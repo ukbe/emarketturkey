@@ -1,0 +1,34 @@
+all:
+#    metas:
+#        title: 'Admininistrator'
+#    layout:  layoutManage
+
+manageSuccess:
+    metas:
+        title: 'Manage Company | eMarketTurkey'
+
+accountSuccess:
+    metas:
+        title: 'Account | eMarketTurkey'
+
+addRelationSuccess:
+    metas:
+        title: 'Add Parent or Subsidiary Company | eMarketTurkey'
+    javascripts:  [jquery.ui-1.8.14.autocomplete.js]
+
+relationsSuccess:
+    metas:
+        title: 'Parent and Subsidiary Companies | eMarketTurkey'
+
+registerSuccess:
+    metas:
+        title: 'Register Company | eMarketTurkey'
+
+routeSuccess:
+    metas:
+        title: "What's next? | eMarketTurkey"
+
+videosSuccess:
+    metas:
+        title: 'Company Videos | eMarketTurkey'
+

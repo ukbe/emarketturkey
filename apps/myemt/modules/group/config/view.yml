@@ -1,0 +1,27 @@
+#all:
+#    layout:  layoutTripleColumn
+
+manageSuccess:
+    metas:
+        title: 'Manage Group'
+
+accountSuccess:
+    metas:
+        title: 'Account | eMarketTurkey'
+
+addRelationSuccess:
+    metas:
+        title: 'Add Parent or Subsidiary Gompany | eMarketTurkey'
+    javascripts:  [jquery.ui-1.8.14.autocomplete.js]
+
+relationsSuccess:
+    metas:
+        title: 'Parent and Subsidiary Groups | eMarketTurkey'
+
+startSuccess:
+    metas:
+        title: 'Start Group | eMarketTurkey'
+
+routeSuccess:
+    metas:
+        title: "What's next? | eMarketTurkey"

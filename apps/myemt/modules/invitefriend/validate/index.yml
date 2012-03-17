@@ -1,0 +1,9 @@
+fields:
+    message:
+        sfStringValidator:
+            max: 1000
+            max_error:     'Your message should be at a maximum of 800 characters.'
+    emaillist:
+        required:
+            msg: 'Please enter at least one email address in order to send invitation.' 
+            

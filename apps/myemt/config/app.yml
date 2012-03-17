@@ -1,0 +1,652 @@
+# default values
+all:
+
+    main:
+    
+        emt_tables:
+            articles:
+                modelClass:   Publication
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  author/articles_row
+                rowCountLabel:  '%1 publications total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['author/article']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION.ID"
+                    name:
+                        displayName:    "Article Name"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION.NAME"
+                        applyFilter:   true
+                    category:
+                        displayName:    "Category"
+                        isSortable:   false
+                        fieldName:  "EMT_PUBLICATION_CATEGORY_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PUBLICATION.CATEGORY_ID"
+                    author:
+                        displayName:    "Author"
+                        isSortable:   true
+                        fieldName:  "EMT_AUTHOR.NAME || ' ' || EMT_AUTHOR.LASTNAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PUBLICATION.AUTHOR_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            news:
+                modelClass:   Publication
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  author/news_row
+                rowCountLabel:  '%1 news total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['author/news']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION.ID"
+                    name:
+                        displayName:    "News Title"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION.NAME"
+                        applyFilter:   true
+                    category:
+                        displayName:    "Category"
+                        isSortable:   false
+                        fieldName:  "EMT_PUBLICATION_CATEGORY_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PUBLICATION.CATEGORY_ID"
+                    source:
+                        displayName:    "Source"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION_SOURCE.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PUBLICATION.SOURCE_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            authors:
+                modelClass:   Author
+                showHeader:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                activateAction:  true
+                rowPartial:  author/authors_row
+                rowCountLabel:  '%1 authors total'
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_AUTHOR.ID"
+                    name:
+                        displayName:    "Author Name"
+                        isSortable:   true
+                        fieldName:  "EMT_AUTHOR.NAME"
+                        applyFilter:   true
+            companies:
+                modelClass:   Company
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/companies_row
+                rowCountLabel:  '%1 companies total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/company']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_COMPANY.ID"
+                    name:
+                        displayName:    "Company Name"
+                        isSortable:   true
+                        fieldName:  "EMT_COMPANY.NAME"
+                        applyFilter:   true
+                    sector:
+                        displayName:    "Sector"
+                        isSortable:   false
+                        fieldName:  "EMT_BUSINESS_SECTOR_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_COMPANY.SECTOR_ID"
+                    type:
+                        displayName:    "Type"
+                        isSortable:   true
+                        fieldName:  "EMT_BUSINESS_TYPE_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_COMPANY.BUSINESS_TYPE_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            sources:
+                modelClass:   PublicationSource
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  author/source_row
+                rowCountLabel:  '%1 sources total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['author/source']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION_SOURCE.ID"
+                    name:
+                        displayName:    "Source Name"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION_SOURCE.NAME"
+                        applyFilter:   true
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            paymentterms:
+                modelClass:   PaymentTerm
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   code
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/paymentterm_row
+                rowCountLabel:  '%1 payment terms total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/paymentTerm']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_PAYMENT_TERM.ID"
+                    code:
+                        displayName:    "Code"
+                        isSortable:   true
+                        fieldName:  "EMT_PAYMENT_TERM.CODE"
+                        applyFilter:   true
+                    name:
+                        displayName:    "Payment Term Name"
+                        isSortable:   true
+                        fieldName:  "EMT_PAYMENT_TERM_I18N.NAME"
+                        applyFilter:   true
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            businesstypes:
+                modelClass:   BusinessType
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/businesstype_row
+                rowCountLabel:  '%1 business types total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['admin/businessType']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_BUSINESS_TYPE.ID"
+                    name:
+                        displayName:    "Business Type Name"
+                        isSortable:   true
+                        fieldName:  "EMT_BUSINESS_TYPE_I18N.NAME"
+                        applyFilter:   true
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            businesssectors:
+                modelClass:   BusinessSector
+                showHeader:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/businesssector_row
+                rowCountLabel:  '%1 sectors total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['admin/businessSector']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_BUSINESS_SECTOR.ID"
+                    name:
+                        displayName:    "Business Sector Name"
+                        isSortable:   true
+                        fieldName:  "EMT_BUSINESS_SECTOR_I18N.NAME"
+                        applyFilter:   true
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            pubcategories:
+                modelClass:   PublicationCategory
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  author/pubcategory_row
+                rowCountLabel:  '%1 categories total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['author/category']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION_CATEGORY.ID"
+                    name:
+                        displayName:    "Category Name"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION_CATEGORY_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PUBLICATION_CATEGORY.ID"
+                    parent:
+                        displayName:    "Parent Category"
+                        isSortable:   true
+                        fieldName:  "EMT_PUBLICATION_CATEGORY_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PUBLICATION_CATEGORY.PARENT_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            users:
+                modelClass:   User
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/user_row
+                rowCountLabel:  '%1 users total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/user']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_USER.ID"
+                    name:
+                        displayName:    "Name"
+                        isSortable:   true
+                        fieldName:  "EMT_USER.NAME"
+                        applyFilter:   true
+                    lastname:
+                        displayName:    "Lastname"
+                        isSortable:   true
+                        fieldName:  "EMT_USER.LASTNAME"
+                        applyFilter:   true
+                    joinedat:
+                        displayName:    "Joined At"
+                        isSortable:   true
+                        fieldName:  "EMT_USER.CREATED_AT"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            mediaitems:
+                modelClass:   MediaItem
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/mediaitem_row
+                rowCountLabel:  '%1 media items total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/mediaItem']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_MEDIA_ITEM.ID"
+                    filename:
+                        displayName:    "File Name"
+                        isSortable:   true
+                        fieldName:  "EMT_MEDIA_ITEM.FILENAME || '.' || EMT_MEDIA_ITEM.FILE_EXTENSION"
+                        applyFilter:   true
+                    owner:
+                        displayName:    "Owner"
+                        isSortable:   false
+                        fieldName:  "EMT_MEDIA_ITEM.OWNER_ID"
+                        applyFilter:   true
+                    filesize:
+                        displayName:    "File Size"
+                        isSortable:   true
+                        fieldName:  "EMT_MEDIA_ITEM.FILE_SIZE"
+                        applyFilter:   true
+                    uploadedat:
+                        displayName:    "Uploaded At"
+                        isSortable:   true
+                        fieldName:  "EMT_MEDIA_ITEM.CREATED_AT"
+                    status:
+                        displayName:    "Status"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            services:
+                modelClass:   Service
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "1"
+                rowPartial:  admin/service_row
+                rowCountLabel:  '%1 services total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/service']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_SERVICE.ID"
+                    servicename:
+                        displayName:    "Service Name"
+                        isSortable:   true
+                        fieldName:  "EMT_SERVICE_I18N.NAME"
+                        applyFilter:   true
+                    application:
+                        displayName:    "Application"
+                        isSortable:   false
+                        fieldName:  "EMT_APPLICATION.APP_CODE"
+                        applyFilter:   false
+                        joinWith:  "EMT_SERVICE.APPLICATION_ID"
+                    appliesto:
+                        displayName:    "Applies To"
+                        isSortable:   true
+                        fieldName:  "EMT_PRIVACY_NODE_TYPE_I18N.NAME"
+                        applyFilter:   false
+                        joinWith:  "EMT_SERVICE.APPLIES_TO_TYPE_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            applications:
+                modelClass:   Application
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "1"
+                rowPartial:  admin/application_row
+                rowCountLabel:  '%1 applications total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/application']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_APPLICATION.ID"
+                    appcode:
+                        displayName:    "App Code"
+                        isSortable:   true
+                        fieldName:  "EMT_APPLICATION.APP_CODE"
+                        applyFilter:   true
+                    name:
+                        displayName:    "Application Name"
+                        isSortable:   true
+                        fieldName:  "EMT_APPLICATION_I18N.NAME"
+                        applyFilter:   true
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            packages:
+                modelClass:   MarketingPackage
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "1"
+                rowPartial:  admin/package_row
+                rowCountLabel:  '%1 packages total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/package']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_MARKETING_PACKAGE.ID"
+                    name:
+                        displayName:    "Package Name"
+                        isSortable:   true
+                        fieldName:  "EMT_MARKETING_PACKAGE_I18N.NAME"
+                        applyFilter:   true
+                    appliesto:
+                        displayName:    "Applies To"
+                        isSortable:   true
+                        fieldName:  "EMT_PRIVACY_NODE_TYPE_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_MARKETING_PACKAGE.APPLIES_TO_TYPE_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            emailtransactions:
+                modelClass:   EmailTransaction
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/emailtransaction_row
+                rowCountLabel:  '%1 transactions total'
+                editAction:  false
+                deleteAction:  true
+                itemUrl:  ['admin/emailTransaction']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_EMAIL_TRANSACTION.ID"
+                    email:
+                        displayName:    "Email"
+                        isSortable:   true
+                        fieldName:  "EMT_EMAIL_TRANSACTION.EMAIL"
+                        applyFilter:   true
+                    namespace:
+                        displayName:    "Namespace"
+                        isSortable:   false
+                        fieldName:  "EMT_EMAIL_TRANSACTION_NS.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_EMAIL_TRANSACTION.NAMESPACE_ID"
+                    recipient:
+                        displayName:    "Recipient"
+                        isSortable:   false
+                        fieldName:  "EMT_EMAIL_TRANSACTION.RCPNT_USER_ID"
+                        applyFilter:   false
+                    updatedat:
+                        displayName:    "Updated At"
+                        isSortable:   false
+                        fieldName:  "EMT_EMAIL_TRANSACTION.UPDATED_AT"
+                        applyFilter:   false
+                    status:
+                        displayName:    "Status"
+                        isSortable:   true
+                        fieldName:  "EMT_EMAIL_TRANSACTION.STATUS"
+                        applyFilter:   false
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            jobpositions:
+                modelClass:   JobPosition
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/jobposition_row
+                rowCountLabel:  '%1 positions total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['admin/jobPosition']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_JOB_POSITION.ID"
+                    name:
+                        displayName:    "Name"
+                        isSortable:   true
+                        fieldName:  "EMT_JOB_POSITION_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_JOB_POSITION.ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            jobgrades:
+                modelClass:   JobGrade
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  admin/jobgrade_row
+                rowCountLabel:  '%1 grades total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['admin/jobGrade']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_JOB_GRADE.ID"
+                    name:
+                        displayName:    "Name"
+                        isSortable:   true
+                        fieldName:  "EMT_JOB_GRADE_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_JOB_GRADE.ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            products:
+                modelClass:   Product
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  products/product_row
+                rowCountLabel:  '%1 products total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['@edit-product?hash={$row->getCompany()->getHash()}&id={$row->getId()}']
+                columns:
+                    thumbnail:
+                        displayName:    "Thumbnail"
+                        isSortable:   false
+                        fieldName:  "EMT_PRODUCT.ID"
+                    model:
+                        displayName:    "Model"
+                        isSortable:   true
+                        fieldName:  "EMT_PRODUCT.MODEL_NO"
+                        applyFilter:   true
+                    name:
+                        displayName:    "Name"
+                        isSortable:   true
+                        fieldName:  "EMT_PRODUCT.NAME"
+                        applyFilter:   true
+                    category:
+                        displayName:    "Category"
+                        isSortable:   true
+                        fieldName:  "EMT_PRODUCT_CATEGORY_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PRODUCT.CATEGORY_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            leads:
+                modelClass:   B2bLead
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   name
+                itemsPerPage:  10
+                selectable:  "N"
+                rowPartial:  leads/lead_row
+                rowCountLabel:  '%1 leads total'
+                editAction:  true
+                deleteAction:  true
+                activateAction:  true
+                itemUrl:  ['@edit-lead?hash={$row->getCompany()->getHash()}&id={$row->getId()}']
+                columns:
+                    thumbnail:
+                        displayName:    "Thumbnail"
+                        isSortable:   false
+                        fieldName:  "EMT_B2B_LEAD.ID"
+                    name:
+                        displayName:    "Name"
+                        isSortable:   true
+                        fieldName:  "EMT_B2B_LEAD.NAME"
+                        applyFilter:   true
+                    category:
+                        displayName:    "Category"
+                        isSortable:   true
+                        fieldName:  "EMT_PRODUCT_CATEGORY_I18N.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_B2B_LEAD.CATEGORY_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+            platformads:
+                modelClass:   PlatformAd
+                showHeader:  true
+                showItemsPerPage:  true
+                orderColumn:   id
+                itemsPerPage:  10
+                selectable:  "1"
+                rowPartial:  admin/platform_ad_row
+                rowCountLabel:  '%1 ads total'
+                editAction:  true
+                deleteAction:  true
+                itemUrl:  ['admin/platformAd']
+                columns:
+                    id:
+                        displayName:    "ID"
+                        isSortable:   true
+                        fieldName:  "EMT_PLATFORM_AD.ID"
+                    title:
+                        displayName:    "Title"
+                        isSortable:   true
+                        fieldName:  "EMT_PLATFORM_AD.TITLE"
+                        applyFilter:   true
+                    company:
+                        displayName:    "Company"
+                        isSortable:   true
+                        fieldName:  "EMT_COMPANY.NAME"
+                        applyFilter:   true
+                        joinWith:  "EMT_PLATFORM_AD.RELATED_COMPANY_ID"
+                    actions:
+                        displayName:    "Actions"
+                        isActionColumn:   true
+                        

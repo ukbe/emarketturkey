@@ -1,0 +1,200 @@
+place-profile:
+  url:   /:sf_culture/venue/:hash
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: venue, action: view }
+
+tradeexpert-profile:
+  url:   /:sf_culture/tradeexpert/:hash
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: tradeexpert, action: view }
+
+company-product-substitute:
+  url:   /:sf_culture/company/:hash/products/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' }
+  param: { module: company, action: products }
+
+tradeexperts-action:
+  url:   /:sf_culture/tradeexperts/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (apply|byCountry|byIndustry|byName|find|connected|featured) }
+  param: { module: tradeexperts }
+
+tradeexperts-dir:
+  url:   /:sf_culture/tradeexperts/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: tradeexperts, action: directory }
+
+tradeexperts:
+  url:   /:sf_culture/tradeexperts
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: tradeexperts, action: index }
+
+buyer-tools:
+  url:   /:sf_culture/buying/tools
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: tradeshows, action: index }
+
+buying-leads:
+  url:   /:sf_culture/buying
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: leads, action: index, type_code: buying }
+
+selling-leads:
+  url:   /:sf_culture/selling
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: leads, action: index, type_code: selling }
+
+lead-detail:
+  url:   /:sf_culture/lead/:guid
+  requirements: { sf_culture: (?:en|de|tr), guid: '[A-Fa-f0-9]+' } 
+  param: { module: lead, action: view }
+
+leads-action:
+  url:   /:sf_culture/leads/:type_code/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (index|latest|network|byCategory|byCountry|results), type_code: (buying|selling) } 
+  param: { module: leads }
+
+leads-dir:
+  url:   /:sf_culture/leads/:type_code/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+', type_code: (selling|buying) } 
+  param: { module: leads, action: directory }
+
+venues-action:
+  url:   /:sf_culture/venues/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|byCountry|byName) }
+  param: { module: venues }
+
+venues-dir:
+  url:   /:sf_culture/venues/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: venues, action: directory }
+
+venues:
+  url:   /:sf_culture/venues
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: venues, action: index }
+
+events-action:
+  url:   /:sf_culture/tradeshows/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|attenders|byCountry|byIndustry|byName) }
+  param: { module: events }
+
+event-detail:
+  url:   /:sf_culture/tradeshow/:guid
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: event, action: view }
+
+tradeshows-dir:
+  url:   /:sf_culture/tradeshows/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: events, action: directory }
+
+tradeshows:
+  url:   /:sf_culture/tradeshows
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: events, action: index }
+
+companies-action:
+  url:   /:sf_culture/companies/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|connected|byCountry|byIndustry|byName|results) } 
+  param: { module: companies }
+
+companies-dir:
+  url:   /:sf_culture/companies/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: companies, action: directory }
+
+companies:
+  url:   /:sf_culture/companies
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: companies, action: index }
+
+products-action:
+  url:   /:sf_culture/products/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (spotlight|network|byCategory|byCountry|results) } 
+  param: { module: products }
+
+products-dir:
+  url:   /:sf_culture/products/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: products, action: directory }
+
+products:
+  url:   /:sf_culture/products
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: products, action: index }
+
+company-events:
+  url:   /:sf_culture/company/:hash/events
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: events }
+
+company-partners:
+  url:   /:sf_culture/company/:hash/partners
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: partners }
+
+company-network:
+  url:   /:sf_culture/company/:hash/network
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: network }
+
+company-people:
+  url:   /:sf_culture/company/:hash/people
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: people }
+
+company-photos:
+  url:   /:sf_culture/company/:hash/photos
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: photos }
+
+company-products:
+  url:   /:sf_culture/company/:hash/products
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: products }
+
+company-profile-action:
+  url:   /:sf_culture/company/:hash/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (products|connections|photos|partners|events|contact|upload|leads|product|lead) } 
+  param: { module: company }
+
+company-profile:
+  url:   /:sf_culture/company/:hash/profile
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: profile }
+
+product-detail:
+  url: /:sf_culture/company/:hash/product/:id
+  param: { module: product, action: index }
+  requirements: { id: \d+, sf_culture: (?:en|de|tr) }
+
+product-category:
+  url: /:sf_culture/product/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: products, action: category }
+
+company-category:
+  url: /:sf_culture/company/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: companies, action: category }
+  
+  
+# default rules
+homepage:
+  url: /:sf_culture
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: index }
+
+homepage1:
+  url: /
+  param: { module: default, action: index }
+
+default_index:
+  url: /:sf_culture/:module
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { action: index }
+
+default:
+  url: /:sf_culture/:module/:action/*
+  requirements: { sf_culture: (?:en|de|tr) } 
+  

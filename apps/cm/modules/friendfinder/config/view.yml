@@ -1,0 +1,13 @@
+all:
+    metas:
+        title: "Friend Finder | eMarketTurkey"
+    layout: layoutTripleColumn
+
+addLiveFriendsSuccess:
+    metas:
+        title: "Add Windows Live Friends | eMarketTurkey"
+
+inviteLiveFriendsSuccess:
+    metas:
+        title: "Invite Windows Live Friends | eMarketTurkey"
+        

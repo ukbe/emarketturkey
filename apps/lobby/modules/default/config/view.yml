@@ -1,0 +1,10 @@
+indexSuccess:
+  stylesheets:   [jquery.jcarousel.css,skin.css]
+  javascripts:    [jquery.scrollTo-1.4.0-min.js,jquery.localscroll-1.2.6-min.js,jquery.serialScroll-1.2.1-min.js,jquery.jcarousel.pack.js]
+
+boxtestSuccess:
+  stylesheets:   []
+  javascripts:    []
+
+setAnalyticFilterCookieSuccess:
+    layout: layoutFilter

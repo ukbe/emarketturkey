@@ -1,0 +1,1 @@
+<?php echo select_tag('reg_state', options_for_select($cities, null, array('include_custom' => __('select state/province'))), array('style' => 'width:190px;')) ?>

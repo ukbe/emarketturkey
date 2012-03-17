@@ -1,0 +1,118 @@
+@CHARSET "UTF-8";
+
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-size: 100%;
+background: transparent;
+}
+
+body {
+line-height: 1;
+}
+ 
+ul {
+ list-style: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+text-decoration: none;
+}
+
+del {
+text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+
+*::-moz-focus-inner, *:focus, *:selected {
+    outline:0;-moz-outline:0;
+}
+
+a, 
+a:link,
+a:visited {
+ font:normal 400 11px/150% "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+ color:#333;
+ text-decoration:none;
+ outline:0;
+ text-align:left;
+}
+
+a:hover,
+a:focus,
+a.current {
+ color:#0088CC;
+ text-decoration:none;
+}
+
+a._blueHover {
+ padding:1px 3px;
+ border-radius:3px;
+ border:1px solid transparent; 
+}
+a._blueHover:hover,
+a._blueHover:focus {
+ background-color:#0088CC;
+ color:#fff;
+ border-color:#046;
+}
+
+
+/***** Common Formatting *****/
+ 
+p, ul, ol {
+margin:0;
+padding:0 0 1.25em 0;
+}
+ 
+ul, ol {
+padding:0 0 1.25em 2.5em;
+}
+ 
+blockquote {
+margin:1.25em;
+padding:1.25em 1.25em 0 1.25em;
+}
+ 
+small {
+font-size:0.85em;
+}
+ 
+img {
+border:0;
+}
+ 
+sup {
+position:relative;
+bottom:0.3em;
+vertical-align:baseline;
+}
+ 
+sub {
+position:relative;
+bottom:-0.2em;
+vertical-align:baseline;
+}
+

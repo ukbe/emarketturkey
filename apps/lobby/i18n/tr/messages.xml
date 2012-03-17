@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="tr" datatype="plaintext" original="messages" date="2010-12-24T15:11:29Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>About Us</source>
+        <target>Hakkımızda</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>For Suppliers</source>
+        <target>Firmalar İçin</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>For Individuals</source>
+        <target>Bireyler İçin</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Privacy Policy</source>
+        <target>Gizlilik Politikası</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Terms of use</source>
+        <target>Kullanım Koşulları</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>All rights reserved</source>
+        <target>Tüm Hakları Saklıdır</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Corporate Info</source>
+        <target>Kurumsal Bilgi</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Services</source>
+        <target>Hizmetler</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Collaboration</source>
+        <target>Katılım</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Team</source>
+        <target>Takım</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Contact</source>
+        <target>İletişim</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Home</source>
+        <target>Ana Sayfa</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Sign Up</source>
+        <target>Üye Ol</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Human Resources</source>
+        <target>İnsan Kaynakları</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Academy</source>
+        <target>Akademi</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Community</source>
+        <target>Topluluk</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Translation</source>
+        <target>Tercüme</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>An error occured while handling your request.&lt;br /&gt;
+                                  We are working on these obstacles to make life easier for you.&lt;br /&gt;
+                                  We are sorry for the inconvenience which you have experienced.</source>
+        <target>Talebinizi yerine getirirken bir hata oluştu.&lt;br /&gt;
+                    Hayatı sizin için daha iyi yapmak amacıyla bu tip sorunları ortadan kaldırmak için çalışıyoruz.&lt;br /&gt;
+                    Ortaya çıkan sorun için özür dileriz.</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Messages</source>
+        <target>Mesajlar</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Settings</source>
+        <target>Ayarlar</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>My Network</source>
+        <target>Ağım</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Tasks</source>
+        <target>Görevler</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Forgot Password?</source>
+        <target>Şifremi Unuttum!</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Please fill in the form below.</source>
+        <target>Lütfen alttaki formu doldurun.</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Name</source>
+        <target>Ad</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Lastname</source>
+        <target>Soyad</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Gender</source>
+        <target>Cinsiyet</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Male</source>
+        <target>Bay</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Female</source>
+        <target>Bayan</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Birthdate</source>
+        <target>Doğum Tarihi</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>day</source>
+        <target>gün</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>month</source>
+        <target>ay</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>year</source>
+        <target>yıl</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Email address</source>
+        <target>E-posta Adresi</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Email address (repeat)</source>
+        <target>E-posta Adresi (tekrar)</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Secret question</source>
+        <target>Güvenlik Sorusu</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Secret answer</source>
+        <target>Güvenlik Sorusu Cevabı</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Please type the security code</source>
+        <target>Lütfen güvenlik kodunu girin</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>I accept %1$s and %2$s.</source>
+        <target>%1s ve %2s'nı kabul ediyorum.</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Terms of Use</source>
+        <target>Kullanım Koşulları</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>Welcome to eMarketTurkey</source>
+        <target>eMarketTurkey'e Hoşgeldiniz</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>We have sent you an e-mail including your account information.&lt;br /&gt;You might want to change your password immediately after your first login. If you can't find the message in your inbox you might need to check your junk mail folder.&lt;br /&gt;In case of any account problems, please write to support@emarketturkey.com!</source>
+        <target>E-posta adresinize, hesap bilgilerinizi içeren bir mesaj gönderildi.&lt;br /&gt;Şifrenizi ilk oturumunuzda değiştirmek isteyebilirsiniz. Eğer gönderilen mesajı "Gelen" kutusunda bulamadıysanız, "Gereksiz Posta(Junk Mail)" klasörünü kontrol etmeniz gerekebilir.&lt;br /&gt;Hesabınızla ilgili herhangi bir sorunla karşılaştığınızda, destek@emarketturkey.com adresine e-posta gönderebilirsiniz!</target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>What's next</source>
+        <target>Sırada ne var?</target>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Register my company</source>
+        <target>Firmamı kaydet</target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Create my first resume</source>
+        <target>İlk CV'mi oluştur</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Enter your name.</source>
+        <target>Adınızı girin.</target>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Enter your lastname.</source>
+        <target>Soyadınızı girin.</target>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Select gender.</source>
+        <target>Cinsiyet seçin.</target>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>Select day of your birthdate.</source>
+        <target>Doğum tarihiniz için gün seçin.</target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>Select month of your birthdate.</source>
+        <target>Doğum tarihiniz için ay seçin.</target>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>Select year of your birthdate.</source>
+        <target>Doğum tarihiniz için yıl seçin.</target>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>Enter your email address.</source>
+        <target>E-posta adresinizi girin.</target>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>Correct your email address.</source>
+        <target>E-posta adresinizin doğruluğunu kontrol edin.</target>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>This email address is already registered.</source>
+        <target>Girmiş olduğunuz e-posta adresi zaten kayıtlı.</target>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>Please enter your email address in the (repeat) field.</source>
+        <target>Lütfen e-posta adresinizi "E-posta (tekrar)" alanına tekrar girin.</target>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Enter a secret question.</source>
+        <target>Bir güvenlik sorusu girin.</target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Enter a secret answer.</source>
+        <target>Güvenlik sorunuza cevap girin.</target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Secret answer length should be less than 50 characters.</source>
+        <target>Güvenlik sorusu cevabı en fazla 50 karakter içermelidir.</target>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>Enter the security code shown on the picture.</source>
+        <target>Resimde görünen güvenlik kodunu girin.</target>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>Incorrect security code! Please try again.</source>
+        <target>Güvenlik kodunu yanlış girdiniz! Lütfen tekrar deneyin.</target>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>Please check confirmation box to accept terms.</source>
+        <target>Kullanım Koşullarını kabul etmek için onay kutusunu işaretleyin.</target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>Explore Services</source>
+        <target>Hizmetleri Keşfet</target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Membership</source>
+        <target>Üyelik</target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>B2B</source>
+        <target>B2B</target>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>Contact Us</source>
+        <target>İletişim</target>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>Please do not hessitate to contact us on any subject.</source>
+        <target>Lütfen herhangi bir konuda bizimle iletişim kurunuz.</target>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>Postal Address:</source>
+        <target>Posta Adresi:</target>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>Mansuroğlu Mah. Cumhuriyet Cad. No:15/1&lt;br /&gt;Bayraklı 35040 Izmir&lt;br /&gt;TURKEY</source>
+        <target>Mansuroğlu Mah. Cumhuriyet Cad. No:15/1&lt;br /&gt;Bayraklı 35040 İzmir&lt;br /&gt;TÜRKİYE</target>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>E-mail:</source>
+        <target>E-posta:</target>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>You may send us your message using the contact form below.</source>
+        <target>Alttaki formu kullanarak bize mesajınızı iletebilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>Topic :</source>
+        <target>Konu :</target>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>Please select a topic</source>
+        <target>Lütfen bir konu seçin</target>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>Technical Support</source>
+        <target>Teknik Destek</target>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>Feature Request</source>
+        <target>Özellik Talebi</target>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>Bug Report</source>
+        <target>Hata Bildirimi</target>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>Financial Inquiry</source>
+        <target>Finansal Bilgi</target>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>Other</source>
+        <target>Diğer</target>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>Your Name and Lastname :</source>
+        <target>Adınız ve Soyadınız :</target>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>Your E-mail Address :</source>
+        <target>E-posta Adresiniz :</target>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>Your Message :</source>
+        <target>Mesajınız :</target>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>Please type the verification code seen above:</source>
+        <target>Lütfen yukarıda görünen güvenli kodunu girin:</target>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>Send Message</source>
+        <target>Mesaj Gönder</target>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>Frequently Asked Questions</source>
+        <target>Sıkça Sorulan Sorular</target>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>content goes here</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>FAQ</source>
+        <target>SSS</target>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>Follow us on</source>
+        <target>Bizi takip edin</target>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>Follow eMarketTurkey on Twitter</source>
+        <target>eMarketTurkey'i Twitter'da takip edin.</target>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>Please select a topic for your message.</source>
+        <target>Lütfen mesajınız için bir konu seçin</target>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>Please enter your name and lastname.</source>
+        <target>Lütfen adınızı ve soyadınızı belirtin.</target>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>Please enter your email address.</source>
+        <target>Lütfen e-posta adresinizi girin.</target>
+      </trans-unit>
+      <trans-unit id="92">
+        <source>Please correct your email address.</source>
+        <target>Lütfen e-posta adresinizin doğruluğunu kontrol edin.</target>
+      </trans-unit>
+      <trans-unit id="93">
+        <source>Please enter your message.</source>
+        <target>Lütfen mesajınızı girin.</target>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>Oops! We couldn't find requested page!</source>
+        <target>Uups! Aradığınız sayfa bulunamadı!</target>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Please make sure your typed the correct url in the address bar.</source>
+        <target>Lütfen adress çubuğuna sayfa adresini doğru yazdığınızdan emin olun.</target>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>Content which was included in the page you requested might be outdated and removed.</source>
+        <target>Erişmeye çalıştığınız sayfadaki içerik eskimiş ve yayından kaldırılmış olabilir.</target>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>Welcome to eMarketTurkey.com</source>
+        <target>eMarketTurkey'e Hoşgeldiniz</target>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>Are you a professional, searching ways to extend your business network or improve your skills or maybe you are responsible person for managing your company's needs?</source>
+        <target>İş ağını genişletmeyi yada becerilerini geliştirmeyi gaye edinmiş bir profesyonel veya firmanızın ihtiyaçlarını yönetmekten sorumlu kişi misiniz?</target>
+      </trans-unit>
+      <trans-unit id="99">
+        <source>eMarketTurkey.com is the best online business platform, connecting job seekers, firms, products, experts and opportunities worldwide!</source>
+        <target>eMarketTurkey.com iş arayanları, firmaları, ürünleri, uzmanları ve imkanları birbirine bağlayan en iyi online platformdur.</target>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>Get around with us! Use our comprehensive tools</source>
+        <target>Bizimle çözüme ulaşın! Kapsamlı araçlarımızı kullanın</target>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>Place online quotations via Transportation Directory</source>
+        <target>Taşımacılık Dizini ile online sorgu yapın</target>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>Promote your products and services</source>
+        <target>Ürün ve hizmetlerinizi tanıtın</target>
+      </trans-unit>
+      <trans-unit id="103">
+        <source>Improve your accessiblity</source>
+        <target>Ulaşılabilirliğinizi artırın</target>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>Get support from trade experts</source>
+        <target>Ticaret uzmanlarından destek alın</target>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>Exclusive access to buyers</source>
+        <target>Alıcılara ulaşın</target>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Build your own Company Website</source>
+        <target>Firmanıza özel bir web sitesi oluşturun</target>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Create your buying/selling board</source>
+        <target>Alım &amp; Satım ilanları verin</target>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Build trusted relationships</source>
+        <target>Güvenilir ticari ilişkiler kurun</target>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>Beware business opportunities</source>
+        <target>İş olanaklarından haberdar olun</target>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>Business to Business Services</source>
+        <target>Business to Business Hizmetler</target>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>Directory Service</source>
+        <target>Dizin Hizmeti</target>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>Transportation Directory</source>
+        <target>Taşımacılık Dizini</target>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>TradeExperts</source>
+        <target>TradeExperts</target>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Selling &amp; Buying Leads</source>
+        <target>Satış ve Alım İlanları</target>
+      </trans-unit>
+      <trans-unit id="115">
+        <source>TravelPal</source>
+        <target>TravelPal</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Human Resources Services</source>
+        <target>İnsan Kaynakları Hizmetleri</target>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>Job Listing</source>
+        <target>İş İlanları</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Embedded HR Interface</source>
+        <target>Gömülü İK Arayüzü</target>
+      </trans-unit>
+      <trans-unit id="119">
+        <source>CV Store</source>
+        <target>CV Bankası</target>
+      </trans-unit>
+      <trans-unit id="120">
+        <source>Translation Services</source>
+        <target>Tercüme Hizmetleri</target>
+      </trans-unit>
+      <trans-unit id="121">
+        <source>Automated Information Translation</source>
+        <target>Otomatik Bilgi Tercümesi</target>
+      </trans-unit>
+      <trans-unit id="122">
+        <source>On-Demand Translation</source>
+        <target>İsteğe Bağlı Tercüme</target>
+      </trans-unit>
+      <trans-unit id="123">
+        <source>Printed Media Translation</source>
+        <target>Basılı Yayın Tercümesi</target>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>Free Member</source>
+        <target>Ücretsiz Üye</target>
+      </trans-unit>
+      <trans-unit id="125">
+        <source>Gold Member</source>
+        <target>Gold Üye</target>
+      </trans-unit>
+      <trans-unit id="126">
+        <source>Premium Member</source>
+        <target>Premium Üye</target>
+      </trans-unit>
+      <trans-unit id="127">
+        <source>B2B Services</source>
+        <target>B2B Hizmetleri</target>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>B2B Directory Listing</source>
+        <target>B2B Dizini Listeleme</target>
+      </trans-unit>
+      <trans-unit id="129">
+        <source>Unlimited Product Listing</source>
+        <target>Limitsiz Ürün Listeleme</target>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>B2B Targeted Ads (1 Month)</source>
+        <target>B2B Hedefe Dönük Reklamlar (1 Ay)</target>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>emTrust</source>
+        <target>emTrust</target>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>Multi-Language Support</source>
+        <target>Çoklu-Dil Desteği</target>
+      </trans-unit>
+      <trans-unit id="133">
+        <source>Translation 3X</source>
+        <target>Tercüme 3X</target>
+      </trans-unit>
+      <trans-unit id="134">
+        <source>Translation 10X</source>
+        <target>Tercüme 10X</target>
+      </trans-unit>
+      <trans-unit id="135">
+        <source>Top Listing</source>
+        <target>Öncelikli Listeleme</target>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>Products Spot</source>
+        <target>Ürün Vitrini</target>
+      </trans-unit>
+      <trans-unit id="137">
+        <source>Multimedia Upload (video,catalog,brochure)</source>
+        <target>Multimedya Yükleme (video,katalog,broşür)</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Online Messaging</source>
+        <target>Online Mesajlaşma</target>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>Investment Opportunity Information Access</source>
+        <target>Yatırım Fırsat Bilgileri Erişimi</target>
+      </trans-unit>
+      <trans-unit id="140">
+        <source>Up to 50 Job Listings</source>
+        <target>İş İlanı Yayını (Maksimum 50)</target>
+      </trans-unit>
+      <trans-unit id="141">
+        <source>Up to 10 Job listings</source>
+        <target>İş İlanı Yayını (Maksimum 10)</target>
+      </trans-unit>
+      <trans-unit id="142">
+        <source>Unlimited CV Database Access</source>
+        <target>Sınırsız CV Veritabanı Erişimi</target>
+      </trans-unit>
+      <trans-unit id="143">
+        <source>HR Targeted Ads (1 Month)</source>
+        <target>İK Hedefe Dönük Reklamlar (1 Ay)</target>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>Create CV</source>
+        <target>CV Oluştur</target>
+      </trans-unit>
+      <trans-unit id="145">
+        <source>Membership Price</source>
+        <target>Üyelik Bedeli</target>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>"Translation 3X" is a representation of on-demand translation into 3 member-specified languages.</source>
+        <target>"Tercüme 3X" isteğe bağlı tercüme hizmetidir ve üye tarafından seçilen 3 farklı dile tercüme hizmetini ifade eder.</target>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>"Translation 10X" is a representation of on-demand translation into 10 member-specified languages.</source>
+        <target>"Tercüme 10X" isteğe bağlı tercüme hizmetidir ve üye tarafından seçilen 3 farklı dile tercüme hizmetini ifade eder.</target>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>Transportation Directory is a business directory which transportation companies get listed 
+and reply to inquiries from other people or companies on eMarketTurkey. &lt;br /&gt;&lt;br /&gt;eMarketTurkey users
+are able to ask any questions(service locations and price, etc.) to Companies listed on 
+Transportation Directory. A practical interface helps users fully prepare their inquiry.</source>
+        <target>Transportation Directory, taşımacılık sektöründe faaliyet gösteren firmaların listelendiği ve eMarketTurkey üzerindeki diğer üye kişi yada firmaların taleplerine cevap verdikleri bir dizin hizmetidir. 
+&lt;br /&gt;&lt;br /&gt;eMarketTurkey kullanıcıları Transportation Directory'ndeki firmalara herhangi bir soru(hizmet noktaları, fiyatlar, vs.) yöneltebilir.
+Pratik kullanım sağlayan arayüz, kullanıcıların sorgularını tamamlamasında kolaylık sağlar.</target>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>A Marketplace for Transportation Services</source>
+        <target>Taşımacılık Hizmetleri için Bir Pazaryeri</target>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>Business people around the world, always try to find more rapid and efficient ways 
+to overcome their supply issues. Transportation Directory as an inquiry tool saves a lot of time for 
+service-demanding companies while providing transportation companies an online marketplace.</source>
+        <target>Dünyanın genelinde iş adamları, her zaman tedarik sorunlarını gidermek için daha hızlı ve verimli yollar aramaktadır.
+         Bir sorgulama aracı olarak Transportation Directory, hizmet bekleyen firmalara önemli oranda zaman kazandırırken, 
+         taşımacılık hizmeti veren kuruluşlara da online bir pazaryeri sunmaktadır.</target>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Get on it!</source>
+        <target>Hemen Başla!</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>If you think this tool would help your company to gain new marketing oportunities;&lt;br /&gt;Join Now!</source>
+        <target>Eğer bu aracın firmanıza yeni pazarlama imkanları sağlayacağını düşünüyorsanız;&lt;br /&gt;Şimdi Katılın!</target>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>TradeExperts is a business directory which individuals or companies get listed 
+and reply to inquiries from other people on eMarketTurkey. &lt;br /&gt;&lt;br /&gt;TradeExperts may provide the support 
+free of charge or on a pay&amp;go basis.</source>
+        <target>TradeExperts, ticaret konusunda uzman bireylerin yada firmaların listelendiği ve eMarketTurkey üzerindeki diğer üye kişi yada firmaların taleplerine cevap verdikleri bir dizin hizmetidir.
+        &lt;br /&gt;&lt;br /&gt;TradeExperts dizinine kayıtlı firma yada kişiler çalışma biçimleri doğrultusunda ücretsiz yada öde&amp;kullan yoluyla hizmet verebilirler.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Who can be qualified as a TradeExpert?</source>
+        <target>Kimler TradeExpert olabilir?</target>
+      </trans-unit>
+      <trans-unit id="155">
+        <source>Any single member or company can create a TradeExpert account for free. 
+All a TradeExpert needs to do is to attract the visitors' focus and provide the people with 
+his/her proficiency. More popularity brings more inquiries!</source>
+        <target>Herhangi bir üye şahıs yada firma ücretsiz TradeExperts hesabı açabilir.
+Bir TradeExperts üyesinin tek yapması gereken ziyaretçilerin dikkatini çekmek ve bilgisini sunmak. 
+Daha çok populerite daha çok sorgu getirir!</target>
+      </trans-unit>
+      <trans-unit id="156">
+        <source>What can I do?</source>
+        <target>Ne yapabilirim?</target>
+      </trans-unit>
+      <trans-unit id="157">
+        <source>If you are a professional on a specific sector, product, etc.&lt;br /&gt;Join to TradeExperts and get inquiries</source>
+        <target>Belirli bir sektör, ürün, vs. üzerine tecrübeniz varsa;&lt;br /&gt;TradeExperts'e kaydolun ve sorgu alın</target>
+      </trans-unit>
+      <trans-unit id="158">
+        <source>Step 1 - Create Your Personal Account</source>
+        <target>Adım 1 - Kişisel Hesabınızı Oluşturun</target>
+      </trans-unit>
+      <trans-unit id="159">
+        <source>Please fill in the form below to have your login account created.&lt;br /&gt;&lt;br /&gt;Once your login account is created, you will be redirected to CV creating page.</source>
+        <target>Lütfen hesabınızı oluşturmak için alttaki formu doldurun.&lt;br /&gt;&lt;br /&gt;Hesabınız oluşturulduktan sonra, CV oluşturma sayfasına yönlendirileceksiniz.</target>
+      </trans-unit>
+      <trans-unit id="160">
+        <source>Please fill in the form below to have your login account created.&lt;br /&gt;&lt;br /&gt;Once your login account is created, you will be redirected to Company registration page.</source>
+        <target>Lütfen hesabınızı oluşturmak için alttaki formu doldurun.&lt;br /&gt;&lt;br /&gt;Hesabınız oluşturulduktan sonra, Firma kayıt sayfasına yönlendirileceksiniz.</target>
+      </trans-unit>
+      <trans-unit id="161">
+        <source>Please fill in the form below to have your login account created.</source>
+        <target>Lütfen hesabınızı oluşturmak için alttaki formu doldurun.</target>
+      </trans-unit>
+      <trans-unit id="162">
+        <source>An error occurred while creating your account.&lt;br /&gt;We are sorry for the inconvenience and still working to work out the problem.</source>
+        <target>Hesabınız oluşturulurken bir hata oluştu.&lt;br /&gt;Sorun ile ilgili özür dileriz, sorunu gidermek için çalışıyoruz.</target>
+      </trans-unit>
+      <trans-unit id="163">
+        <source>We have sent you an e-mail including your account information. If you can't find it in your inbox you might need to check your spam folder.&lt;br /&gt;You might want to change your password immediately after your first login. If you like to change your password right now, %1.&lt;br /&gt;In case of any account problems, please write to %2.</source>
+        <target>E-posta adresinize, hesap bilgilerinizi içeren bir mesaj gönderildi. Eğer gönderilen mesajı "Gelen" kutusunda bulamadıysanız, "Gereksiz Posta(Junk Mail)" klasörünü kontrol etmeniz gerekebilir.&lt;br /&gt;&lt;br /&gt;Şifrenizi ilk oturumunuzda değiştirmek isteyebilirsiniz. Eğer şifrenizi şimdi değiştirmek istiyorsanız, %1.&lt;br /&gt;Hesabınızla ilgili herhangi bir sorunla karşılaştığınızda, %2 adresine konuyla ilgili bir e-posta gönderin.</target>
+      </trans-unit>
+      <trans-unit id="164">
+        <source>click here</source>
+        <target>buraya tıklayın</target>
+      </trans-unit>
+      <trans-unit id="165">
+        <source>Set up your Profile</source>
+        <target>Profilinizi Düzenleyin</target>
+      </trans-unit>
+      <trans-unit id="166">
+        <source>Search for Jobs</source>
+        <target>İş Ara</target>
+      </trans-unit>
+      <trans-unit id="167">
+        <source>Start your Blog</source>
+        <target>Blog oluşturun</target>
+      </trans-unit>
+      <trans-unit id="168">
+        <source>Search for your Friends</source>
+        <target>Arkadaşlarınızı arayın</target>
+      </trans-unit>
+      <trans-unit id="169">
+        <source>Invite your Friends</source>
+        <target>Arkadaşlarınızı davet edin</target>
+      </trans-unit>
+      <trans-unit id="170">
+        <source>Drop a message to Public Bulletin</source>
+        <target>Topluluk panosuna mesaj bırakın</target>
+      </trans-unit>
+      <trans-unit id="171">
+        <source>Become an EMT Contributor and get paid</source>
+        <target>EMT için ücret karşılığı çalışın</target>
+      </trans-unit>
+      <trans-unit id="172">
+        <source>Register your Company</source>
+        <target>Firmanızı Kaydedin</target>
+      </trans-unit>
+      <trans-unit id="173">
+        <source>Promote your Products or Services</source>
+        <target>Ürünlerinizi ve Hizmetlerinizi tanıtın</target>
+      </trans-unit>
+      <trans-unit id="174">
+        <source>Search for Products from other Companies</source>
+        <target>Diğer Firmaların Ürünlerinde arama yapın</target>
+      </trans-unit>
+      <trans-unit id="175">
+        <source>Maintain a customized Company Website</source>
+        <target>Özelleştirilmiş bir Firma Web Sayfasına sahip olun</target>
+      </trans-unit>
+      <trans-unit id="176">
+        <source>Post Jobs</source>
+        <target>İş İlanı yayınlayın</target>
+      </trans-unit>
+      <trans-unit id="177">
+        <source>Get your information translated online</source>
+        <target>Bilgilerinizi tercüme ettirin</target>
+      </trans-unit>
+      <trans-unit id="178">
+        <source>Query prices on Transportation Directory</source>
+        <target>Nakliye Dizininde fiyat sorgulaması yapın.</target>
+      </trans-unit>
+      <trans-unit id="179">
+        <source>Get EMT Localized Representatives work for you</source>
+        <target>EMT Yerel Temsilcilerinin sizin için çalışmasını sağlayın</target>
+      </trans-unit>
+      <trans-unit id="180">
+        <source>Register your Organisation</source>
+        <target>Topluluğunuzu Kaydedin</target>
+      </trans-unit>
+      <trans-unit id="181">
+        <source>Invite your Members</source>
+        <target>Üyelerinizi davet edin</target>
+      </trans-unit>
+      <trans-unit id="182">
+        <source>Promote your Events online on EMT Calender</source>
+        <target>Etkinliklerinizi çevrimiçi EMT Takviminde duyurun</target>
+      </trans-unit>
+      <trans-unit id="183">
+        <source>Contact other Business Organisations worldwide</source>
+        <target>Dünya çapındaki diğer İş Topluluklarına ulaşın</target>
+      </trans-unit>
+      <trans-unit id="184">
+        <source>or even trying to find a job which suits your qualities perfectly?</source>
+        <target>belki de niteliklerinize uygun bir iş arıyorsunuz?</target>
+      </trans-unit>
+      <trans-unit id="185">
+        <source>Sign up</source>
+        <target>Üye Ol</target>
+      </trans-unit>
+      <trans-unit id="186">
+        <source>We have sent you an e-mail including your account information. If you can't find the message in your inbox you might need to check your spam folder.&lt;br /&gt;You might want to change your password immediately after your first login. If you like to change your password right now, %1.&lt;br /&gt;In case of any account problems, please write to %2.</source>
+        <target>E-posta adresinize, hesap bilgilerinizi içeren bir mesaj gönderildi. Eğer gönderilen mesajı "Gelen" kutusunda bulamadıysanız, "Gereksiz Posta(Junk Mail)" klasörünü kontrol etmeniz gerekebilir.&lt;br /&gt;&lt;br /&gt;Şifrenizi ilk oturumunuzda değiştirmek isteyebilirsiniz. Eğer şifrenizi şimdi değiştirmek istiyorsanız, %1.&lt;br /&gt;Hesabınızla ilgili herhangi bir sorunla karşılaştığınızda, %2 adresine konuyla ilgili bir e-posta gönderin.</target>
+      </trans-unit>
+      <trans-unit id="187">
+        <source>Welcome to eMarketTurkey - Global Chamber of Trade</source>
+        <target>eMarketTurkey'e Hoşgeldiniz | Küresel Ticaret Ağı</target>
+      </trans-unit>
+      <trans-unit id="188">
+        <source>About Us | eMarketTurkey</source>
+        <target>Hakkımızda | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="189">
+        <source>Frequently Asked Questions | eMarketTurkey</source>
+        <target>Sıkça Sorulan Sorular | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="190">
+        <source>For Individuals | eMarketTurkey</source>
+        <target>Bireyler İçin | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="191">
+        <source>For Suppliers | eMarketTurkey</source>
+        <target>Firmalar İçin | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="192">
+        <source>Contact Us | eMarketTurkey</source>
+        <target>İletişim | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="193">
+        <source>Privacy Policy | eMarketTurkey</source>
+        <target>Gizlilik Bildirimi | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="194">
+        <source>Terms Of Use | eMarketTurkey</source>
+        <target>Kullanım Koşulları | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="195">
+        <source>eMarketTurkey Services</source>
+        <target>eMarketTurkey Hizmetleri</target>
+      </trans-unit>
+      <trans-unit id="196">
+        <source>TradeExperts | eMarketTurkey</source>
+        <target>TradeExperts | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="197">
+        <source>Transportation Directory | eMarketTurkey</source>
+        <target>Transportation Directory | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="198">
+        <source>Membership | eMarketTurkey</source>
+        <target>Üyelik | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="199">
+        <source>Membership | eMarketTurkey</source>
+        <target>Üyelik | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="200">
+        <source>Sign Up | eMarketTurkey</source>
+        <target>Üye Ol | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="201">
+        <source>What's Next? | eMarketTurkey</source>
+        <target>Sırada Ne Var? | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="202">
+        <source>Logout</source>
+        <target>Oturumu Kapat</target>
+      </trans-unit>
+      <trans-unit id="203">
+        <source>Remember Me</source>
+        <target>Beni Hatırla</target>
+      </trans-unit>
+      <trans-unit id="204">
+        <source>Login</source>
+        <target>Oturum Aç</target>
+      </trans-unit>
+      <trans-unit id="205">
+        <source>emTrust</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="206">
+        <source>Investment and Cooperation Directory</source>
+        <target>Yatırım Fırsatları ve İşbirlikleri Dizini </target>
+      </trans-unit>
+      <trans-unit id="207">
+        <source>Join social and business networks</source>
+        <target>Sosyal ve iş ağlarına katılın</target>
+      </trans-unit>
+      <trans-unit id="208">
+        <source>Improve your career</source>
+        <target>Kariyerinizi geliştirin</target>
+      </trans-unit>
+      <trans-unit id="209">
+        <source>Find a new job</source>
+        <target>Kendinize yeni bir iş arayın</target>
+      </trans-unit>
+      <trans-unit id="210">
+        <source>Be aware of employment opportunities</source>
+        <target>İstihdam fırsatlarından haberdar olun</target>
+      </trans-unit>
+      <trans-unit id="211">
+        <source>Simultane Translator Directory</source>
+        <target>Simultane Tercüman Dizini</target>
+      </trans-unit>
+      <trans-unit id="212">
+        <source>Messaging With Multi-Language Assistance</source>
+        <target>Çoklu Dil Desteği İle Yazışma</target>
+      </trans-unit>
+      <trans-unit id="213">
+        <source>Türkçe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="214">
+        <source>English</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="215">
+        <source>Content to be prepared. Pardon our rush.</source>
+        <target>İçerik hazırlanıyor. Telaşımız için afedersiniz.</target>
+      </trans-unit>
+      <trans-unit id="216">
+        <source>Start using!</source>
+        <target>Kullanmaya Başla!</target>
+      </trans-unit>
+      <trans-unit id="217">
+        <source>Register your company, if you have not done yet.</source>
+        <target>Henüz yapmadıysanız, firmanızı kaydedin.</target>
+      </trans-unit>
+      <trans-unit id="218">
+        <source>Publish your products, if you have already registered your company.</source>
+        <target>Firmanızı kaydettiyseniz, ürünlerinizi ekleyin.</target>
+      </trans-unit>
+      <trans-unit id="219">
+        <source>eMarketTurkey Directory Service allows companies promote their products and services 
+worldwide. By publishing the product and service informations, supplier companies 
+provide 7x24 access for buyers.</source>
+        <target>eMarketTurkey Dizin Hizmeti, firmalara ürünlerini ve hizmetlerini tanıtma imkanı sunar. Ürün ve hizmet bilgilerini yayınlayarak, tedarikçi firmalar 
+        alıcılara 7x24 erişim imkanı sağlamış olurlar.</target>
+      </trans-unit>
+      <trans-unit id="220">
+        <source>Directory Service includes company profile page and product pages. Gold and Premium Members 
+take advantage of unlimited product listings while free members can only list a limited number of
+products. Buyers and other public visitors around the world will have the opportunity to view 
+company profiles and product informations and access supplier companies for free.</source>
+        <target>Dizin hizmeti firma profil sayfası ve ürün sayfalarından oluşur. Ücretsiz üyeler sınırlı sayıda ürün listeleme imkanı bulurken 
+        Gold ve Premium üyeler sınırsız ürün listeleme avantajına sahiptirler. Alıcılar ve dünya çapında diğer tüm kullanıcılar 
+firma profillerine ve ürün bilgilerine erişme imkanı bulurken, tedarikçi firmalarla ücretsiz irtibat kurabilirler.
+        </target>
+      </trans-unit>
+      <trans-unit id="221">
+        <source>Job Postings</source>
+        <target>İş İlanları</target>
+      </trans-unit>
+      <trans-unit id="222">
+        <source>Companies or other corporations can place job postings on eMarketTurkey Human Resources Platform.
+Individual visitors around the world will access your job postings and apply online. Since eMarketTurkey is 
+a global platform, employers will have the opportunity to access professionals around the world by simply posting jobs.</source>
+        <target>Firmalar ya da diğer kurumlar eMarketTurkey İnsan Kaynakları Platformu'nda iş ilanları yayınlayabilir.
+İş arayan kullanıcılar da iş ilanlarınıza erişip başvuruda bulunabilirler. eMarketTurkey küresel bir platform olduğu için 
+işverenler dünya çapında profesyonellere iş ilanı yayınlayarak ulaşabilirler.</target>
+      </trans-unit>
+      <trans-unit id="223">
+        <source>Job Posting Templates</source>
+        <target>İş İlanı Şablonları</target>
+      </trans-unit>
+      <trans-unit id="224">
+        <source>There are different types of job posting templates. If you wish to use your corporate template, 
+then you may consider applying your corporate template to your job postings. This way you will maintain the 
+corporate standarts of your company. Also "Featured Jobs" option will allow you to maintain your job posting 
+on homepage and help job seekers view your job posting faster.</source>
+        <target>Çeşitli iş ilanı şablonları mevcuttur. Eğer, kurumsal iş ilanı çablonunuzu kullanmak isterseniz,
+kurumsal şablonunuzu ilanlarınıza uygulayabilirsiniz. Bu şekilde firmanızın kurumsal standartlarını korumuş olursunuz. 
+Ayrıca, "Öne Çıkan İlanlar" seçeneği iş ilanınızın anasayfada yeralmasını ve iş arayanların ilanınızı daha hızlı görüntülemesini sağlayacaktır.</target>
+      </trans-unit>
+      <trans-unit id="225">
+        <source>Single or Multiple Listings</source>
+        <target>Tek yada çoklu İş İlanı Yayını</target>
+      </trans-unit>
+      <trans-unit id="226">
+        <source>eMarketTurkey HR, lets you choose the exact option while placing your job postings. 
+You might need just a one time to place job postings, or you might be a frequent publisher. Therefore, eMarketTurkey HR 
+will provide you the best job posting package which fits your needs.</source>
+        <target>eMarketTurkey İK, iş ilanı yayınlarken ihtiyacınız olan seçeneği sunar. Tek seferlik iş ilanı yayınlamak isteyebilirsiniz, ya da sık sık ilan yayınlamak isteyebilirsiniz.
+eMarketTurkey tam olarak ihtiyacınız olan ilan paketini sunacaktır.</target>
+      </trans-unit>
+      <trans-unit id="227">
+        <source>One-Stop HR</source>
+        <target>Tek-Noktadan İK</target>
+      </trans-unit>
+      <trans-unit id="228">
+        <source>The most exciting feature of eMarketTurkey HR is %1. Which will let you automatically place job application 
+form on your company's website. This way you will cut costs for a functional HR interface on your corporate website. This will
+also let you manage submitted resumés on your MY EMT page, while allowing visitors who are already eMarketTurkey members 
+apply to job positions automatically listed on your website by simply using their eMarketTurkey account.</source>
+        <target>eMarketTurkey'nin en heyecan verici özelliği %1. Bu özellik firmanızın kurumsal web sayfasına otomatik işe başvuru formu yerleştirmenizi sağlar.
+        Böylelikle, kurumsal web sayfanızda basit ama fonksiyonel bir İK arayüzü edinme konusunda maliyetlerinizi düşürmüş olursunuz. 
+        Bu özellik ayrıca, web sitenizden yapılan başvuruları EMARKETİM sayfasından görüntülemenizi ve zaten eMarketTurkey üyesi olan adayların 
+        kullanıcı adı ve şifrelerini kullanarak firmanızın sitesi üzerinden kolaylıkla başvuru yapmalarını sağlar.</target>
+      </trans-unit>
+      <trans-unit id="229">
+        <source>Don't wait,&lt;br /&gt;Feel the Perfect Match!</source>
+        <target>Beklemeyin,&lt;br /&gt;Mükemmel Eşleşmeyi Hissedin!</target>
+      </trans-unit>
+      <trans-unit id="230">
+        <source>Place your Job Listing.</source>
+        <target>İş İlanı Yayınlayın.</target>
+      </trans-unit>
+      <trans-unit id="231">
+        <source>Create your CV.</source>
+        <target>Özgeçmişinizi oluşturun.</target>
+      </trans-unit>
+      <trans-unit id="232">
+        <source>Buyer companies can access Selling Leads at any time to consider special offers from suppliers. 
+On the other hand supplier companies can check out Buying Leads to draw buyers' attention to their 
+company and products.</source>
+        <target>Alıcı firmalar, satıcı firmaların özel fiyat tekliflerinden haberdar olmak için Satım İlanlarını inceleyebilir.
+         Diğer taraftan, tedarikçi firmalar alıcı firmaların taleplerine Alım İlanlarını tarayarak cevap verebilir.</target>
+      </trans-unit>
+      <trans-unit id="233">
+        <source>Absolutely Free</source>
+        <target>Tamamen Ücretsiz</target>
+      </trans-unit>
+      <trans-unit id="234">
+        <source>It's totally free to place Selling or Buying Leads.</source>
+        <target>Alım ve Satım ilanları yayınlamak tamamen ücretsizdir.</target>
+      </trans-unit>
+      <trans-unit id="235">
+        <source>Check It Out!</source>
+        <target>Gözatın!</target>
+      </trans-unit>
+      <trans-unit id="236">
+        <source>You may check special offers in&lt;br /&gt;%1 or %2 anytime.</source>
+        <target>İstediğiniz zaman&lt;br /&gt;%1 ve %2na gözatabilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="237">
+        <source>Selling Leads</source>
+        <target>Satım İlanları</target>
+      </trans-unit>
+      <trans-unit id="238">
+        <source>Buying Leads</source>
+        <target>Alım İlanları</target>
+      </trans-unit>
+      <trans-unit id="239">
+        <source>or you may place &lt;br /&gt;%1 or %2 anytime for free.</source>
+        <target>yada istediğiniz zaman&lt;br /&gt;ücretsiz %1 veya %2 verebilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="240">
+        <source>Leave a message to Public Bulletin</source>
+        <target>İlan Panosuna mesaj bırakın</target>
+      </trans-unit>
+      <trans-unit id="241">
+        <source>Hi %1,</source>
+        <target>Merhaba %1,</target>
+      </trans-unit>
+      <trans-unit id="242">
+        <source>Please see your login information below.</source>
+        <target>Erişim bilgilerinizi altta bulabilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="243">
+        <source>E-mail address : </source>
+        <target>E-posta adresi : </target>
+      </trans-unit>
+      <trans-unit id="244">
+        <source>Password       : </source>
+        <target>Şifre          : </target>
+      </trans-unit>
+      <trans-unit id="245">
+        <source>You can use this information to log on to %1.</source>
+        <target>Bu bilgileri %1 adresinden giriş için kullanabilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="246">
+        <source>Thank you for signing up!</source>
+        <target>Üye olduğunuz için teşekkürler!</target>
+      </trans-unit>
+      <trans-unit id="247">
+        <source>eMarketTurkey Team</source>
+        <target>eMarketTurkey Ekibi</target>
+      </trans-unit>
+      <trans-unit id="248">
+        <source>This e-mail was automatically sent from (%1).</source>
+        <target>Bu mesaj (%1) adresinden otomatik olarak gönderilmiştir.</target>
+      </trans-unit>
+      <trans-unit id="249">
+        <source>Directory Service | eMarketTurkey</source>
+        <target>Dizin Hizmeti | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="250">
+        <source>Selling &amp; Buying Leads | eMarketTurkey</source>
+        <target>Alım &amp; Satım İlanları | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="251">
+        <source>Job Postings | eMarketTurkey</source>
+        <target>İş İlanları | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="252">
+        <source>Native Messaging | eMarketTurkey</source>
+        <target>Çoklu Dil Desteği ile Yazışma | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="253">
+        <source>Automated Info Translation | eMarketTurkey</source>
+        <target>Otomatik Bilgi Tercümesi | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="254">
+        <source>CV Store | eMarketTurkey</source>
+        <target>CV Bankası | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="255">
+        <source>Embedded HR Interface | eMarketTurkey</source>
+        <target>Gömülü İK Arayüzü | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="256">
+        <source>emTrust | eMarketTurkey</source>
+        <target>emTrust | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="257">
+        <source>Investment Opportunities and Cooperation Directory | eMarketTurkey</source>
+        <target>Yatırım Fırsatları ve İşbirlikleri Dizini | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="258">
+        <source>On-Demand Translation | eMarketTurkey</source>
+        <target>İsteğe Bağlı Tercüme | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="259">
+        <source>Simultaneous Translator Directory | eMarketTurkey</source>
+        <target>Simultane Tercüman Dizini | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="260">
+        <source>eMarketTurkey covering all sectors and companies can promote their products and services on the Internet is a versatile trading platform. We provide opportunities to the companies viewed  in different languages and can be reached around the world. Customizable profile pages enables to create  detailed informations about institutions, products and services.EmarketTurkey's addvertising  power not only to foreign markets, it is achieving new goals and value-added services in domestic markets.</source>
+        <target>eMarketTurkey tüm sektörleri kapsayan,  firmaların ürün ve hizmetlerini internet üzerinde tanıtımını yapabildiği çok yönlü bir ticaret platformudur.  Firmalara Dünyanın her yerinde farklı dillerde  görüntülenebilme ve ulaşılabilme imkanı sağlanmaktadır. Özelleştirilebilir profil sayfalarımız hem kurum bilgilerinin hemde ürün ve hizmetlerle ilgili detayların oluşturulabilmesine imkan vermektedir. eMarketTurkey'in tanıtım gücü sadece dış piyasalara yönelik değil, firmalara iç pazarlarda da yeni hedeflere ulaşmasında ciddi katma değer sağlamaktadır.</target>
+      </trans-unit>
+      <trans-unit id="261">
+        <source>Multi Language Support</source>
+        <target>Çoklu Dil Desteği</target>
+      </trans-unit>
+      <trans-unit id="262">
+        <source>Unlimited Product Listing</source>
+        <target>Limitsiz Ürün Listeleme</target>
+      </trans-unit>
+      <trans-unit id="263">
+        <source>Get Listed In The Front</source>
+        <target>Öncelikli Listelenme</target>
+      </trans-unit>
+      <trans-unit id="264">
+        <source>Multimedia  Upload</source>
+        <target>Multimedya Yükleme</target>
+      </trans-unit>
+      <trans-unit id="265">
+        <source>Multiple Language Support is license and required that registered companies can publish their products and services in many different languages. Companies can determine their interpreters to translate corporation and product informations into different languages or eMarketTurkey takes care of your translations with a few clicks.</source>
+        <target>eMarketTurkey'e kaydolan firmaların ürün ve hizmet bilgilerini bir çok dilde yayınlayabilmesi için gerekli servis lisansıdır. Çoklu Dil Desteği Lisansı  alan firma tüm kurum ve ürün bilgilerininin farklı dillere çevrilmesi işlemini kendisinin belirlediği tercümana yaptırabileceği gibi eMarketTurkey'den tercüme hizmeti de satın alabilir.</target>
+      </trans-unit>
+      <trans-unit id="266">
+        <source>eMarketTurkey determined limits on products and services to save for free members, if our members will demand to continue and if they don't need our other services, Unlimited Product Listing License is required for your usage.</source>
+        <target>Ücretsiz üyelerimizin firmalarına ait ürün ve hizmetlerinin sayısı eMarketTurkey tarafından belirlenen limitlerin üzerinde ise Limitsiz Ürün Listeleme Lisansı  almaları gerekmektedir.</target>
+      </trans-unit>
+      <trans-unit id="267">
+        <source>When our visitors or members make searchs in eMarketTurkey, all products, services, buy-sell ads and other informations of Gold and Premium members list primarily</source>
+        <target>Ziyaretçilerimizin eMarketTurkey.com üzerinde yaptıkları her türlü aramada öncelikli görüntülenme hakkı ücretli üyelerimize aittir. Gold ve Premium müşterilerimize ait ürün, hizmet, alım-satım ilanları ve diğer tüm bilgileri öncelikli olarak listelenmektedir.</target>
+      </trans-unit>
+      <trans-unit id="268">
+        <source>Companies prepare their efficient presentations with videos, product catalogs, price lists, etc. So that the institutions or firms can create more richer profiles pages.</source>
+        <target>Firmalar kendi tanıtımları için hazırladıkları sunum, video, ürün kataloğu, fiyat listesi gibi her türlü dökümantasyonu profil sayfalarında yayınlayabilmektedir.  Böylece kurumlar içerik bakımından daha zengin bir tanıtım profili oluşturma imkanına kavuşmuş olmaktadırlar.</target>
+      </trans-unit>
+      <trans-unit id="269">
+        <source>With buying leads, companies acquire raw materials, semi products and different services quickly, effectively and economically what and when they need.</source>
+        <target>Firmalar alım ilanları ile talep ettikleri ürün, ham madde, yarı mamül ve hizmet gibi tüm ihtiyaçlarını hızlı, etkili ve ekonomik olarak tedarik edebilmektedirler.</target>
+      </trans-unit>
+      <trans-unit id="270">
+        <source>Selling leads help companines for to grow within a shorter period, to enter new markets and reaching to  new buyers. Addtionally, our trade specialists also serve to the companies regarding presenting their products and services in local  and foreign markets.</source>
+        <target>Şirketler büyümek, yeni piyasalara açılmak gibi hedeflerini gerçekletirmek, üretim ve ihraç  fazlası stoklarını eritebilmek için satım ilanları verebilir, alıcılara direkt ulaşabilirler. Ayrıca dış ticaret uzmanlarımız firmalara ait ürün ve hizmetlerin iç ve dış pazarlarda tanıtımı hususunda üyelerimizin hizmetindedir.</target>
+      </trans-unit>
+      <trans-unit id="271">
+        <source>Your eMarketTurkey Account Information</source>
+        <target>eMarketTurkey Hesap Bilgileriniz</target>
+      </trans-unit>
+      <trans-unit id="272">
+        <source>eMarketTurkey visits member companines  (headquaters , manufacturing areas, branch office etc.) every year and confirms that the information accurately entered into the system by members.  So that a product, material or any services who request the opportunity, in this point we  create a safer trade must have.</source>
+        <target>Üye firmaların eMarketTurkey tarafından her yıl ziyaret edilmesi ve üyeler tarafından sisteme girilen bilgilerin eMarketTurkey tarafından onaylanmasıyla ortaya çıkan yüksek güvenirliği ifade eden bir sertifika tipidir.&lt;br /&gt;&lt;br /&gt; eMarketTurkey olarak üye firmaların merkez ofislerini, üretim alanlarını ziyaret ediyor, yöneticileri ile birebir görüşüyoruz, böylece bir ürün, hammadde veya hizmet talep eden diğer üyelerimize daha güvenli bir ticaret fırsatı yaratmış oluyoruz.</target>
+      </trans-unit>
+      <trans-unit id="273">
+        <source>What is emTrust Certificate?</source>
+        <target>emTrust Sertifikası neyi ifade ediyor?</target>
+      </trans-unit>
+      <trans-unit id="274">
+        <source>All of the information in eMarketTurkey.com has been approved by company officials, &lt;br /&gt; The firm is residing at the address specified in eMarketTurkey,&lt;br /&gt; Confirms that launching the products and services produced, manufactured or supplied by member &lt;br /&gt; Company authorized by The government agency  (Accuracy of the Certificate of Authorization) &lt;br /&gt; The fact that the company is certified (ISO, Financial Appraisal Report)</source>
+        <target>eMarketTurkey.com'daki tüm bilgilerin şirket yetkilisi tarafından onaylandığını,&lt;br /&gt;
+		Üye firmanın belirttiği adreste ikamet ettiğini,&lt;br /&gt;
+		Lanse ettiği ürün ve hizmetleri  ürettiği, imal ettiği veya tedarik ettiğini, &lt;br /&gt;
+		İlgili şirketin devlet kurumlarınca yetkilendirildiğini (Yetkilendirme Belgesinin Doğruluğu) &lt;br /&gt;
+		Sahip olduğu sertifikaların gerçek olduğunu (ISO, Finansal Değerleme Raporları)</target>
+      </trans-unit>
+      <trans-unit id="275">
+        <source>eMarketTurkey continues its activities in many countries. Many exclusive information services  are offered to our Gold and Premium members. Investment Opportunities and Partnerships Directory  is a service tool that offering special deals to members about investment opportunities, tax exemptions and grants in different countries.  Addtionally Gold and Premium members also share among themselves is that they want to allow very specific opportunities.</source>
+        <target>Türkiye çapında ve bir çok ülkede faaliyetlerini sürdüren eMarketTurkey, Gold ve Premium üyelerine ayrıcalıklı bilgi servisleri sunmaktadır . “Yatırım Fırsatları ve İşbirlikleri Dizini” az gelişmiş ve gelişmekte olan ülkelerde ortaya çıkan yatırım açıkları, vergi muafiyetleri ve devlet teşvikleri gibi ve ayrıca  Gold ve Premium üyelerin kendi aralarında paylaşmak istedikleri çok özel fırsatları üyelerin hizmetine sunan bir araçtır.</target>
+      </trans-unit>
+      <trans-unit id="276">
+        <source>eMarketTurkey provides its members send and receive messages in their native language from other members around the world. Original message contents are viewed next to the translated text.</source>
+        <target>eMarketTurkey üyelerine dünyanın farklı bölgelerindeki diğer üyelerle kendi ana dillerinde mesaj gönderme ve alma imkanı sunar. Orijinal mesaj içeriği çeviri yapılmış metin ile birlikte görüntülenir.</target>
+      </trans-unit>
+      <trans-unit id="277">
+        <source>Publishing corporate and product information in multiple languages, allows companies reach their target markets and strenghten their corporate profiles.</source>
+        <target>Kurum ve ürün bilgilerini bir çok dilde yayınlamak, firmalara hedefledikleri pazarlara en etkin şekilde ulaşabilmelerini ve kurumsal imajlarını daha da kuvvetlendirmelerini sağlar.</target>
+      </trans-unit>
+      <trans-unit id="278">
+        <source>Right after entering company and product information, professional translators handle translation tasks in a very short time and allow companies accessibility around the world.</source>
+        <target>Firma ve ürün bilgileri girildikten sonra, profesyonel tercümanlar tercüme işlemlerini çok kısa bir sürede yerine getirir ve firmalara dünya çapında erişilebilirlik imkanı sağlar.</target>
+      </trans-unit>
+      <trans-unit id="279">
+        <source>Publishing corporate and product information in multiple languages, allows companies reach their target markets, strenghten their corporate profiles.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="280">
+        <source>Directory Service includes company profile page and product pages. Gold and Premium Members 
+take advantage of unlimited product listings while free members can only list a limited number of 
+products. Buyers and other public visitors around the world will have the opportunity to view 
+company profiles and product informations and access supplier companies for free.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="281">
+        <source>eMarketTurkey HR, lets you choose the exact option while placing your job postings. 
+You might need just a one time to place job postings, or you might be a frequent publisher. Therefore, eMarketTurkey HR 
+will provide you the best job postings package which fits your needs.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="282">
+        <source>Pardon Our Dust!</source>
+        <target>Özür Dileriz!</target>
+      </trans-unit>
+      <trans-unit id="283">
+        <source>Page content is currently being prepared.</source>
+        <target>Sayfa içeriği henüz hazırlanıyor.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Error Occured!</source>
+        <target>Hata Oluştu!</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Please correct the errors listed below:</source>
+        <target>Lütfen listelenen hataları düzeltin:</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Import your Windows Live Contacts</source>
+        <target>Windows Live Arkadaş listenizdekileri aktarın</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>eMarketTurkey - Global Chamber of Business</source>
+        <target>eMarketTurkey - Küresel İş Ağı</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Jobs&lt;b&gt;&lt;/b&gt;</source>
+        <target>Kariyer</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>%1L or %2S to leave comment.</source>
+        <target>Yorumda bulunmak için %1L yada %2S.</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>No comments for this logo, yet. Be the first to comment on this logo.</source>
+        <target>Bu logo için henüz yorum yapılmadı. Yorum yapan ilk kişi ol.</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Comments(%1)</source>
+        <target>Yorumlar(%1)</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Comment removed.</source>
+        <target>Yorum silindi.</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Share your ideas | eMarketTurkey</source>
+        <target>Fikrinizi paylaşın | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Thank you! | eMarketTurkey</source>
+        <target>Teşekkürler! | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>You have submitted this logo.</source>
+        <target>Sizin tercihiniz bu logo.</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Thank you!</source>
+        <target>Teşekkürler</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Your choice has been saved and will definitely help us deciding the right way.&lt;br /&gt;We appreciate your participation in our new logo poll.</source>
+        <target>Seçiminiz kaydedildi ve doğru olanı seçmemizde kesinlikle bize ışık tutacak.&lt;br /&gt;Anketimize katıldığınız için çok teşekkür ederiz.</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>eMarketTurkey Home</source>
+        <target>eMarketTurkey Anasayfa</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Read Poll Comments</source>
+        <target>Anket Yorumlarını Oku</target>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>Leave a comment :</source>
+        <target>Yorum yaz :</target>
+      </trans-unit>
+      <trans-unit id="137">
+        <source>Leave Comment</source>
+        <target>Yorumu Kaydet</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>My Profile</source>
+        <target>Profilim</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Edit Profile</source>
+        <target>Profili Düzenle</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>My Career</source>
+        <target>Kariyerim</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Companies</source>
+        <target>Firmalar</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Products</source>
+        <target>Ürünler</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Job Search</source>
+        <target>İş Arama</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Articles</source>
+        <target>Makaleler</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>News</source>
+        <target>Haberler</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>People</source>
+        <target>Kişiler</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Groups</source>
+        <target>Gruplar</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>join the global business cloud</source>
+        <target>küresel iş ağına katıl</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Go to eMarketTurkey Home</source>
+        <target>eMarketTurkey Ana Sayfasına Git</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>x</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>%1 commented on %2.</source>
+        <target>%1 %2 hakkında yorum yaptı.</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Comment:</source>
+        <target>Yorum:</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>You can click the link below to view the comment:</source>
+        <target>Alttaki linke tıklayarak yorumu görüntüleyebilirsin:</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Language</source>
+        <target>Dil</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Welcome</source>
+        <target>Hoşgeldiniz</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Account</source>
+        <target>Hesap</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Account Settings</source>
+        <target>Hesap Ayarları</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Privacy Settings</source>
+        <target>Gizlilik Ayarları</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Advanced Search</source>
+        <target>Detaylı Arama</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Contacts</source>
+        <target>Kişiler</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Notifications</source>
+        <target>Bildirimler</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>eMarketTurkey helps you advance your commercial activities</source>
+        <target>eMarketTurkey ticari bağlantılantılarınızı geliştirir</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>eMarketTurkey helps you extend your personal network</source>
+        <target>eMarketTurkey kişisel ağınızı genişletmenizi sağlar</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Type the code you see above into Security Code field.</source>
+        <target>Yukarıda gördüğünüz kodu Güvenlik Kodu alanına girin.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Security Code</source>
+        <target>Güvenlik Kodu</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>By clicking Sign Up, you are indicating that you have read and agree to the %1s and %2s.</source>
+        <target>Üye Ol'a tıklayarak %1s ve %2s'nı okuduğunuzu ve kabul ettiğinizi beyan etmiş oluyorsunuz.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Please Select</source>
+        <target>Lütfen Seçin</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>eMarketTurkey helps you advance your commercial activities and personal network.</source>
+        <target>eMarketTurkey ticari bağlantılarınızın ve kişisel ağınızın gelişmesini sağlar.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Get More</source>
+        <target>Daha Fazlası</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>You've got an eMarketTurkey Invitation</source>
+        <target>eMarketTurkey Platformuna davetlisiniz</target>
+      </trans-unit>
+      <trans-unit id="1046">
+        <source>Hello %1n %2n,</source>
+        <target>Merhaba %1n %2n,</target>
+      </trans-unit>
+      <trans-unit id="1048">
+        <source>Your friend &lt;b&gt;%1n&lt;/b&gt; has invited you to join eMarketTurkey.</source>
+        <target>Arkadaşınız &lt;b&gt;%1n&lt;/b&gt; sizi eMarketTurkey platformuna davet etti.</target>
+      </trans-unit>
+      <trans-unit id="1058">
+        <source>Here is %1 message :</source>
+        <target>Arkadaşınızın mesajı :</target>
+      </trans-unit>
+      <trans-unit id="1049">
+        <source>You may click the link below to respond to your friend's invitation:</source>
+        <target>Arkadaşınızın davetine yanıt vermek için alttaki linke tıklayabilirsiniz:</target>
+      </trans-unit>
+      <trans-unit id="1050">
+        <source>More about eMarketTurkey Services</source>
+        <target>eMarketTurkey hakkında daha fazlası</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Hello,</source>
+        <target>Merhaba,</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Check your inbox</source>
+        <target>Gelen kutunuzu kontrol edin</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>We have sent you an email including your password.</source>
+        <target>E-posta adresinize şifrenizi içeren bir e-posta gönderdik.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>If you can't find the email in your inbox you may also need to check out your junk email folder.&lt;br /&gt;Please send an email to &lt;a href="mailto:support@emarketturkey.com"&gt;&lt;b&gt;support@emarketturkey.com&lt;/b&gt;&lt;/a&gt; for account issues.</source>
+        <target>Eğer gönderilen e-postayı bulamıyorsanız önemsiz posta(junk mail) klasörünüzü de kontrol etmeniz gerekebilir.&lt;br /&gt;Lütfen hesabınız ile ilgili sorun yaşamanız durumunda &lt;a href="mailto:support@emarketturkey.com"&gt;&lt;b&gt;support@emarketturkey.com&lt;/b&gt;&lt;/a&gt; adresine bir e-posta gönderin.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Congragulations! Your password has been successfully changed.</source>
+        <target>Tebrikler! Şifreniz başarı bir şekilde değiştirildi.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Change your password?</source>
+        <target>Şifrenizi değiştirmek ister misiniz?</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Please fix the errors specified below.</source>
+        <target>Lütfen altta belirtilen hataları düzeltin.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Old Password :</source>
+        <target>Eski Şifre :</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>New Password :</source>
+        <target>Yeni Şifre :</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>New Password (repeat) :</source>
+        <target>Yeni Şifre (tekrar) :</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Changing your password.</source>
+        <target>Şifreniz değiştiriliyor.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Cancel</source>
+        <target>İptal</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Save Password</source>
+        <target>Şifreyi Kaydet</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Type your old password correctly.</source>
+        <target>Eski şifrenizi doğru olarak girin.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Please enter your old password.</source>
+        <target>Lütfen eski şifrenizi girin.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Please enter your new password.</source>
+        <target>Lütfen yeni şifrenizi girin.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Password should be at least 6 digits.</source>
+        <target>Şifreniz en az 6 karakterli olmalı.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Password should be less than 14 digits.</source>
+        <target>Şifreniz en fazla 14 karakterli olmalı.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Should include letters and &lt;b&gt;at least one&lt;/b&gt; numerical character.</source>
+        <target>Şifreniz harfler ve &lt;b&gt;en az bir&lt;/b&gt; rakamdan oluşmalı.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Please re-type your new password.</source>
+        <target>Lütfen yeni şifrenizi tekrar girin.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Before you start using eMarketTurkey create your user profile now.&lt;br /&gt; This way people and your friends can easily notice you.</source>
+        <target>eMarketTurkey platformunu kullanmaya başlamadan önce kullanıcı profilinizi oluşturun.&lt;br /&gt; Bu sayede diğer kullanıcılar ve arkadaşlarınız sizi rahatlıkla tanıyabilecek.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Welcome | eMarketTurkey</source>
+        <target>Hoşgeldiniz | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Your eMarketTurkey Account Information</source>
+        <target>eMarketTurkey Hesap Bilgileriniz</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Click the verification link in the message to verify your email address.</source>
+        <target>Mesajın içeriğindeki aktivasyon linkine tıklayarak eposta adresinizi doğrulayın.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Email also includes a link to verify your email address. You should click the link in the message in order to login to your account.</source>
+        <target>Gönderilen eposta bir aktivasyon linki içermektedir. Hesabınızı etkinleştirmek için bu linke tıklamanız gerekmektedir.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>You should verify your email address in order to access your account.</source>
+        <target>Hesabınıza erişebilmek için öncelikle eposta adresinizi doğrulamanız gerekmektedir.</target>
+      </trans-unit>
+      <trans-unit id="1047">
+        <source>Please click the verification link below:</source>
+        <target>Lütfen alttaki doğrulama linkine tıklayınız:</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Verification Required</source>
+        <target>Doğrulama Gerekiyor</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>You should verify your e-mail address in order to unlock your account.</source>
+        <target>Hesabınızın kilidini kaldırmak için e-posta addresinizi doğrulamanız gerekiyor.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Please click the verification link below:</source>
+        <target>Lütfen alttaki doğrulama linkine tıklayınız:</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,7 @@
+index:
+  is_secure: off
+  require_ssl: true
+
+route:
+  is_secure: on
+  credential: [emt_user]

@@ -1,0 +1,19 @@
+indexSuccess:
+  metas:
+    title: "Find Someone | eMarketTurkey"
+
+pymkSuccess:
+  metas:
+    title: "People You May Know | eMarketTurkey"
+
+connectedSuccess:
+  metas:
+    title: "People in Your Network | eMarketTurkey"
+
+byCountrySuccess:
+  metas:
+    title: "People by Country | eMarketTurkey"
+
+byNameSuccess:
+  metas:
+    title: "People by Name | eMarketTurkey"

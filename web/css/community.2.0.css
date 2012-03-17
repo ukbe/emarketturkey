@@ -1,0 +1,298 @@
+@CHARSET "UTF-8";
+
+    ol.profile-actions
+    {
+        margin: 10px 5px 10px 0px;
+        padding: 0px;
+    }
+    ol.profile-actions > li
+    {
+        border-bottom: solid 1px #DDDDDD;
+        padding: 5px 5px;
+        margin: 0px;
+    }
+    ol.profile-actions > li a
+    {
+        text-decoration: none;
+        color: #555555;
+        font: 11px arial;
+    }
+    .left-box
+    {
+        padding: 0px;
+        margin: 0px;
+        font: 11px arial;
+        color: #555555;
+    }
+    .left-box span.header
+    {
+        font: bold 11px arial;
+        display: block;
+        padding: 3px 5px 3px 0px;
+        margin: 0px 0px 7px 0px;
+    }
+    .left-box a.action
+    {
+        float: right;
+        font: 11px arial;
+        text-decoration: none;
+    }
+    .left-box a.action:hover
+    {
+        text-decoration: underline;
+    }
+    .left-box ol li a
+    {
+        font: 11px arial;
+        text-decoration: none;
+        color: #000000;
+    }
+    .left-box a img
+    {
+        border: none;
+        margin-bottom: 3px;
+    }
+    .left-box ol
+    {
+        padding: 0px;
+        margin: 0px 5px;
+    }
+    .left-box td
+    {
+        width: 60px;
+        text-align: center;
+        vertical-align: top;
+        padding: 3px;
+    }
+    .left-box table tr td a
+    {
+        font: 11px arial;
+        text-decoration: none;
+        color: #000000;
+    }
+    .island-form
+    {
+        border: none;
+    }
+    .island-form .popup
+    {
+        border: solid 1px #CCCCCC;
+    }
+    .island-form .trigger
+    {
+        display: normal;
+    }
+    .island-form .popup .trigger
+    {
+        display: none;
+    }
+    a.sibling, .sibling
+    {
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        background-color: #B7CBCE;
+        display: inline-block;
+        font: 11px tahoma;
+        border: solid 1px transparent;
+        text-decoration: none;
+        padding: 3px 6px;
+        margin-right: 6px; 
+        color: #222525;
+    }
+    a.sibling:hover
+    {
+        background-color: #A7D2D9;
+        color: #222525;
+        border: solid 1px #DDDDDD;
+    }
+    span.sibling
+    {
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: solid 1px #DDDDDD;
+        background-color: #F8F8F8;
+        display: inline-block;
+        font: 11px tahoma;
+        padding: 3px 6px;
+        color: #55787D;
+    }
+    .side-link
+    {
+        color: #3777A0;
+        font: 11px tahoma;
+        text-decoration: none;
+    }
+    .grey-text
+    {
+        color: #888888;
+    }
+    .network-items
+    {
+        font: 14px helvetica;
+        color: #525252;
+    }
+    .network-items .item
+    {
+        border: solid 1px #F5F7F8;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        padding: 10px;
+        float: left;
+        margin-top: 7px;
+    }
+    .network-items .item:hover
+    {
+        border: solid 1px #E7ECF0;
+        background-color: #F9F9F9;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .network-items div.logo img
+    {
+    }
+    .network-items div.logo
+    {
+        border-right: none;
+        width: 10%;
+        float: left;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        margin-right: 15px;
+    }
+    .network-items div.info
+    {
+        display: table-cell;
+        vertical-align: middle;
+        float: left;
+    }
+    .network-companies, .network-companies a 
+    {
+        font-family: helvetica;
+        font-size: 14px;
+        color: #525252;
+        float: left;
+    }
+    .network-companies .company
+    {
+        border: solid 1px #F5F7F8;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        padding: 10px;
+        float: left;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .network-companies .company:hover
+    {
+        border: solid 1px #E7ECF0;
+        background-color: #F9F9F9;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .network-companies div.logo img
+    {
+    }
+    .network-companies div.logo
+    {
+        border-right: none;
+        width: 10%;
+        float: left;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        margin-right: 15px;
+        margin-top: 3px;
+    }
+    .network-companies div.info
+    {
+        display: table-cell;
+        vertical-align: middle;
+        float: left;
+    }
+    h1.stylish, h2.stylish, h3.stylish, h4.stylish
+    {
+        border-bottom: solid 3px #1E425A;
+    }
+    h1.stylish span, h2.stylish span, h3.stylish span, h4.stylish span
+    {
+        background-color: #1E425A;
+        display: inline-block;
+        padding: 4px 8px;
+        border-style: solid 1px #1E425A;
+        border-size: 1px;
+        border-color: #1E425A;
+        -moz-border-radius: 3px 3px 0px 0px;
+        -webkit-border-radius: 3px 3px 0px 0px;
+        border-radius: 3px 3px 0px 0px;
+        font-weight: bold;
+        font-family: helvetica;
+        color: #FFFFFF;
+    }
+.network-step .menu
+{
+    
+}
+.network-menu ol
+{
+    margin: 0px;
+    padding: 0px;
+    z-index: 0;
+}
+.network-menu li
+{
+    padding: 0px;
+    margin: 0px;
+}
+.network-menu li:hover, .network-menu li.active:hover
+{
+    background-color: #E1F3FF;
+}
+.network-menu li.active
+{
+    background: url(/images/layout/icon/network-arrow.png) left center no-repeat;
+}
+.network-menu li a
+{
+    font: bold 12pt 'arial';
+    color: #000000;
+    text-decoration: none;
+    width: 165px;
+    height: 100%;
+    display: inline-block;
+    padding: 10px 10px 10px 30px;
+}
+ol#tabs li
+{
+    margin: 0px 15px 0px 0px;
+}
+ol#tabs li a
+{
+    font: bold 12px helvetica;
+    text-decoration: none;
+    padding: 2px 4px;
+    color: #162D4F;
+    border: solid 1px transparent;
+}
+ol#tabs li a.selected
+{
+    background-color: #162D4F;
+    color: #FFFFFF;
+    border: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+table#network-groups a
+{
+    font: bold 14px verdana;
+    text-decoration: none;
+    color: #333333;
+}

@@ -1,0 +1,59 @@
+all:
+    metas:
+        title: 'Administrator'
+
+messagesSuccess:
+    metas:
+        title: 'Customer Messages'
+
+businessSectorsSuccess:
+    metas:
+        title: 'Business Sectors'
+
+businessTypesSuccess:
+    metas:
+        title: 'Business Types'
+
+paymentTermsSuccess:
+    metas:
+        title: 'Payment Terms'
+
+emailTransactionsSuccess:
+    metas:
+        title: 'E-mail Transactions'
+
+emailTransactionSuccess:
+    metas:
+        title: 'E-mail Transaction Details'
+
+mediItemsSuccess:
+    metas:
+        title: 'Media Items'
+
+servicesSuccess:
+    metas:
+        title: 'Services'
+
+applicationsSuccess:
+    metas:
+        title: 'Applications'
+
+packagesSuccess:
+    metas:
+        title: 'Marketing Packages'
+
+emailTransactionContentSuccess:
+    metas:
+        title: 'E-mail Transaction Content'
+    has_layout: false
+
+jobPositionsSuccess:
+    metas:
+        title: 'Job Positions'
+
+jobGradesSuccess:
+    metas:
+        title: 'Job Grades'
+
+importProductsSuccess:
+    layout: layoutPlain

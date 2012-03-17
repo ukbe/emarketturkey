@@ -1,0 +1,10 @@
+fields:
+    category_id:
+        required:
+            msg: 'Please select a suitable category for your product.'
+    lead_type_id:
+        required:
+            msg: 'Please select a lead type.'
+    expires_at_dp:
+        required:
+            msg: 'Please specify an expiration date for the lead.'

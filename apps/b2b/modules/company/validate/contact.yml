@@ -1,0 +1,13 @@
+fields:
+    _s:
+        required:
+            msg: 'Please select a sender.'
+    _r:
+        required:
+            msg: 'Please specify a recipient.'
+    _subject:
+        required:
+            msg: 'Please enter a subject for your message.'
+    _message:
+        required:
+            msg: 'Please enter your message.'

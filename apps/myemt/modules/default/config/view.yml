@@ -1,0 +1,13 @@
+all:
+#    layout:  layoutRightColumn
+    metas:
+        title:  'MY EMT | eMarketTurkey'
+    javascripts:   [jquery.cookie.min.js, /jquery-ui-1.8.4.custom/js/jquery-ui-1.8.4.custom.min.js]
+
+setupProfileSuccess:
+    metas:
+        title:  'Setup Your Profile | eMarketTurkey'
+
+uploadProfileSuccess:
+    has_layout: off
+        

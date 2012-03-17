@@ -1,0 +1,24 @@
+easyLoginSuccess:
+    metas:
+        layout: plain
+
+loginSuccess:
+    metas:
+        title: 'Login to Your Account | eMarketTurkey'
+
+resetPasswordSuccess:
+    metas:
+        title: 'Reset Your Password | eMarketTurkey'
+
+resetPasswordApplySuccess:
+    metas:
+        title: 'Set Your New Password | eMarketTurkey'
+
+resetPasswordCompleteSuccess:
+    metas:
+        title: 'Password Set Successfully | eMarketTurkey'
+
+resetPasswordMailSentSuccess:
+    metas:
+        title: 'Reset Password E-mail Sent | eMarketTurkey'
+

@@ -1,0 +1,24 @@
+apply:
+  url:   /:sf_culture/apply
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: apply }
+
+# default rules
+homepage:
+  url:   /:sf_culture
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: index }
+
+homepage1:
+  url:   /
+  param: { module: default, action: index }
+
+default_index:
+  url:   /:sf_culture/:module
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { action: index }
+
+default:
+  url:   /:sf_culture/:module/:action/*
+  requirements: { sf_culture: (?:en|de|tr) } 
+  

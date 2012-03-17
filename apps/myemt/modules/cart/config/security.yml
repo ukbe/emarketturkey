@@ -1,0 +1,5 @@
+index:
+  require_ssl: true
+
+checkout:
+  require_ssl: true

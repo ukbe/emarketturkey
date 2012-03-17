@@ -1,0 +1,26 @@
+fields:
+    ad_title:
+        required:
+            msg: 'Please specify an advertisement title.'
+    ad_message:
+        required:
+            msg: 'Please specify an advertisement description.'
+    ad_namespace_id:
+        required:
+            msg: 'Please specify an advertisement namespace.'
+    ad_url:
+        required:
+            msg: 'Please specify a target url.'
+    ad_type_id:
+        required:
+            msg: 'Please select an advertisement type.'
+    ad_view_percentage:
+        required:
+            msg: 'Please specify view percentage.'
+    ad_valid_from:
+        required:
+            msg: 'Please specify advertisement start date.'
+    ad_valid_until:
+        required:
+            msg: 'Please specify advertisement end date.'
+            

@@ -1,0 +1,7 @@
+fields:
+    fkeyword:
+        required:
+            msg: 'Please type name of your friend or company.'
+        sfStringValidator:
+            min:           3
+            min_error:     'Please type name of your friend or company.'

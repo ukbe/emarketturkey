@@ -1,0 +1,5 @@
+fields:
+    paymentterm_code:
+        required:
+            msg: 'Please specify a payment term code.'
+            

@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+._translation {background:red url(/images/layout/background/translation.jpg) center bottom; }
+
+.presentation .tabs dl {
+height: 344px;
+}
+
+.presentation .slidetabs {
+display: none;
+}
+
+.presentation .tabs {
+height: 344px;
+}
+
+.presentation h2 {
+    font-family: georgia, arial, verdana;
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 34px;
+    color: #c2935d;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0px;
+}
+
+.presentation h3 {
+    font-family: georgia, arial, verdana;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 24px;
+    color: #5b5b5a;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0px 0px 8px;
+    background: transparent;
+    border: none;
+    display: block;
+    clear: both;
+}
+
+.presentation p {
+    color: #585756;
+}

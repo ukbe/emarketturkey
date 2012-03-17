@@ -1,0 +1,12 @@
+all:
+    metas:
+        title: 'Author'
+
+articlesSuccess:
+    metas:
+        title: 'Author: Articles'
+
+sourcesSuccess:
+    metas:
+        title: 'Author: Publication Sources'
+

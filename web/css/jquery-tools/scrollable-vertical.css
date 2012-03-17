@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+
+/* root element for scrollable */
+.scrollable.vertical {  
+    
+    /* required settings */
+    position:relative;
+    overflow:hidden;    
+
+    /* vertical scrollers have typically larger height than width */    
+    height: 150px;   
+    width: 560px;
+}
+
+/* root element for scrollable items */
+.scrollable .items {    
+    position:absolute;
+    
+    /* this time we have very large space for height */ 
+    height:20000em; 
+    margin: 0px;
+}
+
+.scrollable .items > div {
+    height: 140px;
+    overflow: hidden;
+    margin: 5px 5px;
+    width: 560px;
+}
+
+/* single scrollable item */
+.scrollable .item {
+    float: left;
+    margin:5px;
+    padding:0px;
+    font-size:12px;
+    height:60px;
+    width: 265px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.scrollable .item img {
+    float: left;
+    margin: 4px 7px 4px 0px;
+    max-height: 40px;
+    max-width: 80px;
+}
+
+.scrollable .item .cname {
+    font: 11px arial;
+    margin: 3px 0px 0px;
+    padding: 0px;
+    line-height: 12px;
+    max-height: 33px;
+    overflow: hidden;
+    display: block;
+    color: #333;
+}
+
+.scrollable .item .industry {
+    font: 11px arial;
+    margin: 0px;
+    padding: 0px;
+    line-height: 11px;
+    max-height: 11px;
+    overflow: hidden;
+    display: block;
+    color: #888;
+}

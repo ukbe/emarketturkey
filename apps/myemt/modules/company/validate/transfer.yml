@@ -1,0 +1,11 @@
+fields:
+    search_email:
+        required:
+            msg: 'Please enter e-mail address.'
+        sfEmailValidator:
+            strict:      true
+            email_error:  'Type a valid e-mail address.'
+        EmtRegisteredUserValidator:
+            class: Login
+            column: EMAIL
+            absent_error: "E-mail address is invalid."

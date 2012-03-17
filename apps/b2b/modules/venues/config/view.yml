@@ -1,0 +1,15 @@
+indexSuccess:
+  metas:
+    title: "Find a Venue | eMarketTurkey"
+
+featuredSuccess:
+  metas:
+    title: "Featured Venues | eMarketTurkey"
+
+byCountrySuccess:
+  metas:
+    title: "Venues by Country | eMarketTurkey"
+
+byNameSuccess:
+  metas:
+    title: "Venues by Name | eMarketTurkey"

@@ -1,0 +1,11 @@
+all:
+    metas:
+        title: "My Profile | eMarketTurkey"
+editSuccess:
+    metas:
+        title: "Edit Profile | eMarketTurkey"
+    layout: layoutTripleColumn
+findlocationSuccess:
+    has_layout:  off
+locationQuerySuccess:
+    has_layout:  off

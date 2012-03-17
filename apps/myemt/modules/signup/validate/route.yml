@@ -1,0 +1,25 @@
+fields:
+    old_password:
+        required:
+            msg: 'Please enter your old password.'
+        sfStringValidator:
+            min:           6
+            min_error:     'Please enter your old password.'
+    new_password:
+        required:
+            msg:  'Please enter your new password.'
+        sfStringValidator:
+            min:           6
+            min_error:     'Password should be at least 6 digits.'
+            max:           14
+            max_error:     'Password should be less than 14 digits.'
+        sfRegexValidator:
+            match:         true
+            match_error:   'Should include letters and <b>at least one</b> numerical character.'
+            pattern:       '/(?!^\d*$)(?!^[a-zA-ZäüöÄÜÖß]*$)^[a-zA-ZäüöÄÜÖß\d]{6,14}$/u' # u stands for utf8
+    new_password_repeat:
+        required:
+            msg:           'Please re-type your new password.'
+        sfCompareValidator:
+            check:         new_password
+            compare_error: 'Please re-type your new password.'

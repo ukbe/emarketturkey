@@ -1,0 +1,1912 @@
+propel: 
+  _attributes: 
+    package: lib.model
+
+  EMT_GLOBAL_CONFIG:
+    _attributes:          { phpName: GlobalConfig }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    TYPE:                 { type: varchar(20), required: true }
+    VALUE:                { type: varchar(50), required: true }
+
+  EMT_BUSINESS_TYPE: 
+    _attributes:          { phpName: BusinessType, isI18N: true, i18nTable: EMT_BUSINESS_TYPE_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_BUSINESS_TYPE_I18N: 
+    _attributes:          { phpName: BusinessTypeI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_BUSINESS_TYPE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+
+  EMT_BUSINESS_SECTOR:
+    _attributes:          { phpName: BusinessSector, isI18N: true, i18nTable: EMT_BUSINESS_SECTOR_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+    
+
+  EMT_BUSINESS_SECTOR_I18N:
+    _attributes:          { phpName: BusinessSectorI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_BUSINESS_SECTOR, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(100), required: true }
+    STRIPPED_NAME:        { type: varchar(255), required: true, index: unique }
+
+  EMT_ROLE: 
+    _attributes:          { phpName: Role, isI18N: true, i18nTable: EMT_ROLE_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    SYSNAME:              { type: varchar(50), required: true }
+    PARENT_ID:            { type: integer, size: 4, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    MODULE:               { type: varchar(50) }
+    RELATED_TYPE_ID:      { type: integer, size: 3,  foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    OPPOSITE_ROLE_ID:     { type: integer, size: 4, required: false, foreignTable: EMT_ROLE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    
+  EMT_ROLE_I18N:
+    _attributes:          { phpName: RoleI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    DESCRIPTION:          { type: varchar(255) }
+
+  EMT_ROLE_MATRIX: 
+    _attributes:          { phpName: RoleMatrix }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    SUBJECT_TYPE_ID:      { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    IS_RELATION_TYPE:     { type: boolean }
+    BADGE:                { type: varchar(50) }
+
+  EMT_CONTACT:
+    _attributes:          { phpName: Contact }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    EMAIL:                { type: varchar(80) }
+    GTALK:                { type: varchar(50) }
+    MSN:                  { type: varchar(50) }
+    YAHOO:                { type: varchar(50) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_CONTACT_PHONE:
+    _attributes:          { phpName: ContactPhone }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CONTACT_ID:           { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    TYPE:                 { type: integer, size: 4 }
+    PHONE:                { type: varchar(50) }
+    PREFERRED:            { type: boolean }
+
+  EMT_CONTACT_ADDRESS:
+    _attributes:          { phpName: ContactAddress }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CONTACT_ID:           { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    TYPE:                 { type: integer, size: 4 }
+    STREET:               { type: varchar(255) }
+    CITY:                 { type: varchar(50) }
+    STATE:                { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete: RESTRICT, onUpdate: RESCTRICT }
+    POSTALCODE:           { type: varchar(10) }
+    COUNTRY:              { type: varchar(5) }
+
+  EMT_LOGIN:
+    _attributes:          { phpName: Login }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    USERNAME:             { type: varchar(50) }
+    EMAIL:                { type: varchar(80), required: true }
+    SHA1_PASSWORD:        { type: varchar(40), required: true }
+    SALT:                 { type: varchar(32), required: true }
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    REMINDER_QUESTION:    { type: varchar(50), required: true }
+    REMINDER_ANSWER:      { type: varchar(50), required: true }
+    STARTUP:              { type: integer, size: 10 }
+    REMEMBER_CODE:        { type: varchar(35) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    
+  EMT_USER: 
+    _attributes:          { phpName: User }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    NAME:                 { type: varchar(50), required: true }
+    LASTNAME:             { type: varchar(50), required: true }
+    LOGIN_ID:             { type: integer, size: 10, required: true, foreignTable: EMT_LOGIN, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    PROFILE_ID:           { type: integer, size: 10, required: false, default: null, foreignTable: EMT_USER_PROFILE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    GENDER:               { type: tinyint, size: 1 }
+    BIRTHDATE:            { type: date } 
+    ALTERNATIVE_EMAIL:    { type: varchar(80) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    REGISTRATION_IP:      { type: integer, size: 16 }
+    DISPLAY_NAME:         { type: varchar(50) }
+    DISPLAY_LASTNAME:     { type: varchar(50) }
+
+  EMT_USER_PROFILE: 
+    _attributes:          { phpName: UserProfile }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    PHOTO_ID:             { type: integer, size: 15, foreignTable: EMT_MEDIA_ITEM, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    MARITAL_STATUS:       { type: smallint, size: 2 }
+    CONTACT_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    HOME_TOWN_ID:         { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    HOME_COUNTRY:         { type: varchar(5) }
+    PREFERRED_LANGUAGE:   { type: varchar(5) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    SELECTED_HR_REGION:   { type: varchar(5) }
+    
+  EMT_PRIVACY_NODE_TYPE: 
+    _attributes:          { phpName: PrivacyNodeType, isI18N: true, i18nTable: EMT_PRIVACY_NODE_TYPE_I18N }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    PRIORITY:             { type: integer, size: 3 }
+    REQUIRES_SUBJECT:     { type: boolean, required: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_PRIVACY_NODE_TYPE_I18N: 
+    _attributes:          { phpName: PrivacyNodeTypeI18n }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50) }
+  
+  EMT_PRIVACY_PREFERENCE:
+    _attributes:          { phpName: PrivacyPreference }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10 }
+    SUBJECT_ID:           { type: integer, size: 10 }
+    SUBJECT_TYPE_ID:      { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ROLE_ON_SUBJECT:      { type: integer, size: 4, required: false, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    OBJECT_ID:            { type: integer, size: 10 }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ROLE_ON_OBJECT:       { type: integer, size: 4, required: false, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    ACTION_ID:            { type: integer, size: 5, foreignTable: EMT_ACTION, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    ALLOWED:              { type: tinyint, size: 1, required: true }
+
+  EMT_MESSAGE:
+    _attributes:          { phpName: Message }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    THREAD_ID:            { type: integer, size: 15, foreignTable: EMT_MESSAGE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    SENDER_ID:            { type: integer, size: 10 }
+    SENDER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    SUBJECT:              { type: varchar(255) }
+    BODY:                 { type: varchar(1000), required: true }
+    FOLDER_ID:            { type: integer, size: 2, default: 1 }
+    MESSAGE_TYPE_ID:      { type: integer, size: 2, default: 1 }
+    DELETED_AT:           { type: timestamp }
+    CREATED_AT:           ~
+    RELATED_OBJECT_ID:    { type: integer, size: 16, required: false }
+    RELATED_OBJECT_TYPE_ID: { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+
+  EMT_MESSAGE_RECIPIENT:
+    _attributes:          { phpName: MessageRecipient }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    MESSAGE_ID:           { type: integer, size: 15, foreignTable: EMT_MESSAGE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    RECIPIENT_ID:         { type: integer, size: 10, required: true }
+    RECIPIENT_TYPE_ID:    { type: integer, size: 3,  required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    FOLDER_ID:            { type: integer, size: 2, default: 1 }
+    IS_READ:              { type: tinyint, size: 1, default: 0 }
+    DELETED_AT:           { type: timestamp }
+
+  EMT_ROLE_ASSIGNMENT:
+    _attributes:          { phpName: RoleAssignment }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    LOGIN_ID:             { type: integer, size: 4, required: true, foreignTable: EMT_LOGIN, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CREATED_AT:           ~
+
+  EMT_EMAIL_TRANSACTION_RULE:
+    _attributes:          { phpName: EmailTransactionRule }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    NAME:                 { type: varchar(50), required: true }
+    DEFINITION:           { type: varchar(255) }
+    SCHEDULE:             { type: varchar(250) }
+    PRIORITY:             { type: integer, size: 2, default: 2, required: true }
+    IS_SYSRULE:           { type: tinyint, size: 1, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_EMAIL_TRANSACTION_NS:
+    _attributes:          { phpName: EmailTransactionNamespace, isI18N: true, i18nTable: EMT_EMAIL_TRANSACTION_NS_I18N }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    TEMPLATE:             { type: varchar(50), required: true }
+    TR_RULE_ID:           { type: integer, size: 10, foreignTable: EMT_EMAIL_TRANSACTION_RULE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CONTENT_TYPE:         { type: varchar(10) }
+    SENDER_EMAIL:         { type: varchar(80), required: true }
+    SENDER_ACCOUNT:       { type: varchar(50), required: true }
+    SENDER_PASSWORD:      { type: varchar(50), required: true }
+    SENDER_SMTP_HOST:     { type: varchar(50), required: true }
+    SENDER_SMTP_PORT:     { type: varchar(50), required: true }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_EMAIL_TRANSACTION_NS_I18N:
+    _attributes:          { phpName: EmailTransactionNamespaceI18n }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_EMAIL_TRANSACTION_NS, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    DEFINITION:           { type: varchar(255) }
+    SUBJECT:              { type: varchar(50), required: true }
+    SENDER_TITLE:         { type: varchar(50), required: true }
+
+  EMT_EMAIL_TRANSACTION:
+    _attributes:          { phpName: EmailTransaction }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    NAMESPACE_ID:         { type: integer, size: 3, foreignTable: EMT_EMAIL_TRANSACTION_NS, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    EMAIL:                { type: varchar(80), required: true }
+    DATA:                 { type: clob, required: true, default: 'a:0:{}' }
+    RCPNT_USER_ID:        { type: integer, size: 10, foreignTable: EMT_USER, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    RCPNT_COMPANY_ID:     { type: integer, size: 10, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    ERROR_MESSAGE:        { type: varchar(255) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    PREFERRED_LANG:       { type: varchar(5) }
+
+  EMT_BLOCKREASON: 
+    _attributes:          { phpName: BlockReason, isI18N: true, i18nTable: EMT_BLOCKREASON_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_BLOCKREASON_I18N: 
+    _attributes:          { phpName: BlockReasonI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_BLOCKREASON, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    DESCRIPTION:          { type: varchar(255) }
+  
+  EMT_BLOCKLIST:
+    _attributes:          { phpName: Blocklist }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    LOGIN_ID:             { type: integer, size: 10, required: true, index: true, foreignTable: EMT_LOGIN, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE}
+    COMPANY_ID:           { type: integer, size: 10, default: NULL, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE}
+    BLOCKREASON_ID:       { type: integer, size: 4, foreignTable: EMT_BLOCKREASON, foreignReference: ID, required: true, onDelete: SET NULL, onUpdate: SET NULL}
+    ACTIVE:               { type: boolean, default: true }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_COMPANY: 
+    _attributes:          { phpName: Company }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    NAME:                 { type: varchar(255), required: true }
+    BUSINESS_TYPE_ID:     { type: integer, size: 4, index: true, foreignTable: EMT_BUSINESS_TYPE, foreignReference: ID, required: true, onDelete: SET NULL, onUpdate: SET NULL}
+    PROFILE_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_COMPANY_PROFILE, foreignReference: ID, onDelete: SET NULL, onUpdate: SET NULL }
+    SECTOR_ID:            { type: integer, size: 4, index: true, foreignTable: EMT_BUSINESS_SECTOR, foreignReference: ID, required: true, onDelete: SET NULL, onUpdate: SET NULL}
+    URL:                  { type: varchar(255) }
+    BRANDS:               { type: varchar(255) }
+    COMPANY_EMAIL:        { type: varchar(80) }
+    MEMBER_TYPE:          { type: integer, size: 2 }
+    INTERESTED_IN_B2B:    { type: boolean }
+    INTERESTED_IN_HR:     { type: boolean }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    AVAILABLE:            { type: boolean, default: true }
+    BLOCKED:              { type: boolean, default: false }
+    IS_FEATURED:          { type: boolean, default: false }
+
+  EMT_COMPANY_PROFILE:
+    _attributes:          { phpName: CompanyProfile, isI18N: true, i18nTable: EMT_COMPANY_PROFILE_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CONTACT_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    NO_OF_QC_STAFF:       { type: varchar(50) }
+    NO_OF_RD_STAFF:       { type: varchar(50) }
+    NO_OF_EMPLOYEES:      { type: varchar(50) }
+    NO_OF_PROD_LINE:      { type: varchar(50) }
+    CERTIFICATIONS:       { type: varchar(500) }
+    FACTORYSIZE:          { type: integer, size: 10 }
+    FACTORYSIZE_UNIT:     { type: integer, size: 4 }
+    EXPORT_PERCENT_SPAN:  { type: integer, size: 4 }
+    EXPORT_PERCENT:       { type: integer, size: 4 }
+    FOUNDED_IN:           { type: timestamp } 
+
+  EMT_COMPANY_PROFILE_I18N:
+    _attributes:          { phpName: CompanyProfileI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_COMPANY_PROFILE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    INTRODUCTION:         { type: longvarchar }
+    PRODUCT_SERVICE:      { type: longvarchar }
+
+  EMT_COMPANY_LOGIN: 
+    _attributes:          { phpName: CompanyLogin }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    COMPANY_ID:           { type: integer, size: 10, required: true, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    LOGIN_ID:             { type: integer, size: 10, required: true, foreignTable: EMT_LOGIN, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CREATED_AT:           ~
+
+  EMT_COMPANY_USER:
+    _attributes:          { phpName: CompanyUser }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    COMPANY_ID:           { type: integer, size: 10, required: true, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    OBJECT_ID:            { type: integer, size: 10 }
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CREATED_AT:           ~
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    STATUS:               { type: integer, size: 2, default: 0 }
+
+  EMT_JOB_POSITION:
+    _attributes:          { phpName: JobPosition, isI18N: true, i18nTable: EMT_JOB_POSITION_I18N }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_JOB_POSITION_I18N: 
+    _attributes:          { phpName: JobPositionI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_JOB_POSITION, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+
+  EMT_JOB_GRADE:
+    _attributes:         { phpName: JobGrade, isI18N: true, i18nTable: EMT_JOB_GRADE_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_JOB_GRADE_I18N: 
+    _attributes:          { phpName: JobGradeI18n }
+    ID:                   { type: integer, size: 8, required: true, primaryKey: true, foreignTable: EMT_JOB_GRADE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+
+  EMT_RESUME:
+    _attributes:          { phpName: Resume }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TITLE:                { type: varchar(50), required: true }
+    USER_ID:              { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CONTACT_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    JOB_POSITION_ID:      { type: integer, size: 5, required: false, foreignTable: EMT_JOB_POSITION, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    JOB_GRADE_ID:         { type: integer, size: 4, required: false, foreignTable: EMT_JOB_GRADE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    ACTIVE:               { type: boolean }
+    SMOKES:               { type: boolean }
+    DRIVERS_LICENSE:      { type: integer, size: 4 }
+    DESIRED_SALARY:       { type: varchar(50) }
+    SALARY_CURRENCY:      { type: varchar(10) }
+    WILLING_TO_TRAVEL:    { type: integer, size: 4 }
+    WILLING_TO_RELOCATE:  { type: boolean }
+    WILLING_TO_TELECOMMUTE: { type: boolean }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    OBJECTIVE:            { type: longvarchar }
+    MILITARY_SERVICE_STATUS: { type: integer, size: 4 }
+
+  EMT_RESUME_COURSE: 
+    _attributes:          { phpName: ResumeCourse }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    NAME:                 { type: varchar(100), required: true }
+    INSTITUTE:            { type: varchar(100), required: true }
+    DATE_FROM:            { type: timestamp, required: true } 
+    DATE_TO:              { type: timestamp } 
+    PRESENT:              { type: boolean }
+    DAILY:                { type: boolean }
+
+  EMT_RESUME_LANGUAGE: 
+    _attributes:          { phpName: ResumeLanguage }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    LANGUAGE:             { type: varchar(7), required: true }
+    NATIVE:               { type: boolean }
+    LEVEL_READ:           { type: integer, size: 4 }
+    LEVEL_WRITE:          { type: integer, size: 4 }
+    LEVEL_SPEAK:          { type: integer, size: 4 }
+
+  EMT_RESUME_SCHOOL: 
+    _attributes:          { phpName: ResumeSchool }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    DEGREE_ID:            { type: integer, size: 4, required: true, foreignTable: EMT_RESUME_SCHOOL_DEGREE, foreignReference: ID, onDelete:  NO ACTION, onUpdate: NO ACTION }
+    SCHOOL:               { type: varchar(100), required: true }
+    MAJOR:                { type: varchar(100), required: true }
+    DATE_FROM:            { type: timestamp } 
+    DATE_TO:              { type: timestamp, required: true } 
+    PRESENT:              { type: boolean }
+    SUBJECTS:             { type: varchar(900) }
+
+  EMT_RESUME_SCHOOL_DEGREE: 
+    _attributes:          { phpName: ResumeSchoolDegree, isI18N: true, i18nTable: EMT_RESUME_SCHOOL_DEGREE_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+    LEVEL_SEQ:            { type: integer, size: 3, required: false }
+
+  EMT_RESUME_SCHOOL_DEGREE_I18N:
+    _attributes:          { phpName: ResumeSchoolDegreeI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_RESUME_SCHOOL_DEGREE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(100), required: true }
+
+  EMT_RESUME_WORK: 
+    _attributes:          { phpName: ResumeWork }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    COMPANY_NAME:         { type: varchar(300), required: true }
+    LISTED_ON_EMT:        { type: boolean }
+    COMPANY_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete: SET NULL, onUpdate: SET NULL }
+    JOB_TITLE:            { type: varchar(50), required: true }
+    DATE_FROM:            { type: timestamp, required: true } 
+    DATE_TO:              { type: timestamp } 
+    PRESENT:              { type: boolean }
+    PROJECTS:             { type: varchar(900) }
+
+  EMT_RESUME_SKILL: 
+    _attributes:          { phpName: ResumeSkill }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    SKILL_ITEM_ID:        { type: integer, size: 10, required: true, foreignTable: EMT_SKILL_INVENTORY_ITEM, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    PROFICIENCY_ID:       { type: integer, size: 4, required: true, foreignTable: EMT_PROFICIENCY, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+
+  EMT_PROFICIENCY:
+    _attributes:          { phpName: Proficiency, isI18N: true, i18nTable: EMT_PROFICIENCY_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_PROFICIENCY_I18N: 
+    _attributes:          { phpName: ProficiencyI18n }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_PROFICIENCY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(100), required: true }
+    DEFINITION:           { type: varchar(255) }
+
+  EMT_RESUME_SKILL_VERIFICATION: 
+    _attributes:          { phpName: SkillVerification }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_SKILL_ID:      { type: integer, size: 16, required: true, foreignTable: EMT_RESUME_SKILL, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    NAME:                 { type: varchar(50), required: true }
+    DEFINITION:           { type: varchar(100) }
+
+  EMT_SKILL_CATEGORY: 
+    _attributes:          { phpName: SkillCategory, isI18N: true, i18nTable: EMT_SKILL_CATEGORY_I18N }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    PARENT_ID:            { type: integer, size: 16, foreignTable: EMT_SKILL_CATEGORY, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+
+  EMT_SKILL_CATEGORY_I18N: 
+    _attributes:          { phpName: SkillCategoryI18n }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_SKILL_CATEGORY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(100), required: true }
+
+  EMT_SKILL_INVENTORY_ITEM: 
+    _attributes:          { phpName: SkillInventoryItem, isI18N: true, i18nTable: EMT_SKILL_INVENTORY_ITEM_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CATEGORY_ID:          { type: integer, size: 10, required: true, foreignTable: EMT_SKILL_CATEGORY, foreignReference: ID, onDelete:  NO ACTION, onUpdate: NO ACTION }
+
+  EMT_SKILL_INVENTORY_ITEM_I18N: 
+    _attributes:          { phpName: SkillInventoryItemI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_SKILL_INVENTORY_ITEM, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(100), required: true }
+
+  EMT_RESUME_PUBLICATION: 
+    _attributes:          { phpName: ResumePublication }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    SUBJECT:              { type: varchar(200), required: true }
+    PUBLISHER:            { type: varchar(100) }
+    EDITION:              { type: varchar(100) }
+    CO_AUTHORS:           { type: varchar(255) }
+    ISBN:                 { type: varchar(10) }
+    BINDING:              { type: varchar(4) }
+
+  EMT_RESUME_AWARD: 
+    _attributes:          { phpName: ResumeAward }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    TITLE:                { type: varchar(200), required: true }
+    ISSUER:               { type: varchar(100) }
+    NOTES:                { type: longvarchar }
+    YEAR:                 { type: varchar(4) }
+
+  EMT_RESUME_REFERENCE: 
+    _attributes:          { phpName: ResumeReference }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    NAME:                 { type: varchar(100), required: true }
+    JOB_TITLE:            { type: varchar(100) }
+    COMPANY_NAME:         { type: varchar(300) }
+    LISTED_ON_EMT:        { type: boolean }
+    COMPANY_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete: SET NULL, onUpdate: SET NULL }
+    USER_ID:              { type: integer, size: 10, required: false, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    STATUS_ID:            { type: integer, size: 4 }
+    USER_CONTACT_ID:      { type: integer, size: 10, required: false, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+
+  EMT_RESUME_ORGANISATION: 
+    _attributes:          { phpName: ResumeOrganisation }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    NAME:                 { type: varchar(300), required: true }
+    ACTIVITY_ID:          { type: integer, size: 4 }
+    LISTED_ON_EMT:        { type: boolean }
+    ORGANISATION_ID:      { type: integer, size: 10 }
+    JOINED_IN_YEAR:       { type: varchar(4) }
+    CITY:                 { type: varchar(50) }
+    STATE:                { type: varchar(50) }
+    COUNTRY_CODE:         { type: varchar(5) }
+
+  EMT_RELATION:
+    _attributes:          { phpName: Relation }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10, default: NULL, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    COMPANY_ID:           { type: integer, size: 10, default: NULL, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE}
+    RELATED_USER_ID:      { type: integer, size: 10, default: NULL, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    RELATED_COMPANY_ID:   { type: integer, size: 10, default: NULL, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE}
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_ACTION: 
+    _attributes:          { phpName: Action, isI18N: true, i18nTable: EMT_ACTION_I18N }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, autoincrement: true }
+    CONSTANT:             { type: varchar(50), required: true }
+    ACTIVE:               { type: boolean, required: true }
+    DISPLAYABLE:          { type: boolean, required: false }
+    COMMENTABLE:          { type: boolean, required: false }
+    DETAIL_PARTIAL:       { type: varchar(50) }
+    PRIVACY_CONTROLLED:   { type: boolean, required: true }
+
+  EMT_ACTION_I18N: 
+    _attributes:          { phpName: ActionI18n }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, foreignTable: EMT_ACTION, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50) }
+    LOG_SENTENCE:         { type: varchar(255) }
+
+  EMT_NOTIFICATION_PREF:
+    _attributes:          { phpName: NotificationPref }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    OBJECT_ID:            { type: integer, size: 10 }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ACTION_ID:            { type: integer, size: 5, foreignTable: EMT_ACTION, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    IS_ALLOWED:           { type: tinyint, size: 1, required: true }
+  
+  EXT_GEONAME:
+    _attributes:          { phpName: GeonameCity }
+    GEONAME_ID:           { type: integer, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(200) }
+    ASCIINAME:            { type: varchar(200) }
+    ALTERNATENAMES:       { type: longvarchar }
+    LATITUDE:             { type: decimal, size: 19, scale: 7 }
+    LONGITUDE:            { type: decimal, size: 19, scale: 7 }
+    FEATURE_CLASS:        { type: varchar(5) }
+    FEATURE_CODE:         { type: varchar(10) }
+    COUNTRY_CODE:         { type: varchar(5) }
+    CC2:                  { type: varchar(60) }
+    ADMIN1_CODE:          { type: varchar(20) }
+    ADMIN2_CODE:          { type: varchar(80) }
+    ADMIN3_CODE:          { type: varchar(20) }
+    ADMIN4_CODE:          { type: varchar(20) }
+    POPULATION:           { type: integer }
+    ELEVATION:            { type: integer }
+    GTOPO30:              { type: integer }
+    TIMEZONE_ID:          { type: varchar(50) }
+    MODIFICATION_DATE:    { type: date }
+
+  EXT_GEONAME_COUNTRY:
+    _attributes:          { phpName: GeonameCountry }
+    ISO:                  { type: varchar(150) }
+    ISO3:                 { type: varchar(5) }
+    ISO_NUMERIC:          { type: integer, size: 3 }
+    FIPS:                 { type: varchar(2) }
+    COUNTRY:              { type: varchar(200) }
+    CAPITAL:              { type: varchar(200) }
+    AREA:                 { type: integer, size: 8 }
+    POPULATION:           { type: integer, size: 10 }
+    CONTINENT:            { type: varchar(2) }
+    TLD:                  { type: varchar(10) }
+    CURRENCY_CODE:        { type: varchar(10) }
+    CURRENCY_NAME:        { type: varchar(20) }
+    PHONE:                { type: varchar(20) }
+    POSTAL_CODE_FORMAT:   { type: varchar(200) }
+    POSTAL_CODE_REGEX:    { type: varchar(200) }
+    LANGUAGES:            { type: varchar(60) }
+    GEONAME_ID:           { type: integer, size: 7, required: true, primaryKey: true, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    NEIGHBOURS:           { type: varchar(50) }
+    EQUIVALENT_FIPS_CODE: { type: varchar(20) }
+
+  EXT_GEONAME_HIERARCHY:
+    _attributes:          { phpName: GeonameHierarchy }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    PARENT_ID:            { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CHILD_ID:             { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    TYPE:                 { type: varchar(10) }
+
+  EMT_MEDIA_ITEM_FOLDER:
+    _attributes:          { phpName: MediaItemFolder }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    TYPE_ID:              { type: integer, size: 2, default: null }
+    NAME:                 { type: varchar(50) }
+    OWNER_ID:             { type: integer, size: 10, required: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    
+  EMT_MEDIA_ITEM:
+    _attributes:          { phpName: MediaItem }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    ITEM_TYPE_ID:         { type: integer, size: 2, default: null }
+    FILENAME:             { type: varchar(255) }
+    TITLE:                { type: varchar(400) }
+    FILE_STORE:           { type: varchar(255) }
+    FILE_SIZE:            { type: integer, size: 15 }
+    FILE_EXTENTION:       { type: varchar(6) }
+    FOLDER_ID:            { type: integer, size: 15, foreignTable: EMT_MEDIA_ITEM_FOLDER, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    OWNER_ID:             { type: integer, size: 10, required: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    IS_PROFILE_PHOTO:     { type: boolean }
+    HAS_THUMBNAIL:        { type: boolean }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    OFFSET_PAD:           { type: integer, size: 10 }
+    OFFSET_COORDS:        { type: varchar, size: 100 }
+    CROP:                 { type: boolean, default: null }
+    IS_TEMP:              { type: boolean, default: true }
+    MIME_TYPE:            { type: varchar(100) }
+
+  EMT_PAYMENT_TERM:
+    _attributes:         { phpName: PaymentTerm, isI18N: true, i18nTable: EMT_PAYMENT_TERM_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    CODE:                 { type: varchar(20), required: true }
+    
+  EMT_PAYMENT_TERM_I18N:
+    _attributes:          { phpName: PaymentTermI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_PAYMENT_TERM, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    DESCRIPTION:          { type: varchar(200) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PRODUCT_CATEGORY:
+    _attributes:          { phpName: ProductCategory, isI18N: true, i18nTable: EMT_PRODUCT_CATEGORY_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    PARENT_ID:            { type: integer, size: 10, defaultValue: 0, index: true }
+  
+  EMT_PRODUCT_CATEGORY_I18N:
+    _attributes:          { phpName: ProductCategoryI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PRODUCT_CATEGORY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    STRIPPED_CATEGORY:    { type: varchar(255), required: true, index: unique }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PRODUCT_QUANTITY_UNIT:
+    _attributes:          { phpName: ProductQuantityUnit, isI18N: true, i18nTable: EMT_PRODUCT_QUANTITY_UNIT_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_PRODUCT_QUANTITY_UNIT_I18N:
+    _attributes:          { phpName: ProductQuantityUnitI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_PRODUCT_QUANTITY_UNIT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(100), required: true }
+
+  EMT_PRODUCT_GROUP:
+    _attributes:          { phpName: ProductGroup, isI18N: true, i18nTable: EMT_PRODUCT_GROUP_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    COMPANY_ID:           { type: integer, size: 10, index: true, foreignTable: EMT_COMPANY, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+  
+  EMT_PRODUCT_GROUP_I18N:
+    _attributes:          { phpName: ProductGroupI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PRODUCT_GROUP, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    STRIPPED_NAME:        { type: varchar(255), required: true }
+
+  EMT_PRODUCT:
+    _attributes:          { phpName: Product, isI18N: true, i18nTable: EMT_PRODUCT_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CATEGORY_ID:          { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT_CATEGORY, foreignReference: ID, required: true }
+    COMPANY_ID:           { type: integer, size: 10, index: true, foreignTable: EMT_COMPANY, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE }
+    MODEL_NO:             { type: varchar(100) }
+    ACTIVE:               { type: boolean, default: false }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    PAYMENT_TERMS:        { type: varchar(200), default: 'a:0:{}' }
+    GROUP_ID:             { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT_GROUP, foreignReference: ID, onDelete: SET NULL, onUpdate: CASCADE }
+    ORIGIN:               { type: varchar(5) }
+    KEYWORD:              { type: varchar(50) }
+    BRAND_NAME:           { type: varchar(200) }
+    MIN_ORDER_QUANTITY:   { type: integer, size: 16 }
+    QUANTITY_UNIT:        { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT_QUANTITY_UNIT, foreignReference: ID }
+    PRICE_START:          { type: integer, size: 16 }
+    PRICE_END:            { type: integer, size: 16 }
+    PRICE_CURRENCY:       { type: varchar(5) }
+    PRICE_UNIT:           { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT_QUANTITY_UNIT, foreignReference: ID }
+    CAPACITY:             { type: integer, size: 16 }
+    CAPACITY_UNIT:        { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT_QUANTITY_UNIT, foreignReference: ID }
+    CAPACITY_PERIOD_ID:   { type: integer, size: 5, index: true, foreignTable: EMT_TIME_PERIOD, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE}
+    APPROVAL_STATUS:      { type: integer, size: 3, required: true, default: 0 }
+    BRAND_ID:             { type: integer, size: 10, index: true, foreignTable: EMT_COMPANY_BRAND, foreignReference: ID, onDelete: SET NULL, onUpdate: CASCADE}
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    IS_TOP_PRODUCT:       { type: boolean, default: false }
+
+  EMT_PRODUCT_I18N:
+    _attributes:          { phpName: ProductI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PRODUCT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(400), required: true }
+    INTRODUCTION:         { type: longvarchar, required: true }
+    PACKAGING:            { type: varchar(500) }
+    HTML_CONTENT:         { type: longvarchar }
+
+  EMT_PRODUCT_ATTR:
+    _attributes:          { phpName: ProductAttr, isI18N: true, i18nTable: EMT_PRODUCT_ATTR_I18N }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    PRODUCT_ID:           { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+    ATTR_OPTION_ID:       { type: integer, size: 16, index: true, foreignTable: EMT_PRODUCT_ATTR_OPTION, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+
+  EMT_PRODUCT_ATTR_I18N:
+    _attributes:          { phpName: ProductAttrI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PRODUCT_ATTR, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    VALUE:                { type: varchar(255), required: true }
+
+  EMT_PRODUCT_ATTR_DEF:
+    _attributes:          { phpName: ProductAttrDef, isI18N: true, i18nTable: EMT_PRODUCT_ATTR_DEF_I18N }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    CATEGORY_ID:          { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT_CATEGORY, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+    SEQUENCE_NO:          { type: integer, size: 3 }
+    ACTIVE:               { type: boolean, default: true }
+  
+  EMT_PRODUCT_ATTR_DEF_I18N:
+    _attributes:          { phpName: ProductAttrDefI18n }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_PRODUCT_ATTR_DEF, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+
+  EMT_PRODUCT_ATTR_OPTION:
+    _attributes:          { phpName: ProductAttrOption, isI18N: true, i18nTable: EMT_PRODUCT_ATTR_OPTION_I18N }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    ATTRIBUTE_ID:         { type: integer, size: 16, index: true, foreignTable: EMT_PRODUCT_ATTR_DEF, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+    SEQUENCE_NO:          { type: integer, size: 3 }
+
+  EMT_PRODUCT_ATTR_OPTION_I18N:
+    _attributes:          { phpName: ProductAttrOptionI18n }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_PRODUCT_ATTR_OPTION, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    VALUE:                { type: varchar(255), required: true }
+
+  EMT_TIME_PERIOD:
+    _attributes:          { phpName: TimePeriod, isI18N: true, i18nTable: EMT_TIME_PERIOD_I18N }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean }
+  
+  EMT_TIME_PERIOD_I18N:
+    _attributes:          { phpName: TimePeriodI18n }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, foreignTable: EMT_TIME_PERIOD, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    LABEL:                { type: varchar(50), required: true }
+    SENTENCE:             { type: varchar(50), required: true }
+
+  EMT_COMPANY_BRAND:
+    _attributes:          { phpName: CompanyBrand }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    COMPANY_ID:           { type: integer, size: 10, index: true, foreignTable: EMT_COMPANY, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+    NAME:                 { type: varchar(100), required: true }
+    TARGET_MARKETS:       { type: varchar(50) }
+
+  EMT_RATING:
+    _attributes:          { phpName: Rating }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    ITEM_ID:              { type: integer, size: 10, required: true }
+    ITEM_TYPE_ID:         { type: integer, size: 3, required: true }
+    CLIENT_IP:            { type: varchar(15)}
+    SESSION_ID:           { type: varchar(255)}
+    CREATED_AT:           ~
+    VISITOR_ID:           { type: integer, size: 10, required: true }
+    VISITOR_TYPE_ID:      { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+
+  EMT_ERROR_LOG:
+    _attributes:          { phpName: ErrorLog }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    CAUSING_ITEM_ID:      { type: integer, size: 10, required: true }
+    CAUSING_ITEM_TYPE_ID: { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ACTION_ID:            { type: integer, size: 5, foreignTable: EMT_ACTION, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    MESSAGE:              { type: varchar(255) }
+    CREATED_AT:           ~
+
+  EMT_PASSWORD_RESET_REQUEST:
+    _attributes:          { phpName: PasswordResetRequest }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    LOGIN_ID:             { type: integer, size: 10, required: true, foreignTable: EMT_LOGIN, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CREATED_AT:           ~
+  
+  EMT_CUSTOMER_MESSAGE:
+    _attributes:          { phpName: CustomerMessage }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TOPIC_ID:             { type: integer, size: 10, required: true }
+    USER_ID:              { type: integer, size: 10, required: false, default: null, foreignTable: EMT_USER, foreignReference: ID, onDelete:  NO ACTION, onUpdate: NO ACTION }
+    SENDER_NAMELASTNAME:  { type: varchar(50), required: true }
+    SENDER_EMAIL:         { type: varchar(80), required: true }
+    MESSAGE:              { type: longvarchar, required: true }
+    SENDER_IP:            { type: varchar(20) }
+    CREATED_AT:           ~
+
+  EMT_PUBLICATION_CATEGORY:
+    _attributes:          { phpName: PublicationCategory, isI18N: true, i18nTable: EMT_PUBLICATION_CATEGORY_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    PARENT_ID:            { type: integer, size: 10, index: true, foreignTable: EMT_PUBLICATION_CATEGORY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE}
+    ACTIVE:               { type: boolean }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    FEATURED_TYPE:        { type: integer, size: 3 }
+
+  EMT_PUBLICATION_CATEGORY_I18N:
+    _attributes:          { phpName: PublicationCategoryI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PUBLICATION_CATEGORY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    STRIPPED_CATEGORY:    { type: varchar(255), required: true, index: unique }
+
+  EMT_PUBLICATION:
+    _attributes:          { phpName: Publication, isI18N: true, i18nTable: EMT_PUBLICATION_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    AUTHOR_ID:            { type: integer, size: 10, required: true, foreignTable: EMT_AUTHOR, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    TYPE_ID:              { type: integer, size: 5, required: true }
+    NAME:                 { type: varchar(255), required: true }
+    CATEGORY_ID:          { type: integer, size: 10, index: true, foreignTable: EMT_PUBLICATION_CATEGORY, foreignReference: ID, required: true}
+    ACTIVE:               { type: boolean }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    SOURCE_ID:            { type: integer, size: 10, required: true, foreignTable: EMT_PUBLICATION_SOURCE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    FEATURED_TYPE:        { type: integer, size: 3 }
+  
+  EMT_PUBLICATION_I18N:
+    _attributes:          { phpName: PublicationI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PUBLICATION, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    TITLE:                { type: varchar(255), required: true }
+    STRIPPED_TITLE:       { type: varchar(255), required: true, index: unique }
+    SUMMARY:              { type: varchar(100) }
+    INTRODUCTION:         { type: varchar(512), required: true }
+    CONTENT:              { type: clob }
+    I18N_ACTIVE:          { type: boolean }
+    I18N_CREATED_AT:      { type: timestamp }
+    I18N_UPDATED_AT:      { type: timestamp }
+    SHORT_TITLE:          { type: varchar(60) }
+
+  EMT_PUBLICATION_SOURCE:
+    _attributes:          { phpName: PublicationSource, isI18N: true, i18nTable: EMT_PUBLICATION_SOURCE_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TYPE_ID:              { type: integer, size: 5, required: true }
+    NAME:                 { type: varchar(255), required: true }
+    ACTIVE:               { type: boolean }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    FEATURED_TYPE:        { type: integer, size: 3 }
+
+  EMT_PUBLICATION_SOURCE_I18N:
+    _attributes:          { phpName: PublicationSourceI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PUBLICATION_SOURCE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    DISPLAY_NAME:         { type: varchar(255), required: true }
+    STRIPPED_DISPLAY_NAME: { type: varchar(255), required: true, index: unique }
+    SHORT_DESCRIPTION:    { type: varchar(100) }
+    DESCRIPTION:          { type: varchar(512), required: true }
+
+  EMT_AUTHOR:
+    _attributes:          { phpName: Author, isI18N: true, i18nTable: EMT_AUTHOR_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TYPE_ID:              { type: integer, size: 5, required: true }
+    USER_ID:              { type: integer, size: 10, required: false, default: null, foreignTable: EMT_USER, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    SALUTATION:           { type: varchar(20) }
+    NAME:                 { type: varchar(50), required: true }
+    LASTNAME:             { type: varchar(50), required: true }
+    ACTIVE:               { type: boolean }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    IS_COLUMNIST:         { type: boolean }
+    FEATURED_TYPE:        { type: integer, size: 3 }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+  
+  EMT_AUTHOR_I18N:
+    _attributes:          { phpName: AuthorI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_AUTHOR, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    DISPLAY_NAME:         { type: varchar(255), required: true }
+    STRIPPED_DISPLAY_NAME: { type: varchar(255), required: true }
+    INTRODUCTION:         { type: varchar(512) }
+    TITLE:                { type: varchar(100) }
+
+  EMT_ACTION_LOG:
+    _attributes:          { phpName: ActionLog }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10, required: false, default: null, foreignTable: EMT_USER, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    ISSUER_ID:            { type: integer, size: 10, required: true }
+    OBJECT_ID:            { type: integer, size: 10, required: false }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: false, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: SET NULL, onUpdate: SET NULL }
+    TARGET_ID:            { type: integer, size: 10, required: false }
+    ACTION_CASE_ID:       { type: integer, size: 5, required: true, foreignTable: EMT_ACTION_CASE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CREATED_AT:           ~
+
+  EMT_APPLICATION:
+    _attributes:          { phpName: Application, isI18N: true, i18nTable: EMT_APPLICATION_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    APP_CODE:             { type: varchar(30), required: true }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_APPLICATION_I18N:
+    _attributes:          { phpName: ApplicationI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_APPLICATION, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+
+  EMT_SERVICE:
+    _attributes:          { phpName: Service, isI18N: true, i18nTable: EMT_SERVICE_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    APPLICATION_ID:       { type: integer, size: 10, required: true, foreignTable: EMT_APPLICATION, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    APPLIES_TO_TYPE_ID:   { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ACTIVE:               { type: boolean, required: true, default: false }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    DETAIL_PARTIAL:       { type: varchar(50) }
+    IMAGE_ID:             { type: integer, size: 15, foreignTable: EMT_MEDIA_ITEM, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+
+  EMT_SERVICE_I18N:
+    _attributes:          { phpName: ServiceI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_SERVICE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    INTRODUCTION:         { type: longvarchar }
+
+  EMT_MARKETING_PACKAGE:
+    _attributes:          { phpName: MarketingPackage, isI18N: true, i18nTable: EMT_MARKETING_PACKAGE_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    APPLICATION_ID:       { type: integer, size: 10, required: true, foreignTable: EMT_APPLICATION, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    APPLIES_TO_TYPE_ID:   { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    VALID_FROM:           { type: timestamp, required: true } 
+    VALID_TO:             { type: timestamp } 
+    ACTIVE:               { type: boolean, default: false }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    IS_FEATURED:          { type: boolean, default: false }
+    
+  EMT_MARKETING_PACKAGE_I18N:
+    _attributes:          { phpName: MarketingPackageI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_MARKETING_PACKAGE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    DESCRIPTION:          { type: longvarchar, required: true }
+
+  EMT_MARKETING_PACKAGE_ITEM:
+    _attributes:          { phpName: MarketingPackageItem }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    PACKAGE_ID:           { type: integer, size: 10, required: true, foreignTable: EMT_MARKETING_PACKAGE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    SERVICE_ID:           { type: integer, size: 10, required: true, foreignTable: EMT_SERVICE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    QUANTITY:             { type: integer, size: 5, required: true }
+    TIME_LIMIT_TYPE_ID:   { type: integer, size: 3 }
+    TIME_LIMIT:           { type: integer, size: 5 }
+    CREATED_AT:           ~
+
+  EMT_PURCHASE:
+    _attributes:          { phpName: Purchase }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    BUYER_ID:             { type: integer, size: 10, required: true }
+    BUYER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ACTIVE:               { type: boolean, required: true, default: false }
+    SUB_TOTAL:            { type: integer, size: 10 }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PURCHASE_ITEM:
+    _attributes:          { phpName: PurchaseItem }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    PURCHASE_ID:          { type: integer, size: 16, required: true, foreignTable: EMT_PURCHASE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    PACKAGE_ID:           { type: integer, size: 10, required: true, foreignTable: EMT_MARKETING_PACKAGE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    ACTIVE:               { type: boolean, required: true, default: false }
+    SUB_TOTAL:            { type: integer, size: 10 }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PAYMENT:
+    _attributes:          { phpName: Payment }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    PURCHASE_ID:          { type: integer, size: 10, required: false, foreignTable: EMT_PURCHASE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    PAYER_ID:             { type: integer, size: 16, required: true }
+    PAYER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    CREDIT_ACCOUNT_ID:    { type: integer, size: 10, required: false, foreignTable: EMT_CREDIT_ACCOUNT, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    CREDIT_PAYMENT:       { type: boolean }
+    TOTAL_AMOUNT:         { type: integer, size: 10 }
+    COUPON_CODE:          { type: integer, size: 10 }
+    DISCOUNT_TYPE_ID:     { type: integer, size: 10 }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PAYMENT_TRANSACTION:
+    _attributes:          { phpName: PaymentTransaction }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_PAYMENT, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true, primaryKey: true }
+    PAYER_ID:             { type: integer, size: 16, required: true }
+    PAYER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    TYPE_ID:              { type: integer, size: 3, required: true }
+    AMOUNT:               { type: integer, size: 10 }
+    THIRD_PARTY_ID:       { type: varchar(250), required: false, default: '' }
+    NOTE:                 { type: varchar(250), required: false, default: '' }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_CREDIT_ACCOUNT:
+    _attributes:          { phpName: CreditAccount }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    HOLDER_ID:            { type: integer, size: 16, required: true }
+    HOLDER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PAYMENT_TYPE: 
+    _attributes:          { phpName: PaymentType, isI18N: true, i18nTable: EMT_PAYMENT_TYPE_I18N }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_PAYMENT_TYPE_I18N: 
+    _attributes:          { phpName: PaymentTypeI18n }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_PAYMENT_TYPE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    
+  EMT_JOB:
+    _attributes:          { phpName: Job, isI18N: true, i18nTable: EMT_JOB_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    OWNER_ID:             { type: integer, size: 16, required: true, index: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    REF_CODE:             { type: varchar(50) }
+    TITLE:                { type: varchar(255) }
+    TEMPLATE_ID:          { type: integer, size: 4 }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    STATUS:               { type: integer, size: 3, default: 1 }
+    CORPORATE_IMAGE_ID:   { type: integer, size: 15, foreignTable: EMT_MEDIA_ITEM, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    PURCHASE_ITEM_ID:     { type: integer, size: 10, required: true, foreignTable: EMT_PURCHASE_ITEM, foreignReference: ID, onDelete:  NO ACTION, onUpdate: NO ACTION }
+    SALLARY_TYPE:         { type: integer, size: 3 }
+    SALLARY_START:        { type: integer, size: 16 }
+    SALLARY_END:          { type: integer, size: 16 }
+    SALLARY_CURRENCY:     { type: varchar(5) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_JOB_I18N:
+    _attributes:          { phpName: JobI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_JOB, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    DISPLAY_TITLE:        { type: varchar(255) }
+    DESCRIPTION:          { type: clob }
+    RESPONSIBILITY:       { type: clob }
+    REQUIREMENTS:         { type: clob }
+    HTML:                 { type: clob }
+    SPOT_INTRO:           { type: varchar(1500) }
+
+  EMT_HR_PROFILE:
+    _attributes:          { phpName: HRProfile }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    OWNER_ID:             { type: integer, size: 16, required: true, index: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    NAME:                 { type: varchar(255) }
+    LOGO_ID:              { type: integer, size: 15, foreignTable: EMT_MEDIA_ITEM, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    DEFAULT_TEMPLATE_ID:  { type: integer, size: 4 }
+    TEMPLATE_DATA:        { type: clob }
+
+  EMT_CONSENT_LOGIN:
+    _attributes:          { phpName: ConsentLogin }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    USER_ID:              { type: integer, size: 10, foreignTable: EMT_USER, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    TOKEN:                { type: clob }
+    EXPIRY:               { type: timestamp } 
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    SERVICE_ID:           { type: integer, size: 4, required: true }
+    
+  EMT_CONSENT_CONTACT:
+    _attributes:          { phpName: ConsentContact }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CONSENT_LOGIN_ID:     { type: integer, size: 10, foreignTable: EMT_CONSENT_LOGIN, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    EMAIL:                { type: varchar(80), required: true }
+    NAME:                 { type: varchar(50) }
+    LASTNAME:             { type: varchar(50) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    
+  EMT_SELECTED_HR_SECTOR:
+    _attributes:          { phpName: SelectedHRSector }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    SECTOR_ID:            { type: integer, size: 4, index: true, foreignTable: EMT_BUSINESS_SECTOR, foreignReference: ID, required: true, onDelete: SET NULL, onUpdate: SET NULL}
+
+  EMT_USER_JOB:
+    _attributes:          { phpName: UserJob }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    JOB_ID:               { type: integer, size: 10, required: true, foreignTable: EMT_JOB, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    TYPE_ID:              { type: integer, size: 3, required: true }
+    CREATED_AT:           ~
+    FLAG_TYPE:            { type: integer, size: 3, required: false }
+    EMPLOYER_READ:        { type: boolean, default: 0 }
+    FOLDER_ID:            { type: integer, size: 3, required: false }
+    STATUS_ID:            { type: integer, size: 3, required: true, default: 0 }
+
+  EMT_RESUME_FOLDER:
+    _attributes:          { phpName: ResumeFolder }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    NAME:                 { type: varchar(50), required: true }
+    HR_PROFILE_ID:        { type: integer, size: 10, required: true, foreignTable: EMT_HR_PROFILE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CREATED_AT:           ~
+
+  EMT_CLASSIFIED_RESUME:
+    _attributes:          { phpName: ClassifiedResume }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    FOLDER_ID:            { type: integer, size: 10, required: true, foreignTable: EMT_RESUME_FOLDER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CREATED_AT:           ~
+
+  EMT_DATABASE_CV:
+    _attributes:          { phpName: DatabaseCV }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    RESUME_ID:            { type: integer, size: 10, required: true, foreignTable: EMT_RESUME, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    HR_PROFILE_ID:        { type: integer, size: 10, required: true, foreignTable: EMT_HR_PROFILE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CHANNEL_TYPE_ID:      { type: integer, size: 3, required: true }
+    FOLDER_ID:            { type: integer, size: 3, required: false }
+    FLAG_TYPE:            { type: integer, size: 3, required: false }
+    PURCHASE_ITEM_ID:     { type: integer, size: 10, required: true, foreignTable: EMT_PURCHASE_ITEM, foreignReference: ID, onDelete:  NO ACTION, onUpdate: NO ACTION }
+    CREATED_AT:           ~
+
+  EMT_USER_BOOKMARK:
+    _attributes:          { phpName: UserBookmark }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    ITEM_ID:              { type: integer, size: 10, required: true }
+    ITEM_TYPE_ID:         { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    TYPE_ID:              { type: integer, size: 3, required: true }
+    CREATED_AT:           ~
+
+  EMT_JOB_MESSAGE_TEMPLATE:
+    _attributes:          { phpName: JobMessageTemplate, isI18N: true, i18nTable: EMT_JOB_MESSAGE_TEMPLATE_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    NAME:                 { type: varchar(50), required: true }
+    HR_PROFILE_ID:        { type: integer, size: 10, required: true, foreignTable: EMT_HR_PROFILE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    TYPE_ID:              { type: integer, size: 3, required: false }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+
+  EMT_JOB_MESSAGE_TEMPLATE_I18N:
+    _attributes:          { phpName: JobMessageTemplateI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_JOB_MESSAGE_TEMPLATE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    TITLE:                { type: varchar(200), required: false }
+    CONTENT:              { type: clob }
+
+  EMT_JOB_MESSAGE:
+    _attributes:          { phpName: JobMessage }
+    TITLE:                { type: varchar(255), required: true }
+    HR_PROFILE_ID:        { type: integer, size: 10, required: true, foreignTable: EMT_HR_PROFILE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    USER_ID:              { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    JOB_ID:               { type: integer, size: 10, required: true, foreignTable: EMT_JOB, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    STATUS_ID:            { type: integer, size: 3, required: true, default: 0 }
+    TEMPLATE_ID:          { type: integer, size: 3, required: true, foreignTable: EMT_JOB_MESSAGE_TEMPLATE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    EMPLOYEE_READ:        { type: boolean, default: 0 }
+    EMPLOYEE_READ_AT:     { type: timestamp } 
+    CREATED_AT:           ~
+
+  EMT_INVITE_FRIEND:
+    _attributes:          { phpName: InviteFriend }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    INVITER_ID:           { type: integer, size: 10 }
+    INVITER_TYPE_ID:      { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    EMAIL:                { type: varchar(80), required: true }
+    NAME:                 { type: varchar(50) }
+    LASTNAME:             { type: varchar(50) }
+    MESSAGE:              { type: longvarchar }
+    IS_READ:              { type: boolean, default: false }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    INVITED_TO_ID:        { type: integer, size: 10 }
+    INVITED_TO_TYPE_ID:   { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+
+  EMT_GROUP_TYPE: 
+    _attributes:          { phpName: GroupType, isI18N: true, i18nTable: EMT_GROUP_TYPE_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_GROUP_TYPE_I18N: 
+    _attributes:          { phpName: GroupTypeI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_GROUP_TYPE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    
+  EMT_GROUP_INTEREST_AREA: 
+    _attributes:          { phpName: GroupInterestArea, isI18N: true, i18nTable: EMT_GROUP_INTEREST_AREA_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    TYPE_ID:              { type: integer, size: 4, index: true, foreignTable: EMT_GROUP_TYPE, foreignReference: ID, required: true, onDelete: SET NULL, onUpdate: SET NULL}
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_GROUP_INTEREST_AREA_I18N: 
+    _attributes:          { phpName: GroupInterestAreaI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_GROUP_INTEREST_AREA, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    STRIPPED_NAME:        { type: varchar(255), required: true, index: unique }
+    
+  EMT_GROUP: 
+    _attributes:          { phpName: Group, isI18N: true, i18nTable: EMT_GROUP_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    NAME:                 { type: varchar(255), required: true }
+    PARENT_ID:            { type: integer, size: 10, index: true, foreignTable: EMT_GROUP, foreignReference: ID, onDelete: SET NULL, onUpdate: SET NULL}
+    TYPE_ID:              { type: integer, size: 4, index: true, foreignTable: EMT_GROUP_TYPE, foreignReference: ID, required: true, onDelete: SET NULL, onUpdate: SET NULL}
+    INTEREST_AREA_ID:     { type: integer, size: 4, index: true, foreignTable: EMT_GROUP_INTEREST_AREA, foreignReference: ID, required: true, onDelete: SET NULL, onUpdate: SET NULL}
+    CONTACT_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    URL:                  { type: varchar(255) }
+    FOUNDED_IN:           { type: timestamp }
+    AVAILABLE:            { type: boolean, default: true }
+    BLOCKED:              { type: boolean, default: false }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    IS_PRIVATE:           { type: boolean, default: false }
+    STRIPPED_NAME:        { type: varchar(255), required: true, index: unique }
+    IS_FEATURED:          { type: boolean, default: false }
+
+  EMT_GROUP_I18N:
+    _attributes:          { phpName: GroupI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_GROUP, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    DISPLAY_NAME:         { type: varchar(255), required: true }
+    ABBREVIATION:         { type: varchar(50) }
+    STRIPPED_DISPLAY_NAME: { type: varchar(255), required: true, index: unique }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    INTRODUCTION:         { type: longvarchar }
+    MEMBER_PROFILE:       { type: longvarchar }
+    EVENTS_INTRODUCTION:  { type: longvarchar }
+
+  EMT_GROUP_MEMBERSHIP: 
+    _attributes:          { phpName: GroupMembership }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    INVITER_ID:           { type: integer, size: 10 }
+    INVITER_TYPE_ID:      { type: integer, size: 3, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    OBJECT_ID:            { type: integer, size: 10 }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    GROUP_ID:             { type: integer, size: 10, index: true, foreignTable: EMT_GROUP, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_STATUS_UPDATE: 
+    _attributes:          { phpName: StatusUpdate }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    OBJECT_ID:            { type: integer, size: 10 }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    MESSAGE:              { type: varchar(500) }
+    CREATED_AT:           ~
+
+  EMT_LOCATION_UPDATE: 
+    _attributes:          { phpName: LocationUpdate }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    OBJECT_ID:            { type: integer, size: 10 }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    COUNTRY:              { type: varchar(5) }
+    STATE:                { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CITY:                 { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    DATE_FROM:            { type: timestamp } 
+    DATE_TO:              { type: timestamp } 
+    CREATED_AT:           ~
+    
+  EMT_COMMENT: 
+    _attributes:          { phpName: Comment }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    ITEM_ID:              { type: integer, size: 10 }
+    ITEM_TYPE_ID:         { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    COMMENTER_ID:         { type: integer, size: 10 }
+    COMMENTER_TYPE_ID:    { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    TEXT:                 { type: varchar(2000) }
+    DELETED_AT:           { type: timestamp }
+    CREATED_AT:           ~
+
+  EMT_ACTION_CASE: 
+    _attributes:          { phpName: ActionCase, isI18N: true, i18nTable: EMT_ACTION_CASE_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    ACTION_ID:            { type: integer, size: 5, required: true, foreignTable: EMT_ACTION, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ISSUER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    TARGET_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    PRIVACY_CONTROLLED:   { type: boolean, required: true }
+
+  EMT_ACTION_CASE_I18N: 
+    _attributes:          { phpName: ActionCaseI18n }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, foreignTable: EMT_ACTION_CASE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    LOG_SENTENCE:         { type: varchar(255) }
+    SETTINGS_LABEL:       { type: varchar(255) }
+
+  EMT_RELATION_UPDATE: 
+    _attributes:          { phpName: RelationUpdate }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    SUBJECT_ID:           { type: integer, size: 10, required: true }
+    SUBJECT_TYPE_ID:      { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    OBJECT_ID:            { type: integer, size: 10, required: true }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_POLL: 
+    _attributes:          { phpName: Poll }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    DISPLAY_NAME:         { type: varchar(255), required: true }
+    TYPE_ID:              { type: integer, size: 2, required: true }
+    POLL_NAMESPACE:       { type: varchar(255) }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    REFERER_MASK:         { type: varchar(255), required: true }
+    RETURN_TO:            { type: varchar(255) }
+    DATE_FROM:            { type: timestamp }
+    DATE_TO:              { type: timestamp }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_POLL_ITEM: 
+    _attributes:          { phpName: PollItem }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    POLL_ID:              { type: integer, size: 10, required: true, foreignTable: EMT_POLL, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    DISPLAY_NAME:         { type: varchar(255), required: true }
+    SEQUENCE_ID:          { type: integer, size: 3 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_POLL_VOTE: 
+    _attributes:          { phpName: PollVote }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    ITEM_ID:              { type: integer, size: 15, required: true, foreignTable: EMT_POLL_ITEM, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CLIENT_USER_ID:       { type: integer, size: 10, required: false, foreignTable: EMT_CLIENT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_CLIENT_DEVICE: 
+    _attributes:          { phpName: ClientDevice }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    HASH:                 { type: varchar(32), default: sys_guid() }
+    IP:                   { type: integer, size: 16 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_CLIENT_USER: 
+    _attributes:          { phpName: ClientUser }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10, required: false, foreignTable: EMT_USER, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CLIENT_DEVICE_ID:     { type: integer, size: 15, required: true, foreignTable: EMT_CLIENT_DEVICE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    NAME_LASTNAME:        { type: varchar(255) }
+    EMAIL:                { type: varchar(80) }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_IGNORE_ADVISE:
+    _attributes:          { phpName: IgnoreAdvise }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    USER_ID:              { type: integer, size: 10, default: NULL, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    RELATED_USER_ID:      { type: integer, size: 10, default: NULL, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CREATED_AT:           ~
+
+  EMT_WALL_POST:
+    _attributes:          { phpName: WallPost }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    OWNER_ID:             { type: integer, size: 16 }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    POSTER_ID:            { type: integer, size: 16 }
+    POSTER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    ITEM_ID:              { type: integer, size: 16 }
+    ITEM_TYPE_ID:         { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    TARGET_AUDIENCE:      { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  RESTRICT, onUpdate: CASCADE }
+    AVAILABLE:            { type: boolean, default: true }
+    CREATED_AT:           ~
+    DELETED_AT:           { type: timestamp }
+
+  EMT_POST_LINK: 
+    _attributes:          { phpName: PostLink }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    URL:                  { type: varchar(500), required: true }
+    TITLE:                { type: varchar(500) }
+    MESSAGE:              { type: varchar(1024) }
+    CREATED_AT:           ~
+
+  EMT_POST_VIDEO: 
+    _attributes:          { phpName: PostVideo }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    URL:                  { type: varchar(500), required: true }
+    TITLE:                { type: varchar(500) }
+    MESSAGE:              { type: varchar(1024) }
+    CREATED_AT:           ~
+
+  EMT_POST_JOB: 
+    _attributes:          { phpName: PostJob }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TITLE:                { type: varchar(255) }
+    DESCRIPTION:          { type: clob }
+    REQUIREMENTS:         { type: clob }
+    RESPONSIBILITY:       { type: clob }
+    URL:                  { type: varchar(500), required: true }
+    CREATED_AT:           ~
+
+  EMT_POST_OPPORTUNITY: 
+    _attributes:          { phpName: PostOpportunity }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    URL:                  { type: varchar(500), required: true }
+    TITLE:                { type: varchar(500) }
+    MESSAGE:              { type: varchar(1024) }
+    CREATED_AT:           ~
+
+  EMT_LIKE_IT: 
+    _attributes:          { phpName: LikeIt }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    POSTER_ID:            { type: integer, size: 10 }
+    POSTER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    ITEM_ID:              { type: integer, size: 16 }
+    ITEM_TYPE_ID:         { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    CREATED_AT:           ~
+
+  EMT_OPTED_OUT_EMAIL:
+    _attributes:          { phpName: OptedOutEmail }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    EMAIL:                { type: varchar(80), required: true }
+    CREATED_AT:           ~
+
+  EMT_JOB_FUNCTION:
+    _attributes:          { phpName: JobFunction, isI18N: true, i18nTable: EMT_JOB_FUNCTION_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_JOB_FUNCTION_I18N:
+    _attributes:          { phpName: JobFunctionI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_JOB_FUNCTION, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(200), required: true }
+
+  EMT_JOB_WORKING_SCHEME:
+    _attributes:          { phpName: JobWorkingScheme, isI18N: true, i18nTable: EMT_JOB_WORKING_SCHEME_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_JOB_WORKING_SCHEME_I18N:
+    _attributes:          { phpName: JobWorkingSchemeI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_JOB_WORKING_SCHEME, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(200), required: true }
+
+  EMT_JOB_SPECIAL_CASES:
+    _attributes:          { phpName: JobSpecialCases, isI18N: true, i18nTable: EMT_JOB_SPECIAL_CASES_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    TYPE_ID:              { type: integer, size: 4, required: true }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_JOB_SPECIAL_CASES_I18N:
+    _attributes:          { phpName: JobSpecialCasesI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_JOB_SPECIAL_CASES, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(200), required: true }
+
+  EMT_JOB_LOCATION:
+    _attributes:          { phpName: JobLocation }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    JOB_ID:               { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_JOB, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    COUNTRY_CODE:         { type: varchar, size: 7 }
+    LOCATION_ID:          { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  RESTRICT, onUpdate: RESTRICT }
+    NO_OF_STAFF:          { type: integer, size: 6, default: null }
+
+  EMT_JOB_SPEC:
+    _attributes:          { phpName: JobSpec }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    JOB_ID:               { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_JOB, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    TYPE_ID:              { type: integer, size: 4, required: true }
+    SPEC_ID:              { type: integer, size: 16, required: true }
+
+  EMT_MARKETING_PACKAGE_PRICE:
+    _attributes:          { phpName: MarketingPackagePrice }
+    ID:                   { type: integer, size: 15, required: true, primaryKey: true, autoincrement: true }
+    PACKAGE_ID:           { type: integer, size: 10, required: true, foreignTable: EMT_MARKETING_PACKAGE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    TARGET_ID:            { type: integer, size: 10 }
+    TARGET_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ROLE_ID:              { type: integer, size: 4, required: false, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    PRICE:                { type: integer, size: 10 }
+    CURRENCY:             { type: varchar(5) }
+    REFERENCE_ID:         { type: integer, size: 10 }
+    REFERENCE_TYPE_ID:    { type: integer, size: 3, required: false, default: null, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    TARGET_GEO_COUNTRY:   { type: varchar(5) }
+    TARGET_GEO_REGION_ID: { type: integer, size: 7, default: null, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  RESTRICT, onUpdate: RESTRICT }
+    VALID_FROM:           { type: timestamp }
+    VALID_UNTIL:          { type: timestamp }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_JOB_PLUS:
+    _attributes:          { phpName: JobPlus }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    JOB_ID:               { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_JOB, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    SERVICE_ID:           { type: integer, size: 10, required: true, foreignTable: EMT_SERVICE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    PURCHASE_ITEM_ID:     { type: integer, size: 10, required: false, foreignTable: EMT_PURCHASE_ITEM, foreignReference: ID, onDelete:  NO ACTION, onUpdate: NO ACTION }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PLATFORM_AD:
+    _attributes:          { phpName: PlatformAd }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    AD_NAMESPACE_ID:      { type: varchar(500), required: true }
+    NAMESPACE_ID:         { type: integer, size: 3, foreignTable: EMT_PLATFORM_AD_NAMESPACE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    TITLE:                { type: varchar(100), required: true }
+    MESSAGE:              { type: varchar(256), required: true }
+    URL:                  { type: varchar(500), required: true }
+    LOCAL:                { type: boolean, default: false }
+    RELATED_COMPANY_ID:   { type: integer, size: 10, required: false, default: null, foreignTable: EMT_COMPANY, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    TYPE_ID:              { type: integer, size: 3, required: true }
+    VIEW_PERCENTAGE:      { type: integer, size: 4, default: 1, required: true }
+    CLICK_LIMIT:          { type: integer, size: 16, default: 0 }
+    VIEW_LIMIT:           { type: integer, size: 16, default: 0 }
+    VALID_FROM:           { type: timestamp }
+    VALID_UNTIL:          { type: timestamp }
+    STATUS:               { type: integer, size: 3, default: 1 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_PLATFORM_AD_EVENT:
+    _attributes:          { phpName: PlatformAdEvent }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    AD_ID:                { type: integer, size: 10, required: true, foreignTable: EMT_PLATFORM_AD, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CLIENT_IP:            { type: integer, size: 16 }
+    TYPE_ID:              { type: integer, size: 3, required: true }
+    USER_ID:              { type: integer, size: 10, required: false, default: null, foreignTable: EMT_USER, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CREATED_AT:           ~
+
+  EMT_PLATFORM_AD_NAMESPACE:
+    _attributes:          { phpName: PlatformAdNamespace }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    TITLE:                { type: varchar(100), required: true }
+    AD_NAMESPACE:         { type: varchar(500), required: true }
+
+  EMT_B2B_LEAD:
+    _attributes:          { phpName: B2bLead, isI18N: true, i18nTable: EMT_B2B_LEAD_I18N }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    TYPE_ID:              { type: integer, size: 3, required: true }
+    CATEGORY_ID:          { type: integer, size: 10, index: true, foreignTable: EMT_PRODUCT_CATEGORY, foreignReference: ID, required: true}
+    COMPANY_ID:           { type: integer, size: 10, index: true, foreignTable: EMT_COMPANY, foreignReference: ID, required: true, onDelete: CASCADE, onUpdate: CASCADE}
+    ACTIVE:               { type: boolean, default: false }
+    PAYMENT_TERMS:        { type: varchar(200), default: 'a:0:{}' }
+    SHIPMENT_TERMS:       { type: varchar(200), default: 'a:0:{}' }
+    DEFAULT_LANG:         { type: varchar, size: 7, required: true }
+    EXPIRES_AT:           { type: timestamp }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_B2B_LEAD_I18N:
+    _attributes:          { phpName: B2bLeadI18n }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_B2B_LEAD, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(128), required: true }
+    DESCRIPTION:          { type: varchar(1800) }
+
+  EMT_TX_CATALOGUE:
+    _attribute:           { phpName: TXCatalogue }
+    CAT_ID:               { type: integer, size: 11, required: true, primaryKey: true, autoincrement: true }
+    NAME:                 { type: varchar(100), required: true, default: '' }
+    SOURCE_LANG:          { type: varchar(100), required: true, default: '' }
+    TARGET_LANG:          { type: varchar(100), required: true, default: '' }
+    DATE_CREATED:         { type: timestamp, required: true }
+    DATE_MODIFIED:        { type: timestamp, required: true }
+    AUTHOR:               { type: varchar(255), default: '' }
+
+  EMT_TX_TRANS_UNIT:
+    _attribute:           { phpName: TXTransUnit }
+    MSG_ID:               { type: integer, size: 11, required: true, primaryKey: true, autoincrement: true }
+    CAT_ID:               { type: integer, size: 11, required: true, foreignTable: EMT_TX_CATALOGUE, foreignReference: CAT_ID, onDelete: CASCADE, onUpdate: CASCADE }
+    ID:                   { type: varchar(255), required: true, default: '' }
+    SOURCE:               { type: clob }
+    TARGET:               { type: clob }
+    COMMENTS:             { type: clob }
+    DATE_ADDED:           { type: timestamp, required: true }
+    DATE_MODIFIED:        { type: timestamp, required: true }
+    AUTHOR:               { type: varchar(255), required: true, default: '' }
+    TRANSLATED:           { type: tinyint, required: true, default: 0 }
+
+  EMT_PLACE_TYPE:
+    _attributes:          { phpName: PlaceType, isI18N: true, i18nTable: EMT_PLACE_TYPE_I18N }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: integer, size: 1, default: 1 }
+
+  EMT_PLACE_TYPE_I18N:
+    _attributes:          { phpName: PlaceTypeI18n }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_PLACE_TYPE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+
+  EMT_PLACE:
+    _attributes:          { phpName: Place, isI18N: true, i18nTable: EMT_PLACE_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    OWNER_ID:             { type: integer, size: 10, required: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    TYPE_ID:              { type: integer, size: 3, required: true, foreignTable: EMT_PLACE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    LATITUDE:             { type: decimal, size: 19, scale: 7 }
+    LONGITUDE:            { type: decimal, size: 19, scale: 7 }
+    COUNTRY:              { type: varchar(5) }
+    STATE:                { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    IS_FEATURED:          { type: boolean, default: false }
+    CONTACT_ID:           { type: integer, size: 10, required: false, foreignTable: EMT_CONTACT, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+
+  EMT_PLACE_I18N:
+    _attributes:          { phpName: PlaceI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PLACE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    INTRODUCTION:         { type: longvarchar }
+
+  EMT_TIME_SCHEME: 
+    _attributes:          { phpName: TimeScheme }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    START_DATE:           { type: timestamp, required: true }
+    END_DATE:             { type: timestamp, required: true }
+    REPEAT_TYPE_ID:       { type: integer, size: 3, required: true, default: 1 }
+
+  EMT_EVENT_TYPE:
+    _attributes:          { phpName: EventType, isI18N: true, i18nTable: EMT_EVENT_TYPE_I18N }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    ACTIVE:               { type: integer, size: 1, default: 1 }
+    TYPE_CLASS:           { type: integer, size: 3 }
+
+  EMT_EVENT_TYPE_I18N:
+    _attributes:          { phpName: EventTypeI18n }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_EVENT_TYPE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+
+  EMT_EVENT:
+    _attributes:          { phpName: Event, isI18N: true, i18nTable: EMT_EVENT_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    OWNER_ID:             { type: integer, size: 10, required: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ORGANISER_ID:         { type: integer, size: 10, required: false, default: null }
+    ORGANISER_TYPE_ID:    { type: integer, size: 3, required: false, default: null, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ORGANISER_NAME:       { type: varchar(255), required: false }
+    TYPE_ID:              { type: integer, size: 3, required: false, foreignTable: EMT_EVENT_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    TIME_SCHEME_ID:       { type: integer, size: 10, foreignTable: EMT_TIME_SCHEME, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    LOCATION_COUNTRY:     { type: varchar(5) }
+    LOCATION_STATE:       { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    LOCATION_NAME:        { type: varchar(100) }
+    PLACE_ID:             { type: integer, size: 10, foreignTable: EMT_PLACE, foreignReference: ID, onDelete:  RESTRICT, onUpdate: RESTRICT }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+    IS_FEATURED:          { type: boolean, default: 0, required: true }
+
+  EMT_EVENT_I18N:
+    _attributes:          { phpName: EventI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_EVENT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    INTRODUCTION:         { type: longvarchar }
+
+  EMT_EVENT_INVITE:
+    _attributes:          { phpName: EventInvite }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    EVENT_ID:             { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_EVENT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    SUBJECT_ID:           { type: integer, size: 16, required: true }
+    SUBJECT_TYPE_ID:      { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    INVITER_ID:           { type: integer, size: 16, required: false }
+    INVITER_TYPE_ID:      { type: integer, size: 3, required: false, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    RSVP_STATUS:          { type: integer, size: 3 }
+
+  EMT_TRANSFER_OWNERSHIP_REQUEST:
+    _attributes:          { phpName: TransferOwnershipRequest }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    TRANSFER_CODE:        { type: varchar(36), default: sys_guid(), required: true }
+    ACCOUNT_ID:           { type: integer, size: 10, required: true }
+    ACCOUNT_TYPE_ID:      { type: integer, size: 3,  foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    PROCESS_INIT_BY_ID:   { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CURRENT_OWNER_ID:     { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    NEW_OWNER_ID:         { type: integer, size: 10, required: true, foreignTable: EMT_USER, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    EMAIL_ADDRESS:        { type: varchar(80), required: true }
+    STATUS:               { type: integer, size: 3, default: 0 }
+    CREATED_AT:           ~
+  
+  EMT_ANNOUNCEMENT:
+    _attributes:          { phpName: Announcement, isI18N: true, i18nTable: EMT_ANNOUNCEMENT_I18N }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    OWNER_ID:             { type: integer, size: 16, required: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    TITLE:                { type: varchar(255), required: true }
+    CHANNEL_ID:           { type: integer, size: 3, required: true }
+    LAYOUT_ID:            { type: integer, size: 5, default: null, foreignTable: EMT_EMAIL_LAYOUT, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    DELIVERY_MODE_ID:     { type: integer, size: 3, required: true }
+    DELIVER_FROM:         { type: timestamp }
+    DELIVER_BY:           { type: timestamp }
+    OBJECT_ID:            { type: integer, size: 16 }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    CONTENT_TYPE_ID:      { type: integer, size: 3, required: true }
+    RECIPIENT_REP_CODE:   { type: integer, size: 3, required: true }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_ANNOUNCEMENT_I18N:
+    _attributes:          { phpName: AnnouncementI18n }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_ANNOUNCEMENT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    DISPLAY_TITLE:        { type: varchar(255), required: true }
+    DATA:                 { type: clob }
+    SMS_MESSAGE:          { type: clob }
+
+  EMT_ANN_RECIPIENT:
+    _attributes:          { phpName: AnnRecipient }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    ANN_ID:               { type: integer, size: 16, foreignTable: EMT_ANNOUNCEMENT, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    RECIPIENT_ID:         { type: integer, size: 16, required: true }
+    RECIPIENT_TYPE_ID:    { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    IS_READ:              { type: tinyint, size: 1, default: 0 }
+    CREATED_AT:           ~
+    DELIVERED_AT:         { type: timestamp }
+    DELETED_AT:           { type: timestamp }
+
+  EMT_EMAIL_LAYOUT:
+    _attributes:          { phpName: EmailLayout, isI18N: true, i18nTable: EMT_EMAIL_LAYOUT_I18N }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, autoincrement: true }
+    OWNER_ID:             { type: integer, size: 16, required: true }
+    OWNER_TYPE_ID:        { type: integer, size: 3, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    NAME:                 { type: varchar(100), required: true }
+
+  EMT_EMAIL_LAYOUT_I18N:
+    _attributes:          { phpName: EmailLayoutI18n }
+    ID:                   { type: integer, size: 5, required: true, primaryKey: true, foreignTable: EMT_EMAIL_LAYOUT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    TITLE:                { type: varchar(255) }
+    CONTENT:              { type: clob }
+    DEFAULTS:             { type: clob }
+
+  EMT_COUNTRY:
+    _attributes:          { phpName: Country, isI18N: true, i18nTable: EMT_COUNTRY_I18N }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, autoincrement: true }
+    ISO:                  { type: varchar, size: 2, required: true }
+
+  EMT_COUNTRY_I18N:
+    _attributes:          { phpName: CountryI18n }
+    ID:                   { type: integer, size: 3, required: true, primaryKey: true, foreignTable: EMT_COUNTRY, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    STRIPPED_NAME:        { type: varchar(255), required: true }
+
+  EMT_TRADE_EXPERT:
+    _attributes:          { phpName: TradeExpert, isI18N: true, i18nTable: EMT_TRADE_EXPERT_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    HOLDER_ID:            { type: integer, size: 10, required: true }
+    HOLDER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    IS_FEATURED:          { type: boolean, default: 0 }
+
+  EMT_TRADE_EXPERT_I18N:
+    _attributes:          { phpName: TradeExpertI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRADE_EXPERT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    STRIPPED_NAME:        { type: varchar(255), required: true }
+    INTRODUCTION:         { type: clob }
+
+  EMT_TRADE_EXPERT_INDUSTRY:
+    _attributes:          { phpName: TradeExpertIndustry }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRADE_EXPERT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    INDUSTRY_ID:          { type: integer, size: 4, index: true, primaryKey: true, foreignTable: EMT_BUSINESS_SECTOR, foreignReference: ID, required: true, onDelete: RESTRICT, onUpdate: RESTRICT }
+
+  EMT_TRADE_EXPERT_AREA:
+    _attributes:          { phpName: TradeExpertArea }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRADE_EXPERT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    COUNTRY:              { type: varchar(5) }
+    STATE:                { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  RESTRICT, onUpdate: RESCTRICT }
+    CITY:                 { type: varchar(50) }
+
+  EMT_MESSAGE_TYPE:
+    _attributes:          { phpName: MessageType, isI18N: true, i18nTable: EMT_MESSAGE_TYPE_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    APPLICATION_ID:       { type: integer, size: 10, required: true, foreignTable: EMT_APPLICATION, foreignReference: ID, onDelete:  RESTRICT, onUpdate: RESTRICT }
+    BUILT_IN:             { type: boolean, required: true }
+
+  EMT_MESSAGE_TYPE_I18N: 
+    _attributes:          { phpName: MessageTypeI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_MESSAGE_TYPE, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+    DESCRIPTION:          { type: varchar(255), required: false }
+
+  EMT_TRADE_EXPERT_CLIENT:
+    _attributes:          { phpName: TradeExpertClient }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TRADE_EXPERT_ID:      { type: integer, size: 10, required: true, foreignTable: EMT_TRADE_EXPERT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CLIENT_ID:            { type: integer, size: 10, required: true }
+    CLIENT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    ACTIVE:               { type: boolean, required: true, default: 0 }
+    STATUS:               { type: integer, size: 2, default: 0 }
+
+  EMT_TASK:
+    _attributes:          { phpName: Task }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    STAFF_ID:             { type: integer, size: 10, required: true }
+    STAFF_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    ROLE_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    OBJECT_ID:            { type: integer, size: 16, required: true }
+    OBJECT_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    ACTION_ID:            { type: integer, size: 5, foreignTable: EMT_ACTION, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    START_DATE:           { type: timestamp, required: true }
+    END_DATE:             { type: timestamp, required: true }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~
+
+  EMT_FINANCE_TICKER_ITEM:
+    _attributes:          { phpName: FinanceTickerItem, isI18N: true, i18nTable: EMT_FINANCE_TICKER_ITEM_I18N }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, autoincrement: true }
+    TYPE_ID:              { type: integer, size: 3 }
+    COUNTRY_CODE:         { type: varchar(10) }
+    IS_GLOBAL:            { type: boolean }
+    SYMBOL_GOOGLE:        { type: varchar(50) }
+    SYMBOL_YAHOO:         { type: varchar(50) }
+    SYMBOL_OTHER:         { type: varchar(50) }
+    ACTIVE:               { type: boolean, required: true }
+
+  EMT_FINANCE_TICKER_ITEM_I18N:
+    _attributes:          { phpName: FinanceTickerItemI18n }
+    ID:                   { type: integer, size: 4, required: true, primaryKey: true, foreignTable: EMT_FINANCE_TICKER_ITEM, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(50), required: true }
+
+  EMT_FINANCE_TICKER_DATA:
+    _attributes:          { phpName: FinanceTickerData }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    ITEM_ID:              { type: integer, size: 4, required: true, foreignTable: EMT_FINANCE_TICKER_ITEM, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    DATA:                 { type: float, size: 16, scale: 2, required: true }
+    CHANGE:               { type: float, size: 16, scale: 2 }
+    CHANGE_PERCENT:       { type: float, size: 16, scale: 2 }
+    CREATED_AT:           ~
+
+  EMT_TRANSLATOR:
+    _attributes:          { phpName: Translator, isI18N: true, i18nTable: EMT_TRANSLATOR_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CORPORATE_ACCOUNT:    { type: integer, size: 10, required: false, default: null, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete: SET NULL, onUpdate: SET NULL }
+    HOLDER_ID:            { type: integer, size: 10, required: true }
+    HOLDER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: RESTRICT }
+    STATUS:               { type: integer, size: 2, default: 0 }
+    DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
+    IS_FEATURED:          { type: boolean, default: 0 }
+
+  EMT_TRANSLATOR_I18N:
+    _attributes:          { phpName: TranslatorI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
+    NAME:                 { type: varchar(255), required: true }
+    STRIPPED_NAME:        { type: varchar(255), required: true }
+    INTRODUCTION:         { type: clob }
+
+  EMT_TRANSLATOR_LANGUAGE:
+    _attributes:          { phpName: TranslatorLanguage }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    LANGUAGE:             { type: varchar(7), required: true }
+    NATIVE:               { type: boolean }
+    LEVEL_READ:           { type: integer, size: 4 }
+    LEVEL_WRITE:          { type: integer, size: 4 }
+    LEVEL_SPEAK:          { type: integer, size: 4 }
+
+  EMT_TRANSLATOR_COUPLE:
+    _attributes:          { phpName: TranslatorCouple }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    SOURCE_LANG:          { type: varchar(7), required: true }
+    TARGET_LANG:          { type: varchar(7), required: true }
+    TWO_WAY:              { type: boolean }
+    CAN_INTERPRET:        { type: boolean }

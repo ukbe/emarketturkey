@@ -1,0 +1,5 @@
+fields:
+    companylogo:
+        file: true
+        required:
+            msg: 'Please select a logo file for your company.'

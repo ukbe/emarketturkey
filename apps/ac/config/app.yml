@@ -1,0 +1,9 @@
+# default values
+all:
+
+    homepagePlacements:
+        newsColumns: # max 4 columns
+            1:  1 # Economy
+            2:  7 # Science
+            3:  4 # Markets
+            4:  2 # Politics

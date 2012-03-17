@@ -1,0 +1,10 @@
+login:
+  is_secure: off
+  require_ssl: true
+
+resetPassword:
+  is_secure: off
+
+easyLogin:
+  is_secure: off
+  

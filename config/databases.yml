@@ -1,0 +1,11 @@
+all: 
+    propel: 
+        class:   sfPropelDatabase 
+        param: 
+            phptype: oracle
+            host: 
+            dsn: oci:dbname=EMTBAG
+            database: 
+            username: geek 
+            password: geeker
+            encoding: utf8

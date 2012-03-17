@@ -1,0 +1,11 @@
+fields:
+    group_name:
+        required:
+            msg: 'Please enter a group name.'
+        sfPropelUniqueValidator:
+            class:  Group
+            column:  NAME
+            unique_error:  'A group with the same name already exists. Please provide a different group name.'
+    group_type_id:
+        required:
+            msg: 'Please select a group type.'

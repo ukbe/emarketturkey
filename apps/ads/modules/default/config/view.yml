@@ -1,0 +1,8 @@
+errorOccuredSuccess:
+    has_layout: off
+    
+advertiseSuccess:
+  metas:
+    title:        'Advertise on eMarketTurkey'
+  layout:  layoutAdvertise
+    

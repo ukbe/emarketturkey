@@ -1,0 +1,371 @@
+@CHARSET "UTF-8";
+
+body {
+    xbackground:#303030;
+    font-size:62.5%;
+    font-family:"Verdana",sans-serif;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a, a:link, a:visited {outline:0;text-align:left;}
+
+#map_container {
+    display:block;position:relative;
+    width:700px;
+    height:390px;
+    padding:3px;
+    text-align:left;
+    margin:0 auto;
+    border:1px solid #ddd;
+    background:#fafafa;
+}
+
+#map_canvas {
+    display:block;float:left;
+    width:550px;height:345px;
+}
+
+#map_canvas_screen,
+#map_canvas_screen_bg { 
+    display:none;position:absolute;left:2px;top:2px;z-index:2;
+    border:5px solid white;padding:10px;
+    width:520px;height:315px;
+}
+#map_canvas_screen_bg { background:#000;opacity:.45;z-index:1; }
+
+div.my_geomap embed
+{
+    display:block;float:left;
+    width:550px;height:345px;
+    border-right:0;
+}
+
+#butonLists {
+    display:block;float:left;
+    width:546px;height:40px;
+    margin:1px 1px 2px 4px;padding:0;
+    border-right:1px dotted #ddd;
+    xbackground:black;
+    list-style:none;
+}
+#butonLists li {
+    display:block;float:left;
+    width:150px;height:27px;
+    margin:3px 3px 0 0;padding:6px;
+}
+#butonLists li.uzun {
+    width:200px;height:27px;
+    xbackground:orangered;
+}
+
+#linkLists {
+    display:block;float:left;
+    width:145px;height:40px;
+    margin:2px 1px;padding:0;
+    xbackground:black;
+    list-style:none;
+}
+#linkLists li {
+    display:block;float:left;
+    width:86px;height:27px;
+    margin:3px 0 0 4px;padding:5px;
+}
+#linkLists li._oib {padding:0;width:36px;margin-left:8px;}
+#linkLists li._oib a span {
+	display:block;width:36px;height:36px;margin:0;padding:0;overflow:hidden;text-indent:-900px;background:url(/images/layout/oib_logo_40x40.png) center no-repeat;
+}
+
+#multi_box {
+    display:block;float:right;position:relative;
+    width:149px;height: 345px;
+    border-left:1px solid #ddd;
+    text-align:left;
+    background:url(BlankMap.png) -340px -180px no-repeat;
+}
+
+#multi_box button {
+    position:absolute;bottom:1px;left:5px;
+    display:block;
+    width:142px;height:58px;
+    padding:0 0 0 52px;
+    border:0;
+    color:#ecc;
+    font:normal 300 11px verdana;text-align:left;text-decoration:none;
+    background:url(../submit-cities-geomap.png);cursor:pointer;
+}
+#multi_box button:hover {
+    color:#fee;
+    text-decoration:underline;
+}
+#multi_box ul {
+    display:block;
+    height:200px;overflow:auto;overflow-y:auto;overflow-x:hidden;
+    margin:0;padding-left:20px;
+    padding-bottom:10px;
+    list-style-type:square;
+    xbackground:#ffa;
+}
+#multi_box ul li {
+    margin-left:3px;
+    width:122px;
+    color:#666;
+    xbackground-color:steelblue;
+    text-decoration:none;
+    cursor:pointer;
+    list-style-image:url("../plus.png");
+}
+#multi_box ul li:hover {
+    color:#999;
+    list-style-image:url("../minus.png");
+}
+#multi_box h2 {
+    display:block;
+    width:109px;height:25px;
+    margin:6px auto -6px;padding:1px 13px;
+    text-indent:-900px;
+    overflow:hidden;
+    background:url(../emt-ik-miniHeader.png) no-repeat;
+}
+#multi_box p {
+    margin:0 auto 1em 36px;
+    font-size:9px;
+}
+#multi_box em.hidden {
+    display:none;
+}
+#multi_box ul li em {
+    font-style:normal;
+    display:block;float:left;width:95px;overflow:hidden;
+    xbackground:steelblue;
+}
+#multi_box ul li:hover em {
+    text-decoration:line-through;
+}
+#multi_box ul li span,
+#multi_box ul li:hover span {
+    display:block;float:left;width:18px;
+    padding:1px;margin-right:7px;
+    background-color:#a22;color:#fee;
+    font-size:70%;font-family:tahoma;
+    text-align:center;text-decoration:none;
+}
+#multi_box ul li:hover span {
+    background-color:gray;
+    color:white;
+}
+
+#multi_box strong {
+    display:block;
+    width:80%;
+    margin:0 auto;padding:5px 0;
+    border-top:1px solid #ddd;
+    text-align:center;
+    font-size:9px;
+}
+#lower_box {
+    display:block;float:left;position:relative;
+    width:700px;height:44px;
+    border-top:1px solid #ddd;
+}
+.selectBox-dropdown, #ulkeler, #bolgeler {
+    width:200px;
+    float:left;margin:4px 8px;width:130px;
+}
+fieldset ul {
+    margin:0;
+    padding:0;
+    display:block;
+    background:red;
+    list-style:none;
+}
+fieldset ul li {
+    display:block;
+    float:left;
+    padding:7px 16px 3px 14px;
+    xbackground:blue;
+    text-align:left;
+}
+
+#lower_box label {
+    display:none;
+    font:normal 300 10px verdana;
+}
+
+#canvas_button
+{
+    display:none;position:absolute;bottom:17px;left:377px;;
+    width:179px;height:98px;cursor:pointer;
+    background:url(button-yuksek-kirmizi.png);
+}
+#canvas_button span {
+    display:block;width:60px;
+    margin:23px 0 0 66px;
+    color:#edd;
+    font:normal 300 14px arial;text-align:left;
+    xbackground:red;
+}
+#canvas_button:hover span {
+    text-decoration:underline;
+}
+
+
+/*
+
+fg
+
+*/
+
+
+/* Styles for jQuery menu widget
+Author: Maggie Wachs, maggie@filamentgroup.com
+Date:       September 2008
+*/
+
+
+            body { font-size:67%; }
+            #menuLog { position:absolute;top:40px;left:0;color:#252525;font-size:14px;font-family:monospace;text-align:left; }
+            .hidden { position:absolute; top:0; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+            .fg-button { width:110px;clear:left; margin:0 4px 40px 0; padding: .4em 10px; text-decoration:none !important; cursor:pointer; position: relative; text-align:left; zoom: 1; }
+
+            #_regionMaps { width:160px;xbackground:#333;xborder-color:#222;xcolor:#eee;}
+
+            #_neighborNames {background:#fff;border-color:#ccc;color:#459e00;}
+            #_neighborNames span.ui-icon {color:#459e00;}
+            #_neighborNames.fg-button-off {background:#fff;border-color:#ddd;color:#fff;xdisplay:none;}
+            #_cityNames.fg-button-off       {background:#fff;border-color:#ddd;color:#fff;xdisplay:none;}
+            #_cityNames em,
+            #_neighborNames em {font-style:normal;font-weight:300;}
+            #_cityNames em span,
+            #_neighborNames em span {float:right;}
+
+            #_helpMenu { width:84px;margin-left:3px;border-color:royalblue;background:skyblue;color:#f0f0ff;text-align:left;}
+            #_helpMenu span {padding-right:2px;}
+            #_helpMenu:active { color:#fff;border-color:lightskyblue; }
+
+            a._selected, a._selected:visited, a._selected:hover { background:#a22;color:#fdd;border-color:#a22; }
+
+            .fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
+            a.fg-button { float:left;  }
+            button.fg-button { width:auto; overflow:visible; } /* removes extra button width in IE */
+
+            .fg-button-icon-left { padding-left: 2.1em; }
+            .fg-button-icon-right { padding-right: 2.1em; }
+            .fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
+            .fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
+            .fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }     /* solo icon buttons must have block properties for the text-indent to work */ 
+
+            .fg-button.ui-state-loading .ui-icon { background: url(spinner_bar.gif) no-repeat 0 0; }
+
+
+/* REQUIRED STYLES - the menus will only render correctly with these rules */   
+
+.fg-menu-container { position: absolute; top:0; left:-999px; padding: .4em;  overflow: hidden;height:300px;overflow-y:auto }
+.fg-menu-container.fg-menu-flyout { overflow: visible; }
+
+.fg-menu, .fg-menu ul { list-style-type:none; padding: 0; margin:0; }
+
+.fg-menu { position:relative; }
+.fg-menu-flyout .fg-menu { position:static; }
+
+.fg-menu ul { position:absolute; top:0; }
+.fg-menu ul ul { top:-1px; }
+
+.fg-menu-container.fg-menu-ipod .fg-menu-content, 
+.fg-menu-container.fg-menu-ipod .fg-menu-content ul { background: none !important; }
+
+.fg-menu.fg-menu-scroll,
+.fg-menu ul.fg-menu-scroll { overflow: scroll;  overflow-x: hidden; }
+
+.fg-menu li { clear:both; float:left; width:100%; margin: 0; padding:0; border: 0; }    
+.fg-menu li li { font-size:1em; } /* inner li font size must be reset so that they don't blow up */
+
+.fg-menu-flyout ul ul { padding: .4em; }
+.fg-menu-flyout li { position:relative; }
+
+.fg-menu-scroll { overflow: scroll; overflow-x: hidden; }
+
+.fg-menu-breadcrumb { margin: 0; padding: 0; }
+
+.fg-menu-footer {  margin-top: .4em; padding: .4em; }
+.fg-menu-header {  margin-bottom: .4em; padding: .4em; }
+
+.fg-menu-breadcrumb li { float: left; list-style: none; margin: 0; padding: 0 .2em; font-size: .9em; opacity: .7; }
+.fg-menu-breadcrumb li.fg-menu-prev-list,
+.fg-menu-breadcrumb li.fg-menu-current-crumb { clear: left; float: none; opacity: 1; }
+.fg-menu-breadcrumb li.fg-menu-current-crumb { padding-top: .2em; }
+
+.fg-menu-breadcrumb a, 
+.fg-menu-breadcrumb span { float: left; }
+
+.fg-menu-footer a:link,
+.fg-menu-footer a:visited { float:left; width:100%; text-decoration: none; }
+.fg-menu-footer a:hover,
+.fg-menu-footer a:active {  }
+
+.fg-menu-footer a span { float:left; cursor: pointer; }
+
+.fg-menu-breadcrumb .fg-menu-prev-list a:link,
+.fg-menu-breadcrumb .fg-menu-prev-list a:visited,
+.fg-menu-breadcrumb .fg-menu-prev-list a:hover,
+.fg-menu-breadcrumb .fg-menu-prev-list a:active { background-image: none; text-decoration:none; }
+    
+.fg-menu-breadcrumb .fg-menu-prev-list a { float: left; padding-right: .4em; }
+.fg-menu-breadcrumb .fg-menu-prev-list a .ui-icon { float: left; }
+    
+.fg-menu-breadcrumb .fg-menu-current-crumb a:link,
+.fg-menu-breadcrumb .fg-menu-current-crumb a:visited,
+.fg-menu-breadcrumb .fg-menu-current-crumb a:hover,
+.fg-menu-breadcrumb .fg-menu-current-crumb a:active { display:block; background-image:none; font-size:1.3em; text-decoration:none; }
+
+
+
+/* REQUIRED LINK STYLES: links are "display:block" by default; if the menu options are split into 
+    selectable node links and 'next' links, the script floats the node links left and floats the 'next' links to the right  */
+
+.fg-menu a:link,
+.fg-menu a:visited,
+.fg-menu a:hover,
+.fg-menu a:active { float:left; width:92%; padding:.3em 3%; text-decoration:none; outline: 0 !important; }
+
+.fg-menu a { border: 1px dashed transparent; }
+
+.fg-menu a.ui-state-default:link,
+.fg-menu a.ui-state-default:visited,
+.fg-menu a.ui-state-default:hover,
+.fg-menu a.ui-state-default:active,
+.fg-menu a.ui-state-hover:link,
+.fg-menu a.ui-state-hover:visited,
+.fg-menu a.ui-state-hover:hover,
+.fg-menu a.ui-state-hover:active,
+ .fg-menu a.ui-state-active:link,
+ .fg-menu a.ui-state-active:visited,
+ .fg-menu a.ui-state-active:hover,
+.fg-menu a.ui-state-active:active { border-style: solid; font-weight: normal; }
+
+.fg-menu a span { display:block; cursor:pointer; }
+
+
+ /* SUGGESTED STYLES - for use with jQuery UI Themeroller CSS */    
+ 
+.fg-menu-indicator span { float:left; }
+.fg-menu-indicator span.ui-icon { float:right; }
+
+.fg-menu-content.ui-widget-content, 
+.fg-menu-content ul.ui-widget-content { border:0; }
+
+
+/* ICONS AND DIVIDERS */
+
+.fg-menu.fg-menu-has-icons a:link,
+.fg-menu.fg-menu-has-icons a:visited,
+.fg-menu.fg-menu-has-icons a:hover,
+.fg-menu.fg-menu-has-icons a:active { padding-left:20px; }
+
+.fg-menu .horizontal-divider hr, .fg-menu .horizontal-divider span { padding:0; margin:5px .6em; }
+.fg-menu .horizontal-divider hr { border:0; height:1px; }
+.fg-menu .horizontal-divider span { font-size:.9em; text-transform: uppercase; padding-left:.2em; }
+

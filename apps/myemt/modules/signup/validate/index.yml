@@ -1,0 +1,46 @@
+fields:
+    name:
+        required:
+            msg: 'Enter your name.'
+    lastname:
+        required:
+            msg: 'Enter your lastname.'
+    gender:
+        required:
+            msg: 'Select gender.'
+    bd_day:
+        required:
+            msg: 'Select day of your birthdate.'
+    bd_month:
+        required:
+            msg: 'Select month of your birthdate.'
+    bd_year:
+        required:
+            msg: 'Select year of your birthdate.'
+    email_first:
+        required:
+            msg: 'Enter your email address.'
+        sfEmailValidator:
+            strict:      true
+            email_error: 'Correct your email address.'
+        sfStringValidator:
+            max: 50
+        sfPropelUniqueValidator:
+            class:  Login
+            column:  EMAIL
+            unique_error:  'This email address is already registered.'
+        sfRegexValidator:
+            match:  true
+            match_error:  'Correct your email address.'
+            pattern: '/^(?!www\.)[a-z0-9\.@\-_]+$/i'
+    email_repeat:
+        required:
+            msg: 'Please enter your email address in the (repeat) field.'
+        sfCompareValidator:
+            check:         email_first
+            compare_error: 'Please enter your email address in the (repeat) field.'
+    captcha:
+        required:
+            msg: 'Enter the security code shown on the picture.'
+        sfCryptographpValidator:
+            code_error: 'Incorrect security code! Please try again.'

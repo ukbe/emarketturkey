@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="tr" datatype="plaintext" original="messages" date="2010-12-24T15:11:40Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>About Us</source>
+        <target>Hakkımızda</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>For Suppliers</source>
+        <target>Firmalar İçin</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>For Individuals</source>
+        <target>Bireyler İçin</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Privacy Policy</source>
+        <target>Gizlilik Politikası</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Terms of use</source>
+        <target>Kullanım Koşulları</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>All rights reserved</source>
+        <target>Tüm Hakları Saklıdır</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Companies</source>
+        <target>Firmalar</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Products</source>
+        <target>Ürünler</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Selling Leads</source>
+        <target>Satım İlanları</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Buying Leads</source>
+        <target>Alım İlanları</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Tools</source>
+        <target>Araçlar</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Home</source>
+        <target>Ana Sayfa</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Sign Up</source>
+        <target>Üye Ol</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Human Resources</source>
+        <target>İnsan Kaynakları</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Academy</source>
+        <target>Akademi</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Community</source>
+        <target>Topluluk</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Translation</source>
+        <target>Tercüme</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>An error occured while handling your request.&lt;br /&gt;
+                                  We are working on these obstacles to make life easier for you.&lt;br /&gt;
+                                  We are sorry for the inconvenience which you have experienced.</source>
+        <target>Talebinizi yerine getirirken bir hata oluştu.&lt;br /&gt;
+                    Hayatı sizin için daha iyi yapmak amacıyla bu tip sorunları ortadan kaldırmak için çalışıyoruz.&lt;br /&gt;
+                    Ortaya çıkan sorun için özür dileriz.</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Messages</source>
+        <target>Mesajlar</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Settings</source>
+        <target>Ayarlar</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>My Network</source>
+        <target>Ağım</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Tasks</source>
+        <target>Görevler</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Forgot Password?</source>
+        <target>Şifremi Unuttum!</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Articles</source>
+        <target>Makaleler</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>News</source>
+        <target>Haberler</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Country Profiles</source>
+        <target>Ülke Profilleri</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Surveys</source>
+        <target>Anketler</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Researches</source>
+        <target>Araştırmalar</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>B2B</source>
+        <target>B2B</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Oops! We couldn't find requested page!</source>
+        <target>Oops! Aradığınız sayfa bulunamadı!</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Please make sure your typed the correct url in the address bar.</source>
+        <target>Lütfen adress çubuğuna sayfa adresini doğru yazdığınızdan emin olun.</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Content which was included in the page you requested might be outdated and removed.</source>
+        <target>Erişmeye çalıştığınız sayfadaki içerik eskimiş ve yayından kaldırılmış olabilir.</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>Welcome to eMarketTurkey Academy Portal</source>
+        <target>eMarketTurkey Akademi Platformuna Hoşgeldiniz</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>This portal is currently in development process. And will be up and running soon.</source>
+        <target>Bu portal henüz geliştirme sürecinde. Fakat, çok yakında hizmete girecektir.</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>In this portal you will be able to find articles on variety of subject like ecomonics, global trade, import&amp;export information. We will also provide results of researches about different topics.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Check back again and keep up with the good stuff.</source>
+        <target>Daha sonra tekrar uğrayın ve güzelliklerinden faydalanın.</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>eMarketTurkey Team</source>
+        <target>eMarketTurkey Ekibi</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Logout</source>
+        <target>Oturumu Kapat</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Remember Me</source>
+        <target>Beni Hatırla</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>Login</source>
+        <target>Oturum Aç</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Türkçe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>English</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>more</source>
+        <target>devamı</target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>Permanent link to %1</source>
+        <target>%1 için kalıcı bağlantı adresi</target>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Articles by %1</source>
+        <target>%1 Makaleleri</target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Read Full Article by %1</source>
+        <target>%1 Makalesinin Tamamını Oku</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Comments (%1)</source>
+        <target>Yorumlar (%1)</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Jobs&lt;b&gt;&lt;/b&gt;</source>
+        <target>Kariyer</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>My Profile</source>
+        <target>Profilim</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Edit Profile</source>
+        <target>Profili Düzenle</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>My Career</source>
+        <target>Kariyerim</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Job Search</source>
+        <target>İş Arama</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>People</source>
+        <target>Kişiler</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Groups</source>
+        <target>Gruplar</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>%1art by %2aut</source>
+        <target>%2aut makalesi %1art</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>View All Articles</source>
+        <target>Tüm Makaleler</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>All %1 Articles</source>
+        <target>Tüm %1 Makaleleri</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Other %1 Articles</source>
+        <target>Diğer %1 Makaleleri</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Read Full News Story by %1</source>
+        <target>%1 haberinin devamı</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>%1news by %2aut</source>
+        <target>%2aut haberi %1news</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>News by %1</source>
+        <target>%1 kaynağından haberler</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>View All News</source>
+        <target>Tüm Haberler</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>All %1 News</source>
+        <target>Tüm %1 Haberleri</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Academy | eMarketTurkey</source>
+        <target>Akademi | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Academy Home</source>
+        <target>Akademi Giriş</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Language</source>
+        <target>Dil</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Account</source>
+        <target>Hesap</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Account Settings</source>
+        <target>Hesap Ayarları</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Privacy Settings</source>
+        <target>Gizlilik Ayarları</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Advanced Search</source>
+        <target>Detaylı Arama</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Contacts</source>
+        <target>Kişiler</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Notifications</source>
+        <target>Bildirimler</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Verification Required</source>
+        <target>Doğrulama Gerekiyor</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

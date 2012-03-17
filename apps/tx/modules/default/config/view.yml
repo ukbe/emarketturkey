@@ -1,0 +1,19 @@
+errorOccuredSuccess:
+    has_layout: off
+
+companyEditSuccess:
+    stylesheets:    [master-1.0.css, boxmodel-admin.css]
+    javascripts:  [jquery.customCheckbox.js, emt.langform-1.0.js, emt.hierarchyselector-1.0.js]
+
+productEditSuccess:
+    stylesheets:    [master-1.0.css, boxmodel-admin.css]
+    javascripts:  [jquery.customCheckbox.js, emt.langform-1.0.js, emt.hierarchyselector-1.0.js]
+
+jobsEditSuccess:
+    stylesheets:    [master-1.0.css, boxmodel-admin.css]
+    javascripts:  [jquery.customCheckbox.js, jquery.switchButton.js, emt.langform-1.0.js, emt.hierarchyselector-1.0.js]
+
+jobsSuccess:
+    stylesheets:    [master-1.0.css, boxmodel-admin.css]
+    javascripts:  [jquery.customCheckbox.js, jquery.switchButton.js, emt.langform-1.0.js, emt.hierarchyselector-1.0.js]
+    

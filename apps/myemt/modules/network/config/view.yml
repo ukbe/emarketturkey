@@ -1,0 +1,17 @@
+all:
+    metas:
+        title: "My Network | eMarketTurkey"
+    layout: layoutTripleColumn
+addSuccess:
+    metas:
+        title: "Add Contact | eMarketTurkey"
+    has_layout: off
+addedSuccess:
+    metas:
+        title: "Add Contact | eMarketTurkey"
+requestsSuccess:
+    metas:
+        title: "Network Requests | eMarketTurkey"
+    layout: layoutTripleColumn
+searchSuccess:
+    has_layout:  off        

@@ -1,0 +1,8 @@
+fields:
+    article_file:
+      file:       True
+      sfFileValidator:
+        mime_types: [@ms-docs, @open-docs, @other-docs, @archives, @web_images]
+        mime_types_error: Only document, archive or image file types are allowed
+        max_size:         5120000
+        max_size_error:   Max allowed size is 5MB    

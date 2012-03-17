@@ -1,0 +1,5 @@
+fields:
+    photo:
+        file: true
+        required:
+            msg: 'Please select a file to upload'

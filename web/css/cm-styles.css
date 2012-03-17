@@ -1,0 +1,399 @@
+@CHARSET "UTF-8";
+
+#pymk.data-table td:first-child { width: 60px; }
+#pymk.data-table td:last-child { width: 120px; }
+
+/*----------------------------------------------*/
+.cmUser ._comPro {
+ display:block;
+ width:761px;
+ min-height: 80px;
+ float: right;
+ z-index: 0;
+ position: relative;
+ margin:-20px -3px 20px -196px;
+ padding: 10px 13px 10px 186px;
+ border-bottom: solid 1px #e5e5e5; 
+ background-color: #f8f8f8;
+}
+
+.cmGroup ._comPro {
+ display:block;
+ width:761px;
+ min-height: 80px;
+ float: right;
+ z-index: 0;
+ position: relative;
+ margin:-20px -3px 20px -196px;
+ padding: 10px 13px 10px 186px;
+ border-bottom: solid 1px #e5e5e5; 
+ background-color: #f8f8f8;
+}
+
+.photoBox {
+ width: 180px;
+ min-height: 90px;
+ text-align: right;
+ float: left;
+ margin-bottom: 10px;
+}
+    
+.cmGroup .photoBox {
+ text-align: right;
+ float: left;
+ margin-bottom: 30px;
+}
+    
+.photoBox img {
+ float: right;
+ display:block;
+ background-color:#fff;
+ padding:6px; margin-top: 0px;
+ border-radius:3px;
+ border:1px solid #e0e0e0;
+ max-width: 150px;
+ min-height: 64px;
+}
+
+.cmUser ._comPro dl,
+.cmGroup ._comPro dl {
+ position:relative;
+ display:block;
+}
+.cmUser ._comPro dl,
+.cmGroup ._comPro dl {margin-left: 0px;}
+
+.cmUser ._comPro > ul,
+.cmGroup ._comPro > ul {width:530px;}
+
+.cmUser ._comPro dt,
+.cmGroup ._comPro dt {
+ margin:10px 10px 0px 16px;
+ padding:0px;
+ border:0px solid #d0d0d0;
+ position:relative;
+ z-index:12;
+}
+
+.cmUser ._comPro dd,
+.cmGroup ._comPro dd {
+ display:block;
+ padding:6px;
+ margin:0px 10px;
+ border:none;
+ font-family: 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif;
+ font-size: 12px;
+ 
+}
+
+.cmUser ._comPro > ul,
+.cmGroup ._comPro > ul {
+ float:left;
+ display:block;
+ margin:8px 0 0 16px; padding:0;
+ list-style:none;
+ width: auto;
+}
+.cmUser ._comPro > ul li,
+.cmGroup ._comPro > ul li {
+ float:left;
+ color:silver;
+ padding-right:16px;
+ background:url(/images/layout/icon/sep.dot.png) right 4px no-repeat;
+}
+
+.cmUser ._comPro > ul li a:hover,
+.cmGroup ._comPro > ul li a:hover {text-decoration:underline;}
+
+.cmUser ._comPro > ul li a,
+.cmGroup ._comPro > ul li a {display:block; text-align:center; color:#666; padding:0 .50em; font-size: 11px; }
+.cmUser ._comPro > ul li:first-child a,
+.cmGroup ._comPro > ul li:first-child a {padding-left:0px;}
+.cmUser ._comPro > ul li a:hover,
+.cmGroup ._comPro > ul li a:hover {text-decoration:none; color:#08f; }
+.cmUser ._comPro > ul li a span,
+.cmGroup ._comPro > ul li a span {
+ display:block;
+ margin:2px auto 0px;
+ padding:1px 3px;
+ font: 300 9px tahoma;
+ text-indent: 1px;
+ text-align:center;
+ word-spacing:.50em;
+ border: 1px solid #e0e0e0;
+ border-radius:3px 3px 3px 3px;
+ background-color: #f0f0f0;
+}
+.cmUser ._comPro > ul li a:hover span,
+.cmGroup ._comPro > ul li a:hover span {background-color:#08f; border-color:#3482d0; color:#fff; }
+
+.cmUser ._comPro > ul li:last-child,
+.cmGroup ._comPro > ul li:last-child {background:none;}
+
+/*----------------------------------------------*/
+
+._noBordered h3
+{
+    border: solid 1px #ddd;
+    background-color: #eee;
+    font-family: 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+._noBordered h3 a
+{
+    font-family: 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+}
+._noBordered div
+{
+    width: 170px;
+    padding: 5px;
+    border: none;
+}
+.box_180.profile-photos div
+{
+    width: 180px;
+    padding: 5px 0px 0px;
+}
+.box_180.profile-photos div a,
+.box_180.profile-photos div img
+{
+    width: 86px;
+    max-width: 86px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    display: block;
+}
+.box_180.profile-photos div a
+{
+    margin: 0px 4px 4px 0px;
+    border: solid 1px #eee;
+}
+
+.box_180.profile-photos div a:nth-child(even)
+{
+    margin: 0px 0px 4px;
+}
+
+.box_180 ._table dt,
+.box_180 ._table dd
+{
+    margin-top: 5px;
+}
+.box_180 ._table dt img
+{
+    max-width: 30px;
+}
+.box_180 ._table dt a
+{
+    display: inline-block;
+    padding: 0px;
+    margin: 3px 0px;
+}
+.box_180 ._table dd, .box_180 ._table a
+{
+    line-height: 14px;
+}
+
+/*------------ Derived From HR --------------*/
+
+
+#cv-preview .includerbox
+{
+    float: left;
+    width: 559px;
+    padding: 5px;
+    margin-left: 0px;
+    margin-bottom: 25px;
+}
+
+.cvRecordBlock
+{
+    border-bottom : dotted 1px #e9e9e9;
+    margin-bottom: 5px;
+    padding: 0px;
+    position: relative;
+}
+.cvRecordBlock > div
+{
+    margin: 5px 0px 5px;
+    padding: 11px;
+}
+#editrecord.cvRecordBlock > div
+{
+    margin: 5px 0px 5px;
+    padding: 1px;
+}
+.cvRecordBlock > div dl._table
+{
+    width: 540px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.cvRecordBlock > div dl._table dd
+{
+    width: 385px;
+}
+.cvRecordBlock:hover > div
+{
+    border: solid 1px #e5ebf7;
+    padding: 10px;
+    background-color: #f5f7fb;
+}
+#editrecord.cvRecordBlock:hover > div
+{
+    padding: 0px;
+}
+.cvRecordBlock h5
+{
+    font: bold 15px 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif;
+    background: transparent;
+    padding: 0px;
+    margin: 0px 0px 6px;
+}
+.cvRecordBlock h5 em
+{
+    font-weight: normal;
+    margin-left: 10px;
+    font-style: normal;
+    color: #777;
+}
+.cvRecordBlock .actions
+{
+    display: none;
+    position: absolute;
+    right: 10px; top: 10px;
+}
+.cvRecordBlock .actions a
+{
+    height: 12px;
+    line-height: 12px;
+    display: inline-block;
+    background: url(/images/layout/button/action-button-bg.png) top repeat-x;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border: solid 1px #888;
+    border-top-color: #bbb;
+    border-left-color: #bbb; 
+    font: 11px tahoma;
+    font-weight: normal;
+    color: #333;
+    padding: 4px 6px 6px;
+}
+.cvRecordBlock .actions a:hover
+{
+    background-position: bottom;
+    border-color: #aaa;
+    border-bottom-color: #777;
+    border-right-color: #777;
+}
+.cvRecordBlock:hover .actions,
+.cvRecordBlock.confirm-removal .actions 
+{
+    display: block;
+}
+.cvRecordBlock p 
+{
+    font: 11px tahoma;
+    color: #333;
+    padding: 5px 0px;
+    margin: 0px; 
+}
+.cvRecordBlock p.flash 
+{
+    font-size: 14px;
+    font-family: arial;
+    color: #465271; 
+}
+.cvRecordBlock .bubble 
+{
+    margin: 4px -5px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    font: 11px tahoma;
+}
+.cvRecordBlock:hover .bubble 
+{
+    background-color: #ebeff7;
+}
+.cvRecordBlock .level-low,
+.cvRecordBlock .level-fair,
+.cvRecordBlock .level-fluent,
+.cvRecordBlock .level-unknown
+{
+    display: inline-block;
+    margin: 0px 20px 0px 0px;
+    min-width: 100px;
+}
+.cvRecordBlock .level-low .level-bar,
+.cvRecordBlock .level-fair .level-bar,
+.cvRecordBlock .level-fluent .level-bar,
+.cvRecordBlock .level-unknown .level-bar
+{
+    height: 18px;
+    margin-top: 10px;
+    border: solid 1px #aaa;
+    width: 100%;
+    padding: 1px;
+}
+.cvRecordBlock .level-low .level-bar div span,
+.cvRecordBlock .level-fair .level-bar div span,
+.cvRecordBlock .level-fluent .level-bar div span,
+.cvRecordBlock .level-unknown .level-bar div span
+{
+    line-height: 14px;
+    font: 11px arial;
+    color: #fff;
+    padding: 2px 5px;
+    display: block;
+}
+/*
+yeşil tonlar
+.cvRecordBlock .level-low .level-bar div
+{
+    width: 33%;
+    background-color: #9ddda3;
+}
+.cvRecordBlock .level-fair .level-bar div
+{
+    width: 66%;
+    background-color: #6dd577;
+}
+.cvRecordBlock .level-fluent .level-bar div
+{
+    width: 100%;
+    background-color: #037F0F;
+}
+*/
+.cvRecordBlock .level-low .level-bar div
+{
+    width: 33%;
+    background-color: #9bc2dd;
+}
+.cvRecordBlock .level-fair .level-bar div
+{
+    width: 66%;
+    background-color: #5da0cf;
+}
+.cvRecordBlock .level-fluent .level-bar div
+{
+    width: 100%;
+    background-color: #3776a2;
+}
+.cvRecordBlock .level-unknown .level-bar div span
+{
+    color: #666;
+}
+
+/*------------ End Derived ------------------*/

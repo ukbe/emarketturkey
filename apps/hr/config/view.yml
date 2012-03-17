@@ -1,0 +1,18 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        'Jobs | eMarketTurkey'
+    description:  'eMarketTurkey Jobs Platform'
+    keywords:     'jobs, cv, resumes, job search, bulletin job application, human resources, hr'
+    #language:     en
+    robots:       index, follow
+    base:         'http://hr.emarketturkey.com'
+
+  stylesheets:    [master-1.0.css, hr-styles.css]
+
+  javascripts:    [jquery-1.7.1.min.js, jquery-ui-1.8.13.core.min.js, jquery.tools-1.2.5.min.js, emt-dynabox-1.0.js, emt-toolbar-init.js]
+
+  has_layout:     on
+  layout:         layoutBoxModel

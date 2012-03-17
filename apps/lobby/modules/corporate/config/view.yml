@@ -1,0 +1,31 @@
+default:
+    layout: layoutDoubleColumn
+    
+aboutusSuccess:
+    metas:
+        title:  'About Us | eMarketTurkey'
+
+faqSuccess:
+    metas:
+        title:  'Frequently Asked Questions | eMarketTurkey'
+
+forIndividualsSuccess:
+    metas:
+        title:  'For Individuals | eMarketTurkey'
+
+forSuppliersSuccess:
+    metas:
+        title:  'For Suppliers | eMarketTurkey'
+
+contactusSuccess:
+    metas:
+        title:  'Contact Us | eMarketTurkey'
+
+privacySuccess:
+    metas:
+        title:  'Privacy Policy | eMarketTurkey'
+
+termsSuccess:
+    metas:
+        title:  'Terms Of Use | eMarketTurkey'
+    

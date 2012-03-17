@@ -1,0 +1,29 @@
+all:
+
+postSuccess:
+    metas:
+        title: 'Post Lead | eMarketTurkey'
+    javascripts:  [emt.langform-1.0.js, emt.hierarchyselector-1.0.js, jquery.customCheckbox.js]
+    stylesheets:  [jquery-tools/dateinput.css]
+
+listSuccess:
+    metas:
+        title: 'Leads | eMarketTurkey'
+    javascripts:  []
+
+manageSuccess:
+    metas:
+        title: 'Manage Leads | eMarketTurkey'
+    javascripts:  []
+
+toggleActivateSuccess:
+    has_layout:  off
+
+productCategoriesSuccess:
+    has_layout:  off
+
+productCategoriesError:
+    has_layout:  off
+
+retrieveSuccess:
+    has_layout:  off

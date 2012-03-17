@@ -1,0 +1,99 @@
+kb-article:
+  url: /:sf_culture/knowledgebase/posts/:stripped_title
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: kb, action: article }
+
+kb-category:
+  url: /:sf_culture/knowledgebase/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: kb, action: category }
+
+kb:
+  url: /:sf_culture/knowledgebase
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: kb, action: index }
+
+article-source:
+  url: /:sf_culture/article/by/:stripped_display_name
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: source }
+
+author-article:
+  url: /:sf_culture/authors/:stripped_display_name/posts/:stripped_title
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: authors, action: article }
+
+author:
+  url: /:sf_culture/authors/:stripped_display_name/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (profile|posts) } 
+  param: { module: authors }
+
+authors:
+  url: /:sf_culture/authors
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: authors, action: overview }
+
+articles-category:
+  url: /:sf_culture/articles/on/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: category }
+
+articles:
+  url: /:sf_culture/articles
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: index }
+
+news-home:
+  url: /:sf_culture/news
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: index }
+
+news-category:
+  url: /:sf_culture/news/on/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: category }
+
+news-source:
+  url: /:sf_culture/news/by/:stripped_display_name
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: source }
+
+news-feed:
+  url: /:sf_culture/news/:stripped_title/feed
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: feed }
+
+news:
+  url: /:sf_culture/news/:stripped_title
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: show }
+
+article-feed:
+  url: /:sf_culture/article/:stripped_title/feed
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: feed }
+
+article:
+  url: /:sf_culture/article/:stripped_title
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: show }
+
+# default rules
+homepage:
+  url: /:sf_culture
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: index }
+
+homepage1:
+  url: /
+  param: { module: default, action: index }
+
+default_index:
+  url: /:sf_culture/:module
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { action: index }
+
+default:
+  url: /:sf_culture/:module/:action/*
+  requirements: { sf_culture: (?:en|de|tr) } 
+  

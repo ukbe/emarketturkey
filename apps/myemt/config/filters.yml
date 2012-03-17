@@ -1,0 +1,14 @@
+rendering: ~
+security:
+  class:  emtBasicSecurityFilter
+
+# insert your own filters here
+emtRememberFilter:
+   class: emtRememberFilter
+
+sfSslRequirement:
+  class: sfSslRequirementFilter  
+
+cache:     ~
+common:    ~
+execution: ~

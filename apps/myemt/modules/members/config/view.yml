@@ -1,0 +1,20 @@
+all:
+    metas:
+        title: 'Group Members | eMarketTurkey'
+
+listSuccess:
+    metas:
+        title: 'List Members | eMarketTurkey'
+
+summarySuccess:
+    metas:
+        title: 'Members Summary | eMarketTurkey'
+
+memberSuccess:
+    metas:
+        title: 'Member Details | eMarketTurkey'
+
+sendMessageSuccess:
+    metas:
+        title: 'Send Message | eMarketTurkey'
+    has_layout: off

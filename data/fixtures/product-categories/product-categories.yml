@@ -1,0 +1,343 @@
+ProductCategory:
+    pc1:
+        parent_id:  0
+    pc2:
+        parent_id:  0
+    pc3:
+        parent_id:  0
+    pc4:
+        parent_id:  0
+    pc5:
+        parent_id:  0
+    pc6:
+        parent_id:  0
+    pc7:
+        parent_id:  0
+    pc8:
+        parent_id:  0
+    pc9:
+        parent_id:  0
+    pc10:
+        parent_id:  0
+    pc11:
+        parent_id:  0
+    pc12:
+        parent_id:  0
+    pc13:
+        parent_id:  0
+    pc14:
+        parent_id:  0
+    pc15:
+        parent_id:  0
+    pc16:
+        parent_id:  0
+    pc17:
+        parent_id:  0
+    pc18:
+        parent_id:  0
+    pc19:
+        parent_id:  0
+    pc20:
+        parent_id:  0
+    pc21:
+        parent_id:  0
+    pc22:
+        parent_id:  0
+    pc23:
+        parent_id:  0
+    pc24:
+        parent_id:  0
+    pc25:
+        parent_id:  0
+    pc26:
+        parent_id:  0
+    pc27:
+        parent_id:  0
+    pc28:
+        parent_id:  0
+    pc29:
+        parent_id:  0
+    pc30:
+        parent_id:  0
+    pc31:
+        parent_id:  0
+    pc32:
+        parent_id:  0
+    pc33:
+        parent_id:  0
+    pc34:
+        parent_id:  0
+
+ProductCategoryI18n:
+    1:
+        id:  pc1
+        culture:  'en'
+        name:  'Agriculture & Livestock'
+    2:
+        id:  pc2
+        culture:  'en'
+        name:  'Apparel & Accessories'
+    3:
+        id:  pc3
+        culture:  'en'
+        name:  'Automobile & Motorcycle Industry'
+    4:
+        id:  pc4
+        culture:  'en'
+        name:  'Banking & Finance & Insurance'
+    5:
+        id:  pc5
+        culture:  'en'
+        name:  'Business Services'
+    6:
+        id:  pc6
+        culture:  'en'
+        name:  'Chemicals & Pharmaceuticals'
+    7:
+        id:  pc7
+        culture:  'en'
+        name:  'Computer Hardware & Software'
+    8:
+        id:  pc8
+        culture:  'en'
+        name:  'Construction & Infrastructure & Public Works & Decoration'
+    9:
+        id:  pc9
+        culture:  'en'
+        name:  'Electrical & Electronics & Equipments & Other Components'
+    10:
+        id:  pc10
+        culture:  'en'
+        name:  'Energy Industry'
+    11:
+        id:  pc11
+        culture:  'en'
+        name:  'Food & Beverage & Related Products'
+    12:
+        id:  pc12
+        culture:  'en'
+        name:  'General Industrial Equipment & Mechanical Components'
+    13:
+        id:  pc13
+        culture:  'en'
+        name:  'Health & Medicine & Beauty'
+    14:
+        id:  pc14
+        culture:  'en'
+        name:  'Home & Garden Appliances'
+    15:
+        id:  pc15
+        culture:  'en'
+        name:  'Information Technology'
+    16:
+        id:  pc16
+        culture:  'en'
+        name:  'Luxury & Leisure Products & Gifts & Crafts & Fashion & Arts'
+    17:
+        id:  pc17
+        culture:  'en'
+        name:  'Manufacturing Industry & Processing Machinery'
+    18:
+        id:  pc18
+        culture:  'en'
+        name:  'Marketing & Advertising & Media'
+    19:
+        id:  pc19
+        culture:  'en'
+        name:  'Measurement & Analysis Instruments'
+    20:
+        id:  pc20
+        culture:  'en'
+        name:  'Metallurgy & Metalworking & Minerals'
+    21:
+        id:  pc21
+        culture:  'en'
+        name:  'Military & Defence Industry'
+    22:
+        id:  pc22
+        culture:  'en'
+        name:  'Office Supplies'
+    23:
+        id:  pc23
+        culture:  'en'
+        name:  'Paper & Cardboard & Packaging'
+    24:
+        id:  pc24
+        culture:  'en'
+        name:  'Printing & Publishing'
+    25:
+        id:  pc25
+        culture:  'en'
+        name:  'Rubber & Plastics & Semi-products'
+    26:
+        id:  pc26
+        culture:  'en'
+        name:  'Security & Protection'
+    27:
+        id:  pc27
+        culture:  'en'
+        name:  'Sports & Entertainment'
+    28:
+        id:  pc28
+        culture:  'en'
+        name:  'Telecommunications'
+    29:
+        id:  pc29
+        culture:  'en'
+        name:  'Textiles & Clothing & Leather'
+    30:
+        id:  pc30
+        culture:  'en'
+        name:  'Timepieces & Jewelry'
+    31:
+        id:  pc31
+        culture:  'en'
+        name:  'Toys'
+    32:
+        id:  pc32
+        culture:  'en'
+        name:  'Transportation & Vehicles'
+    33:
+        id:  pc33
+        culture:  'en'
+        name:  'Travel & Tourism & Leisure'
+    34:
+        id:  pc34
+        culture:  'en'
+        name:  'Wood & Furniture & Furnishings'
+    35:
+        id:  pc1
+        culture:  'tr'
+        name:  'Tarım ve Hayvancılık'
+    36:
+        id:  pc2
+        culture:  'tr'
+        name:  'Giyim & Aksesuarlar'
+    37:
+        id:  pc3
+        culture:  'tr'
+        name:  'Otomobil ve Motorsiklet Endüstrisi'
+    38:
+        id:  pc4
+        culture:  'tr'
+        name:  'Bankacılık & Finans & Sigortacılık'
+    39:
+        id:  pc5
+        culture:  'tr'
+        name:  'Kurumsal Hizmetler'
+    40:
+        id:  pc6
+        culture:  'tr'
+        name:  'Kimyasal Maddeler ve Eczacılık Ürünleri'
+    41:
+        id:  pc7
+        culture:  'tr'
+        name:  'Bilgisayar Donanım & Yazılım'
+    42:
+        id:  pc8
+        culture:  'tr'
+        name:  'İnşaat & Bayındırlık & Alt yapı & Dekorasyon işleri'
+    43:
+        id:  pc9
+        culture:  'tr'
+        name:  'Elektrikli ve Elektronik Aletler & Diğer Bileşenler'
+    44:
+        id:  pc10
+        culture:  'tr'
+        name:  'Enerji Endüstrisi'
+    45:
+        id:  pc11
+        culture:  'tr'
+        name:  'Gıda & içecek & ilgili ürünler'
+    46:
+        id:  pc12
+        culture:  'tr'
+        name:  'Genel Endüstriyel Ekipmanlar & Mekanik Bileşenler'
+    47:
+        id:  pc13
+        culture:  'tr'
+        name:  'Sağlık & İlaç & Güzellik'
+    48:
+        id:  pc14
+        culture:  'tr'
+        name:  'Ev & Bahçe Araç Gereçleri'
+    49:
+        id:  pc15
+        culture:  'tr'
+        name:  'Bilgi teknolojileri'
+    50:
+        id:  pc16
+        culture:  'tr'
+        name:  'Lüks ve Hobi Ürünleri & Hediye & Moda & Sanat & El sanatları'
+    51:
+        id:  pc17
+        culture:  'tr'
+        name:  'İmalat Endüstrisi ve Üretim Makineleri'
+    52:
+        id:  pc18
+        culture:  'tr'
+        name:  'Pazarlama & Reklam & Medya'
+    53:
+        id:  pc19
+        culture:  'tr'
+        name:  'Ölçüm ve Analiz Enstrümanları'
+    54:
+        id:  pc20
+        culture:  'tr'
+        name:  'Metalurji & Metal İşleme & Mineraller'
+    55:
+        id:  pc21
+        culture:  'tr'
+        name:  'Askeri ve Savunma Endüstrisi'
+    56:
+        id:  pc22
+        culture:  'tr'
+        name:  'Ofis Araçları & Gereçleri'
+    57:
+        id:  pc23
+        culture:  'tr'
+        name:  'Kağıt & Karton & Paketleme'
+    58:
+        id:  pc24
+        culture:  'tr'
+        name:  'Basım ve Yayıncılık'
+    59:
+        id:  pc25
+        culture:  'tr'
+        name:  'Kauçuk & Plastik & Yarı Mamüller'
+    60:
+        id:  pc26
+        culture:  'tr'
+        name:  'Güvenlik & Koruma'
+    61:
+        id:  pc27
+        culture:  'tr'
+        name:  'Spor & Eğlence'
+    62:
+        id:  pc28
+        culture:  'tr'
+        name:  'Telekomünikasyon'
+    63:
+        id:  pc29
+        culture:  'tr'
+        name:  'Tekstil & konfeksiyon & Deri'
+    64:
+        id:  pc30
+        culture:  'tr'
+        name:  'Saat & Mücevharat & Kuyumculuk'
+    65:
+        id:  pc31
+        culture:  'tr'
+        name:  'Oyuncaklar'
+    66:
+        id:  pc32
+        culture:  'tr'
+        name:  'Taşımacılık & Nakliye Ekipmanları ve Araçları'
+    67:
+        id:  pc33
+        culture:  'tr'
+        name:  'Seyahat & Turizm & Geziler'
+    68:
+        id:  pc34
+        culture:  'tr'
+        name:  'Ahşap & Mobilya & Mefruşat'

@@ -1,0 +1,10 @@
+all:
+    layout:  layoutTripleColumn
+
+manageSuccess:
+    metas:
+        title: 'Manage Group'
+
+logoSuccess:
+    metas:
+        title: 'Group Logo | eMarketTurkey'

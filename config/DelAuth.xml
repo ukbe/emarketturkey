@@ -1,0 +1,8 @@
+<windowslivelogin>
+  <appid>000000004C030718</appid>
+  <secret>USCf5yVubKSW7Z6dTp2xbgp9iHZYldii</secret>
+  <securityalgorithm>wsignin1.0</securityalgorithm>
+
+  <returnurl>http://my.emarketturkey.com/en/consent/handle</returnurl>
+  <policyurl>http://emarketturkey.com/corporate/privacy</policyurl>
+</windowslivelogin>

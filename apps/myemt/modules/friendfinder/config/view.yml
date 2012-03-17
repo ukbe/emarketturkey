@@ -1,0 +1,8 @@
+all:
+    metas:
+        title: "Friend Finder | eMarketTurkey"
+        
+resultsSuccess:
+    metas:
+        title: "Friend Finder Search Results | eMarketTurkey"
+        

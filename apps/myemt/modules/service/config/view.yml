@@ -1,0 +1,6 @@
+#all:
+#    layout:  layoutDoubleColumn
+
+packagesSuccess:
+    metas:
+        title: 'Select Package'

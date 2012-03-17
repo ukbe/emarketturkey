@@ -1,0 +1,978 @@
+.schoolrecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.schoolrecord h1,.schoolrecord h2,.schoolrecord h3,.schoolrecord h4 
+{
+    margin-left: 20px;
+}
+.schoolrecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.schoolrecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.schoolrecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.schoolrecord .leftblock .major
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.schoolrecord .leftblock .schoollevel
+{
+    font: 15px tahoma;
+    color: #666666;
+    margin-left: 10px;
+}
+.schoolrecord .leftblock .institutename
+{
+    clear: left;
+    font: 14px 'trebuchet ms';
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+}
+.schoolrecord .leftblock .datefrom
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/cv/calender-icon.png') no-repeat left top;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.schoolrecord .leftblock .dateto
+{
+    padding-left: 30px;
+    background: url('/images/layout/icon/cv/orange-arrow.png') no-repeat 0px 3px;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.schoolrecord .leftblock a.details
+{
+    font: bold 11px tahoma;
+    color: #FC930A;
+    margin: 2px 0px 0px 30px;
+    text-decoration: none;
+    background: url(/images/layout/icon/cv/circle-arrow-bottom.png) no-repeat right 0px;
+    padding: 0px;
+    padding-right: 20px;
+    height: 14px;
+    display: inline-block;
+    float: left;
+}
+.schoolrecord .leftblock div.details
+{
+    clear: left;
+    font: 11px tahoma;
+    color: #000000;
+    margin: 15px 0px 0px 10px;
+    padding: 10px;
+    background-color: #FFF2E1;
+    float: left;
+}
+.schoolrecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.schoolrecord .rightblock a
+{
+    margin: 4px;
+}
+.schoolrecord .erroroccured
+{
+    padding: 10px;
+}
+.schoolrecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+.schoolrecord div[id|=rsme_today_div]
+{
+    line-height: 26px;
+}
+.workrecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.workrecord h1,.workrecord h2,.workrecord h3,.workrecord h4 
+{
+    margin-left: 20px;
+}
+.workrecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.workrecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.workrecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.workrecord .leftblock .jobtitle
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.workrecord .leftblock .companyname
+{
+    clear: left;
+    font: 14px 'trebuchet ms';
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+}
+.workrecord .leftblock .datefrom
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/cv/calender-icon.png') no-repeat left top;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.workrecord .leftblock .dateto
+{
+    padding-left: 30px;
+    background: url('/images/layout/icon/cv/orange-arrow.png') no-repeat 0px 3px;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.workrecord .leftblock a.details
+{
+    font: bold 11px tahoma;
+    color: #FC930A;
+    margin: 2px 0px 0px 30px;
+    text-decoration: none;
+    background: url(/images/layout/icon/cv/circle-arrow-bottom.png) no-repeat right 0px;
+    padding: 0px;
+    padding-right: 20px;
+    height: 14px;
+    display: inline-block;
+    float: left;
+}
+.workrecord .leftblock div.details
+{
+    clear: left;
+    font: 11px tahoma;
+    color: #000000;
+    margin: 15px 0px 0px 10px;
+    padding: 10px;
+    background-color: #FFF2E1;
+    float: left;
+}
+.workrecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.workrecord .rightblock a
+{
+    margin: 4px;
+}
+.workrecord .erroroccured
+{
+    padding: 10px;
+}
+.workrecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+.workrecord div[id|=rsmw_today_div]
+{
+    line-height: 26px;
+}
+.courserecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.courserecord h1,.courserecord h2,.courserecord h3,.courserecord h4 
+{
+    margin-left: 20px;
+}
+.courserecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.courserecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.courserecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.courserecord .leftblock .coursetitle
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.courserecord .leftblock .institutename
+{
+    clear: left;
+    font: 14px 'trebuchet ms';
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+}
+.courserecord .leftblock .datefrom
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/cv/calender-icon.png') no-repeat left top;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.courserecord .leftblock .dateto
+{
+    padding-left: 30px;
+    background: url('/images/layout/icon/cv/orange-arrow.png') no-repeat 0px 3px;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.courserecord .leftblock a.details
+{
+    font: bold 11px tahoma;
+    color: #FC930A;
+    margin: 2px 0px 0px 30px;
+    text-decoration: none;
+    background: url(/images/layout/icon/cv/circle-arrow-bottom.png) no-repeat right 0px;
+    padding: 0px;
+    padding-right: 20px;
+    height: 14px;
+    display: inline-block;
+    float: left;
+}
+.courserecord .leftblock div.details
+{
+    clear: left;
+    font: 11px tahoma;
+    color: #000000;
+    margin: 15px 0px 0px 10px;
+    padding: 10px;
+    background-color: #FFF2E1;
+    float: left;
+}
+.courserecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.courserecord .rightblock a
+{
+    margin: 4px;
+}
+.courserecord .erroroccured
+{
+    padding: 10px;
+}
+.courserecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+.courserecord div[id|=rsmw_today_div]
+{
+    line-height: 26px;
+}
+.languagerecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.languagerecord h1,.languagerecord h2,.languagerecord h3,.languagerecord h4 
+{
+    margin-left: 20px;
+}
+.languagerecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.languagerecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.languagerecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.languagerecord .leftblock .languagetitle
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.languagerecord .leftblock .native
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.languagerecord .leftblock .level
+{
+    padding: 0px 20px 0px 30px;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.languagerecord .leftblock .languagetitle + .level
+{
+    clear: left;
+}
+.languagerecord .leftblock a.details
+{
+    font: bold 11px tahoma;
+    color: #FC930A;
+    margin: 2px 0px 0px 30px;
+    text-decoration: none;
+    background: url(/images/layout/icon/cv/circle-arrow-bottom.png) no-repeat right 0px;
+    padding: 0px;
+    padding-right: 20px;
+    height: 14px;
+    display: inline-block;
+    float: left;
+}
+.languagerecord .leftblock div.details
+{
+    clear: left;
+    font: 11px tahoma;
+    color: #000000;
+    margin: 15px 0px 0px 10px;
+    padding: 10px;
+    background-color: #FFF2E1;
+    float: left;
+}
+.languagerecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.languagerecord .rightblock a
+{
+    margin: 4px;
+}
+.languagerecord .erroroccured
+{
+    padding: 10px;
+}
+.languagerecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+.publicationrecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.publicationrecord h1,.publicationrecord h2,.publicationrecord h3,.publicationrecord h4 
+{
+    margin-left: 20px;
+}
+.publicationrecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.publicationrecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.publicationrecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.publicationrecord .leftblock .subject
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.publicationrecord .leftblock .edition
+{
+    font: 15px tahoma;
+    color: #666666;
+    margin-left: 10px;
+}
+.publicationrecord .leftblock .publisher
+{
+    clear: left;
+    font: 14px 'trebuchet ms';
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+}
+.publicationrecord .leftblock .binding
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/cv/calender-icon.png') no-repeat left top;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.publicationrecord .leftblock a.coauthors
+{
+    clear: left;
+    font: 11px tahoma;
+    color: #000000;
+    margin: 15px 0px 0px 10px;
+    padding: 10px;
+    background-color: #FFF2E1;
+    float: left;
+}
+.publicationrecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.publicationrecord .rightblock a
+{
+    margin: 4px;
+}
+.publicationrecord .erroroccured
+{
+    padding: 10px;
+}
+.publicationrecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+.publicationrecord div[id|=rsmp_today_div]
+{
+    line-height: 26px;
+}
+.awardrecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.awardrecord h1,.awardrecord h2,.awardrecord h3,.awardrecord h4 
+{
+    margin-left: 20px;
+}
+.awardrecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.awardrecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.awardrecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.awardrecord .leftblock .title
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.awardrecord .leftblock .issuer
+{
+    clear: left;
+    font: 14px 'trebuchet ms';
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+}
+.awardrecord .leftblock .year
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/cv/calender-icon.png') no-repeat left top;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.awardrecord .leftblock a.details
+{
+    font: bold 11px tahoma;
+    color: #FC930A;
+    margin: 2px 0px 0px 30px;
+    text-decoration: none;
+    background: url(/images/layout/icon/cv/circle-arrow-bottom.png) no-repeat right 0px;
+    padding: 0px;
+    padding-right: 20px;
+    height: 14px;
+    display: inline-block;
+    float: left;
+}
+.awardrecord .leftblock div.details
+{
+    clear: left;
+    font: 11px tahoma;
+    color: #000000;
+    margin: 15px 0px 0px 10px;
+    padding: 10px;
+    background-color: #FFF2E1;
+    float: left;
+}
+.awardrecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.awardrecord .rightblock a
+{
+    margin: 4px;
+}
+.awardrecord .erroroccured
+{
+    padding: 10px;
+}
+.awardrecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+.referencerecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.referencerecord h1,.referencerecord h2,.referencerecord h3,.referencerecord h4 
+{
+    margin-left: 20px;
+}
+.referencerecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.referencerecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.referencerecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.referencerecord .leftblock .name
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.referencerecord .leftblock .jobtitle
+{
+    font: 15px tahoma;
+    color: #666666;
+    margin-left: 10px;
+}
+.referencerecord .leftblock .companyname
+{
+    clear: left;
+    font: 14px 'trebuchet ms';
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+}
+.referencerecord .leftblock .phone
+{
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/telephone.18x18.png') no-repeat left top;
+    font: 14px arial;
+    color: #000000;
+    float: left;
+    margin: 0px 0px 0px 30px;
+    height: 22px;
+}
+.referencerecord .leftblock .email
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/envelope.18x18.png') no-repeat left top;
+    font: 14px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+    height: 22px;
+}
+.referencerecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.referencerecord .rightblock a
+{
+    margin: 4px;
+}
+.referencerecord .erroroccured
+{
+    padding: 10px;
+}
+.referencerecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+.organisationrecord 
+{
+    display: block;
+    float: left;
+    border-bottom: solid 1px #C8C6C6;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    width: 745px;
+    margin-bottom: 0px;
+}
+.organisationrecord h1,.organisationrecord h2,.organisationrecord h3,.organisationrecord h4 
+{
+    margin-left: 20px;
+}
+.organisationrecord ol 
+{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.organisationrecord:hover 
+{
+    background-color: #E5FFD8;
+}
+.organisationrecord .leftblock
+{
+    display: block;
+    float: left;
+    width: 600px;
+    padding-left: 10px;
+}
+.organisationrecord .leftblock .name
+{
+    font: bold 16px helvetica;
+    color: #000000;
+    float: left;
+    margin: 10px 0px;
+}
+.organisationrecord .leftblock .activitylevel
+{
+    font: 15px tahoma;
+    color: #666666;
+    margin-left: 10px;
+}
+.organisationrecord .leftblock .location
+{
+    clear: left;
+    font: 14px 'trebuchet ms';
+    color: #000000;
+    margin: 0px 0px 10px 0px;
+}
+.organisationrecord .leftblock .joinedinyear
+{
+    clear: left;
+    padding: 0px 20px 0px 30px;
+    background: url('/images/layout/icon/cv/calender-icon.png') no-repeat left top;
+    font: 13px arial;
+    color: #000000;
+    float: left;
+    margin: 0px;
+}
+.organisationrecord .rightblock
+{
+    display: table-cell;
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+    height: 90px;
+}
+.organisationrecord .rightblock a
+{
+    margin: 4px;
+}
+.organisationrecord .erroroccured
+{
+    padding: 10px;
+}
+.organisationrecord div.tipbox#error
+{
+    width: 90%;
+    float: left;
+    margin: 0px 15px 15px 15px;
+    padding-bottom: 15px;
+}
+#cv-preview
+{
+}
+#cv-preview #actionbar a
+{
+    background-color: #fff;
+    margin: 0px 5px;
+    vertical-align: top;
+}
+#cv-preview #updatedat
+{
+    padding-left: 25px;
+    padding: 5px 0px 5px 25px; 
+    background: url('/images/layout/icon/cv/calender.png') no-repeat left 4px;
+    display: inline-block;
+}
+#cv-preview #print
+{
+    float: right;
+    display: inline-block;
+    margin-left: 22px;
+}
+#cv-preview #exportpdf
+{
+    float: right;
+    display: inline-block;
+}
+#cv-preview #cv-intro
+{
+    float: left;
+    width: 730px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+#cv-preview #cv-intro #photoblock
+{
+    float: left;
+    width: 100px;
+    text-align: center;
+}
+#cv-preview #leftblock
+{
+    float: left;
+    width: 450px;
+}
+#cv-preview #leftblock #name
+{
+    font: 19px helvetica;
+    display: block;
+    margin-bottom: 5px;
+}
+#cv-preview #leftblock #birth
+{
+    font: 15px helvetica;
+    display: block;
+    margin-bottom: 5px;
+}
+#cv-preview #leftblock #gender
+{
+    font: 13px helvetica;
+    display: block;
+    margin-bottom: 5px;
+}
+#cv-preview #leftblock #employment
+{
+    font: 13px 'helvetica';
+    display: block;
+}
+#cv-preview #cv-intro #rightblock
+{
+    float: left;
+    width: 210px;
+    text-align: right;
+}
+#cv-preview #cv-intro #rightblock #phone
+{
+    font: 15px helvetica;
+    padding-right: 25px;
+    background: url(/images/layout/icon/cv/telephone.png) right 1px no-repeat;
+    margin-bottom: 5px;
+}
+#cv-preview #cv-intro #rightblock #email
+{
+    font: 15px helvetica;
+    padding-right: 25px;
+    background: url(/images/layout/icon/cv/email.png) right 1px no-repeat;
+    margin-bottom: 5px;
+}
+#cv-preview #cv-intro #rightblock #street
+{
+    font: 13px helvetica;
+    padding-right: 25px;
+    background: url(/images/layout/icon/cv/envelope.png) right 1px no-repeat;
+    margin-bottom: 5px;
+}
+#cv-preview #objective
+{
+    margin: 15px 10px;
+}
+#cv-preview #position
+{
+    float: left;
+    font: 17px helvetica;
+}
+#cv-preview #level
+{
+    font: 17px helvetica;
+    color: #6E6B6B;
+    margin-left: 15px;
+}
+#cv-preview #objectivepack
+{
+    margin-top: 10px;
+}
+#cv-preview #objectivepack #objtag
+{
+    font: 17px helvetica;
+    float: left;
+    margin-right: 20px;
+}
+#cv-preview #objectivepack #objectivebox
+{
+    float: left;
+    font: 13px helvetica;
+    width: 600px;
+    background-color: #F0FFE6;
+    padding: 10px;
+}
+#cv-preview #objectivepack #objectivebox #openquote
+{
+    font: 17px helvetica;
+}
+#cv-preview #objectivepack #objectivebox #closequote
+{
+    clear: both;
+    float: right;
+    font: 17px helvetica;
+    display: block;
+}
+#cv-preview .includerbox
+{
+    float: left;
+    width: 750px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}

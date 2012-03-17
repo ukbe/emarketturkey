@@ -1,0 +1,9 @@
+all:
+    layout:  layoutTripleColumn
+
+indexSuccess:
+    javascripts:    [/js/jquery.thickbox.min.js]
+    stylesheets:    [thickbox.css]
+ 
+joinSuccess:
+    has_layout: off

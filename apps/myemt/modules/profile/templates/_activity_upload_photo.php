@@ -1,0 +1,1 @@
+<?php echo link_to(image_tag($item->getMediumUri()), $item->getOwner()->getPhotosUrl(), array('query_string' => 'mod=display&pid='.$item->getId())) ?>

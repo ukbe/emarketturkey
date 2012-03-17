@@ -1,0 +1,4 @@
+all:
+    javascripts:  [jquery.customCheckbox.js]
+    stylesheets:  [jquery-tools/dateinput.css]
+

@@ -1,0 +1,113 @@
+privacy-help:
+  url:   /:sf_culture/help/privacy
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: help, action: privacy }
+
+temp-privacy:
+  url:   /:sf_culture/temp/privacy
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: tempPrivacy }
+
+viewinvite:
+  url:   /:sf_culture/invite/view
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: viewInvite }
+
+newlogo2:
+  url:   /:sf_culture/newlogo
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: newlogo, action: index }
+
+newlogo1:
+  url:   /newlogo
+  param: { module: newlogo, action: welcome }
+
+profile-action:
+  url:   /:sf_culture/profile/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (comment) } 
+  param: { module: profile }
+
+cookie-setter:
+  url:   /setAnalyticFilterCookie
+  param: { module: default, action: setAnalyticFilterCookie }
+
+aboutus:
+  url:   /:sf_culture/corporate/aboutus
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: aboutus }
+
+for-suppliers:
+  url:   /:sf_culture/corporate/forSuppliers
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: forSuppliers }
+
+for-individuals:
+  url:   /:sf_culture/corporate/forIndividuals
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: forIndividuals }
+
+faq:
+  url:   /:sf_culture/corporate/faq
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: faq }
+
+contactus:
+  url:   /:sf_culture/corporate/contactus
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: contactus }
+
+privacy:
+  url:   /:sf_culture/corporate/privacy
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: privacy }
+
+terms:
+  url:   /:sf_culture/corporate/terms
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: terms }
+
+login:
+  url:   /login
+  param: { module: login, action: index }
+
+logout:
+  url:   /logout
+  param: { module: login, action: logout }
+
+cryptographp:
+  url:   /cryptographp/:id
+  param: { module: cryptographp, action: index }
+  
+locate:
+  url:   /locate
+  param: { module: default, action: locate }
+
+signup:
+  url:   /:sf_culture/signup
+  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  param: { module: signup, action: index }
+
+verify:
+  url:   /:sf_culture/verify
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: signup, action: verifyEmailAddress }
+
+# default rules
+homepage:
+  url:   /:sf_culture
+  requirements: {sf_culture: (en|de|tr)}
+  param: { module: default, action: index }
+
+homepage1:
+  url:   /
+  param: { module: default, action: index }
+
+default_index:
+  url:   /:sf_culture/:module
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { action: index }
+
+default:
+  url:   /:sf_culture/:module/:action/*
+  requirements: { sf_culture: (?:en|de|tr) } 
+  

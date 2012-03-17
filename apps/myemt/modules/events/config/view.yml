@@ -1,0 +1,11 @@
+all:
+
+overviewSuccess:
+    metas:
+        title: 'Events Overview | eMarketTurkey'
+
+addSuccess:
+    metas:
+        title: 'Add Event | eMarketTurkey'
+    stylesheets:  [jquery-tools/dateinput.css]
+    javascripts:  [emt.langform-1.0.js, jquery.customCheckbox.js, emt-branch-1.0.js, jquery.ui-1.8.14.autocomplete.js]

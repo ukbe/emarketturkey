@@ -1,0 +1,996 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+# User:
+#   fabien:
+#     username: fabien
+#     password: changeme
+#     name:     Fabien Potencier
+#     email:    fabien.potencier@symfony-project.com
+#   kris:
+#     username: Kris.Wallsmith
+#     password: changeme
+#     name:     Kris Wallsmith
+#     email:    kris.wallsmith@symfony-project.com
+
+Role:
+    ur1:
+        sysname:  everyone
+        parent_id:  null
+    ur2:
+        sysname:  admin
+        parent_id:  ur1 
+    ur3:
+        sysname:  user
+        parent_id:  ur1
+    ur4:
+        sysname:  company
+        parent_id:  ur3
+    ur5:
+        sysname:  anonymous
+        parent_id:  ur1
+    ur6:
+        sysname:  individual
+        parent_id:  ur3
+
+RoleI18n:
+    1:
+        id:  ur1
+        culture:  tr
+        name:  'Tüm kullanıcılar'
+        description:  
+    2:
+        id:  ur1
+        culture:  en
+        name:  'Everyone'
+        description:  
+    3:
+        id:  ur2
+        culture:  tr
+        name:  'Yönetici'
+        description:  
+    4:
+        id:  ur2
+        culture:  en
+        name:  'Administrator'
+        description:  
+    5:
+        id:  ur3
+        culture:  tr
+        name:  'Kullanıcı'
+        description:  
+    6:
+        id:  ur3
+        culture:  en
+        name:  'User'
+        description:  
+    7:
+        id:  ur4
+        culture:  tr
+        name:  'Firma'
+        description:  
+    8:
+        id:  ur4
+        culture:  en
+        name:  'Company'
+        description:  
+    9:
+        id:  ur5
+        culture:  tr
+        name:  'Ziyaretçi'
+        description:  
+    10:
+        id:  ur5
+        culture:  en
+        name:  'Anonymous'
+        description:  
+    9:
+        id:  ur6
+        culture:  tr
+        name:  'Bireysel'
+        description:  
+    10:
+        id:  ur6
+        culture:  en
+        name:  'Individual'
+        description:  
+
+EmailTransactionRule:
+    s1:
+        name: "IMMEDIATE"
+        schedule: "*"
+        priority: 1
+        is_sysrule: 1
+
+
+BlockReason:
+    br1:
+        active:  true
+
+BlockReasonI18n:
+    1:
+        id:  br1
+        culture:  tr
+        name:  'DOĞRULAMA GEREKİYOR'
+    2:
+        id:  br1
+        culture:  en
+        name:  'VERIFICATION REQUIRED'
+
+JobPosition:
+    jp1:
+        active:  true
+    jp2:
+        active:  true
+    jp3:
+        active:  true
+    jp4:
+        active:  true
+        
+
+JobPositionI18n:
+    1:
+        id:  jp1
+        culture:  tr
+        name:  'Bakım Mühendisi'
+    2:
+        id:  jp1
+        culture:  en
+        name:  'Maintanence Engineer'
+    3:
+        id:  jp2
+        culture:  tr
+        name:  'Cerrahi Asistan'
+    4:
+        id:  jp2
+        culture:  en
+        name:  'Assistant Surgeon'
+    5:
+        id:  jp3
+        culture:  tr
+        name:  'Yazılım Mühendisi'
+    6:
+        id:  jp3
+        culture:  en
+        name:  'Software Engineer'
+    7:
+        id:  jp4
+        culture:  tr
+        name:  'Pazarlama Elemanı'
+    8:
+        id:  jp4
+        culture:  en
+        name:  'Marketing Staff'
+
+JobGrade:
+    jg1:
+        active:  true
+    jg2:
+        active:  true
+    jg3:
+        active:  true
+    jg4:
+        active:  true
+        
+
+JobGradeI18n:
+    1:
+        id:  jg1
+        culture:  tr
+        name:  'Üst Düzey Yönetici'
+    2:
+        id:  jg1
+        culture:  en
+        name:  'High-Level Executive'
+    3:
+        id:  jg2
+        culture:  tr
+        name:  'Uzman'
+    4:
+        id:  jg2
+        culture:  en
+        name:  'Specialist'
+    5:
+        id:  jg3
+        culture:  tr
+        name:  'Orta Düzey Yönetici'
+    6:
+        id:  jg3
+        culture:  en
+        name:  'Mid-Level Executive'
+    7:
+        id:  jg4
+        culture:  tr
+        name:  'Yeni Başlayan'
+    8:
+        id:  jg4
+        culture:  en
+        name:  'Beginner'
+
+EmailTransactionRule:
+    et1:
+        name:  'IMMEDIATE'
+        definition:  'Messages are delivered immediately with high priority.'
+        schedule:  "1111111"
+        priority:  1
+        is_sysrule:  1
+
+EmailTransactionNamespace:
+    1:
+        name:  'Account Activation'
+        definition:  'This is a template for account activation process. E-mail includes access information of the user.'
+        template:   'signup/accountInformationMailHtml'
+        tr_rule_id:  et1
+        subject:  'Your eMarketTurkey Account Information'
+        content_type:  'text/html'
+        sender_title:  'eMarketTurkey Account Services'
+        sender_email:  accounts@emarketturkey.com
+        sender_account:  accounts.emarketturkey
+        sender_password:  emtaccount
+        sender_smtp_host:  mail.emarketturkey.com
+        sender_smtp_port:  5000         
+    2:
+        name:  'New Message Notify'
+        definition:  'This is a template for notification of new message delivery. E-mail includes link to message detail page.'
+        template:   'messages/notifyDeliveryMailHtml'
+        tr_rule_id:  et1
+        subject:  'You received a new message'
+        content_type:  'text/html'
+        sender_title:  'eMarketTurkey Post Office'
+        sender_email:  notify@emarketturkey.com
+        sender_account:  notify.emarketturkey
+        sender_password:  emtnotify
+        sender_smtp_host:  mail.emarketturkey.com
+        sender_smtp_port:  5000         
+    3:
+        name:  'New Network Request Notify'
+        definition:  'This is a template for notification of new network request. E-mail includes link to network requests page.'
+        template:   'network/notifyNetworkRequestMailHtml'
+        tr_rule_id:  et1
+        subject:  'You have a network request'
+        content_type:  'text/html'
+        sender_title:  'eMarketTurkey Networking'
+        sender_email:  notify@emarketturkey.com
+        sender_account:  notify.emarketturkey
+        sender_password:  emtnotify
+        sender_smtp_host:  mail.emarketturkey.com
+        sender_smtp_port:  5000         
+    4:
+        name:  'Company Registration'
+        definition:  'This is a template for notification of new company registration. E-mail includes link to company profile page and managing interface.'
+        template:   'company/registrationMailHtml'
+        tr_rule_id:  et1
+        subject:  'Thank you for registering your company'
+        content_type:  'text/html'
+        sender_title:  'eMarketTurkey B2B Services'
+        sender_email:  notify@emarketturkey.com
+        sender_account:  notify.emarketturkey
+        sender_password:  emtnotify
+        sender_smtp_host:  mail.emarketturkey.com
+        sender_smtp_port:  5000         
+    5:
+        name:  'Reset Password Email'
+        definition:  'This is a template for resetting login password. E-mail includes link to reset password form page.'
+        template:   'login/resetPasswordMailHtml'
+        tr_rule_id:  et1
+        subject:  'Information to reset your password'
+        content_type:  'text/html'
+        sender_title:  'eMarketTurkey Account Services'
+        sender_email:  accounts@emarketturkey.com
+        sender_account:  accounts.emarketturkey
+        sender_password:  emtaccount
+        sender_smtp_host:  mail.emarketturkey.com
+        sender_smtp_port:  5000         
+    
+Action:
+    act1:
+        constant: 'view_profile'
+        active:  true
+    act2:
+        constant: 'view_public_profile'
+        active:  true
+    act3:
+        constant: 'view_friends'
+        active:  true
+    act4:
+        constant: 'view_groups'
+        active:  true
+    act5:
+        constant: 'view_follows'
+        active:  true
+    act6:
+        constant: 'view_personal_info'
+        active:  true
+    act7:
+        constant: 'update_personal_info'
+        active:  true
+    act8:
+        constant: 'view_contact_info'
+        active:  true
+    act9:
+        constant: 'update_contact_info'
+        active:  true
+    act10:
+        constant: 'view_career'
+        active:  true
+    act11:
+        constant: 'send_message'
+        active:  true
+    act12:
+        constant: 'post_wall'
+        active:  true
+    act13:
+        constant: 'comment_asset'
+        active:  true
+    act14:
+        constant: 'view_followers'
+        active:  true
+    act15:
+        constant: 'view_people'
+        active:  true
+    act16:
+        constant: 'view_companies'
+        active:  true
+    act17:
+        constant: 'add_to_network'
+        active:  true
+    act18:
+        constant: 'follow_company'
+        active:  true
+    act19:
+        constant: 'join_group'
+        active:  true
+    act20:
+        constant: 'view_photos'
+        active:  true
+    act21:
+        constant: 'view_events'
+        active:  true
+    act22:
+        constant: 'create_resume'
+        active:  true
+    act23:
+        constant: 'create_company'
+        active:  true
+    act24:
+        constant: 'update_corporate_info'
+        active:  true
+    act25:
+        constant: 'upload_photo'
+        active:  true
+    act26:
+        constant: 'manage_followers'
+        active:  true
+    act27:
+        constant: 'create_event'
+        active:  true
+    act28:
+        constant: 'create_group'
+        active:  true
+    act29:
+        constant: 'update_group_info'
+        active:  true
+    act30:
+        constant: 'manage_members'
+        active:  true
+    act31:
+        constant: 'invite_to_event'
+        active:  true
+    act32:
+        constant: 'invite_group'
+        active:  true
+    act33:
+        constant: 'upload_profile_picture'
+        active:  true
+    act34:
+        constant: 'upload_logo'
+        active:  true
+    act35:
+        constant: 'log_in'
+        active:  true
+    act36:
+        constant: 'change_password'
+        active:  true
+    act37:
+        constant: 'update_hr_logo'
+        active:  true
+    act38:
+        constant: 'set_username'
+        active:  true
+    act39:
+        constant: 'add_product'
+        active:  true
+    act40:
+        constant: 'update_product'
+        active:  true
+    act41:
+        constant: 'post_job'
+        active:  true
+    act42:
+        constant: 'create_hr_profile'
+        active:  true
+
+ActionI18n:
+    1:
+        id:  act1
+        culture:  tr
+        name:  'Profili Görüntüle'
+    2:
+        id:  act1
+        culture:  en
+        name:  'View Profile'
+    3:
+        id:  act2
+        culture:  tr
+        name:  'Sınırlı Profili Görüntüle'
+    4:
+        id:  act2
+        culture:  en
+        name:  'View Public Profile'
+    5:
+        id:  act3
+        culture:  tr
+        name:  'Arkadaşları Görüntüle'
+    6:
+        id:  act3
+        culture:  en
+        name:  'View Friends'
+    7:
+        id:  act4
+        culture:  tr
+        name:  'Grupları Görüntüle'
+    8:
+        id:  act4
+        culture:  en
+        name:  'View Groups'
+    9:
+        id:  act5
+        culture:  tr
+        name:  'Firmaları Görüntüle'
+    10:
+        id:  act5
+        culture:  en
+        name:  'View Companies'
+    11:
+        id:  act6
+        culture:  tr
+        name:  'Kişisel Bilgileri Görüntüle'
+    12:
+        id:  act6
+        culture:  en
+        name:  'View Personal Information'
+    13:
+        id:  act7
+        culture:  tr
+        name:  'Kişisel Bilgileri Güncelle'
+    14:
+        id:  act7
+        culture:  en
+        name:  'Update Personal Information'
+    15:
+        id:  act8
+        culture:  tr
+        name:  'İletişim Bilgilerini Görüntüle'
+    16:
+        id:  act8
+        culture:  en
+        name:  'View Contact Information'
+    17:
+        id:  act9
+        culture:  tr
+        name:  'İletişim Bilgilerini Güncelle'
+    18:
+        id:  act9
+        culture:  en
+        name:  'Update Contact Information'
+    19:
+        id:  act10
+        culture:  tr
+        name:  'Kariyer Bilgilerini Görüntüle'
+    20:
+        id:  act10
+        culture:  en
+        name:  'View Career Information'
+    21:
+        id:  act11
+        culture:  tr
+        name:  'Mesaj Gönder'
+    22:
+        id:  act11
+        culture:  en
+        name:  'Send Message'
+    23:
+        id:  act12
+        culture:  tr
+        name:  'Duvarında Paylaş'
+    24:
+        id:  act12
+        culture:  en
+        name:  'Post to Wall'
+    25:
+        id:  act13
+        culture:  tr
+        name:  'Yorum Yaz'
+    26:
+        id:  act13
+        culture:  en
+        name:  'Comment'
+    27:
+        id:  act14
+        culture:  tr
+        name:  'Takip Edenleri Görüntüle'
+    28:
+        id:  act14
+        culture:  en
+        name:  'View Followers'
+    29:
+        id:  act15
+        culture:  tr
+        name:  'Kişileri Görüntüle'
+    30:
+        id:  act15
+        culture:  en
+        name:  'View People'
+    31:
+        id:  act16
+        culture:  tr
+        name:  'Firmaları Görüntüle'
+    32:
+        id:  act16
+        culture:  en
+        name:  'View Companies'
+    33:
+        id:  act17
+        culture:  tr
+        name:  'Ağa Ekle'
+    34:
+        id:  act17
+        culture:  en
+        name:  'Add to Network'
+    35:
+        id:  act18
+        culture:  tr
+        name:  'Firmayı İzle'
+    36:
+        id:  act18
+        culture:  en
+        name:  'Follow Company'
+    37:
+        id:  act19
+        culture:  tr
+        name:  'Gruba Katıl'
+    38:
+        id:  act19
+        culture:  en
+        name:  'Join Group'
+    39:
+        id:  act20
+        culture:  tr
+        name:  'Resimleri Görüntüle'
+    40:
+        id:  act20
+        culture:  en
+        name:  'View Photos'
+    41:
+        id:  act21
+        culture:  tr
+        name:  'Etkinlikleri Görüntüle'
+    42:
+        id:  act21
+        culture:  en
+        name:  'View Events'
+    43:
+        id:  act22
+        culture:  tr
+        name:  'Özgeçmiş Oluştur'
+    44:
+        id:  act22
+        culture:  en
+        name:  'Create Resume'
+    45:
+        id:  act23
+        culture:  tr
+        name:  'Firma Kaydet'
+    46:
+        id:  act23
+        culture:  en
+        name:  'Register Company'
+    47:
+        id:  act24
+        culture:  tr
+        name:  'Kurumsal Bilgileri Güncelle'
+    48:
+        id:  act24
+        culture:  en
+        name:  'Update Corporate Information'
+    49:
+        id:  act25
+        culture:  tr
+        name:  'Resim Yükle'
+    50:
+        id:  act25
+        culture:  en
+        name:  'Upload Photo'
+    51:
+        id:  act26
+        culture:  tr
+        name:  'Takip Edenleri Yönet'
+    52:
+        id:  act26
+        culture:  en
+        name:  'Manage Followers'
+    53:
+        id:  act27
+        culture:  tr
+        name:  'Etkinlik Oluştur'
+    54:
+        id:  act27
+        culture:  en
+        name:  'Create Event'
+    55:
+        id:  act28
+        culture:  tr
+        name:  'Grup Oluştur'
+    56:
+        id:  act28
+        culture:  en
+        name:  'Create Group'
+    57:
+        id:  act29
+        culture:  tr
+        name:  'Grup Bilgilerini Güncelle'
+    58:
+        id:  act29
+        culture:  en
+        name:  'Update Group Information'
+    59:
+        id:  act30
+        culture:  tr
+        name:  'Üyeleri Yönet'
+    60:
+        id:  act30
+        culture:  en
+        name:  'Manage Members'
+    61:
+        id:  act31
+        culture:  tr
+        name:  'Etkinliğe Davet Et'
+    62:
+        id:  act31
+        culture:  en
+        name:  'Invite to Event'
+    63:
+        id:  act32
+        culture:  tr
+        name:  'Gruba Davet Et'
+    64:
+        id:  act32
+        culture:  en
+        name:  'Invite to Group'
+    65:
+        id:  act33
+        culture:  tr
+        name:  'Profil Resmi Yükle'
+    66:
+        id:  act33
+        culture:  en
+        name:  'Upload Profile Picture'
+    67:
+        id:  act34
+        culture:  tr
+        name:  'Logo Yükle'
+    68:
+        id:  act34
+        culture:  en
+        name:  'Upload Logo'
+    67:
+        id:  act35
+        culture:  tr
+        name:  'Oturum Aç'
+    68:
+        id:  act35
+        culture:  en
+        name:  'Log In'
+    67:
+        id:  act36
+        culture:  tr
+        name:  'Şifre Değiştir'
+    68:
+        id:  act36
+        culture:  en
+        name:  'Change Password'
+    67:
+        id:  act37
+        culture:  tr
+        name:  'İK Logosu Yükle'
+    68:
+        id:  act37
+        culture:  en
+        name:  'Upload HR Logo'
+    67:
+        id:  act38
+        culture:  tr
+        name:  'Kullanıcı Adı Oluştur'
+    68:
+        id:  act38
+        culture:  en
+        name:  'Set Username'
+    67:
+        id:  act39
+        culture:  tr
+        name:  'Ürün Ekle'
+    68:
+        id:  act39
+        culture:  en
+        name:  'Add Product'
+    67:
+        id:  act40
+        culture:  tr
+        name:  'Ürünü Güncelle'
+    68:
+        id:  act40
+        culture:  en
+        name:  'Update Product'
+    67:
+        id:  act41
+        culture:  tr
+        name:  'İş İlanı Oluştur'
+    68:
+        id:  act41
+        culture:  en
+        name:  'Post Job'
+    67:
+        id:  act42
+        culture:  tr
+        name:  'İK Profili Oluştur'
+    68:
+        id:  act42
+        culture:  en
+        name:  'Create HR Profile'
+    
+PrivacyNodeType:
+    pnt1:
+        active:  true
+        requires_subject:  1
+    pnt2:
+        active:  true
+        requires_subject:  1
+    pnt3:
+        active:  true
+        requires_subject:  1
+    pnt4:
+        active:  true
+        requires_subject:  0
+    pnt5:
+        active:  true
+        requires_subject:  0
+    pnt6:
+        active:  true
+        requires_subject:  0
+    pnt7:
+        active:  true
+        requires_subject:  0
+
+PrivacyNodeTypeI18n:
+    1:
+        id:  pnt1
+        culture:  tr
+        name:  'Kullanıcı'
+    2:
+        id:  pnt1
+        culture:  en
+        name:  'User'
+    3:
+        id:  pnt2
+        culture:  tr
+        name:  'Firma'
+    4:
+        id:  pnt2
+        culture:  en
+        name:  'Company'
+    5:
+        id:  pnt3
+        culture:  tr
+        name:  'Grup'
+    6:
+        id:  pnt3
+        culture:  en
+        name:  'Group'
+    7:
+        id:  pnt4
+        culture:  tr
+        name:  'Herkes'
+    8:
+        id:  pnt4
+        culture:  en
+        name:  'Everyone'
+    9:
+        id:  pnt5
+        culture:  tr
+        name:  'Ağımdakiler'
+    10:
+        id:  pnt5
+        culture:  en
+        name:  'Network Members'
+    11:
+        id:  pnt6
+        culture:  tr
+        name:  'Aile Bireyleri'
+    12:
+        id:  pnt6
+        culture:  en
+        name:  'Family Members'
+    13:
+        id:  pnt7
+        culture:  tr
+        name:  'İş Arkadaşlarım'
+    14:
+        id:  pnt7
+        culture:  en
+        name:  'Colleagues'
+
+ResumeSchoolDegree:
+    rsd1:
+        active:  true
+    rsd2:
+        active:  true
+    rsd3:
+        active:  true
+    rsd4:
+        active:  true
+    rsd5:
+        active:  true
+    rsd6:
+        active:  true
+    rsd7:
+        active:  true
+
+ResumeSchoolDegreeI18n:
+    1:
+        id:  rsd1
+        culture:  tr
+        name:  'İlk Okul'
+    2:
+        id:  rsd1
+        culture:  en
+        name:  'Elementary'
+    3:
+        id:  rsd2
+        culture:  tr
+        name:  'Orta Okul'
+    4:
+        id:  rsd2
+        culture:  en
+        name:  'Middle School'
+    5:
+        id:  rsd3
+        culture:  tr
+        name:  'Lise'
+    6:
+        id:  rsd3
+        culture:  en
+        name:  'High School'
+    7:
+        id:  rsd4
+        culture:  tr
+        name:  'Lisans'
+    8:
+        id:  rsd4
+        culture:  en
+        name:  'Bachelors'
+    9:
+        id:  rsd5
+        culture:  tr
+        name:  'Yüksek Lisans'
+    10:
+        id:  rsd5
+        culture:  en
+        name:  'Masters'
+    11:
+        id:  rsd6
+        culture:  tr
+        name:  'Doktora'
+    12:
+        id:  rsd6
+        culture:  en
+        name:  'Doctorate'
+    13:
+        id:  rsd7
+        culture:  tr
+        name:  'Yüksekokul'
+    14:
+        id:  rsd7
+        culture:  en
+        name:  'Vocational'
+
+BusinessSector:
+    bs1:
+        active:  1
+    bs2:
+        active:  1
+    bs3:
+        active:  1
+    bs4:
+        active:  1
+    bs5:
+        active:  1
+
+BusinessSectorI18n:
+    1:
+        id:  bs1
+        culture:  tr
+        name:  'Otomotiv'
+    2:
+        id:  bs1
+        culture:  en
+        name:  'Automotive'
+    3:
+        id:  bs2
+        culture:  tr
+        name:  'Medikal Hizmetler & Donanım'
+    4:
+        id:  bs2
+        culture:  en
+        name:  'Medical Services & Appliances'
+    5:
+        id:  bs3
+        culture:  tr
+        name:  'Gıda'
+    6:
+        id:  bs3
+        culture:  en
+        name:  'Food'
+    7:
+        id:  bs4
+        culture:  tr
+        name:  'Mobilya'
+    8:
+        id:  bs4
+        culture:  en
+        name:  'Furniture'
+    9:
+        id:  bs5
+        culture:  tr
+        name:  'İnşaat'
+    10:
+        id:  bs5
+        culture:  en
+        name:  'Construction'
+
+BusinessType:
+    bt1:
+        active:  1
+    bt2:
+        active:  1
+    bt3:
+        active:  1
+
+BusinessTypeI18n:
+    1:  
+        id:  bt1
+        culture:    tr
+        name:       'İmalat'
+    2:
+        id:  bt1
+        culture:    en
+        name:       'Manufacturer'
+    3:  
+        id:  bt2
+        culture:    tr
+        name:       'Perakende'
+    4:
+        id:  bt2
+        culture:    en
+        name:       'Retail'
+    5:
+        id:  bt3
+        culture:    tr
+        name:       'Acente'
+    6:
+        id:  bt3
+        culture:    en
+        name:       'Agent'
+        

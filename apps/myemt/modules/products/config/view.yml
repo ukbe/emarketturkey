@@ -1,0 +1,39 @@
+all:
+
+newSuccess:
+    metas:
+        title: 'New Product | eMarketTurkey'
+    javascripts:  [emt.langform-1.0.js, emt.hierarchyselector-1.0.js, emt-branch-1.0.js, jquery.customCheckbox.js]
+
+newGroupSuccess:
+    metas:
+        title: 'New Product Group | eMarketTurkey'
+    javascripts:  [emt.langform-1.0.js]
+
+overviewSuccess:
+    metas:
+        title: 'Products | eMarketTurkey'
+    stylesheets:  [jquery-tools/tabs.css]
+    javascripts:  [visualize.jQuery.js]
+
+listSuccess:
+    metas:
+        title: 'Products | eMarketTurkey'
+    javascripts:  []
+
+groupsSuccess:
+    metas:
+        title: 'Product Groups | eMarketTurkey'
+    javascripts:  []
+
+toggleActivateSuccess:
+    has_layout:  off
+
+productCategoriesSuccess:
+    has_layout:  off
+
+productCategoriesError:
+    has_layout:  off
+
+retrieveSuccess:
+    has_layout:  off

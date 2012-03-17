@@ -1,0 +1,3 @@
+./symfony cc
+/usr/local/zend/bin/zendctl.sh stop
+/usr/local/zend/bin/zendctl.sh start

@@ -1,0 +1,12 @@
+all:
+    metas:
+        title: Messages
+compose:
+    metas:
+        title: Compose Message
+readSuccess:
+    metas:
+        title: Read Message
+composedSuccess:
+    metas:
+        title: Send Successful

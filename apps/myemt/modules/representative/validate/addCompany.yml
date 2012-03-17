@@ -1,0 +1,49 @@
+fields:
+# contact person related fields
+    name:
+        required:
+            msg: "Enter contact person's name."
+    lastname:
+        required:
+            msg: "Enter contact person's lastname."
+    gender:
+        required:
+            msg: "Select contact person's gender."
+    email_first:
+        required:
+            msg: "Enter contact person's email address."
+        sfEmailValidator:
+            strict:      true
+            email_error: "Correct contact person's email address."
+        sfStringValidator:
+            max: 50
+        sfPropelUniqueValidator:
+            class:  Login
+            column:  EMAIL
+            unique_error:  'This email address is already registered.'
+
+#company related fields
+    comp_name:
+        required:
+            msg: "Please specify candidate company's name."
+    comp_sector:
+        required:
+            msg: "Please select a sector which suits cadidate company's business area."
+    comp_busstype:
+        required:
+            msg: "Please select a business type which suits candidate company's business model."
+    comp_phone:
+        required:
+            msg: "Please enter phone number of candidate company."
+    comp_street:
+        required:
+            msg: "Please enter street address of candidate company."
+    comp_city:
+        required:
+            msg: "Please specify which city/town candidate company is located in."
+    comp_state:
+        required:
+            msg: "Please specify which state/province candidate company is located in."
+    comp_country:
+        required:
+            msg: "Please specify which country candidate company is located in."

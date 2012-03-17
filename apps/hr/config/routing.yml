@@ -1,0 +1,101 @@
+myemployers:
+  url: /:sf_culture/mycareer/employers
+  param: { module: mycareer, action: employers, group: null }
+
+myemployers-banned:
+  url: /:sf_culture/mycareer/employers/banned
+  param: { module: mycareer, action: employers, group: banned }
+
+myemployers-bookmarked:
+  url: /:sf_culture/mycareer/employers/bookmarked
+  param: { module: mycareer, action: employers, group: bookmarked }
+
+myjobs:
+  url: /:sf_culture/mycareer/jobs
+  param: { module: mycareer, action: jobs, group: null }
+
+myjobs-applied-view:
+  url: /:sf_culture/mycareer/jobs/applied/:guid
+  param: { module: mycareer, action: jobs, group: applied }
+
+myjobs-applied:
+  url: /:sf_culture/mycareer/jobs/applied
+  param: { module: mycareer, action: jobs, group: applied }
+
+myjobs-bookmarked:
+  url: /:sf_culture/mycareer/jobs/bookmarked
+  param: { module: mycareer, action: jobs, group: bookmarked }
+
+myjobs-viewed:
+  url: /:sf_culture/mycareer/jobs/viewed
+  param: { module: mycareer, action: jobs, group: viewed }
+
+mycv-action:
+  url:   /:sf_culture/mycareer/cv/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (review|edit|status|basic|contact|education|work|courses|languages|skills|publications|awards|references|organisations|materials|custom|preview|export) } 
+  param: { module: mycv }
+
+jobsearch:
+  url:   /:sf_culture/jobs/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: search }
+
+company-jobs:
+  url:   /:sf_culture/company/:hash/jobs
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: company }
+
+group-jobs:
+  url:   /:sf_culture/group/:hash/jobs
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: group }
+
+similar-jobs:
+  url:   /:sf_culture/jobs/:guid/similar
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: index }
+
+job:
+  url:   /:sf_culture/jobs/:guid/view
+  requirements: { id: '[A-F0-9]+', sf_culture: (?:en|de|tr) }
+  param: { module: jobs, action: view }
+
+jobs:
+  url:   /:sf_culture/jobs
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: jobs, action: list }
+
+mycareer:
+  url: /:sf_culture/mycareer
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: mycareer, action: overview }
+
+mycareer-action:
+  url:   /:sf_culture/mycareer/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (bookmarks) } 
+  param: { module: mycareer }
+
+cv-create:
+  url:   /:sf_culture/mycareer/cv/create
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: hr_cv, action: create }
+
+# default rules
+homepage:
+  url:   /:sf_culture
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: index }
+
+homepage1:
+  url:   /
+  param: { module: default, action: index }
+
+default_index:
+  url:   /:sf_culture/:module
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { action: index }
+
+default:
+  url:   /:sf_culture/:module/:action/*
+  requirements: { sf_culture: (?:en|de|tr) } 
+  

@@ -1,0 +1,1837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="tr" datatype="plaintext" original="messages" date="2010-12-24T15:11:48Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>About Us</source>
+        <target>Hakkımızda</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>For Suppliers</source>
+        <target>Firmalar İçin</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>For Individuals</source>
+        <target>Bireyler İçin</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Privacy Policy</source>
+        <target>Gizlilik Politikası</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Terms of use</source>
+        <target>Kullanım Koşulları</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>All rights reserved</source>
+        <target>Tüm Hakları Saklıdır</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Companies</source>
+        <target>Firmalar</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Products</source>
+        <target>Ürünler</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Selling Leads</source>
+        <target>Satım İlanları</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Buying Leads</source>
+        <target>Alım İlanları</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Tools</source>
+        <target>Araçlar</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Sign Up</source>
+        <target>Üye Ol</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Human Resources</source>
+        <target>İnsan Kaynakları</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Academy</source>
+        <target>Akademi</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Community</source>
+        <target>Topluluk</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Translation</source>
+        <target>Tercüme</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Messages</source>
+        <target>Mesajlar</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Settings</source>
+        <target>Ayarlar</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>My Network</source>
+        <target>Ağım</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Tasks</source>
+        <target>Görevler</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Forgot Password?</source>
+        <target>Şifremi Unuttum!</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Bulletin</source>
+        <target>İlan Tahtası</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Events</source>
+        <target>Etkinlikler</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>B2B</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Oops! We couldn't find requested page!</source>
+        <target>Uups! Aradığınız sayfayı bulamadık!</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Please make sure your typed the correct url in the address bar.</source>
+        <target>Lütfen aradığınız sayfanın adresini doğru yazdığınızdan emin olun.</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Content which was included in the page you requested might be outdated and removed.</source>
+        <target>Görüntülemeye çalıştığınız sayfadaki içerik eskidiği için kaldırılmış olabilir.</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>eMarketTurkey Team</source>
+        <target>eMarketTurkey Ekibi</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Logout</source>
+        <target>Oturumu Kapat</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Remember Me</source>
+        <target>Beni Hatırla</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Login</source>
+        <target>Oturum Aç</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Türkçe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>English</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>People</source>
+        <target>Kişiler</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Groups</source>
+        <target>Gruplar</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>Search</source>
+        <target>Arama Yap</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>Search In</source>
+        <target>Nerede</target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>Looking for Someone?</source>
+        <target>Birini mi arıyorsun?</target>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Example: John Meyer</source>
+        <target>Örnek: John Meyer</target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Wanna Check out a Group?</source>
+        <target>Gruplara gözatmak ister misin?</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Example: Tokyo Business Association</source>
+        <target>Örnek: Tokyo İş Adamları Derneği</target>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Build your network in eMarketTurkey Community.&lt;br /&gt;You will find business groups, NGOs, and more ..</source>
+        <target>eMarketTurkey Topluluk ağını oluştur.&lt;br /&gt;İş grupları, STK'lar, ve daha fazlası ..</target>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>&lt;b&gt;Create your eMarketTurkey Community Group;&lt;/b&gt;&lt;br /&gt;and promote your organisation online.&lt;br /&gt;&lt;b&gt;Invite your members;&lt;/b&gt;&lt;br /&gt;so increase your organisation's popularity.</source>
+        <target>&lt;b&gt;eMarketTurkey Topluluk Grubunu oluştur;&lt;/b&gt;&lt;br /&gt;ve organizasyonunu online tanıt.&lt;br /&gt;&lt;b&gt;Üyelerini davet et;&lt;/b&gt;&lt;br /&gt;böylece bilinirliğini artır.</target>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>%1's Photo | eMarketTurkey</source>
+        <target>%1 Fotoğrafları | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>New Profile Photo | eMarketTurkey</source>
+        <target>Yeni Profil Resmi | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>none</source>
+        <target>yok</target>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>new album</source>
+        <target>yeni albüm</target>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>Photos</source>
+        <target>Resimler</target>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Photo Preview</source>
+        <target>Resim Önizleme</target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Delete Photo</source>
+        <target>Resmi Sil</target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Set as Profile Picture</source>
+        <target>Profil Resmi Yap</target>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>Previous</source>
+        <target>Önceki</target>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>Next</source>
+        <target>Sonraki</target>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>%1i of %2i</source>
+        <target>%1i / %2i</target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>Back to Album</source>
+        <target>Albüme geri dön</target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Uploaded at %1t by %2n</source>
+        <target>%2n tarafından %1t tarihinde yüklendi</target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Members</source>
+        <target>Üyeler</target>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>see all</source>
+        <target>hepsi</target>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>Member Profile</source>
+        <target>Üye Profili</target>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>Events Description</source>
+        <target>Etkinlikler Tanımı</target>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>Contact Information</source>
+        <target>İletişim Bilgileri</target>
+      </trans-unit>
+      <trans-unit id="74">
+        <source>E-mail</source>
+        <target>E-posta</target>
+      </trans-unit>
+      <trans-unit id="75">
+        <source>Send Message</source>
+        <target>Mesaj Gönder</target>
+      </trans-unit>
+      <trans-unit id="76">
+        <source>Join Group</source>
+        <target>Gruba Katıl</target>
+      </trans-unit>
+      <trans-unit id="77">
+        <source>Manage Group</source>
+        <target>Grubu Yönet</target>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>Cancel</source>
+        <target>İptal</target>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>click to set a status message</source>
+        <target>bir ileti mesajı yazmak için tıkla</target>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>Save</source>
+        <target>Kaydet</target>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>Group Type</source>
+        <target>Grup Türü</target>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>Subject</source>
+        <target>İlgi Alanı</target>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>Introduction</source>
+        <target>Tanıtım</target>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>Home Address</source>
+        <target>Ev Adresi</target>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>Home Phone</source>
+        <target>Ev Telefonu</target>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>Work Address</source>
+        <target>İş Adresi</target>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>Work Phone</source>
+        <target>İş Telefonu</target>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>Locked Profile!</source>
+        <target>Gizli Profil</target>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>%1 profile page was locked for public access.</source>
+        <target>%1 profil sayfası genel erişime kapalı.</target>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>Have a look at our %1.</source>
+        <target>%1na gözatın.</target>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>Go Back</source>
+        <target>Geri Dön</target>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>Album</source>
+        <target>Albüm</target>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Upload Photo</source>
+        <target>Resim Yükle</target>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>Album: %1 (%2 photos)</source>
+        <target>Albüm: %1 (%2 resim)</target>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>&lt;span class="grey-text"&gt;%1 Photos&lt;/span&gt;</source>
+        <target>&lt;span class="grey-text"&gt;%1 Fotoğrafları&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>No photos uploaded, yet. Click "Upload" button to upload a photo.</source>
+        <target>Henüz resim yüklenmedi. Bir resim yüklemek için "Yükle" düğmesine tıklayın.</target>
+      </trans-unit>
+      <trans-unit id="99">
+        <source>%1 does not have any photos, yet.</source>
+        <target>%1 henüz resim yüklemedi.</target>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>&lt;b&gt;Uploaded at:&lt;/b&gt; %1t</source>
+        <target>&lt;b&gt;Yüklenme Zamanı:&lt;/b&gt; %1t</target>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>See Photos</source>
+        <target>Resimleri Gör</target>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>Add to My Network</source>
+        <target>Ağına Ekle</target>
+      </trans-unit>
+      <trans-unit id="103">
+        <source>Friends</source>
+        <target>Arkadaşlar</target>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>Occupation</source>
+        <target>İş</target>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>since %1</source>
+        <target>%1'den beri</target>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Gender</source>
+        <target>Cinsiyet</target>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Marital Status</source>
+        <target>Medeni Hal</target>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Hometown</source>
+        <target>Doğum Yeri</target>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>Not Set</source>
+        <target>Belirtilmedi</target>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>Preferred Language</source>
+        <target>Tercih Edilen Dil</target>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>Not Preferred</source>
+        <target>Tercih Edilmedi</target>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>IM</source>
+        <target>Anlık Mesajlaşma</target>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>Works</source>
+        <target>Portföy</target>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>You may upload photos for your group's profile. Please take care of requirements while selecting the files to upload.</source>
+        <target>Profiliniz için resimler yükleyebilirsiniz. Lütfen yükleyeceğiniz resmi seçerken dikkat edilmesi gerekenleri kontrol edin.</target>
+      </trans-unit>
+      <trans-unit id="115">
+        <source>Maximum size of the file should be 2MB.</source>
+        <target>Maksimum dosya boyutu 2MB olmalıdır.</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Only files with an extention of .jpeg, .jpg, .png. are allowed.</source>
+        <target>Sadece .jpeg, .jpg, .png uzantılı dosyalar yüklenebilir.</target>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>Select File</source>
+        <target>Dosya Seç</target>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Set as profile picture.</source>
+        <target>Profil resmi olarak belirle.</target>
+      </trans-unit>
+      <trans-unit id="119">
+        <source>Store in album</source>
+        <target>Albüme ekle</target>
+      </trans-unit>
+      <trans-unit id="120">
+        <source>Comment removed.</source>
+        <target>Yorum silindi.</target>
+      </trans-unit>
+      <trans-unit id="121">
+        <source>My Photo | eMarketTurkey</source>
+        <target>Resmim | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>x</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="127">
+        <source>My Photos</source>
+        <target>Resimlerim</target>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>Current Location</source>
+        <target>Şu anki konum</target>
+      </trans-unit>
+      <trans-unit id="129">
+        <source>Location not set</source>
+        <target>Konum belirtilmedi</target>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>set your location</source>
+        <target>konumunu belirt</target>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>%1 locked %2 profile for public access.</source>
+        <target>%1 profilini genel erişime kapattı.</target>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>his</source>
+        <target> </target>
+      </trans-unit>
+      <trans-unit id="133">
+        <source>her</source>
+        <target> </target>
+      </trans-unit>
+      <trans-unit id="134">
+        <source>You may upload photos for your profile. Please take care of requirements while selecting the files to upload.</source>
+        <target>Profiliniz için resimler yükleyebilirsiniz. Lütfen yükleyeceğiniz resmi seçerken dikkat edilmesi gerekenleri kontrol edin.</target>
+      </trans-unit>
+      <trans-unit id="135">
+        <source>new album ..</source>
+        <target>yeni albüm ..</target>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>Leave a comment :</source>
+        <target>Yorum yaz :</target>
+      </trans-unit>
+      <trans-unit id="137">
+        <source>Leave Comment</source>
+        <target>Yorumu Kaydet</target>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>Search Results</source>
+        <target>Arama Sonuçları</target>
+      </trans-unit>
+      <trans-unit id="141">
+        <source>Sorry! We could not find the person you are looking for.</source>
+        <target>Maalesef aradığın kişi bulunamadı.</target>
+      </trans-unit>
+      <trans-unit id="142">
+        <source>Sorry! We could not find the group you are looking for.</source>
+        <target>Maalesef aradığın grup bulunamadı.</target>
+      </trans-unit>
+      <trans-unit id="143">
+        <source>Recent Searches</source>
+        <target>Önceki Aramalar</target>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>Filter Results</source>
+        <target>Sonuçları Filtrele</target>
+      </trans-unit>
+      <trans-unit id="145">
+        <source>All</source>
+        <target>Hepsi</target>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>[1]%1 Common Friend|(1,+Inf]%1 Common Friends</source>
+        <target>[1]%1 Ortak Arkadaş|(1,+Inf]%1 Ortak Arkadaş</target>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>more</source>
+        <target>daha</target>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>THAT'S YOU!</source>
+        <target>BU SENSİN!</target>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>ACTION DISALLOWED</source>
+        <target>İŞLEM UYGUN DEĞİL</target>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>Edit Membership</source>
+        <target>Üyeliği Düzenle</target>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Leave</source>
+        <target>Ayrıl</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Join</source>
+        <target>Katıl</target>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>Owner</source>
+        <target>Sahip</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>select relationship type</source>
+        <target>yakınlık türünü seçin</target>
+      </trans-unit>
+      <trans-unit id="155">
+        <source>Pending Confirmation</source>
+        <target>Onay Bekleniyor</target>
+      </trans-unit>
+      <trans-unit id="156">
+        <source>There are no members yet.</source>
+        <target>Henüz üye yok.</target>
+      </trans-unit>
+      <trans-unit id="157">
+        <source>Protected Content</source>
+        <target>Gizli İçerik</target>
+      </trans-unit>
+      <trans-unit id="159">
+        <source>Updated!</source>
+        <target>Kaydedildi!</target>
+      </trans-unit>
+      <trans-unit id="160">
+        <source>A friendship request will be sent to %1</source>
+        <target>%1 kullanıcısına bir arkadaşlık talebi gönderilecek</target>
+      </trans-unit>
+      <trans-unit id="161">
+        <source>You may attach a message to your friendship request :</source>
+        <target>Arkadaşlık talebine bir mesaj ekleyebilirsin :</target>
+      </trans-unit>
+      <trans-unit id="162">
+        <source>Send Invitation</source>
+        <target>Daveti Gönder</target>
+      </trans-unit>
+      <trans-unit id="163">
+        <source>Add to Network</source>
+        <target>Ağına Ekle</target>
+      </trans-unit>
+      <trans-unit id="164">
+        <source>Add as Friend</source>
+        <target>Arkadaş olarak Ekle</target>
+      </trans-unit>
+      <trans-unit id="165">
+        <source>Edit Relationship</source>
+        <target>Yakınlığı Düzenle</target>
+      </trans-unit>
+      <trans-unit id="166">
+        <source>Remove from Friends</source>
+        <target>Arkadaşlardan Sil</target>
+      </trans-unit>
+      <trans-unit id="167">
+        <source>Friendship request sent to %1</source>
+        <target>Arkadaşlık talebi %1 kullanıcısına gönderildi</target>
+      </trans-unit>
+      <trans-unit id="168">
+        <source>Hi %1,</source>
+        <target>Merhaba %1,</target>
+      </trans-unit>
+      <trans-unit id="169">
+        <source>%1 %2 added you in %3.</source>
+        <target>%1 seni %3 ekledi.</target>
+      </trans-unit>
+      <trans-unit id="170">
+        <source>her network</source>
+        <target>ağına</target>
+      </trans-unit>
+      <trans-unit id="171">
+        <source>his network</source>
+        <target>ağına</target>
+      </trans-unit>
+      <trans-unit id="172">
+        <source>Message:</source>
+        <target>Mesaj:</target>
+      </trans-unit>
+      <trans-unit id="173">
+        <source>You can click the link below to accept the request:</source>
+        <target>Alttaki linki tıklayarak arkadaşlık talebine cevap verebilirsin:</target>
+      </trans-unit>
+      <trans-unit id="174">
+        <source>This e-mail was automatically sent from (%1).</source>
+        <target>Bu mesaj (%1) adresinden otomatik olarak gönderilmiştir.</target>
+      </trans-unit>
+      <trans-unit id="175">
+        <source>Are you sure that you want to remove %1 from your friends?</source>
+        <target>%1 kullanıcısını arkadaşlarından silmek istediğine emin misin?</target>
+      </trans-unit>
+      <trans-unit id="176">
+        <source>Yes do it!</source>
+        <target>Evet sil!</target>
+      </trans-unit>
+      <trans-unit id="177">
+        <source>You may update your relationship status with %1 :</source>
+        <target>%1 ile yakınlığını düzenleyebilirsin :</target>
+      </trans-unit>
+      <trans-unit id="178">
+        <source>No existing member companies in the group.</source>
+        <target>Gruba üye herhangi bir firma yok.</target>
+      </trans-unit>
+      <trans-unit id="179">
+        <source>No existing member groups in the group.</source>
+        <target>Gruba üye herhangi bir grup yok.</target>
+      </trans-unit>
+      <trans-unit id="180">
+        <source>General Information</source>
+        <target>Genel Bilgiler</target>
+      </trans-unit>
+      <trans-unit id="181">
+        <source>Pending</source>
+        <target>Beklemede</target>
+      </trans-unit>
+      <trans-unit id="182">
+        <source>Edit Information</source>
+        <target>Bilgileri Düzenle</target>
+      </trans-unit>
+      <trans-unit id="183">
+        <source>Basic Information</source>
+        <target>Temel Bilgiler</target>
+      </trans-unit>
+      <trans-unit id="184">
+        <source>Group Name</source>
+        <target>Grup Adı</target>
+      </trans-unit>
+      <trans-unit id="185">
+        <source>(required)</source>
+        <target>(zorunlu)</target>
+      </trans-unit>
+      <trans-unit id="186">
+        <source>select a group type</source>
+        <target>grup türü seçin</target>
+      </trans-unit>
+      <trans-unit id="187">
+        <source>Founded In</source>
+        <target>Kuruluş Tarihi</target>
+      </trans-unit>
+      <trans-unit id="188">
+        <source>year</source>
+        <target>yıl</target>
+      </trans-unit>
+      <trans-unit id="189">
+        <source>Select the year which your organisation was founded in.(optional)</source>
+        <target>Kurumunuzun kuruluş yılını seçin.(isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="190">
+        <source>Group Web Site</source>
+        <target>Grup Web Sitesi</target>
+      </trans-unit>
+      <trans-unit id="191">
+        <source>Example: http://www.groupsite.com (optional)</source>
+        <target>Örnek: http://www.groupsite.com (isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="192">
+        <source>Country</source>
+        <target>Ülke</target>
+      </trans-unit>
+      <trans-unit id="193">
+        <source>select country</source>
+        <target>ülke seçin</target>
+      </trans-unit>
+      <trans-unit id="194">
+        <source>Street Address</source>
+        <target>Adres</target>
+      </trans-unit>
+      <trans-unit id="195">
+        <source>Example: 54th Hallway Rd.</source>
+        <target>Örnek: 42. Cadde No:32</target>
+      </trans-unit>
+      <trans-unit id="196">
+        <source>State/Province</source>
+        <target>Eyalet/İl</target>
+      </trans-unit>
+      <trans-unit id="197">
+        <source>select state/province</source>
+        <target>eyalet/il seçin</target>
+      </trans-unit>
+      <trans-unit id="198">
+        <source>Postal Code</source>
+        <target>Posta Kodu</target>
+      </trans-unit>
+      <trans-unit id="199">
+        <source>Example: 54367</source>
+        <target>Örnek: 54367</target>
+      </trans-unit>
+      <trans-unit id="200">
+        <source>City/Town</source>
+        <target>Semt/Şehir</target>
+      </trans-unit>
+      <trans-unit id="201">
+        <source>Example: Arlington</source>
+        <target>Örnek: Kızılay</target>
+      </trans-unit>
+      <trans-unit id="202">
+        <source>Phone Number</source>
+        <target>Telefon Numarası</target>
+      </trans-unit>
+      <trans-unit id="203">
+        <source>Example: +66 342 5445332</source>
+        <target>Örnek: +66 342 5445332</target>
+      </trans-unit>
+      <trans-unit id="204">
+        <source>Fax Number</source>
+        <target>Faks Numarası</target>
+      </trans-unit>
+      <trans-unit id="205">
+        <source>Example: +66 342 6534522</source>
+        <target>Örnek: +66 342 6534522</target>
+      </trans-unit>
+      <trans-unit id="206">
+        <source>Group's public e-mail address.(optional)</source>
+        <target>Grubun e-posta adresi.(isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="207">
+        <source>Group Abbreviation</source>
+        <target>Grubun Kısaltması</target>
+      </trans-unit>
+      <trans-unit id="209">
+        <source>State</source>
+        <target>Şehir</target>
+      </trans-unit>
+      <trans-unit id="210">
+        <source>City</source>
+        <target>Semt</target>
+      </trans-unit>
+      <trans-unit id="211">
+        <source>Invite People</source>
+        <target>Arkadaşlarını Davet Et</target>
+      </trans-unit>
+      <trans-unit id="212">
+        <source>%1 of your friends were invited to join %2.</source>
+        <target>Arkadaşlarının %1 tanesi %2 grubuna davet edildi.</target>
+      </trans-unit>
+      <trans-unit id="213">
+        <source>See invited friend list</source>
+        <target>Davet edilen arkadaşlar</target>
+      </trans-unit>
+      <trans-unit id="214">
+        <source>No friends were invited!</source>
+        <target>Hiçbir arkadaş davet edilmedi!</target>
+      </trans-unit>
+      <trans-unit id="215">
+        <source>%1 friends total</source>
+        <target>%1 arkadaş</target>
+      </trans-unit>
+      <trans-unit id="216">
+        <source>Select All</source>
+        <target>Tümünü Seç</target>
+      </trans-unit>
+      <trans-unit id="217">
+        <source>De-Select All</source>
+        <target>Tüm İşaretleri Kaldır</target>
+      </trans-unit>
+      <trans-unit id="218">
+        <source>You don't have any person in your network.</source>
+        <target>Ağında kimse yok.</target>
+      </trans-unit>
+      <trans-unit id="219">
+        <source>&lt;span id="num"&gt;0&lt;/span&gt; Friends Selected</source>
+        <target>&lt;span id="num"&gt;0&lt;/span&gt; Arkadaş Seçildi</target>
+      </trans-unit>
+      <trans-unit id="220">
+        <source>Media</source>
+        <target>Medya</target>
+      </trans-unit>
+      <trans-unit id="221">
+        <source>Group Logo</source>
+        <target>Grup Logosu</target>
+      </trans-unit>
+      <trans-unit id="222">
+        <source>If you would like to change your logo please click the "Upload New" button below.</source>
+        <target>Logonuzu değiştirmek isterseniz, alttaki "Yeni Yükle" düğmesine tıklayın.</target>
+      </trans-unit>
+      <trans-unit id="223">
+        <source>You have not uploaded a logo for your group, yet.</source>
+        <target>Grubunuz için henüz logo yüklemediniz.</target>
+      </trans-unit>
+      <trans-unit id="224">
+        <source>If you would like to upload your logo please click the "Upload" button below.</source>
+        <target>Logo yüklemek isterseniz, alttaki "Yükle" düğmesine tıklayın.</target>
+      </trans-unit>
+      <trans-unit id="225">
+        <source>Upload</source>
+        <target>Yükle</target>
+      </trans-unit>
+      <trans-unit id="226">
+        <source>Invite Mail Sent</source>
+        <target>Davet Mesajı Gönderildi</target>
+      </trans-unit>
+      <trans-unit id="227">
+        <source>Invitations Sent</source>
+        <target>Davetler Gönderildi</target>
+      </trans-unit>
+      <trans-unit id="228">
+        <source>[0]No friends were invited|[1]1 friend was invited|(1,+Inf]%1% friends were invited</source>
+        <target>[0]Hiçbir arkadaş davet edilmedi|[1]1 arkadaş davet edildi|(1,+Inf]%1% arkadaş davet edildi</target>
+      </trans-unit>
+      <trans-unit id="229">
+        <source>Tips</source>
+        <target>İpuçları</target>
+      </trans-unit>
+      <trans-unit id="230">
+        <source>Change Logo</source>
+        <target>Logo Değiştir</target>
+      </trans-unit>
+      <trans-unit id="231">
+        <source>Upload Logo</source>
+        <target>Logo Yükle</target>
+      </trans-unit>
+      <trans-unit id="232">
+        <source>Group Information</source>
+        <target>Grup Bilgileri</target>
+      </trans-unit>
+      <trans-unit id="233">
+        <source>Edit Contact Details</source>
+        <target>İletişim Bilgilerini Düzenle</target>
+      </trans-unit>
+      <trans-unit id="234">
+        <source>Group Members</source>
+        <target>Grup Üyeleri</target>
+      </trans-unit>
+      <trans-unit id="235">
+        <source>List Members</source>
+        <target>Üyeleri Listele</target>
+      </trans-unit>
+      <trans-unit id="236">
+        <source>Pending Memberships</source>
+        <target>Onay Bekleyen Üyeler</target>
+      </trans-unit>
+      <trans-unit id="237">
+        <source>Calender</source>
+        <target>Takvim</target>
+      </trans-unit>
+      <trans-unit id="238">
+        <source>Attendance Notice</source>
+        <target>Katılım Bildirimi</target>
+      </trans-unit>
+      <trans-unit id="239">
+        <source>Add Event</source>
+        <target>Etkinlik Ekle</target>
+      </trans-unit>
+      <trans-unit id="240">
+        <source>Logo</source>
+        <target>Logo</target>
+      </trans-unit>
+      <trans-unit id="241">
+        <source>Documents</source>
+        <target>Belgeler</target>
+      </trans-unit>
+      <trans-unit id="242">
+        <source>Videos</source>
+        <target>Videolar</target>
+      </trans-unit>
+      <trans-unit id="243">
+        <source>Media Overview</source>
+        <target>Medya Genel Bakış</target>
+      </trans-unit>
+      <trans-unit id="244">
+        <source>Maybe, we can help you connect to people and companies you may know.</source>
+        <target>Belki, tanıdığınız kişi ve firmalara ulaşmanıza yardımcı olabiliriz.</target>
+      </trans-unit>
+      <trans-unit id="245">
+        <source>Pending Members</source>
+        <target>Onay Bekleyen Üyeler</target>
+      </trans-unit>
+      <trans-unit id="246">
+        <source>There are no pending membership requests, at the moment.</source>
+        <target>Şu anda onay bekleyen üye yok.</target>
+      </trans-unit>
+      <trans-unit id="247">
+        <source>Thank you for starting a new group!</source>
+        <target>Grup oluşturduğunuz için teşekkürler!</target>
+      </trans-unit>
+      <trans-unit id="248">
+        <source>We have sent you an e-mail including access information for your group. If you can't find the message in your inbox you might need to check your spam folder.&lt;br /&gt;In case of any account problems, please write to %1.</source>
+        <target>E-posta hesabınıza grup bilgilerini içeren bir mesaj gönderildi. Gelen kutunuzda bulamıyorsanız, "Gereksiz Posta" klasörünü kontrol edin.&lt;br /&gt;Hesabınız ile alakalı sorunları gidermek için, %2 adresine mesaj gönderin.</target>
+      </trans-unit>
+      <trans-unit id="249">
+        <source>Setup your Profile</source>
+        <target>Profilinizi Oluşturun</target>
+      </trans-unit>
+      <trans-unit id="249">
+        <source>Setup Your Profile</source>
+        <target>Profilini Oluştur</target>
+      </trans-unit>
+      <trans-unit id="250">
+        <source>Create CV</source>
+        <target>CV Oluştur</target>
+      </trans-unit>
+      <trans-unit id="251">
+        <source>Search for Jobs</source>
+        <target>İş İlanlarında arama yapın</target>
+      </trans-unit>
+      <trans-unit id="252">
+        <source>Start your Blog</source>
+        <target>Kendi Günlüğünüzü oluşturun</target>
+      </trans-unit>
+      <trans-unit id="253">
+        <source>Search for your Friends</source>
+        <target>Arkadaşlarınızı bulun</target>
+      </trans-unit>
+      <trans-unit id="254">
+        <source>Invite your Friends</source>
+        <target>Arkadaşlarınızı davet edin.</target>
+      </trans-unit>
+      <trans-unit id="255">
+        <source>Leave a message to Public Bulletin</source>
+        <target>Topluluk panosuna mesaj bırakın</target>
+      </trans-unit>
+      <trans-unit id="256">
+        <source>Become an EMT Contributor and get paid</source>
+        <target>EMT için ücret karşılığı çalışın</target>
+      </trans-unit>
+      <trans-unit id="257">
+        <source>Promote your Products or Services</source>
+        <target>Ürünlerinizi ve Hizmetlerinizi tanıtın</target>
+      </trans-unit>
+      <trans-unit id="258">
+        <source>Search for Products from other Companies</source>
+        <target>Diğer Firmaların Ürünlerinde arama yapın</target>
+      </trans-unit>
+      <trans-unit id="259">
+        <source>Maintain a customized Company Website</source>
+        <target>Özelleştirilmiş bir Firma Web Sayfasına sahip olun</target>
+      </trans-unit>
+      <trans-unit id="260">
+        <source>Post Jobs</source>
+        <target>İş İlanı yayınlayın</target>
+      </trans-unit>
+      <trans-unit id="261">
+        <source>Get your information translated online</source>
+        <target>Bilgilerinizi tercüme ettirin</target>
+      </trans-unit>
+      <trans-unit id="262">
+        <source>Query prices on Transportation Directory</source>
+        <target>Taşımacılık Dizininde fiyat sorgulaması yapın.</target>
+      </trans-unit>
+      <trans-unit id="263">
+        <source>Get EMT Localized Representatives work for you</source>
+        <target>EMT Yerel Temsilcilerinin sizin için çalışmasını sağlayın</target>
+      </trans-unit>
+      <trans-unit id="264">
+        <source>Invite your Members</source>
+        <target>Resmi Üyelerinizi davet edin</target>
+      </trans-unit>
+      <trans-unit id="265">
+        <source>Promote your Events online on EMT Calender</source>
+        <target>Etkinliklerinizi çevrimiçi EMT Takviminde duyurun</target>
+      </trans-unit>
+      <trans-unit id="266">
+        <source>Contact other Business Organisations worldwide</source>
+        <target>Dünya çapındaki diğer İş Topluluklarına ulaşın</target>
+      </trans-unit>
+      <trans-unit id="267">
+        <source>Invite People Tool, lets you invite people to join your group on eMarketTurkey.</source>
+        <target>Kişi Davet Aracı, kişileri eMarketTurkey grubunuza davet etmenizi sağlar.</target>
+      </trans-unit>
+      <trans-unit id="268">
+        <source>E-mail List</source>
+        <target>E-posta Listesi</target>
+      </trans-unit>
+      <trans-unit id="269">
+        <source>please enter only one email address per line</source>
+        <target>lütfen her satıra sadece bir adres girin</target>
+      </trans-unit>
+      <trans-unit id="270">
+        <source>Invite Message</source>
+        <target>Davet Mesajı</target>
+      </trans-unit>
+      <trans-unit id="271">
+        <source>optional</source>
+        <target>isteğe bağlı</target>
+      </trans-unit>
+      <trans-unit id="272">
+        <source>Invitation Language</source>
+        <target>Davet Dili</target>
+      </trans-unit>
+      <trans-unit id="273">
+        <source>Please fill in the form below in order to create your group.</source>
+        <target>Lütfen grubunuzu oluşturmak için alttaki gerekli bilgileri girin.</target>
+      </trans-unit>
+      <trans-unit id="274">
+        <source>An error occurred while creating your group.&lt;br /&gt;We are sorry for the inconvenience and working to work out the problem yet.</source>
+        <target>Grubunuzu oluştururken bir hata oluştu..&lt;br /&gt;Sorundan dolayı özür dileriz ve gidermek için çalışıyoruz.</target>
+      </trans-unit>
+      <trans-unit id="275">
+        <source>Example: NASA (optional)</source>
+        <target>Örnek: NASA (isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="276">
+        <source>Tell us about your group.(optional)</source>
+        <target>Bize grubunuzdan bahsedin.(isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="277">
+        <source>Describe your members' profile.(optional)</source>
+        <target>Üye profilinizi tarif edin.(isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="278">
+        <source>Provide some information about your organisation's events, if available.(optional)</source>
+        <target>Grubunuzun etkinlikleri ile ilgili bilgi verin.(isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="279">
+        <source>Please provide contact information of your organisation, if available.(optional)</source>
+        <target>Eğer mevcutsa grubunuzun iletişim bilgilerini girin. (isteğe bağlı)</target>
+      </trans-unit>
+      <trans-unit id="280">
+        <source>Please select membership settings for your group :</source>
+        <target>Grubunuz için üyelik kriterlerini seçin :</target>
+      </trans-unit>
+      <trans-unit id="281">
+        <source>Membership Confirmation</source>
+        <target>Üyelik Onayı</target>
+      </trans-unit>
+      <trans-unit id="282">
+        <source>Anyone can join</source>
+        <target>Herkes katılabilir</target>
+      </trans-unit>
+      <trans-unit id="283">
+        <source>Approval required</source>
+        <target>Onay gerekli</target>
+      </trans-unit>
+      <trans-unit id="284">
+        <source>I accept %1$s and %2$s.</source>
+        <target>%1$s ve %2$s kabul ediyorum.</target>
+      </trans-unit>
+      <trans-unit id="285">
+        <source>Terms of Use</source>
+        <target>Kullanım Koşulları</target>
+      </trans-unit>
+      <trans-unit id="286">
+        <source>Display Name</source>
+        <target>Görünen Ad</target>
+      </trans-unit>
+      <trans-unit id="287">
+        <source>Abbreviation</source>
+        <target>Kısaltma</target>
+      </trans-unit>
+      <trans-unit id="288">
+        <source>You've got an eMarketTurkey Group Invitation</source>
+        <target>Bir eMarketTurkey grup davetiniz var</target>
+      </trans-unit>
+      <trans-unit id="289">
+        <source>Hello %1n %2n,</source>
+        <target>Merhaba %1n %2n,</target>
+      </trans-unit>
+      <trans-unit id="290">
+        <source>Hello,</source>
+        <target>Merhaba,</target>
+      </trans-unit>
+      <trans-unit id="291">
+        <source>You are invited to join the group &lt;b&gt;"%1"&lt;/b&gt; by &lt;b&gt;%2&lt;/b&gt;.</source>
+        <target>&lt;b&gt;%2&lt;/b&gt; tarafından &lt;b&gt;"%1"&lt;/b&gt; grubuna davet edildiniz.</target>
+      </trans-unit>
+      <trans-unit id="292">
+        <source>Here is %1 message :</source>
+        <target>Davet Mesajı :</target>
+      </trans-unit>
+      <trans-unit id="293">
+        <source>You may click the link below to respond to your invitation to join the group:</source>
+        <target>Grub davetinizi yanıtlamak için alttaki linke tıklayabilirsiniz:</target>
+      </trans-unit>
+      <trans-unit id="294">
+        <source>More about eMarketTurkey Services</source>
+        <target>eMarketTurkey ile ilgili daha fazla bilgi</target>
+      </trans-unit>
+      <trans-unit id="295">
+        <source>If you cannot view this message properly, then %1.</source>
+        <target>Bu mesajı düzgün görüntüleyemiyorsanız, %1.</target>
+      </trans-unit>
+      <trans-unit id="296">
+        <source>click here</source>
+        <target>buraya tıklayın</target>
+      </trans-unit>
+      <trans-unit id="297">
+        <source>%1 invited you to join the group %3.</source>
+        <target>%1 seni %3 grubuna davet etti.</target>
+      </trans-unit>
+      <trans-unit id="298">
+        <source>You can click the link below to accept the invite:</source>
+        <target>Daveti kabul etmek için alttaki linki tıklayabilirsin:</target>
+      </trans-unit>
+      <trans-unit id="299">
+        <source>Group Photos</source>
+        <target>Grup Resimleri</target>
+      </trans-unit>
+      <trans-unit id="300">
+        <source>Send Email</source>
+        <target>E-posta Gönder</target>
+      </trans-unit>
+      <trans-unit id="301">
+        <source>Perform Search</source>
+        <target>Arama Yap</target>
+      </trans-unit>
+      <trans-unit id="302">
+        <source>Congratulations! Your group was successfully created. Now, you can invite friends or members to promote your group.</source>
+        <target>Tebrikler! Grubunuz oluşturuldu. Şimdi, arkadaşlarınızı ve resmi üyelerinizi grubunuza davet edebilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="303">
+        <source>You may click the link below to view %1's profile :</source>
+        <target>%1 profilini görüntülemek için alttaki linke tıklayabilirsin :</target>
+      </trans-unit>
+      <trans-unit id="304">
+        <source>You may also click the link below to edit informations about %1 :</source>
+        <target>Ayrıca %1 bilgilerini düzenlemek için alttaki linki tıklayabilirsin :</target>
+      </trans-unit>
+      <trans-unit id="305">
+        <source>Enjoy your eMarketTurkey Community Group!</source>
+        <target>eMarketTurkey Topluluk Grubunun keyfini çıkar!</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>No Career information available.</source>
+        <target>Kariyer bilgisi yok.</target>
+      </trans-unit>
+      <trans-unit id="307">
+        <source>Employments</source>
+        <target>Çalışma Durumu</target>
+      </trans-unit>
+      <trans-unit id="308">
+        <source>Education Status</source>
+        <target>Eğitim Durumu</target>
+      </trans-unit>
+      <trans-unit id="309">
+        <source>No existing companies in network.</source>
+        <target>Ağında firma yok.</target>
+      </trans-unit>
+      <trans-unit id="310">
+        <source>No existing friends in network.</source>
+        <target>Ağında arkadaş yok.</target>
+      </trans-unit>
+      <trans-unit id="311">
+        <source>Not a member of any groups.</source>
+        <target>Herhangi bir gruba üye değil.</target>
+      </trans-unit>
+      <trans-unit id="312">
+        <source>Edit Profile</source>
+        <target>Profili Düzenle</target>
+      </trans-unit>
+      <trans-unit id="313">
+        <source>Married to %1u</source>
+        <target>%1u ile evli</target>
+      </trans-unit>
+      <trans-unit id="314">
+        <source>Info</source>
+        <target>Bilgi</target>
+      </trans-unit>
+      <trans-unit id="315">
+        <source>Career</source>
+        <target>Kariyer</target>
+      </trans-unit>
+      <trans-unit id="316">
+        <source>You have a community group invitation</source>
+        <target>Bir topluluk grubu davetiniz var</target>
+      </trans-unit>
+      <trans-unit id="317">
+        <source>Information for your new group</source>
+        <target>Yeni grubunuz ile ilgili bilgiler</target>
+      </trans-unit>
+      <trans-unit id="318">
+        <source>New group photo was uploaded successfully</source>
+        <target>Yeni grup resmi başarıyla yüklendi</target>
+      </trans-unit>
+      <trans-unit id="319">
+        <source>You have a friendship request</source>
+        <target>Bir arkadaşlık talebiniz var</target>
+      </trans-unit>
+      <trans-unit id="320">
+        <source>Photo Uploaded</source>
+        <target>Resim Yüklendi</target>
+      </trans-unit>
+      <trans-unit id="321">
+        <source>Error Occured!</source>
+        <target>Hata Oluştu!</target>
+      </trans-unit>
+      <trans-unit id="321">
+        <source>Invalid Request!</source>
+        <target>Geçersiz İstek!</target>
+      </trans-unit>
+      <trans-unit id="322">
+        <source>Error occured while storing group photo. Please try again later.</source>
+        <target>Grup resmi yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Photo Deleted</source>
+        <target>Resim Silindi</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Group photo was deleted successfully!</source>
+        <target>Grup resmi başarıyla silindi!</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Information Saved!</source>
+        <target>Bilgiler Kaydedildi!</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Group information has been saved successfully.</source>
+        <target>Grup bilgileri başarıyla kaydedildi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Error occured while storing group information. Please try again later.</source>
+        <target>Grup bilgileri kaydedilirken hata oluştu. Lütfen daha sonra tekrar deneyin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Friends Invited!</source>
+        <target>Arkadaşlar Davet Edildi!</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Selected friends have been successfully invited to your group.</source>
+        <target>Seçilen arkadaşlar başarıyla davet edildi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Error occured while inviting your friends. Please try again later.</source>
+        <target>Arkadaşlar davet edilirken hata oluştu. Lütfen daha sonra tekrar deneyin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Group Logo Uploaded</source>
+        <target>Grup Logosu Yüklendi</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Your new logo was uploaded successfully.</source>
+        <target>Yeni logonuz başarıyla yüklendi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Error occured while storing your logo. Please try again later.</source>
+        <target>Logonuz kaydedilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Specified friends have been successfully invited to your group.</source>
+        <target>Belirtilen arkadaşlar başarıyla grubunuza davet edildi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Friendship Request Sent!</source>
+        <target>Arkadaşlık Talebi İletildi!</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>A friendship request has been sent to %1</source>
+        <target>Arkadaşlık talebi %1 kullanıcısına iletildi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Removed from Friends!</source>
+        <target>Arkadaşlardan Silindi!</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>%1 has been removed from your friends.</source>
+        <target>%1 arkadaşlarınız arasından çıkarıldı.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Your photo was deleted successfully!</source>
+        <target>Resminiz başarıyla silindi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>New Profile Picture</source>
+        <target>Yeni Profil Resmi</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Your photo was set as profile picture</source>
+        <target>Resminiz profil resmi olarak belirlendi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Your new photo was uploaded successfully.</source>
+        <target>Yeni resminiz başarıyla kaydedildi.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Error occured while storing your photo. Please try again later.</source>
+        <target>Resminiz kaydedilirken hata oluştu. Lütfen daha sonra tekrar deneyin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Error Occured!</source>
+        <target>Hata Oluştu!</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>%1's Photos</source>
+        <target>%1 Resimleri</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Please enter a group name.</source>
+        <target>Lütfen bir grup adı belirtin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>A group with the same name already exists. Please provide a different group name.</source>
+        <target>Bu ada sahip başka bir grup zaten var. Lütfen başka bir grup adı belirtin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Please select a group type.</source>
+        <target>Lütfen bir grup türü seçin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Please select a membership confirmation option.</source>
+        <target>Lütfen bir üyelik onay seçeneğini işaretleyin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Please check confirmation box to accept terms.</source>
+        <target>Kullanım Koşullarını kabul etmek için onay kutusunu işaretleyin.</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Please correct the errors listed below:</source>
+        <target>Lütfen listelenen hataları düzeltin:</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Unknown</source>
+        <target>Bilinmeyen</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>[0]No members|[1]1 member|(1,+Inf]%1 members</source>
+        <target>[0]Üye yok|[1]1 üye|(1,+Inf]%1 üye</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>%1 users total</source>
+        <target>toplam %1 kullanıcı</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>%1 groups total</source>
+        <target>toplam %1 grup</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Type</source>
+        <target>Tür</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Location</source>
+        <target>Konum</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>EMT Community</source>
+        <target>EMT Topluluk</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>My Profile</source>
+        <target>Profilim</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Network Activity</source>
+        <target>Ağ Aktiviteleri</target>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Requests</source>
+        <target>İstekler</target>
+      </trans-unit>
+      <trans-unit id="170">
+        <source>Network Requests</source>
+        <target>Ağ İstekleri</target>
+      </trans-unit>
+      <trans-unit id="171">
+        <source>Accept</source>
+        <target>Kabul Et</target>
+      </trans-unit>
+      <trans-unit id="172">
+        <source>Ignore</source>
+        <target>Yoksay</target>
+      </trans-unit>
+      <trans-unit id="173">
+        <source>You don't have any awaiting network requests.</source>
+        <target>Şu anda bekleyen ağ isteğiniz bulunmamaktadır.</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>My Network | eMarketTurkey</source>
+        <target>Ağım | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>Network Activity | eMarketTurkey</source>
+        <target>Ağ Aktiviteleri | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>Network Requests | eMarketTurkey</source>
+        <target>Ağ İstekleri | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>%1 updated %2 relationship status with you to &lt;b&gt;%3&lt;/b&gt;.</source>
+        <target>%1 ilişki durumunuzu &lt;b&gt;%3&lt;/b&gt; olarak güncelledi.</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>%1 wants to be friends with you.</source>
+        <target>%1 seninle arkadaş olmak istiyor.</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>%1 invited you to join the group %2.</source>
+        <target>%1 seni %2 grubuna üye olmaya davet etti.</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>%1 wants to join the group %2.</source>
+        <target>%1, %2 grubuna üye olmak istiyor.</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>Comment</source>
+        <target>Yorum Yap</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Jobs&lt;b&gt;&lt;/b&gt;</source>
+        <target>Kariyer</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>You may edit your career information by %1.</source>
+        <target>Kariyer bilgilerini %1 düzenleyebilirsin.</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>clicking here</source>
+        <target>buraya tıklayarak</target>
+      </trans-unit>
+      <trans-unit id="1">
+        <source>Home</source>
+        <target>Ana Sayfa</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>My Career</source>
+        <target>Kariyerim</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Job Search</source>
+        <target>İş Arama</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Articles</source>
+        <target>Makaleler</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>News</source>
+        <target>Haberler</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>%1's Photos | eMarketTurkey</source>
+        <target>%1 Resimleri | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Confirm</source>
+        <target>Kabul Et</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Reject</source>
+        <target>Reddet</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>You accepted relation status update by %1u.</source>
+        <target>%1u tarafından talep edilen durum değişikliğini kabul ettiniz.</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>You ignored relation update by %1u.</source>
+        <target>%1u tarafından talep edilen durum değişikliğini reddettiniz.</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>You accepted network request from %1u.</source>
+        <target>%1u tarafından talep edilen arkadaşlık talebini kabul ettiniz.</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>You ignored network request from %1u.</source>
+        <target>%1u tarafından talep edilen arkadaşlık talebini reddettiniz.</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>MyEMT</source>
+        <target>emarketim</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Network</source>
+        <target>Ağım</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Request Sent</source>
+        <target>Talep Gönderildi</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Request was successfuly sent.</source>
+        <target>Talep başarıyla gönderildi.</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Your request was sent to %1%</source>
+        <target>Talebiniz %1% adlı kullanıcıya gönderildi.</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Add Contact</source>
+        <target>Arkadaş Ekle</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>A network invitation will be sent to %1</source>
+        <target>%1 adlı kullanıcıya bir arkadaşlık talebi gönderilecek</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>You may include a message in your invitation</source>
+        <target>Davetinize bir mesaj ekleyebilirsiniz</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>You don't have any people in your network, yet.&lt;br /&gt;Friend Finder may help you find your friends online.</source>
+        <target>Ağınızda henüz hiç kullanıcı yok.&lt;br /&gt;Friend Finder arkadaşlarınızı bulmanıza yardımcı olabilir.</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Networking Tools</source>
+        <target>Ağ Araçları</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>%1 Members</source>
+        <target>%1 Üyeleri</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>You are not a member of any groups, yet.&lt;br /&gt;You may browse groups on eMarketTurkey Community.</source>
+        <target>Henüz hiçbir gruba üye değilsiniz.&lt;br /&gt;eMarketTurkey Topluluk gruplarına gözatabilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>You don't have any companies in your network, yet.&lt;br /&gt;You may browse companies on eMarketTurkey B2B Directory.</source>
+        <target>Henüz ağınızda hiçbir firma yok.&lt;br /&gt;eMarketTurkey B2B dizinindeki firmalara gözatabilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Visit eMarketTurkey Groups</source>
+        <target>eMarketTurkey Gruplarına Gözat</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Visit eMarketTurkey B2B Directory</source>
+        <target>eMarketTurkey B2B Dizinine Gözat</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Go to Friend Finder</source>
+        <target>Friend Finder'a Git</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Item does not exist</source>
+        <target>Nesne bulunamadı</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>%1 commented on %2.</source>
+        <target>%1, %2 hakkında yorum yaptı.</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Comment:</source>
+        <target>Yorum:</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>You can click the link below to view the comment:</source>
+        <target>Alttaki linke tıklayarak yorumu görüntüleyebilirsin:</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>%1p at %2c</source>
+        <target>%1p - %2c</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>%1d student at %2s on %3m</source>
+        <target>%3m(%1d) öğrencisi - %2s</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Community | eMarketTurkey</source>
+        <target>Topluluk | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>People | eMarketTurkey</source>
+        <target>Kişiler | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Groups | eMarketTurkey</source>
+        <target>Gruplar | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>an album of you</source>
+        <target>bir albümün</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>an album of %1u</source>
+        <target>%1u kullanıcısının bir albümü</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>an album of your company %1c</source>
+        <target>%1c adlı firmanın bir albümü</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>an album of %1u's company %2c</source>
+        <target>%1u kullanıcısının %2c adlı firmasının bir albümü</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>an album of your group %1g</source>
+        <target>%1g adlı grubunun bir albümü</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>an album of %1u's group %2g</source>
+        <target>%1u kullanıcısının %1g adlı grubunun bir albümü</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>a photo of you</source>
+        <target>bir fotoğrafın</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>a photo of %1u</source>
+        <target>%1u kullanıcısının bir fotoğrafı</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>human resources logo of your company %1c</source>
+        <target>%1c adlı firmanın insan kaynakları logosu</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>human resources logo of %1u's company %2c</source>
+        <target>%1u kullanıcısının %2c adlı firmasının insan kaynakları logosu</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Community Home</source>
+        <target>Topluluk Giriş</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Language</source>
+        <target>Dil</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Account</source>
+        <target>Hesap</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>People You May Know</source>
+        <target>Tanıyabileceğin Kişiler</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Contacts</source>
+        <target>Kişiler</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Notifications</source>
+        <target>Bildirimler</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>You don\'t have any notifications.</source>
+        <target>Herhangi bir bildiriminiz yok.</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Edit</source>
+        <target>Düzenle</target>
+      </trans-unit>
+      <trans-unit id="495">
+        <source>Residential Country</source>
+        <target>Yaşadığı Ülke</target>
+      </trans-unit>
+      <trans-unit id="1019">
+        <source>Male</source>
+        <target>Bay</target>
+      </trans-unit>
+      <trans-unit id="1020">
+        <source>Female</source>
+        <target>Bayan</target>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>Birthdate</source>
+        <target>Doğum Tarihi</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Married</source>
+        <target>Evli</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Single</source>
+        <target>Bekar</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>not set</source>
+        <target>belirtilmemiş</target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Home Contact Information</source>
+        <target>Ev İletişim Bilgileri</target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Work Contact Information</source>
+        <target>İşyeri İletişim Bilgileri</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Save Changes</source>
+        <target>Değişiklikleri Kaydet</target>
+      </trans-unit>
+      <trans-unit id="491">
+        <source>Home Country</source>
+        <target>Doğum Yeri</target>
+      </trans-unit>
+      <trans-unit id="492">
+        <source>please select your home country</source>
+        <target>lütfen doğduğunuz ülkeyi seçin</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Account Settings</source>
+        <target>Hesap Ayarları</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Privacy Settings</source>
+        <target>Gizlilik Ayarları</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>You don't have any notifications.</source>
+        <target>Şu anda yeni bildirim yok.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Network Request Accepted</source>
+        <target>Ağ Talebi Kabul Edildi</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Network Request Ignored</source>
+        <target>Ağ Talebi Reddedildi</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Failed to respond to group invitation! Group invitation could not be located.</source>
+        <target>Grup talebi işlenirken hata oluştu! Talep bulunamadı.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Group Invitation Accepted</source>
+        <target>Grup Talebi Kabul Edildi</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>You accepted group invitation from %1u.</source>
+        <target>%1u tarafından yapılan grup davetini kabul ettiniz.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Group Invitation Ignored</source>
+        <target>Grup Talebi Reddedildi</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>You ignored group invitation from %1u.</source>
+        <target>%1u tarafından yapılan grup davetini reddedildi.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Failed to respond to membership request! Group membership request could not be located.</source>
+        <target>Üyelik talebini yanıtlarken hata oluştu! Üyelik talebi bulunamadı.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Failed to respond to status change! Status change owner currently does not exist.</source>
+        <target>Durum değişikliği talebini yanıtlarken hata oluştu! Durum değişikliğini yapan kullanıcı şu anda mevcut değil.</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Relation Update Accepted</source>
+        <target>Durum Değişikliği Kabul Edildi</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Relation Update Ignored</source>
+        <target>Durum Değişikliği Reddedildi</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Failed to accept network request! Network request owner currently does not exist.</source>
+        <target>Ağ talebini kabul ederken hata oluştu! Ağ talebinde bulunan kullanıcı bulunamadı.</target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>People You May Know | eMarketTurkey</source>
+        <target>Tanıyabileceğin Kişiler | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Advanced Search</source>
+        <target>Detaylı Arama</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Your friend &lt;b&gt;%1n&lt;/b&gt; has invited you to join eMarketTurkey.</source>
+        <target>Arkadaşın &lt;b&gt;%1n&lt;/b&gt; seni eMarketTurkey platformuna üye olmaya davet etti.</target>
+      </trans-unit>
+      <trans-unit id="1049">
+        <source>You may click the link below to respond to your friend's invitation:</source>
+        <target>Arkadaşınızın davetine yanıt vermek için alttaki linke tıklayabilirsiniz:</target>
+      </trans-unit>
+      <trans-unit id="1053">
+        <source>You may invite your friends to join eMarketTurkey by providing their e-mail addresses.</source>
+        <target>Arkadaşlarınızı e-posta adreslerini belirterek eMarketTurkey platformuna davet edebilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Invite Friends</source>
+        <target>Arkadaşlarını Davet Et</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Find Friends</source>
+        <target>Arkadaşlarını Bul</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Windows Live Contacts</source>
+        <target>Windows Live Rehberim</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Search for your friends by using your Windows Live account.&lt;br /&gt;This way you will have the opportunity to find your friends who are already member of eMarketTurkey.</source>
+        <target>Windows Live hesabınızı kullanarak arkadaşlarınızı arayabilirsiniz.&lt;br /&gt;Bu şekilde, eMarketTurkey üyesi olan arkadaşlarınızı kolayca bulabilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Continue</source>
+        <target>Devam Et</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Notice: eMarketTurkey WILL NOT be able to access or store your password.</source>
+        <target>Dikkat: eMarketTurkey hiçbir şekilde şifrenize erişemeyecek ve kaydetmeyecektir. </target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Google Contacts</source>
+        <target>Google Arkadaşlarım</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Search for your friends by using your Google account.&lt;br /&gt;This way you will have the opportunity to find your friends who are already member of eMarketTurkey.</source>
+        <target>Google hesabınızı kullanarak arkadaşlarınızı arayabilirsiniz.&lt;br /&gt;Bu şekilde, eMarketTurkey üyesi olan arkadaşlarınızı kolayca bulabilirsiniz.</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Check All</source>
+        <target>Tümünü İşaretle</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Un-check All</source>
+        <target>İşaretleri Kaldır</target>
+      </trans-unit>
+      <trans-unit id="515">
+        <source>Friend Finder | eMarketTurkey</source>
+        <target>Arkadaşlarını Bul | eMarketTurkey</target>
+      </trans-unit>
+      <trans-unit id="1134">
+        <source>Skip this step</source>
+        <target>Bu adımı atla</target>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>Verification Required</source>
+        <target>Doğrulama Gerekiyor</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

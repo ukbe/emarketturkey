@@ -1,0 +1,50 @@
+all:
+    metas:
+        title: 'Manage Jobs | eMarketTurkey'
+
+listSuccess:
+    metas:
+        title: 'Jobs | eMarketTurkey'
+
+postSuccess:
+    metas:
+        title: 'Post Job | eMarketTurkey'
+    javascripts:  [emt.langform-1.0.js, jquery.customCheckbox.js, emt.locform-1.0.js, emt-branch-1.0.js]
+
+profileSuccess:
+    metas:
+        title: 'HR Profile | eMarketTurkey'
+
+profileEditSuccess:
+    metas:
+        title: "Edit HR Profile | eMarketTurkey"
+
+applicantsSuccess:
+    metas:
+        title: "Job Applicants | eMarketTurkey"
+
+overviewSuccess:
+    metas:
+        title: "Jobs Overview | eMarketTurkey"
+
+cvVaultSuccess:
+    metas:
+        title: "CV Vault | eMarketTurkey"
+
+messageTemplatesSuccess:
+    metas:
+        title: "Message Templates | eMarketTurkey"
+
+messageTemplateSuccess:
+    metas:
+        title: "Message Template | eMarketTurkey"
+    javascripts:  [emt.langform-1.0.js]
+
+previewCVSuccess:
+  javascripts:    [emt-branch-1.0.js]
+  stylesheets:    [hr.2.0.css]
+
+detailsSuccess:
+  javascripts:    [jquery.ui-1.8.16.accordion.js]
+
+  

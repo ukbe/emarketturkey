@@ -1,0 +1,5 @@
+showSuccess:
+    metas:
+        title:  'Article Content'
+    layout:  layoutTripleColumn
+    

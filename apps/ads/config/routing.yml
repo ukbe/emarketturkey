@@ -1,0 +1,11 @@
+ad_view:
+  url: /view/:guid
+  param: { module: default, action: view }
+
+ad_click:
+  url: /click/:guid
+  param: { module: default, action: click }
+  
+post-ad:
+  url: /advertise
+  param: { module: default, action: advertise }

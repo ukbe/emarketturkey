@@ -1,0 +1,26 @@
+fields:
+    comp_name:
+        required:
+            msg: "Please specify your company's name."
+    comp_sector:
+        required:
+            msg: "Please select a sector which suits your company's business area."
+    comp_busstype:
+        required:
+            msg: "Please select a business type which suits your company's business model."
+    comp_phone:
+        required:
+            msg: "Please enter phone number of your company."
+    comp_street:
+        required:
+            msg: "Please enter street address of your company."
+    comp_city:
+        required:
+            msg: "Please specify which city/town your company is located in."
+    comp_state:
+        required:
+            msg: "Please specify which state/province your company is located in."
+    comp_country:
+        required:
+            msg: "Please specify which country your company is located in."
+            

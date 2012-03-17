@@ -1,0 +1,41 @@
+all:
+
+    main:
+    
+        emt_tables:
+            users:
+                modelClass:   User
+                orderColumn:   id
+                itemsPerPage:  10
+                rowPartial:  search/user_row
+                rowCountLabel:  '%1 users total'
+                showItemsPerPage:  false
+                itemUrl:  ['profile/index']
+                cssClass:  'searchresults'
+                columns:
+                    id:
+                        displayName:    "ID"
+                        fieldName:  "EMT_USER.ID"
+                        cssClass: 'piccol'
+                    name:
+                        displayName:    "Name"
+                        isSortable:   true
+                        fieldName:  "EMT_USER.NAME"
+            groups:
+                modelClass:   Group
+                orderColumn:   id
+                itemsPerPage:  10
+                rowPartial:  search/group_row
+                rowCountLabel:  '%1 groups total'
+                showItemsPerPage:  false
+                itemUrl:  ['group/home']
+                cssClass:  'searchresults'
+                columns:
+                    id:
+                        displayName:    "ID"
+                        fieldName:  "EMT_GROUP.ID"
+                        cssClass: 'piccol'
+                    name:
+                        displayName:    "Name"
+                        fieldName:  "EMT_GROUP.NAME"
+                        

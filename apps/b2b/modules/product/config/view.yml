@@ -1,0 +1,4 @@
+indexSuccess:
+    javascripts:  [/sf/shadowbox-build-3.0rc1/shadowbox.js]
+    stylesheets:  [/sf/shadowbox-build-3.0rc1/shadowbox.css]
+    layout:  layoutTripleAloneColumn

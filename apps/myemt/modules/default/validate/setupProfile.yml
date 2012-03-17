@@ -1,0 +1,22 @@
+fields:
+    profile_hometown_country:
+        required:
+            msg: "Please select your home country."
+    profile_hometown_state:
+        required:
+            msg: "Please select your home state/province."
+    profile_preferred_lang:
+        required:
+            msg: "Please select your preferred language."
+    contact_country:
+        required:
+            msg: "Please select your current residential country."
+    contact_type:
+        required:
+            msg: "Please select contact detail type."
+    contact_street:
+        required:
+            msg: "Please enter your street address."
+    contact_state:
+        required:
+            msg: "Please select your residential state/province."

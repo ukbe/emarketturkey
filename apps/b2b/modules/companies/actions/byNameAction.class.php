@@ -1,0 +1,14 @@
+<?php
+
+class byNameAction extends EmtAction
+{
+    public function execute($request)
+    {
+        
+    }
+
+    public function handleError()
+    {
+    }
+
+}

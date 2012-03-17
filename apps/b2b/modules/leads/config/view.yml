@@ -1,0 +1,20 @@
+indexSuccess:
+  metas:
+    title: "Find a Trade Lead | eMarketTurkey"
+
+spotlightSuccess:
+  metas:
+    title: "Latest Trade Leads | eMarketTurkey"
+
+networkSuccess:
+  metas:
+    title: "Leads from Your Network | eMarketTurkey"
+
+byCountrySuccess:
+  metas:
+    title: "Trade Leads by Country | eMarketTurkey"
+
+byCategorySuccess:
+  metas:
+    title: "Trade Leads by Category | eMarketTurkey"
+

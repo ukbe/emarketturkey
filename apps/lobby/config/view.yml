@@ -1,0 +1,18 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        'eMarketTurkey - Global Chamber of Business'
+    description:  'eMarketTurkey is a business platform which companies and professionals could have variety of services at the same place.'
+    keywords:     'products, companies, import, export, trade, business, jobs, human networking, events, human resources, hr, directory, transportation directory, trade experts, emarket, turkey, global'
+    #language:     en
+    robots:       index, follow
+    base:         'http://www.emarketturkey.com'
+
+  stylesheets:    [main.2.0.1.css,forms.css,grid-ie.css,grid.css,zend-menu.css]
+
+  javascripts:    [jquery-1.7.1.min.js, /js/jquery.thickbox.min.js, jquery-ui-1.8.13.core.min.js]
+
+  has_layout:     on
+  layout:         layout

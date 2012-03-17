@@ -1,0 +1,25 @@
+all:
+#    layout:  layoutManage
+
+corporateSuccess:
+    metas:
+        title: 'Edit Corporate Information | eMarketTurkey'
+    stylesheets:  [jquery-tools/dateinput.css]
+ 
+    javascripts:  [emt.langform-1.0.js]
+
+contactSuccess:
+    metas:
+        title: 'Edit Contact Information | eMarketTurkey'
+
+logoSuccess:
+    metas:
+        title: 'Company Logo | eMarketTurkey'
+    stylesheets:  [jquery-tools/tabs.css, jquery.Jcrop.css]
+    javascripts:  [jquery.Jcrop.min.js, jquery.ui-1.8.14.dragdrop.js, emt-logoWidget.js]
+
+profileSuccess:
+    metas:
+        title: 'Edit Company Profile | eMarketTurkey'
+
+        

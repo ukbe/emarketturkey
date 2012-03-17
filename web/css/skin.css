@@ -1,0 +1,276 @@
+.jcarousel-skin-ie7 .jcarousel-container {
+}
+
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+    width: 410px;
+    padding: 0px 25px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-container-vertical {
+    width: 80px;
+    height: 245px;
+    padding: 40px 20px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+    width:  410px;
+    height: 130px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-clip-vertical {
+    width:  87px;
+    height: 245px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item {
+    width: 97px;
+    height: 130px;
+    text-align: center;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item span {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item span.pic {
+    height: 60px;
+    display: table-cell;
+    text-align: center;
+    width: 90px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item span.product-name {
+    width:auto !important;
+    max-width: 90px;
+    max-height: 27px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item span.product-name:after {
+    content: "...";
+}
+
+.jcarousel-skin-ie7 .jcarousel-item span.text {
+    width:auto !important;
+    height: 53px;
+    max-width: 90px;
+    max-height: 53px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item span.company-name {
+}
+
+.jcarousel-skin-ie7 .jcarousel-item img {
+    vertical-align: middle;
+    text-align: right;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item:hover {
+    border-color: #808080;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item-horizontal {
+    margin-right: 7px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item-vertical {
+    margin-bottom: 7px;
+}
+
+.jcarousel-skin-ie7 .jcarousel-item-placeholder {
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: transparent url(/images/layout/carousel/scroll-right.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: transparent url(/images/layout/carousel/scroll-left.png) no-repeat 0 0;
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-ie7 .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(/images/layout/carousel/scroll-bottom.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-ie7 .jcarousel-prev-vertical {
+    position: absolute;
+    top: 5px;
+    left: 43px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(/images/layout/carousel/scroll-up.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-newcomers .jcarousel-container {
+}
+
+.jcarousel-skin-newcomers .jcarousel-container-vertical {
+    width: 510px;
+    height: 84px;
+    padding: 0px;
+}
+
+.jcarousel-skin-newcomers .jcarousel-clip-vertical {
+    width:  510px;
+    height: 84px;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item {
+    width: 230px;
+    height: 17px;
+    text-align: left;
+    padding: 0px;
+    line-height: 17px;
+    margin: 0px;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item li {
+    width: 250px;
+    height: 17px;
+    padding: 0px;
+    line-height: 15px;
+    margin: 0;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item li a {
+    font: 11px tahoma;
+    color: #000000;
+    text-decoration: none;
+    width: 220px;
+    background: white;
+    margin: 0px;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item li a:hover {
+    text-decoration: underline;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item span.logo img {
+    height: 1.2em;
+    vertical-align: middle;
+    display: block;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item span.logo {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0px;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item div {
+    width: 20px;
+    vertical-align: middle;
+    float: left;
+    overflow: hidden;
+    height: 25px;
+    margin: 0px;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item span.name {
+    position: absolute;
+    padding-left: 5px;
+    width:auto !important;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.jcarousel-skin-newcomers .jcarousel-item:hover {
+}
+
+.jcarousel-skin-newcomers .jcarousel-item-vertical {
+}
+
+.jcarousel-skin-newcomers .jcarousel-item-placeholder {
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-newcomers .jcarousel-next-vertical {
+    display: none;
+}
+
+.jcarousel-skin-newcomers .jcarousel-prev-vertical {
+    display: none;
+}
+
+.jcarousel-skin-news-spot .jcarousel-container {
+}
+
+.jcarousel-skin-news-spot .jcarousel-container-vertical {
+    width: 610px;
+    height: 22px;
+    overflow: hidden;
+    padding: 0px 6px;
+    background: url(/images/layout/background/news-spot-back.gif) no-repeat 0 0;
+}
+
+.jcarousel-skin-news-spot .jcarousel-clip-vertical {
+    width:  610px;
+    height: 22px;
+    padding: 1px;
+    line-height: 18px;
+}
+
+.jcarousel-skin-news-spot .jcarousel-item {
+    width: 610px;
+    height: 18px;
+    text-align: left;
+    padding: 0px;
+}
+
+.jcarousel-skin-news-spot .jcarousel-item span.logo img {
+}
+
+.jcarousel-skin-news-spot .jcarousel-item:hover {
+}
+
+.jcarousel-skin-news-spot .jcarousel-item-vertical {
+}
+
+.jcarousel-skin-news-spot .jcarousel-item-placeholder {
+}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel-skin-news-spot .jcarousel-next-vertical {
+    display: none;
+}
+
+.jcarousel-skin-news-spot .jcarousel-prev-vertical {
+    display: none;
+}

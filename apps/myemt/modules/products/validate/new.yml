@@ -1,0 +1,8 @@
+fields:
+    product_model:
+        sfStringValidator:
+            max: 100
+            max_error:     'Product model must be maximum 100 characters long.'
+    pcategory_id:
+        required:
+            msg: 'Please select a suitable category for your product.'

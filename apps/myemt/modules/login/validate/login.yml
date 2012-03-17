@@ -1,0 +1,25 @@
+fields:
+    email:
+        required:
+            msg: 'Please enter your e-mail address.'
+        sfEmailValidator:
+            strict:      true
+            email_error:  'Incorrect e-mail address or password.'
+        sfStringValidator:
+            max: 50
+        EmtLoginValidator:
+            password:  password
+            login_error:  'Incorrect e-mail address or password.'
+            
+    password:
+        required:
+            msg:  'Please enter your password.'
+        sfStringValidator:
+            min:           6
+            min_error:     'Incorrect e-mail address or password.'
+            max:           14
+            max_error:     'Incorrect e-mail address or password.'
+        sfRegexValidator:
+            match:         true
+            match_error:   'Incorrect e-mail address or password.'
+            pattern:       '/(?!^\d*$)(?!^[a-zA-ZäüöÄÜÖß]*$)^[a-zA-ZäüöÄÜÖß\d]{6,14}$/u' # u stands for utf8

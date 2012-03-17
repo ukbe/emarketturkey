@@ -1,0 +1,13 @@
+all:
+    metas:
+        title: 'Corporate Representative'
+    layout:  layoutTripleColumn
+
+companiesSuccess:
+    metas:
+        title: 'Corporate Representative: Portfolio Companies'
+
+addCompanySuccess:
+    metas:
+        title: 'Add New Portfolio Company'
+

@@ -1,0 +1,95 @@
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleemtbag)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=emtbag)(CID=(PROGRAM=C:\instantclient_10_2\sqlplus.exe)(HOST=EUK)(USER=Ukbe))))
+
+  VERSION INFORMATION:
+	TNS for 64-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 64-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 13-SEP-2009 04:32:29
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: Message 12560 not found; No message file for product=NETWORK, facility=TNS
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Message 530 not found; No message file for product=NETWORK, facility=TNS
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleemtbag)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=emtbag)(CID=(PROGRAM=C:\instantclient_10_2\sqlplus.exe)(HOST=EUK)(USER=Ukbe))))
+
+  VERSION INFORMATION:
+	TNS for 64-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 64-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 13-SEP-2009 04:34:07
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: Message 12560 not found; No message file for product=NETWORK, facility=TNS
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Message 530 not found; No message file for product=NETWORK, facility=TNS
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleemtbag)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=emtbag)(CID=(PROGRAM=C:\instantclient_10_2\sqlplus.exe)(HOST=EUK)(USER=Ukbe))))
+
+  VERSION INFORMATION:
+	TNS for 64-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 64-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 13-SEP-2009 04:34:23
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: Message 12560 not found; No message file for product=NETWORK, facility=TNS
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Message 530 not found; No message file for product=NETWORK, facility=TNS
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleemtbag)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=emtbag)(CID=(PROGRAM=C:\instantclient_10_2\sqlplus.exe)(HOST=EUK)(USER=Ukbe))))
+
+  VERSION INFORMATION:
+	TNS for 64-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 64-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 13-SEP-2009 04:35:43
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: Message 12560 not found; No message file for product=NETWORK, facility=TNS
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Message 530 not found; No message file for product=NETWORK, facility=TNS
+    nt secondary err code: 126
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12560, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=BEQ)(PROGRAM=oracle)(ARGV0=oracleemtbag)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))'))(CONNECT_DATA=(SID=emtbag)(CID=(PROGRAM=C:\instantclient_10_2\sqlplus.exe)(HOST=EUK)(USER=Ukbe))))
+
+  VERSION INFORMATION:
+	TNS for 64-bit Windows: Version 10.2.0.3.0 - Production
+	Oracle Bequeath NT Protocol Adapter for 64-bit Windows: Version 10.2.0.3.0 - Production
+  Time: 13-SEP-2009 04:35:52
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12560
+    TNS-12560: Message 12560 not found; No message file for product=NETWORK, facility=TNS
+    ns secondary err code: 0
+    nt main err code: 530
+    TNS-00530: Message 530 not found; No message file for product=NETWORK, facility=TNS
+    nt secondary err code: 126
+    nt OS err code: 0

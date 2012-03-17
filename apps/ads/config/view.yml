@@ -1,0 +1,18 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        'ADs | eMarketTurkey'
+    description:  'eMarketTurkey Ads Service'
+    keywords:     'import, export, product, sell, buy, leads, trade, tools, trade events, companies, profiles, business groups'
+    #language:     en
+    robots:       index, follow
+    base:         'http://ads.emarketturkey.com'
+
+  stylesheets:    [main.2.0.1.css,forms.css,grid-ie.css,grid.css]
+
+  javascripts:    [jquery-1.7.1.min.js]
+
+  has_layout:     on
+  layout:         layout

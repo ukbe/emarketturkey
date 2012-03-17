@@ -1,0 +1,59 @@
+ .coll-list li
+ {margin:0 10px;padding:0;border-bottom:1px solid #d8d8d8;font:normal 1em/1.335em Arial;list-style:none;}
+ .coll-list li a,.coll-list li a:hover
+ {text-decoration:none;}
+ .coll-list li a
+ {margin:0;padding:4px 3px 6px 3px;display:block;color:#0088b5;background:url(/images/layout/background/bg-sidenav.gif) no-repeat 0 45%;}
+ .coll-list li a:hover,.coll-list li.on a
+ {color:#36444d;text-decoration:none;background:url(/images/layout/background/bg-sidenav.gif) no-repeat -300px 45%;}
+ .coll-list li.on a
+ {font-weight:bold;}
+ .coll-list li.disabled a
+ {color:#CCCCCC;}
+ .coll-list li.disabled a:hover
+ {text-decoration:none;background:url(/images/layout/background/bg-sidenav.gif) no-repeat 0 45%;}
+.coll-list li.first
+ {border-top:1px solid #d8d8d8;margin-top: -2px;}
+ .coll-list li.last
+ {border-bottom:1px solid #fff;}
+ .coll-list li ul
+ {margin:0 0 2px;padding:0;border:0;}
+ .coll-list li ul li
+ {margin:0 0 0 8px;padding:1px 0 3px 18px;border-bottom:0;background:url(/images/layout/background/bg-sidenav-sub2.gif) no-repeat 0 1px;}
+ .coll-list li ul li a,.coll-list li.on ul li a
+ {padding:0;color:#0088B5;font-weight:normal;}
+ .coll-list li ul li a:hover,.coll-list li ul li.on a
+ {color:#222 !important;background: none !important;}
+ .coll-list li ul li.last
+ {background:url(/images/layout/background/bg-sidenav-sub-last.gif) no-repeat 0 0;}
+
+.col-collateral
+ {float:left;width:195px;border-top:9px solid #394750;margin:0 20px 9px 0;}
+ .col-collateral .content
+ {margin:9px 0 11px 0;padding:0;}
+ .col-collateral .content li
+ {list-style:none;}
+ .col-collateral .content p
+ {margin-left:14px;}
+ .col-collateral .content p img
+ {margin-left: -14px;}
+ .col-collateral .bottom
+ {margin:0;padding:4px 0 0px;border:1px solid #d7d7d7;border-top:0;}
+ .col-collateral .emph
+ {border-bottom:1px solid #c9ceca;background:url(/images/layout/background/col_collateral_emph_bg.gif) repeat-y #d4dce3;padding:20px;}
+ .col-collateral .emph p
+ {margin-bottom:.15em;}
+ .col-collateral .corner-left,.col-collateral .corner-right
+ {height:5px;overflow:hidden;}
+ .col-collateral .corner-left
+ {background:url(/images/layout/background/bg-sidenav-lbc.gif) no-repeat 0 0;margin-top: -5px;}
+ .col-collateral .corner-right
+ {background:url(/images/layout/background/bg-sidenav-rbc.gif) no-repeat 100% 0;}
+ .col-collateral .callout
+ {margin:30px 0 0 0;}
+ .col-collateral dt
+ {color:#090909;}
+ .col-collateral dd
+ {margin-bottom:1.3em;}
+ .col-collateral dd li
+ {margin:2px 0;}

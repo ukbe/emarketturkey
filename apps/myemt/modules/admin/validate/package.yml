@@ -1,0 +1,8 @@
+fields:
+    application_id:
+        required:
+            msg: 'Please select an application which this package is related with.'
+    applies_to_id:
+        required:
+            msg: 'Please select an object type which this package applies to.'
+            

@@ -1,0 +1,6 @@
+all:
+  is_secure: on
+  credentials: [user, author]
+
+sources:
+  credentials: [user, author, editor]
