@@ -31,7 +31,14 @@ class indexAction extends EmtAction
                 }
                                 
                 $signup_fields = $this->getRequest()->getParameterHolder();
-                $signup_fields->set('registration_ip', $this->getRequest()->getHttpHeader('addr', 'remote'));
+                
+                /*
+                 * $signup_fields->set('registration_ip', $this->getRequest()->getHttpHeader('addr', 'remote'));
+                 * Changed the header name due to HAProxy redirect process. HAProxy adds X-Forwarded-For header storing Client IP Address.
+                 *  
+                 */
+                $signup_fields->set('registration_ip', $this->getRequest()->getHttpHeader('X-Forwarded-For'));
+
                 $data = new sfParameterHolder();
                 try
                 {

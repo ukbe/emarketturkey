@@ -3,25 +3,234 @@
 <?php end_slot() ?>
 
 <div class="col_948">
-    <div class="col_678">
-        <div class="box_678 _titleBG_Transparent _noBorder">
+    <div class="col_630">
+        <div class="box_630 _titleBG_Transparent">
+            <div class="_noBorder post-box">
+                <ul class="selectorlist">
+                <li><?php echo __('Share :') ?></li>
+                <li id="p-status" class="selected"><?php echo link_to_function(image_tag('layout/wall/post-status.png').'<span>'.__('Status').'</span>','') ?></li>
+                <li id="p-link"><?php echo link_to_function(image_tag('layout/wall/post-link.png').'<span>'.__('Link').'</span>','') ?></li>
+                <li id="p-video"><?php echo link_to_function(image_tag('layout/wall/post-video.png').'<span>'.__('Video').'</span>','') ?></li>
+                <li id="p-location"><?php echo link_to_function(image_tag('layout/wall/post-location.png').'<span>'.__('Location').'</span>','') ?></li>
+                <li id="p-job"><?php echo link_to_function(image_tag('layout/wall/post-job.png').'<span>'.__('Job').'</span>','') ?></li>
+                <li id="p-opportunity"><?php echo link_to_function(image_tag('layout/wall/post-opportunity.png').'<span>'.__('Opportunity').'</span>','') ?></li>
+                </ul>
+                <div id="target-box">
+                <div class="p-status">
+                <?php echo form_tag('profile/updateStatus') ?>
+                <div class="bordered">
+                <?php echo textarea_tag('msg', '', 'rows=1') ?>
+                <?php echo javascript_tag("
+                var tx='".__('Type your status message ..')."'; 
+                $('.p-status #msg').focus(function(){if ($(this).val()==tx) $(this).removeClass('blurred-input-tip').val('');});
+                $('.p-status #msg').blur(function(){if ($(this).val()=='') $(this).addClass('blurred-input-tip').val(tx);}).blur();
+                ") ?>
+                </div>
+                <div class="out-p-status p-status-post _right ghost-sub" style="margin-top: 5px;">
+                <span id="p-status-error" class="ghost"><?php echo __('Error Occured!') ?></span>
+                <?php if_javascript(); ?>
+                <?php echo submit_to_remote('status-message-post', __('Share'), array(
+                                    'url' => '/profile/updateStatus',
+                                    'update' => 'status-message',
+                                    'success' => "$('.p-status #msg').val('');$('div#target-box #msg').keyup();$('.activity').update();",
+                                    'script' => true,
+                                    'before' => "$('#p-status-error').hide()",
+                                    'failure' => "$('#p-status-error').show()"), array('type' => 'link', 'class' => 'action-button')) ?>
+                <?php end_if_javascript(); ?>
+                <noscript><?php echo submit_tag(__('Share'), 'class=action-button') ?></noscript>
+                </div>
+                </form>
+                <div id="clonediv" class="clone-textarea ghost" style="word-wrap: break-word;"></div>
+                </div>
+                <div class="p-link ghost bordered">
+                <?php echo form_tag('profile/post') ?>
+                <?php echo input_hidden_tag('type', PrivacyNodeTypePeer::PR_NTYP_POST_LINK) ?>
+                <table cellspacing="0" cellpadding="5" border="0" width="100%" style="vertical-align: middle; text-align: left;">
+                <tr>
+                <td style="width: 480px;"><div class="pad-1"><?php echo input_tag('plink', '', array('class' => 'watermark', 'alt' => 'http://')) ?></div></td>
+                <td><div class="pad-1"><?php echo submit_tag(__('Share'), 'class=action-button') ?></div></td>
+                </tr>
+                </table>
+                </form>
+                </div>
+                <div class="p-video ghost bordered">
+                <?php echo form_tag('profile/post') ?>
+                <?php echo input_hidden_tag('type', PrivacyNodeTypePeer::PR_NTYP_POST_VIDEO) ?>
+                <table cellspacing="0" cellpadding="5" border="0" width="100%" style="vertical-align: middle; text-align: left;">
+                <tr>
+                <td style="width: 480px;"><div class="pad-1"><?php echo input_tag('pvideo', '', array('class' => 'watermark', 'alt' => 'http://')) ?></div></td>
+                <td><div class="pad-1"><?php echo submit_tag(__('Share'), 'class=action-button') ?></div></td>
+                </tr>
+                </table>
+                </form>
+                </div>
+                <div class="p-location ghost bordered status-select" style="padding: 10px;">
+                <?php echo form_tag('profile/post') ?>
+                <?php echo input_hidden_tag('type', PrivacyNodeTypePeer::PR_NTYP_POST_LOCATION) ?>
+                <table id="select-location" cellspacing="0" cellpadding="0" border="0" width="100%" style="vertical-align: middle; text-align: center;">
+                <tr>
+                <td style="width: 50%;"><div class="pad-3">
+                    <?php echo __('You may automatically check-in your location.')?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo link_to_function(__('Check-in My Location'), '', 'id=get-location-link class=action-button') ?>
+                    </div></td>
+                <td class="or-splitter"><span><?php echo __('or') ?></span></td>
+                <td style="width: 50%;"><div class="pad-3">
+                    <?php echo __('You may manually set your location.')?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo input_tag('location-manual', '', 'style=width:200px;') ?>
+<?php echo javascript_tag("
+$('#location-manual').autocomplete({
+            source: function( request, response ) {
+                $.ajax({
+                    url: 'http://ws.geonames.org/searchJSON',
+                    dataType: 'jsonp',
+                    data: {
+                        featureClass: 'P',
+                        style: 'full',
+                        maxRows: 12,
+                        name_startsWith: request.term
+                    },
+                    success: function( data ) {
+                        response( $.map( data.geonames, function( item ) {
+                            return {
+                                label: item.name + (item.adminName1 ? ', ' + item.adminName1 : '') + ', ' + item.countryName,
+                                value: item.name,
+                                latitude: item.lat,
+                                longitude: item.lng
+                            }
+                        }));
+                    }
+                });
+            },
+            minLength: 2,
+            select: function( event, ui ) {
+                emtProcessLocation({ 'coords' : { 'longitude' : ui.item.longitude, 'latitude' : ui.item.latitude }});
+            },
+            open: function() {
+                $( this ).removeClass( 'ui-corner-all' ).addClass( 'ui-corner-top' );
+            },
+            close: function() {
+                $( this ).removeClass( 'ui-corner-top' ).addClass( 'ui-corner-all' );
+            }
+        });
+") ?>                    
+                    </div></td>
+                </tr>
+                </table>
+                <table id="save-location" cellspacing="0" cellpadding="0" border="0" width="100%" style="vertical-align: middle; text-align: center;">
+                <tr>
+                <td style="width: 200px"><div id="location-map">
+                    </div>
+                    <?php echo input_hidden_tag('location_data', '') ?>
+                    <?php echo input_hidden_tag('_ref', url_for('@homepage', true)) ?></td>
+                <td style="text-align: left;"><div class="pad-3">
+                    <strong id="location-label"><?php echo "###" ?></strong>
+                    <div class="hrsplit-1"></div>
+                    <?php echo textarea_tag('location-comment', '', array('class' => 'watermark', 'style' => 'width:400px;', 'rows' => 2, 'alt' => __('Comments'))) ?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo submit_tag(__('Share My Location'), 'class=action-button') ?>
+                    </div></td>
+                </tr>
+                </table>
+                </form>
+                </div>
+                </div>
+            
+            </div>
+        </div>
+        <div class="box_630 _border_Shadowed">
+            <div>
+            </div>
+        </div>
+    </div>
+    <div class="col_312">
+        <div class="box_312 _border_Shadowed">
+            <h3><span class="_right"><?php echo link_to(__('Add Company'), '@register-comp', 'class=action') ?></span>
+                <span class="blue"><?php echo __('Companies') ?></span></h3>
+            <div>
+            <?php if (count($companies)): ?>
+                <div class="hrsplit-2"></div>
+                <div class="col_assets margin-t2">
+                    <dl>
+                    <?php foreach ($companies as $company): ?>
+                        <dt><?php echo link_to(image_tag($company->getProfilePictureUri()), $company->getProfileUrl()) ?></dt>
+                        <dd>
+                            <?php echo link_to($company->getName(), $company->getProfileUrl(), 'class=t_black') ?>
+                            <div class="asset-name"><?php echo $company->getBusinessSector() ?></div>
+                            <div class="asset-name t_black"><?php echo $company->getBusinessType() ?></div>
+                            <?php echo link_to(__('Manage'), '@company-manage?hash='.$company->getHash(), 'class=bluelink hover') ?>
+                            </dd>
+                    <?php endforeach ?>
+                    </dl>
+                </div>
+            <?php else: ?>
+                <?php echo __('A large number of companies use eMarketTurkey B2B for their business operations.') ?>
+                <div class="hrsplit-1"></div>
+                <?php echo __('Register your company and get listed on eMarketTurkey B2B Directory.') ?>
+                <div class="hrsplit-1"></div>
+                <?php echo link_to(__('Register Your Company'), '@register-comp') ?>
+            <?php endif ?>
+            </div>
+        </div>
+        <div class="box_312 _border_Shadowed">
+            <h3><span class="_right"><?php echo link_to(__('Add Group'), '@group-start', 'class=action') ?></span>
+                <span class="blue"><?php echo __('Groups') ?></span></h3>
+            <div>
+            <?php if (count($groups)): ?>
+                <div class="hrsplit-2"></div>
+                <div class="col_assets margin-t2">
+                    <dl>
+                    <?php foreach ($groups as $group): ?>
+                        <dt><?php echo link_to(image_tag($group->getProfilePictureUri()), $group->getProfileUrl()) ?></dt>
+                        <dd>
+                            <?php echo link_to($group, $group->getProfileUrl(), 'class=t_black') ?>
+                            <div class="asset-name"><?php echo $group->getGroupType() ?></div>
+                            <?php echo link_to(__('Manage'), '@group-manage?action=manage&hash='.$group->getHash()) ?>
+                            </dd>
+                    <?php endforeach ?>
+                    </dl>
+                </div>
+            <?php else: ?>
+                <?php echo __('Business groups, alumni groups or even social organisations get connected on eMarketTurkey Community.') ?>
+                <div class="hrsplit-1"></div>
+                <?php echo __('You can start your own group and invite friends in your network.') ?>
+                <div class="hrsplit-1"></div>
+                <?php echo link_to(__('Start Your Group'), '@group-start') ?>
+            <?php endif ?>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div>
+
+
+
+
+
+
+
+
+
 <style>
-    .post-box ol.selecterlist
+    .post-box ul.selectorlist
     {
         margin: 0px;
         padding: 0px;
+        font: 11px arial;
     }
-    .post-box ol.selecterlist li
+    .post-box ul.selectorlist li
     {
-        height: 24px;
+        float: left;
+        height: 28px;
         background-image: none;
         margin: 0px;
     }
-    .post-box ol.selecterlist li.selected
+    .post-box ul.selectorlist li.selected
     {
         background: url(/images/layout/wall/post-indicator.png) no-repeat 11px bottom;
     }
-    .post-box ol.selecterlist a
+    .post-box ul.selectorlist a
     {
         display: inline-block;
         border: none;
@@ -33,20 +242,24 @@
         margin: 0px 8px;
         line-height: 13px;
     }
-    .post-box ol.selecterlist img
+    .post-box ul.selectorlist img
     {
         border: none;
         margin: 0px 4px 0px 0px;
         vertical-align: middle;
     }
-    .post-box ol.selecterlist a span
+    .post-box ul.selectorlist a span
     {
         vertical-align: middle;
+    }
+    .post-box .p-status textarea
+    {
+        width: 200px;
     }
     .post-box #target-box .bordered
     {
         border: solid 1px #88BCDF;
-        margin-top: 23px;
+        margin-top: 27px;
         padding: 0px;
     }
     .post-box #target-box form
@@ -62,15 +275,17 @@
     {
         font: 12px arial;
         outline: none;
-        width: 710px;
+        width: 600px;
         margin: 0px;
         resize: none;
-        padding: 3px;
+        padding: 6px;
         overflow: hidden;
         border: none;
         min-height: 16px;
+        display: block;
     }
-    .post-box #target-box div.p-link #plink
+    .post-box #target-box div.p-link #plink,
+    .post-box #target-box div.p-video #pvideo
     {
         font: 12px arial;
         outline: none;
@@ -80,95 +295,85 @@
         min-height: 16px;
     }
     
+    .p-location.status-select #select-location
+    {
+        display: table;
+    }
+    .p-location.status-select #save-location
+    {
+        display: none;
+    }
+    .p-location #select-location
+    {
+        display: none;
+    }
+    .p-location #save-location
+    {
+        display: table;
+    }
+    
 </style>
 
 
 <div class="column span-144 prepend-1 append-2 post-box">
-<ol class="selecterlist column span-144" style="padding: 0px;margin: 0px;">
-<li class="column"><?php echo __('Share :') ?></li>
-<li id="p-status" class="column selected"><?php echo link_to_function(image_tag('layout/wall/post-status.png').'<span>'.__('Status').'</span>','') ?></li>
-<?php /* ?>
-<li id="p-link" class="column"><?php echo link_to_function(image_tag('layout/wall/post-link.png').'<span>'.__('Link').'</span>','') ?></li>
-<li id="p-video" class="column"><?php echo link_to_function(image_tag('layout/wall/post-video.png').'<span>'.__('Video').'</span>','') ?></li>
-*/ ?>
-<li id="p-location" class="column"><?php echo link_to_function(image_tag('layout/wall/post-location.png').'<span>'.__('Location').'</span>','') ?></li>
-<?php /* ?>
-<li id="p-job" class="column"><?php echo link_to_function(image_tag('layout/wall/post-job.png').'<span>'.__('Job').'</span>','') ?></li>
-<li id="p-opportunity" class="column"><?php echo link_to_function(image_tag('layout/wall/post-opportunity.png').'<span>'.__('Opportunity').'</span>','') ?></li>
- */ ?>
-</ol>
-<div id="target-box">
-<div class="p-status">
-<?php echo form_tag('profile/updateStatus') ?>
-<div class="bordered">
-<?php echo textarea_tag('msg', '', 'class=span-145 rows=1') ?>
 <?php echo javascript_tag("
-var tx='".__('Type your status message ..')."'; 
-jQuery('.p-status #msg').focus(function(){if (jQuery(this).val()==tx) jQuery(this).removeClass('blurred-input-tip').val('');});
-jQuery('.p-status #msg').blur(function(){if (jQuery(this).val()=='') jQuery(this).addClass('blurred-input-tip').val(tx);}).blur();
-") ?>
-</div>
-<div class="out-p-status p-status-post a-right ghost-sub" style="margin-top: 5px;">
-<span id="p-status-error" class="ghost"><?php echo __('Error Occured!') ?></span>
-<?php if_javascript(); ?>
-<?php echo submit_to_remote('status-message-post', __('Share'), array(
-                    'url' => '/profile/updateStatus',
-                    'update' => 'status-message',
-                    'success' => "jQuery('.p-status #msg').val('');jQuery('div#target-box #msg').keyup();jQuery('.activity').update();",
-                    'script' => true,
-                    'before' => "jQuery('#p-status-error').hide()",
-                    'failure' => "jQuery('#p-status-error').show()"), array('type' => 'link', 'class' => 'nice')) ?>
-<?php end_if_javascript(); ?>
-<noscript><?php echo submit_tag(__('Share')) ?></noscript>
-</div>
-</form>
-</div>
-<div class="p-link ghost bordered">
-<?php echo form_tag('profile/post?type='.PrivacyNodeTypePeer::PR_NTYP_POST_LINK) ?>
-<table cellspacing="0" cellpadding="0" border="0" width="100%" style="vertical-align: middle; text-align: left;">
-<tr>
-<td><?php echo input_tag('plink', '', "style=margin: 4px;") ?>
-<?php echo javascript_tag("
-var px='".__('http://')."';
-jQuery('.p-link #plink').focus(function(){if (jQuery(this).val()==px) jQuery(this).removeClass('blurred-input-tip').val('');});
-jQuery('.p-link #plink').blur(function(){if (jQuery(this).val()=='') jQuery(this).addClass('blurred-input-tip').val(px);}).blur();
-") ?></td>
-<td><?php echo submit_tag(__('Share')) ?></td>
-</tr>
-</table>
-</form>
-</div>
-</div>
-<?php echo javascript_tag("
-jQuery('.post-box a').click(function(){
-    jQuery('.post-box li').removeClass('selected');
-    jQuery(this).closest('li').addClass('selected');
-    jQuery('div#target-box div[class^=\"p-\"]').addClass('ghost');
-    jQuery('div[class^=\"out-\"]').addClass('ghost');
-    jQuery('div#target-box div.'+jQuery(this).closest('li').attr('id')).removeClass('ghost');
-    jQuery('div.out-'+jQuery(this).closest('li').attr('id')).removeClass('ghost');
+
+$('.watermark').focus(function(){if ($(this).val()==$(this).attr('alt')) $(this).removeClass('blurred-input-tip').val('');});
+$('.watermark').blur(function(){if ($(this).val()=='') $(this).addClass('blurred-input-tip').val($(this).attr('alt'));}).blur();
+                
+function emtProcessLocation(location){
+    var geo = '".url_for('profile/geoLocate')."';
+    $.getJSON(geo,{latlng: location.coords.latitude + ',' + location.coords.longitude },
+      function(loc){
+        $('#location_data').val($.toJSON(loc));
+        $('#location-label').text(loc.result.town_city + ', ' + loc.result.country);
+        $('#alt').text(loc.result.town_city + ', ' + loc.result.country);
+        $('#save-location #location-map').html('').append($('<img />').attr('src', 'http://maps.google.com/maps/api/staticmap?center=' + loc.result.latitude + ',' + loc.result.longitude + '&zoom=14&size=150x150&maptype=roadmap&&sensor=true'));
+        $('.p-location').removeClass('status-select');
+      }
+    );
+}
+
+function emtDeniedLocation(){
+
+}
+
+
+$('#get-location-link').click(function(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(emtProcessLocation, emtDeniedLocation);
+    }    
+});
+
+
+$('.post-box > ul > li > a').click(function(){
+    $('.post-box li').removeClass('selected');
+    $(this).closest('li').addClass('selected');
+    $('div#target-box div[class^=\"p-\"]').addClass('ghost');
+    $('div[class^=\"out-\"]').addClass('ghost');
+    $('div#target-box div.'+$(this).closest('li').attr('id')).removeClass('ghost');
+    $('div.out-'+$(this).closest('li').attr('id')).removeClass('ghost');
 });
 function FitToContent(id, maxHeight)
 {
    var text = id && id.style ? id : document.getElementById(id);
    if (!text) return;
-   jQuery('#clonediv').html(jQuery(text).val().replace(/\\n$/g, '<br />&nbsp;').replace(/\\n/g, '<br />'));
-   jQuery(text).height(jQuery('#clonediv').height());
+   $('#clonediv').html($(text).val().replace(/\\n$/g, '<br />&nbsp;').replace(/\\n/g, '<br />'));
+   $(text).height($('#clonediv').height());
 }
 
 window.onload = function() {
-    jQuery('div#target-box #msg').keyup(function() {
+    $('div#target-box #msg').keyup(function() {
         FitToContent(this);
       });
-    jQuery('div#target-box #msg').focus(function(){jQuery('.p-status-post').removeClass('ghost-sub');});
+    $('div#target-box #msg').focus(function(){ $('.p-status-post').removeClass('ghost-sub'); });
     };
 
 ") ?>
-<div id="clonediv" class="clone-textarea ghost" style="word-wrap: break-word;"></div>
 </div>
 <div class="hrsplit-1"></div>
 <div class="append-1">
-<h3 style="font: bold 13px 'trebuchet ms'; color: #4D4D4D; border-bottom: solid 2px #F1F1F1;padding: 3px 5px;margin-bottom: 10px;"><?php echo __('Updates') ?>&nbsp;<?php echo link_to_function(__('(refresh)'), "jQuery('.activity').update(0);", 'class=action') ?></h3>
+<h3 style="font: bold 13px 'trebuchet ms'; color: #4D4D4D; border-bottom: solid 2px #F1F1F1;padding: 3px 5px;margin-bottom: 10px;"><?php echo __('Updates') ?>&nbsp;<?php echo link_to_function(__('(refresh)'), "$('.activity').update(0);", 'class=action') ?></h3>
 <?php include_partial('network/network_activity', array('activities' => $activities)) ?>
 </div>
         
@@ -283,17 +488,17 @@ function focusFloat(trigger, force)
 {
     if (force)
     {
-        jQuery('.floating-block').addClass('focus');
+        $('.floating-block').addClass('focus');
         inside = true;
     }
     else if (trigger && onn)
     {
-        jQuery('.floating-block').addClass('focus');
+        $('.floating-block').addClass('focus');
     }
     else
     {
         inside = false;
-        jQuery('.floating-block').removeClass('focus');
+        $('.floating-block').removeClass('focus');
     }
 }
 ") ?>
@@ -327,6 +532,6 @@ function focusFloat(trigger, force)
 </ol>
 </div>
 <?php echo javascript_tag("
-    //jQuery('.readmore').readmore(2);
+    //$('.readmore').readmore(2);
 ") ?>
 </div>

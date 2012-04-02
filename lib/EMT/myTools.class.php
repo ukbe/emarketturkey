@@ -411,14 +411,14 @@ class myTools
         return $url; 
     }
 
-    public static function executeSql($sql, $useTransaction = true)
+    public static function executeSql($sql, $useTransaction = true, $return_array = false)
     {
         $con = Propel::getConnection();
         try {
             $con->beginTransaction();
             $stmt = $con->prepare($sql);
             $stmt->execute();
-            return $stmt;
+            return $return_array ? $stmt->fetchAll(PDO::FETCH_NUM) : $stmt;
         }
         catch (Exception $e)
         {

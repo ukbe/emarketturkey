@@ -333,15 +333,15 @@ border:1px solid #d0d0d0;
  border-top-right-radius:0px;
 }
 
-.app_ac .box_312, .app_ac .box_630 {
+.box_312._border_Shadowed, .box_630._border_Shadowed {
  margin: 6px 6px 6px 6px;
 }
 
-.app_ac div.box_312 {
+div.box_312._border_Shadowed {
  width: 306px;
 }
 
-.app_ac div.box_630 {
+div.box_630._border_Shadowed {
  width: 624px;
 }
 

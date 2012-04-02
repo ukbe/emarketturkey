@@ -1404,7 +1404,20 @@ propel:
     TARGET_AUDIENCE:      { type: integer, size: 4, required: true, foreignTable: EMT_ROLE, foreignReference: ID, onDelete:  RESTRICT, onUpdate: CASCADE }
     AVAILABLE:            { type: boolean, default: true }
     CREATED_AT:           ~
-    DELETED_AT:           { type: timestamp }
+    DELETED_AT_BY_OWNER:  { type: timestamp }
+    DELETED_AT_BY_POSTER: { type: timestamp }
+
+  EMT_WALL_IGNORE:
+    _attributes:          { phpName: WallIgnore }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    IGNORE_USER_ID:       { type: integer, size: 10, foreignTable: EMT_USER, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    OWNER_ID:             { type: integer, size: 16 }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    POSTER_ID:            { type: integer, size: 16 }
+    POSTER_TYPE_ID:       { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    ITEM_ID:              { type: integer, size: 16 }
+    ITEM_TYPE_ID:         { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: RESTRICT, onUpdate: CASCADE }
+    CREATED_AT:           ~
 
   EMT_POST_LINK: 
     _attributes:          { phpName: PostLink }
@@ -1419,6 +1432,18 @@ propel:
     ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
     URL:                  { type: varchar(500), required: true }
     TITLE:                { type: varchar(500) }
+    MESSAGE:              { type: varchar(1024) }
+    CREATED_AT:           ~
+
+  EMT_POST_LOCATION: 
+    _attributes:          { phpName: PostLocation }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    DATA:                 { type: clob }
+    LATITUDE:             { type: decimal, size: 19, scale: 7 }
+    LONGITUDE:            { type: decimal, size: 19, scale: 7 }
+    COUNTRY:              { type: varchar(5) }
+    STATE:                { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
+    CITY:                 { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  SET NULL, onUpdate: SET NULL }
     MESSAGE:              { type: varchar(1024) }
     CREATED_AT:           ~
 
@@ -1896,7 +1921,8 @@ propel:
 
   EMT_TRANSLATOR_LANGUAGE:
     _attributes:          { phpName: TranslatorLanguage }
-    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TRANSLATOR_ID:        { type: integer, size: 4, required: true, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
     LANGUAGE:             { type: varchar(7), required: true }
     NATIVE:               { type: boolean }
     LEVEL_READ:           { type: integer, size: 4 }
@@ -1905,8 +1931,11 @@ propel:
 
   EMT_TRANSLATOR_COUPLE:
     _attributes:          { phpName: TranslatorCouple }
-    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TRANSLATOR_ID:        { type: integer, size: 4, required: true, foreignTable: EMT_TRANSLATOR, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
     SOURCE_LANG:          { type: varchar(7), required: true }
     TARGET_LANG:          { type: varchar(7), required: true }
     TWO_WAY:              { type: boolean }
     CAN_INTERPRET:        { type: boolean }
+    LEVEL_INTERPRET:      { type: integer, size: 4 }
+    

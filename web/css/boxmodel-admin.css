@@ -602,3 +602,72 @@ ul.side-menu li a:hover { background-color: #eefbb8; color: #000; text-decoratio
 {
     color: #666;
 }
+
+
+.col_assets dl
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.col_assets dl dt
+{
+    width: 65px;
+    margin: 5px 15px 15px 0px;
+    padding: 0px;
+    float: left;
+    clear: both;
+    display: block;
+}
+.col_assets dl dt a
+{
+    display: block;
+}
+.col_assets dl dt img
+{
+    width: 60px;
+    max-width: 60px;
+    display: block;
+    padding: 3px;
+    border: solid 1px #e5e5e5;
+    margin-top: -3px;
+}
+.col_assets dl dd
+{
+    width: 212px;
+    margin: 0px 0px 15px 0px;
+    padding: 0px;
+    float: left;
+}
+.col_assets dl dd .asset-name
+{
+    font-family: georgia, arial, verdana;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: normal;
+    color: #999;
+}
+.col_assets dl dd .asset-name a, .fgeorgia
+{
+    font-family: georgia, arial, verdana;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 2px;
+    display: block;
+}
+.col_assets dl dd > a
+{
+    font-family: georgia, arial, verdana;
+    font-size: 13px;
+    font-weight: normal;
+    color: #039;
+    margin-bottom: 2px;
+    display: block;
+}
+.col_assets.pubs dl dt { width: 75px; }
+.col_assets.pubs dl dt img { width: 70px; max-width: 70px; }
+.col_assets.pubs dl dd { width: 207px; }
+

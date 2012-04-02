@@ -4,11 +4,7 @@
             <ul class="_horizontal">
                 <li><?php echo link_to(__('Go to Profile'), $sesuser->getProfileUrl()) ?></li>
                 <li><?php echo link_to($sesuser->getProfilePicture() ? __('Change Photo') : __('Upload Photo'), "@edit-profile-picture") ?></li>
-                <li<?php echo !($loc = $sesuser->getLocationUpdate()) ? ' class="_last_item"' : '' ?>><?php echo link_to(__('Messages'), "@messages") ?></li>
-                <?php if ($loc): ?>
-                <li class="_last_item">
-                    <?php echo image_tag('layout/flag/'.$loc->getCountry().'.png', array('title' => format_country($loc->getCountry()), 'style' => 'max-height: 10px;')) ?><?php echo implode(',', array_filter(array($loc->getGeonameCityRelatedByCity(), $loc->getGeonameCityRelatedByState()?$loc->getGeonameCityRelatedByState()->getAdmin1Code():null))) ?></li>
-                <?php endif ?>
+                <li class="_last_item"><?php echo link_to(__('Messages'), "@messages") ?></li>
             </ul>
             <dl>
                 <dt>

@@ -10,4 +10,6 @@ setupProfileSuccess:
 
 uploadProfileSuccess:
     has_layout: off
-        
+
+indexSuccess:        
+    javascripts:   [jquery.json-2.3.min.js]

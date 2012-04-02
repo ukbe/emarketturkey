@@ -2968,3 +2968,21 @@ dl.rating-list dd strong a
     -webkit-border-bottom-right-radius: 2px !important;
     border-bottom-right-radius: 2px !important; 
 }
+
+.or-splitter
+{
+    background: url(/images/layout/background/grey-orsplitter-back.png) repeat-y center;
+}
+.or-splitter span
+{
+    background-color: #fff;
+    padding: 4px;
+    font: bold 14px arial;
+    color: #b5b5b5;
+}
+
+.blurred-input-tip
+{
+    color: #aaa !important;
+    font-style: italic !important;
+}
