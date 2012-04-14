@@ -39,9 +39,27 @@ class sfPropelUniqueValidator extends sfValidator
   {
     $className  = constant($this->getParameter('class').'::PEER');
     $columnName = call_user_func(array($className, 'translateFieldName'), $this->getParameter('column'), BasePeer::TYPE_FIELDNAME, BasePeer::TYPE_COLNAME);
+    
+    $caseInsensitive = $this->getParameter('case_insensitive', false);
+    $caseTransform = $this->getParameter('case_transform', null);
 
     $c = new Criteria();
-    $c->add($columnName, $value);
+    if ($caseInsensitive)
+    {
+        $c->add($columnName, "LOWER($columnName) = LOWER('$value')", Criteria::CUSTOM);
+    }
+    elseif($caseTransform == 'UPPER')
+    {
+        $c->add($columnName, strtoupper($value));
+    }
+    elseif($caseTransform == 'LOWER')
+    {
+        $c->add($columnName, strtolower($value));
+    }
+    else
+    {
+        $c->add($columnName, $value);
+    }
     $object = call_user_func(array($className, 'doSelectOne'), $c);
 
     if ($object)
@@ -53,13 +71,11 @@ class sfPropelUniqueValidator extends sfValidator
         {
           continue;
         }
-
         $method = 'get'.$column->getPhpName();
         $primaryKey = call_user_func(array($className, 'translateFieldName'), $column->getPhpName(), BasePeer::TYPE_PHPNAME, BasePeer::TYPE_FIELDNAME);
         if ($object->$method() != $this->getContext()->getRequest()->getParameter($primaryKey))
         {
           $error = $this->getParameter('unique_error');
-
           return false;
         }
       }
