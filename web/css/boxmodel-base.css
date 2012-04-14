@@ -3,7 +3,7 @@
 
 body {
  color: #262626;
- background:#e0e0e0 url(/images/layout/background/bg-upperShadow.png) center 80px no-repeat; /* 8a809c */
+ background:#e0e0e0;# url(/images/layout/background/bg-upperShadow.png) center 80px no-repeat; /* 8a809c */
 }
 
 ::-moz-selection {
@@ -74,11 +74,11 @@ margin:0 auto;padding:0;z-index:20;
  -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
 }
 
-body > section {
+body #section-bg > section {
  position: relative;
  display:block;
  width:960px;
- margin:131px auto 40px; padding:0px;
+ margin:0px auto 40px; padding:0px;
  background:#fafafa;
 -moz-border-radius-bottomleft: 6px;
 -webkit-border-bottom-left-radius: 6px;
@@ -89,7 +89,7 @@ body > section {
  z-index: 0;
 }
 
-body > section > .col_948 {
+body #section-bg > section > .col_948 {
  min-height: 200px;
 }
 
@@ -185,12 +185,14 @@ div.ui-state-default span.ui-icon {float: left; margin: 0 4px;}
 .app_ac  #subNav dt { background:#ffd16a;border-color:#e5b958; } /* !! uyumsuz kombinasyon */
 .app_cm  #subNav dt { background:#8d6ab1;border-color:#7a599d; }
 .app_tx  #subNav dt { background:#8db16a;border-color:#7a9d59; }
+.app_myemt  #subNav dt { background:#8db16a;border-color:#7a9d59; }
 
 .app_b2b #subNav dt a { color:#cae1f9; }
 .app_hr  #subNav dt a { color:#f9cae1; }
 .app_ac  #subNav dt a { color:#967f4b; }
 .app_cm  #subNav dt a { color:#e1caf9; }
 .app_tx  #subNav dt a { color:#e1f9ca; }
+.app_myemt  #subNav dt a { color:#e1f9ca; }
 
 #subNav dd a,
 #subNav dd a:link,
@@ -209,13 +211,15 @@ div.ui-state-default span.ui-icon {float: left; margin: 0 4px;}
  border-top-left-radius:6px;border-top-right-radius:6px;
 }
 
+#subNav dd._selected,
+._admin #subNav dd._selected {
+ margin-top:-5px;
+ background-color: #fff;
+}
+
 #subNav dd:hover a,
 #subNav dd._selected a {
  padding:7px 15px 8px;
-}
-
-#subNav dd._pr._selected {
- border-bottom:none;
 }
 
 #subNav dd._pr {
@@ -227,6 +231,7 @@ div.ui-state-default span.ui-icon {float: left; margin: 0 4px;}
  border-top-right-radius:6px;
  border-bottom: none;
 }
+
 #subNav dd._sp {
  clear: none;
  float:right;
@@ -239,8 +244,15 @@ div.ui-state-default span.ui-icon {float: left; margin: 0 4px;}
  border-bottom: none;
 }
 
+
+#subNav dd._pr._selected,
 #subNav dd._pr:hover {background:#222;border-color:#444;}
+#subNav dd._sp._selected,
 #subNav dd._sp:hover {background:#f44;border-color:#c44;}
+
+#subNav dd._pr._selected,
+#subNav dd._sp._selected { border-bottom: none; }
+    
 
 #subNav dd._pr a,
 #subNav dd._sp a { color:#eee;font-weight:bold;font-size:9px;}
@@ -891,17 +903,17 @@ dl._survey dd {
 section select { padding:4px; }
 
 section input[type="text"], 
+section input[type="password"],
 section textarea {
  width:330px;
  padding:2px 4px;
 }
 section textarea { padding:5px 6px; }
 
-
-
 section select { padding:4px; }
 
-section input[type="text"] { height:21px;}
+section input[type="text"],
+section input[type="password"] { height:21px; }
 
 section a.ln-addlink,
 section a.ln-removelink {
@@ -1107,4 +1119,57 @@ div.select:hover ul li a:hover
     display: block;
     background-color: #ccddf5;
     color: #333;
+}
+
+div#pop-holder
+{
+    margin-top: 45px;
+    margin-bottom: 0px;
+    padding: 10px 0px;
+    min-height: 30px;
+}
+
+div.pop-message
+{
+    border: solid 2px #98b7d4;
+    display: block;
+    background-color: #f6f8f9;
+    font-family: arial, tahoma;
+    font-size: 14px;
+    color: #333;
+    padding: 20px;
+    margin: 10px auto 0px;
+    width: 916px;
+}
+div.pop-message a.action
+{
+    border: solid 1px #98b7d4;
+    display: block;
+    background-color: #f6f8f9;
+    font-family: arial, tahoma;
+    font-size: 14px;
+    color: #333;
+}
+div.pop-message h5
+{
+    font-family: arial, tahoma;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1em;
+    margin: 0px 0px 13px;
+    padding: 0px;
+}
+
+.centralBlock {
+    width: 960px;
+    margin:20px auto 0px;
+    padding: 0px;
+    display: block;
+}
+
+body #section-bg {
+    background:#e0e0e0 url(/images/layout/background/bg-upperShadow.png) center -16px no-repeat; /* 8a809c */
+    padding-top: 35px;
+    position: relative;
 }

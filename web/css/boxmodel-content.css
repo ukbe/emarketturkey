@@ -1239,6 +1239,10 @@ table.data-table td img {
 table.data-table.list td img {
     max-width: 20px;
 }
+.contact-list table.data-table.list td img {
+    max-width: 30px;
+    margin: -5px 0px;
+}
 table.data-table.extended td img {
     max-width: 50px;
 }
@@ -1560,17 +1564,17 @@ ul.select-step .activate {
 
 ._comSel dt em,
 ._comPro dt em {
- padding-right:20px;
+ padding-right:30px;
  overflow: hidden;
  display: block;
- width: 660px;
+ max-width: 660px;
  white-space: nowrap;
  font:normal 300 24px Helvetica,arial,sans-serif;
  background:url(/images/layout/icon/arrow-s.png) right center no-repeat;
 }._comPro dt em {background:none;}
 
 ._comSel dl._open dt em {
- color:#eee;
+ color:#666;
  background-image:url(/images/layout/icon/arrow-n.png)
 }
 
@@ -1614,7 +1618,6 @@ ul.select-step .activate {
 ._comSel dd li a:hover {
  background-color:#f0f0f0;
  border-color:#eee;
- border-radius:3px;
 }
 
 ._comSel dd li._bottom_comMng_links a {
@@ -2985,4 +2988,45 @@ dl.rating-list dd strong a
 {
     color: #aaa !important;
     font-style: italic !important;
+}
+
+dl.activity
+{
+    width: 620px;
+    float: left;
+    clear: left;
+    padding: 0px;
+    margin: 0px;
+}
+dl.activity dt,
+dl.activity dd
+{
+    float: left;
+    padding: 0px;
+    margin: 0px 0px 20px 0px;
+    width: 480px;
+    display: block;
+}
+dl.activity > dt
+{
+    width: 120px;
+    clear: left;
+    vertical-align: top;
+    text-align: right;
+    margin-right: 20px;
+}
+dl.activity .ref-loading
+{
+    text-align: center;
+}
+dl.activity > dd em
+{
+    font: 11px tahoma;
+    color: #AAAAAA;
+}
+dl.activity a 
+{
+    font: 12px tahoma;
+    color: #538AB0;
+    text-decoration: none; 
 }

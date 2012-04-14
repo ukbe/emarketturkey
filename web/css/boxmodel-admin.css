@@ -1,9 +1,5 @@
 @CHARSET "UTF-8";
 
-body {
- background-position: center 100px;
-}
-
 ._admin > header {
  display:block;
  width:100%;height:26px;
@@ -18,9 +14,25 @@ body {
  background:url(/images/emtLogo-admin.png) no-repeat;
 }
 
-body > section {
+div#pop-holder
+{
+    margin-top: 26px;
+    margin-bottom: 0px;
+    padding: 1px 0px;
+    min-height: 40px;
+}
+div.pop-message
+{
+    margin: 15px auto;
+}
+body #section-bg {
+    padding-top: 35px;
+    position: relative;
+}
+
+body #section-bg > section {
  position:relative;
- display:block;margin-top: 151px;
+ display:block;margin-top: 0px;
  background:transparent;z-index:0;
 }
 
@@ -49,7 +61,17 @@ body > section {
 -moz-border-bottom-right-radius:0px; -webkit-border-bottom-right-radius:0px; border-bottom-right-radius:0px;
 }
 
-._admin #subNav dt { display:none; }
+._admin #buttons > li > b > a#btn_login {
+ width:22px;height:20px;
+}
+._admin #buttons > li > b > a#btn_login > b {
+ width: 22px; height: 20px;
+}
+._admin #buttons > li > b > a#btn_login._btn_up {
+ margin:0px 3px -3px;padding:0px 0px 4px;
+}
+
+//._admin #subNav dt { display:none; }
 
 ._monitor {
  position:absolute;
@@ -60,7 +82,7 @@ body > section {
  height:120px;
 }
 
-._admin > section section {
+._admin #section-bg > section section {
  clear:both;
  display:block;
  position:relative;
@@ -68,18 +90,18 @@ body > section {
  height:100%;
 }
 
-._admin > section section p {
+._admin #section-bg > section section p {
  padding:1em;
 }
 
-._admin > section section:hover .btn_container { display:block; }
+._admin #section-bg > section section:hover .btn_container { display:block; }
 
 
 /*
  admin. form fields
  */
 
-._admin > section > header > hgroup {
+._admin #section-bg > section > header > hgroup {
  display:block;
  position:absolute;
  top:-100px;
@@ -108,7 +130,7 @@ body > section {
 
 ._comSel dt {
  margin:-6px 0 0 9px;
- padding:6px 6px 6px 11px;
+ padding:6px 8px 6px 11px;
  border:0px solid #d0d0d0;
  position:relative;
  z-index:12;
@@ -120,7 +142,7 @@ body > section {
 ._comSel dl._open dt,
 ._comSel dt:hover,
 ._comSel dt:active {
- padding:5px 5px 5px 10px;
+ padding:5px 8px 5px 10px;
  cursor:pointer;
  background-color:#fff;
  border:1px solid #d0d0d0;
@@ -129,6 +151,7 @@ body > section {
 
 ._comSel dl._open dt {
  padding-bottom:1px;
+ padding-right:8px;
  border:1px solid #d0d0d0;
  border-bottom-color:transparent;
  border-bottom-left-radius:0px;
@@ -136,9 +159,10 @@ body > section {
 }
 
 ._comSel dt em {
- padding-right:20px;
+ padding-right:30px;
  font:normal 300 21px Helvetica,arial,sans-serif;
  background:url(/images/layout/icon/arrow-s.png) right center no-repeat;
+ display: inline-block;
 }
 
 ._comSel dl._open dt em {
@@ -179,6 +203,7 @@ body > section {
 ._comSel dd li a {
  display:block;
  padding:5px 12px;
+ margin: 0px 1px;
  border:0px solid transparent;
  border-width:1px 0;
 }

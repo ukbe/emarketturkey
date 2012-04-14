@@ -87,6 +87,7 @@ body > header > div > nav > dl dt.selected a {
     color:#009fec;
 }
 
+body > header > div > nav > dl > dt a._btn_up,
 body > header > div > nav > dl > dt a:hover,
 body > header > div > nav > dl > dt a:focus {
     background: url(/images/layout/icon/icon-down-menu.png) right 20px no-repeat;
@@ -97,6 +98,7 @@ body > header > div > nav > dl > dt.empty a:focus {
     background: none;
 }
 
+._admin > header > div > nav > dl > dt a._btn_up,
 ._admin > header > div > nav > dl > dt a:hover,
 ._admin > header > div > nav > dl > dt a:focus {
     background: url(/images/layout/icon/icon-down-menu.png) right 8px no-repeat;
@@ -418,6 +420,20 @@ label.ui-state-active span.ui-button-text { color:#fff; }
  background-color:#fafafa;
 }
 
+#buttons > li > b > a#btn_login {
+ width:26px; height:24px;
+}
+#buttons > li > b > a#btn_login > b {
+ width: 26px; height: 24px;
+}
+
+#buttons > li > b > a#btn_login._btn_up {
+ padding-bottom:12px;
+}
+._admin #buttons > li > a._btn_up {
+ background-color:#fafafa;
+}
+
 #buttons li > b > a > span {
  visibility:visible;
  position:absolute;
@@ -446,8 +462,10 @@ label.ui-state-active span.ui-button-text { color:#fff; }
 ._login #buttons > li { display:block; }
 ._login #buttons > li.nologin { display:none; }
 
-#buttons a#btn_signup { width:auto; padding:3px 9px; font:normal 700 9px/16px tahoma; text-indent:0; background-color: #5991b8; color: #fff; border: solid 1px #567e9b; }
-._admin #buttons a#btn_signup { width:auto; padding:1px 3px; }
+#buttons a#btn_signup { width:auto; padding:2px 7px; font:normal 700 9px/20px tahoma; text-indent:0; background-color: #5991b8; color: #fff; border: solid 1px #567e9b;
+ background-image: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #bcdaef), color-stop(100%, #5991b8));
+}
+._admin #buttons a#btn_signup { width:auto; padding:0px 5px; }
 
 a#btn_login > b { background-image:url(/images/layout/icon/icon-login.png); }
 #btn_login-box { display:none; position:absolute; margin-left: -95px; }
