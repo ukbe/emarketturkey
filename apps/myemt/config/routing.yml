@@ -159,9 +159,9 @@ verify-email:
   param: { module: account, action: verify }
 
 setup-notify:
-  url:   /:sf_culture/account/
+  url:   /:sf_culture/account/notifications
   requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: account, action: notify }
+  param: { module: account, action: notifications }
 
 contacts:
   url:   /:sf_culture/contacts

@@ -1,4 +1,5 @@
     <header>
+<?php slot('pageHeader') ?>
         <hgroup class="_comSel">
             <?php echo link_to(image_tag($company->getProfilePictureUri()), "@upload-company-logo?hash={$company->getHash()}", "class=_comMng_logo") ?>
             <ul class="_horizontal">
@@ -26,10 +27,11 @@
                 </dd>
             </dl>
         </hgroup>
+<?php end_slot() ?>
         <nav>
             <dl id="subNav">
-                <dt><a href=""><?php echo __('Control Panel') ?></a></dt>
-                <dd<?php echo checkActivePage('@company-manage', null, true, '_selected') ?>><?php echo link_to(__('Overview'), "@company-manage?hash={$company->getHash()}") ?></dd>
+                <dt><?php echo link_to(__('myEMT'), '@homepage') ?></dt>
+                <dd class="ui-corner-tl<?php echo checkActivePage('@company-manage', null, false, '_selected') ?>"><?php echo link_to(__('Overview'), "@company-manage?hash={$company->getHash()}") ?></dd>
                 <dd<?php echo checkActivePage('module=companyProfile', null, true, '_selected') ?>><?php echo link_to(__('Edit Company Profile'), "@edit-company-profile?hash={$company->getHash()}") ?></dd>
                 <dd<?php echo checkActivePage('module=products', null, true, '_selected') ?><?php echo checkActivePage('module=leads', null, true, '_selected') ?>><?php echo link_to(__('Products and Services'), "@products-overview?hash={$company->getHash()}") ?></dd>
                 <dd<?php echo checkActivePage('module=events', null, true, '_selected') ?>><?php echo link_to(__('Events'), "@company-events-action?hash={$company->getHash()}&action=overview") ?></dd>
@@ -45,7 +47,6 @@ $(function() {
         $('._comSel dl').toggleClass('_open');
         return false;
     });
-    $("span.btn_container").buttonset();
 });
 </script>
     </header>

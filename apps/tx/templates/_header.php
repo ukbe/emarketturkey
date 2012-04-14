@@ -178,7 +178,7 @@
                     </ul>
                 </div>
             </li>
-            <li><b><?php echo link_to(__('Contacts').'<b></b>', '@network', array('id' => 'btn_contacts', 'title' => __('Contacts'))) ?></b></li>
+            <li><b><?php echo link_to(__('Contacts').'<b></b>', '@myemt.contacts', array('id' => 'btn_contacts', 'title' => __('Contacts'))) ?></b></li>
             <li><b><?php echo link_to(__('Tasks').'<b></b>', '@myemt.tasks', array('id' => 'btn_tasks', 'title' => __('Tasks'))) ?></b></li>
             <li><b><?php echo link_to(__('Account').'<b></b>', '@myemt.account', array('id' => 'btn_account', 'title' => __('Account'))) ?></b>
         <?php if ($sf_user->isLoggedIn()): ?>
@@ -195,18 +195,6 @@
         <?php endif ?>
             </li>
         </ul>
-
-        <?php if ($sf_user->isLoggedIn()): ?>
-        <div id="btn_account-box" class="ghost">
-            <ul id="subscr_account" class="list">
-                <li class="header"><?php echo $sf_user->getUser() ?></li>
-                <li class="item"><?php echo link_to(__('My Profile'), $sf_user->getUser()->getProfileUrl()) ?></li>
-                <li class="item"><?php echo link_to(__('Account Settings'), '@myemt.account') ?></li>
-                <li class="item"><?php echo link_to(__('Privacy Settings'), '@lobby.privacy') ?></li>
-                <li class="item"><?php echo link_to(__('Logout'), '@myemt.logout') ?></li>
-            </ul>
-        </div>
-        <?php endif ?>
 
         <div style="position:absolute;top:0px;right:0px;margin:0;padding:0;font-size:10px;z-index:500;">
 <?php $search = array(PrivacyNodeTypePeer::PR_NTYP_COMPANY  => array(__('Companies'), url_for('@companies')),

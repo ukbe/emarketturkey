@@ -9,7 +9,7 @@ class connectAction extends EmtAction
 
         if ($this->getRequest()->isXmlHttpRequest()) header('Content-type: text/html');
 
-        if (!$this->user && $this->getRequest()->isXmlHttpRequest()) return $this->renderText($this->getContext()->getI18N()->__('ACTION DISALLOWED'));
+        if (!$this->user && ($this->getRequest()->isXmlHttpRequest() || $this->hasRequestParameter('callback'))) return $this->renderText($this->getContext()->getI18N()->__('ACTION DISALLOWED'));
         if (!$this->user) $this->redirect('@myemt.homepage');
 
         if ($this->getRequestParameter('mod') == 'commit' && !$this->sesuser->isFriendsWith($this->user->getId()))
@@ -36,33 +36,41 @@ class connectAction extends EmtAction
 
                     EmailTransactionPeer::CreateTransaction($vars);
 
-                    $this->getUser()->setMessage('Friendship Request Sent!', 'A friendship request has been sent to %1', 
-                                              null, array('%1' => $this->user));
                     if ($this->getRequest()->isXmlHttpRequest())
                     {
-                        return $this->renderPartial('global/ajaxRedirect', array('target' => $this->_ref));
+                        return $this->renderPartial('global/ajaxSuccess', array('message' => $this->getContext()->getI18N()->__('Your connection request was submitted.'), 'redir' => $this->_ref ? $this->_ref : $this->_referer));
+                    }
+                    elseif ($this->hasRequestParameter('callback'))
+                    {
+                        return $this->renderText($this->getRequestParameter('callback')."(".json_encode(array('content' => $this->getPartial('global/ajaxSuccess', array('message' => $this->getContext()->getI18N()->__('Your connection request was submitted.'), 'redir' => $this->_ref ? $this->_ref : $this->_referer)))).");");
                     }
                     else
                     {
+                        $this->getUser()->setMessage('Friendship Request Sent!', 'A friendship request has been sent to %1', 
+                                                  null, array('%1' => $this->user));
+
                         $this->redirect($this->_ref);
                     }
                 }
             }
-            if ($this->getRequest()->isXmlHttpRequest())
+            if ($this->getRequest()->isXmlHttpRequest() || $this->hasRequestParameter('callback'))
                 return $this->renderPartial('global/ajaxSuccess', array('message' => $this->getContext()->getI18N()->__('ACTION DISALLOWED')));
         }
         elseif ($this->sesuser->isFriendsWith($this->user))
         {
-            return $this->renderPartial('global/ajaxSuccess', array('message' => $this->getContext()->getI18N()->__('You are already connected.')));
+            if ($this->getRequest()->isXmlHttpRequest() || $this->hasRequestParameter('callback'))
+                return $this->renderPartial('global/ajaxSuccess', array('message' => $this->getContext()->getI18N()->__('You are already connected.')));
         }
         elseif (!$this->sesuser->can(ActionPeer::ACT_ADD_TO_NETWORK, $this->user))
         {
-            if ($this->getRequest()->isXmlHttpRequest())
+            if ($this->getRequest()->isXmlHttpRequest() || $this->hasRequestParameter('callback'))
                 return $this->renderPartial('global/ajaxSuccess', array('message' => $this->getContext()->getI18N()->__('ACTION DISALLOWED')));
         }
 
         if ($this->getRequest()->isXmlHttpRequest())
             return $this->renderPartial('connect', array('sesuser' => $this->sesuser, 'user' => $this->user, '_ref' => $this->_ref));
+        if ($this->hasRequestParameter('callback'))
+            return $this->renderText($this->getRequestParameter('callback').'('.json_encode(array('content' => $this->getPartial('connect', array('sesuser' => $this->sesuser, 'user' => $this->user, '_ref' => $this->_ref)))).');');
 
     }
     

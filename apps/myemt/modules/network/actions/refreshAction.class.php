@@ -6,7 +6,7 @@
  * @package b2b
  * @sub-package login
  */
-class refreshAction extends EmtUserAction
+class refreshAction extends EmtManageAction
 {
     public function execute($request)
     {

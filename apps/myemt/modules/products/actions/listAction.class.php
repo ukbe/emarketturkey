@@ -11,7 +11,7 @@ class listAction extends EmtManageCompanyAction
         
         $this->keyword = $this->getRequestParameter('keyword', '');
         $this->page = is_numeric($this->getRequestParameter('page')) ? $this->getRequestParameter('page') : 1;
-        $this->status = myTools::pick_from_list($this->getRequestParameter('status'), array(ProductPeer::PR_STAT_APPROVED, ProductPeer::PR_STAT_EDITING_REQUIRED, ProductPeer::PR_STAT_PENDING_APPROVAL), ProductPeer::PR_STAT_APPROVED);
+        $this->status = myTools::pick_from_list(myTools::fixInt($this->getRequestParameter('status')), array(ProductPeer::PR_STAT_APPROVED, ProductPeer::PR_STAT_EDITING_REQUIRED, ProductPeer::PR_STAT_PENDING_APPROVAL), ProductPeer::PR_STAT_APPROVED);
         $this->view = myTools::pick_from_list($this->getRequestParameter('view'), array('extended', 'list', 'thumbs'), 'list');
         $this->ipp = myTools::pick_from_list($this->getRequestParameter('ipp'), $this->ipps[$this->view], 20);
         $this->group = is_numeric($this->getRequestParameter('group')) ? $this->company->getProductGroupById($this->getRequestParameter('group')) : null;

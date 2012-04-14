@@ -26,15 +26,10 @@ class applyAction extends EmtAction
                 if ($this->getRequestParameter('account') == 'new_company')
                 {
                     $data = $this->getRequest()->getParameterHolder();
-                    $this->account = new Company();
-                    $this->account->setName($data->get('company_name'));
-                    $this->account->setSectorId($data->get('company_industry'));
-                    $this->account->setBusinessTypeId($data->get('company_bussiness_type'));
                     
                     $this->getUser()->setAttribute('new_company_data', $data, '\tx\translators\apply');
                     $this->getUser()->setAttribute('account', 'new_company', '\tx\translators\apply');
-                    $this->setTemplate('translatorProfile');
-                    return sfView::SUCCESS;
+                    $this->redirect('@apply?step=2');
                 }
                 elseif ($this->getRequestParameter('account') != '')
                 {
@@ -44,8 +39,7 @@ class applyAction extends EmtAction
                         && !(TranslatorPeer::retrieveAccountFor(array(TranslatorPeer::TR_STAT_APPROVED, TranslatorPeer::TR_STAT_PENDING, TranslatorPeer::TR_STAT_SUSPENDED), $this->account)))
                     {
                         $this->getUser()->setAttribute('account', $this->getRequestParameter('account'), '\tx\translators\apply');
-                        $this->setTemplate('translatorProfile');
-                        return sfView::SUCCESS;
+                        $this->redirect('@apply?step=2');
                     }
                     else
                     {
@@ -112,8 +106,8 @@ class applyAction extends EmtAction
                     {
                         $this->redirect('@apply');
                     }
-                    
                 }
+                
                 try
                 {
                     $con->beginTransaction();
@@ -122,6 +116,7 @@ class applyAction extends EmtAction
                     $this->translator->setHolderId($this->account->getId());
                     $this->translator->setHolderTypeId($this->account->getObjectTypeId());
                     $this->translator->setStatus(TranslatorPeer::TR_STAT_PENDING);
+                    $this->translator->setDefaultLang($this->getUser()->getCulture());
                     $this->translator->save();
                     $this->translator->setName($this->account->__toString());
     
@@ -140,22 +135,19 @@ class applyAction extends EmtAction
                     $stmt->bindParam(':introduction', $intro, PDO::PARAM_STR, strlen($intro));
                     $stmt->execute();
                     
-                    $reads = $this->getRequestParameter('tr_reads');
-                    $writes = $this->getRequestParameter('tr_writes');
-                    $speaks = $this->getRequestParameter('tr_speaks');
-                    $natives = $this->getRequestParameter('tr_natives');
-                    foreach ($this->getRequestParameter('tr_langs') as $key => $lang)
+                    foreach ($this->getRequestParameter('langs') as $key => $lang)
                     {
                         $in = new TranslatorLanguage();
-                        $in->setId($this->translator->getId());
+                        $in->setTranslatorId($this->translator->getId());
                         $in->setLanguage($lang);
-                        $in->setNative($natives[$key]);
-                        $in->setLevelRead($reads[$key]);
-                        $in->setLevelWrite($writes[$key]);
-                        $in->setLevelSpeak($speaks[$key]);
+                        $in->setNative($this->getRequestParameter('lang-'.$lang.'-native'));
+                        $in->setLevelRead($this->getRequestParameter('lang-'.$lang.'-read'));
+                        $in->setLevelWrite($this->getRequestParameter('lang-'.$lang.'-write'));
+                        $in->setLevelSpeak($this->getRequestParameter('lang-'.$lang.'-speak'));
                         $in->save();
                     }
 
+                    /*
                     $targets = $this->getRequestParameter('coup_targets');
                     $interprets = $this->getRequestParameter('coup_interprets');
                     $two_ways = $this->getRequestParameter('coup_two_ways');
@@ -169,13 +161,14 @@ class applyAction extends EmtAction
                         $mk->setTwoWay($two_ways[$key]);
                         $mk->save();
                     }
+                    */
 
                     $con->commit();
                 }
                 catch (Exception $e)
                 {
                     $con->rollBack();
-                    ErrorLogPeer::Log($this->account->getId(), $this->account->getObjectTypeId(), 'Error while creating trade expert application: '.$e->getMessage().'; File: '.$e->getFile().'; Line: '.$e->getLine());
+                    ErrorLogPeer::Log($this->account->getId(), $this->account->getObjectTypeId(), 'Error while creating translator application: '.$e->getMessage().'; File: '.$e->getFile().'; Line: '.$e->getLine());
                     $this->error = 'An error occured while creating your Translator application.';
                     return sfView::SUCCESS;
                 }
@@ -189,7 +182,13 @@ class applyAction extends EmtAction
         {
             if ($this->getUser()->getAttribute('account', null, '\tx\translators\apply') == 'new_company')
             {
-                $data = $this->getRequest()->getParameterHolder();
+                $data = $this->getUser()->getAttribute('new_company_data', null, '\tx\translators\apply');
+                if (!$data)
+                {
+                    $this->getUser()->setAttribute('new_company_data', null, '\tx\translators\apply');
+                    $this->getUser()->setAttribute('account', null, '\tx\translators\apply');
+                    $this->redirect("@apply");
+                }
                 $this->account = new Company();
                 $this->account->setName($data->get('company_name'));
                 $this->account->setSectorId($data->get('company_industry'));
@@ -209,7 +208,7 @@ class applyAction extends EmtAction
                     $this->redirect('@apply');
                 }
             }
-            $this->setTemplate('translatorsProfile');
+            $this->setTemplate('translatorProfile');
         }
     }
     
@@ -250,15 +249,11 @@ class applyAction extends EmtAction
         if ($this->step != 2)
         {
             $this->getRequest()->removeError('translator_introduction');
-            $this->getRequest()->removeError('tr_langs');
+            $this->getRequest()->removeError('langs');
             $this->getRequest()->removeError('tr_reads');
             $this->getRequest()->removeError('tr_writes');
             $this->getRequest()->removeError('tr_speaks');
             $this->getRequest()->removeError('tr_natives');
-            $this->getRequest()->removeError('coup_sources');
-            $this->getRequest()->removeError('coup_targets');
-            $this->getRequest()->removeError('coup_interprets');
-            $this->getRequest()->removeError('coup_two_ways');
         }
         
         return !$this->getRequest()->hasErrors();

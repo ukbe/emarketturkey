@@ -8,18 +8,13 @@ transferSuccess:
 verifySuccess:
     metas:
         title: Verify Now
-    layout: layoutTripleColumn
 editSuccess:
     metas:
         title: Edit Account Settings
-    layout: layoutTripleColumn
 changePasswordSuccess:
     metas:
         title: Change Password
-    layout: layoutTripleColumn
 privacySuccess:
     metas:
         title: Privacy Settings
-    layout: layoutTripleColumn
-
         

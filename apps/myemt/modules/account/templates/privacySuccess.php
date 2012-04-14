@@ -1,7 +1,19 @@
-<?php slot('uppermenu') ?>
-<?php include_partial('account/uppermenu') ?>
+<?php slot('subNav') ?>
+<?php include_partial('profile/subNav', array('sesuser' => $sesuser)) ?>
 <?php end_slot() ?>
-                <h3><?php echo __('Privacy Preferences') ?></h3>
+
+<div class="col_948">
+    <div class="col_180">
+        <div class="box_180">
+<?php include_partial('account/settings', array('sesuser' => $sesuser)) ?>
+        </div>
+
+    </div>
+
+    <div class="col_576">
+        <div class="box_576 _titleBG_Transparent">
+            <section>
+                <h4><?php echo __('Privacy Preferences') ?></h4>
                 <p><?php echo __('You may edit your privacy preferences anytime by using the controls below.') ?></p>
                 <?php echo form_tag('@setup-privacy', 'class=focusing') ?>
                 <div class="save-block">
@@ -75,131 +87,106 @@
                     <?php echo submit_tag(__('Save Changes')) ?>
                 </div>
                 </form>
-                <style>
-dl._table {
- margin:0 0 10px;
- font-size:12px;
- clear:both;
- width:98%;
-}
+            </section>
+        </div>
+        
+    </div>
 
-dl._table dt {
- float:left;
- clear:both;
- display:block;
- width:120px;
- margin-right:15px;
- padding:5px;
- font-weight:bold;
- text-align:right;
-}
+    <div class="col_180">
 
-dl._table dd {
- display:block;
- float: left;
- width:auto;
- margin:1px 0 0;
- padding:5px 0;
-}
-
-body ._right {float:right}
-body ._left {float:left}
-body .clear { float:none;display:block;clear:both; }
-
-                    .prefs { width: 100%; }
-                    .prefs th { font: 12px tahoma; color: #647199; text-align: left; vertical-align: middle; padding: 7px 5px; }
-                    .prefs td {font: 13px tahoma; color: #3d3e3f; text-align: left; vertical-align: middle; padding: 7px 5px; }
-                    .prefs tr:nth-child(even) { background-color: #f8f8f8; } 
-                    .prefs tr:nth-child(odd) { background-color: #fefefe; } 
-                    .prefs tr:hover { background-color: #e5e5f7; } 
-                    .prefs label {width: 0px; height: 15px; padding: 0px; margin: 0 auto; display: inline; cursor: pointer; }
-                    
-                    .switched { -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; border: solid 1px #e7e7e7; clear: both; }
-                    .switched h3 * { display: inline-block; vertical-align: middle; }
-                    .switched h3 ._on { display: inline-block; }
-                    .switched h3 ._off { display: none; }
-                    .switched div._body{ padding: 10px; border-width: 1px 0px 0px 0px; border-color: #e7e7e7; border-style: solid;  }
-                    .switched h3 { background-color: #fff; font: 14px tahoma; color: #000; padding: 10px 10px; border-width: 0px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;  }
-                    .switched h3 div._right { margin-top: -1px; font: 16px arial; color: #b1b1b1; }
-                    .switched._off h3 ._on { display: none; }
-                    .switched._off h3 ._off { display: inline-block; }
-                    .switched._off div._body{ display: none; }
-                    .switched._off h3 { border-width: 0px; }
-                    .switched .custom-checkbox label { padding-left: 80px; background-image: url(/images/layout/background/switch-on-off.png); height: 20px; }
-                    .switched ._body { clear: both; }
-                    .switched ._body dl { clear: both; width: 500px; }
-                    .switched ._body dl dt { width: auto; }
-                    .switched ._body dl dd { }
-
-                    .save-block { padding: 0px; text-align: right; margin: 10px 0px; }
-                    .save-block .fade { display: none; font: 400 13px 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif; }
-                    .save-block.bold { padding: 10px; background-color: #ddd; }
-                    .save-block.bold .fade { display: inline; }
-                    .save-block input[type=button], 
-                    .save-block input[type=submit] { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background-color: transparent; padding: 0px; font: 400 12px 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif; color: #5b8fca; cursor: pointer; border: solid 1px transparent; }
-                    .save-block.bold input[type=button], 
-                    .save-block.bold input[type=submit] { background-color: #e00000; padding: 4px 6px; color: #fff; border: solid 1px #e64f4f; }
-
-/* wrapper divs */
-.custom-checkbox, 
-.custom-radio { position: relative; margin-left:15px;}
+    </div>
     
-/* input, label positioning */
-.custom-checkbox input, 
-.custom-radio input {
- position: absolute;
- left: -1em;
- top: 0.50em;
- margin:0;
- z-index:0;
- visibility:hidden;
-}
+</div>
 
-.custom-checkbox label, 
-.custom-radio label {
- display: block;
- position: relative;
- z-index: 1;
- cursor: pointer;
- padding-left: 15px;
-}
-
-.custom-checkbox label {
-    background: url(/images/layout/background/checkbox.gif) no-repeat;
-}
-
-.custom-radio label { 
-    background: url(/images/layout/background/radiobutton.gif) no-repeat; 
-}
+<style>
+    dl._table { margin:0 0 10px; font-size:12px; clear:both; width:98%; }
+    dl._table dt { float:left; clear:both; display:block; width:120px; margin-right:15px; padding:5px; font-weight:bold; text-align:right; }
+    dl._table dd { display:block; float: left; width:auto; margin:1px 0 0; padding:5px 0; }
+    body ._right { float:right }
+    body ._left { float:left }
+    body .clear { float:none; display:block; clear:both; }
     
-/* states */
-
-.custom-checkbox label, .custom-radio label {
- background-position: -10px -14px;
-}
-
-.custom-checkbox label.hover,
-.custom-checkbox label.focus,
-.custom-radio label.hover,
-.custom-radio label.focus {
- background-position: -10px -114px;
-}
-
-.custom-checkbox label.checked, 
-.custom-radio label.checked {
- background-position: -10px -214px;
-}
-
-.custom-checkbox label.checkedHover, 
-.custom-checkbox label.checkedFocus {
- background-position: -10px -314px;
-}
-
-.custom-checkbox label.focus, 
-.custom-radio label.focus {
- outline: 1px dotted #ccc;
-}
-                 </style>
+    .prefs { width: 100%; }
+    .prefs th { font: 12px tahoma; color: #647199; text-align: left; vertical-align: middle; padding: 7px 5px; }
+    .prefs td {font: 13px tahoma; color: #3d3e3f; text-align: left; vertical-align: middle; padding: 7px 5px; }
+    .prefs tr:nth-child(even) { background-color: #f8f8f8; } 
+    .prefs tr:nth-child(odd) { background-color: #fefefe; } 
+    .prefs tr:hover { background-color: #e5e5f7; } 
+    .prefs label {width: 0px; height: 15px; padding: 0px; margin: 0 auto; display: inline; cursor: pointer; }
+    
+    .switched { -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; border: solid 1px #e7e7e7; clear: both; }
+    .switched h3 * { display: inline-block; vertical-align: middle; }
+    .switched h3 ._on { display: inline-block; }
+    .switched h3 ._off { display: none; }
+    .switched div._body{ padding: 10px; border-width: 1px 0px 0px 0px; border-color: #e7e7e7; border-style: solid;  }
+    .switched h3 { background-color: #fff; font: 14px tahoma; color: #000; padding: 10px 10px; border-width: 0px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; margin: 0px; }
+    .switched h3 div._right { margin-top: -1px; font: 16px arial; color: #b1b1b1; }
+    .switched._off h3 ._on { display: none; }
+    .switched._off h3 ._off { display: inline-block; }
+    .switched._off div._body{ display: none; }
+    .switched._off h3 { border-width: 0px; }
+    .switched .custom-checkbox label { padding-left: 80px; background-image: url(/images/layout/background/switch-on-off.png); height: 20px; }
+    .switched ._body { clear: both; }
+    .switched ._body dl { clear: both; width: 500px; }
+    .switched ._body dl dt { width: auto; }
+    .switched ._body dl dd { }
+    
+    .save-block { padding: 0px; text-align: right; margin: 10px 0px; }
+    .save-block .fade { display: none; font: 400 13px 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif; }
+    .save-block.bold { padding: 10px; background-color: #ddd; }
+    .save-block.bold .fade { display: inline; }
+    .save-block input[type=button], 
+    .save-block input[type=submit] { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background-color: transparent; padding: 0px; font: 400 12px 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif; color: #5b8fca; cursor: pointer; border: solid 1px transparent; }
+    .save-block.bold input[type=button], 
+    .save-block.bold input[type=submit] { background-color: #e00000; padding: 4px 6px; color: #fff; border: solid 1px #e64f4f; }
+    
+    /* wrapper divs */
+    .custom-checkbox, 
+    .custom-radio { position: relative; margin-left:15px; }
+        
+    /* input, label positioning */
+    .custom-checkbox input, 
+    .custom-radio input { position: absolute; left: -1em; top: 0.50em; margin:0; z-index:0; visibility:hidden; }
+    
+    .custom-checkbox label, 
+    .custom-radio label { display: block; position: relative; z-index: 1; cursor: pointer; padding-left: 15px; }
+    
+    .custom-checkbox label {
+        background: url(/images/layout/background/checkbox.gif) no-repeat;
+    }
+    
+    .custom-radio label { 
+        background: url(/images/layout/background/radiobutton.gif) no-repeat; 
+    }
+        
+    /* states */
+    
+    .custom-checkbox label, .custom-radio label {
+     background-position: -10px -14px;
+    }
+    
+    .custom-checkbox label.hover,
+    .custom-checkbox label.focus,
+    .custom-radio label.hover,
+    .custom-radio label.focus {
+     background-position: -10px -114px;
+    }
+    
+    .custom-checkbox label.checked, 
+    .custom-radio label.checked {
+     background-position: -10px -214px;
+    }
+    
+    .custom-checkbox label.checkedHover, 
+    .custom-checkbox label.checkedFocus {
+     background-position: -10px -314px;
+    }
+    
+    .custom-checkbox label.focus, 
+    .custom-radio label.focus {
+     outline: 1px dotted #ccc;
+    }
+</style>
 <?php use_javascript('jquery.customCheckbox.js'); ?>
 <?php echo javascript_tag("
 

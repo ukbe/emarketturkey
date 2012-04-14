@@ -1,6 +1,6 @@
 <?php
 $criterias = array('wheres' => array("(P_OBJECT_TYPE_ID={$target->getObjectTypeId()} AND P_OBJECT_ID={$target->getId()})"));
-$connections = $subject->getConnections(null, null, true, false, null, false, null, null, $criterias);
+$connections = $subject->getConnections(null, null, false, false, null, false, null, null, $criterias);
 ?>
 <?php if (count($connections)): ?>
 <ul class="conn-how">

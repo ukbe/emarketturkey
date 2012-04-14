@@ -12,32 +12,20 @@
                 <li id="p-link"><?php echo link_to_function(image_tag('layout/wall/post-link.png').'<span>'.__('Link').'</span>','') ?></li>
                 <li id="p-video"><?php echo link_to_function(image_tag('layout/wall/post-video.png').'<span>'.__('Video').'</span>','') ?></li>
                 <li id="p-location"><?php echo link_to_function(image_tag('layout/wall/post-location.png').'<span>'.__('Location').'</span>','') ?></li>
+                <?php /* ?>
                 <li id="p-job"><?php echo link_to_function(image_tag('layout/wall/post-job.png').'<span>'.__('Job').'</span>','') ?></li>
                 <li id="p-opportunity"><?php echo link_to_function(image_tag('layout/wall/post-opportunity.png').'<span>'.__('Opportunity').'</span>','') ?></li>
+                <?php */ ?>
                 </ul>
                 <div id="target-box">
                 <div class="p-status">
-                <?php echo form_tag('profile/updateStatus') ?>
+                <?php echo form_tag('profile/post', 'id=status-form') ?>
+                <?php echo input_hidden_tag('type', PrivacyNodeTypePeer::PR_NTYP_POST_STATUS) ?>
                 <div class="bordered">
-                <?php echo textarea_tag('msg', '', 'rows=1') ?>
-                <?php echo javascript_tag("
-                var tx='".__('Type your status message ..')."'; 
-                $('.p-status #msg').focus(function(){if ($(this).val()==tx) $(this).removeClass('blurred-input-tip').val('');});
-                $('.p-status #msg').blur(function(){if ($(this).val()=='') $(this).addClass('blurred-input-tip').val(tx);}).blur();
-                ") ?>
+                <?php echo textarea_tag('status-message', '', array('rows' => 1, 'class' => 'watermark', 'alt' => __('Type your status message ..'))) ?>
                 </div>
                 <div class="out-p-status p-status-post _right ghost-sub" style="margin-top: 5px;">
-                <span id="p-status-error" class="ghost"><?php echo __('Error Occured!') ?></span>
-                <?php if_javascript(); ?>
-                <?php echo submit_to_remote('status-message-post', __('Share'), array(
-                                    'url' => '/profile/updateStatus',
-                                    'update' => 'status-message',
-                                    'success' => "$('.p-status #msg').val('');$('div#target-box #msg').keyup();$('.activity').update();",
-                                    'script' => true,
-                                    'before' => "$('#p-status-error').hide()",
-                                    'failure' => "$('#p-status-error').show()"), array('type' => 'link', 'class' => 'action-button')) ?>
-                <?php end_if_javascript(); ?>
-                <noscript><?php echo submit_tag(__('Share'), 'class=action-button') ?></noscript>
+                <?php echo submit_tag(__('Share'), 'class=action-button') ?>
                 </div>
                 </form>
                 <div id="clonediv" class="clone-textarea ghost" style="word-wrap: break-word;"></div>
@@ -53,13 +41,31 @@
                 </table>
                 </form>
                 </div>
-                <div class="p-video ghost bordered">
+                <div class="p-video ghost bordered status-select">
                 <?php echo form_tag('profile/post') ?>
                 <?php echo input_hidden_tag('type', PrivacyNodeTypePeer::PR_NTYP_POST_VIDEO) ?>
-                <table cellspacing="0" cellpadding="5" border="0" width="100%" style="vertical-align: middle; text-align: left;">
+                <?php echo input_hidden_tag('video-id', '') ?>
+                <?php echo input_hidden_tag('video-service-id', '') ?>
+                <table id="select-video" cellspacing="0" cellpadding="5" border="0" width="100%" style="vertical-align: middle; text-align: left;">
                 <tr>
-                <td style="width: 480px;"><div class="pad-1"><?php echo input_tag('pvideo', '', array('class' => 'watermark', 'alt' => 'http://')) ?></div></td>
-                <td><div class="pad-1"><?php echo submit_tag(__('Share'), 'class=action-button') ?></div></td>
+                <td style="width: 480px;"><div class="pad-1"><?php echo input_tag('pvideo', '', array('class' => 'watermark', 'alt' => 'http://', 'onfocus' => "$('#video-error').hide();")) ?></div></td>
+                <td><div class="pad-1"><?php echo link_to_function(__('Share'), '', 'id=get-video-link class=action-button') ?></div></td>
+                </tr>
+                </table>
+                <div id="video-error" class="inherit-font t_red txtCenter pad-1 ghost"><?php echo __('Something went wrong while retrieving video information. Sorry!') ?></div>
+                <table id="save-video" cellspacing="0" cellpadding="0" border="0" width="100%" style="vertical-align: middle; text-align: center;">
+                <tr>
+                <td style="width: 200px"><div id="video-thumb">
+                    </div>
+                    <?php echo input_hidden_tag('_ref', url_for('@homepage', true)) ?></td>
+                <td style="text-align: left;"><div class="pad-3">
+                    <strong id="video-title-label"><?php echo "###" ?></strong>
+                    <?php echo input_hidden_tag('video-title', '') ?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo textarea_tag('video-comment', '', array('class' => 'watermark', 'style' => 'width:400px;', 'rows' => 2, 'alt' => __('Comments'))) ?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo submit_tag(__('Post Video'), 'class=action-button') ?>
+                    </div></td>
                 </tr>
                 </table>
                 </form>
@@ -139,8 +145,10 @@ $('#location-manual').autocomplete({
             
             </div>
         </div>
-        <div class="box_630 _border_Shadowed">
-            <div>
+        <div class="box_630 _titleBG_Transparent">
+            <div class="_noBorder">
+                <h3 class="margin-t0" style="font: bold 13px 'trebuchet ms'; color: #4D4D4D; border-bottom: solid 2px #F1F1F1;padding: 3px 5px;margin-bottom: 10px;"><?php echo __('Updates') ?>&nbsp;<?php echo link_to_function(__('(refresh)'), "$('.activity').update(0);", 'class=action') ?></h3>
+                <?php include_partial('network/network_activity', array('activities' => $activities)) ?>
             </div>
         </div>
     </div>
@@ -150,7 +158,6 @@ $('#location-manual').autocomplete({
                 <span class="blue"><?php echo __('Companies') ?></span></h3>
             <div>
             <?php if (count($companies)): ?>
-                <div class="hrsplit-2"></div>
                 <div class="col_assets margin-t2">
                     <dl>
                     <?php foreach ($companies as $company): ?>
@@ -178,7 +185,6 @@ $('#location-manual').autocomplete({
                 <span class="blue"><?php echo __('Groups') ?></span></h3>
             <div>
             <?php if (count($groups)): ?>
-                <div class="hrsplit-2"></div>
                 <div class="col_assets margin-t2">
                     <dl>
                     <?php foreach ($groups as $group): ?>
@@ -200,17 +206,49 @@ $('#location-manual').autocomplete({
             <?php endif ?>
             </div>
         </div>
+        <?php $advises = $sesuser->getSuggestedFriendsPager(null, true, 3) ?>
+        <?php if (count($advises)): ?>
+        <div class="box_312 _border_Shadowed">
+            <h3><span class="_right"><?php echo link_to(__('See All'), '@cm.pymk') ?></span>
+                <span class="blue"><?php echo __('People You May Know') ?></span>
+            </h3>
+            <div>
+            <?php $myfriends = $sesuser->getFriends() ?>
+                <div class="col_assets margin-t2">
+                    <dl>
+                    <?php foreach ($advises as $friend): ?>
+                        <dt><?php echo link_to(image_tag($friend->getProfilePictureUri()), $friend->getProfileUrl()) ?></dt>
+                        <dd>
+                            <?php echo link_to($friend, $friend->getProfileUrl(), 'class=t_black') ?>
+                            <?php $hisfriends = $friend->getFriends();
+                                  $comm = array_intersect($hisfriends, $myfriends);
+                                  $fcount = count($comm);
+                            ?>
+                            <div class="asset-name"><?php echo link_to_function(format_number_choice(__('[0]No common friends|[1]%1 friend in common|(1,+Inf]%1 friends in common'), 
+                             array('%1' => $fcount), $fcount), '', array('id' => 'cmf-'.($friend->getId()))) ?></div>
+                            <?php if (!$friend->isFriendsWith($sesuser->getId()) && $sesuser->can(ActionPeer::ACT_ADD_TO_NETWORK, $friend)) 
+                                    echo link_to(__('Connect'), "@connect-user?user={$friend->getPlug()}", "class=action-button ajax-enabled id=conus-{$friend->getPlug()}") ?>
+                            <div id="cmf-<?php echo $friend->getId() ?>" class="ghost">
+                            <table cellspacing="0" cellpadding="5" border="0" width="100%" class="network-list">
+                                <?php foreach ($comm as $com): ?>
+                                <tr>
+                                <td><?php echo image_tag($com->getProfilePictureUri()) ?></td>
+                                <td width="90%" class="name">
+                                <?php echo $com ?>
+                                </td>
+                                </tr>
+                                <?php endforeach ?>
+                            </table>
+                            </div>
+                            </dd>
+                    <?php endforeach ?>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <?php endif ?>
     </div>
-    <div class="clear"></div>
-    <div>
-
-
-
-
-
-
-
-
+</div>
 
 <style>
     .post-box ul.selectorlist
@@ -271,7 +309,7 @@ $('#location-manual').autocomplete({
     {
         padding: 0px;
     }
-    .post-box #target-box div.p-status #msg, .clone-textarea
+    .post-box #target-box div.p-status #status-message, .clone-textarea
     {
         font: 12px arial;
         outline: none;
@@ -312,10 +350,30 @@ $('#location-manual').autocomplete({
         display: table;
     }
     
+    .p-video.status-select #select-video
+    {
+        display: table;
+    }
+    .p-video.status-select #save-video
+    {
+        display: none;
+    }
+    .p-video #select-video
+    {
+        display: none;
+    }
+    .p-video #save-video
+    {
+        display: table;
+    }
+    #video-thumb img
+    {
+        width: 120px;
+        display: block;
+    }
 </style>
 
 
-<div class="column span-144 prepend-1 append-2 post-box">
 <?php echo javascript_tag("
 
 $('.watermark').focus(function(){if ($(this).val()==$(this).attr('alt')) $(this).removeClass('blurred-input-tip').val('');});
@@ -345,6 +403,22 @@ $('#get-location-link').click(function(){
     }    
 });
 
+$('#get-video-link').click(function(){
+    var geo = '".url_for('profile/parseVideoId')."';
+    $.getJSON(geo,{url: $('#pvideo').val() },
+      function(video){
+        if (video.stat != 'success') {
+           $('#video-error').show();
+           return;
+        }
+        $('#video-title-label').text(video.title);
+        $('#video-title').val(video.title);
+        $('#save-video #video-thumb').html('').append($('<img />').attr('src', video.thumb));
+        $('.p-video').removeClass('status-select');
+      }
+    );
+});
+
 
 $('.post-box > ul > li > a').click(function(){
     $('.post-box li').removeClass('selected');
@@ -363,175 +437,10 @@ function FitToContent(id, maxHeight)
 }
 
 window.onload = function() {
-    $('div#target-box #msg').keyup(function() {
+    $('div#target-box #status-message').keyup(function() {
         FitToContent(this);
       });
-    $('div#target-box #msg').focus(function(){ $('.p-status-post').removeClass('ghost-sub'); });
+    $('div#target-box #status-message').focus(function(){ $('.p-status-post').removeClass('ghost-sub'); });
     };
 
 ") ?>
-</div>
-<div class="hrsplit-1"></div>
-<div class="append-1">
-<h3 style="font: bold 13px 'trebuchet ms'; color: #4D4D4D; border-bottom: solid 2px #F1F1F1;padding: 3px 5px;margin-bottom: 10px;"><?php echo __('Updates') ?>&nbsp;<?php echo link_to_function(__('(refresh)'), "$('.activity').update(0);", 'class=action') ?></h3>
-<?php include_partial('network/network_activity', array('activities' => $activities)) ?>
-</div>
-        
-        </div>
-    </div>
-
-    <div class="col_264">
-        <div class="box_264">
-            <h3><?php echo __('Companies') ?>
-            <?php echo link_to(__('Add Company'), '@register-comp', 'class=action') ?></h3>
-            <div>
-            <?php if (count($companies)): ?>
-            <ol class="column span-45" style="padding: 0px; margin: 0px;">
-            <?php foreach ($companies as $company): ?>
-            <li class="column span-10 append-2 first">
-            <?php echo link_to(image_tag($company->getProfilePictureUri()), $company->getProfileUrl()) ?>
-            </li>
-            <li class="column span-33">
-            <?php echo link_to($company->getName(), $company->getProfileUrl()) ?><br />
-            <em class="tip"><?php echo $company->getBusinessSector() ?></em><br />
-            <?php echo link_to(__('Manage'), '@company-manage?hash='.$company->getHash()) ?>
-            </li>
-            <?php endforeach ?>
-            </ol>
-            <?php else: ?>
-            <?php echo __('A large number of companies use eMarketTurkey B2B for their business operations.') ?>
-            <div class="hrsplit-1"></div>
-            <?php echo __('Register your company and get listed on eMarketTurkey B2B Directory.') ?>
-            <div class="hrsplit-1"></div>
-            <?php echo link_to(__('Register Your Company'), '@register-comp') ?>
-            <?php endif ?>
-            </div>
-        </div>
-        
-        <div class="box_264">
-            <h3><?php echo __('Groups') ?>
-            <?php echo link_to(__('Add Group'), '@group-start', 'class=action') ?></h3>
-            <div>
-            <?php if (count($groups)): ?>
-            <ol class="column span-45" style="padding: 0px; margin: 0px;">
-            <?php foreach ($groups as $group): ?>
-            <li class="column span-10 append-2 first">
-            <?php echo link_to(image_tag($group->getProfilePictureUri()), $group->getProfileUrl()) ?>
-            </li>
-            <li class="column span-33">
-            <?php echo link_to($group->getName(), $group->getProfileUrl()) ?><br />
-            <em class="tip"><?php echo __('%1 Members', array('%1' => $group->countMembers())) ?></em><br />
-            <?php echo link_to(__('Manage'), '@group-manage?action=manage&hash='.$group->getHash()) ?>
-            </li>
-            <?php endforeach ?>
-            </ol>
-            <?php else: ?>
-            <?php echo __('Business groups, alumni groups or even social organisations get connected on eMarketTurkey Community.') ?>
-            <div class="hrsplit-1"></div>
-            <?php echo __('You can start your own group and invite friends in your network.') ?>
-            <div class="hrsplit-1"></div>
-            <?php echo link_to(__('Start Your Group'), '@group-start') ?>
-            <?php endif ?>
-            </div>
-        </div>
-        
-        <?php $advises = $sesuser->getSuggestedFriendsPager(null, true, 3) ?>
-        <?php if (count($advises)): ?>
-        <div class="box_264">
-            <h3><?php echo __('People You May Know') ?>
-            <?php echo link_to(__('See All'), '@cm.pymk', 'class=action') ?></h3>
-            <div>
-            <ol class="column span-45" style="padding: 0px; margin: 0px;">
-            <?php $myfriends = $sesuser->getFriends() ?>
-            <?php foreach ($advises as $friend): ?>
-            <li class="column span-10 append-2 first">
-            <?php echo link_to(image_tag($friend->getProfilePictureUri()), $friend->getProfileUrl()) ?>
-            </li>
-            <li class="column span-33">
-            <?php echo link_to($friend, $friend->getProfileUrl(), 'class=name') ?><br />
-            <?php 
-                    $hisfriends = $friend->getFriends();
-                    $comm = array_intersect($hisfriends, $myfriends);
-                    $fcount = count($comm);
-             ?>
-            <em class="tip"><a href="<?php echo "#TB_inline?height=155&width=400&inlineId=commonFriend_{$friend->getId()}" ?>" class="thickbox"><?php echo format_number_choice(__('[0]No common friends|[1]%1 friend in common|(1,+Inf]%1 friends in common'), 
-                             array('%1' => $fcount), $fcount) ?></a></em><br />
-            <?php if (!$friend->isFriendsWith($sesuser->getId()) && $sesuser->can(ActionPeer::ACT_ADD_TO_NETWORK, $friend)) 
-                        echo link_to(__('Add as Friend'), 'network/add', array('query_string' => 'cid='.$friend->getId().'&width=560&height=220', 'class' => 'thickbox action plus')) ?>
-            <div id="commonFriend_<?php echo $friend->getId() ?>" class="ghost">
-            <table cellspacing="0" cellpadding="5" border="0" width="100%" class="network-list">
-            <?php foreach ($comm as $com): ?>
-            <tr>
-            <td><?php echo image_tag($com->getProfilePictureUri()) ?></td>
-            <td width="90%" class="name">
-            <?php echo $com ?>
-            </td>
-            </tr>
-            <?php endforeach ?>
-            </table>
-            </div>
-            </li>
-            <?php endforeach ?>
-            </ol>
-            </div>
-        </div>
-        <?php endif ?>
-        
-    </div>
-    
-    
-</div>
-<div class="column span-144 append-2 prepend-1 home-top" style="position: relative;">
-<?php echo javascript_tag("
-var inside = false;
-function focusFloat(trigger, force)
-{
-    if (force)
-    {
-        $('.floating-block').addClass('focus');
-        inside = true;
-    }
-    else if (trigger && onn)
-    {
-        $('.floating-block').addClass('focus');
-    }
-    else
-    {
-        inside = false;
-        $('.floating-block').removeClass('focus');
-    }
-}
-") ?>
-<ol class="column" style="padding: 0px; margin: 0px;">
-<li class="column span-10 append-3" style="text-align: center;"><?php echo link_to(image_tag($sesuser->getProfilePictureUri()), $sesuser->getProfileUrl(), array('class' => 'profile-picture', 'title' => __('Go to My Profile'))) ?><br />
-    <?php echo link_to(__('Edit Picture'), '@setup-profile', array('class' => 'tiny-grey show', 'style' => 'display: block; margin-top: 2px;')) ?>
-</li>
-<li class="column">
-<h3 style="margin: 0px;"><?php echo $sesuser ?></h3>
-<?php $occ = $sesuser->getCurrentEmployments(true) ?>
-<?php $sch = $sesuser->getCurrentEducations(true) ?>
-<?php if ($occ): ?>
-<span class="occupation"><?php echo __('%1p at %2c' , array('%1p' => $occ->getJobTitle(), '%2c' => $occ->getCompanyName())) ?></span>
-<?php elseif ($sch): ?>
-<span class="occupation"><?php echo __('%1d student at %2s on %3m' , array('%1d' => $sch->getResumeSchoolDegree(), '%2s' => $sch->getSchool(), '%3m' => $sch->getMajor())) ?></span>
-<?php endif ?>
-<div id="status-message" class="span-120 status-message readmore hide"><?php echo 
-($status = $sesuser->getStatusUpdate()) ? 
-(mb_strlen($status->getMessage())> 200 ? mb_substr($status->getMessage(), 0, 200).link_to_function(__('read more'), "", 'class=readmorelink')."<span class='more'>".mb_substr($status->getMessage(), 200)."</span>": $status->getMessage()) 
-: '' ?></div>
-<div class="hrsplit-1"></div>
-<?php /*
-<ol class="horizontal-menu show ghost" style="margin: 0px; padding: 0px;">
-<li><?php echo link_to(__('Edit Profile'), '@profile-edit') ?></li>
-<li><?php echo link_to(__('Photos'), $sesuser->getPhotosUrl()) ?></li>
-<li><?php echo $sesuser->getResume() ? link_to(__('Edit CV'), '@hr.hr-cv') : link_to(__('Create CV'), '@hr.hr-cv-create') ?></li>
-<li><?php echo link_to(__('Contacts'), '@cm.network') ?></li>
-</ol>
-*/ ?>
-</li>
-</ol>
-</div>
-<?php echo javascript_tag("
-    //$('.readmore').readmore(2);
-") ?>
-</div>

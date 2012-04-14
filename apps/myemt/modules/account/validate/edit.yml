@@ -3,26 +3,33 @@ fields:
         required:
             msg: 'Enter your name.'
         sfStringValidator:
-            min: 3
-            min_error: 'Name field should be at least 3 characters.'
-            max: 20
-            min_error: 'Name field should be maximum 20 characters.'
+            min: 2
+            min_error: 'Name field should be at least 2 characters.'
+            max: 50
+            min_error: 'Name field should be maximum 50 characters.'
     user_lastname:
         required:
             msg: 'Enter your lastname.'
         sfStringValidator:
-            min: 3
-            min_error: 'Lastname field should be at least 3 characters.'
-            max: 20
-            min_error: 'Lastname field should be maximum 20 characters.'
+            min: 2
+            min_error: 'Lastname field should be at least 2 characters.'
+            max: 50
+            min_error: 'Lastname field should be maximum 50 characters.'
     user_alternative_email:
         sfPropelUniqueValidator:
             class:  Login
             column:  EMAIL
+            case_insensitive:  true
             unique_error:  'This email address is owned by another user.'
     user_username:
         sfPropelUniqueValidator:
             class:  Login
             column:  USERNAME
             unique_error:  'This username is not available.'
+    user_account_email:
+        sfPropelUniqueValidator:
+            class:  Login
+            column:  EMAIL
+            case_insensitive:  true
+            unique_error:  'This email address is owned by another user.'
         

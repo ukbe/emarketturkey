@@ -23,7 +23,7 @@ class careerAction extends EmtUserAction
         $this->occupations = $this->user->getWorkHistory(false);
         $this->educations = $this->user->getEducationHistory(false);
         
-        if ($this->thisIsMe) RatingPeer::logNewVisit($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER);
+        if (!$this->thisIsMe) RatingPeer::logNewVisit($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER);
     }
 
 }

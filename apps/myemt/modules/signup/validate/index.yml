@@ -28,6 +28,7 @@ fields:
         sfPropelUniqueValidator:
             class:  Login
             column:  EMAIL
+            case_insensitive:  true
             unique_error:  'This email address is already registered.'
         sfRegexValidator:
             match:  true

@@ -35,7 +35,7 @@ class profileAction extends EmtUserAction
         $this->num_groups = $this->user->getGroupMemberships(RolePeer::RL_GP_MEMBER, GroupMembershipPeer::STYP_ACTIVE, false, null, false, true);
         $this->groups = $this->user->getGroupMemberships(RolePeer::RL_GP_MEMBER, GroupMembershipPeer::STYP_ACTIVE, true, null, true, false, 1, 5, false);
 
-        if ($this->user->getId() != $this->sesuser->getId()) RatingPeer::logNewVisit($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER);
+        if (!$this->thisIsMe) RatingPeer::logNewVisit($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER);
     }
 
 }

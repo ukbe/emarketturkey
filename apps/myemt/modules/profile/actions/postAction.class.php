@@ -8,7 +8,7 @@ class postAction extends EmtManageAction
         $user = $this->sesuser;
         
         $type = myTools::pick_from_list(myTools::fixInt($this->getRequestParameter('type')), 
-            array(PrivacyNodeTypePeer::PR_NTYP_STATUS_UPDATE,
+            array(PrivacyNodeTypePeer::PR_NTYP_POST_STATUS,
                   PrivacyNodeTypePeer::PR_NTYP_POST_LOCATION,
                   PrivacyNodeTypePeer::PR_NTYP_POST_LINK,
                   PrivacyNodeTypePeer::PR_NTYP_POST_VIDEO,
@@ -18,7 +18,17 @@ class postAction extends EmtManageAction
 
         switch ($type)
         {
-            case PrivacyNodeTypePeer::PR_NTYP_STATUS_UPDATE :
+            case PrivacyNodeTypePeer::PR_NTYP_POST_STATUS :
+                if ($this->hasRequestParameter('status-message'))
+                {
+                    $status = new PostStatus();
+                    $status->setMessage($this->getRequestParameter('status-message'));
+
+                    $post = WallPostPeer::postItem($this->sesuser, null, $status, RolePeer::RL_ALL);
+
+                    if ($post) $this->redirect($this->_ref ? $this->_ref : $this->_referer);
+                    else $this->redirect($this->_referer);
+                }
                 break;
             case PrivacyNodeTypePeer::PR_NTYP_POST_LOCATION :
                 if ($this->hasRequestParameter('location_data'))
@@ -39,7 +49,6 @@ class postAction extends EmtManageAction
                     $location->setCity($result[0][0]);
 
                     $post = WallPostPeer::postItem($this->sesuser, null, $location, RolePeer::RL_ALL);
-
                     if ($post) $this->redirect($this->_ref ? $this->_ref : $this->_referer);
                     else $this->redirect($this->_referer);
                 }
@@ -50,11 +59,26 @@ class postAction extends EmtManageAction
                 // no photo for beginning
                 break;
             case PrivacyNodeTypePeer::PR_NTYP_POST_VIDEO :
-                // save url
-                // while printing parse url and use vieo id in embed code 
-                $query = parse_url($url, PHP_URL_QUERY);
-                parse_str($query, $vals);
-                $youtube_id = $vals['v'];
+                if ($this->hasRequestParameter('pvideo'))
+                {
+                    $videodata = PostVideoPeer::parseVideoUrl($this->getRequestParameter('pvideo'));
+
+                    $video = new PostVideo();
+                    $video->setTitle($videodata['title']);
+                    $video->setUrl($this->getRequestParameter('pvideo'));
+                    $video->setMessage($this->getRequestParameter('video-comment'));
+                    $video->setVideoId($videodata['video_id']);
+                    $video->setServiceId($videodata['service_id']);
+                    $video->save();
+
+                    MediaItemPeer::createMediaItemFromRemoteFile($video->getId(), $video->getObjectTypeId(), MediaItemPeer::MI_TYP_VIDEO_PREVIEW, $video->getRemoteThumbUrl());
+
+                    $post = WallPostPeer::postItem($this->sesuser, null, $video, RolePeer::RL_ALL);
+
+                    if ($post) $this->redirect($this->_ref ? $this->_ref : $this->_referer);
+                    else $this->redirect($this->_referer);
+                    // Embed DailyMotion Video: <object width="425" height="335"><param name="movie" value="http://www.dailymotion.com/swf/xpul0b"><param name="allowfullscreen" value="true"><embed src="http://www.dailymotion.com/swf/xpul0b" type="application/x-shockwave-flash" width="425" height="335" allowfullscreen="true"></object>
+                }
                 break;
             case PrivacyNodeTypePeer::PR_NTYP_POST_JOB :
                 break;
@@ -62,6 +86,7 @@ class postAction extends EmtManageAction
                 break;
         }
 
+        $this->redirect($this->_referer);
     }
     
     public function validate()

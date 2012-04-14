@@ -101,6 +101,7 @@ propel:
     REMEMBER_CODE:        { type: varchar(35) }
     CREATED_AT:           ~
     UPDATED_AT:           ~
+    EMAIL_LOG:            { type: varchar(400), default: 'a:0:{}' }
     
   EMT_USER: 
     _attributes:          { phpName: User }
@@ -1433,6 +1434,8 @@ propel:
     URL:                  { type: varchar(500), required: true }
     TITLE:                { type: varchar(500) }
     MESSAGE:              { type: varchar(1024) }
+    VIDEO_ID:             { type: varchar(50) }
+    SERVICE_ID:           { type: integer, size: 2 }
     CREATED_AT:           ~
 
   EMT_POST_LOCATION: 
@@ -1463,6 +1466,13 @@ propel:
     URL:                  { type: varchar(500), required: true }
     TITLE:                { type: varchar(500) }
     MESSAGE:              { type: varchar(1024) }
+    CREATED_AT:           ~
+
+  EMT_POST_STATUS: 
+    _attributes:          { phpName: PostStatus }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    TITLE:                { type: varchar(500) }
+    MESSAGE:              { type: varchar(2000) }
     CREATED_AT:           ~
 
   EMT_LIKE_IT: 

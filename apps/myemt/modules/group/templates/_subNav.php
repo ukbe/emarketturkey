@@ -1,4 +1,5 @@
     <header>
+<?php slot('pageHeader') ?>
         <hgroup class="_comSel">
             <?php echo link_to(image_tag($group->getProfilePictureUri()), "@upload-group-logo?hash={$group->getHash()}", "class=_comMng_logo") ?>
             <ul class="_horizontal">
@@ -26,10 +27,11 @@
                 </dd>
             </dl>
         </hgroup>
+<?php end_slot() ?>
         <nav>
             <dl id="subNav">
-                <dt><a href=""><?php echo __('Control Panel') ?></a></dt>
-                <dd<?php echo checkActivePage('@group-manage', null, true, '_selected') ?>><?php echo link_to(__('Overview'), "@group-manage?hash={$group->getHash()}") ?></dd>
+                <dt><?php echo link_to(__('myEMT'), '@homepage') ?></dt>
+                <dd class="ui-corner-tl<?php echo checkActivePage('@group-manage', null, false, '_selected') ?>"><?php echo link_to(__('Overview'), "@group-manage?action=manage&hash={$group->getHash()}") ?></dd>
                 <dd<?php echo checkActivePage('module=groupProfile', null, true, '_selected') ?>><?php echo link_to(__('Edit Group Profile'), "@edit-group-profile?action=edit&hash={$group->getHash()}") ?></dd>
                 <dd<?php echo checkActivePage('module=members', null, true, '_selected') ?><?php echo checkActivePage('module=leads', null, true, '_selected') ?>><?php echo link_to(__('Members'), "@group-members?action=summary&hash={$group->getHash()}") ?></dd>
                 <dd<?php echo checkActivePage('module=discussions', null, true, '_selected') ?><?php echo checkActivePage('module=leads', null, true, '_selected') ?>><?php echo link_to(__('Discussions'), "@group-discussions?action=review&hash={$group->getHash()}") ?></dd>

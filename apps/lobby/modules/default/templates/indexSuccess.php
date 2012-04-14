@@ -77,7 +77,7 @@
 <?php if ($sf_user->getUser() && !$sf_user->getUser()->getResume()): ?>
 <div class="column span-62">
 <div class="column">
-<?php echo link_to(image_tag('layout/button/lobby/create-cv.'.$sf_user->getCulture().'.png'), '@hr.hr-cv-create') ?>
+<?php echo link_to(image_tag('layout/button/lobby/create-cv.'.$sf_user->getCulture().'.png'), '@hr.mycv-action?action=edit') ?>
 </div>
 <ul class="first" style="margin-top: 7px;display: inline-block; font: 1em 'helvetica'; color: #666666; list-style-type: circle; padding-left: 20px; line-height: 1.4em;">
 <li><?php echo __('Improve your career') ?></li>

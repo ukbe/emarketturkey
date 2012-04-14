@@ -42,7 +42,7 @@
                     <dd><?php echo input_tag('web_url', $sf_params->get('web_url', $company->getUrl()), 'size=30') ?><br />
                              <em class="ln-example"><?php echo __('http://www.companysite.com') ?></em></dd>
                     <dt></dt>
-                    <dd><?php echo submit_tag(__('Save Changes'), 'class=green-button') ?>&nbsp;&nbsp;<?php echo link_to(__('Cancel Changes'), "@edit-group-profile?hash={$group->getHash()}", 'class=inherit-font bluelink hover') ?></dd>
+                    <dd><?php echo submit_tag(__('Save Changes'), 'class=green-button') ?>&nbsp;&nbsp;<?php echo link_to(__('Cancel Changes'), "@edit-company-profile?hash={$company->getHash()}", 'class=inherit-font bluelink hover') ?></dd>
                 </dl>
                 </form>
             </section>

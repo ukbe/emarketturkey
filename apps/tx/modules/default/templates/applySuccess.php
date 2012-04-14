@@ -36,7 +36,7 @@
                 </li>
             <?php endforeach ?>
                 <li><?php echo radiobutton_tag('account', 'new_company', $sf_params->get('account') == 'new_company', 'id=account_new_company') ?>
-                    <?php echo emt_label_for('account_new_company', __('Register a new Company for Translator')) ?>
+                    <?php echo emt_label_for('account_new_company', __('Register a new company for Translator Account')) ?>
                     <div class="activate <?php echo $sf_params->get('account') == 'new_company' ? '' : 'ghost' ?>">
                         <?php echo $sf_request->hasError('account') ? '' : form_errors() ?>
                         <dl class="_table">

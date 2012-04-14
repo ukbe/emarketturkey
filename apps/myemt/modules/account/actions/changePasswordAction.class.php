@@ -32,8 +32,9 @@ class changePasswordAction extends EmtAction
                 
                 ActionLogPeer::Log($this->sesuser, ActionPeer::ACT_CHANGE_PASSWORD);
                 
-                $this->getUser()->setFlash('message', 'Password was changed successfully!', true);
-                $this->redirect('account/index');
+                $this->getUser()->setMessage(null, 'Password was changed successfully!');
+
+                $this->redirect('@account');
             }
         }
     }

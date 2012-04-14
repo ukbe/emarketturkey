@@ -9,10 +9,18 @@
 </head>
 <body class="_noJS">
 <header>
-
  <?php include_partial('global/header') ?>
-
 </header>
+<div id="pop-holder"><?php include_partial('global/pop_message') ?>
+<?php if (has_slot('pageHeader')): ?>
+<div class="centralBlock">
+<?php include_slot('pageHeader') ?>
+<div class="clear"></div>
+</div>
+<?php endif ?>
+</div>
+<?php include_partial('global/page_user_message') ?>
+<div id="section-bg">
 <section class="app_cm">
  <?php if (has_slot('subNav')): ?>
  <?php include_slot('subNav') ?>
@@ -21,7 +29,7 @@
  <?php endif ?>
  <?php echo $sf_data->getraw('sf_content') ?>
 </section>
-
+</div>
 <section id="lowerContainer">
  <?php include_partial('global/footer') ?>
 </section>

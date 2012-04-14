@@ -14,6 +14,6 @@
                 <li><?php echo link_to($role, "@{$role->getModule()}-action?=action=overview") ?></li>
                 <?php endif ?>
                 <?php endforeach ?>
-            </ul>
+            </ul></div>
         </li>
 </ul>

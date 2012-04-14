@@ -22,6 +22,7 @@ $('#reco').dynalist({
 <?php echo form_errors() ?>
 <?php echo form_tag(url_for("@compose-message", true), 'id=mess-form') ?>
 <?php echo input_hidden_tag('_ref', $_ref) ?>
+<?php echo input_hidden_tag('mod', 'commit') ?>
 <dl class="_table">
 <dt><?php echo emt_label_for('_s', __('Sender')) ?></dt>
 <dd><?php echo image_tag($sender->getProfilePictureUri(), 'class=_left style=margin: -2px 10px 0px 0px; height: 20px;') . $sender ?>

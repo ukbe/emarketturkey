@@ -47,7 +47,7 @@ class connectionsAction extends EmtUserAction
         
         $this->pager = $this->user->getConnections($objtypes[$this->role_name], $roles[$this->role_name], true, true, null, false, 20, $this->page);
         
-        if ($this->thisIsMe) RatingPeer::logNewVisit($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER);
+        if (!$this->thisIsMe) RatingPeer::logNewVisit($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER);
     }
 
 }

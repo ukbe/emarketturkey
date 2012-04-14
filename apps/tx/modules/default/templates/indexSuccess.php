@@ -44,24 +44,6 @@
         </div>
     </div>
 
-<?php $sql = "
-select trunc(created_at), count(*) 
-from emt_user
-group by trunc(created_at)
-";
-$con = Propel::getConnection();
-$stmt = $con->prepare($sql);
-$stmt->execute();
- ?>
-<div class="statwin">
-<?php while ($row = $stmt->fetch(PDO::FETCH_NUM)): ?>
-<div style="height: <?php echo $row[1] ?>px;" title="<?php echo $row[0] ?>"><?php echo $row[1] ?></div>
-<?php endwhile ?>
-</div>
-<style>
-.statwin { width: 90%; }
-.statwin div { float: left; width: 10px; border: solid 1px black; background-color: red; color: white; font-size: 9px; padding: 2px;}
-</style>
 </div>
 <?php echo javascript_tag("
 $(function() {

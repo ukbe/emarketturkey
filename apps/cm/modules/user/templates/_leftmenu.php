@@ -11,4 +11,3 @@
                 <li class="_events<?php echo $action == 'events' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Events'), $user->getProfileActionUrl('events')) ?></li>
             </ul>
         </div>
-        

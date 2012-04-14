@@ -13,25 +13,7 @@ class verifyAction extends EmtAction
         
         if ($this->getRequestParameter('resend') == 'yes' && !$this->sesuser->isNew())
         {
-            $rcodes = explode('@', $this->sesuser->getLogin()->getRememberCode());
-            $nid = uniqid();
-            $this->sesuser->getLogin()->setRememberCode($nid . (count($rcodes) == 2 ? '@'.$rcodes[1] : ''));
-            $this->sesuser->getLogin()->save();
-            
-            $data = new sfParameterHolder();
-            $data->set('uname', $this->sesuser->getName());
-            $data->set('ui', $nid);
-            $data->set('em', $this->sesuser->getLogin()->getGuid());
-            
-            $vars = array();
-            $vars['email'] = $this->sesuser->getLogin()->getEmail();
-            $vars['user_id'] = $this->sesuser->getId();
-            $vars['data'] = $data;
-            $vars['namespace'] = EmailTransactionNamespacePeer::EML_TR_NS_VERIFY_EMAIL_ADDR;
-    
-            EmailTransactionPeer::CreateTransaction($vars);
-            
-            $this->resentMail = true;
+            $this->resentMail = $this->sesuser->sendVerificationEmail();
         }
         
         if ($this->getRequestParameter('ui') != '' && $this->getRequestParameter('em') != '')

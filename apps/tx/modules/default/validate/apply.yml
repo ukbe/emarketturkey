@@ -28,12 +28,9 @@ fields:
         required:
             msg: "Please enter phone number of your company."
 
-    tr_langs:
+    langs:
         required:
             msg: "Please select at least one language."
-    coup_sources:
-        required:
-            msg: "Please select at least one couple."
     translator_introduction:
         required:
             msg: "Please specify introduction information for Translator profile."

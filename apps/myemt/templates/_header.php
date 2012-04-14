@@ -82,7 +82,7 @@
     	<ul id="buttons">
             <!--// LOGGED OFF //-->
             <li class="nologin"><b><?php echo link_to(__('Sign Up'), '@signup', array('id' => 'btn_signup' , 'tabindex' => 7, 'title' => __('Sign Up'))) ?></b></li>
-            <li class="nologin"><b><?php echo link_to(__('Login'), '@login', array('id' => 'btn_login', 'title' => __('Login'))) ?></b>
+            <li class="nologin"><b><?php echo link_to(__('Login').'<b></b>', '@login', array('id' => 'btn_login', 'title' => __('Login'))) ?></b>
                 <div id="btn_login-box">
                     <ul class="menu-sub-box list">
                         <li class="header"><?php echo __('Login') ?></li>
@@ -162,7 +162,7 @@
                     </ul>
                 </div>
             </li>
-            <li><b><?php echo link_to(__('Contacts').'<b></b>', '@cm.network', array('id' => 'btn_contacts', 'title' => __('Contacts'))) ?></b></li>
+            <li><b><?php echo link_to(__('Contacts').'<b></b>', '@contacts', array('id' => 'btn_contacts', 'title' => __('Contacts'))) ?></b></li>
             <li><b><?php echo link_to(__('Tasks').'<b></b>', '@tasks', array('id' => 'btn_tasks', 'title' => __('Tasks'))) ?></b></li>
             <li><b><?php echo link_to(__('Account').'<b></b>', '@account', array('id' => 'btn_account', 'title' => __('Account'))) ?></b>
             <?php if ($sf_user->isLoggedIn()): ?>

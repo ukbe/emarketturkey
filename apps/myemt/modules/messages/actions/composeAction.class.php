@@ -59,7 +59,7 @@ class composeAction extends EmtAction
 
         if ($this->getRequest()->isXmlHttpRequest()) header('Content-type: text/html');
 
-        if ($this->getRequest()->getMethod() == sfRequest::POST && !$isValidationError)
+        if (($this->getRequest()->getMethod() == sfRequest::POST || ($this->hasRequestParameter('callback') && $this->getRequestParameter('mod') == 'commit'))  && !$isValidationError)
         {
             $con = Propel::getConnection();
             
@@ -117,13 +117,15 @@ class composeAction extends EmtAction
 
                 if ($this->getRequest()->isXmlHttpRequest())
                     return $this->renderPartial('global/ajaxSuccess', array('message' => 'Message successfully sent!'));
-                
+                elseif ($this->hasRequestParameter('callback'))
+                    return $this->renderText($this->getRequestParameter('callback')."(".json_encode(array('content' => $this->getPartial('global/ajaxSuccess', array('message' => $this->getContext()->getI18N()->__('Message successfully sent!'), 'redir' => $this->_ref ? $this->_ref : null)))).");");
+                                    
                 else
                     $this->setTemplate('composed');
             }
             catch (Exception $e)
             {
-                $con->rollBack();
+                $con->rollBack();echo $e->getMessage();
                 ErrorLogPeer::Log($this->sender->getId(), $this->sender->getObjectTypeId(), 'Message:' . $e->getMessage() . "\nFile:" . $e->getFile() . "\nLine:" . $e->getLine());
                 $this->getRequest()->setError('_generic', 'Error occured while sending message');
             }
@@ -139,12 +141,15 @@ class composeAction extends EmtAction
 
     public function validate()
     {
-        if ($this->getRequest()->getMethod() == sfRequest::POST)
+        if ($this->getRequest()->getMethod() == sfRequest::POST || ($this->hasRequestParameter('callback') && $this->getRequestParameter('mod') == 'commit'))
         {
             if (!$this->getRequestParameter('_r') || !count($this->getRequestParameter('_r')))
             {
                 $this->getRequest()->setError('_r', 'Please specify a recipient');
             }
+            if (!$this->getRequestParameter('_s')) $this->getRequest()->setError('_s', 'Please select a sender.');
+            if (!$this->getRequestParameter('_subject')) $this->getRequest()->setError('_subject', 'Please enter a subject for your message.');
+            if (!$this->getRequestParameter('_message')) $this->getRequest()->setError('_message', 'Please enter your message.');
         }
         return !$this->getRequest()->hasErrors();
     }

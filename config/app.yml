@@ -57,8 +57,8 @@ all:
                     width: 130
                     height: 130
                 large:
-                    width: 600
-                    height: 600
+                    width: 540
+                    height: 405
             3:  # MI_TYP_RESUME_PHOTO
                 small:
                     width: 85
@@ -194,6 +194,17 @@ all:
                 large:
                     width: 560
                     height: 400
+            21:  # MI_TYP_VIDEO_PREVIEW
+                crop: false
+                small:
+                    width: 120
+                    height: 90
+                medium:
+                    width: 200
+                    height: 150
+                large:
+                    width: 400
+                    height: 300
     
     swToolbox:
         cross_link_application:
