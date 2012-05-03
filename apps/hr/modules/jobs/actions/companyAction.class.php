@@ -12,8 +12,8 @@ class companyAction extends EmtCompanyAction
                 $this->redirect('@myemt.login?_ref='.$this->_here);
             }
 
-            $fav = $this->sesuser->getUserCompany($this->company->getId(), UserBookmarkPeer::BMTYP_FAVOURITE);
-            $ban = $this->sesuser->getUserCompany($this->company->getId(), UserBookmarkPeer::BMTYP_BANNED);
+            $fav = $this->sesuser->getBookmarkByItem($this->company->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, UserBookmarkPeer::BMTYP_FAVOURITE);
+            $ban = $this->sesuser->getBookmarkByItem($this->company->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, UserBookmarkPeer::BMTYP_BANNED);
             if ($act == 'rem' && $fav)
             {
                 $fav->delete();

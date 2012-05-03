@@ -23,7 +23,7 @@
                 <?php endforeach ?>
                 </dl>
                 <?php else: ?>
-                <div class="t_grey"><?php echo __("It's sad. No posts at this time.") ?></div>
+                <div class="t_grey"><?php echo __("No posts at this time.") ?></div>
                 <?php endif ?>
                 </div>
             </div>

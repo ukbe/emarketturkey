@@ -1,13 +1,11 @@
 <?php
 
-class addConsentFriendsAction extends EmtAction
+class addConsentFriendsAction extends EmtManageAction
 {
     public function execute($request)
     {
-        $this->user = $this->getUser()->getUser();
-        
         $this->consentLogin = ConsentLoginPeer::retrieveByPk($this->getRequestParameter('lid'));
-        if (!$this->user || !$this->consentLogin || $this->user->getId()!=$this->consentLogin->getUserId()) $this->redirect('@friendfinder');
+        if (!$this->sesuser || !$this->consentLogin || $this->sesuser->getId()!=$this->consentLogin->getUserId()) $this->redirect('@friendfinder');
         $this->consent_type = $this->consentLogin->getServiceId();
         $this->getContext()->getConfiguration()->loadHelpers('Url');
         
@@ -29,7 +27,7 @@ class addConsentFriendsAction extends EmtAction
                 
                 if (!($member instanceof User)) continue;
                 
-                $this->relation = $this->user->setupRelationWith($member->getId());
+                $this->relation = $this->sesuser->setupRelationWith($member->getId());
                 
                 if ($this->relation)
                 {
@@ -38,9 +36,9 @@ class addConsentFriendsAction extends EmtAction
                     $data = new sfParameterHolder();
                     $data->set('cname', $member->getName());
                     $data->set('clname', $member->getLastname());
-                    $data->set('uname', $this->user->getName());
-                    $data->set('ulname', $this->user->getLastname());
-                    $data->set('ugender', $this->user->getGender());
+                    $data->set('uname', $this->sesuser->getName());
+                    $data->set('ulname', $this->sesuser->getLastname());
+                    $data->set('ugender', $this->sesuser->getGender());
                     $data->set('message', $this->getRequestParameter('add-friend-message'));
                     
                     $vars = array();
@@ -71,7 +69,7 @@ class addConsentFriendsAction extends EmtAction
                 $members = UserPeer::doSelect($c);
                 foreach ($members as $member)
                 {
-                    if (!$this->user->isFriendsWith($member->getId())) $this->members[] = $member;
+                    if (!($rel=$this->sesuser->isFriendsWith($member->getId()))) $this->members[] = $member;
                 } 
                 if (!count($this->members)) $this->redirect(url_for(str_replace('@cm.', '@', $settings['invite-friend'])).'?lid='.$this->consentLogin->getId());
                 

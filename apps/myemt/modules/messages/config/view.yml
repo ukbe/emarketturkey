@@ -1,12 +1,12 @@
 all:
     metas:
-        title: Messages
+        title: Messages | eMarketTurkey
 compose:
     metas:
-        title: Compose Message
+        title: Compose Message | eMarketTurkey
 readSuccess:
     metas:
-        title: Read Message
+        title: Read Message | eMarketTurkey
 composedSuccess:
     metas:
-        title: Send Successful
+        title: Send Successful | eMarketTurkey

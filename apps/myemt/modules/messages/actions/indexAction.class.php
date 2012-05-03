@@ -6,103 +6,88 @@
  * @package b2b
  * @sub-package login
  */
-class indexAction extends EmtAction
+class indexAction extends EmtMessageAction
 {
-    
+
     public function execute($request)
     {
-        return $this->handleAction(false);
-    }
-    
-    private function handleAction($isValidationError)
-    {
-        if ($this->hasRequestParameter('callback'))
+        $list = array();
+
+        if ($this->account)
         {
-            $con = Propel::getConnection();
-
-            $sql = "
-    SELECT * FROM
-    (
-        SELECT EMT_MESSAGE_RECIPIENT.* 
-        FROM EMT_MESSAGE
-        LEFT JOIN EMT_MESSAGE_RECIPIENT ON EMT_MESSAGE.ID=EMT_MESSAGE_RECIPIENT.MESSAGE_ID
-        LEFT JOIN
-        (
-            SELECT {$this->sesuser->getId()} ID, ".PrivacyNodeTypePeer::PR_NTYP_USER." TYPE_ID FROM DUAL
-
-            UNION ALL
-
-            SELECT COMPANY_ID ID, ".PrivacyNodeTypePeer::PR_NTYP_COMPANY." TYPE_ID FROM EMT_COMPANY_USER_VIEW
-            LEFT JOIN EMT_COMPANY ON EMT_COMPANY_USER_VIEW.COMPANY_ID=EMT_COMPANY.ID
-            WHERE ROLE_ID=".RolePeer::RL_CM_OWNER." AND OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_USER." AND OBJECT_ID={$this->sesuser->getId()}
-
-            UNION ALL
-
-            SELECT GROUP_ID ID, ".PrivacyNodeTypePeer::PR_NTYP_GROUP." TYPE_ID FROM EMT_GROUP_MEMBERSHIP_VIEW
-            LEFT JOIN EMT_GROUP ON EMT_GROUP_MEMBERSHIP_VIEW.GROUP_ID=EMT_GROUP.ID
-            WHERE ROLE_ID=".RolePeer::RL_GP_OWNER." AND OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_USER." AND OBJECT_ID={$this->sesuser->getId()}
-        ) OBJ ON OBJ.ID=EMT_MESSAGE_RECIPIENT.RECIPIENT_ID
-        WHERE EMT_MESSAGE_RECIPIENT.RECIPIENT_TYPE_ID=OBJ.TYPE_ID
-        ORDER BY EMT_MESSAGE.CREATED_AT DESC
-    )
-    WHERE ROWNUM < 10
-            ";
-            $stmt = $con->prepare($sql);
-            $stmt->execute();
-            $messages = MessageRecipientPeer::populateObjects($stmt);
-            $items = array();
-            
-            sfLoader::loadHelpers(array('Url', 'Date'));
-            
-            foreach ($messages as $mess)
-            {
-                $items[] = array('IMG' => $mess->getMessage()->getSender()->getProfilePictureUri(), 'NAME' => $mess->getMessage()->getSender()->__toString(), 'MSG' => $mess->getMessage()->getBody(), 'LINK' => url_for('@homepage', true), 'DATE' => format_datetime($mess->getMessage()->getCreatedAt('U'), 'r'), 'NEW' => !$mess->getIsRead());
-            }
-            $items = array('NEW' => count($items), 'ITEMS' => $items);
-            
-            return $this->renderText($this->getRequestParameter('callback') . "(" . json_encode($items) . ");");
+            $list[] = array($this->account->getId(), $this->account->getObjectTypeId());
         }
-        return $this->renderText('Not Applicable');
-        
-        // Codes below are expected to be replaces
-        $filter  = array('inbox' => 1,
-                         'sent' => 2,
-                         'archived' => 3);
-        
-        $this->user = $this->getUser()->getUser();
-        $this->company = CompanyPeer::getCompanyFromUrl($this->getRequest()->getParameterHolder());
-        if ($this->company && !$this->user->isOwnerOf($this->company)) $this->redirect404();
-        
-        $this->mod = $this->getRequestParameter('mod');
-        $this->companies = $this->user->getCompanies(RolePeer::RL_CM_OWNER);
-        
-        if (array_key_exists($this->getRequestParameter('cls', 'inbox'), $filter))
-            $this->folder = $this->getRequestParameter('cls', 'inbox');
         else
-            $this->folder = 'inbox';
-            
+        {
+            foreach ($this->props as $prop)
+            {
+                $list[] = array($prop->getId(), $prop->getObjectTypeId());
+            }
+        }
+
         if ($this->folder == 'sent')
         {
-            $this->messages = ($this->mod=='cm'&&$this->company)?$this->company->getSentMessages():$this->user->getSentMessages();
+            foreach ($list as $key => $item)
+            {
+                $list[$key] = "SENDER_ID=".$item[0]." AND SENDER_TYPE_ID=".$item[1];
+            }
+            $sql = "
+                SELECT * FROM EMT_MESSAGE
+                WHERE (".implode(' OR ', $list).")
+                AND DELETED_AT IS NULL
+                ORDER BY CREATED_AT DESC
+            ";
         }
-        elseif ($this->folder == 'archived')
+        elseif ($this->folder == 'inbox')
         {
-            $this->messages = ($this->mod=='cm'&&$this->company)?$this->company->getArchivedMessages():$this->user->getArchivedMessages();
+            foreach ($list as $key => $item)
+            {
+                $list[$key] = "RECIPIENT_ID=".$item[0]." AND RECIPIENT_TYPE_ID=".$item[1];
+            }
+            $sql = "
+                SELECT EMT_MESSAGE_RECIPIENT.* FROM EMT_MESSAGE
+                LEFT JOIN EMT_MESSAGE_RECIPIENT ON EMT_MESSAGE.ID=EMT_MESSAGE_RECIPIENT.MESSAGE_ID
+                WHERE (".implode(' OR ', $list).")
+                AND EMT_MESSAGE_RECIPIENT.DELETED_AT IS NULL
+                ORDER BY CREATED_AT DESC
+            ";
         }
-        else
+
+        $con = Propel::getConnection();
+
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $this->messages = ($this->folder == 'inbox' ? MessageRecipientPeer::populateObjects($stmt) : MessagePeer::populateObjects($stmt));
+
+        if ($this->hasRequestParameter('callback'))
         {
-            $this->messages = ($this->mod=='cm'&&$this->company)?$this->company->getMessages():$this->user->getMessages();
+            $items = array();
+
+            sfLoader::loadHelpers(array('Url', 'Date'));
+
+            foreach ($this->messages as $mess)
+            {
+                $message = ($mess instanceof Message ? $mess : $mess->getMessage());
+                $items[] = array('IMG' => $message->getSender()->getProfilePictureUri(), 'NAME' => $message->getSender()->__toString(), 'MSG' => $message->getBody(), 'LINK' => url_for($message->getUrl(), true), 'DATE' => format_datetime($message->getCreatedAt('U'), 'r'), 'NEW' => !$mess->getIsRead());
+            }
+            if ($this->folder == 'inbox')
+            {
+                $sql = "SELECT COUNT(*) FROM ($sql) WHERE IS_READ=0";
+                $stmt = $con->prepare($sql);
+                $stmt->execute();
+                $num = $stmt->fetchColumn(0);
+            }
+            else
+            {
+                $num = 0;
+            }
+            $items = array('NEW' => $num, 'ITEMS' => $items);
+
+            return $this->renderText($this->getRequestParameter('callback') . "(" . json_encode($items) . ");");
         }
+        
+        $this->folders = $this->account ? $this->account->getMessageFolders() : array();
+
     }
 
-    public function validate()
-    {
-        return !$this->getRequest()->hasErrors();
-    }
-
-    public function handleError()
-    {
-        return $this->handleAction(true);
-        return sfView::SUCCESS;
-    }
 }

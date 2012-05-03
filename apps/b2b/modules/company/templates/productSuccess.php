@@ -111,7 +111,7 @@
                 </div>
                 <div class="box_180 txtCenter">
                     <div class="_noBorder">
-                        <?php echo link_to(__('Like'), $company->getProfileActionUrl('contact'), array('query_string' => "rel_type={$product->getObjectTypeId()}&rel={$product->getId()}"))?>
+                        <?php echo like_button($product) ?>
                     </div>
                 </div>
             </div>

@@ -93,9 +93,14 @@ group-account-default:
   requirements: { sf_culture: (?:en|de|tr) }
   param: { module: group, action: settings }
 
+group-route:
+  url:   /:sf_culture/group/:hash/route
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: group, action: route }
+
 group-manage:
   url:   /:sf_culture/group/:hash/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (manage|basic|contact|edit|invite|media|route|sendMail|search|logo|editPendingMember) } 
+  requirements: { sf_culture: (?:en|de|tr), action: (manage|basic|contact|edit|invite|media|sendMail|search|logo|editPendingMember) } 
   param: { module: group }
 
 group-start:
@@ -483,8 +488,13 @@ setup-privacy:
 
 register-comp:
   url:   /:sf_culture/register
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
   param: { module: company, action: register }
+
+company-route:
+  url: /:sf_culture/company/:hash/route
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: route }
 
 network-tools:
   url:   /:sf_culture/network/tools
@@ -514,6 +524,11 @@ login:
 logout:
   url:   /logout
   param: { module: login, action: logout }
+
+message-read:
+  url:   /:sf_culture/messages/read
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: messages, action: read }
 
 compose-message:
   url:   /:sf_culture/messages/compose

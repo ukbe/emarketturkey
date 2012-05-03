@@ -5,7 +5,23 @@ class Message extends BaseMessage
     protected $sender = null;
     protected $aRecipients = null;
     protected $_conversationRecipient = null;
+    private $hash = null;
     
+    public function getObjectTypeId()
+    {
+        return PrivacyNodeTypePeer::PR_NTYP_MESSAGE;
+    }
+    
+    public function getHash($reverse = false)
+    {
+        return is_null($this->hash) ? $this->hash = myTools::flipHash($this->getId(), false, PrivacyNodeTypePeer::PR_NTYP_MESSAGE) : $this->hash;
+    }
+
+    public function getPlug()
+    {
+        return base64_encode($this->getObjectTypeId() . '|' . $this->getHash());
+    }
+
     public function getSender()
     {
         if (!is_null($this->sender))
@@ -91,6 +107,12 @@ class Message extends BaseMessage
         return ($this->getRecipientFor($recipient_id, $recipient_type_id) ? true : false);
     }
     
+    public function isReadBy($recipient_id, $recipient_type_id)
+    {
+        $rcp = $this->getRecipientFor($recipient_id, $recipient_type_id);
+        return $rcp->getIsRead();
+    }
+    
     public function isSentBy($sender_id, $sender_type_id = PrivacyNodeTypePeer::PR_NTYP_USER)
     {
         return ($this->sender_id==$sender_id && $this->sender_type_id==$sender_type_id);
@@ -110,5 +132,9 @@ class Message extends BaseMessage
     {
         return $this->_conversationRecipient;
     }
-    
+
+    public function getUrl($acc = null, $folder = null, $action = null)
+    {
+        return "@message-read?" . ($acc ? "acc={$acc->getPlug()}&" : '') . ($folder ? "folder=$folder&" : '') . ($action ? "_a=$action&" : '') . "_m={$this->getPlug()}";
+    }
 }

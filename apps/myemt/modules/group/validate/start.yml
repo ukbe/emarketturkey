@@ -1,17 +1,14 @@
 fields:
-    group_name:
+    group_publicity:
+        required:
+            msg: 'Please select a group publicity option.'
+    group_type_id:
+        required:
+            msg: 'Please select a group type.'
+    group_name_0:
         required:
             msg: 'Please enter a group name.'
         sfPropelUniqueValidator:
             class:  Group
             column:  NAME
-            unique_error:  'A group with the same name already exists. Please provide a different group name.'
-    group_type_id:
-        required:
-            msg: 'Please select a group type.'
-    group_member_confirm:
-        required:
-            msg: 'Please select a membership confirmation option.'
-    confirm:
-        required:
-            msg: 'Please check confirmation box to accept terms.'       
+            unique_error:  'A group with the same name already exists. Please enter a unique group name.'

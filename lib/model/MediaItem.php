@@ -151,6 +151,13 @@ class MediaItem extends BaseMediaItem
 
         move_uploaded_file($fhandle, $this->getOriginalFilePath());
         
+        if (!file_exists($this->getOriginalFilePath()))
+        {
+            if (copy($fhandle, $this->getOriginalFilePath())) {
+                    unlink($fhandle);
+            }            
+        }
+        
         if (!$this->getIsTemp())
         {
             $this->sampleFiles();
@@ -205,7 +212,7 @@ class MediaItem extends BaseMediaItem
             {
                 if (count($coords))
                 {
-                    imagecopyresampled($ks, $ms, 0, 0, $coords['x'], $coords['y'], $c[$size]['width'],  $c[$size]['height'], $coords['w'], $coords['h']);
+                    imagecopyresampled($ks, $ms, 0, 0, $coords['x']/$coords['zoom'], $coords['y']/$coords['zoom'], $c[$size]['width'],  $c[$size]['height'], $coords['w']/$coords['zoom'], $coords['h']/$coords['zoom']);
                 }
                 else
                 {

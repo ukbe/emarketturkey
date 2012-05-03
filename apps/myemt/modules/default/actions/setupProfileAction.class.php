@@ -34,13 +34,15 @@ class setupProfileAction extends EmtAction
             $this->contact_cities = ($this->home_cnt === $this->cont_cnt ? $this->local_cities : GeonameCityPeer::getCitiesFor($this->cont_cnt));
         else
             $this->contact_cities = array();
+        
+        $this->photo = $this->sesuser->getProfilePicture();
     }
-    
+
     public function execute($request)
     {
         return $this->handleAction(false);
     }
-    
+
     public function handleAction($isValidationError)
     {
         if ($this->getRequest()->getMethod() == sfRequest::POST && !$isValidationError)
@@ -69,17 +71,7 @@ class setupProfileAction extends EmtAction
             $this->phone->setPhone($this->getRequestParameter('contact_phone'));
             $this->phone->setType($this->getRequestParameter('contact_type'));
             $this->phone->save();
-            if ($this->getRequestParameter('newi') == 1)
-            {
-                $photo = $this->sesuser->getProfilePicture();
-                if ($photo)
-                {
-                    $offx = $this->getRequestParameter('offx');
-                    $photo->setOffsetPad($offx !== 0 ? $offx : $this->getRequestParameter('offy'));
-                    $photo->save();
-                    $photo->sampleFiles();
-                }
-            }
+
             $this->redirect('@cm.friendfinder?sup=true');
         }
 

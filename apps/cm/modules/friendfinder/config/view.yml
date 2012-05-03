@@ -1,7 +1,7 @@
 all:
     metas:
         title: "Friend Finder | eMarketTurkey"
-    layout: layoutTripleColumn
+    layout:  'layoutBoxModel-island'
 
 addLiveFriendsSuccess:
     metas:

@@ -1,26 +1,27 @@
-<div class="column span-198">
-<div class="column">
-<ol class="column mappath">
-<li><?php echo link_to(__('MyEMT'), '@homepage') ?></li>
-<?php if ($folder == 'inbox'): ?>
-<li class="last"><?php echo __('Messages') ?></li>
-<?php elseif ($folder == 'sent'): ?>
-<li class="last"><?php echo __('Sent Messages') ?></li>
-<?php elseif ($folder == 'archived'): ?>
-<li class="last"><?php echo __('Archived Messages') ?></li>
-<?php endif ?>
-</ol>
-</div>
-<ol class="column command-menu">
-<li><?php echo link_to(__('Compose'), 'messages/compose') ?></li>
-</ol>
-</div>
-<div class="hrsplit-1"></div>
-<?php include_partial('messages/leftmenu', array('companies' => $companies, 'user' => $user)) ?>
-<div class="column span-156 prepend-1 last">
-<?php if ($folder == 'sent'): ?>
-<?php include_partial('messages/sentMessages', array('messages' => $messages, 'folder' => $folder, 'user' => $user, 'company' => $company, 'mod' => $mod)) ?>
-<?php else: ?>
-<?php include_partial('messages/receivedMessages', array('messages' => $messages, 'folder' => $folder, 'user' => $user, 'company' => $company, 'mod' => $mod)) ?>
-<?php endif ?>
+<?php slot('subNav') ?>
+<?php include_partial('profile/subNav', array('sesuser' => $sesuser)) ?>
+<?php end_slot() ?>
+
+<div class="col_948">
+
+<?php include_partial('messages/toolbar', array('sesuser' => $sesuser, 'props' => $props, 'account' => $account, 'accparam' => $accparam)) ?>
+
+    <div class="col_180">
+
+<?php include_partial('messages/leftmenu', array('sesuser' => $sesuser, 'account' => $account, 'folders' => $folders, 'folder' => $folder, 'accparam' => $accparam)) ?>
+
+    </div>
+
+    <div class="col_762">
+
+        <div class="box_762 _titleBG_Transparent">
+
+<?php include_partial($folder, array('messages' => $messages, 'account' => $account, 'folder' => $folder)) ?>                
+            
+        </div>
+
+    </div>
+
+    <div class="col_180">
+    </div>
 </div>

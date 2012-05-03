@@ -36,7 +36,7 @@
                 <?php /*?><dd<?php echo checkActivePage('@calender', null, true, '_selected') ?>><?php echo link_to(__('Calendar'), "@calendar") ?></dd> */ ?>
                 <dd<?php echo checkActivePage('@mycareer', null, true, '_selected') ?>><?php echo link_to(__('My Career'), "@mycareer") ?></dd>
                 <dd class="ui-corner-tr<?php echo checkActivePage('module=account', null, false, '_selected') ?>"><?php echo link_to(__('Account'), "@account") ?></dd>
-                <dd class="_sp <?php echo checkActivePage('@invite-friend', null, false, ' _selected') ?>"><?php echo link_to(__('INVITE FRIENDS'), "@invite-friend") ?></dd>
+                <dd class="_sp <?php echo checkActivePage('@cm.invite-friends', null, false, ' _selected') ?>"><?php echo link_to(__('INVITE FRIENDS'), "@cm.invite-friends") ?></dd>
             </dl>
         </nav>
 <script type="text/javascript">

@@ -23,9 +23,10 @@ class EmailTransaction extends BaseEmailTransaction
                 
                 if ($opt) throw new EmailPrivacyException('Recipient in opted-out email list', 8001);
             }
-            
+            echo "pre-partial";
             //Start Swift
             $body = myTools::renderPartial($namespace->getTemplate(), unserialize($this->getClob(EmailTransactionPeer::DATA)));
+            echo "post-partial";
 
             $mcon = new Swift_Connection_SMTP($namespace->getSenderSmtpHost(), $namespace->getSenderSmtpPort());
             $mcon->setUsername($namespace->getSenderAccount());

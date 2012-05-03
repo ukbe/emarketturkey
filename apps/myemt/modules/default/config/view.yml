@@ -7,6 +7,9 @@ all:
 setupProfileSuccess:
     metas:
         title:  'Setup Your Profile | eMarketTurkey'
+    layout:  'layoutBoxModel-island'
+    stylesheets:  [jquery.Jcrop.css]
+    javascripts:  [jquery.Jcrop.min.js, jquery.ui-1.8.14.dragdrop.js, emt-logoWidget.js]
 
 uploadProfileSuccess:
     has_layout: off

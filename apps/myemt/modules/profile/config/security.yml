@@ -1,3 +1,6 @@
 like:
   is_secure: on
   credentials: [user]
+
+locationQuery:
+  allow_ssl: true

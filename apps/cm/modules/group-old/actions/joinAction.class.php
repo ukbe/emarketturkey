@@ -32,11 +32,6 @@ class joinAction extends EmtGroupAction
                     }
                     $this->membership = $membership;
 
-                    if (!$this->group->getIsPrivate())
-                    {
-                        ActionLogPeer::Log($item, ActionPeer::ACT_JOIN_GROUP, $this->group);
-                    }
-
                     return $this->renderPartial('joined_group', array('group' => $this->group, 'row' => $this->getRequestParameter('row'), 'membership' => $membership, 'item' => $item, 'sesuser' => $this->sesuser));
                 }
                 return $this->renderText($this->getContext()->getI18N()->__('ACTION DISALLOWED'));

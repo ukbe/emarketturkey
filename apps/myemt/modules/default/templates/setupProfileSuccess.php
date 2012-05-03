@@ -1,151 +1,81 @@
-<?php slot('uppermenu') ?>
-<?php include_partial('default/startup-uppermenu') ?>
+<?php use_helper('DateForm') ?>
+<?php slot('subNav') ?>
+<?php include_partial('subNav-setupProfile', array('sesuser' => $sesuser)) ?>
 <?php end_slot() ?>
-<?php $has_p = $sesuser->getProfilePicture() ?>
-<?php $horiz = $has_p ? $has_p->isHorizontal() : false ?>
-<?php echo javascript_tag("
-    function setupThumbnail()
-    {
-        var tmblr = jQuery('#thumbnailer');
-        var tmbl = jQuery('#thumbnail');
-        var imgPos = tmblr.offset();
-        ah = tmblr.height();
-        aw = tmblr.width();
-        bh = tmbl.height();
-        bw = tmbl.width();
-        var x1 = (bw-aw > 0) ? imgPos.left - (bw-aw) + 1 : imgPos.left + 1;
-        var y1 = (bh-ah > 0) ? imgPos.top - (bh-ah) + 1 : imgPos.top + 1;
-        var x2 = (bw-aw < 0) ? imgPos.left + (bw-aw) + 1 : imgPos.left + 1;
-        var y2 = (bh-ah < 0) ? imgPos.top + (bh-ah) + 1 : imgPos.top + 1;
 
-        if (tmbl.is('.ui-draggable'))
-        {
-            tmbl.draggable('option', 'containment', [x1, y1, x2, y2]);
-        }
-        else
-        {
-            tmbl.draggable({ containment: [x1, y1, x2, y2], stop: function(event, ui){el=jQuery('#thumbnail').position();jQuery('#profileform #offx').val(-1*el.left);jQuery('#profileform #offy').val(-1*el.top);jQuery('#profileform #newi').val(1);} });
-        }
-        tmbl.css({cursor: 'move'});
-    }
+<div class="col_948 login">
+    <div class="box_657 _titleBG_Transparent" style="float: none; margin: 0 auto;">
+        <h4><?php echo __('Profile Photo') ?></h4>
+        <div class="_noBorder">
+            <div id="profile-photo-holder">
+            
+                <div id="existing-photo"<?php echo $photo ? '' : ' class="ghost"' ?>>
+                    <div class="margin-t1"><?php echo __('Your current profile photo.') ?></div>
+                    <div class="hrsplit-3"></div>
+                    <div class="pad-2">
+                        <dl class="_table">
+                            <dt style="background: url(/images/layout/icon/green-tick.png) no-repeat right center; padding: 0px; height: 64px;">
+                        <dd><?php echo image_tag($photo ? $photo->getThumbnailUri() : '', 'border: solid 5px #ccc;') ?>
+                        <div class="hrsplit-2"></div>
+                        <?php echo link_to_function(__('Edit Thumbnail'), "$('#profile-photo-holder > *').slideUp(); $('#edit-thumbnail').slideDown(null, function(){ $('#cropbox').data('logoWidget')._reloadImage(); });", 'class=action-button') ?>&nbsp;&nbsp;
+                        <?php echo link_to_function(__('Upload New'), "$('#profile-photo-holder > *').slideUp(); $('#upload-photo').slideDown();", 'class=action-button') ?>
+                        </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div id="upload-photo"<?php echo $photo ? 'class="ghost"' : '' ?>>
+                    <div class="margin-t1"><?php echo __('Upload a file as your profile photo.') ?></div>
+                    <div class="hrsplit-3"></div>
+                    <div class="pad-2">
+                        <?php echo form_tag("profile/photo", array('enctype' => 'multipart/form-data', 'id' => 'thumbform')) ?>
+                        <div class="error-block"></div>
+                        <dl class="_table">
+                        <dt class="frm-st-select"><?php echo emt_label_for('profilephoto', 'Please select a file') ?></dt>
+                        <dd class="frm-st-select"><?php echo input_file_tag('profilephoto') ?></dd>
+                        <dt class="frm-st-select"></dt>
+                        <dd class="frm-st-select"><?php echo submit_tag(__('Upload Photo'), 'class=frm-submit') ?>&nbsp;&nbsp;
+                                                  <?php echo link_to_function(__('Cancel'), "$('#profile-photo-holder > *').slideUp(); $('#existing-photo').slideDown();") ?></dd>
+                        <dt class="frm-st-process"></dt>
+                        <dd class="frm-st-process"><?php echo __('Loading .. ') . image_tag('layout/icon/loading.gif') ?></dd>
+                        <dt class="frm-st-process"></dt>
+                        <dd class="frm-st-process"><?php echo link_to_function(__('Cancel Upload'), '', 'id=cancelupload') ?></dd>
+                        </dl>
+                        </form>
+                    </div>
+                </div>
+                <div id="edit-thumbnail" class="ghost">
+                    <div class="margin-t1"><?php echo __('Edit thumbnail of your profile photo.') ?></div>
+                    <div class="hrsplit-3"></div>
+                    <table style="margin: 0px; width: 100%; border: solid 2px #ddd; background-color: #F6F6F6;">
+                        <tr>
+                            <td style="margin: 0px; width: 400px; vertical-align: middle; text-align: center;"> 
+                            <div id="cropbox" class="_comMng_nologo" style="width: 400px; height: 300px; text-align: center;background-color: white;">
+                                <?php echo $photo ? image_tag($photo->getOriginalFileUri()) : image_tag('content/user/no-photo-e.png') ?>
+                            </div>
+                            </td>
+                            <td style="background-color: #EFEFEF; vertical-align: middle; text-align: center; position: relative;">
+                                <div id="preview" style="margin: auto;"></div>
+                                <div class="hrsplit-2"></div>
+                                <?php echo form_tag("profile/photo") ?>
+                                <?php echo input_hidden_tag('process', 'thumb') ?>
+                                <?php echo input_hidden_tag('crop', $photo ? $photo->getCrop() : '') ?>
+                                <?php echo input_hidden_tag('ref', $photo ? $photo->getGuid() : '') ?>
+                                <?php echo input_hidden_tag('coords', $photo ? $photo->getOffsetCoords() : '') ?>
+                                <?php echo submit_tag(__('Save'), 'id=savephoto class=action-button') ?>&nbsp;&nbsp;
+                                <?php echo link_to_function(__('Remove'), 'id=removephoto', 'class=bluelink') ?>
+                                </form>
+                                <div style="position: absolute; right: 10px; bottom: 10px;"><?php echo link_to_function(__('Upload New'), "$('#profile-photo-holder > *').slideUp(); $('#upload-photo').slideDown();", 'class=inherit-font bluelink hover') ?></div>
+                            </td>
+                        </tr>
+                    </table> 
     
-    var uploadStarted = false;
-    var hasp = false;
-    function OnUploadStart(){            
-        uploadStarted = true;
-        jQuery('#uploadform dd.upform').removeClass('focus');
-        jQuery('#uploadform li').hide();
-        jQuery('li.proc').show();
-    }
+                </div>
+            </div>
+        <div class="hrsplit-2"></div>
+        <h4><?php echo __('Profile Information') ?></h4>
 
-    function interruptUpload(){            
-        uploadStarted = false;
-        if (navigator.appName == 'Microsoft Internet Explorer') {
-            window.frames['upload-frame'].document.execCommand('Stop');
-        } else {
-            window.frames['upload-frame'].stop();
-        }
-        jQuery('#uploadform dt, #uploadform dd').hide();
-        jQuery('#uploadform .upform').show();
-        jQuery('#profileform #newi').val(0);
-    }
-
-    function cancelUpload(){            
-        jQuery('#uploadform dt, #uploadform dd').hide();
-        jQuery('#uploadform dd.upform').removeClass('focus');
-        jQuery('#uploadform .thumbform').show();
-    }
-
-    function resetUpload(){            
-        uploadStarted = false;
-        document.forms['uploadform'].reset();
-        jQuery('#uploadform dt, #uploadform dd').hide();
-        jQuery('#uploadform .upform').show();
-        jQuery('#profileform #newi').val(0);
-    }
-
-    function OnUploadComplete(state, message, uri){
-       if(state == 1)
-       {
-        jQuery('#thumbnail').attr('src', uri);
-        jQuery('#uploadform dt, #uploadform dd').hide();
-        jQuery('#uploadform .thumbform').show();
-        jQuery('#profileform #newi').val(1);
-        jQuery('#profileform #offx, #profileform #offy').val(0);
-       }     
-       else if(state == 0 && uploadStarted)
-       {
-         jQuery('#upload_file_error .err-1').html(message);
-         jQuery('#uploadform dd.upform').addClass('focus');
-         jQuery('#profileform #newi').val(0);
-       }
-       uploadStarted = false;
-    }
-    ") ?>
-<style>
-.thumbformatter #thumbnailer
-{
-    width: 50px;
-    height: 50px;
-    background-color: #FFFFFF;
-    overflow:hidden;
-    z-index: 200;
-    border: solid 1px;
-    position: absolute;
-}
-.thumbformatter #thumbnailer img
-{
-    z-index: 150;
-    position: relative;
-    <?php echo "left: ".($has_p && $horiz ? (-1 *$has_p->getOffsetPad()) : 0) . "px; top:".($has_p && !$horiz ? -1 * $has_p->getOffsetPad() : 0)."px;" ?>
-}
-dl.easyform input[type=text]
-{
-    font: 11pt tahoma;
-    padding: 4px;
-    border: solid 1px #CCCCCC;
-}
-dl.easyform select
-{
-    border: solid 1px #CCCCCC;
-    background-color: #FFFFFF;
-    padding: 4px;
-    margin: 0px;
-}
-dl.easyform input[type=file]
-{
-    border: solid 1px #CCCCCC;
-    padding: 10px 10px;
-    margin: 10px 0px;
-    font: bold 9pt tahoma;
-    color: #505050;
-}
-dl.form dt {width: 300px;}
-dl.form dd {width: 550px;}
-</style>
-<?php echo form_tag('default/uploadProfile', array('target' => 'upload-frame', 'enctype' => 'multipart/form-data', 'onsubmit' => 'OnUploadStart()', 'id' => 'uploadform')) ?>
-<dl class="form easyform thumbformatter">
-    <dt class="upform<?php echo $has_p ? ' ghost': '' ?>"><?php echo emt_label_for('upload_file', __('Select an image file for your profile picture')) ?></dt>
-    <dd class="upform upfile<?php echo ($has_p ? ' ghost': '') . ($sf_request->hasError('upload_file') ? ' focus"' : '') ?>"><?php echo input_file_tag('upload_file', '') ?><br />
-        <span class="form-error" id="upload_file_error" style="float: none;">
-        <span class="err-1" title=""></span><br />
-        </span><?php echo submit_tag(__('Upload Photo'), 'class=nice') ?>&nbsp;&nbsp;<?php echo link_to_function(__('Cancel'), 'cancelUpload()', 'class=nice cancel-upload'.($has_p ? '' : ' ghost')) ?></dd>
-    <dt class="thumbform<?php echo !$has_p ? ' ghost': '' ?>"><?php echo emt_label_for('thumbnail', __('Edit thumbnail')) ?></dt>
-    <dd class="thumbform<?php echo !$has_p ? ' ghost': '' ?>">
-        <div style="height: 50px;"><div id="thumbnailer"><?php echo image_tag($has_p ? $sesuser->getProfilePicture()->getUncroppedThumbUri() : $sesuser->getProfilePictureUri(), array('id' => 'thumbnail', 'onload' => 'setupThumbnail()', 'onmousedown' => 'javascript:if (event.preventDefault) event.preventDefault()')) ?></div></div><br />
-        <?php echo button_to_function(__('Upload New'), 'resetUpload()', 'class=nice') ?>
-        </dd>
-    <dt></dt>
-    <dd class="proc ghost"><?php echo __('Uploading your profile picture') ?><br />
-        <?php echo button_to_function(__('Cancel Upload'), 'interruptUpload();', 'class=nice') ?>
-        </dd>
-</dl>
-</form>
-    <iframe id="upload-frame" name="upload-frame" style="width: 0px; height: 0px; border: none; display: none;" onload="OnUploadComplete(0);"></iframe>
 <?php echo form_tag('default/setupProfile', 'id=profileform') ?>
-<?php echo input_hidden_tag('newi', 0) ?>
-<?php echo input_hidden_tag('offx', $has_p && $horiz ? $has_p->getOffsetPad() : 0) ?>
-<?php echo input_hidden_tag('offy', $has_p && !$horiz ? $has_p->getOffsetPad() : 0) ?>
+<div class="hrsplit-3"></div>
 <dl class="form easyform">
 <dt><?php echo emt_label_for('profile_hometown_country', __('Select your home country')) ?></dt>
 <dd<?php echo $sf_request->hasError('profile_hometown_country') ? ' class="focus"' : '' ?>><?php echo select_country_tag('profile_hometown_country', $home_cnt, array('include_custom' => __('Select your home country'))) ?>
@@ -158,7 +88,7 @@ dl.form dd {width: 550px;}
         <span class="err-1" title="^[0-9]{1,9}$"><?php echo __('Please select your home state/province') ?></span>
     </span></dd>
 <dt><?php echo emt_label_for('profile_preferred_lang', __('Select your preferred language')) ?></dt>
-<dd<?php echo $sf_request->hasError('profile_preferred_lang') ? ' class="focus"' : '' ?>><?php echo select_language_tag('profile_preferred_lang', $sf_params->get('profile_preferred_lang', $profile->getPreferredLanguage() ? $profile->getPreferredLanguage() : $sf_user->getCulture()), array('include_custom' => __('Select language'))) ?>
+<dd<?php echo $sf_request->hasError('profile_preferred_lang') ? ' class="focus"' : '' ?>><?php echo select_tag('profile_preferred_lang', options_for_select(array('tr' => 'Türkçe', 'en' => 'English'), $sf_params->get('profile_preferred_lang', $profile->getPreferredLanguage() ? $profile->getPreferredLanguage() : $sf_user->getCulture()), array('include_custom' => __('Select language')))) ?>
     <span class="form-error" id="profile_preferred_lang_error">
         <span class="err-1" title="^(tr)|(en)$"><?php echo __('Please select your preferred language') ?></span>
     </span></dd>
@@ -206,69 +136,16 @@ dl.form dd {width: 550px;}
         <span class="err-1" title="^\+?([0-9]|\(|\)|-|\/|\s)+$"><?php echo __('Please enter your phone number') ?></span>
     </span></dd>
 <dt></dt>
-<dd><span class="hangright"><?php echo link_to(__('Skip this step'), '@cm.friendfinder?sup=true', 'class=action') ?></span> <?php echo submit_tag(__('Save Profile'), 'class=nice') ?></dd>
+<dd><span class="_right"><?php echo link_to(__('Skip this step'), '@cm.friendfinder?sup=true', 'class=inherit-font bluelink hover') ?></span> <?php echo submit_tag(__('Save Profile'), 'class=green-button') ?></dd>
 </dl>
 </form>
+<?php use_javascript('emt-location-1.0.js') ?>
+<?php $dims = sfConfig::get('app_photoConfig_size') ?>
+<?php $dims = $dims[MediaItemPeer::MI_TYP_ALBUM_PHOTO] ?>
 <?php echo javascript_tag("
-    $('#profile_hometown_country, #contact_country').change(function(){
-        var t = $(this);
-        var s = $('#'+t.attr('id').replace('_country', '_state'));
-        if (this.value != '')
-        {
-            t.attr('disabled', true);
-            s.attr('disabled', true);
-            $.getJSON('".url_for('profile/locationQuery')."', {cc: t.val()}, 
-                function(d){
-                    s.find(\"option[value!='']\").remove();
-                    $(d).each(function(g,i){s.append($('<option value='+i.ID+'>'+i.NAME+'</option>'));});
-                }
-            )
-            .error(function(e,str){etag.removeClass('ghost');})
-            .complete(function(){t.attr('disabled', false);s.attr('disabled', false);});
-        }
-        else if (this.value == '')
-        {
-            s.empty();
-        }
-    });
-
-$.fn.validateForm = function(){
-    var o = $(this[0]);
-    $.extend(o, {fields: o.find('.form-error'),
-        setupField: function(dl){
-            $.extend(dl, {input: o.find('input#'+$(dl).attr('id').replace('_error', '')+',select#'+$(dl).attr('id').replace('_error', '')), label: o.find('label[for=\"'+$(dl).attr('id').replace('_error', '')+'\"]'), errorBlock: $(dl), errorTypes: $(dl).find('span[class^=\"err-\"]'), 
-                validate: function(){
-                    var result = true;
-                    dl.errorTypes.each(function(i,ertyp){
-                        var regex  =  new RegExp($(ertyp).attr('title'));
-                        if (!regex.test(dl.input.val())) {
-                            $(dl).parent().addClass('focus');
-                            dl.label.addClass('error');
-                            return (result = false);
-                        }
-                        else
-                        {
-                            $(dl).parent().removeClass('focus');
-                            dl.label.removeClass('error');
-                        }
-                    });
-                    return result;
-                },
-            });
-        },
-        validate: function(){
-            var errs = [];
-            o.fields.each(function(i,field){
-                if (!field.validate())
-                {
-                    errs.push(field);
-                }
-            });
-            return errs.length == 0;
-        }
-    });
-    o.fields.each(function(i,l){o.setupField(l);});
-    o.submit(function(){return o.validate();})
-};
-    $('#profileform').validateForm();
-    ") ?>
+    $('#cropbox').logoWidget({formSelector: '#thumbform', imageUrl: '', prwDims: [".$dims['small']['width'].", ".$dims['small']['height']."], crop: ".($photo && $photo->getCrop() ? 'true' : $dims['crop']).", left: ".($photo && is_numeric($photo->getOffsetCoord('x')) ? $photo->getOffsetCoord('x') : 'undefined').", top: ".($photo && is_numeric($photo->getOffsetCoord('y')) ? $photo->getOffsetCoord('y') : 'undefined').", right: ".($photo && is_numeric($photo->getOffsetCoord('x2')) ? $photo->getOffsetCoord('x2') : 'undefined').", bottom: ".($photo && is_numeric($photo->getOffsetCoord('y2')) ? $photo->getOffsetCoord('y2') : 'undefined')."}).bind('logowidgetafterupload', function(){ $('#profile-photo-holder > *').slideUp(); $('#edit-thumbnail').slideDown(); });
+    $('#profile_hometown_country, #contact_country').location({url: '".url_for('@location-query')."'});
+") ?>
+        </div>
+    </div>
+</div>

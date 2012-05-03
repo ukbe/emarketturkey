@@ -1,3 +1,6 @@
 all:
   is_secure: on
   credentials: user
+
+start:
+  require_ssl: true

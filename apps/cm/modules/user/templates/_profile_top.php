@@ -10,7 +10,7 @@
             <dd><?php echo implode(' | ', $career) ?></dd>
             <?php endif ?>
         </dl>
-        <div style="float:right; margin-top: 15px;">
+        <div style="float:right; margin-top: 15px; clear: both;">
         <ul class="trailButtons">
             <?php if (($relation = $sesuser->hasRelation($user)) && $relation->getStatus() == RelationPeer::RL_STAT_ACTIVE): ?>        
             <li><?php echo link_to('<span></span>'.__('Connected'), "@connect-edit-user?user={$user->getPlug()}", "class=action-button connected-user ajax-enabled id=cnus-{$user->getPlug()}") ?></li>

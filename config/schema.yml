@@ -1249,7 +1249,7 @@ propel:
     BLOCKED:              { type: boolean, default: false }
     CREATED_AT:           ~
     UPDATED_AT:           ~
-    IS_PRIVATE:           { type: boolean, default: false }
+    PUBLICITY:            { type: integer, size: 3, default: 2 }
     STRIPPED_NAME:        { type: varchar(255), required: true, index: unique }
     IS_FEATURED:          { type: boolean, default: false }
 
@@ -1948,4 +1948,15 @@ propel:
     TWO_WAY:              { type: boolean }
     CAN_INTERPRET:        { type: boolean }
     LEVEL_INTERPRET:      { type: integer, size: 4 }
-    
+
+  EMT_PREMIUM_ACCOUNT:
+    _attributes:          { phpName: PremiumAccount }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    OWNER_ID:             { type: integer, size: 10 }
+    OWNER_TYPE_ID:        { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
+    ACCOUNT_TYPE_ID:      { type: integer, size: 3, required: true }
+    VALID_FROM:           { type: timestamp, required: true } 
+    VALID_TO:             { type: timestamp } 
+    STATUS:               { type: integer, size: 2, default: 0 }
+    CREATED_AT:           ~
+    UPDATED_AT:           ~

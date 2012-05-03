@@ -506,9 +506,9 @@ a.dark-button.smaller, input.dark-button.smaller { font-size: 11px; font-weight:
 .flagBox {
  display:block;
  float:right;
- margin:0;
- padding:15px 0 0;
- width:150px;
+ margin:20px 10px 0;
+ padding:0;
+ width:230px;
  overflow:hidden;
  list-style:none;
  position:absolute; top:1px; right:-1px; z-index:11;
@@ -517,13 +517,17 @@ a.dark-button.smaller, input.dark-button.smaller { font-size: 11px; font-weight:
 
 .flagBox li {
  float:right;
- width:100px; 
- height:30px;
+ width:230px; 
  display:block;
- margin:3px 18px 3px 3px;
+ margin:0px 0px 2px;
 }
 
-.flagBox li img {float:right; display:block; max-width:200px;}
+.flagBox li a {
+ display: block;
+ float: right;
+}
+
+.flagBox li img {float:right; display:block; max-width:230px; max-height: 34px;}
 
 .flagBox li.flag {
  float:right; 

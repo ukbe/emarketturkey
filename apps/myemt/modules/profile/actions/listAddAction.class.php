@@ -154,6 +154,7 @@ class listAddAction extends EmtManageAction
         }
         else
         {
+            $this->items = array();
         }
 
         if ($this->getRequest()->isXmlHttpRequest())

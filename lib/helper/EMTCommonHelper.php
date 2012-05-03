@@ -606,3 +606,8 @@ function get_youtube_embed($youtube_video_id, $autoplay=false)
         $embed_code = '<embed src="http://www.youtube.com/v/'.$youtube_video_id.'&rel=1" pluginspage="http://adobe.com/go/getflashplayer" type="application/x-shockwave-flash" quality="high" width="450" height="376" bgcolor="#ffffff" loop="false"></embed>';
     return $embed_code;
 }
+
+function help_link($handle, $label = 'Help!')
+{
+    return link_to($label, "@lobby.help-page?handle=$handle", 'class=help-link target=blank');
+}

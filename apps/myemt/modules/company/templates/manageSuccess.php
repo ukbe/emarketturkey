@@ -19,6 +19,13 @@
     </div>
 
     <div class="col_576">
+        <div class="box_576">
+            <h4><?php echo __('Manage Company') ?></h4>
+            <div class="_noBorder">
+                <?php echo __('On this section you can manage your company account by following module links above.')?>
+            </div>
+        </div>
+    <?php /* ?>
         <div class="box_576 _titleBG_Transparent" style="background-color: #f0effb;">
             <h3 style="background-color: #f0effb;"><?php echo __("Share what's new about your company") ?></h3>
             <div style="background-color: #f0effb;">
@@ -26,9 +33,9 @@
             fdgfdgs
             </div>
         </div>
-
+*/ ?>
+    <?php /* ?>        
         <div class="box_576 _noTitle">
-            
             <div id="chart_div">
             <?php /* ?>
             <h3><?php echo __('Product Views') ?></h3>
@@ -44,7 +51,7 @@
                         <td><?php echo rand(1, 100) ?>%</td></tr>
                 <?php endforeach ?>
                 </table>
-*/?>
+
             </div>
  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
@@ -93,9 +100,10 @@
     </script>
         </div>
 
+*/ ?>
     </div>
-
     <div class="col_180">
+    <?php /* ?>
         <div class="box_180 _titleBG_Transparent">
             <h3><?php echo __('Notifications') ?></h3>
             <div>
@@ -107,7 +115,7 @@
                 </ul>
             </div>
         </div>
-
+*/ ?>
         <?php include_partial('company/upgradeBox', array('company' => $company)) ?>
 
     </div>

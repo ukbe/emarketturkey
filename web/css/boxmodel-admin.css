@@ -696,3 +696,141 @@ ul.side-menu li a:hover { background-color: #eefbb8; color: #000; text-decoratio
 .col_assets.pubs dl dt img { width: 70px; max-width: 70px; }
 .col_assets.pubs dl dd { width: 207px; }
 
+dl.form { color: #595959; line-height: 25px; position: relative; width: 641px; }
+dl.form dt { float: left; clear: both; font-weight: bold; width: 150px; text-align: right; padding: 4px 4px; }
+dl.form dd { float: left; width: 463px; margin-left: 10px; margin-bottom: 5px; padding: 3px 4px; position: relative; border: solid 1px transparent; }
+dl.form dd span.form-error { display: none; padding: 0px 5px; color: #eb4225; font-family: verdana; font-size: 11px; float: right; line-height: 25px; }
+dl.form dd.focus { background-color: #f6f5f5; border: solid 1px #e6e6e6; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+dl.form dd.focus span.form-error { display: block; }
+dl.form dd.optional input { display: block; }
+
+table.message-list
+{
+    width: 100%;
+}
+table.message-list tr:hover
+{
+    background-color: #f6f8fb;
+}
+table.message-list th
+{
+    font: bold 12px arial;
+    color: #333333;
+    background-color: #ecf2f7;
+    padding: 5px 10px;
+    text-align: left;
+}
+table.message-list th:last-child
+{
+    text-align: right;
+}
+table.message-list td
+{
+    font: 12px tahoma;
+    color: #222;
+    border-bottom: solid 1px #f0f0f0;
+    padding: 7px 7px;
+    text-align: left;
+    width: 40%;
+    max-width: 40%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+table.message-list tr.unread td,
+table.message-list tr.unread td a
+{
+    font-weight: bold;
+}
+.col_762 table.message-list td
+{
+    width: 315px;
+}
+table.message-list td:first-child
+{
+    width: 20px;
+}
+table.message-list td.rec
+{
+    width: 50px;
+    padding: 7px 0px;
+}
+table.message-list td.snd span
+{
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+table.message-list td:last-child
+{
+    width: 232px;
+    text-align: right;
+    font-family: arial;
+    font-size: 11px;
+    color: #777;
+}
+table.message-list td a
+{
+    font: 12px tahoma;
+    color: #1D5B8A;
+    width: 300px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+table.message-list td img
+{
+    max-height: 25px;
+    margin: -4px auto;
+    display: block;
+
+}
+table.message-list td a:hover
+{
+    text-decoration: underline;
+}
+table._message
+{
+    width: 574px;
+}
+
+table._message th,
+table._message td
+{
+    padding: 7px 10px;
+    border-bottom: solid 1px #f5f5f5;
+}
+table._message th
+{
+    width: 80px;
+    text-align: right;
+}
+table._message td
+{
+    text-align: left;
+    width: 456px;;
+}
+table._message td a
+{
+    max-width: 330px;
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+table._message td.body
+{
+    width: 510px;
+    padding: 20px;
+    border-left: solid 1px #f5f5f5;
+    border-right: solid 1px #f5f5f5;
+}
+div._datetime
+{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}

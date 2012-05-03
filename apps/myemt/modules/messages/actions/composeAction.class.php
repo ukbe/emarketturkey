@@ -6,7 +6,7 @@
  * @package b2b
  * @sub-package login
  */
-class composeAction extends EmtAction
+class composeAction extends EmtMessageAction
 {
     
     public function execute($request)
@@ -137,6 +137,22 @@ class composeAction extends EmtAction
             return $this->renderPartial('sendMessage', array('sf_params' => $this->getRequest()->getParameterHolder(), 'sender' => $this->sender, 'recdata' => $this->recdata, 'header' => implode(', ', $this->recipients), 'sf_request' => $this->getRequest(), '_ref' => $this->_ref));
         else if ($this->hasRequestParameter('callback'))
             return $this->renderText($this->getRequestParameter('callback') . "(" . json_encode(array('content' => get_partial('sendMessage', array('sf_params' => $this->getRequest()->getParameterHolder(), 'sender' => $this->sender, 'recdata' => $this->recdata, 'header' => implode(', ', $this->recipients), 'sf_request' => $this->getRequest(), '_ref' => $this->_ref)))) . ");");
+
+        $this->senders = array();
+        foreach ($this->props as $prop)
+        {
+            $this->senders[$prop->getPlug()] = $prop;
+        }
+
+        $this->folders = $this->account ? $this->account->getMessageFolders() : array();
+
+        $params = array();
+        if ($this->account) $params[] = "acc={$this->account->getPlug()}";
+        if ($this->folder) $params[] = "folder={$this->folder}";
+        $params = implode('&', $params);
+        $this->cancel = "@messages" . ($params ? "?$params" : '');
+        
+        return sfView::SUCCESS;
     }
 
     public function validate()

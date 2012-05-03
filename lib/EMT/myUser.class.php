@@ -17,6 +17,18 @@ class myUser extends sfBasicSecurityUser
             {
                 $this->signOut();
             }
+
+            $current_pop = $this->getAttribute('pop_message', array(), '/user/page/default');
+            if (!$this->login_obj->isVerified() && !isset($current_pop['unverified_user']))
+            {
+                $current_pop['unverified_user'] = array('partial' => 'global/pop_unverified_user');
+                $this->setAttribute('pop_message', $current_pop, '/user/page/default');
+            }
+            elseif ($this->login_obj->isVerified() && isset($current_pop['unverified_user']))
+            {
+                unset($current_pop['unverified_user']);
+                $this->setAttribute('pop_message', $current_pop, '/user/page/default');
+            }
         }
         else if ($this->getUser())
         {
@@ -152,10 +164,24 @@ class myUser extends sfBasicSecurityUser
         $this->setAttribute("recentsearches", $flash, 'myemt');
     }
     
-    public function setMessage($header, $message, array $attr_header=null, array $attr_message=null, $persist=true)
+    public function setMessage($header, $message, array $attr_header=null, array $attr_message=null)
     {
-        $this->setFlash('message_header', sfContext::getInstance()->getI18N()->__($header, $attr_header), $persist);
-        $this->setFlash('message', sfContext::getInstance()->getI18N()->__($message, $attr_message), $persist);
+        $this->setAttribute('message_header', sfContext::getInstance()->getI18N()->__($header, $attr_header), '/user/page/default');
+        $this->setAttribute('message', sfContext::getInstance()->getI18N()->__($message, $attr_message), '/user/page/default');
+    }
+    
+    public function getMessageHeader($purge = false)
+    {
+        $msg = $this->getAttribute('message_header', null, '/user/page/default');
+        if ($purge) $this->setAttribute('message_header', null, '/user/page/default');
+        return $msg;
+    }
+
+    public function getMessage($purge = false)
+    {
+        $msg = $this->getAttribute('message', null, '/user/page/default');
+        if ($purge) $this->setAttribute('message', null, '/user/page/default');
+        return $msg;
     }
     
     public function getUserCompany($company_id)
@@ -187,4 +213,14 @@ class myUser extends sfBasicSecurityUser
         return (($this->getUser() instanceof  User) && !$this->getUser()->isNew());
     }
     
+    public function getPopMessages()
+    {
+        return $this->getAttribute('pop_message', array(), '/user/page/default');
+    }
+    
+    public function hasPopMessage()
+    {
+        return $this->hasAttribute('pop_message', '/user/page/default') ? count($this->getAttribute('pop_message', array(), '/user/page/default')) : false;
+    }
+
 }

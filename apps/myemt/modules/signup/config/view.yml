@@ -1,3 +1,6 @@
+all:
+    layout: layoutBoxModel-island
+
 indexSuccess:
     metas:
         title:  'Sign Up | eMarketTurkey'
@@ -5,4 +8,3 @@ indexSuccess:
 routeSuccess:
     metas:
         title:  "Welcome | eMarketTurkey"
-    

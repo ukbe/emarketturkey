@@ -12,6 +12,10 @@ class EmtGroupAction extends EmtAction
         {
             $this->group = GroupPeer::retrieveByStrippedName($this->getRequestParameter('stripped_name'));
         }
+        elseif ($this->getContext()->getConfiguration()->getApplication() !== 'cm' && $this->getRequestParameter('hash'))
+        {
+            $this->group = GroupPeer::getGroupFromHash($this->getRequestParameter('hash'));
+        }
         if (!$this->group || $this->group->getOwner()->isBlocked()) $this->redirect404();
 
         if (!$this->sesuser->isNew())

@@ -31,32 +31,24 @@ class PostLocation extends BasePostLocation
 
     public function save(PropelPDO $con = null)
     {
-        $con = isset($con) ? $con : Propel::getConnection();
-        try
-        {
-            $con->beginTransaction();
+        $pcon = Propel::getConnection();
+
             $clobs = array();
             $clobs['data'] = $this->getData();
 
             $this->setData(null);
 
             $res = parent::save($con);
-    
+
             $sql = "UPDATE EMT_POST_LOCATION 
                     SET data=:data
                     WHERE id=".$this->getId();
-    
-            $stmt = $con->prepare($sql);
+
+            $stmt = $pcon->prepare($sql);
             $stmt->bindParam(':data', $clobs['data'], PDO::PARAM_STR, strlen($clobs['data']));
             $stmt->execute();
-            $con->commit();
-        }
-        catch(Exception $e)
-        {
-            $con->rollBack();
-            return null;
-        }
-        return $res;
+
+        return $this;
     }
 
     public function getClob($field, $culture = null)
@@ -76,5 +68,5 @@ class PostLocation extends BasePostLocation
         $res = oci_fetch_row($stmt);
         return isset($res[0]) ? $res[0]->load() : "";
     }
-    
+
 }

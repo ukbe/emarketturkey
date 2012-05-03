@@ -86,7 +86,7 @@ class sfSslRequirementActionMixin
   protected function sslAllowed($action)
   {
     $security = $action->getSecurityConfiguration();
-    $actionName = $action->getActionName();
+    $actionName = strtolower($action->getActionName());
 
     // If ssl is required, then we can assume they also want to allow it
     if ($this->sslRequired($action))

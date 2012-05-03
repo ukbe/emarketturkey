@@ -1,45 +1,60 @@
-<div class="column span-198">
-<div class="hrsplit-2"></div>
-<h2><?php echo $group->getName() ?></h2>
-<h3><?php echo __('Thank you for starting a new group!') ?></h3>
-<div class="span-194 pad-2">
-<?php echo __('We have sent you an e-mail including access information for your group. If you can\'t find the message in your inbox you might need to check your spam folder.<br />In case of any account problems, please write to %1.', array('%1' => '<a href="mailto:support@emarketturkey.com">support@emarketturkey.com</a>')) ?>
+<?php use_helper('DateForm') ?>
+<?php slot('subNav') ?>
+<?php include_partial('subNav-route', array('sesuser' => $sesuser)) ?>
+<?php end_slot() ?>
+
+<div class="col_948">
+
+    <div class="col_678 login">
+        <div class="box_678 _titleBG_Transparent">
+            <h4 class="_noBorder"><?php echo __('Hooray!') ?></h4>
+            <div class="_noBorder">
+                <div class="spot margin-b2">
+                <?php echo __('%1grp&nbsp; is now registered.', array('%1grp' => $group)) ?>
+                </div>
+                <div class="hrsplit-3"></div>
+                <div class="ui-corner-all bubble pad-3">
+                    <div><?php echo __("We have sent you an e-mail providing information on how to manage your group account.") ?></div>
+                    <div><?php echo __("Group page is available at %1cplink.", array('%1cplink' => link_to('', $group->getProfileUrl(), array('absolute' => true, 'class' => 'inherit-font bluelink hover', 'target' => 'blank')))) ?></div>
+                </div>
+                <div class="hrsplit-3"></div>
+                <div class="txtCenter">
+                    <h3><?php echo __("What's Next?") ?></h3>
+                <div style="display: inline-block;">
+                    <ul class="_horizontal sepdot">
+                        <li><?php echo link_to(__('Invite others to group'), "@group-members?action=invite&hash={$group->getHash()}", 'class=inherit-font bluelink hover') ?></li>
+                        <li><?php echo link_to(__('Post a Job'), "@group-jobs-action?hash={$group->getHash()}&action=overview", 'class=inherit-font bluelink hover') ?></li>
+                        <li><?php echo __('Go to %1mcp page', array('%1mcp' => link_to(__('Manage Group'), $group->getManageUrl(), 'class=inherit-font bluelink hover'))) ?></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="hrsplit-3"></div>
+                <div class="hrsplit-3"></div>
+                <div style="text-align: center;">
+                    <?php echo image_tag("layout/route/menu-strip-group.{$sf_user->getCulture()}.png", 'style=border: solid 1px #ddd; padding: 8px;') ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col_264">
+        <div class="box_264 _titleBG_Transparent">
+            <h4><?php echo __('Profile Status') ?></h4>
+            <div class="_noBorder">
+            <?php echo $group->getStatusMessage() ?>
+            </div>
+        </div>
+        <div class="box_264 _titleBG_Transparent">
+            <h4><?php echo __('Upgrade to a Premium Account') ?></h4>
+            <div class="_noBorder" style="background: url(/images/background/emtTrust);">
+                <?php echo __("Prove your group's online reliability by upgrading your account.") ?>
+                <?php echo link_to(__('Upgrade Account'), "@group-account?action=upgrade&hash={$group->getHash()}", 'class=green-button margin-t2')?>
+            </div>
+        </div>
+    </div>
+
 </div>
-</div>
-<div class="hrsplit-2"></div>
-<div class="column span-193 prepend-5">
-<div class="column span-60">
-<?php echo image_tag('layout/background/individuals.'.$sf_user->getCulture().'.png') ?>
-<ol class="welcome-actions">
-<li><?php echo link_to(__('Setup your Profile'), '@myemt.profile') ?></li>
-<li><?php echo link_to(__('Create CV'), '@hr-cv-create') ?></li>
-<li><?php echo __('Search for Jobs') ?></li>
-<li><?php echo __('Start your Blog') ?></li>
-<li><?php echo link_to(__('Search for your Friends'), '@myemt.friendfinder') ?></li>
-<li><?php echo __('Invite your Friends') ?></li>
-<li><?php echo __('Leave a message to Public Bulletin') ?></li>
-<li><?php echo __('Become an EMT Contributor and get paid') ?></li>
-</ol>
-</div>
-<div class="column span-60">
-<?php echo image_tag('layout/background/suppliers.'.$sf_user->getCulture().'.png') ?>
-<ol class="welcome-actions">
-<li><?php echo link_to(__('Promote your Products or Services'), '@myemt.manage-products') ?></li>
-<li><?php echo link_to(__('Search for Products from other Companies'), '@b2b.homepage') ?></li>
-<li><?php echo __('Maintain a customized Company Website') ?></li>
-<li><?php echo link_to(__('Post Jobs'), 'jobs/new') ?></li>
-<li><?php echo __('Get your information translated online') ?></li>
-<li><?php echo __('Query prices on Transportation Directory') ?></li>
-<li><?php echo __('Get EMT Localized Representatives work for you') ?></li>
-</ol>
-</div>
-<div class="column span-60">
-<?php echo image_tag('layout/background/business.organisations.'.$sf_user->getCulture().'.png') ?>
-<ol class="welcome-actions">
-<li><?php echo __('Invite your Members') ?></li>
-<li><?php echo __('Promote your Events online on EMT Calender') ?></li>
-<li><?php echo __('Contact other Business Organisations worldwide') ?></li>
-</ol>
-</div>
-<div class="hrsplit-1"></div>
-</div>
+<style>
+.login h4 { font-family: 'Century Gothic', sans-serif; font-size: 23px; color: #222; margin: 0px 0px 10px; padding: 5px 10px; border-bottom: none; }
+.spot { font-family: 'Century Gothic', sans-serif; font-size: 26px; color: #0088CC; }
+</style>

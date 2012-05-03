@@ -23,7 +23,7 @@
                     <?php if ($otyp == PrivacyNodeTypePeer::PR_NTYP_COMPANY): ?>
                     <?php echo __("In order to use EMT Jobs, you should initially create your company's <b>HR Profile</b>.") ?><br /><br />
                     <?php echo __("You may create now by clicking the link below.") ?><br /><br />
-                    <?php echo link_to(image_tag('layout/button/start-now.'.$sf_user->getCulture().'.png'), "@group-jobs-action?action=profile&hash=$own", array('query_string' => 'act=edit')) ?>
+                    <?php echo link_to(image_tag('layout/button/start-now.'.$sf_user->getCulture().'.png'), "@company-jobs-action?action=profile&hash=$own", array('query_string' => 'act=edit')) ?>
                     <?php elseif ($otyp == PrivacyNodeTypePeer::PR_NTYP_GROUP): ?>
                     <?php echo __("In order to use EMT Jobs, you should initially create your group's <b>HR Profile</b>.") ?><br /><br />
                     <?php echo __("You may create now by clicking the link below.") ?><br /><br />

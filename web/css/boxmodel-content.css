@@ -895,11 +895,7 @@ header .list li {
     padding: 0px;
 }
 header .list li.new-item {
-    background-color: #ffd5d5;
-    color: #333;
-}
-header .list li.new-item:hover {
-    background-color: #e43535;
+    background-color: #feeeee;
     color: #333;
 }
 header .list li a {
@@ -1000,6 +996,10 @@ header .list li.footer a:hover {
 
 .menu-sub-box.list li.item:hover {
     background-color: #6a8db1;
+}
+
+.menu-sub-box.list li.item.new-item:hover {
+    background-color: #cd3939;
 }
 
 .roundInput input[type="text"], 
@@ -1567,8 +1567,9 @@ ul.select-step .activate {
  padding-right:30px;
  overflow: hidden;
  display: block;
- max-width: 660px;
+ max-width: 520px;
  white-space: nowrap;
+ text-overflow: ellipsis;
  font:normal 300 24px Helvetica,arial,sans-serif;
  background:url(/images/layout/icon/arrow-s.png) right center no-repeat;
 }._comPro dt em {background:none;}
@@ -3029,4 +3030,39 @@ dl.activity a
     font: 12px tahoma;
     color: #538AB0;
     text-decoration: none; 
+}
+
+a.submit-link, input.submit-link {
+background-image: url(/images/layout/background/submit.png) !important;
+background-position: left top;
+color: white;
+height: 40px;
+line-height: 40px;
+width: 146px;
+padding: 0;
+margin: 0 5px 0 0;
+font-weight: bold;
+display: inline-block;
+text-align: center;
+font-size: 16px;
+text-shadow: 0 1px 1px #595;
+border: none;
+cursor: pointer;
+}
+.submit-link:hover {
+color: white;
+background-position: left 80px;
+}
+
+a.help-link
+{
+    font-family: inherit;
+    color: #0088CC;
+    text-decoration: none;
+    font-style: inherit;
+    white-space: nowrap;
+}
+a.help-link:hover
+{
+    text-decoration: underline;
 }

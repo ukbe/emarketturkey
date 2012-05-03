@@ -1,3 +1,6 @@
+all:
+    layout: layoutBoxModel-island
+
 easyLoginSuccess:
     metas:
         layout: plain

@@ -104,10 +104,14 @@
             if (this._gallery.length) this._initGallery();
 
             this._saveLink.closest('form').submit(function(){
+            	var dims = origin._jcropHandle.tellScaled();
+            	dims['zoom'] = origin._width / origin._orgDims[0];
                 $(this).find('input[name="ref"]').val(origin._guid);
                 $(this).find('input[name="crop"]').val(origin._crop);
-                $(this).find('input[name="coords"]').val($.param(origin._jcropHandle.tellScaled()));
+                $(this).find('input[name="coords"]').val($.param(dims));
             });
+            
+            this.element.data('logoWidget', this);
         },
 
         _init: function(){
@@ -130,10 +134,25 @@
                 origin._orgDims = [origin._image.width(), origin._image.height()];
                 origin._initImage();
             });
-            nimage.attr('src', url);
+            nimage.attr('src', url || origin._url);
         },
 
+        _reloadImage: function(){
+        	var origin = this;
+        	var nimage = $(new Image());
+        	nimage.load(function(){
+        		origin._image = $(this);
+        		origin._guid = origin._parseImageGuid(origin._url);
+        		origin._image.css({'width': 'auto', 'height': 'auto', 'display': 'none'});
+        		origin._frame.html(origin._image);
+        		origin._orgDims = [origin._image.width(), origin._image.height()];
+        		origin._initImage();
+        	});
+        	nimage.attr('src', origin._url);
+        },
+        
         _initImage: function(){
+        	var origin = this;
             this._image.css('display', 'none');
             var rx = this._frmDims[0] / this._orgDims[0];
             var ry = this._frmDims[1] / this._orgDims[1];
@@ -149,8 +168,7 @@
             this._image.css('display', 'block');
             
             this._preview.attr('src', this._url);
-            
-            var origin = this;
+            this._saveLink.closest('form').find('input[name="ref"]').val(origin._guid);
             var setselect = (this._right == undefined || this._bottom == undefined) ? [this._left, this._top, this._left + this._width, this._bottom] : [this._left, this._top, this._right, this._bottom]; 
             
             this._jcropHandle = $.Jcrop(this._image, {
@@ -213,15 +231,23 @@
                         origin._loadImage(res.uri);
                         origin._setOption('saved', false);
                         origin._form[0].reset();
+                        origin._trigger("afterupload");
                    }
                    else if(res.status == 0 && origin._uploadStarted)
                    {
-                     origin._formErrorBlock.html(res.message).show();
+                	   origin._trigger("uploaderror");
+                	   origin._formErrorBlock.html(res.message).show();
                    }
                    origin._setFormStatus('select');
+
                    origin._uploadStarted = false;
                 });
                 this._formSubmitter.click(function(){
+
+                	if( origin._trigger("beforeupload", null, this) === false ){
+                		return;
+                	}
+
                     origin._uploadStarted = true;
                     origin._formErrorBlock.html('').hide();
                     origin._form.submit();
@@ -267,9 +293,18 @@
         _setFormStatus: function(stat){
             if (this._form)
             {
-                this._formStatus = (/^(select|process)$/.test(stat) ? stat : 'select');
+            	var newFormStatus = (/^(select|process)$/.test(stat) ? stat : 'select');
+            	if (this._formStatus != newFormStatus) {
+        			if (newFormStatus == 'select' && this._trigger("beforeselect", null, this) === false ) return;
+        			if (newFormStatus == 'process' && this._trigger("beforeprocess", null, this) === false ) return;
+            	}
+
+            	this._formStatus = newFormStatus;
                 this._form.find('[class|="frm-st"]').hide();
                 this._form.find('.frm-st-'+this._formStatus).show();
+
+                this._trigger("status" + this._formStatus, null, this);
+                
             }
         },
         

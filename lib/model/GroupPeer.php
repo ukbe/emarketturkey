@@ -2,6 +2,24 @@
 
 class GroupPeer extends BaseGroupPeer
 {
+    CONST GRP_PBL_CLOSED        = 1;
+    CONST GRP_PBL_OPEN          = 2;
+
+    public static $pblLabels    = array(self::GRP_PBL_CLOSED    => 'Closed Group',
+                                        self::GRP_PBL_OPEN      => 'Open Group',
+                                    );
+    
+    CONST GRP_STAT_ONLINE           = 1;
+    CONST GRP_STAT_IS_UNPUBLISHED   = 2;
+    CONST GRP_STAT_IS_SUSPENDED     = 3;
+    CONST GRP_STAT_OWNER_BLOCKED    = 4;
+
+    public static $statMessages     = array(self::GRP_STAT_ONLINE           => 'Group profile is online',
+                                            self::GRP_STAT_IS_UNPUBLISHED   => 'Group profile is unpublished by account owner',
+                                            self::GRP_STAT_IS_SUSPENDED     => 'Group profile is suspended',
+                                            self::GRP_STAT_OWNER_BLOCKED    => 'Group account owner is blocked',
+                                        );
+
     public static function Create(sfParameterHolder $register_prefs, sfParameterHolder $group_prefs)
     {
         $con = Propel::getConnection(self::DATABASE_NAME);
@@ -15,48 +33,66 @@ class GroupPeer extends BaseGroupPeer
             $con->beginTransaction();
 
             $group = new Group();
+
+            if ($register_prefs->get('group_type_id') != GroupTypePeer::GRTYP_ONLINE)
+            {
+                $contact = new Contact();
+                $contact->setEmail($register_prefs->get('group_email'));
+                $contact->save();
+                
+                $contact_address = new ContactAddress();
+                $contact_address->setContactId($contact->getId());
+                $contact_address->setType(ContactPeer::WORK);
+                $contact_address->setStreet($register_prefs->get('group_street'));
+                $contact_address->setCity($register_prefs->get('group_city'));
+                $contact_address->setPostalcode($register_prefs->get('group_postalcode'));
+                $contact_address->setState($register_prefs->get('group_state'));
+                $contact_address->setCountry($register_prefs->get('group_country'));
+                $contact_address->save();
+                
+                $contact_phone = new ContactPhone();
+                $contact_phone->setContactId($contact->getId());
+                $contact_phone->setPhone($register_prefs->get('group_phone'));
+                $contact_phone->setType(ContactPeer::WORK);
+                $contact_phone->save();
+            }
             
-            $contact = new Contact();
-            $contact->setEmail($register_prefs->get('group_email'));
-            $contact->save();
-            
-            $contact_address = new ContactAddress();
-            $contact_address->setContactId($contact->getId());
-            $contact_address->setType(ContactPeer::WORK);
-            $contact_address->setStreet($register_prefs->get('group_street'));
-            $contact_address->setCity($register_prefs->get('group_city'));
-            $contact_address->setPostalcode($register_prefs->get('group_postalcode'));
-            $contact_address->setState($register_prefs->get('group_state'));
-            $contact_address->setCountry($register_prefs->get('group_country'));
-            $contact_address->save();
-            
-            $contact_phone = new ContactPhone();
-            $contact_phone->setContactId($contact->getId());
-            $contact_phone->setPhone($register_prefs->get('group_phone'));
-            $contact_phone->setType(ContactPeer::WORK);
-            $contact_phone->save();
-            
-            $group->setName($register_prefs->get('group_name'));
+            $group->setName($register_prefs->get('group_name_0'));
             $group->setTypeId($register_prefs->get('group_type_id'));
             //$group->setInterestAreaId($register_prefs->get('group_interest_area_id'));
             if ($group->getTypeId()!=GroupTypePeer::GRTYP_ONLINE)
+            {
                 $group->setFoundedIn($register_prefs->get('group_founded_in'));
+                $group->setAbbreviation($register_prefs->get('group_abbreviation_0'));
+                $group->setContactId($contact->getId());
+            }
             else
+            {
                 $group->setFoundedIn('');
-            if ($group->getTypeId()!=GroupTypePeer::GRTYP_ONLINE)
-                $group->setAbbreviation($register_prefs->get('group_abbreviation'));
-            else
                 $group->setAbbreviation('');
+                if ($contact = $group->getContact()) $contact->delete();
+                $group->setContactId(null);
+            }
             $group->setUrl($register_prefs->get('group_url'));
+            $group->setPublicity($register_prefs->get('group_publicity'));
             
-            $group->setDisplayName($register_prefs->get('group_name'));
-            $group->setIntroduction($register_prefs->get('group_introduction'));
-            $group->setMemberProfile($register_prefs->get('group_member_profile'));
-            $group->setEventsIntroduction($register_prefs->get('group_events'));
-            $group->setContactId($contact->getId());
-            $group->setIsPrivate($register_prefs->get('group_member_confirm'));
-            $group->save();
+            $pr = $register_prefs->get('group_lang');
 
+            if (is_array($pr))
+            {
+                foreach($pr as $key => $lang)
+                {echo "$key = $lang";
+                    $ci18n = $group->getCurrentGroupI18n($lang);
+                    $ci18n->setDisplayName($register_prefs->get("group_name_$key"));
+                    $ci18n->setAbbreviation($register_prefs->get("group_abbreviation_$key"));
+                    $ci18n->setIntroduction($register_prefs->get("group_introduction_$key"));
+                    $ci18n->setMemberProfile($register_prefs->get("group_member_profile_$key"));
+                    $ci18n->setEventsIntroduction($register_prefs->get("group_events_$key"));
+                    $ci18n->save();
+                }
+            }
+
+            $group->save();
             /*   Geçici olarak sakla, daha sonra silinecek
             $pref = new PrivacyPreference();
             $pref->setObjectId($group->getId());

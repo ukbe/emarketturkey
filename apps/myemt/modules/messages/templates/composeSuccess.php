@@ -1,61 +1,56 @@
-<?php use_helper('Cryptographp') ?>
-<div class="column span-198">
-<ol class="column mappath">
-<li><?php echo link_to(__('MyEMT'), '@homepage') ?></li>
-<li><?php echo link_to(__('Messages'), '@messages') ?></li>
-<li class="last"><?php echo __('Compose') ?></li>
-</ol>
-<ol class="column" style="margin: 0px;">
-<li></li>
-</ol>
+<?php use_helper('Date') ?>
+<?php slot('subNav') ?>
+<?php include_partial('profile/subNav', array('sesuser' => $sesuser)) ?>
+<?php end_slot() ?>
+
+<div class="col_948">
+
+<?php include_partial('messages/toolbar', array('sesuser' => $sesuser, 'props' => $props, 'account' => $account, 'folder' => $folder, 'accparam' => $accparam)) ?>
+
+    <div class="col_180">
+
+<?php include_partial('messages/leftmenu', array('sesuser' => $sesuser, 'account' => $account, 'folders' => $folders, 'folder' => $folder, 'accparam' => $accparam)) ?>
+
+    </div>
+
+    <div class="col_576">
+
+        <div class="box_576 _titleBG_Transparent">
+            <section>
+                <?php echo form_errors() ?>
+                <?php echo form_tag(url_for("@compose-message", true), 'id=mess-form') ?>
+                <?php echo input_hidden_tag('_ref', $_ref) ?>
+                <?php echo input_hidden_tag('mod', 'commit') ?>
+                <dl class="_table">
+                    <dt><?php echo emt_label_for('_s', __('Sender')) ?></dt>
+                    <dd><?php echo select_tag('_s', options_for_select($senders, $sf_params->get('_s'))) ?></dd>
+                    <dt><?php echo emt_label_for('_r', __('Recipient')) ?></dt>
+                    <dd><div id="reco"></div></dd>
+                    <dt><?php echo emt_label_for('_subject', __('Subject')) ?></dt>
+                    <dd><?php echo input_tag('_subject', $sf_params->get('_subject')) ?></dd>
+                    <dt><?php echo emt_label_for('_message', __('Message')) ?></dt>
+                    <dd><?php echo textarea_tag('_message', $sf_params->get('_message'), 'cols=40 rows=4') ?></dd>
+                    <dt></dt>
+                    <dd><?php echo submit_tag(__('Send Message'), 'class=green-button') ?>&nbsp;&nbsp;
+                        <?php echo link_to(__('Cancel'), $cancel, 'class=inherit-font bluelink hover') ?></dd>
+                </dl>
+                </form>
+            </section>
+        </div>
+
+    </div>
+
+    <div class="col_180">
+    </div>
 </div>
-<div class="hrsplit-1"></div>
-<?php include_partial('messages/leftmenu', array('companies' => $companies, 'user' => $user)) ?>
-<div class="column span-156 prepend-1 last">
-<?php echo form_errors() ?>
-<?php if ($blocked): ?>
-<?php echo __('You have exceeded the message sending frequency limits.') ?>
-<?php else: ?>
-<?php echo form_tag('messages/compose') ?>
-<?php echo input_hidden_tag('ref', $sf_request->getAttribute('ref', url_for('messages/index'))) ?>
-<?php echo (isset($message)?input_hidden_tag('inreplyto', $message->getThreadId()).input_hidden_tag('mod', 'reply'):"") ?>
-<ol class="column span-102">
-<?php if (count($senderlist)>0): ?>
-<li class="column span-20 right append-2"><?php echo emt_label_for('sender', __('Sender')) ?></li>
-<style>
-#sender option { padding-left: 25px; display: inline-block; background-image: url(/images/layout/icon/add-icon.png)}
-</style>
-<li class="column span-80"><?php echo select_tag('sender', options_for_select($senderlist, $default_sender), 'style=width:390px') ?></li>
-<?php endif ?>
-<li class="column span-20 right append-2" style="padding: 3px 0px;"><?php echo emt_label_for('type_rcpnt', __('Recipient')) ?></li>
-<li class="column span-80"><ol class="column span-80" style="margin: 0px; padding: 0px;">
-<?php if (isset($rcpu)): ?>
-<li id="fu<?php echo $rcpu->getId() ?>" class="column span-69" style="padding: 3px;border-bottom: dotted 1px #CCCCCC;" onmouseover="this.style.backgroundColor='#99AAAA'" onmouseout="this.style.backgroundColor='#FFFFFF'"><?php echo input_hidden_tag('recipients[]',$rcpu->getId()) ?><span class="column span-65"><?php echo $rcpu ?></span><span class="column span-4"><?php echo link_to_function(image_tag('layout/icon/delete-icon.png', 'width=15'), '$(\'fu'.$rcpu->getId().'\').outerHTML=\'\';') ?></span></li>
-<?php elseif (isset($rcpus)): ?>
-<?php foreach ($rcpus as $rcpu): ?>
-<li id="fu<?php echo $rcpu->getId() ?>" class="column span-69" style="padding: 3px;border-bottom: dotted 1px #CCCCCC;" onmouseover="this.style.backgroundColor='#99AAAA'" onmouseout="this.style.backgroundColor='#FFFFFF'"><?php echo input_hidden_tag('recipients[]',$rcpu->getId()) ?><span class="column span-65"><?php echo $rcpu ?></span><span class="column span-4"><?php echo link_to_function(image_tag('layout/icon/delete-icon.png', 'width=15'), '$(\'fu'.$rcpu->getId().'\').outerHTML=\'\';') ?></span></li>
-<?php endforeach ?>
-<?php endif ?>
-<li id="lastli" class="column span-4" style="padding: 3px;" style="border-bottom: dotted 1px #CCCCCC;"><?php echo link_to_function(image_tag('layout/icon/add-icon.png', 'width=15'), visual_effect('BlindDown', 'type_rcpnt', array('duration' => 0.2))) ?></li>
-</ol>
-<?php echo input_auto_complete_tag('type_rcpnt', '' , 'messages/setrecipient', array('autocomplete' => 'off', 'style' => 'width:390px;'.(isset($rcpu)?'display:none;':'')), array('use_style' => false)) ?></li>
-<li class="column span-20 right append-2"><?php echo emt_label_for('msg_subject', __('Subject')) ?></li>
-<li class="column span-80"><?php echo input_tag('msg_subject', $sf_params->get('msg_subject', ''), 'style=width:390px') ?></li>
-<li class="column span-20 right append-2"><?php echo emt_label_for('msg_body', __('Message')) ?></li>
-<li class="column span-80"><?php echo textarea_tag('msg_body', $sf_params->get('msg_body', ''), 'cols=61 rows=6') ?></li>
-      <li class="column span-20 right append-2"></li>
-      <li class="column span-80"><?php echo cryptographp_picture(); ?>&nbsp;
-<?php echo cryptographp_reload(); ?></li>
-      <li class="column span-20 right append-2"><?php echo emt_label_for('captcha', __('Please type the security code')) ?></li>
-      <li class="column span-80"><?php echo input_tag('captcha', '', array('style' => 'border:solid 1px #CCCCCC', 'size' => '6')); ?></li>
-<?php if ($confirmPassword): ?>
-<li class="column span-102">&nbsp;</li>
-<li class="column span-20 right append-2"><?php echo emt_label_for('msg_passwd', __('Your Password')) ?></li>
-<li class="column span-80"><?php echo input_password_tag('msg_passwd', '', 'length=15 maxlength=50') ?></li>
-<?php endif ?>
-<li class="column span-20 append-2"></li>
-<li class="column span-80"><?php echo submit_tag(__('Send Message')) ?></li>
-</ol>
-<?php echo "</form>" ?>
-<?php endif ?>
-</div>
+<?php use_javascript("emt-dynalist-1.0.js")?>
+<?php echo javascript_tag("
+$(function() {
+    $('#reco').dynalist({
+        data: $recdata,
+        autoCompleteConf: {url: '".url_for('@query-network', true)."', data: { scope: $('#_s').val() }},
+        classMap: { TYPE_ID: {1: 'user-px', 2: 'company-px', 3: 'group-px'} },
+        includeSpan: true, mapFields: {HASH: '_r[]'}
+        });
+});
+") ?>

@@ -2,6 +2,18 @@
 
 class CompanyPeer extends BaseCompanyPeer
 {
+
+    CONST CMP_STAT_ONLINE           = 1;
+    CONST CMP_STAT_IS_UNPUBLISHED   = 2;
+    CONST CMP_STAT_IS_SUSPENDED     = 3;
+    CONST CMP_STAT_OWNER_BLOCKED    = 4;
+
+    public static $statMessages     = array(self::CMP_STAT_ONLINE           => 'Company profile is online',
+                                            self::CMP_STAT_IS_UNPUBLISHED   => 'Company profile is unpublished by account owner',
+                                            self::CMP_STAT_IS_SUSPENDED     => 'Company profile is suspended',
+                                            self::CMP_STAT_OWNER_BLOCKED    => 'Company account owner is blocked',
+                                        );
+
     public static function Register(sfParameterHolder $register_prefs, sfParameterHolder $company_prefs)
     {
         $con = Propel::getConnection(self::DATABASE_NAME);
@@ -37,16 +49,27 @@ class CompanyPeer extends BaseCompanyPeer
             
             $company_profile = new CompanyProfile();
             $company_profile->setContactId($contact->getId());
-            $company_profile->setIntroduction($register_prefs->get('company_introduction'));
-            $company_profile->setProductService($register_prefs->get('company_products'));
             $company_profile->save();
+
+            $pr = $register_prefs->get('company_lang');
+
+            if (is_array($pr))
+            {
+                foreach($pr as $key => $lang)
+                {
+                    $ci18n = $company_profile->getCurrentCompanyProfileI18n($lang);
+                    $ci18n->setIntroduction($register_prefs->get("company_introduction_$key"));
+                    $ci18n->setProductService($register_prefs->get("company_productservice_$key"));
+                    $ci18n->save();
+                }
+            }
             
             $company->setName($register_prefs->get('company_name'));
             $company->setSectorId($register_prefs->get('company_industry'));
             $company->setBusinessTypeId($register_prefs->get('company_business_type'));
-            $company->setInterestedInHr($register_prefs->get('company_services_hr'));
-            $company->setInterestedInB2b($register_prefs->get('company_services_b2b'));
-            $company->setMemberType($register_prefs->get('company_b2b_purpose'));
+            //$company->setInterestedInHr($register_prefs->get('company_services_hr'));
+            //$company->setInterestedInB2b($register_prefs->get('company_services_b2b'));
+            //$company->setMemberType($register_prefs->get('company_b2b_purpose'));
             $company->setProfileId($company_profile->getId());
             $company->save();
 
@@ -77,8 +100,10 @@ class CompanyPeer extends BaseCompanyPeer
         }
         catch(Exception $e)
         {
+            echo $e->getMessage();
             $con->rollBack();
-            ErrorLogPeer::Log(array_key_exists(RolePeer::RL_CM_REPRESENTATIVE, $users)?$users[RolePeer::RL_CM_REPRESENTATIVE]:$users[RolePeer::RL_CM_OWNER], RolePeer::RL_CM_ALL, "Error while registering new company: ".$e->getMessage()."; File: ".$e->getFile()."; Line: ".$e->getLine());
+            $owner = array_key_exists(RolePeer::RL_CM_REPRESENTATIVE, $users)?$users[RolePeer::RL_CM_REPRESENTATIVE]:$users[RolePeer::RL_CM_OWNER];
+            ErrorLogPeer::Log($owner->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, "Error while registering new company: ".$e->getMessage()."; File: ".$e->getFile()."; Line: ".$e->getLine());
             return null;
         }
 

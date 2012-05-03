@@ -6,7 +6,7 @@ class MessageRecipient extends BaseMessageRecipient
 
     public function getRecipient()
     {
-        return $this->recipient;
+        return $this->recipient ? $this->recipient : ($this->recipient = PrivacyNodeTypePeer::retrieveObject($this->getRecipientId(), $this->getRecipientTypeId()));
     }
 
     public function setRecipient(& $v)

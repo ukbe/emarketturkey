@@ -15,6 +15,8 @@ class contactAction extends EmtGroupAction
     
     private function handleAction($isValidationError)
     {
+        if ($this->group->getTypeId() == GroupTypePeer::GRTYP_ONLINE) $this->redirect($this->group->getProfileUrl());
+
         $this->getResponse()->setTitle(sfContext::getInstance()->getI18N()->__('Contact %1', array('%1' => $this->group->getName())) . ' | eMarketTurkey');
 
         $this->getResponse()->setTitle($this->group . ' | eMarketTurkey');

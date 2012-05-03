@@ -22,7 +22,7 @@
                 <div class="txtCenter" style="margin-top: 20px;">
                 <p><?php echo __('Create your own group, and invite friends.')?></p>
                 <?php echo link_to(__('Sign Up'), '@myemt.signup', 'class=submit-link margin-r2')?>
-                <?php echo link_to(__('Create Group'), '@myemt.signup', 'class=submit-link')?>
+                <?php echo link_to(__('Create Group'), '@myemt.group-start', 'class=submit-link')?>
                 </div>
             </div>
         </div>
@@ -93,27 +93,6 @@
 .cm-signup { position: absolute; left: 457px; top: 300px; z-index: 20; }
 hr.split { height: 1px; line-height: 1px; margin: 20px 5px; border: solid 1px #ccc; }
 
-a.submit-link, input.submit-link {
-background-image: url(/images/layout/background/submit.png) !important;
-background-position: left top;
-color: white;
-height: 40px;
-line-height: 40px;
-width: 146px;
-padding: 0;
-margin: 0 5px 0 0;
-font-weight: bold;
-display: inline-block;
-text-align: center;
-font-size: 16px;
-text-shadow: 0 1px 1px #595;
-border: none;
-cursor: pointer;
-}
-.submit-link:hover {
-color: white;
-background-position: left 80px;
-}
 a.large-button, input.large-button {
     -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
     -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;

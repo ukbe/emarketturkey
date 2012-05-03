@@ -6,6 +6,7 @@
             clickerOpenClass: 'box-open', 
             boxId: '_ID_-box', 
             itemTempSelector: '.temp',
+            sourceElement: '_ID_-src',
             listObjSelector: '.list',
             newTagSelector: '#_ID_-newtag',
             keepContent: true, 
@@ -39,6 +40,7 @@
             this._dynaBox = this.options.position == 'window' ? $.ui.dynabox.window
                             : $('#'+this.options.boxId.replace('_ID_', this.element.attr('id')));
             this._newTag = $(this.options.newTagSelector.replace('_ID_', this.element.attr('id')));
+            this._srcElement = $(this.options.sourceElement.replace('_ID_', this.element.attr('id')));
             this._listObj = null;
             this._items = [];
             this._itemTemp = null;
@@ -47,6 +49,8 @@
             this._isFilled = false;
             this._isForm = this.element[0].tagName.toLowerCase() == 'form',
             this._boxesInside = [];
+            this._headeron = this.options.showHeader;
+            this._footeron = this.options.showFooter;
             // remember this instance
             $.ui.dynabox.instances.push(this.element);
         },
@@ -224,9 +228,43 @@
         },
 
         toggle: function(){
-                if (this._isOpen) this.close(); else this.open();
-            },
-
+            if (this._isOpen) this.close(); else this.open();
+        },
+        
+        hideHeaderFooter: function(){
+        	this._header.hide();
+        	this._footer.hide();
+        	this._headeron = false;
+        	this._footeron = false;
+        },
+        
+        hideHeader: function(){
+        	this._header.hide();
+        	this._headeron = false;
+        },
+        
+        hideFooter: function(){
+        	this._footer.hide();
+        	this._footeron = false;
+        },
+        
+        showHeaderFooter: function(){
+        	this._header.show();
+        	this._footer.show();
+        	this._headeron = true;
+        	this._footeron = true;
+        },
+        
+        showHeader: function(){
+        	this._header.show();
+        	this._headeron = true;
+        },
+        
+        showFooter: function(){
+        	this._footer.show();
+        	this._footeron = true;
+        },
+        
         isOpen: function(){
             return this._isOpen;
         },
@@ -320,6 +358,7 @@
                     o._listObj.addClass('loading');
                     o._listObj.find('li.item').hide();
                 }
+
                 params = (o._isForm ? o.element.serialize() : '');
                 var isFill = (typeof filler == 'function');
                 switch (o.options.loadMethod)
@@ -375,7 +414,7 @@
                      switch (o.options.fillType)
                      {
                      case 'copy': 
-                         if (isFill) filler($(o.options.sourceElement).html()); else return $(o.options.sourceElement).html();
+                         if (isFill) filler($(o._srcElement).html()); else return $(o._srcElement).html();
                          break;
                      case 'param':
                          if (isFill) filler(o.options.content); else return o.options.content;
@@ -407,7 +446,7 @@
             this._listObj.find('li.header').html('');
             this._listObj.find('li.item').remove();
             if (this._dynaBox.hasClass('flooded'))
-            {
+        	{
                 this._dynaBox.removeClass('flooded');
                 this._listObj.find('li.item').css('height', '');
             }

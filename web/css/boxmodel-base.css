@@ -79,7 +79,7 @@ body #section-bg > section {
  display:block;
  width:960px;
  margin:0px auto 40px; padding:0px;
- background:#fafafa;
+ background: transparent;
 -moz-border-radius-bottomleft: 6px;
 -webkit-border-bottom-left-radius: 6px;
  border-bottom-left-radius:6px;
@@ -90,7 +90,7 @@ body #section-bg > section {
 }
 
 body #section-bg > section > .col_948 {
- min-height: 200px;
+ min-height: 400px;
 }
 
 article {
@@ -1085,10 +1085,10 @@ div.select ul
     top: 27px;
     right: 0px;
     display: none;
-    border: solid 1px #ccc;
+    border: solid 2px #ccc;
     margin: 0px 0px 0px 0px; padding: 4px;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #fafafa;
 }
 div.select:hover ul
 {
@@ -1101,7 +1101,7 @@ div.select:hover span
 div.select:hover ul li
 {
     display: block;
-    margin: 0px; padding: 0px;
+    margin: 1px 0px; padding: 0px;
     clear: both;
 }
 div.select:hover ul li a
@@ -1110,9 +1110,19 @@ div.select:hover ul li a
     text-align: left;
     white-space: nowrap;
     margin: 0px;
-    padding: 4px;
+    padding: 4px 6px;
     font: 13px arial;
     line-height: 20px;
+    border-radius: 3px;
+}
+div.select:hover ul li.blank a
+{
+    background-color: #f8f8f8;
+    font-weight: normal;
+    border: dashed 1px #ddd;
+    text-align: center;
+    padding: 1px 6px;
+    font-size: 12px;
 }
 div.select:hover ul li a:hover
 {
@@ -1172,4 +1182,92 @@ body #section-bg {
     background:#e0e0e0 url(/images/layout/background/bg-upperShadow.png) center -16px no-repeat; /* 8a809c */
     padding-top: 35px;
     position: relative;
+}
+
+body._island header {
+    width:960px;
+    display:block;
+    padding: 0px;
+    margin:0;
+    position:absolute;
+    top:0px;left:0px;
+    z-index:3;
+    font-family: Segoe UI,Arial,Helvetica,sans-serif; font-size:12px;
+    color:#555;
+}
+body._island header table {
+    width:960px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: arial;
+    font-size: 14px;
+}
+body._island header table td.logo {
+    vertical-align: middle;
+    text-align: left;
+    width: 190px;
+    padding: 10px;
+}
+body._island header table td {
+    width: 690px;
+    padding: 10px 30px;
+    text-align: right;
+    vertical-align: middle;
+    font-weight: bold;
+}
+body._island .col_948 {
+    padding-top: 100px;
+    border-radius: 8px;
+    padding-bottom: 50px;
+}
+body._island div#pop-holder
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px 0px;
+    min-height: 10px;
+}
+body._island div.liner
+{
+    height: 3px;
+    background-color: #cf3a3a;
+    width: 940px;
+    margin: 0 auto;
+}
+body._island footer
+{
+    position: absolute;
+    bottom: 0px;
+    left: 1px;
+    z-index: 20;
+    width: 920px;
+    padding: 15px 20px;
+    background-color: #303030;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font: normal 400 12px/150% "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    color: #ccc;
+}
+body._island footer a
+{
+    color: #ccc;
+    margin-right: 20px;
+    font-size: 12px;
+}
+body._island footer a:hover
+{
+    text-decoration: underline;
+}
+
+table._secured {
+    clear: both;
+    margin: 0 auto;
+    margin-top: 0px;
+    color: #777;
+    border-radius: 8px;
+    background-color: #eee;
+}
+table._secured td {
+    padding: 10px 15px;
 }

@@ -90,6 +90,10 @@ class logoAction extends EmtManageCompanyAction
     
     public function validate()
     {
+        if ($this->getRequest()->getMethod() == sfRequest::POST && $this->hasRequestParameter('coords') && $this->hasRequestParameter('ref'))
+        {
+            $this->getRequest()->removeError('companylogo');
+        }
         return !$this->getRequest()->hasErrors();
     }
 

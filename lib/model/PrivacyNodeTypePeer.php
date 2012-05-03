@@ -47,6 +47,8 @@ class PrivacyNodeTypePeer extends BasePrivacyNodeTypePeer
     CONST PR_NTYP_PUBLICATION_CATEGORY= 37;
     CONST PR_NTYP_TRANSLATOR        = 38;
     CONST PR_NTYP_POST_LOCATION     = 39;
+    CONST PR_NTYP_POST_STATUS       = 40;
+    CONST PR_NTYP_MESSAGE           = 41;
 
     public static $typeNames    = array (1 => 'User',
                                          2 => 'Company',
@@ -87,6 +89,8 @@ class PrivacyNodeTypePeer extends BasePrivacyNodeTypePeer
                                          37 => 'Publication Category',
                                          38 => 'Translator',
                                          39 => 'Post Location',
+                                         40 => 'Post Status',
+                                         41 => 'Message',
                                          );
     public static $matrix       = array('User'      => self::PR_NTYP_USER,
                                         'Company'   => self::PR_NTYP_COMPANY,
@@ -118,6 +122,8 @@ class PrivacyNodeTypePeer extends BasePrivacyNodeTypePeer
                                         'PublicationCategory' => self::PR_NTYP_PUBLICATION_CATEGORY,
                                         'Translator' => self::PR_NTYP_TRANSLATOR,
                                         'PostLocation' => self::PR_NTYP_POST_LOCATION,
+                                        'PostStatus' => self::PR_NTYP_POST_STATUS,
+                                        'Message' => self::PR_NTYP_MESSAGE,
                                         );
 
     public static function getTypeFromClassname($classname, $return_obj = false)

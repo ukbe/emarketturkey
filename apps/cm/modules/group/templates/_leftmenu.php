@@ -8,7 +8,9 @@
                 <li class="_connections<?php echo $action == 'connections' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Connections'), $group->getProfileActionUrl('connections')) ?></li>
                 <li class="_photos<?php echo $action == 'photos' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Photos'), $group->getProfileActionUrl('photos')) ?></li>
                 <li class="_events<?php echo $action == 'events' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Events'), $group->getProfileActionUrl('events')) ?></li>
+                <?php if ($group->getTypeId() != GroupTypePeer::GRTYP_ONLINE): ?>
                 <li class="_contact<?php echo $action == 'contact' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Contact'), $group->getProfileActionUrl('contact')) ?></li>
+                <?php endif ?>
             </ul>
         </div>
         <div class="box_180 txtCenter">

@@ -1,3 +1,8 @@
+help-page:
+  url:   /:sf_culture/help/:handle
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: help, action: generic }
+
 privacy-help:
   url:   /:sf_culture/help/privacy
   requirements: { sf_culture: (?:en|de|tr) } 

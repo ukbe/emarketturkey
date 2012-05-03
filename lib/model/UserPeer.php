@@ -20,7 +20,7 @@ class UserPeer extends BaseUserPeer
                                 $signup_prefs->get('bd_month').'-'.
                                 $signup_prefs->get('bd_day'));
             $user->setRegistrationIp(ip2long($signup_prefs->get('registration_ip')));
-            $login->setEmail($signup_prefs->get('email_first'));
+            $login->setEmail(strtolower($signup_prefs->get('email_first')));
             $password = EmtPasswordUtil::generate();
             $login->setPassword($password);
             $login->setReminderQuestion($signup_prefs->get('reminder_question'));

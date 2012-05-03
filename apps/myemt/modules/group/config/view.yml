@@ -21,7 +21,9 @@ relationsSuccess:
 startSuccess:
     metas:
         title: 'Start Group | eMarketTurkey'
+    layout: layoutBoxModel-island
 
 routeSuccess:
     metas:
         title: "What's next? | eMarketTurkey"
+    layout: layoutBoxModel-island

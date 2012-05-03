@@ -5,7 +5,7 @@
             <dt><em><?php echo $group ?></em></dt>
             <dd><?php echo $group->getGroupType() ?></dd>
         </dl>
-        <div style="float:right; margin-top: 15px;">
+        <div style="float:right; margin-top: 15px; clear: both;">
         <ul class="trailButtons">
             <?php if (count($userprops) == 1): ?>
             <?php if (($membership = $sesuser->getGroupMembership($group->getId())) && $membership->getStatus() == GroupMembershipPeer::STYP_ACTIVE): ?>        

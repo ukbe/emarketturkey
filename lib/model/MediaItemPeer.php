@@ -22,6 +22,7 @@ class MediaItemPeer extends BaseMediaItemPeer
     CONST MI_TYP_AUTHOR_PHOTO               = 18;
     CONST MI_TYP_PUBLICATION_SOURCE_PHOTO   = 19;
     CONST MI_TYP_PUBLICATION_CATEGORY_PHOTO = 20;
+    CONST MI_TYP_VIDEO_PREVIEW              = 21;
     
     #Generic Versions
     CONST LOGO_TYP_SMALL                    = 1;
@@ -59,6 +60,7 @@ class MediaItemPeer extends BaseMediaItemPeer
                                          18 => 'Author Photo',
                                          19 => 'Publication Source Photo',
                                          20 => 'Publication Category Photo',
+                                         21 => 'Video Preview',
                                          );
                                          
     public static $namingSuffixes = array(MediaItemPeer::LOGO_TYP_SMALL      => array('S/', 'S'),
@@ -123,7 +125,7 @@ class MediaItemPeer extends BaseMediaItemPeer
         $fileobj->setOffsetCoords($coords);
         if ($finfo = finfo_open(FILEINFO_MIME_TYPE))
         {
-            $mime_type = finfo_file($finfo, $tmppath['tmp_name']);
+            $mime_type = finfo_file($finfo, $isuploaded ? $tmppath['tmp_name'] : $tmppath);
             finfo_close($finfo);
             $fileobj->setMimeType($mime_type);
         }
@@ -132,6 +134,18 @@ class MediaItemPeer extends BaseMediaItemPeer
         $fileobj->reload();
         $fileobj->store($isuploaded ? $tmppath['tmp_name'] : $tmppath, $options);
         return $fileobj;
+    }
+    
+    public static function createMediaItemFromRemoteFile($owner_id, $owner_type_id, $item_type_id, $url, $is_temp = 0, $options = array())
+    {
+        $pathinfo = pathinfo($url);
+
+        $tmppath = sys_get_temp_dir() . uniqid() . "." . (isset($pathinfo['extension']) ? $pathinfo['extension'] : 'jpg');
+        
+        $image = file_get_contents($url);
+        file_put_contents($tmppath, $image);
+
+        self::createMediaItem($owner_id, $owner_type_id, $item_type_id, $tmppath, $is_temp, $options);
     }
     
     public static function getDimensionsFor($type_id, $size = null)

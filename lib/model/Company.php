@@ -660,186 +660,53 @@ class Company extends BaseCompany
 
         $con = Propel::getConnection();
 $sql = "
-select * from (
-select * from 
+
+SELECT * FROM
 (
-select 
-rl.object_id p_object_id, 
-1 p_object_type_id, 
-rl.subject_id p_subject_id, 
-1 p_subject_type_id, 
-rls.id p_role_id,
-rls.lvl p_rlvl
-from 
-(
-SELECT USER_ID SUBJECT_ID, RELATED_USER_ID OBJECT_ID, ROLE_ID FROM
-(
-    SELECT USER_ID, RELATED_USER_ID, ROLE_ID,
-    RANK() OVER (PARTITION BY RELATED_USER_ID, USER_ID ORDER BY CREATED_AT DESC) SEQNUMBER
-    FROM EMT_RELATION
-    WHERE STATUS=" . RelationPeer::RL_STAT_ACTIVE . " OR STATUS=" . RelationPeer::RL_STAT_PENDING_CONFIRMATION . "
-    
-    UNION
-    
-    SELECT RELATED_USER_ID USER_ID, USER_ID RELATED_USER_ID, ROLE_ID,
-    RANK() OVER (PARTITION BY RELATED_USER_ID, USER_ID ORDER BY CREATED_AT DESC) SEQNUMBER
-    FROM EMT_RELATION
-    WHERE STATUS=" . RelationPeer::RL_STAT_ACTIVE . " OR STATUS=" . RelationPeer::RL_STAT_PENDING_CONFIRMATION . "
-) drl
-WHERE SEQNUMBER=1 
-
-union 
-
-select null subject_id, emt_user.id object_id, 21 from emt_user
-
-union 
-
-select emt_user.id subject_id, emt_user.id object_id, 0 from emt_user
-)
-rl
-left join
-(
-select connect_by_root id spoint, id, sysname, level lvl from emt_role
-start with parent_id is not null
-connect by nocycle prior parent_id = id
-
-union
-
-select id spoint, id, sysname, 1 from emt_role where id=21
-
-union
-
-select id spoint, id, sysname, 1 from emt_role where id=0
-) rls on rl.role_id=spoint
-
-union 
-
-select 
-gm.group_id p_object_id, 
-3 p_object_type_id, 
-gm.object_id p_subject_id, 
-gm.object_type_id p_subject_type_id, 
-rls.id p_role_id,
-rls.lvl p_rlvl
-from 
-(
-SELECT ID, INVITER_ID, INVITER_TYPE_ID, OBJECT_ID, OBJECT_TYPE_ID, GROUP_ID, ROLE_ID, STATUS, CREATED_AT, UPDATED_AT FROM
-(
-    SELECT EMT_GROUP_MEMBERSHIP.*,
-    RANK() OVER (PARTITION BY OBJECT_ID, OBJECT_TYPE_ID, GROUP_ID ORDER BY CREATED_AT DESC) SEQNUMBER
-    FROM EMT_GROUP_MEMBERSHIP
-)   
-WHERE SEQNUMBER=1 AND STATUS=" . GroupMembershipPeer::STYP_ACTIVE . " OR STATUS=" . GroupMembershipPeer::STYP_PENDING . "
-
-union
-
-select null id, null inviter_id, null inviter_type_id, null object_id, 1 object_type_id, id group_id, 21 role_id, 1 status, null created_at, null updated_at from emt_group
-
-union
-
-select null id, null inviter_id, null inviter_type_id, null object_id, 1 object_type_id, id group_id, 0 role_id, 1 status, null created_at, null updated_at from emt_group
-) gm
-left join
-(
-select connect_by_root id spoint, id, sysname, level lvl from emt_role
-start with parent_id is not null
-connect by nocycle prior parent_id = id
-
-union
-
-select id spoint, id, sysname, 1 from emt_role where id=21
-
-union
-
-select id spoint, id, sysname, 1 from emt_role where id=0
-) rls on gm.role_id=spoint
-
-union 
-
-select 
-cu.company_id p_object_id, 
-2 p_object_type_id, 
-cu.object_id p_subject_id, 
-cu.object_type_id p_subject_type_id, 
-rls.id p_role_id,
-rls.lvl p_rlvl
-from 
-(
-select * from emt_company_user
-
-union
-
-select aa.id, aa.company_id, aa.company_id object_id, 0 role_id, aa.created_at, 2 object_type_id from emt_company_user aa 
-) cu
-left join 
-(
-select connect_by_root id spoint, id, sysname, level lvl from emt_role
-start with parent_id is not null
-connect by nocycle prior parent_id = id
-
-union
-
-select id spoint, id, sysname, 1 from emt_role where id=21
-
-union
-
-select id spoint, id, sysname, 1 from emt_role where id=0
-) rls on cu.role_id=spoint
-
-union 
-
-select 
-null p_object_id, 
-null p_object_type_id, 
-usr.id p_subject_id, 
-1 p_subject_type_id, 
-rls.id p_role_id,
-rls.lvl p_rlvl
-from emt_role_assignment ra
-left join emt_user usr on ra.login_id=usr.login_id
-left join 
-(
-select connect_by_root id spoint, id, sysname, level lvl from emt_role
-start with parent_id is not null
-connect by nocycle prior parent_id = id
-) rls on ra.role_id=spoint
-
-) assig, 
-(
-select 
-CASE
-WHEN (coalesce(subject_id, 0) * coalesce(object_id, 0) > 0) THEN 1
-WHEN coalesce(object_id, 0) < coalesce(subject_id, 0) THEN 2
-ELSE 3
-END
- objected, emt_privacy_preference.* from emt_privacy_preference
-) pp
-
-order by p_rlvl, objected, p_subject_id
-) 
-where 
-(
-  (
+    SELECT * FROM
     (
-      (p_subject_id=subject_id and subject_type_id=p_subject_type_id) or subject_id is null
-    )
-    and 
+        SELECT FS.*, SROLES.ID SUB_VROLE_ID, SROLES.LVL SUB_VROLE_LVL, OROLES.ID OBJ_VROLE_ID, OROLES.LVL OBJ_VROLE_LVL FROM 
+        EMT_CONNECTIONS FS
+        LEFT JOIN
+        (
+            SELECT CONNECT_BY_ROOT ID SPOINT, ID, SYSNAME, LEVEL LVL FROM EMT_ROLE
+            START WITH PARENT_ID IS NOT NULL
+            CONNECT BY NOCYCLE PRIOR PARENT_ID = ID
+        ) OROLES ON FS.P_ROLE_ON_OBJECT=OROLES.SPOINT
+        LEFT JOIN
+        (
+            SELECT CONNECT_BY_ROOT ID SPOINT, ID, SYSNAME, LEVEL LVL FROM EMT_ROLE
+            START WITH PARENT_ID IS NOT NULL
+            CONNECT BY NOCYCLE PRIOR PARENT_ID = ID
+        ) SROLES ON FS.P_ROLE_ON_SUBJECT=SROLES.SPOINT
+    ) ASSIG, 
     (
-      (p_object_id=object_id and object_type_id=p_object_type_id) or object_id is null
-    )
-  )  
-  and 
-  ((p_role_id=role_on_object and p_object_type_id=object_type_id) or (role_on_object is null and p_rlvl=1))
-  and 
-  (p_object_type_id is not null)
-  and 
-  (
-    (p_subject_id=".($this->getId()?$this->getId():0) ." and subject_type_id=2 and p_object_id=$object_id and p_object_type_id=$object_type_id) or
-    (p_subject_id is null and p_role_id=21 and subject_type_id=2 and p_object_id=$object_id and p_object_type_id=$object_type_id and rownum=1)
-  )
-  and
-  action_id={$action_id}
+        SELECT EMT_PRIVACY_PREFERENCE.*, 
+            CASE
+            WHEN (COALESCE(SUBJECT_ID, 0) * COALESCE(OBJECT_ID, 0) > 0) THEN 1
+            WHEN COALESCE(OBJECT_ID, 0) < COALESCE(SUBJECT_ID, 0) THEN 2
+            WHEN COALESCE(OBJECT_ID, 0) > COALESCE(SUBJECT_ID, 0) THEN 3
+            ELSE 4
+            END OBJECTED 
+        FROM EMT_PRIVACY_PREFERENCE
+    ) PP
+    
+    WHERE 
+        ((ROOT_ID={$this->getId()} AND ROOT_TYPE_ID=2) OR (ROOT_ID IS NULL))
+        AND 
+        (P_SUBJECT_TYPE_ID=SUBJECT_TYPE_ID AND (P_SUBJECT_ID=SUBJECT_ID OR SUBJECT_ID IS NULL))
+        AND
+        (P_OBJECT_TYPE_ID=OBJECT_TYPE_ID AND (P_OBJECT_ID=OBJECT_ID OR OBJECT_ID IS NULL))
+        AND
+        (SUB_VROLE_ID=ROLE_ON_SUBJECT OR ROLE_ON_SUBJECT IS NULL)
+        AND
+        (OBJ_VROLE_ID=ROLE_ON_OBJECT OR ROLE_ON_OBJECT IS NULL)
+        AND
+        (P_OBJECT_TYPE_ID=$object_type_id AND P_OBJECT_ID=$object_id)
+        AND
+        (ACTION_ID=$action_id)
 )
+ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED, P_SUBJECT_ID
 
 ";
 
@@ -1737,4 +1604,39 @@ WHERE PRIO=1
         return $this->getFolderByName($name, MediaItemPeer::MI_TYP_ALBUM_PHOTO);
     }
     
+    public function isOnline()
+    {
+        return ($this->getAvailable() && !$this->getBlocked() && !$this->getOwner()->isBlocked());
+    }
+
+    public function getStatusCode()
+    {
+        if ($this->getBlocked()) {
+            return CompanyPeer::CMP_STAT_IS_SUSPENDED;
+        }
+        elseif (!$this->getAvailable()) {
+            return CompanyPeer::CMP_STAT_IS_UNPUBLISHED;
+        }
+        elseif ($this->getOwner()->isBlocked()) {
+            return CompanyPeer::CMP_STAT_OWNER_BLOCKED;
+        }
+        else {
+            return CompanyPeer::CMP_STAT_ONLINE;
+        }
+    }
+    
+    public function getStatusMessage()
+    {
+        return CompanyPeer::$statMessages[$this->getStatusCode()];
+    }
+
+    public function getPremiumAccount($type_id = null)
+    {
+        return PremiumAccountPeer::getAccountFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, $type_id);
+    }
+
+    public function getMessageFolders()
+    {
+        return $this->getFolders(MediaItemFolderPeer::MIF_TYP_MESSAGE);
+    }
 }

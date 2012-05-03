@@ -991,9 +991,19 @@ WHERE
         $membership->setObjectId($item_id);
         $membership->setObjectTypeId($item_type_id);
         $membership->setGroupId($this->getId());
-        $membership->setRoleId($this->getIsPrivate() ? RolePeer::RL_GP_CANDIDATE_MEMBER : RolePeer::RL_GP_MEMBER);
-        $membership->setStatus($this->getIsPrivate() ? GroupMembershipPeer::STYP_PENDING : GroupMembershipPeer::STYP_ACTIVE);
+        if ($this->getPublicity() == GroupPeer::GRP_PBL_OPEN)
+        {
+            $membership->setRoleId(RolePeer::RL_GP_MEMBER);
+            $membership->setStatus(GroupMembershipPeer::STYP_ACTIVE);
+            ActionLogPeer::Log($item, ActionPeer::ACT_JOIN_GROUP, $this);
+        }
+        else
+        {
+            $membership->setRoleId(RolePeer::RL_GP_CANDIDATE_MEMBER);
+            $membership->setStatus(GroupMembershipPeer::STYP_PENDING);
+        }
         $membership->save();
+
         return $membership;
     }
     
@@ -1004,8 +1014,19 @@ WHERE
 
     public function getOwner()
     {
-        $owner_mem = $this->getMembership(null, PrivacyNodeTypePeer::PR_NTYP_USER, RolePeer::RL_GP_OWNER, GroupMembershipPeer::STYP_ACTIVE);
-        return count($owner_mem) ? $owner_mem[0]->getMember() : null;
+        $con = Propel::getConnection();
+        
+        $sql = "
+            SELECT EMT_USER.* FROM EMT_GROUP_MEMBERSHIP_VIEW GMVIEW
+            LEFT JOIN EMT_USER ON GMVIEW.OBJECT_ID=EMT_USER.ID AND GMVIEW.OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_USER."
+            WHERE GMVIEW.STATUS=".GroupMembershipPeer::STYP_ACTIVE." AND GMVIEW.ROLE_ID=".RolePeer::RL_GP_OWNER."
+                AND GMVIEW.GROUP_ID={$this->getId()}
+        ";
+        //Removed from SQL >   AND NOT EXISTS (SELECT 1 FROM EMT_BLOCKLIST WHERE LOGIN_ID=EMT_USER.LOGIN_ID AND ACTIVE=1)
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+
+        return count($usr = UserPeer::populateObjects($stmt)) ? $usr[0] : null;
     }
     
     public function getDefineText($to_user = null, $target_culture = null)
@@ -1409,7 +1430,7 @@ WHERE
                 connect by nocycle prior parent_id = id
             ) OROLES ON RELS.ROLE_ID=OROLES.SPOINT
 
-            WHERE EMT_WALL_POST.DELETED_AT IS NULL AND AVAILABLE=1 
+            WHERE EMT_WALL_POST.DELETED_AT_BY_OWNER IS NULL AND EMT_WALL_POST.DELETED_AT_BY_POSTER IS NULL AND AVAILABLE=1 
                 AND EMT_WALL_POST.TARGET_AUDIENCE=OROLES.ID AND EMT_WALL_POST.OWNER_TYPE_ID={$this->getObjectTypeId()} AND EMT_WALL_POST.OWNER_ID=".($this->getId() ? $this->getId() : 0)."
 
             ORDER BY EMT_WALL_POST.CREATED_AT DESC
@@ -1691,4 +1712,39 @@ WHERE PRIO=1
         return $pager;
     }
 
+    public function isOnline()
+    {
+        return ($this->getAvailable() && !$this->getBlocked() && !$this->getOwner()->isBlocked());
+    }
+
+    public function getStatusCode()
+    {
+        if ($this->getBlocked()) {
+            return GroupPeer::GRP_STAT_IS_SUSPENDED;
+        }
+        elseif (!$this->getAvailable()) {
+            return GroupPeer::GRP_STAT_IS_UNPUBLISHED;
+        }
+        elseif ($this->getOwner()->isBlocked()) {
+            return GroupPeer::GRP_STAT_OWNER_BLOCKED;
+        }
+        else {
+            return GroupPeer::GRP_STAT_ONLINE;
+        }
+    }
+    
+    public function getStatusMessage()
+    {
+        return GroupPeer::$statMessages[$this->getStatusCode()];
+    }
+
+    public function getPremiumAccount($type_id = null)
+    {
+        return PremiumAccountPeer::getAccountFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_GROUP, $type_id);
+    }
+
+    public function getMessageFolders()
+    {
+        return $this->getFolders(MediaItemFolderPeer::MIF_TYP_MESSAGE);
+    }
 }

@@ -23,10 +23,12 @@ relationsSuccess:
 registerSuccess:
     metas:
         title: 'Register Company | eMarketTurkey'
+    layout: layoutBoxModel-island
 
 routeSuccess:
     metas:
         title: "What's next? | eMarketTurkey"
+    layout: layoutBoxModel-island
 
 videosSuccess:
     metas:

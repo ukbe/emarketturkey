@@ -149,10 +149,12 @@ class User extends BaseUser
     public function isFriendsWith($user_id)
     {
         if ($user_id instanceof User) $user_id = $user_id->getId();
+        
+        $this_id = $this->getId() ? $this->getId() : 0;
 
         $con = Propel::getConnection();
         $sql = "SELECT * FROM EMT_RELATION_VIEW
-                WHERE (USER_ID=".($this->getId() ? $this->getId() : 0)." AND RELATED_USER_ID=$user_id) OR (USER_ID=$user_id AND RELATED_USER_ID=".($this->getId() ? $this->getId() : 0).")
+                WHERE ((USER_ID=$this_id AND RELATED_USER_ID=$user_id) OR (USER_ID=$user_id AND RELATED_USER_ID=$this_id))
                 AND STATUS=".RelationPeer::RL_STAT_ACTIVE;
 
         $stmt = $con->prepare($sql);
@@ -264,7 +266,7 @@ class User extends BaseUser
         $profile = $this->getUserProfile();
         $item = PrivacyNodeTypePeer::retrieveObject($mi_id, PrivacyNodeTypePeer::PR_NTYP_MEDIA_ITEM);
         
-        if ($item)
+        if ($item && $item->getOwnerId() == $this->getId() && $item->getOwnerTypeId() == $this->getObjectTypeId())
         {
             if (!$profile)
             {
@@ -638,6 +640,7 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
     public function getPrivacyPrefMatrix($actions = null)
     {
         $prefs = PrivacyPreferencePeer::retrieveByObject($this->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, $actions, true);
+        if (!is_array($prefs)) $prefs = array($prefs);
         $mtr = array();
         $x = array();
 
@@ -1241,14 +1244,18 @@ select count(*) from (
     
     public function getGroups($role_id = null, $status = GroupMembershipPeer::STYP_ACTIVE)
     {
-        $c = new Criteria();
-        $c->addJoin(GroupPeer::ID, GroupMembershipPeer::GROUP_ID, Criteria::INNER_JOIN);
-        $c->add(GroupMembershipPeer::OBJECT_ID, $this->getId());
-        $c->add(GroupMembershipPeer::OBJECT_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_USER);
-        $c->setDistinct();
-        if ($status) $c->add(GroupMembershipPeer::STATUS, $status);
-        if ($role_id) $c->add(GroupMembershipPeer::ROLE_ID, $role_id);
-        return GroupPeer::doSelect($c);
+        $con = Propel::getConnection();
+
+        $sql = "
+        SELECT DISTINCT EMT_GROUP.* FROM EMT_GROUP_MEMBERSHIP_VIEW
+        LEFT JOIN EMT_GROUP ON EMT_GROUP_MEMBERSHIP_VIEW.GROUP_ID=EMT_GROUP.ID
+        WHERE EMT_GROUP_MEMBERSHIP_VIEW.OBJECT_ID=".($this->getId() ? $this->getId() : 0)." AND EMT_GROUP_MEMBERSHIP_VIEW.OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_USER."
+            ".($role_id ? "AND EMT_GROUP_MEMBERSHIP_VIEW.ROLE_ID=$role_id" : '')."
+            ".($status ? "AND EMT_GROUP_MEMBERSHIP_VIEW.STATUS=$status" : '');
+
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        return GroupPeer::populateObjects($stmt);
     }
     
     public function getStatusUpdate($id = null, $index = null)
@@ -1381,12 +1388,17 @@ select count(*) from (
    
     public function getCompanies($role_id = null)
     {
-        $c = new Criteria();
-        $c->addJoin(CompanyUserPeer::COMPANY_ID, CompanyPeer::ID);
-        $c->add(CompanyUserPeer::OBJECT_ID, $this->getId());
-        $c->add(CompanyUserPeer::OBJECT_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_USER);
-        if ($role_id) $c->add(CompanyUserPeer::ROLE_ID, $role_id);
-        return CompanyPeer::doSelect($c);
+        $con = Propel::getConnection();
+
+        $sql = "
+        SELECT EMT_COMPANY.* FROM EMT_COMPANY_USER_VIEW
+        LEFT JOIN EMT_COMPANY ON EMT_COMPANY_USER_VIEW.COMPANY_ID=EMT_COMPANY.ID
+        WHERE EMT_COMPANY_USER_VIEW.OBJECT_ID=".($this->getId() ? $this->getId() : 0)." AND EMT_COMPANY_USER_VIEW.OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_USER."
+            ".($role_id ? "AND EMT_COMPANY_USER_VIEW.ROLE_ID=$role_id" : '');
+
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        return CompanyPeer::populateObjects($stmt);
     }
    
     public function getOwnerships($include_plugs = false)
@@ -2017,7 +2029,7 @@ WHERE PRIO=1
                 connect by nocycle prior parent_id = id
             ) OROLES ON RELS.ROLE_ID=OROLES.SPOINT
 
-            WHERE EMT_WALL_POST.DELETED_AT IS NULL AND AVAILABLE=1 
+            WHERE EMT_WALL_POST.DELETED_AT_BY_OWNER IS NULL AND EMT_WALL_POST.DELETED_AT_BY_POSTER IS NULL AND AVAILABLE=1 
                 AND EMT_WALL_POST.TARGET_AUDIENCE=OROLES.ID AND EMT_WALL_POST.OWNER_TYPE_ID={$this->getObjectTypeId()} AND EMT_WALL_POST.OWNER_ID=".($this->getId() ? $this->getId() : 0)."
 
             ORDER BY EMT_WALL_POST.CREATED_AT DESC
@@ -2202,4 +2214,48 @@ WHERE PRIO=1
         return $pager;
     }
 
+    public function sendVerificationEmail()
+    {
+        $con = Propel::getConnection();
+        
+        try
+        {
+            $con->beginTransaction();
+            
+            $rcodes = explode('@', $this->getLogin()->getRememberCode());
+            $nid = uniqid();
+            $this->getLogin()->setRememberCode($nid . (count($rcodes) == 2 ? '@'.$rcodes[1] : ''));
+            $this->getLogin()->save();
+            
+            $data = new sfParameterHolder();
+            $data->set('uname', $this->getName());
+            $data->set('ui', $nid);
+            $data->set('em', $this->getLogin()->getGuid());
+            
+            $vars = array();
+            $vars['email'] = $this->getLogin()->getEmail();
+            $vars['user_id'] = $this->getId();
+            $vars['data'] = $data;
+            $vars['namespace'] = EmailTransactionNamespacePeer::EML_TR_NS_VERIFY_EMAIL_ADDR;
+    
+            $email_trans = EmailTransactionPeer::CreateTransaction($vars, false);
+            
+            $con->commit();
+        }
+        catch (Exception $e)
+        {
+            $con->rollback();
+            
+            return false;
+        }
+        $email_trans->deliver();
+
+        return true;
+    }
+
+    public function getMessageFolders()
+    {
+        return $this->getFolders(MediaItemFolderPeer::MIF_TYP_MESSAGE);
+    }
+    
 }

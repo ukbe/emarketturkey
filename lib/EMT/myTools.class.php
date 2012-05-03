@@ -383,7 +383,7 @@ class myTools
     public static function unplug($plug, $return_object = true)
     {
         $psplit = explode('|', base64_decode($plug));
-        if (is_array($psplit) && ($psplit[0] = intval($psplit[0])) && in_array($psplit[0], array(PrivacyNodeTypePeer::PR_NTYP_USER, PrivacyNodeTypePeer::PR_NTYP_COMPANY, PrivacyNodeTypePeer::PR_NTYP_GROUP, PrivacyNodeTypePeer::PR_NTYP_PRODUCT, PrivacyNodeTypePeer::PR_NTYP_MEDIA_ITEM, PrivacyNodeTypePeer::PR_NTYP_B2B_LEAD, PrivacyNodeTypePeer::PR_NTYP_EVENT, PrivacyNodeTypePeer::PR_NTYP_TRADE_EXPERT, PrivacyNodeTypePeer::PR_NTYP_PLACE, PrivacyNodeTypePeer::PR_NTYP_JOB, PrivacyNodeTypePeer::PR_NTYP_PUBLICATION)))
+        if (is_array($psplit) && ($psplit[0] = intval($psplit[0])))
         {
             $id = myTools::flipHash($psplit[1], true, $psplit[0]);
             return $return_object ? PrivacyNodeTypePeer::retrieveObject($id, $psplit[0]) : array($psplit[0], $id);
@@ -415,7 +415,6 @@ class myTools
     {
         $con = Propel::getConnection();
         try {
-            $con->beginTransaction();
             $stmt = $con->prepare($sql);
             $stmt->execute();
             return $return_array ? $stmt->fetchAll(PDO::FETCH_NUM) : $stmt;
@@ -480,5 +479,10 @@ class myTools
         {
             return $url . '?' . (is_array($parameter) ? http_build_query($parameter) : $parameter); 
         }
+    }
+
+    public static function format_text($text)
+    {
+        return str_replace("\n", "<br />", $text);
     }
 }

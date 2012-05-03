@@ -78,7 +78,7 @@
 		                    return;
 		                }
 	            	},
-	            	complete: function(){
+	            	complete: function(e){
 		                o._country.attr('disabled', false);
 		                o._state.attr('disabled', false);
 		                // trigger beforeopen event.  if beforeopen returns false,
@@ -90,7 +90,7 @@
 	                success: function(data){
 	                    o._state.find("option[value!='']").remove();
                         $(data).each(function(g,i){o._state.append($('<option value='+i.ID+'>'+i.NAME+'</option>'));});
-	                }
+	                }    
 	            });
             },
             

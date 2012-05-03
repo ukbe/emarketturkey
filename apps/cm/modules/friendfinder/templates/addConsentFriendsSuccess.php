@@ -1,7 +1,14 @@
-<?php slot('uppermenu') ?>
-<?php include_partial('friendfinder/uppermenu') ?>
+<?php slot('subNav') ?>
+<?php include_partial('subNav-addFriends', array('sesuser' => $sesuser)) ?>
 <?php end_slot() ?>
-<div style="margin: 0 auto; width: 731px;">
+
+<div class="col_948 login">
+    <div class="box_657 _titleBG_Transparent" style="float: none; margin: 0 auto;">
+        <?php $logo = ($consent_type == ConsentLoginPeer::CST_SERV_TYP_WINDOWS_LIVE) ? 'windows-live-logo.png' : 'google.png' ?>
+        <h4 style="background: url(/images/layout/<?php echo $logo ?>) 99% top no-repeat; background-size: auto 40px; padding-top: 20px;"><?php echo __('Found Some Friends') ?></h4>
+        <div class="_noBorder">
+
+
 <style>
 .add-list tr td.logo 
 {
@@ -19,20 +26,7 @@
     vertical-align: middle;
 }
 </style>
-<div class="rounded-border" style="margin: 0 auto;">
-<div>
-<div>
-<ol class="column">
-<li class="column span-21" style="padding: 10px;">
-<?php if ($consent_type == ConsentLoginPeer::CST_SERV_TYP_WINDOWS_LIVE): ?>
-<?php echo image_tag('layout/live-add-friends.png') ?>
-<?php elseif ($consent_type == ConsentLoginPeer::CST_SERV_TYP_GOOGLE): ?>
-<?php echo image_tag('layout/google-add-friends.png', 'width=100 style=margin-top:0px;') ?>
-<?php endif ?>
-</li>
-<li class="column span-116">
 <?php echo form_tag('@consent-add?lid='.$consentLogin->getId()) ?>
-<h1 style="font: bold 20px tahoma; color: #737373; border-bottom: solid 3px #A4A9A6; padding: 3px;"><?php echo __('Add Friends') ?></h1>
 <?php if (count($members)): ?>
 <table class="add-list" cellpadding="0" cellspacing="0" align="left">
 <?php foreach ($members as $member): ?>
@@ -41,21 +35,19 @@
 <td><b><?php echo $member ?></b><br /><em class="tip"><?php echo $member->getLogin()->getEmail() ?></em></td></tr>
 <?php endforeach ?>
 </table>
-<div class="right first">
-<?php echo link_to_function(__('Check All'), "jQuery('input[name=members\\[\\]]').each(function(){this.checked=true});", 'class=action') ?>&nbsp;&nbsp;
-<em class="sepdot"></em>
-<?php echo link_to_function(__('Un-check All'), "jQuery('input[name=members\\[\\]]').each(function(){this.checked=false});", 'class=action') ?>
-</div>
+<div class="hrsplit-3"></div>
+<ul class="_horizontal sepdot">
+    <li><?php echo link_to_function(__('Check All'), "$('input[name=\"members\\[\\]\"]').each(function(){ $(this).attr('checked', true); });", 'class=inherit-font bluelink hover') ?></li>
+    <li><?php echo link_to_function(__('Un-check All'), "$('input[name=\"members\\[\\]\"]').each(function(){ $(this).attr('checked', false); });", 'class=inherit-font bluelink hover') ?></li>
+</ul>
 <?php endif ?>
-<div class="hrsplit-2"></div>
-<div class="right">
-<?php echo submit_tag(__('Continue'), 'class=command target=_blank') ?>
+<div class="hrsplit-1"></div>
+<div class="_right">
+<?php echo submit_tag(__('Continue'), 'class=green-button target=_blank') ?>
 </div>
 </form>
 <div class="hrsplit-2"></div>
-</li>
-</ol>
-</div>
-</div>
-</div>
+
+        </div>
+    </div>
 </div>

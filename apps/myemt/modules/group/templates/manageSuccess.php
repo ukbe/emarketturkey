@@ -19,80 +19,16 @@
     </div>
 
     <div class="col_576">
-        <div class="box_576 _titleBG_Transparent" style="background-color: #f0effb;">
-            <h3 style="background-color: #f0effb;"><?php echo __("Share what's new about your company") ?></h3>
-            <div style="background-color: #f0effb;">
-            <?php echo textarea_tag('post-update', '', 'style="margin: 0 auto;width: 97%;"') ?>
-            fdgfdgs
+        <div class="box_576">
+            <h4><?php echo __('Manage Company') ?></h4>
+            <div class="_noBorder">
+                <?php echo __('On this section you can manage your company account by following module links above.')?>
             </div>
-        </div>
-
-        <div class="box_576 _noTitle">
-            
-            <div id="chart_div">
-            </div>
- <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Month');
-        data.addColumn('number', 'Views');
-        data.addColumn('number', 'Visitors');
-        data.addRows(10);
-        data.setValue(0, 0, 'Oca');
-        data.setValue(0, 1, 1000);
-        data.setValue(0, 2, 400);
-        data.setValue(1, 0, 'Şub');
-        data.setValue(1, 1, 1170);
-        data.setValue(1, 2, 460);
-        data.setValue(2, 0, 'Mar');
-        data.setValue(2, 1, 860);
-        data.setValue(2, 2, 580);
-        data.setValue(3, 0, 'Nis');
-        data.setValue(3, 1, 1030);
-        data.setValue(3, 2, 540);
-        data.setValue(4, 0, 'May');
-        data.setValue(4, 1, 1030);
-        data.setValue(4, 2, 730);
-        data.setValue(5, 0, 'Haz');
-        data.setValue(5, 1, 1050);
-        data.setValue(5, 2, 650);
-        data.setValue(6, 0, 'Tem');
-        data.setValue(6, 1, 1060);
-        data.setValue(6, 2, 690);
-        data.setValue(7, 0, 'Ağu');
-        data.setValue(7, 1, 990);
-        data.setValue(7, 2, 620);
-        data.setValue(8, 0, 'Eyl');
-        data.setValue(8, 1, 1150);
-        data.setValue(8, 2, 650);
-        data.setValue(9, 0, 'Eki');
-        data.setValue(9, 1, 1300);
-        data.setValue(9, 2, 790);
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, {width: 560, height: 200, legend: 'bottom', chartArea: {left:'8%',top:'10%',width:'88%',height:'70%'}, pointSize: 5});
-      }
-    </script>
         </div>
 
     </div>
 
     <div class="col_180">
-        <div class="box_180 _titleBG_Transparent">
-            <h3><?php echo __('Notifications') ?></h3>
-            <div>
-                <ul class="_linksVertical">
-                    <li><?php echo link_to(__('+%1 Followers', array('%1' => $num_followers)), "@homepage", 'style=color:red;') ?></li>
-                    <?php if ($num_messages > 0): ?><li><?php echo link_to(__('+%1 Messages', array('%1' => $num_messages)), "@homepage", 'style=color:red;') ?></li><?php endif ?>
-                    <li><?php echo link_to(__('+%1 Likes', array('%1' => 12)), "@homepage", 'style=color:red;') ?></li>
-                    <li><?php echo link_to(__('+%1 Job Candidates', array('%1' => 5)), "@homepage", 'style=color:red;') ?></li>
-                </ul>
-            </div>
-        </div>
-
         <?php include_partial('group/upgradeBox', array('group' => $group)) ?>
 
     </div>

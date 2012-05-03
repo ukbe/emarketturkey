@@ -5,7 +5,6 @@ corporateSuccess:
     metas:
         title: 'Edit Corporate Information | eMarketTurkey'
     stylesheets:  [jquery-tools/dateinput.css]
- 
     javascripts:  [emt.langform-1.0.js]
 
 contactSuccess:

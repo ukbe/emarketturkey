@@ -12,11 +12,9 @@ $(document).ready(function() {
 	 * removing _noJS class on document ready:
 	 *  
 	 */
-	var JS_STATE = 0;
-	var body = document.getElementsByTagName("body")[0];
-	body.className = body.className.replace(/\b_noJS\b/,'');
-	JS_STATE = 1;
-
+	var JS_STATE = 1;
+	
+	$('body').removeClass('_noJS')
 
 
 
@@ -96,9 +94,9 @@ if (!$('body').hasClass('_admin'))
 $("#search_option").buttonset();
 
 $('#btn_messages, #btn_notifications').dynabox({clickerOpenClass: '_btn_up', clickerMethod: 'click', highlightUnless: 'clicked', isFeed: true, autoUpdate: true, newTagSelector: '._ID_-newtag',
-			beforeopen: function(){$('#buttons > li > b > a > span').hide();},
-			closed: function(){$('#buttons > li > b > a > span:not(:empty)').show();}
-			});
+	beforeopen: function(){$('#buttons > li > b > a > span').hide();},
+	closed: function(){$('#buttons > li > b > a > span:not(:empty)').show();}
+});
 
 $('#btn_account').dynabox({clickerOpenClass: '_btn_up', clickerMethod: 'click', loadMethod: 'static', loadType: 'none'}); 
 
@@ -196,4 +194,11 @@ if (scrollable.length) {
     window.initElementsScript('body');
     
     $('#page-user-message').dynabox({loadType: 'html', loadMethod: 'static', sourceElement: '_ID_', keepContent: true, position: 'window', clickerMethod: 'click', showHeader: $('#page-user-message-header').length, headerContent: $('#page-user-message-header').html(), fillType: 'param', content: $('#page-user-message').html(), showFooter: false}).click();
+    
+    if ((cbx = $('input.custom')).length) {
+    	$.ajaxSetup({async: false});
+    	$.getScript('/js/jquery.customCheckbox.js');
+    	$.ajaxSetup({async: true});
+    	cbx.customInput();
+	}
 });
