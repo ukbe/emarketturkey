@@ -1,0 +1,6 @@
+all:
+  layout:  layoutBoxModel-corporate
+
+releasesSuccess:
+  metas:
+    title: "Press Releases | eMarketTurkey"

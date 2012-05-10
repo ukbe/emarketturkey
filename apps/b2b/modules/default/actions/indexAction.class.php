@@ -18,12 +18,15 @@ class indexAction extends EmtAction
         
         $this->categories = ProductCategoryPeer::getBaseCategories();
         
-        $this->featured_products = ProductPeer::getFeaturedProducts(8);
+        $this->featured_products = ProductPeer::getFeaturedProducts(16);
         
-        $this->featured_companies = CompanyPeer::getFeaturedCompanies(8);
+        $this->featured_companies = CompanyPeer::getFeaturedCompanies();
         
         $this->selling_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_SELLING, 5);
         $this->buying_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_BUYING, 5);
+
+        $this->featured_shows = EventPeer::getFeaturedEvents(3, EventTypePeer::ECLS_TYP_BUSINESS);
+        $this->featured_experts = TradeExpertPeer::getFeaturedTradeExperts(4);
     }
     
     public function handleError()

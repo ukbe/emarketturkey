@@ -176,4 +176,38 @@ class TradeExpert extends BaseTradeExpert
         return $pager;
     }
 
+    public function getLogo()
+    {
+        $c = new Criteria();
+        $c->add(MediaItemPeer::ITEM_TYPE_ID, MediaItemPeer::MI_TYP_LOGO);
+        $c->add(MediaItemPeer::IS_TEMP, null, Criteria::ISNULL);
+        $logo_ar = $this->getMediaItems($c);
+        if (is_array($logo_ar) && count($logo_ar))
+            return $logo_ar[0];
+        else
+            return null;
+    }
+    
+    public function getMediaItems($c1 = null)
+    {
+        if (is_int($c1))
+        {
+            return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_TRADE_EXPERT, $c1);
+        }
+        
+        if ($c1)
+        {
+            $c = clone $c1;
+        }
+        else
+        {
+            $c = new Criteria();
+        }
+        
+        $c->add(MediaItemPeer::OWNER_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_TRADE_EXPERT);
+        $c->add(MediaItemPeer::OWNER_ID, $this->getId());
+        
+        return MediaItemPeer::doSelect($c);
+    }
+
 }

@@ -5,3 +5,32 @@
 ._trade_expert-03 {background:orange url(/images/layout/background/tradeExpert-03.jpg) center -75px;}
 ._premium_services {background:orange url(/images/layout/background/premium.jpg) center center;}
 
+dl.trade-experts
+{
+    width: 180px;
+    float: left;
+}
+dl.trade-experts dt,
+dl.trade-experts dd
+{
+    margin: 5px 0px 0px;
+    float: left;
+}
+dl.trade-experts dt
+{
+    padding: 3px 0px;
+    width: 30px;
+    margin-right: 10px;
+    text-align: right;
+    clear: both;
+}
+dl.trade-experts dd
+{
+    padding: 0px;
+    width: 140px;
+}
+dl.trade-experts dt img
+{
+    max-width: 30px;
+    max-height: 30px;
+}

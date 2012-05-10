@@ -1,21 +1,17 @@
-default:
-    layout: layoutDoubleColumn
+all:
+    layout: layoutBoxModel-corporate
     
 aboutusSuccess:
     metas:
         title:  'About Us | eMarketTurkey'
 
-faqSuccess:
+partnersSuccess:
     metas:
-        title:  'Frequently Asked Questions | eMarketTurkey'
+        title:  'Partners | eMarketTurkey'
 
-forIndividualsSuccess:
+storiesSuccess:
     metas:
-        title:  'For Individuals | eMarketTurkey'
-
-forSuppliersSuccess:
-    metas:
-        title:  'For Suppliers | eMarketTurkey'
+        title:  'Success Stories | eMarketTurkey'
 
 contactusSuccess:
     metas:

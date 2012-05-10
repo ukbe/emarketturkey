@@ -24,7 +24,7 @@
     </div>
 
     <div class="box_630">
-        <div class="_noBorder pad-0">
+        <div class="_noBorder pad-0" style="width: 630px;">
             <ul class="vertical_pubs">
                 <?php foreach ($sectnews as $sect): ?>
                 <?php if (!count($sect)) continue;?>

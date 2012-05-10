@@ -15,17 +15,6 @@ class indexAction extends EmtAction
                 }
             }
         }
-        $startup = base64_decode($request->getCookie('EMT_STARTUP'));
-        if (in_array($startup, array('b2b', 'hr', 'cm', 'tx', 'ac')) && $request->getReferer()=='')
-        {
-            $this->redirect('@'.$startup.'.homepage');
-        }
-        else
-        {
-            $cookieparams = session_get_cookie_params();
-            $cook = base64_encode('lobby');
-            sfContext::getInstance()->getResponse()->setCookie('EMT_STARTUP', $cook, time()+60*60*24*15, '/', $cookieparams['domain']);
-        }
     }
     
     public function handleError()

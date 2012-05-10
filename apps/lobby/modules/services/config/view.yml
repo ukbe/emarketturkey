@@ -1,7 +1,21 @@
-indexSuccess:
+all:
+  layout:  layoutBoxModel-corporate
+
+overviewSuccess:
   metas:
     title: "eMarketTurkey Services"
-  layout:  layout
+
+forIndividualsSuccess:
+    metas:
+        title:  'For Individuals | eMarketTurkey'
+
+forSuppliersSuccess:
+    metas:
+        title:  'For Suppliers | eMarketTurkey'
+
+forAssociationsSuccess:
+    metas:
+        title:  'For Suppliers | eMarketTurkey'
 
 tradeexpertsSuccess:
   metas:

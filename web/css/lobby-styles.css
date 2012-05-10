@@ -1,0 +1,336 @@
+@CHARSET "UTF-8";
+@font-face {
+  font-family: "Eras Bk BT";
+  src: url(/fonts/erasd.ttf) format("truetype");
+}
+
+.corporate-menu
+{
+    margin-top: 15px;
+    margin-left: -20px;
+}
+.corporate-menu li
+{
+    margin: 0px 15px 0px 0px;
+}
+.corporate-menu li:first-child
+{
+    margin-right: 0px;
+}
+.corporate-menu li:first-child a
+{
+    border: none;
+}
+.corporate-menu li a
+{
+    border: solid 1px #f0f0f0;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+.corporate-menu li a:hover
+{
+    border: solid 1px #86b5cc;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: #08c;
+}
+.corporate-menu li.selected a
+{
+    border: solid 1px #08c;
+    background-color: #08c;
+    color: #fff;
+}
+.corporate-menu li:first-child a:hover
+{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+table.press-releases
+{
+    margin: 0 auto;
+    padding: 0px;
+}
+table.press-releases td
+{
+    padding: 10px;
+    border-bottom: solid 5px #4376aa;
+    font: 12px arial;
+    color: #333;
+}
+table.press-releases td img
+{
+    max-width: 100px;
+    max-height: 100px;
+}
+table.press-releases td h2,
+table.press-releases td h2 a
+{
+    font: bold 18px arial;
+    color: #333;
+    margin: 0px 0px 10px;
+    padding: 0px;
+}
+table.press-releases td .date
+{
+    color: #888;
+    padding: 0px;
+    margin: 0px 0px 5px;
+    display: block;
+}
+
+._premium-services {background: url(/images/layout/background/premium.jpg) center bottom;}
+
+table.partners
+{
+    margin: 30px auto 10px;
+    padding: 0px;
+    width: 100%;
+    vertical-align: top;
+}
+table.partners th
+{
+    color: #444;
+    text-align: left;
+    font: bold 13px arial;
+    padding: 5px;
+}
+table.partners td
+{
+    color: #333;
+    text-align: center;
+    margin: 100px;
+    width: 200px;
+    padding: 30px 10px;
+}
+table.partners td a
+{
+    display: inline-block;
+    
+}
+table.partners td img
+{
+    max-width: 150px;
+    max-height: 90px;
+    display: block;
+}
+
+dl.faq-list
+{
+    display: block;
+    margin: 5px auto;
+    font-family: arial;
+    font-size: 13px;
+}
+dl.faq-list dt
+{
+    display: block;
+    margin: 10px auto 5px;
+    padding-left: 10px;
+}
+dl.faq-list dt a
+{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    color: #08c;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 13px;
+}
+dl.faq-list dd
+{
+    display: none;
+    margin: 0px auto 20px;
+    padding: 10px;
+}
+dl.faq-list dd.view
+{
+    display: block;
+    margin: 0px auto 20px;
+    border: solid 1px #eee;
+    background-color: #fafafa;
+}
+dl.faq-list dt.category
+{
+    display: block;
+    margin: 10px auto;
+    font: bold 14px tahoma;
+    color: #333;
+    padding-left: 0px;
+}
+.support
+{
+    display: inline-block;
+    width: 195px;
+    padding: 10px 10px 10px 70px;
+}
+.support h3
+{
+    margin: 0px 0px 5px;
+    padding: 0px;
+}
+.support h3 a
+{
+    font: inherit;
+    color: #08c;
+}
+.support div
+{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+.faq
+{
+    background: url(/images/layout/icon/faq-50px.png) no-repeat 10px 15px;
+}
+.help-center
+{
+    background: url(/images/layout/icon/help-center-50px.png) no-repeat 10px 15px;
+}
+.get-support
+{
+    background: url(/images/layout/icon/get-support-50px.png) no-repeat 10px 15px;
+}
+table.note td
+{
+    vertical-align: top;
+    padding: 4px;
+    margin: 0px;
+    font-size: smaller;
+    color: #888;
+}
+table.note td:first-child
+{
+    white-space: nowrap;
+    font-weight: bold;
+}
+ul.home-tabs
+{
+    height: 300px;
+    width: 160px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    margin-right: -1px;
+}
+ul.home-tabs li
+{
+    width: 138px;
+    height: 78px;
+    border: solid 1px #c5c5c5;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom-color: #e4e3e3;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+ul.home-tabs li:last-child
+{
+    border-bottom-color: #c5c5c5;
+}
+ul.home-tabs li h2
+{
+    color: #6a8db1;
+    margin: 0px 0px 7px;
+    padding: 0px;
+    font: 14px 'Eras Bk BT';
+}
+ul.home-tabs li div
+{
+    color: #000333;
+    font: 11px tahoma;
+}
+ul.home-tabs li.active
+{
+    background-color: #fff;
+    border-right: none;
+}
+ul.home-pans
+{
+    height: 298px;
+    width: 470px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    border: solid 1px #c5c5c5;
+    border-left: none;
+    z-index: 9;
+}
+ul.home-pans li
+{
+    width: 430px;
+    height: 258px;
+    padding: 20px;
+    background-color: #fff;
+    display: none;
+}
+ul.home-pans li h1
+{
+    color: #6a8db1;
+    margin: 0px 0px 7px;
+    padding: 0px;
+    font: bold 20px 'Eras Bk BT';
+    margin-top: -10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 430px;
+    text-align: center;
+}
+ul.home-pans li div
+{
+    color: #000333;
+    font: 11px tahoma;
+    height: 240px;
+}
+ul.home-pans li.spread div
+{
+    margin: -44px -20px -20px -19px;
+    height: 298px;
+}
+ul.home-pans li.active
+{
+    background-color: #fff;
+    display: block;
+}
+
+dl._table.signup
+{
+    width: 305px;
+    margin: 10px -7px;
+}
+dl._table.signup dt
+{
+    width: 90px;
+    margin-right: 5px;
+    font-size: 11px;
+    margin-left: 0px;
+}
+dl._table.signup dt.doubleline
+{
+    margin-right: 5px;
+    font-size: 11px;
+    line-height: 12px;
+}
+dl._table.signup dd
+{
+    width: 200px;
+}
+dl._table.signup input
+{
+    width: 90%;
+}
+dl._table.signup select
+{
+    padding: 3px;
+}
+.g_bubble
+{
+    background-color: #f8f8f8;
+    line-height: 1.2em;
+}

@@ -1,8 +1,7 @@
-<div class="">
 <em>(Güncelleme 20 Nisan, 2010)</em>
 <div class="hrsplit-1"></div>
-<h3>eMarketTurkey.com Hizmet ve Servislerine Yönelik 
-Genel Şartlar ve Kullanım Koşulları</h3>
+<h5>eMarketTurkey.com Hizmet ve Servislerine Yönelik Genel Şartlar ve Kullanım Koşulları</h5>
+<div>
 <div class="hrsplit-2"></div>
 <style>
 ul.order { list-style-type: decimal; padding: 10px 15px; margin-left: 20px; font-size: 1.2em;}
@@ -37,8 +36,10 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <li><a href="#13">Tazminat</a></li>
 <li><a href="#14">Sözleşmenin Yürürlülüğü</a></li>
 </ul>
+</div>
 
-<h3 id="1">1. Giriş, Taraflar, Tanımlar</h3>
+<h5 id="1">1. Giriş, Taraflar, Tanımlar</h5>
+<div>
 <p>Bu Web Sitesi, eMarketTurkey Business Services Ltd.Şti ’ne aittir.</p>
 <p><b>eMarketTurkey.com, ticaret, sanayi ve hizmet sektörlerine yönelik dizin servisleri, insan kaynakları, uluslar arası ticaret ve yatırım danışmanlığı alanlarında bir çok servisi tek bir platformda barındıran yeni nesil ticaret portalıdır.</b></p> 
 <p><span><b>Kullanıcı/Üye : </b></span>Site'ye üye olan ve Site'de sunulan Servis ve Hizmet'lerden, işbu sözleşmede belirtilen koşullar dâhilinde yararlanan gerçek veya tüzel kişi</p>
@@ -53,13 +54,17 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <p><span><b>myEMT/emarketim : </b></span>eMarketTurkey.com'un üyelerine yönelik yönetim arayüzü,</p> 
 <p><span><b>Kullanıcı İçeriği/İçerik : </b></span>Kullanıcı tarafından Web Sitesi’nde veya Web Sitesi aracılığıyla sunduğu, ilan ettiği veya teşhir ettiği bütün bilgiler, veriler, metinler, yazılımlar, forumlar, müzik ve ses unsurları, fotoğraflar, grafikler, videolar, reklamlar, mesajlar veya eser niteliğindeki diğer materyallerdir,</p> 
 <p><span><b>Sözleşme/Kullanıcı Sözleşmesi/Kullanım Koşulları : </b></span>işbu sözleşme ve ekleri ile Site içerisinde yer alan, kullanıma, üyeliğe ve Servis ve Hizmet'lere ilişkin olarak eMarketTurkey ve/veya www.emarketturkey.com tarafından yapılmış olan bilcümle uyarı, yazı ve açıklama gibi beyanlardır. </p>
+</div>
 
-<h3 id="2">2. Sözleşmenin Konusu</h3>
-<p>Kullanıcı Sözleşmesi'nin amacı, www.emarketturkey.com internet sitesinde ürünlerini sergileyen, firmasını tanıtan, anlaşma yapan, çevrimiçi ticaret sisteminin üyeler veya 3.şahıslar tarafından kullanılmasının ve sitenin diğer hizmetlerinden yararlanılmasının kayıt ve koşullarını ortaya koymaktır. Ayrıca www.emarketturkey.com , potansiyel işverenlerin iş olanaklarını ilan etmesi ve Kullanıcıların da özgeçmişlerini  Web Sitesi veri tabanına kaydetmesi yolu ile sanal bir buluşma imkanı sunmaktadır./ 
+<h5 id="2">2. Sözleşmenin Konusu</h5>
+<div>
+<p>Kullanıcı Sözleşmesi'nin amacı, www.emarketturkey.com internet sitesinde ürünlerini sergileyen, firmasını tanıtan, anlaşma yapan, çevrimiçi ticaret sisteminin üyeler veya 3.şahıslar tarafından kullanılmasının ve sitenin diğer hizmetlerinden yararlanılmasının kayıt ve koşullarını ortaya koymaktır. Ayrıca www.emarketturkey.com , potansiyel işverenlerin iş olanaklarını ilan etmesi ve Kullanıcıların da özgeçmişlerini  Web Sitesi veri tabanına kaydetmesi yolu ile sanal bir buluşma imkanı sunmaktadır.</p>
 <p>www.emarketturkey.com  Kullanıcılar arasında, ortak deneyimler ve ilgi alanlarına bağlı olarak profesyonel ve kişisel bir ağ oluşturacak şekilde tasarlanmış olan online toplulukları içermektedir (“eMarketTurkey Toplulukları”). Web Sitesi, aynı zamanda Kullanıcılar’ın, kişisel bilgiler de içerebilecek olan kişisel profiller (”Profiller”) oluşturmalarına ve bu Profilleri kısmen yahut tamamen umuma arz etmelerine imkan tanımaktadır.</p>
 <p>Nihai olarak bu sözleşme, sitemizdeki hizmetlerden faydalanabilmeniz, güvenli ticaret ve üyeler ile etkili ilişki kurabilmeniz için gerekli kuralları içermektedir.</p>
+</div>
 
-<h3 id="3">3. Üyelik İşlemleri ve Hizmetin Kullanımı</h3>
+<h5 id="3">3. Üyelik İşlemleri ve Hizmetin Kullanımı</h5>
+<div>
 <p>Kullanıcılar, eMarketTurkey Web sitelerindeki herhangi bir hizmeti kullanmadan önce kayıt yaptırmalıdırlar.</p>
 <p>Kullanıcı, kendisi tarafından kayıt için sağlanan tüm verilerin doğru ve eksiksiz olduğunu taahhüt ve beyan etmiştir. Kullanıcı, kayıt verilerinde olabilecek her türlü değişikliği gecikmeksizin eMarketTurkey’e bildirecektir.</p>
 <p>Üyelik işlemi tamamlanmadan, işbu sözleşmede tanımlanan Kullanıcı olma hak ve yetkisine sahip olunamaz.</p>
@@ -79,10 +84,12 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <p>İnternette kullanıcı doğrulamasının güç olmasından ötürü, eMarketTurkey, her Kullanıcı’nın iddia ettiği kişi olduğunu teyit etmemektedir. Kullanıcılar arası işlemlere dahil olmadığımızdan/olamadığımızdan veya Web Sitesi’nin katılımcılarının davranışlarını kontrol edemememizden ötürü, diğer Kullanıcılar ile ihtilaf yaşamanız durumunda, eMarketTurkey’ı (ve iştiraklerimizi ve çalışanlarımızı), yasaların izin verdiği azami dereceye kadar olmak üzere) söz konusu ihtilaflarla ilgili olarak ortaya çıkabilecek her türlü tazmin ve ödeme talepleri ile (fiili, sonuç olarak ortaya çıkan ve doğrudan veya dolaylı) zararlardan ibra etmektesiniz. Ayrıca ilgili konularda eMarketTurkey’a rücu hakkınız bulunmadığını kabul etmektesiniz.</p>
 <p>Kullanıcılar istedikleri zaman üyeliklerini yazılı olarak bildirmek kaydı ile iptal edebilirler. Ancak üyelik iptalinden önce sunulan hizmetlerden dolayı eMarketTurkey nezdinde doğan haklar saklıdır.</p>
 <p>Grup moderatörleri, üyelerini seçme hakkına sahiptirler. Bir kullanıcının gruplarına katılıp katılmamasına karar vermek konusunda özgürdürler.</p> 
+</div>
 
-<h3 id="4">4. Hak ve Yükümlülükler</h3>
+<h5 id="4">4. Hak ve Yükümlülükler</h5>
+<div>
 <br />
-<h3 id="4-1">4.1. eMarketTurkey'in Hak ve Yükümlülükleri</h3>
+<h5 id="4-1">4.1. eMarketTurkey'in Hak ve Yükümlülükleri</h5>
 <p><span><b>Servis Ve Hizmetlerde Değişiklik : </b></span>eMarketTurkey ve/veya www.emarketturkey.com Kullanıcı'ların Kullanıcı Sözleşmesi'nde tanımlı olan iş ve işlemleri daha etkin şekilde gerçekleştirebilmelerini sağlamak üzere, dilediği zaman Servis ve Hizmet'lerinde değişiklikler ve/veya uyarlamalar yapabilir. eMarketTurkey ve/veya www.emarketturkey.com tarafından yapılan bu değişiklikler ve/veya uyarlamalarla ilgili olarak Kullanıcı'ların uymakla yükümlü olduğu kural ve koşullar, eMarketTurkey ve/veya www.emarketturkey.com tarafından, ilgili Servis ve/veya Hizmet'in kullanımıyla ilgili açıklamaların bulunduğu web sayfasından Kullanıcı'lara duyurulur.</p>
 <p><span><b>Teklif Sunma : </b></span>eMarketTurkey, kaydınız sırasında veya daha sonra belirtmiş olduğunuz tercihlere bağlı olarak veya almayı kabul etmiş olduğunuz üçüncü kişi hizmet ve ürünlerini Size teklif etme hakkını saklı tutmaktadır. Söz konusu teklifler eMarketTurkey veya üçüncü kişilerce yapılabilecektir. Bilgilerinize ilişkin ilave detaylar için eMarketTurkey’ın Gizlilik Sözleşmesi’ne bakınız.</p>
 <p><span><b>Üyeliğin iptali : </b></span>Hesabınız üzerinde hiç bir mülkiyet hakkına sahip olmadığınızı ve eMarketTurkey hesabınızı iptal etmeniz veya eMarketTurkey hesabınızın kapatılması durumunda, CV’ler, Profiller, kapak mektupları, kaydedilen işler, anket formları da dahil olmak üzere eMarketTurkey hesabınıza ilişkin bütün bilgilerin silinmiş olarak işaretleneceğini ve eMarketTurkey’ın veritabanlarından silinebileceğini ve Web Sitesi’nin umuma açık alanlarından kaldırılacağını kabul etmektesiniz. Söz konusu silme işlemlerinin eMarketTurkey’ın web sunucuları aracılığıyla gerçekleştirilmesinde yaşanabilecek gecikmelerden ötürü bilgiler bir süre boyunca saklanmaya devam edebilecektir. Ayrıca, üçüncü kişiler, bilgilerinizin saklanmış kopyalarını muhafaza edebileceklerdir.</p>
@@ -107,8 +114,10 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <p><span><b>İçeriğe Müdahale Etme : </b></span>Kullanıcı tarafından gönderilen içeriği silme, uyarıda bulunma veya Kullanıcı’nın eMarketTurkey Web sitelerindeki hizmetlere erişimini engelleme hakkına sahiptir.</p>
 <p><span><b>Yanlış Beyanda Bulunma ve Sözleşmenin İhlali : </b></span>Bu Kullanım Koşulları’ndan herhangi birini ihlal etmeniz veya bir Web Sitesi’ne kayıt olmak için eMarketTurkey’a sunmuş olduğunuz bilgileri eMarketTurkey’ın teyit edebilecek durumda olmaması halinde, eMarketTurkey, Kullanıcı İçeriği’nizin Web Sitesi’nden kaldırılması ve Web Sitesi’ne yaptırdığınız kaydın ve/veya Web Sitesi’ne ve/veya eMarketTurkey’ın Size sunmuş olduğu diğer hizmetlere erişiminizin hemen iptali de dahil fakat bunlarla sınırlı olmamak üzere sahip olduğu yasal çözüm yollarının ve talep haklarının tamamını kullanma hakkını saklı tutmaktadır.</p> 
 <p><span><b>Web Sitesinin İçeriği Hakkında Garantisi : </b></span>eMarketTurkey ve/veya www.emarketturkey.com, websitesi’nin veya Servis ve Hizmetlerin hatasız çalışacağını veya websitesi’nin veya sunucularının bilgisayar virüsleri veya diğer zararlı mekanizmaları içermeyeceğini garanti etmemektedir. Site’yi veya hizmeti kullanmanızın, ekipmanlara, kullanıcının donanımına zarar vermesi veya sair materyale zarar vermesi halinde, ilgili maliyetlerden sorumlu olmayacaktır.  kullanıcılara ait Servis ve Hizmetler hakkındaki içeriği hiç bir garanti söz konusu olmaksızın “olduğu gibi” sunulmaktadır. eMarketTurkey ve/veya www.emarketturkey.com, pazarlanabilirliğe, belirli bir amaca uygunluğa ve herhangi bir hakkın ihlal edilmediğine ilişkin garantiler de dahil olmak üzere açık veya zımni tüm garantilerden aridir.eMarketTurkey ve/veya www.emarketturkey.com, Servis ve Hizmetlerin, yazlımların, metinlerin, grafiklerin ve linklerin doğruluğuna, güvenilirliğine, tamlığına, kesintisizliğine ilişkin hiç bir garantide bulunmamaktadır.</p>
+</div>
 
-<h3 id="4-2">4.2. Kullanıcıların Hak ve Yükümlülükleri</h3>
+<h5 id="4-2">4.2. Kullanıcıların Hak ve Yükümlülükleri</h5>
+<div>
 <p><span><b>Kullanım Sözleşmesinin Kabulü : </b></span>Kullanıcı, Kullanıcı Sözleşmesi'nin hükümlerini kabul etmekle, Site içinde yer alan, kullanıma, üyeliğe ve Servis ve Hizmet'lere ilişkin olarak eMarketTurkey ve/veya www.emarketturkey.com tarafından açıklanan her türlü beyanı da kabul etmiş olmaktadır. Kullanıcı, bahsi geçen beyanlarda belirtilen her türlü hususa uygun olarak davranacağını kabul, beyan ve taahhüt eder.</p> 
 <p><span><b>Kullanıcılara(Üyelere) ve Ürün ve/veya Hizmelerine Ait İçerik : </b></span>eMarketTurkey ve/veya www.emarketturkey.com,  Site'de sunulan Servis ve Hizmet'leri ve içerikleri her zaman değiştirebilme, üçüncü kişilerin erişimine kapatabilme ve silme hakkını saklı tutmaktadır. eMarketTurkey ve/veya www.emarketturkey.com, bu hakkını, hiçbir bildirimde bulunmadan ve önel vermeden kullanabilir. eMarketTurkey ve/veya www.emarketturkey.com tarafından talep edilen değişiklik ve/veya düzeltme istekleri, gerekli görüldüğü takdirde, eMarketTurkey ve/veya www.emarketturkey.com tarafından herhangi bir bildirim yapılmaksızın yapılabilir. Kullanıcı'lar, eMarketTurkey ve/veya www.emarketturkey.com’un talep ettiği değişiklik ve/veya düzeltmeleri ivedi olarak yerine getirmek zorundadırlar. eMarketTurkey ve/veya www.emarketturkey.com tarafından talep edilen değişiklik ve/veya düzeltme taleplerinin Kullanıcı'lar tarafından zamanında yerine getirilmemesi sebebiyle doğan veya doğabilecek zararlar, hukuki ve cezai sorumluluklar tamamen Kullanıcı'lara aittir.</p>
 <p><span><b>İçeriğin Özenle Seçilmesi : </b></span>Sitede iş ilanı bırakmak, ticari talepleri yayınlamak, firma ürünlerini resimli olarak yayınlamak vs. kullanıcıya tanınan her türlü yetkilendirme kapsamında iş ve işlemler özenle yapılmak zorundadır.</p>
@@ -153,19 +162,20 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <p>eMarketTurkey Hizmetleri’nin yasadışı bir maksat veya aktivite için kullanılması veya eMarketTurkey’ın takdirine bağlı olarak tespit edileceği üzere onur kırıcı, iftira niteliğindeki, açık veya dolaylı olarak saldırgan, amiyane, müstehcen, tehdit edici, nefret dolu, ırkçı, ayrımcılık yapan, tehditkar nitelikteki veya rahatsızlığa, tacize, endişeye neden olması muhtemel olan veya bir kişinin taciz edilmesine neden olabilecek olan veya pornografik, çirkin, cinsel istismar içeren materyallerin linklerini içeren bir içeriğin, CV’nin veya iş ilanının asılması veya sunulması. Toplumun genel ahlak kurallarına uymayan ifadeleri içeren metin, fotoğraf veya görseller, politik içerikli, başka kişi ve kurumların kişilik haklarına saldırı niteliği taşıyan içerikler yahut eksik, yanlış, hatalı ve yanıltıcı nitelikte resim ve/veya özgeçmiş bilgilerinin Site’ye kaydedilmesi;</p>
 
 <p><u>yasaklanmış olup, kullanıcı bu maddeleri kabul, beyan ve taahhüt eder.</u></p>
+</div>
 
-<h3 id="4-3">4.3. İşverenlerin ve İş Arayanların Hak ve Yükümlülükleri</h3>
-     
-<p><span><b>CV Kaydetme ve Kullanımına İzin Verme : </b></span>(Özgeçmişlerin Kaydedilmesi ve Bilgilerin Toplanması)
+<h5 id="4-3">4.3. İşverenlerin ve İş Arayanların Hak ve Yükümlülükleri</h5>     
+<div>
+<p><span><b>CV Kaydetme ve Kullanımına İzin Verme : </b></span>(Özgeçmişlerin Kaydedilmesi ve Bilgilerin Toplanması)</p>
 <p>Kullanıcılar Web Sitesi’ne üye olup kayıt işlemini tamamladıktan sonra özgeçmişlerini Web Sitesi veritabanında saklanmak üzere kaydedebilirler. Kullanıcılar özgeçmişlerini Site’ye yükleyerek; özgeçmişlerinin genel kullanım için görüntülenmesine, potansiyel işverenler ile paylaşılmasına yahut eMarketTurkey tarafından istatiki amaçlarla ve işbu Kullanım Şartları’nda tesis edilen amaçlarla kullanılmasına izin verdiğini beyan ederler. Bu durumlarda özgeçmişlerin saklanmasından, kullanılmasından, değiştirilmesinden ve gizliliğinden yahut sair işlemlerden eMarketTurkey sorumlu değildir. Ayrıca Kullanıcı özgeçmiş bilgilerini bizzat oluşturduğunu ve her türlü bilginin doğru olduğunu beyan etmektedir. eMarketTurkey’ın kullanıcıların ilan ettiği hususları kontrol etmek gibi bir yükümlülüğü bulunmamaktadır.</p>
-<p><span><b>CV'lerin Doğruluğu Ve İşverenlere Ulaştırılması : </b></span>Kullanıcılar, kendileri tarafından doldurulmuş ve kaydedilmiş özgeçmişlerinin içeriğinden ve doğruluğundan yalnızca kendilerinin sorumlu olduklarını kabul ederler. Kullanıcılar özgeçmişlerinde yer alan bilgilerin, potansiyel işverenlere sunulmak üzere Web Sitesi’ne kaydedildiğini bilmekte, kayıtları kendileri gerçekleştirmektedir. Bu nedenle ilgili bilgiler eMarketTurkey tarafından potansiyel işveren olduğunu beyan ederek Site’ye giriş yapan kişilere herhangi bir izne gerek kalmaksızın ifşa edilebilir. 
-<p><span><b>Özel Bilgilerin , Kullanımına İzin Verme : </b></span>Kullanıcılar, toplanılan iletişim bilgilerinin (GSM numarası, e-posta adresi vs.) eMarketTurkey tarafından, eMarketTurkey’ın sağlayacağı diğer ürünler veya hizmetler hakkında bilgilendirilmek ya da Web Sitesi’ndeki güncellemelerin bildirilmesi amacıyla kullanılabileceğini kabul ederler. Kullanıcılar, ayrıca iletişim bilgilerine, Web Sitesi’nden, potansiyel işverenlerden ya da üçüncü kişilerden ücretsiz bültenlerinin, hatırlatma bilgilerinin ya da tanıtım ve promosyon mesajlarının gönderilebileceğini bağlantılı bu kişilere ilgili bilgilerin ifşa edilebileceğini kabul ederler.
-<p><span><b>CV'leri Güncelleme : </b></span>Kullanıcılar Web Sitesi veri tabanına kaydettikleri özgeçmişlerini istedikleri zaman gözden geçirebilir, düzeltebilir veya güncelleyebilirler.
-<p><span><b>İşverenin Verdiği İş İlanlarına Dair Sorumluluğu : </b></span>İşverenler, Web Sitesi’nde yer alan ilanların içeriğinden münhasıran sorumludur. eMarketTurkey’ın söz konusu içerikleri önceden kontrol etmek gibi bir yükümlülüğü bulunmamaktadır. eMarketTurkey, bir işveren değildir ve eMarketTurkey, Web Sitesi’nde iş ilanları yayımlayan gerçek yahut tüzel kişilerin vermiş olduğu istihdam kararlarından her ne nam altında olursa olsun sorumlu tutulamaz. eMarketTurkey, Web Sitesi’nde yer alan her türlü bilgi, haber ve makale içeriği ile ilgili herhangi bir sorumluluk kabul etmez veya Kullanıcılar tarafından ifade edilmiş herhangi bir fikri onaylamış addedilemez.
-<p><span><b>Kişisel Bilgilerin Korunması ve İşverenin Sorumluluğu : </b></span>İşveren eMarketTurkey CV Veritabanı’nını genel gizlilik ve kişisel bilgilerin korunmasına dair yasalara uygun olarak kullanacak ve yetkilendirilmiş bir istihdam bürosu ve personel temin ajansı olmadığınız veya CV’leri açık bir şekilde istihdam maksatları için kullanmadığınız sürece eMarketTurkey CV Veritabanı’ndan alınmış olan verileri üçüncü kişilere ifşa etmeyeceğinizi kabul etmektesiniz. eMarketTurkey CV Veritabanı’ndan almış olduğunuz verileri, kayıplara, suistimallere, yetkisiz erişimlere, ifşalara, kurcalamalara veya imhalara karşı korumak için gereken fiziksel, teknik ve idari önlemleri alacaksınız. eMarketTurkey, özgeçmiş görüntüleme hizmetinin amaç dışı veya kötü niyetli kullanımının tesbiti halinde veritabanını potansiyel işverenlere haber vermeksizin kapatma hakkını gizli tutar. İşveren, eMarketTurkey ve adayın uğrayacağı maddi ve manevi tüm zararları ferileri ile birlikte ödemekle yükümlüdür. Potansiyel işveren ile CV sahibi arasındaki ilişkide eMarketTurkey muhatap olarak alınmayacak ve sorumlu tutulmayacaktır.
-<p><span><b>İşverenin İş Arayanı İstihdamı Etmesi : </b></span>İşveren, eMarketTurkey hizmetleri aracılığı ile bir adayı işe alır ise, bordro ve tüm özlük haklarından ve sair benzeri sorumluluklarından işveren sıfatı ile münhasıran sorumlu olacaktır. eMarketTurkey’ın hizmetleri Web Sitesi hizmetleri ile sınırlıdır.
-<p><span><b>İşveren Hesabının Kapatılması : </b></span>İşveren hesabının iptal edilmesi veya işveren hesabınızın feshedilmesi durumunda, kaydedilmiş CV’ler, network irtibatları ve elektronik posta listeleri de dahil olmak üzere eMarketTurkey hesabınıza ilişkin bütün bilgilerin silinmiş olarak işaretleneceğini ve eMarketTurkey’ın veritabanlarından silinebileceğini kabul ve taahhüt etmektesiniz. Söz konusu silme işlemlerinin eMarketTurkey’ın web sunucuları aracılığıyla gerçekleştirilmesinde yaşanabilecek gecikmelerden ötürü bilgiler bir süre boyunca saklanmaya devam edebilecektir. İşveren silinen ya da muhafaza edilen kayıtlar ile ilgili herhangi bir hak veya tazminat talebinde bulunamaz. İşveren, sona ermeye ilişkin olarak herhangi bir zarar – ziyan ve/veya hangi nam altında olursa olsun herhangi bir tazmin talebinde bulunmayacağını bu haklarından peşinen feragat ettiğini kabul ve beyan eder.
-<p><span><b>Bir iş ilanı aşağıda belirtilen hususları içeremez:</b></span>
+<p><span><b>CV'lerin Doğruluğu Ve İşverenlere Ulaştırılması : </b></span>Kullanıcılar, kendileri tarafından doldurulmuş ve kaydedilmiş özgeçmişlerinin içeriğinden ve doğruluğundan yalnızca kendilerinin sorumlu olduklarını kabul ederler. Kullanıcılar özgeçmişlerinde yer alan bilgilerin, potansiyel işverenlere sunulmak üzere Web Sitesi’ne kaydedildiğini bilmekte, kayıtları kendileri gerçekleştirmektedir. Bu nedenle ilgili bilgiler eMarketTurkey tarafından potansiyel işveren olduğunu beyan ederek Site’ye giriş yapan kişilere herhangi bir izne gerek kalmaksızın ifşa edilebilir.</p> 
+<p><span><b>Özel Bilgilerin , Kullanımına İzin Verme : </b></span>Kullanıcılar, toplanılan iletişim bilgilerinin (GSM numarası, e-posta adresi vs.) eMarketTurkey tarafından, eMarketTurkey’ın sağlayacağı diğer ürünler veya hizmetler hakkında bilgilendirilmek ya da Web Sitesi’ndeki güncellemelerin bildirilmesi amacıyla kullanılabileceğini kabul ederler. Kullanıcılar, ayrıca iletişim bilgilerine, Web Sitesi’nden, potansiyel işverenlerden ya da üçüncü kişilerden ücretsiz bültenlerinin, hatırlatma bilgilerinin ya da tanıtım ve promosyon mesajlarının gönderilebileceğini bağlantılı bu kişilere ilgili bilgilerin ifşa edilebileceğini kabul ederler.</p>
+<p><span><b>CV'leri Güncelleme : </b></span>Kullanıcılar Web Sitesi veri tabanına kaydettikleri özgeçmişlerini istedikleri zaman gözden geçirebilir, düzeltebilir veya güncelleyebilirler.</p>
+<p><span><b>İşverenin Verdiği İş İlanlarına Dair Sorumluluğu : </b></span>İşverenler, Web Sitesi’nde yer alan ilanların içeriğinden münhasıran sorumludur. eMarketTurkey’ın söz konusu içerikleri önceden kontrol etmek gibi bir yükümlülüğü bulunmamaktadır. eMarketTurkey, bir işveren değildir ve eMarketTurkey, Web Sitesi’nde iş ilanları yayımlayan gerçek yahut tüzel kişilerin vermiş olduğu istihdam kararlarından her ne nam altında olursa olsun sorumlu tutulamaz. eMarketTurkey, Web Sitesi’nde yer alan her türlü bilgi, haber ve makale içeriği ile ilgili herhangi bir sorumluluk kabul etmez veya Kullanıcılar tarafından ifade edilmiş herhangi bir fikri onaylamış addedilemez.</p>
+<p><span><b>Kişisel Bilgilerin Korunması ve İşverenin Sorumluluğu : </b></span>İşveren eMarketTurkey CV Veritabanı’nını genel gizlilik ve kişisel bilgilerin korunmasına dair yasalara uygun olarak kullanacak ve yetkilendirilmiş bir istihdam bürosu ve personel temin ajansı olmadığınız veya CV’leri açık bir şekilde istihdam maksatları için kullanmadığınız sürece eMarketTurkey CV Veritabanı’ndan alınmış olan verileri üçüncü kişilere ifşa etmeyeceğinizi kabul etmektesiniz. eMarketTurkey CV Veritabanı’ndan almış olduğunuz verileri, kayıplara, suistimallere, yetkisiz erişimlere, ifşalara, kurcalamalara veya imhalara karşı korumak için gereken fiziksel, teknik ve idari önlemleri alacaksınız. eMarketTurkey, özgeçmiş görüntüleme hizmetinin amaç dışı veya kötü niyetli kullanımının tesbiti halinde veritabanını potansiyel işverenlere haber vermeksizin kapatma hakkını gizli tutar. İşveren, eMarketTurkey ve adayın uğrayacağı maddi ve manevi tüm zararları ferileri ile birlikte ödemekle yükümlüdür. Potansiyel işveren ile CV sahibi arasındaki ilişkide eMarketTurkey muhatap olarak alınmayacak ve sorumlu tutulmayacaktır.</p>
+<p><span><b>İşverenin İş Arayanı İstihdamı Etmesi : </b></span>İşveren, eMarketTurkey hizmetleri aracılığı ile bir adayı işe alır ise, bordro ve tüm özlük haklarından ve sair benzeri sorumluluklarından işveren sıfatı ile münhasıran sorumlu olacaktır. eMarketTurkey’ın hizmetleri Web Sitesi hizmetleri ile sınırlıdır.</p>
+<p><span><b>İşveren Hesabının Kapatılması : </b></span>İşveren hesabının iptal edilmesi veya işveren hesabınızın feshedilmesi durumunda, kaydedilmiş CV’ler, network irtibatları ve elektronik posta listeleri de dahil olmak üzere eMarketTurkey hesabınıza ilişkin bütün bilgilerin silinmiş olarak işaretleneceğini ve eMarketTurkey’ın veritabanlarından silinebileceğini kabul ve taahhüt etmektesiniz. Söz konusu silme işlemlerinin eMarketTurkey’ın web sunucuları aracılığıyla gerçekleştirilmesinde yaşanabilecek gecikmelerden ötürü bilgiler bir süre boyunca saklanmaya devam edebilecektir. İşveren silinen ya da muhafaza edilen kayıtlar ile ilgili herhangi bir hak veya tazminat talebinde bulunamaz. İşveren, sona ermeye ilişkin olarak herhangi bir zarar – ziyan ve/veya hangi nam altında olursa olsun herhangi bir tazmin talebinde bulunmayacağını bu haklarından peşinen feragat ettiğini kabul ve beyan eder.</p>
+<p><span><b>Bir iş ilanı aşağıda belirtilen hususları içeremez:</b></span></p>
 <ul>
 <li>eMarketTurkey’ın özel olarak onayladıkları dışında kalan hiperlinkler (gelen başvuruların Web Sitesi haricindeki bir faks numarası, e-posta, adres veya web adresine yönlendirilmesi);</li>
 <li>eMarketTurkey tarafından tespit edilmek üzere, yanıltıcı, okunaksız veya “gizli” anahtar kelimeler, tekrar edilen anahtar kelimeler veya sunulan iş fırsatı ile ilişkisiz olan anahtar kelimeler;
@@ -197,9 +207,10 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <li>eMarketTurkey, takdir hakkı tamamen kendisinde olmak üzere yukarıda yer alan Kulanım Koşulları’na uygun olmayan ve/veya amacına uygun olmayan herhangi bir iş ilanını veya içeriği Web Sitesi’nden kaldırma yahut ilanı askıya alma hakkını saklı tutmaktadır.</li>
 </ul>
 <p><span><b>eMarketTurkey'in CV Verileri Üzerinde Taktir Hakkı : </b></span>Müşterilerimizin tamamı için güvenli ve etkili bir deneyim sağlamak amacıyla, eMarketTurkey, herhangi bir süre içinde erişimde bulunabileceğiniz veri miktarını (CV görüntülemeleri dahil) sınırlandırma hakkını saklı tutmaktadır. Bu limitler, eMarketTurkey tarafından zaman zaman değiştirilebilecektir.</p>
+</div>
 
-<h3>5. Genel Koşullar</h3> 
-
+<h5>5. Genel Koşullar</h5> 
+<div>
 <p><span><b>Kullanım Sözlemesinde Belirtilmeyen Hususların Geçerliliği : </b></span>Bir Kullanıcı’nın eMarketTurkey’dan veya Web Sitesi’nden elde ettiği yazılı veya şifahi hiç bir bilgi veya görüş, bu Kullanım Koşulları’nda açık bir şekilde belirtilmeyen bir garanti tesis etmeyecektir.</p>
 <p><span><b>Ek Koşullar/ Sözleşmeler : </b></span>Web Sitesi’nin belirli alanları ilave koşullara tabi bulunmaktadır. Söz konusu alanların tamamını yahut bir kısmını kullanmak suretiyle, söz konusu alanlar için geçerli olan ilave koşulların bağlayıcılığını kabul etmektesiniz. </p>
 <p><span><b>Sözleşme Süresi : </b></span>Kullanım Koşulları Web Sitesi’nin Kullanıcısı veya Üyesi olduğunuz sürece geçerli ve yürürlükte olmaya devam edecektir. </p>
@@ -224,51 +235,73 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <p>eMarketTurkey, söz konusu Kullanıcı İçeriği’nin eMarketTurkey’dan kaldırılmasından sonra ticari açıdan makul bir süre içinde bu kullanıma son verebilecektir. eMarketTurkey, takdir hakkı yalnızca kendisine ait olmak üzere, herhangi bir Kullanıcı İçeriği’ni kabul etmeyi, ilan etmeyi, teşhir etmeyi veya iletmeyi reddetme hakkını saklı tutmaktadır. Kullanıcılar Web Sitesi’ndeki her türlü sohbet, dosya paylaşımı ve kendi rızaları ile oluşturdukları her türlü kişisel profil bilgilerinin başkalarının görüntülemesini kendi rızaları ile kabul etmiştir. Bu bağlamda Site üzerindeki bu platformlarda 3.kişiler ile konuşulan sohbet, doküman, resim gibi araçlardan doğacak üçüncü kişi taleplerinden hiçbir şekilde eMarketTurkey sorumlu tutulamaz.</p>
 <p>Kullanıcı İçeriği’ni Web Sitesi’nin umuma açık bir alanında teşhir etmeniz durumunda, diğer Kullanıcılar’a, söz konusu Kullanıcı İçeriği’ne kişisel kullanım için erişimde bulunmaları, teşhir etmeleri, görüntülemeleri, saklamaları ve çoğaltmaları için izin vermektesiniz. eMarketTurkey, bu Kullanım Koşulları’nı, meri yasaları, mevzuatları ve kuralları ihlal eden, kötüleyici, rahatsız edici, hakaret edici yahut yasadışı nitelikte olan veya bir eMarketTurkey sitesinin Kullanıcılarının haklarını ihlal eden veya emniyetlerine zarar veren veya tehdit eden veya işbu Kullanım Koşulları’nda belirtilen sakıncalı hususları içeren, Kullanıcı içeriklerini inceleyebilecek ve kaldırabilecektir. Bu Kullanım Koşulları’nın veya meri yasalar, mevzuatlar ve kuralların ihlal edilmesi durumunda, eMarketTurkey, Kullanıcıları feshetme ve Web Sitesi’ne erişimde bulunmalarını ve/veya eMarketTurkey Hizmetleri’ni kullanmalarını engelleme hakkını saklı tutmaktadır. Bu halde eMarketTurkey’ın zarara ilişkin yasal talep hakları mahfuzdur. eMarketTurkey, takdir hakkı yalnızca kendisine ait olmak üzere, bir Kullanıcı İçeriği’nin eMarketTurkey’ı bir mali yükümlülük altına sokabileceğini, eMarketTurkey’ın markasına veya imajına zarar verebileceğini veya eMarketTurkey’ın Kullanıcıları kaybetmesine veya (kısmen veya tamamen olmak üzere) internet hizmet sağlayıcılarının veya diğer tedarikçilerinin hizmetlerini kaybetmesine neden olabileceğini tespit etmesi durumunda, söz konusu Kullanıcı İçeriği ile ilgili olarak uygun olduğunu düşündüğü herhangi bir işlemde bulunabilecektir.</p>
 <p>Tam zamanlı veya yarım zamanlı olarak iş arayan kişilere hitap eden mevcut bir iş pozisyonu için yapılmış doğrudan bir talep, reklam veya işe yerleştirme olarak yorumlanabilecek olan bilgileri eMarketTurkey Topluluklarına sunulmuş olan bir Kullanıcı İçeriğine dahil edemezsiniz. Ayrıca;  eMarketTurkey Topluluğu, Kullanıcılarını ticari reklamlar veya taleplerden korumak üzere, bir Kullanıcının diğer Kullanıcılara gönderebileceği elektronik postaların veya diğer mesajların sayısını ve büyüklüğünü, takdir hakkı yalnızca kendisine ait olmak üzere kısıtlama hakkını saklı tutmaktadır.</p>
+</div>
 
-<h3 id="5-1">5.1. Yasaklı Ürünler</h3>
+<h5 id="5-1">5.1. Yasaklı Ürünler</h5>
+<div>
 <p>eMarketTurkey ve/veya www.emarketturkey.com tarafından Site'de verilen Servis ve Hizmet'ler kapsamında, bazı ürünlerin satışa arzı eMarketTurkey ve/veya www.emarketturkey.com tarafından yasaklanmıştır.</p> 
 <p>Yasaklı Ürünler'in Satıcı tarafından Site'de satışa arz edilmesi ve bu durumun eMarketTurkey ve/veya www.emarketturkey.com tarafından tespit edilmesi halinde, eMarketTurkey ve/veya www.emarketturkey.com, ilgili Yasaklı Ürünler'in satışa arz bilgilerini ve satış süreçlerini durdurma ve/veya bu ürünlere ilişkin listeleme ücretlerini iade etmeme ve/veya Yasaklı Ürünler'i satışa arz eden Satıcı'nın üyeliğine geçici veya kalıcı olarak son verme ve/veya Kullanıcı sözleşmesini ihbara gerek olmaksızın feshetme haklarını saklı tutmaktadır.</p>
 <p>eMarketTurkey ve/veya www.emarketturkey.com, gerekli gördüğü durumlarda (özellikle çalıntı, kaçak veya sahte ürün satışlarında), önceden uyarıda bulunmaksızın ilgili hakkında gerekli yasal işlemin yapılması amacıyla, Cumhuriyet Savcılığı'na ve ilgili denetleme ve düzenleme kuruluşlarına şikâyet veya ihbarda bulunabilir. Kullanıcı, Yasaklı Ürünler'in satışıyla bağlantılı olarak, eMarketTurkey ve/veya www.emarketturkey.com ihbarı ve/veya bilgi temini sonucu zarara uğraması durumunda, eMarketTurkey ve/veya www.emarketturkey.com'u hiç bir isim veya sıfatla sorumlu tutmamayı ve her ne suretle olursa olsun tazminat talep etmemeyi kabul, beyan ve taahhüt eder. Satıcı, aynı sebepten kaynaklanarak üçüncü kişi veya kurumlardan gelebilecek tazminat taleplerinde, eMarketTurkey ve/veya www.emarketturkey.com'un, doğabilecek tazminat ve avukatlık ücretleri dahil fakat bunlarla sınırlı olmaksızın, tüm dava ve diğer yükümlülüklerini karşılamayı peşinen kabul, beyan ve taahhüt eder. Satıcı, Site'de sergilediği ürünlerin tamamının, Türkiye Cumhuriyeti gümrük mevzuatı ve rejimine uygun olarak gümrük işlemine tabi tutulmuş ve serbest dolaşıma girmiş ürünler olduğunu kabul, beyan ve taahhüt eder.</p>
 <p>Site'de yürürlükteki gümrük mevzuatı ve rejimine aykırı olarak veya hiç gümrük işlemine tabi tutulmaksızın, Türkiye'ye giriş yapmış ürünlerin sergilenmesi ve satışı yasaktır. Yurt dışında yerleşik Kullanıcı'ların, gümrük işlemine tabi tutularak serbest dolaşıma girmemiş ürünleri Site'de satışa sunmaları ve satmaları yasaktır. eMarketTurkey ve/veya www.emarketturkey.com, gümrük işlemine tabi tutulmamış ürünleri, doğrudan yurtdışı satışı olarak satmak teşebbüsünde bulunan Kullanıcı'ların sergilediği ürünleri, haberdar olduğu anda iptal eder ve bu tür teşebbüste bulunanlara listeleme ücreti iadesi yapmaz.</p>
+</div>
 
-<h3 id="5-2">5.2. Garantiden Feragat</h3>
+<h5 id="5-2">5.2. Garantiden Feragat</h5>
+<div>
 <p>İşbu Kullanım Koşulları’nda eMarketTurkey’in sorumsuzluğuna ilişkin tesis edilen hükümlerde yahut sorumluluğunu sınırlayan hükümlerde, eMarketTurkey’in ağır kusuru ve hile hali istisnadır. Kullanıcılar, sorumlu olduklarını kabul ettikleri konulara ilişkin olarak eMarketTurkey’e yöneltilebilecek taleplerinden feragat etmektedir. eMarketTurkey’in sorumlu olmadığı belirtilen hususlarda, eMarketTurkey’in muhatap olarak alınmasi halinde eMarketTurkey tüm talep ve/veya ödemeleri ferileri ile kullanıcılara rücu edebilecektir.</p>
+</div>
 
-<h3 id="5-3">5.3. Mali Yükümlülüğün Sınırlandırılması</h3>
+<h5 id="5-3">5.3. Mali Yükümlülüğün Sınırlandırılması</h5>
+<div>
 <p>WEB SİTESİ VEYA EMARKETTURKEY İÇERİĞİNİ KULLANMANIZ NEDENİYLE EMARKETTURKEY’IN SAHİP OLACAĞI AZAMİ MALİ SORUMLULUK, DAVA GEREKÇESİNE BAKILMAKSIZIN (DAVANIN KESİN OLARAK EMARKETTURKEY ALEYHİNE SONUÇLANMASI KAYDI İLE), 1US$ TUTARINI GEÇMEYECEKTİR.</p>
+</div>
 
-<h3 id="5-4">5.4. Talep ve Şikayet</h3>
+<h5 id="5-4">5.4. Talep ve Şikayet</h5>
+<div>
 <p>Sunduğumuz servis ve hizmetlere ilişkin talep ve şikayetlerinizi aşağıdaki iletişim bilgilerinden tarafımıza iletebilirsiniz:</p>
 <p>Şirket adı  :</p>
 <p>Adres   :</p>
 <p>Telefon     :</p> 
 <p>Email Adresi :</p>
+</div>
 
-<h3 id="6">6. Gizlilik</h3>
+<h5 id="6">6. Gizlilik</h5>
+<div>
 <p>eMarketTurkey ve/veya www.emarketturkey.com, Kullanıcı'lara ilişkin bilgileri, gizlilik politikası bölümündeki düzenlemelere uygun olarak üyelerine yönelik araştırmalarda, istatistikî verilerin temininde ve sair ihtiyaç duyacağı alanlarda kullanabilir. eMarketTurkey ve/veya www.emarketturkey.com, Kullanıcı'lara ait gizli bilgileri, Kullanıcı Sözleşmesi'nde aksine müsaade edilen durumlar haricinde, üçüncü kişi ve kurumlara kullandırılmaz.</p>
+</div>
 
-<h3 id="7">7. Fikri Mülkiyet Hakları</h3>
+<h5 id="7">7. Fikri Mülkiyet Hakları</h5>
+<div>
 <p>Site'nin (tasarım, metin, imge, html kodu ve diğer kodlar da dâhil ve fakat bunlarla sınırlı olmamak kaydıyla) tüm elemanları (eMarketTurkey ve/veya www.emarketturkey.com'un telif haklarına tabi çalışmalar) eMarketTurkey ve/veya www.emarketturkey.com'a ait olarak ve/veya eMarketTurkey ve/veya www.emarketturkey.com tarafından üçüncü bir kişiden alınan lisans hakkı altında kullanılmaktadır.</p> 
 <p>Kullanıcı'lar, e MarketTurkey ve/veya www.emarketturkey.com Servis ve Hizmet'lerini, eMarketTurkey ve/veya www.emarketturkey.com bilgilerini ve eMarketTurkey ve/veya www.emarketturkey.com'un telif haklarına tabi çalışmalarını yeniden satamaz, paylaşamaz, dağıtamaz, sergileyemez, çoğaltamaz, bunlardan türemiş çalışmalar yapamaz veya hazırlayamaz, veya başkasının eMarketTurkey ve/veya www.emarketturkey.com'un Servis ve Hizmet'lerine erişmesine veya kullanmasına izin veremez; aksi takdirde, lisans verenler de dâhil ancak bunlarla sınırlı olmaksızın, üçüncü kişilerin uğradıkları zararlardan dolayı eMarketTurkey ve/veya www.emarketturkey.com'dan talep edilen tazminat miktarını ve mahkeme masrafları ve avukatlık ücreti de dahil ancak bununla sınırlı olmamak üzere diğer her türlü yükümlülükleri karşılamakla sorumlu olacaklardır.</p>
 <p>eMarketTurkey ve/veya www.emarketturkey.com'un, Servis ve Hizmet'leri, bilgileri, telif haklarına tabi çalışmalar, ticari markaları, ticari görünümü veya Site vasıtasıyla sahip olduğu her tür maddi ve fikri mülkiyet hakları da dâhil tüm malvarlığı, ayni ve şahsi hakları, ticari bilgi ve know-how'a yönelik tüm hakları saklıdır.</p>
-<h4>Üçüncü Kişilerin Fikri ve Sınai Mülkiyet Haklarını İhlal Eden Kullanıcıların Üyelikten Çıkarılmalarına İlişkin Politika :</h4>
+<h5>Üçüncü Kişilerin Fikri ve Sınai Mülkiyet Haklarını İhlal Eden Kullanıcıların Üyelikten Çıkarılmalarına İlişkin Politika :</h5>
 <p>eMarketTurkey üçüncü kişilerin fikri mülkiyetine saygı duymaktadır, bu nedenle Kullanıcılarımızın ve içerik ortaklarımızın da aynı şekilde davranmasını talep etmekteyiz. Fikri ve sınai mülkiyet haklarına tabi eserlerin yetkisiz olarak ilan edilmesi, çoğaltılması, kopyalanması, dağıtılması, değiştirilmesi, işlenmesi, umuma teşhir edilmesi veya umum önünde ifası ve mevzuatta belirtilen diğer izinsiz tasarruflar, ilgili hak sahiplerinin haklarının bir ihlalini teşkil etmektedir. Web Sitesi’ni kullanmanızın bir koşulu olarak, üçüncü kişilerin fikri ve sınai mülkiyet haklarını herhangi bir şekilde ihlal etmek maksadıyla Web Sitesi’ni kullanmamayı kabul etmektesiniz. eMarketTurkey, üçüncü kişilerin fikri ve sınai haklarını sürekli olarak ihlal etmekte olan Kullanıcılar’ın hesaplarını kapatma ve bu Kullanıcıların Web Sitesi’ne erişimde bulunmalarını bloke etme yahut askıya alma hakkını diğer yasal hakları ile birlikte saklı tutmaktadır.</p>
 <p>Kullanıcılar Site’yi kullanırken Türk Ceza Kanunu, Türk Ticaret Kanunu, Borçlar Kanunu, Fikir ve Sanat Eserleri Kanunu, Marka ve Patent Haklarının Korunması ile ilgili kanun hükmünde kararnamesi ve halihazırda yürürlükte olan ilgili her türlü mevzuat hükümleri ile ileride yürürlüğe girecek olan mevzuata ve eMarketTurkey’in Site’ye ilişkin olarak yayımlayacağı bildirimlere uymayı kabul eder. Bildirimlere ve yasalara aykırı kullanım sebebiyle doğabilecek hukuki, cezai ve mali her türlü sorumluluk Kullanıcı’ya aittir. eMarketTurkey’ın bu sorumluluk nedeni ile uğrayacağı her türlü zararı Kullanıcı’ya fer’ileri ile birlikte rücu hakkı saklıdır.</p>
+</div>
 
-<h3 id="8">8. Sözleşme Üzerinde Yapılacak Değişiklikler</h3>
+<h5 id="8">8. Sözleşme Üzerinde Yapılacak Değişiklikler</h5>
+<div>
 <p>eMarketTurkey ve/veya www.emarketturkey.com, tamamen kendi takdirine bağlı ve tek taraflı olarak, işbu Kullanıcı Sözleşmesi'ni, uygun göreceği herhangi bir zamanda, Site'de ilan etmek suretiyle değiştirebilir. İşbu Kullanıcı Sözleşmesi'nin değişen hükümleri, ilan edildikleri tarihte geçerlilik kazanacak; geri kalan hükümler, aynen yürürlükte kalarak hüküm ve sonuçlarını doğurmaya devam edecektir. İşbu Kullanıcı Sözleşmesi, Kullanıcı'nın tek taraflı beyanları ile değiştirilemez.</p>
+</div>
 
-<h3 id="9">9. Devir ve Temlik</h3>
+<h5 id="9">9. Devir ve Temlik</h5>
+<div>
 <p>Kullanıcı, İşbu Kullanım Koşulları’ndan doğan hak ve yükümlülüklerini üçüncü kişilere devir ve temlik etmeyeceğinizi beyan ve kabul eder. Ayrıca herhangi bir www.emarketturkey.com sitesini yetkisiz ticari kullanım konusu yapmamayı kabul edecektir.</p>
+</div>
 
-<h3 id="10">10. Mücbir Sebepler</h3>
+<h5 id="10">10. Mücbir Sebepler</h5>
+<div>
 <p>Hukuken 'mücbir sebep' sayılan tüm hallerde, eMarketTurkey ve/veya www.emarketturkey.com, işbu Kullanıcı Sözleşmesi ile belirlenen yükümlülüklerinden herhangi birini geç veya eksik ifa etme veya ifa etmeme nedeniyle yükümlü değildir. Bu ve bunun gibi durumlar, eMarketTurkey ve/veya www.emarketturkey.comiçin, gecikme, eksik ifa etme veya ifa etmeme veya temerrüt addedilmeyecek veya bu durumlar için, eMarketTurkey ve/veya www.emarketturkey.com'dan herhangi bir nam altında tazminat talep edilemeyecektir.</p>
 <p>"Mücbir sebep" terimi, doğal afet, isyan, savaş, grev, iletişim sorunları, altyapı ve internet arızaları, elektrik kesintisi ve kötü hava koşulları da dâhil ve fakat bunlarla sınırlı olmamak kaydıyla, ilgili tarafın makul kontrolü haricinde ve gerekli özeni göstermesine rağmen önleyemediği, kaçınılamayacak olaylar olarak yorumlanacaktır.</p>
+</div>
 
-<h3 id="11">11. İhtilafların Çözümü</h3>
+<h5 id="11">11. İhtilafların Çözümü</h5>
+<div>
 <p>İşbu Kullanıcı Sözleşmesi'nin uygulanmasında, yorumlanmasında ve hükümleri dâhilinde doğan hukuki ilişkilerin yönetiminde T.C. Hukuk Kuralları uygulanacaktır. İşbu Kullanıcı Sözleşmesi'nden doğan veya doğabilecek her türlü ihtilafın hallinde, İzmir Mahkemeleri ve İcra Daireleri yetkilidir.</p>
+</div>
 
-<h3 id="12">12. Fesih</h3>
+<h5 id="12">12. Fesih</h5>
+<div>
 <p>Kullanıcı, Ücretsiz Üyeliği dilediği zaman herhangi bir gerekçe olmaksızın feshedebilir.  Fesih bildirimi, Kullanıcı’nın kayıtlı adını ve Kullanıcı’nın eMarketTurkey Web sitelerinden birinde kayıtlı bir e-posta adresini içerecektir.</p>
 <p>Hem Kullanıcı hem eMarketTurkey, Gold ve Premium Üyeliği, Kullanıcı tarafından kayıt sürecinde seçilen minimum çalışma zamanının sonunda ya da söz konusu minimum çalışma zamanının dolmasını takiben herhangi bir yenileme döneminin sonunda, on dört (14) işgünü önceden bildirimde bulunmak kaydıyla gerekçesiz feshedebilir.</p> 
 <p>Hem Kullanıcı hem de eMarketTurkey, faks,email, telefon veya mektup yoluyla da fesih bildiriminde bulunabilirler. Fesih bildirimi, Kullanıcı’nın kayıtlı adını ve Kullanıcı’nın eMarketTurkey Web sitelerinde kayıtlı e-posta adresini içerecektir.</p> 
@@ -283,13 +316,17 @@ ul.order ul { list-style-type: lower-roman; padding: 10px 15px;}
 <li>Kullanıcı'nın, herhangi bir yöntem kullanarak, Site'nin işleyişini manipüle edecek davranışlarda bulunması,</li>
 <li>Kullanıcı'nın kendisi için oluşturulmuş Kullanıcı profilini başkasına devretmesi veya kullanıma açması.</li>
 </ul>
+</div>
 
-<h3 id="13">13. Tazminat</h3>
+<h5 id="13">13. Tazminat</h5>
+<div>
 <p>İş bu Kullanım Koşulları’nı ihlal etmenizden kaynaklanan veya kaynaklandığı iddia edilen, yargılama giderleri ve muhasebe ücretleri de dahil fakat bunlarla sınırlı olmamak üzere, bütün tazmin taleplerine, davalara veya ödemelere karşı eMarketTurkey’ı, yan kuruluşlarını, bunların memurlarını, yöneticilerini, çalışanlarını ve acentelerini müdafaa etmeyi, bu kişileri tazmin etmeyi kabul etmektesiniz. eMarketTurkey bu türden tazmin talepleri, davalar veya takibatları derhal Size bildirecektir.</p>
+</div>
 
-<h3 id="14">14. Sözleşmenin Yürürlülüğü</h3>
+<h5 id="14">14. Sözleşmenin Yürürlülüğü</h5>
+<div>
 <p>Kullanıcı, Site'ye üye olarak, Kullanıcı Sözleşmesi'nin tamamını okuduğunu, içeriğini bütünü ile anladığını ve tüm hükümlerini onayladığını kabul, beyan ve taahhüt eder.</p> 
 <p>Kullanım Şartları Kullanıcı tarafından okunarak kabul edilmiş ve ilk oturum açtığı tarihte yürürlüğe girmiştir.</p>
+</div>
 
 <div class="hrsplit-1"></div>
-</div>

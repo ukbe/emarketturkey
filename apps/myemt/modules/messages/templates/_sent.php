@@ -4,7 +4,7 @@
                         <th><?php echo __('Title') ?></th>
                         <th><?php echo __('Recipient') ?></th>
                         <th><?php echo __('Sender') ?></th>
-                        <th><?php echo __('Time') ?></th></tr>
+                        <th><?php echo __('Date') ?></th></tr>
                 <?php foreach ($messages as $message): ?>
                     <tr>
                         <td><?php echo checkbox_tag("msg[]", $message->getPlug()) ?></td>

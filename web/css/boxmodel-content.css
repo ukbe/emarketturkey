@@ -1697,6 +1697,14 @@ ul.select-step .activate {
  border-top: 1px solid #f5f5f5;
 }
 
+._comMenu li.split {
+ margin:20px 0px 0px;
+ border-bottom: none;
+ border-top: none;
+ background: #6a8db1;
+ padding: 0px;
+}
+
 ._comMenu li > a {
  display:block;
  width:140px;

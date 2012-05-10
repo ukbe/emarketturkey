@@ -12,148 +12,184 @@
     </div>
 </div>
 
+<div class="col_576">
+    
+    <div class="box_576">
+        <div class="slider-wrapper theme-orman _noBorder"  style="height: 250px;">
+            <div id="slider" class="nivoSlider">
+                <img src="/images/content/banner/blank-blue.jpg" alt="" height="229" />
+                <img src="/images/content/banner/around-the-world.jpg" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <hr class="margin-b2" />
+
+    <?php if (count($selling_leads) > 3): ?>
+    <div class="box_576 _title_BoldColor">
+        
+        <h3>
+        <div class="_right"><?php echo link_to(__('See All'), '@selling-leads', 'class=bluelink hover') ?></div>
+        <?php echo __('<strong>Selling</strong> Leads') ?></h3>
+        <div>
+            <div class="scrollable vertical">
+            
+                <div class="items">
+                
+                <?php foreach ($selling_leads as $i => $lead): ?>
+                    <?php if (($i % 4) == 0): ?>
+                    <div>
+                    <?php endif ?>
+                        <div class="item">
+                            <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead)), $lead->getUrl()) ?>
+                            <div class="cname"><? echo link_to($lead, $lead->getUrl(), 'class=bluelink hover') ?></div>
+                            <div class="industry"><? echo link_to($lead->getCompany(), $lead->getCompany()->getProfileUrl()) ?></div>
+                        </div>
+                    <?php if (($i % 4) == 3 || $i == (count($selling_leads)-1)): ?>
+                    </div>
+                    <?php endif ?>
+                <?php endforeach ?> 
+                </div>
+            </div>
+            <div class="navi"></div>
+        </div>
+    </div>
+
+    <hr class="margin-b2" />
+    <?php endif ?>
+
+    <?php if (count($buying_leads) > 3): ?>
+    <div class="box_576 _title_BoldColor">
+        <h3><?php echo __('<strong>Buying</strong> Leads') ?></h3>
+        <div>
+            <div class="scrollable vertical">
+            
+                <div class="items">
+                
+                <?php foreach ($buying_leads as $i => $lead): ?>
+                    <?php if (($i % 4) == 0): ?>
+                    <div>
+                    <?php endif ?>
+                    <div class="item">
+                        <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead)), $lead->getUrl()) ?>
+                        <div class="cname"><? echo link_to($lead, $lead->getUrl(), 'class=bluelink hover') ?></div>
+                        <div class="industry"><? echo link_to($lead->getCompany(), $lead->getCompany()->getProfileUrl()) ?></div>
+                    </div>
+                    <?php if (($i % 4) == 3 || $i == (count($buying_leads) - 1)): ?>
+                    </div>
+                    <?php endif ?>
+                <?php endforeach ?> 
+                </div>
+            </div>
+            <div class="navi"></div>
+        </div>
+    </div>
+
+    <hr class="margin-b2" />
+    <?php endif ?>
+
+    <?php if (count($featured_companies) > 3): ?>
+    <div class="box_576 _title_BoldColor">
+        <h3><?php echo __('<strong>Featured</strong> Companies') ?></h3>
+        <div>
+            <div class="scrollable vertical">
+            
+                <div class="items">
+                
+                <?php foreach ($featured_companies as $i => $company): ?>
+                    <?php if (($i % 4) == 0): ?>
+                    <div>
+                    <?php endif ?>
+                    <div class="item">
+                        <?php echo link_to(image_tag($company->getProfilePictureUri(), array('title' => $company)), $company->getProfileUrl()) ?>
+                        <div class="cname"><? echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
+                        <div class="industry"><? echo $company->getBusinessSector() ?></div>
+                    </div>
+                    <?php if (($i % 4) == 3 || $i == (count($featured_companies) - 1)): ?>
+                    </div>
+                    <?php endif ?>
+                <?php endforeach ?> 
+                </div>
+            </div>
+            <div class="navi"></div>
+        </div>
+    </div>
+
+    <hr class="margin-b2" />
+    <?php endif ?>
+
+    <?php if (count($featured_products) > 3): ?>
+    <div class="box_576 _title_BoldColor">
+        <h3><?php echo __('<strong>Featured</strong> Products') ?></h3>
+        <div>
+            <div class="scrollable vertical">
+            
+                <div class="items">
+                
+                <?php foreach ($featured_products as $i => $product): ?>
+                    <?php if (($i % 4) == 0): ?>
+                    <div>
+                    <?php endif ?>
+                    <div class="item">
+                        <?php echo link_to(image_tag($product->getThumbUri(), array('title' => $product)), $product->getUrl()) ?>
+                        <div class="cname"><? echo link_to($product, $product->getUrl()) ?></div>
+                        <div class="industry"><? echo link_to($product->getCompany(), $product->getCompany()->getProfileUrl()) ?></div>
+                    </div>
+                    <?php if (($i % 4) == 3 || $i == (count($featured_products) - 1)): ?>
+                    </div>
+                    <?php endif ?>
+                <?php endforeach ?> 
+                </div>
+            </div>
+            <div class="navi"></div>
+        </div>
+    </div>
+    <?php endif ?>
+</div>
+<div class="col_180">
+    <?php if (count($featured_shows)): ?>
+    <div class="box_180 _title_BaseXor">
+        <h3><?php echo __('Upcoming Events') ?></h3>
+        <div class="pad-0">
+        <?php foreach ($featured_shows as $show): ?>
+            <?php if ($show->getPhoto()): ?>
+            <?php echo link_to(image_tag($show->getPhoto()->getMediumUri(), array('title' => $show, 'width' => 178, 'style' => 'display:block;')), $show->getUrl(), 'target=blank') ?>
+            <?php endif ?>
+        <?php endforeach ?>
+        </div>
+    </div>
+    <?php endif ?>
+    <style>.b2bad img { max-width: 170px; margin: 4px; } </style>
+    <div class="b2bad box_180 pad-0">
+    <?php echo get_ad_for_ns('/b2b/homepage/left|center|right/top|middle|bottom') ?>
+    </div>
+    <?php if (count($featured_experts)): ?>
+    <div class="box_180 _title_BaseXor">
+        <h3><?php echo __('Trade Experts') ?></h3>
+        <div>
+        <?php $texp = UserPeer::retrieveByPKs(array(15, 19)) ?>
+        <dl class="trade-experts">
+        <?php foreach ($featured_experts as $expert): ?>
+            <dt><?php echo link_to(image_tag($expert->getProfilePictureUri(), array('title' => $expert)), $expert->getProfileUrl()) ?></dt>
+            <dd><?php echo link_to($expert, $expert->getProfileUrl()) ?></dd>
+        <?php endforeach ?>
+        </dl>
+        <div class="hrsplit-1"></div>
+        <div class="pad-1"><?php echo link_to(__('Find Trade Experts'), '@tradeexperts-action?action=find', 'class=bluelink hover')?></div>
+        </div>
+    </div>
+    <?php endif ?>
+</div>
+<br class="clear" />
+</div>
 <?php use_stylesheet('jquery-tools/scrollable-navigator.css') ?>
 <?php use_stylesheet('jquery-tools/scrollable-vertical.css') ?>
 <?php use_javascript('jquery.nivo.slider.pack.js') ?>
 <?php use_stylesheet('nivo-slider.css') ?>
 <?php use_stylesheet('/images/nivo/orman/orman.css') ?>
-<div class="col_576">
-    
-    <div class="box_576">
-    <div class="slider-wrapper theme-orman _noBorder"  style="height: 250px;">
-        <div id="slider" class="nivoSlider">
-            <img src="/images/content/banner/blank-blue.jpg" alt="" height="229" />
-            <img src="/images/content/banner/around-the-world.jpg" alt="" />
-        </div>
-    </div>
-    </div>
-
-    <div class="box_576 _title_BoldColor">
-        <h3><?php echo __('<strong>Trade</strong> Leads') ?></h3>
-        <div class="pad-0">
-            <div class="box_285 _drySpotBox pad-0 margin-0 margin-r1">
-                <h3><?php echo __('Selling Leads') ?></h3>
-                <div class="margin-2">
-                    <ul class="pad-0 margin-b2">
-                    <?php foreach ($selling_leads as $slead): ?>
-                    <li><?php echo link_to($slead, $slead->getUrl(), 'class=inherit-font t_blue t_small hover') ?>
-                        <div class="t_grey t_smaller"><?php echo $slead->getCompany() ?></div></li>
-                    <?php endforeach ?>
-                    </ul>
-                    <?php echo link_to(__('Browse all Selling Leads'), '@selling-leads', 'class=t_blue t_underline trail-right-11px') ?>
-                </div>
-            </div>
-            <div class="box_285 _drySpotBox pad-0 margin-0">
-                <h3><?php echo __('Buying Leads') ?></h3>
-                <div class="margin-2">
-                    <ul class="pad-0 margin-b2">
-                    <?php foreach ($buying_leads as $blead): ?>
-                    <li><?php echo link_to($blead, $blead->getUrl(), 'class=inherit-font t_blue t_small hover') ?>
-                        <div class="t_grey t_smaller"><?php echo $blead->getCompany() ?></div></li>
-                    <?php endforeach ?>
-                    </ul>
-                    <?php echo link_to(__('Browse all Buying Leads'), '@buying-leads', 'class=t_blue t_underline trail-right-11px') ?>
-                </div>
-            </div>
-        
-        </div>
-    </div>
-    <hr class="margin-b2" />
-
-    <?php if (count($featured_companies)): ?>
-    <div class="box_576 _title_BoldColor">
-        <h3><?php echo __('<strong>Featured</strong> Companies') ?></h3>
-        <div>
-    <?php $i = 0 ?>
-    <div class="scrollable vertical">
-    
-    <div class="items">
-    
-    <?php foreach ($featured_companies as $company): ?>
-    <?php $i++ ?>
-    <?php if (($i % 4) == 1): ?>
-    <div>
-    <?php endif ?>
-    <div class="item">
-        <?php echo link_to(image_tag($company->getProfilePictureUri(), array('title' => $company)), $company->getProfileUrl()) ?>
-        <div class="cname"><? echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
-        <div class="industry"><? echo $company->getBusinessSector() ?></div>
-    </div>
-    <?php if (($i % 4) == 0): ?>
-    </div>
-    <?php endif ?>
-    <?php endforeach ?> 
-    </div>
-    </div>
-    <div class="navi"></div>
-        </div>
-    </div>
 <?php echo javascript_tag("
    $(function(){
         $('.scrollable').scrollable({vertical: true, circular: true, mousewheel: true}).navigator().autoscroll({interval: 15000});
         $('#slider').nivoSlider({effect: 'fade', pauseTime: 5000});
    });
 ") ?>
-    <?php endif ?>
-
-    <hr class="margin-b2" />
-    
-    <?php if (count($featured_products)): ?>
-    <div class="box_576 _title_BoldColor">
-        <h3><?php echo __('<strong>Featured</strong> Products') ?></h3>
-        <div>
-    <?php $i = 0 ?>
-    <table class="recentcomps" cellspacing="1" cellpadding="0" border="0" width="576">
-    <?php foreach ($featured_products as $product): ?>
-    <?php $i++ ?>
-    <?php if (($i % 2) == 1): ?>
-    <tr>
-    <?php endif ?>
-    <td class="logo"><?php echo link_to(image_tag($product->getThumbUri(), array('title' => $product)), $product->getUrl()) ?></td>
-    <td class="cname">
-        <span><? echo link_to($product, $product->getUrl()) ?></span>
-        <em><?php echo link_to($product->getCompany(), $product->getUrl()) ?></em>
-        </td>
-    <?php if (($i % 2) == 0): ?>
-    </tr>
-    <?php endif ?>
-    <?php endforeach ?> 
-    <?php if (($i % 2) == 1): ?>
-    <td></td>
-    </tr>
-    <?php endif ?>
-    </table>
-        </div>
-    </div>
-    <?php endif ?>
-</div>
-/academy/homepage/right/middle:square
-<div class="col_180">
-    <div class="box_180 _title_BaseXor">
-        <h3><?php echo __('Upcoming Events') ?></h3>
-        <div class="pad-0">
-    <?php echo link_to(image_tag("content/event/automechanika.png", array('title' => __('Automechanika Middle East - Messe Frankfurt, 7-9 June 2011, Dubai'), 'width' => 178, 'style' => 'display:block;')), 'http://www.automechanikame.com', 'target=blank') ?>
-        </div>
-    </div>
-    <style>.b2bad img { max-width: 170px; margin: 4px; } </style>
-    <div class="b2bad box_180 pad-0">
-    <?php echo get_ad_for_ns('/b2b/homepage/left|center|right/top|middle|bottom') ?>
-    </div>
-    <div class="box_180 _title_BaseXor">
-        <h3><?php echo __('TRADE Experts <sup>®</sup>') ?></h3>
-        <div>
-        <?php $texp = UserPeer::retrieveByPKs(array(15, 19)) ?>
-        <dl class="">
-            <dt class="_left margin-r1 clear"><?php echo link_to(image_tag($texp[0]->getProfilePictureUri(), array('title' => $texp[0])), $texp[0]->getProfileUrl()) ?></dt>
-            <dd class="_left" style="width:90px;"><?php echo link_to($texp[0], $texp[0]->getProfileUrl()) ?><br />
-                              <span class="t_grey t_smaller"><?php echo count($wrk = $texp[0]->getWorkHistory()) ? $wrk[0]->getCompany() : '' ?></span></dd>
-            <dt class="_left margin-r1 clear "><?php echo link_to(image_tag($texp[1]->getProfilePictureUri(), array('title' => $texp[1])), $texp[1]->getProfileUrl()) ?></dt>
-            <dd class="_left" style="width:90px;"><?php echo link_to($texp[1], $texp[1]->getProfileUrl()) ?><br />
-                              <span class="t_grey t_smaller"><?php echo count($wrk = $texp[1]->getWorkHistory()) ? $wrk[0]->getCompany() : '' ?></span></dd>
-        </dl>
-        <div class="clear"></div>
-        </div>
-    </div>
-</div>
-<br class="clear" />
-</div>

@@ -68,7 +68,7 @@ margin:0 auto;padding:0;z-index:20;
 
 #lowerContainer footer {
  display:block; width:950px;
- border:1px solid #252525;margin:0 auto;
+ border:1px solid #252525;margin:0 auto 20px;
  padding:5px 0 5px 10px;
  background: #303030;
  -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
@@ -1235,7 +1235,7 @@ body._island div.liner
     width: 940px;
     margin: 0 auto;
 }
-body._island footer
+body._island footer.small
 {
     position: absolute;
     bottom: 0px;
@@ -1249,13 +1249,13 @@ body._island footer
     font: normal 400 12px/150% "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     color: #ccc;
 }
-body._island footer a
+body._island footer.small a
 {
     color: #ccc;
     margin-right: 20px;
     font-size: 12px;
 }
-body._island footer a:hover
+body._island footer.small a:hover
 {
     text-decoration: underline;
 }

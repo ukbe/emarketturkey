@@ -1,4 +1,4 @@
-<div class="pad-3">
+<div>
 <em>(Updated on July 22, 2011)</em>
 <div class="hrsplit-2"></div>
 <p>This is the Privacy Policy governing your use of the <b>eMarketTurkey.com Site</b> ("<b>Site</b>") and the collection, use, transfer and processing of your collected information by <b>eMarketTurkey.com</b> and those affiliates which provide the relevant Premium Services (collectively referred to as "<b>eMarketTurkey.com</b>","we" or "us"). By using this <b>Site</b>, you consent to our Privacy Policy set out below.</p>
@@ -12,8 +12,10 @@
 <p>We at <b>eMarketTurkey.com</b> are committed to good privacy practices regarding your personal information. Your loyalty as a job seeker, customer, reseller, supplier, manufacturer or visitor is important and we hope that our concerns regarding your privacy, as described in this policy, demonstrate our commitment to making your experience with <b>eMarketTurkey.com</b> an enjoyable and satisfying one.</p>
 <p>Although <b>eMarketTurkey.com</b> respects the privacy of all those who visit our web sites and use our online services, we do collect information from our visitors, including job seekers, customers, manufacturers, suppliers, reseller etc. This Privacy Policy governs your interaction with <b>eMarketTurkey.com</b> web site and your registration for and use of <b>eMarketTurkey.com</b>'s online services. Except as set forth within this Privacy Policy and our <?php echo link_to(__('Terms of Use'), '@terms') ?>, we do not release personally identifiable information about our members and visitors without their permission.</p>
 <p>Note that, by using the Services, you signify your agreement to this Privacy Policy. If you do not agree to this Policy, please do not use the Services. Your continued use of the Services subsequent to changes to this Policy will mean that you accept the changes; therefore, please bookmark this page and review it periodically.</p>
+</div>
 
-<h2>The Information We Gather</h2>
+<h5>The Information We Gather</h5>
+<div>
 <p><b>Registration Information:</b> At the time you register to become a Registered User of the <b>Site</b>, you will be asked to complete a registration form which requires you provide information such as your name, address, phone/fax number, email address and other personal information as well as information about your business ("Registration Information.")</p>
 <p><b>Publishing Information:</b> If you submit any information to "<b>eMarketTurkey.com</b>" to be published on the <b>Site</b> through the publishing tools, including but not limited to Company Profile, Product Catalog, Trade Leads and any discussion forum, then you are deemed to have given consent to the publication of such information ("Publishing Information").</p>
 <p><b>Statistical Information:</b> In addition, we gather aggregate statistical information about our <b>Site</b> and Users, such as IP addresses, browser software, operating system, pages viewed, number of sessions, unique visitors and so forth. ("Statistical Information").</p>
@@ -29,8 +31,10 @@
 <p>Any improper collection or misuse of information provided on <b>eMarketTurkey.com</b> is a violation of the <b>eMarketTurkey.com</b> Terms of Service and should be reported through the form on our privacy help page.</p>
 <p>If you choose to use our invitation service to tell a friend about our <b>Site</b>, we will ask you for information needed to send the invitation, such as your friend's email address. We will send your friend an email or instant message in your name inviting him or her to visit the <b>Site</b>. <b>eMarketTurkey.com</b> stores this information to send invitations, to register a friend connection if your invitation is accepted, to allow you to see invitations you have sent, and to track the success of our referral program. Your friend may contact us through the form on our <?php echo link_to(__('Contact Us'), '@contactus') ?> page to request that we remove this information from our database.</p>
 <p><b>eMarketTurkey.com</b> may also collect information about you from other sources, such as newspapers, blogs, instant messaging services, and other users of the <b>eMarketTurkey.com</b> service through the operation of the service (e.g., photo tags) in order to provide you with more useful information and a more personalized experience. By using <b>eMarketTurkey.com</b>, you are consenting to have your personal data transferred to and processed in Turkey.</p>
+</div>
 
-<h2>How We May Use Information</h2>
+<h5>How We May Use Information</h5>
+<div>
 <p>We use your Collected Information to improve our marketing and promotional efforts, to statistically analyze <b>Site</b> usage, to improve our content and product offerings and to customize our <b>Site</b>'s content, layout and service specifically for you. We may use your Collected Information to service your Account with us, including but not limited to investigating problems, resolving disputes and enforcing agreements with us. We may provide your Collected Information to our affiliates and service providers under contract (such as customer care) to support the operation of the <b>Site</b> and our services. We may share certain aggregate information based on analysis of Collected Information with our partners, customers, advertisers or potential Users. We may use your Collected Information to execute marketing campaigns, promotions or advertising messages on behalf of third parties; however, in these circumstances, your Collected Information will not be disclosed to such third parties unless you respond to the marketing, promotion or advertising message. Your Collected Information may be transferred, stored, used and processed outside your home jurisdiction. In case of a merger with or transfer of business to another business entity, we will transfer your Collected Information to the entity which acquires the business (Should such a combination occur, we will require that the new combined entity follow this Privacy Policy with respect to your Collected Information).</p>
 <p><b>Registration Information:</b> We may use your Registration Information to provide services that you request or to contact you regarding additional services about which <b>eMarketTurkey.com</b> determines that you might be interested. Specifically, we may use your email address, mailing address, phone number or fax number to contact you regarding notices, surveys, product alerts, new service or product offerings and communications relevant to your use of our <b>Site</b>. We may generate reports and analysis based on the Registration Information for internal analysis, monitoring and marketing decisions.</p>
 <p><b>Publishing Information:</b> All of your Publishing Information will be publicly available on the <b>Site</b> and therefore accessible by any internet user. Any Publishing Information that you disclose to <b>eMarketTurkey.com</b> becomes public information and you relinquish any proprietary rights (including but not limited to the rights of confidentiality and copyrights) in such information. You should exercise caution when deciding to include personal or proprietary information in the Publishing Information that you submit to us.</p>
@@ -58,8 +62,10 @@
     <li>When a job seeker elects to make his or her profile searchable by <b>eMarketTurkey.com</b> customers on a confidential basis only, the user's name and contact information will not be displayed to customers performing searches on <b>eMarketTurkey.com</b>. If the customer desires to contact the confidential job seeker regarding an employment opportunity, it will send an email to the job seeker through the <b>eMarketTurkey.com</b> system. <b>eMarketTurkey.com</b> will forward the email to the seeker's email address. The seeker's email address will not be provided directly to the customer. When posting a resume confidentially, it is the job seeker's responsibility to ensure that their contact information is not included within their resume attachment.</li>
     <li>All information made available to <b>eMarketTurkey.com</b> may be made available to our contractors and consultants, and professional advisors (such as attorneys or accountants), but only to the extent necessary for them to perform services on our behalf, and only under a duty of confidentiality.</li>
 </ul>
+</div>
 
-<h2>Sharing Your Information with Third Parties</h2>
+<h5>Sharing Your Information with Third Parties</h5>
+<div>
 <p><b>eMarketTurkey.com</b> is about sharing information with others — friends, people and compaines in your networks — while providing you with privacy settings that restrict other users from accessing your information. We allow you to choose the information you provide to friends and networks through <b>eMarketTurkey.com</b>. Our network architecture and your privacy settings allow you to make informed choices about who has access to your information. We do not provide contact information to third party marketers without your permission. We share your information with third parties only in limited circumstances where we believe such sharing is</p>
 <ul>
     <li>reasonably necessary to offer the service,</li>
@@ -68,46 +74,64 @@
 </ul>
 
 <p>When you use <b>eMarketTurkey.com</b>, certain information you post or share with third parties (e.g., a friend, companies or someone in the world), such as personal information, resumes, comments, messages, photos, videos, products, services, marketplace listings or other information, may be shared with other users in accordance with the privacy settings you select. All such sharing of information is done at your own risk. Please keep in mind that if you disclose personal information in your profile or when posting comments, messages, photos, videos, Marketplace listings or other items , this information may become publicly available.</p>
+</div>
 
-<h2>Cookies, Advertisements and 3.party applications</h2>
+<h5>Cookies, Advertisements and 3.party applications</h5>
+<div>
 <p>We use "cookies" to store specific information about you and track your visits to our <b>Site</b>. It is not uncommon for websites to use cookies to enhance identification of their users. A "cookie" is a small amount of data that is sent to your browser and stored on your computer's hard drive. A cookie can be sent to your computer's hard drive only if you access our <b>Site</b> using the computer. If you do not de-activate or erase the cookie, each time you use the same computer to access our <b>Site</b>, our web servers will be notified of your visit to our <b>Site</b> and in turn we may have knowledge of your visit and the pattern of your usage. Generally, we use cookies to identify you and enable us to access your Registration Information, Publishing Information or Payment Information so you do not have to re-enter it; gather statistical information about usage by Users; research visiting patters and help target advertisements based on User interests; assist our partners to track User visits to the <b>Site</b> and process orders; and track progress and participation in promotions.</p>
 <p>You can determine if and how a cookie will be accepted by configuring your browser's which is installed in the computer you are using to access the <b>Site</b>. If you desire, you can change those configurations in your browser. By setting your preferences in the browser, you can accept all cookies, you can be notified when a cookie is sent, or you can reject all cookies. If you reject all cookies by choosing the cookie-disabling function in your browser, you may be required to re-enter your information on our <b>Site</b> more often and certain features of our <b>Site</b> may be unavailable.</p>
 <p>Advertisements that appear on <b>eMarketTurkey.com</b> are sometimes delivered directly to users by third party advertisers. They automatically receive your IP address when this happens. These third party advertisers may also download cookies to your computer, or use other technologies such as JavaScript and web beacons to measure the effectiveness of their ads and to personalize advertising content. Doing this allows the advertising network to recognize your computer each time they send you an advertisement in order to measure the effectiveness of their ads and to personalize advertising content. In this way, they may compile information about where individuals using your computer or browser saw their advertisements and determine which advertisements are clicked. <b>eMarketTurkey.com</b> does not have access to or control of the cookies that may be placed by the third party advertisers. Third party advertisers have no access to your contact information stored on <b>eMarketTurkey.com</b> unless you choose to share it with them.</p>
 <p>This privacy policy covers the use of cookies by <b>eMarketTurkey.com</b> and does not cover the use of cookies or other tracking technologies by any of its advertisers.</p>
+</div>
 
-<h2>Security</h2>
+<h5>Security</h5>
+<div>
 <p>We employ commercially reasonable security methods to prevent unauthorized access, maintain data accuracy and ensure correct use of information.</p>
 <p>As a Registered User, your Registration Information and Publishing Information can be viewed and edited through your Account which is protected by Password. We recommend that you do not divulge your Password to anyone. Our personnel will never ask you for your Password in an unsolicited phone call or in an unsolicited e-mail. If you share a computer with others, you should not choose to save your log-in information (e.g., User ID and Password) on the computer. Remember to sign out of your Account and close your browser window when you have finished your session.</p>
 <p>No data transmission over the Internet or any wireless network can be guaranteed to be perfectly secured. As a result, while we try to protect your information, no web site or company, including ourselves, can absolutely ensure or guarantee the security of any information you transmit to us and you do so at your own risk.</p>
 <p>We are not responsible for the privacy protection methods of other web sites who are linked to .</p>
 <p><b>eMarketTurkey.com</b> may contain links to other web sites. We are of course not responsible for the privacy practices of other web sites. We encourage our users to be aware when they leave our <b>Site</b> to read the privacy statements of each and every web site that collects personally identifiable information. This Privacy Policy applies solely to information collected by <b>eMarketTurkey.com</b>.</p>
 <p><b>eMarketTurkey.com</b> takes appropriate precautions to protect our users' information. Your account information is located on a secured server behind a firewall. When you enter sensitive information such as your password), we encrypt that information using secure socket layer technology (SSL). Email and instant messaging are not recognized as secure communications, we request that you not send private information to us by email or instant messaging services. If you have any questions about the security of <b>eMarketTurkey.com</b> web site, please contact us through the form on our privacy help page.</p>
+</div>
 
-<h2>Under Age 18 (Minors)</h2>
+<h5>Under Age 18 (Minors)</h5>
+<div>
 <p><b>eMarketTurkey.com</b> does not knowingly collect or solicit personal information from anyone under the age of 18 or knowingly allow such persons to register. If you are under 18, please do not attempt to register for <b>eMarketTurkey.com</b> or send any information about yourself to us, including your name, address, telephone number, or email address. No one under age 18 may provide any personal information to or on <b>eMarketTurkey.com</b>. In the event that we learn that we have collected personal information from a child under age 18, we will delete that information as quickly as possible. If you believe that we might have any information from or about a child under 18, please contact us through the form on our privacy help page.</p>
+</div>
 
-<h2>Accessing and Correcting Your All Information</h2>
+<h5>Accessing and Correcting Your All Information</h5>
+<div>
 <p>You can access, view and edit your Registration Information, Publishing Information and Payment Information (if any) through your Account with <b>eMarketTurkey.com</b>.</p>
 <p>Access and control over most personal information on <b>eMarketTurkey.com</b> is readily available through the profile editing tools. <b>eMarketTurkey.com</b> users may modify or delete any of their profile information at any time by logging into their account. Information will be updated immediately. Individuals who wish to deactivate their <b>eMarketTurkey.com</b> account may do so on the My Account page. Removed information may persist in backup copies for a reasonable period of time but will not be generally available to members of <b>eMarketTurkey.com</b> Where you make use of the communication features of the service to share information with other individuals on <b>eMarketTurkey.com</b> however, you generally cannot remove such communications.</p>
 <p>If you would like to have your personally identifiable information removed from <b>eMarketTurkey.com</b>'s database, or would like to correct an error in such information, please contact us at #EMAIL-PRIVACY#, and we will use reasonable efforts to comply with your request. Keep in mind, however, that there will be residual information that will remain within <b>eMarketTurkey.com</b> databases, access logs, and other records, which may or may not contain such personally identifiable information. The residual information will not be used for commercial purposes; however <b>eMarketTurkey.com</b> reserves the right, from time to time, to re-contact former customers or users of <b>eMarketTurkey.com</b>.</p>
+</div>
 
-<h2>Surveys and Sweepstakes</h2>
+<h5>Surveys and Sweepstakes</h5>
+<div>
 <p>Occasionally, <b>eMarketTurkey.com</b> may conduct surveys in order to better deliver advertisements and content and to better understand your needs relating to the Services. We will not share your survey information with any third party, except in aggregate form. In addition, if and when we sponsor sweepstakes or other promotions, or third parties sponsor such promotions in conjunction with us, either we or the third party will post relevant privacy information in the official rules and/or registration area for the sweepstakes or promotion. That privacy information, to the extent it conflicts with this Policy, will govern that particular promotion or sweepstakes - please remember to read it carefully.</p>
+</div>
 
-<h2>Changes to Privacy Policy</h2>
+<h5>Changes to Privacy Policy</h5>
+<div>
 <p>Any changes to this Privacy Policy will be communicated through our posting an amended and restated Privacy Policy on our <b>Site</b>. Our posting the amended and restated Privacy Policy will make such new Privacy Policy immediately effective. You agree that all Collected Information will be governed by the newest Privacy Policy then in effect. If you do not agree to the new changes in our Privacy Policy, you should contact <b>eMarketTurkey.com</b> in writing and specifically request that <b>eMarketTurkey.com</b> return and/or destroy all copies of all or part of your Collected Information in <b>eMarketTurkey.com</b>'s possession.</p>
 <p>Your use of <b>eMarketTurkey.com</b> and any disputes arising from it, is subject to this Privacy Policy as well as our Terms of Use and all of its dispute resolution provisions including arbitration, limitation on damages and choice of law. We reserve the right to change our Privacy Policy and our Terms of Use at any time. Non-material changes and clarifications will take effect immediately, and material changes will take effect within 30 days of their posting on this <b>Site</b>. If we make changes, we will post them and will indicate at the top of this page the policy's new effective date. If we make material changes to this policy, we will notify you here, by email, or through notice on our home page. We encourage you to refer to this policy on an ongoing basis so that you understand our current privacy policy. Unless stated otherwise, our current privacy policy applies to all information that we have about you and your account.</p>
+</div>
 
-<h2>Protecting your privacy</h2>
+<h5>Protecting your privacy</h5>
+<div>
 <p>Avoid using a Social Security or Bank(s) Accout numbers on your resume.</p>
 <p>Don't provide any non-work related personal information over the phone or online.</p>
 <p>Never provide credit card or bank account numbers or related information before we demand.</p>
 <p>Never give out your <b>eMarketTurkey.com</b> username or password to anyone.</p>
+</div>
 
-<h2>Your feedback</h2>
+<h5>Your feedback</h5>
+<div>
 <p><b>eMarketTurkey.com</b> welcomes your continuous input regarding our Privacy Policy or our services provided to you. You may send us your comments and responses by email to #EMAIL-PRIVACY#.</p>
+</div>
 
-<h2>Physical mailing address</h2>
+<h5>Physical mailing address</h5>
+<div>
 <p>EMTPORT A.S.<br />
 Mansuroglu Mah. Cumhuriyet Cad. No:15/1 Bayrakli 35040 Izmir TURKEY</p>
 <div class="hrsplit-1"></div>

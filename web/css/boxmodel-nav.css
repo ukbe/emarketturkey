@@ -437,15 +437,26 @@ label.ui-state-active span.ui-button-text { color:#fff; }
 #buttons li > b > a > span {
  visibility:visible;
  position:absolute;
- right:-3px; top:15px;
+ right:-3px; top:18px;
  display:block; width:auto;
  padding:2px;
- background-color:#f44;
  font:normal 300 9px/9px tahoma;
- border:1px solid #eee;
  text-indent:1px;
- color:#fff;
- border-radius:3px;
+ text-shadow: none;
+ color: white;
+ border: 1px solid #bb1818;
+ -webkit-border-radius: 3px;
+ -moz-border-radius: 3px;
+ border-radius: 3px;
+ background-color: #f44;
+ background-image: -webkit-linear-gradient(top, #F26870, #f44);
+ background-image: -moz-linear-gradient(top, #F26870, #f44);
+ background-image: -o-linear-gradient(top, #F26870, #f44);
+ background-image: -ms-linear-gradient(top, #F26870, #f44);
+ background-image: linear-gradient(top, #F26870, #f44);
+ -webkit-box-shadow: inset 0 1px #ffa7a7;
+ -moz-box-shadow: inset 0 1px #ffa7a7;
+ box-shadow: inset 0 1px #ffa7a7;
 }
 
 #buttons li > b > a._btn_up > span {

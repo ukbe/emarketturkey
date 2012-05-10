@@ -1,3 +1,8 @@
+press-releases:
+  url:   /:sf_culture/press/releases
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: press, action: releases }
+
 help-page:
   url:   /:sf_culture/help/:handle
   requirements: { sf_culture: (?:en|de|tr) } 
@@ -41,20 +46,45 @@ aboutus:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: corporate, action: aboutus }
 
-for-suppliers:
-  url:   /:sf_culture/corporate/forSuppliers
+services:
+  url:   /:sf_culture/services/overview
   requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: corporate, action: forSuppliers }
+  param: { module: services, action: overview }
 
 for-individuals:
-  url:   /:sf_culture/corporate/forIndividuals
+  url:   /:sf_culture/services/for-individuals
   requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: corporate, action: forIndividuals }
+  param: { module: services, action: forIndividuals }
+
+for-suppliers:
+  url:   /:sf_culture/services/for-suppliers
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: forSuppliers }
+
+for-associations:
+  url:   /:sf_culture/services/for-associations
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: forAssociations }
+
+premium:
+  url:   /:sf_culture/services/premium
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: premium }
 
 faq:
-  url:   /:sf_culture/corporate/faq
+  url:   /:sf_culture/support/faq
   requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: corporate, action: faq }
+  param: { module: support, action: faq }
+
+support:
+  url:   /:sf_culture/support/overview
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: support, action: overview }
+
+help-center:
+  url:   /:sf_culture/support/help
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: support, action: help }
 
 contactus:
   url:   /:sf_culture/corporate/contactus

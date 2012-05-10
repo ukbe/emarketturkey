@@ -16,16 +16,18 @@ class contactusAction extends EmtAction
 
     private function handleAction($isValidationError)
     {
-        $i18n = $this->getContext()->getI18N();
-        $this->subject_list = array(
-            '' => $i18n->__('Please select a topic'),
-            '1' => $i18n->__('Technical Support'),
-            '2' => $i18n->__('Feature Request'),
-            '3' => $i18n->__('Bug Report'),
-            '4' => $i18n->__('Financial Inquiry'),
-            '5' => $i18n->__('Other')
-        );
-                
+        sfLoader::loadHelpers('I18n');
+
+        $this->subject_list = array();
+        
+        foreach (CustomerMessagePeer::$topics as $key => $topic)
+        {
+            $this->subject_list[$key] = __($topic);
+        }
+        sort($this->subject_list);
+
+        $this->topic = myTools::pick_from_list($this->getRequestParameter('topic'), array_keys($this->subject_list), null);
+
         if (!$isValidationError && $this->getRequest()->getMethod()==sfRequest::POST)
         {
             try

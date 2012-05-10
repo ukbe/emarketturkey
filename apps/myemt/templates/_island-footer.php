@@ -1,4 +1,4 @@
-		<footer>
+		<footer class="small">
 			<div>
 				<ul class="_horizontal" style="line-height: 27px;">
 					<li><?php echo link_to(__('About Us'), '@lobby.aboutus') ?></li>

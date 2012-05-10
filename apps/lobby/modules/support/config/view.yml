@@ -1,0 +1,16 @@
+all:
+  layout:  layoutBoxModel-corporate
+
+overviewSuccess:
+  metas:
+    title: "Support | eMarketTurkey"
+
+helpSuccess:
+  metas:
+    title: "Help Center | eMarketTurkey"
+
+faqSuccess:
+    metas:
+        title:  'Frequently Asked Questions | eMarketTurkey'
+
+

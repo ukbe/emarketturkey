@@ -112,16 +112,24 @@ class CompanyPeer extends BaseCompanyPeer
     
     public static function getFeaturedCompanies($maxnum=20)
     {
-        // @todo: Add an algorith to select companies to display on homepage
-        $c = new Criteria();
-        $c->add(CompanyPeer::AVAILABLE, 1);
-        $c->addDescendingOrderByColumn(CompanyPeer::CREATED_AT);
-        $c->setLimit($maxnum);
-        $c->addJoin(MediaItemPeer::OWNER_ID, CompanyPeer::ID);
-        $c->add(MediaItemPeer::OWNER_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_COMPANY);
-        $c->add(MediaItemPeer::ITEM_TYPE_ID, MediaItemPeer::MI_TYP_LOGO);
-        $c->add(MediaItemPeer::ID, null, Criteria::ISNOTNULL);
-        return CompanyPeer::doSelect($c);
+        // @todo: Add an algorithm to select companies to display on homepage
+        $sql = "
+            SELECT EMT_COMPANY.* FROM EMT_COMPANY
+            LEFT JOIN EMT_COMPANY_USER_VIEW ON EMT_COMPANY.ID=EMT_COMPANY_USER_VIEW.COMPANY_ID AND EMT_COMPANY_USER_VIEW.OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_USER." AND EMT_COMPANY_USER_VIEW.ROLE_ID=".RolePeer::RL_CM_OWNER."
+            LEFT JOIN EMT_USER ON EMT_COMPANY_USER_VIEW.OBJECT_ID=EMT_USER.ID
+            WHERE EMT_COMPANY.AVAILABLE=1 AND EMT_COMPANY.BLOCKED=0 AND EMT_COMPANY.IS_FEATURED=1
+                AND NOT EXISTS (SELECT 1 FROM EMT_BLOCKLIST WHERE LOGIN_ID=EMT_USER.LOGIN_ID AND ACTIVE=1)
+                AND EXISTS (SELECT 1 FROM EMT_MEDIA_ITEM WHERE OWNER_ID=EMT_COMPANY.ID AND OWNER_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_COMPANY." AND ITEM_TYPE_ID=".MediaItemPeer::MI_TYP_LOGO.")
+            ORDER BY EMT_COMPANY.CREATED_AT DESC
+        ";
+        
+        if ($maxnum) $sql = "SELECT * FROM ($sql) WHERE ROWNUM <= $maxnum";
+        
+        $con = Propel::getConnection();
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+
+        return CompanyPeer::populateObjects($stmt);
     }
     
     public static function getCompaniesOfCategory($catid)

@@ -57,7 +57,7 @@
                     <p><?php echo __('%1 how you can benefit for your career or your corporation.', array('%1' => link_to(__("Find out"), "@homepage", 'class=inherit-font bluelink hover'))) ?></p>
                     <div class="hrsplit-1"></div>
                     <div> 
-                    <ul class="t_smaller" style="padding-left: 60px; background: url(/images/layout/faq-40px.png) left 10px no-repeat;">
+                    <ul class="t_smaller" style="padding-left: 60px; background: url(/images/layout/icon/faq-40px.png) left 10px no-repeat;">
                         <li><h3 class="pad-l0 margin-b1 t_underline"><?php echo __('Frequently Asked Questions') ?>:</h3></li>
                         <li><?php echo link_to (__('Who can register to eMarketTurkey?'), "@homepage", 'class=inherit-font hover') ?></li>
                         <li><?php echo link_to (__('How can I register my company?'), "@homepage", 'class=inherit-font hover') ?></li>

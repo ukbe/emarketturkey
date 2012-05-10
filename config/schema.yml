@@ -1960,3 +1960,28 @@ propel:
     STATUS:               { type: integer, size: 2, default: 0 }
     CREATED_AT:           ~
     UPDATED_AT:           ~
+
+  EMT_FAQ_CATEGORY: 
+    _attributes:          { phpName: FaqCategory, isI18N: true, i18nTable: EMT_FAQ_CATEGORY_I18N }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, autoincrement: true }
+    PARENT_ID:            { type: integer, size: 16, foreignTable: EMT_FAQ_CATEGORY, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
+
+  EMT_FAQ_CATEGORY_I18N: 
+    _attributes:          { phpName: FaqCategoryI18n }
+    ID:                   { type: integer, size: 16, required: true, primaryKey: true, foreignTable: EMT_FAQ_CATEGORY, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    NAME:                 { type: varchar(100), required: true }
+
+  EMT_FAQ_ITEM: 
+    _attributes:          { phpName: FaqItem, isI18N: true, i18nTable: EMT_FAQ_ITEM_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    CATEGORY_ID:          { type: integer, size: 10, required: true, foreignTable: EMT_FAQ_CATEGORY, foreignReference: ID, onDelete:  NO ACTION, onUpdate: NO ACTION }
+
+  EMT_FAQ_ITEM_I18N: 
+    _attributes:          { phpName: FaqItemI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_FAQ_ITEM, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    QUESTION:             { type: varchar(1000), required: true }
+    ANSWER:               { type: clob, required: true }
+
+    

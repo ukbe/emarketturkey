@@ -21,7 +21,7 @@
 </div>
 <?php include_partial('global/page_user_message') ?>
 <div id="section-bg">
-<section class="app_lobby">
+<section class="app_b2b">
  <?php if (has_slot('subNav')): ?>
  <?php include_slot('subNav') ?>
  <?php else: ?>
