@@ -1,3 +1,7 @@
+alive:
+  url:   /alive
+  param: { module: default, action: alive }
+
 press-releases:
   url:   /:sf_culture/press/releases
   requirements: { sf_culture: (?:en|de|tr) } 
