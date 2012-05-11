@@ -128,7 +128,7 @@ class postAction extends EmtManageLeadAction
         $pr = $this->getRequestParameter('lead_lang');
         $pr = is_array($pr)?$pr:array();
         
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         
         foreach ($pr as $key => $lang)
         {

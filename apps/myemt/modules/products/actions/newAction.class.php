@@ -230,7 +230,7 @@ class newAction extends EmtManageProductAction
         $pr = $this->getRequestParameter('product_lang');
         $pr = is_array($pr)?$pr:array();
         
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         
         foreach ($pr as $key => $lang)
         {

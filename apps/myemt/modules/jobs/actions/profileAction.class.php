@@ -108,7 +108,7 @@ class profileAction extends EmtManageJobAction
     {
         if ($this->getRequest()->getMethod() == sfRequest::POST)
         {   
-            sfLoader::loadHelpers('I18n');
+            sfLoader::loadHelpers('I18N');
             if (trim($this->getRequestParameter("display_name"))=='')
                 $this->getRequest()->setError("display_name", $this->otyp == PrivacyNodeTypePeer::PR_NTYP_COMPANY ? __('Please enter display name for your company.') : __('Please enter a display name for your group.'));
             if (mb_strlen($this->getRequestParameter("display_name")) > 255)
