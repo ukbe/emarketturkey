@@ -57,7 +57,7 @@ class photoAction extends EmtManageAction
             }
             elseif ($this->getRequest()->getFileName('profilephoto') == '')
             {
-                if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18n()->__('Please select an image file to upload as profile photo.'), 'uri' => '')));
+                if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18N()->__('Please select an image file to upload as profile photo.'), 'uri' => '')));
                 $this->getRequest()->setError('profilephoto', 'Please select an image file to upload as profile photo.');
             }
             else
@@ -77,7 +77,7 @@ class photoAction extends EmtManageAction
                 {
                     $con->rollBack();
                     ErrorLogPeer::Log($this->sesuser, PrivacyNodeTypePeer::PR_NTYP_USER, "Error occured during profile photo upload\nMsg:{$e->getMessage()}\nFile:{$e->getFile()} Line:{$e->getLine()}");
-                    if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18n()->__('Error Occured'), 'uri' => $this->fileobj->getOriginalFileUri())));
+                    if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18N()->__('Error Occured'), 'uri' => $this->fileobj->getOriginalFileUri())));
                     else $this->uploadError = true;
                 }
             }

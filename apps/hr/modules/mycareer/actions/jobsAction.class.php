@@ -20,7 +20,7 @@ class jobsAction extends EmtCVAction
 
                     if ($this->getRequest()->isXmlHttpRequest())
                         return $this->renderPartial('global/ajaxSuccess', array(
-                                        'message' => $this->getContext()->getI18n()->__('Your job application has been terminated.'),
+                                        'message' => $this->getContext()->getI18N()->__('Your job application has been terminated.'),
                                         'redir' => "@myjobs-applied"
                                     ));
                     else

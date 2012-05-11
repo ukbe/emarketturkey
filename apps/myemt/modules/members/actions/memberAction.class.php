@@ -39,7 +39,7 @@ class memberAction extends EmtManageGroupAction
                     
                     if ($this->getRequest()->isXmlHttpRequest())
                         return $this->renderPartial('global/ajaxSuccess', array(
-                                        'message' => $this->getContext()->getI18n()->__('Member %1 has been successfully removed from group!', array('%1' => $this->member)),
+                                        'message' => $this->getContext()->getI18N()->__('Member %1 has been successfully removed from group!', array('%1' => $this->member)),
                                         'redir' => "@group-members?action=list&hash={$this->group->getHash()}&typ=".$urltype[$this->member->getObjectTypeId()]
                                     ));
                     else
@@ -75,7 +75,7 @@ class memberAction extends EmtManageGroupAction
                     $np->save();
                     if ($this->getRequest()->isXmlHttpRequest())
                         return $this->renderPartial('global/ajaxSuccess', array(
-                                        'message' => $this->getContext()->getI18n()->__('Member %1 has been successfully banned from group!', array('%1' => $this->member)),
+                                        'message' => $this->getContext()->getI18N()->__('Member %1 has been successfully banned from group!', array('%1' => $this->member)),
                                         'redir' => "@group-members?action=list&hash={$this->group->getHash()}&typ=".$urltype[$this->member->getObjectTypeId()]
                                     ));
                     else

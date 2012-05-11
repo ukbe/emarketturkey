@@ -26,7 +26,7 @@ class materialsAction extends EmtCVAction
 
                         if ($this->getRequest()->isXmlHttpRequest())
                             return $this->renderPartial('global/ajaxSuccess', array(
-                                            'message' => $this->getContext()->getI18n()->__('Your photo has been deleted!'),
+                                            'message' => $this->getContext()->getI18N()->__('Your photo has been deleted!'),
                                             'redir' => "@mycv-action?action=materials"
                                         ));
                         else
@@ -48,7 +48,7 @@ class materialsAction extends EmtCVAction
 
                         if ($this->getRequest()->isXmlHttpRequest())
                             return $this->renderPartial('global/ajaxSuccess', array(
-                                            'message' => $this->getContext()->getI18n()->__('Your Hardcopy CV has been deleted!'),
+                                            'message' => $this->getContext()->getI18N()->__('Your Hardcopy CV has been deleted!'),
                                             'redir' => "@mycv-action?action=materials"
                                         ));
                         else
@@ -72,7 +72,7 @@ class materialsAction extends EmtCVAction
 
                         if ($this->getRequest()->isXmlHttpRequest())
                             return $this->renderPartial('global/ajaxSuccess', array(
-                                            'message' => $this->getContext()->getI18n()->__('Your portfolio item has been deleted!'),
+                                            'message' => $this->getContext()->getI18N()->__('Your portfolio item has been deleted!'),
                                             'redir' => "@mycv-action?action=materials"
                                         ));
                         else

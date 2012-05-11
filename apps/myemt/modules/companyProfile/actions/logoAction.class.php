@@ -61,7 +61,7 @@ class logoAction extends EmtManageCompanyAction
             }
             elseif ($this->getRequest()->getFileName('companylogo') == '')
             {
-                if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18n()->__('Please select an image file to upload as company logo.'), 'uri' => '')));
+                if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18N()->__('Please select an image file to upload as company logo.'), 'uri' => '')));
                 $this->getRequest()->setError('companylogo', 'Please select an image file to upload as company logo.');
             }
             else
@@ -81,7 +81,7 @@ class logoAction extends EmtManageCompanyAction
                 {
                     $con->rollBack();
                     ErrorLogPeer::Log($this->company, PrivacyNodeTypePeer::PR_NTYP_COMPANY, "Error Occured During logo upload\nMsg:{$e->getMessage()}\nFile:{$e->getFile()} Line:{$e->getLine()}");
-                    if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18n()->__('Error Occured'), 'uri' => $this->fileobj->getOriginalFileUri())));
+                    if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18N()->__('Error Occured'), 'uri' => $this->fileobj->getOriginalFileUri())));
                     else $this->uploadError = true;
                 }
             }

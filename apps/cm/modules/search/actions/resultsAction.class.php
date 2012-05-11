@@ -18,7 +18,7 @@ class resultsAction extends EmtAction
         
         $this->redirectIf($this->within == null, '@homepage');
         
-        $this->getResponse()->setTitle($this->getContext()->getI18n()->__($withintypes[$this->getRequestParameter('within')] . ' | eMarketTurkey'));
+        $this->getResponse()->setTitle($this->getContext()->getI18N()->__($withintypes[$this->getRequestParameter('within')] . ' | eMarketTurkey'));
         
         $criterias['keyword'] = rtrim(ltrim($this->getRequestParameter('keyword')));
         $criterias['within'] = (array_key_exists($this->getRequestParameter('within'), $withintypes)?$this->getRequestParameter('within'):null);

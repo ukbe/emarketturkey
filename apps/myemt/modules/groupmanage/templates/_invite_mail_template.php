@@ -1,5 +1,5 @@
-<?php $clt = $sf_context->getI18n()->getCulture() ?>
-<?php $sf_context->getI18n()->setCulture($culture) ?>
+<?php $clt = $sf_context->getI18N()->getCulture() ?>
+<?php $sf_context->getI18N()->setCulture($culture) ?>
 <html>
 <head>
 <title><?php echo __("You've got an eMarketTurkey Group Invitation") ?></title>
@@ -42,4 +42,4 @@
 </div>
 </body>
 </html>
-<?php $sf_context->getI18n()->setCulture($clt) ?>
+<?php $sf_context->getI18N()->setCulture($clt) ?>

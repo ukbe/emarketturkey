@@ -6,7 +6,7 @@ class listAction extends EmtAction
     {
         if ($this->hasRequestParameter('within') && is_numeric($this->getRequestParameter('within')))
         {
-            $this->getResponse()->setTitle($this->getContext()->getI18n()->__('Jobs | eMarketTurkey'));
+            $this->getResponse()->setTitle($this->getContext()->getI18N()->__('Jobs | eMarketTurkey'));
             
             $this->keyword = str_replace(array("'", '"'), "", rtrim(ltrim($this->getRequestParameter('keyword'))));
             $this->within = PrivacyNodeTypePeer::PR_NTYP_JOB;

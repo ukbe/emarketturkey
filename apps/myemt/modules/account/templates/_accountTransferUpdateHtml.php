@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
-<?php $clt = $sf_context->getI18n()->getCulture() ?>
-<?php $sf_context->getI18n()->setCulture($culture) ?>
+<?php $clt = $sf_context->getI18N()->getCulture() ?>
+<?php $sf_context->getI18N()->setCulture($culture) ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="title" content="emt" />
 <meta name="language" content="<?php echo $culture ?>" />
@@ -42,4 +42,4 @@ body { font-family: Arial; font-size: 10pt; font-weight: normal; color: #000000;
 </div>
 </body>
 </html>
-<?php $sf_context->getI18n()->setCulture($clt) ?>
+<?php $sf_context->getI18N()->setCulture($clt) ?>

@@ -14,7 +14,7 @@ class updateStatusAction extends EmtUserAction
         if ($this->getRequest()->isXmlHttpRequest())
         {
             $str =  $this->getRequestParameter('msg');
-            return $this->renderText(mb_strlen($str)> 200 ? mb_substr($str, 0, 200, 'utf-8')."<a href=\"#\" onclick=\"javascript:linkread(this);\" class=\"readmorelink\">".$this->getContext()->getI18n()->__('read more')."</a><span class='more'>".mb_substr($str, 200, -1, 'utf-8')."</span>" : $str);
+            return $this->renderText(mb_strlen($str)> 200 ? mb_substr($str, 0, 200, 'utf-8')."<a href=\"#\" onclick=\"javascript:linkread(this);\" class=\"readmorelink\">".$this->getContext()->getI18N()->__('read more')."</a><span class='more'>".mb_substr($str, 200, -1, 'utf-8')."</span>" : $str);
         }
         else
             $this->getRequestParameter('ref')!='' ? $this->redirect($this->getRequestParameter('ref')) : $this->redirect($this->getRequest()->getReferrer());
