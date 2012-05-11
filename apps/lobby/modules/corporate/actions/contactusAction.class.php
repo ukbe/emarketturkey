@@ -16,7 +16,7 @@ class contactusAction extends EmtAction
 
     private function handleAction($isValidationError)
     {
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
 
         $this->subject_list = array();
         
