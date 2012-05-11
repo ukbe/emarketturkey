@@ -86,7 +86,7 @@ class PublicationCategoryPeer extends BasePublicationCategoryPeer
 
     public static function validate($params, $author = null, $request)
     {
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         
         $parent = PublicationCategoryPeer::retrieveByPK($params->get('pubc_parent_id'));
 

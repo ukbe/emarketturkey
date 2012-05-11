@@ -11,7 +11,7 @@ class JobLocation extends BaseJobLocation
     {
         $culture = sfContext::getInstance()->getUser()->getCulture();
 
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
 
         $arr = array();
 

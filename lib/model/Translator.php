@@ -86,7 +86,7 @@ class Translator extends BaseTranslator
     
     public function getLanguagesText()
     {
-        use_helper('I18n');
+        use_helper('I18N');
         return format_number_choice('[0]No languages.|[1]1 language.|(1,+Inf]%1 language.', 
                  array('%1' => $this->countTranslatorLanguages()), $this->countTranslatorLanguages());
     }

@@ -71,7 +71,7 @@ class AuthorPeer extends BaseAuthorPeer
     {
         $post_user = myTools::unplug(count($hashes = $params->get('auth_user_hash')) ? $hashes[0] : null);
 
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         
         $updating_account = AuthorPeer::retrieveByPK($params->get('id'));
 

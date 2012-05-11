@@ -161,7 +161,7 @@ class PublicationPeer extends BasePublicationPeer
         if (!$category) $request->setError("category_id", 'Please select a category.');
         if (!$post_source) $request->setError("source_id", 'Please select a publication source.');
 
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         
         $pr = $params->get('article_lang');
 

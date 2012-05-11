@@ -57,7 +57,7 @@ class PublicationSourcePeer extends BasePublicationSourcePeer
 
     public static function validate($params, $author = null, $request)
     {
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         
         if (!(3 < mb_strlen($params->get("pubs_name")) && 
                   mb_strlen($params->get("pubs_name")) < 256)) $request->setError("pubs_name", 'Please enter a publication source name.');

@@ -454,7 +454,7 @@ class myTools
         $cult = $culture ? $culture : sfContext::getInstance()->getUser()->getCulture();
         if ($cult != 'en')
         {
-            sfLoader::loadHelpers('I18n');
+            sfLoader::loadHelpers('I18N');
             return "NLS$glue$nls_function($column,'NLS_SORT=".(format_language($cult, 'en'))."')";
         }
         else

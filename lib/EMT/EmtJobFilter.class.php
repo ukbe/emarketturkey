@@ -193,7 +193,7 @@ class JFPeriod
     
     public function __toString()
     {
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         return (isset(JFPeriodPeer::$periodLabels[$this->_key]) ? __(JFPeriodPeer::$periodLabels[$this->_key]) : __('%1 Days', array('%1' => $this->_key)));
     }
 }
@@ -215,7 +215,7 @@ class JFMilService
     
     public function __toString()
     {
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         return (isset(ResumePeer::$mservLabels[$this->_key]) ? __(ResumePeer::$mservLabels[$this->_key]) : '');
     }
 }
@@ -237,7 +237,7 @@ class JFGender
     
     public function __toString()
     {
-        sfLoader::loadHelpers('I18n');
+        sfLoader::loadHelpers('I18N');
         return (isset(ResumePeer::$genderOptLabels[$this->_key]) ? __(ResumePeer::$genderOptLabels[$this->_key]) : '');
     }
 }
