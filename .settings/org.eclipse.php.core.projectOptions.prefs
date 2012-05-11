@@ -1,5 +1,0 @@
-#Thu Apr 21 11:16:17 EEST 2011
-eclipse.preferences.version=1
-org.eclipse.php.core.contextRoot=
-org.eclipse.php.core.defaultEncoding=
-org.eclipse.php.core.includePath=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<includepath>\r\n\t<includepathentry createdReference\="false" path\="glib/symfony" contentKind\="source" kind\="var">\r\n</includepathentry>\r\n<includepathentry createdReference\="false" path\="C\:/Program Files (x86)/Zend/ZendServer/share/ZendFramework/library" contentKind\="source" kind\="lib">\r\n</includepathentry>\r\n<includepathentry createdReference\="false" path\="glib/model" contentKind\="source" kind\="var">\r\n</includepathentry>\r\n</includepath>\r\n
