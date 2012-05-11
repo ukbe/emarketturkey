@@ -39,7 +39,7 @@ class uploadAction extends EmtCompanyAction
                 {
                     $con->rollBack();
                     ErrorLogPeer::Log($this->company, PrivacyNodeTypePeer::PR_NTYP_COMPANY, "Error Occured During album photo upload\nMsg:{$e->getMessage()}\nFile:{$e->getFile()} Line:{$e->getLine()}");
-                    if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18n()->__('Error Occured'), 'uri' => $this->photo->getOriginalFileUri())));
+                    if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18N()->__('Error Occured'), 'uri' => $this->photo->getOriginalFileUri())));
                     else $this->getRequest()->setError('custom', 'An error occured while uploading new photo. Please try again later');
                 }
             }

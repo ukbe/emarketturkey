@@ -11,7 +11,7 @@ class resultsAction extends EmtAction
                             3                                    => 'Selling Leads',
                             4                                    => 'Buying Leads',
                             );
-            $this->getResponse()->setTitle($this->getContext()->getI18n()->__($within[$this->getRequestParameter('within')] . ' | eMarketTurkey'));
+            $this->getResponse()->setTitle($this->getContext()->getI18N()->__($within[$this->getRequestParameter('within')] . ' | eMarketTurkey'));
             
             $this->keyword = str_replace(array("'", '"'), "", rtrim(ltrim($this->getRequestParameter('keyword'))));
             $this->within = $this->getRequestParameter('within');
