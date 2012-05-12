@@ -12,7 +12,7 @@
             <li><?php echo link_to('<span></span>'.__('Joined'), "@edit-group-mem?group={$group->getPlug()}", "class=action-button connected-user ajax-enabled id=cnus-{$group->getPlug()}") ?></li>
             <?php elseif ($membership && $membership->getStatus() == GroupMembershipPeer::STYP_PENDING): ?>
             <li><?php echo link_to('<span></span>'.__('Pending'), "@edit-group-mem?user={$group->getPlug()}", "class=action-button connect-user ajax-enabled id=cnus-{$group->getPlug()}") ?></li>
-            <?php elseif ($membership->getStatus() == GroupMembershipPeer::STYP_INVITED): ?>
+            <?php elseif ($membership && $membership->getStatus() == GroupMembershipPeer::STYP_INVITED): ?>
             <li><?php echo link_to('<span></span>'.__('Respond to Invitation'), "@group-invitation?group={$user->getPlug()}", "class=action-button connect-user ajax-enabled id=cnus-{$group->getPlug()}") ?></li>
             <?php elseif ($sesuser->can(ActionPeer::ACT_JOIN_GROUP, $group)): ?>
             <li><?php echo link_to('<span></span>'.__('Join'), "@join-group?group={$group->getPlug()}", "class=action-button connect-user ajax-enabled id=cnus-{$group->getPlug()}") ?></li>
