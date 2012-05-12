@@ -29,8 +29,8 @@
 <li><?php echo link_to(__('Publication Categories'), 'author/categories') ?></li>
 <li><?php echo link_to(__('Edit Publication Sources'), 'author/sources') ?></li>
 <li><?php echo link_to(__('Authors'), 'author/authors') ?></li>
-<li><?php echo link_to(__('All Articles'), 'author/articles', array('query_string' => 'group=all')) ?></li>
-<li><?php echo link_to(__('All News'), 'author/newss', array('query_string' => 'group=all')) ?></li>
+<li><?php echo link_to(__('All Articles'), 'author/articles', array('query_string' => 'filter=none')) ?></li>
+<li><?php echo link_to(__('All News'), 'author/newss', array('query_string' => 'filter=none')) ?></li>
 </ol>
 <?php endif ?>
 <div class="hrsplit-1"></div>
