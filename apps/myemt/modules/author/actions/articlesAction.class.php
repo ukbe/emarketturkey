@@ -21,6 +21,7 @@ class articlesAction extends EmtAuthorAction
         $this->keyword = $this->getRequestParameter('keyword');
         $this->sort = myTools::pick_from_list($this->getRequestParameter('sort'), array('id', 'title', 'category', 'source', 'publish'), 'id');
         $this->dir = myTools::pick_from_list($this->getRequestParameter('dir'), array('asc', 'desc'), 'asc');
+        $this->ipp = myTools::pick_from_list($this->getRequestParameter('ipp'), array(10, 20, 50), 20);
         
         $sortFields = array('id'        => PublicationPeer::ID,
                             'title'     => PublicationI18nPeer::TITLE,
