@@ -4,7 +4,7 @@ class PublicationCategoryPeer extends BasePublicationCategoryPeer
 {
     CONST PCAT_FEATURED         = 1;
     
-    CONST KNOWLEDGEBASE_CATEGORY_ID = 48;
+    CONST KNOWLEDGEBASE_CATEGORY_ID = 20;
     
     public static function getBaseCategories($cr=null, $for_select = false, $parent_id = null)
     {
