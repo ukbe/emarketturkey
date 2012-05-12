@@ -9,7 +9,7 @@ class Author extends BaseAuthor
     
     public function getDefaultDisplayName()
     {
-        return $this->getDefaultDisplayName($this->getDefaultLang()); 
+        return $this->getDisplayName($this->getDefaultLang()); 
     }
     
     public function getPicture()
