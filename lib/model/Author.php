@@ -39,7 +39,7 @@ class Author extends BaseAuthor
     
     public function getMediaItems($item_id = null, $type_id = null)
     {
-        return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_AUTHOR, $type_id, $item_id);
+        return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_AUTHOR, $type_id, $item_id);
     }
     
     public function hasLsiIn($culture)
