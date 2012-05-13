@@ -86,7 +86,7 @@ class Publication extends BasePublication
     
     public function getPhotos()
     {
-        return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_PUBLICATION);
+        return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_PUBLICATION);
     }
     
     public function getMediaItems($item_id = null, $type_id = null)
