@@ -850,3 +850,5 @@ yeşil tonlar
 
 .data-table.job-search-result td.date .clndr-leaf { font-size: 9px; padding: 0px; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
 .data-table.job-search-result td.date .clndr-leaf div { font-size: 8px; font-family: arial; margin: -1px; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; padding: 1px 0px; }
+
+body #section-bg > section > .col_948 { min-height: 470px; }
