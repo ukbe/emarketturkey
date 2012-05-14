@@ -5,5 +5,5 @@ all:
         newsColumns: # max 4 columns
             1:  1 # Economy
             2:  7 # Science
-            3:  4 # Markets
-            4:  2 # Politics
+            3:  2 # Politics
+            4:  14 # Markets
