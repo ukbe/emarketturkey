@@ -168,10 +168,7 @@ class CompanyPeer extends BaseCompanyPeer
 
     public static function getCompanyFromUrl(sfParameterHolder $ph)
     {
-        if (is_numeric($ph->get('hash')) && $ph->get('hash') < 179)
-            $company = self::retrieveByPK($ph->get('hash'));
-        else
-            $company = self::getCompanyFromHash($ph->get('hash'));
+        $company = self::getCompanyFromHash($ph->get('hash'));
         
         // Check if company is blocked on b2b
         if (sfContext::getInstance()->getConfiguration()->getApplication() == "b2b")

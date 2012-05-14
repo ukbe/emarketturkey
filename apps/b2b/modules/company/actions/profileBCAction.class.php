@@ -5,7 +5,7 @@ class profileBCAction extends EmtAction
 
     public function execute($request)
     {
-        if ($this->getRequestParameter('id') < 4739)
+        if ($this->getRequestParameter('id') < 458)
         {
             $action = $this->getRequestParameter('paction');
             

@@ -1,10 +1,10 @@
-user-profile-temp-bc:
-  url:   /:sf_culture/profile/:id
+company-profile-temp-bc:
+  url:   /:sf_culture/company/:id
   requirements: { sf_culture: (?:en|de|tr), id: \d+ }
   param: { module: company, action: profileBC }
 
-user-profile-temp-bc-action:
-  url:   /:sf_culture/profile/:id/:paction
+company-profile-temp-bc-action:
+  url:   /:sf_culture/company/:id/:paction
   requirements: { sf_culture: (?:en|de|tr), id: \d+, action: (events|partners|network|people|photos|products|profile) }
   param: { module: company, action: profileBC }
 
