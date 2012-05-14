@@ -21,6 +21,7 @@
         <dl class="grid">
             <dt><?php echo __('Job in Your Network')?></dt>
             <?php foreach ($network_jobs as $job): ?>
+            <?php if ($job->getOwner()->getHRProfile() && $job->getOwner()->getHRProfile()->getHRLogo()): ?>
             <dd>
                 <ul>
                     <li class="_hrBranding"><a rel="net_spot" href="<?php echo url_for($job->getUrl()) ?>"><span style="background-image:url(<?php echo $job->getOwner()->getHRProfile()->getHRLogo() ? $job->getOwner()->getHRProfile()->getHRLogo()->getThumbnailUri() : $job->getOwner()->getLogo()->getThumbnailUri() ?>)"></span></a></li>
@@ -28,6 +29,7 @@
                     <li class="_hrPosition"><a rel="net_spot" href="<?php echo url_for($job->getUrl()) ?>"><em><?php echo $job ?></em></a></li>
                 </ul>
             </dd>
+            <?php endif ?>
             <?php endforeach ?>
         </dl>
     </div>
