@@ -57,7 +57,7 @@ class B2bLead extends BaseB2bLead
         $c = clone $c1;
         $c->add(MediaItemPeer::OWNER_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_B2B_LEAD);
         $c->add(MediaItemPeer::ITEM_TYPE_ID, MediaItemPeer::MI_TYP_PRODUCT_PICTURE);
-        $c->add(MediaItemPeer::OWNER_ID, $this->getId());
+        $c->add(MediaItemPeer::OWNER_ID, $this->getId() ? $this->getId() : 0);
         
         return MediaItemPeer::doSelect($c);
     }

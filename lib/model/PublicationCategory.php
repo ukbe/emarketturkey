@@ -50,7 +50,7 @@ class PublicationCategory extends BasePublicationCategory
     
     public function getPhotos()
     {
-        return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_PUBLICATION_CATEGORY);
+        return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_PUBLICATION_CATEGORY);
     }
     
     public function getEditUrl($act = 'edit')

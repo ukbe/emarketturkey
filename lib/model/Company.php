@@ -412,7 +412,7 @@ class Company extends BaseCompany
             $c = new Criteria();
         }
         
-        $c->add(MediaItemPeer::OWNER_ID, $this->getId());
+        $c->add(MediaItemPeer::OWNER_ID, $this->getId() ? $this->getId() : 0);
         $c->add(MediaItemPeer::OWNER_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_COMPANY);
         $c->add(MediaItemPeer::ITEM_TYPE_ID, MediaItemPeer::MI_TYP_ALBUM_PHOTO);
         return $count ? MediaItemPeer::doCount($c) : MediaItemPeer::doSelect($c);

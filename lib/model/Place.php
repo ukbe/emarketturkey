@@ -60,7 +60,7 @@ class Place extends BasePlace
     {
         if (is_int($c1))
         {
-            return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_PLACE, $c1);
+            return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_PLACE, $c1);
         }
         
         if ($c1)

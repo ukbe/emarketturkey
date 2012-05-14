@@ -153,7 +153,7 @@ class Event extends BaseEvent
     {
         if (is_int($c1))
         {
-            return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_EVENT, $c1);
+            return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_EVENT, $c1);
         }
         
         if ($c1)

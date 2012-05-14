@@ -109,7 +109,7 @@ class Job extends BaseJob
     {
         if (is_int($c1))
         {
-            return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_JOB, $c1);
+            return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_JOB, $c1);
         }
         
         if ($c1)

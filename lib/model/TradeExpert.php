@@ -192,7 +192,7 @@ class TradeExpert extends BaseTradeExpert
     {
         if (is_int($c1))
         {
-            return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_TRADE_EXPERT, $c1);
+            return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_TRADE_EXPERT, $c1);
         }
         
         if ($c1)

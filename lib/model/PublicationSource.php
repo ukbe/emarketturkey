@@ -34,7 +34,7 @@ class PublicationSource extends BasePublicationSource
     
     public function getPhotos()
     {
-        return MediaItemPeer::retrieveItemsFor($this->getId(), PrivacyNodeTypePeer::PR_NTYP_PUBLICATION_SOURCE);
+        return MediaItemPeer::retrieveItemsFor($this->getId() ? $this->getId() : 0, PrivacyNodeTypePeer::PR_NTYP_PUBLICATION_SOURCE);
     }
     
     public function hasLsiIn($culture)

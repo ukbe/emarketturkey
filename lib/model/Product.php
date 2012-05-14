@@ -51,7 +51,7 @@ class Product extends BaseProduct
     {
         $c = clone $c1;
         $c->add(MediaItemPeer::OWNER_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_PRODUCT);
-        $c->add(MediaItemPeer::OWNER_ID, $this->getId());
+        $c->add(MediaItemPeer::OWNER_ID, $this->getId() ? $this->getId() : 0);
         
         return MediaItemPeer::doSelect($c);
     }
