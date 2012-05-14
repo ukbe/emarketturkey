@@ -420,7 +420,12 @@ function injectCurrentUrl()
 
 function emt_remote_form($divId, $url, $params=Array(), $htmloptions = null)
 {
-    $params['credit'] = (($usr = sfContext::getInstance()->getUser()->getUser())?$usr->getLogin()->getGuid():'');
+    $usr = sfContext::getInstance()->getUser()->getUser();
+    ErrorLogPeer::Log($usr->getId(), 1, "Someone called emt_remote_form.\n\nPage:".sfContext::getInstance()->getRequest()->getUri());
+    
+    return "INVALID";
+    
+    $params['credit'] = ($usr ? $usr->getLogin()->getGuid() : '');
         
     return form_remote_tag(array(
             'update' => array('success' => $divId),
@@ -434,6 +439,11 @@ function emt_remote_form($divId, $url, $params=Array(), $htmloptions = null)
 
 function emt_remote_function($update, $url, $options)
 {
+    $usr = sfContext::getInstance()->getUser()->getUser();
+    ErrorLogPeer::Log($usr->getId(), 1, "Someone called emt_remote_function.\n\nPage:".sfContext::getInstance()->getRequest()->getUri());
+    
+    return "INVALID";
+
     $options['url'] = $url . (strpos($url,'?')?'&':'?').'credit=' . (($usr = sfContext::getInstance()->getUser()->getUser())?$usr->getLogin()->getGuid():'');
     $options['update'] = $update;
     $options['script'] = true;
@@ -442,6 +452,11 @@ function emt_remote_function($update, $url, $options)
 
 function emt_remote_link($text, $divId, $url, $params=Array(), $method=null, $htmloptions = null)
 {
+    $usr = sfContext::getInstance()->getUser()->getUser();
+    ErrorLogPeer::Log($usr->getId(), 1, "Someone called emt_remote_link.\n\nPage:".sfContext::getInstance()->getRequest()->getUri());
+    
+    return "INVALID";
+
     $params['credit'] = (($usr = sfContext::getInstance()->getUser()->getUser())?$usr->getLogin()->getGuid():'');
     return link_to_remote($text, array(
             'update' => array('success' => $divId),
