@@ -441,7 +441,6 @@ class Company extends BaseCompany
     {
         $c = new Criteria();
         $c->add(MediaItemPeer::ITEM_TYPE_ID, MediaItemPeer::MI_TYP_LOGO);
-        $c->add(MediaItemPeer::IS_TEMP, null, Criteria::ISNULL);
         $logo_ar = $this->getMediaItems($c);
         if (is_array($logo_ar) && count($logo_ar))
             return $logo_ar[0];
