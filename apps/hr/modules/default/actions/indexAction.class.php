@@ -60,7 +60,7 @@ class indexAction extends EmtAction
         $this->advanced = JobPeer::getFeaturedJobs(2, JobSpecPeer::JSPTYP_ADVANCED_LISTING);
         $this->branded = JobPeer::getFeaturedJobs(4, JobSpecPeer::JSPTYP_BRANDED_LISTING);
         
-        $this->network_jobs = $this->sesuser->getConnections(NULL, null, true, true, 8, true, null, null, null, PrivacyNodeTypePeer::PR_NTYP_JOB);
+        $this->network_jobs = $this->sesuser->getConnections(NULL, null, true, true, 8, true, null, null, array('wheres' => array('EMT_JOB.STATUS='.JobPeer::JSTYP_ONLINE)), PrivacyNodeTypePeer::PR_NTYP_JOB);
         shuffle($this->network_jobs);
         
         $this->params = array();
