@@ -67,7 +67,7 @@ class searchAction extends EmtAction
             if (isset($params['scase']))
                 $sqls['scase'] = "EXISTS (SELECT 1 FROM EMT_JOB_SPEC WHERE JOB_ID=EMT_JOB.ID AND TYPE_ID=".JobSpecPeer::JSPTYP_SPECIAL_CASE." AND SPEC_ID IN (".implode(',', $params['scase'])."))";
             
-            $sql = "SELECT * FROM EMT_JOB_VIEW EMT_JOB WHERE (".implode(') AND (', $sqls).")";
+            $sql = "SELECT * FROM EMT_JOB_VIEW EMT_JOB WHERE (".implode(') AND (', $sqls).") AND STATUS=".JobPeer::JSTYP_ONLINE."";
     
             $this->pager  = new EmtPager('Job', 20);
             $this->pager->setSql($sql);
