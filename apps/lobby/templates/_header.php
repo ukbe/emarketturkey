@@ -36,13 +36,13 @@
             </dt>
             <dd id='btn-b2b-box'>
                 <ul>
-                    <li><?php echo link_to(__('Companies'), '@companies') ?></li>
-                    <li><?php echo link_to(__('Products and Services'), '@products') ?></li>
-                    <li><?php echo link_to(__('Buying Leads'), '@buying-leads') ?></li>
-                    <li><?php echo link_to(__('Selling Leads'), '@selling-leads') ?></li>
-                    <li><?php echo link_to(__('Trade Shows'), '@tradeshows') ?></li>
-                    <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), '@tradeexperts') ?></li>
-                    <li><a href="s5.html">em<span style="color:red;">TR</span>UST <sup>®</sup></a></li>
+                    <li><?php echo link_to(__('Companies'), '@b2b.companies') ?></li>
+                    <li><?php echo link_to(__('Products and Services'), '@b2b.products') ?></li>
+                    <li><?php echo link_to(__('Buying Leads'), '@b2b.buying-leads') ?></li>
+                    <li><?php echo link_to(__('Selling Leads'), '@b2b.selling-leads') ?></li>
+                    <li><?php echo link_to(__('Trade Shows'), '@b2b.tradeshows') ?></li>
+                    <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), '@b2b.tradeexperts') ?></li>
+                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@b2b.emttrust') ?></li>
                 </ul>
             </dd>
         </dl>
@@ -66,8 +66,8 @@
                 <ul>
                     <li><?php echo link_to(__('Articles'), '@ac.articles') ?></li>
                     <li><?php echo link_to(__('News'), '@ac.news-home') ?></li>
-                    <li><?php echo link_to(__('Foreign Trade Glossary'), '@homepage') ?></li>
-                    <li><?php echo link_to(__('Country Profiles'), '@homepage') ?></li>
+                    <li><?php echo link_to(__('Authors'), '@ac.homepage') ?></li>
+                    <li><?php echo link_to(__('Knowledgebase'), '@ac.kb') ?></li>
                 </ul>
             </dd>
         </dl>
@@ -79,8 +79,7 @@
                 <ul>
                     <li><?php echo link_to(__('People'), '@cm.people') ?></li>
                     <li><?php echo link_to(__('Groups'), '@cm.groups') ?></li>
-                    <li><?php echo link_to(__('Events'), '@cm.homepage') ?></li>
-                    <li><?php echo link_to(__('Public Bulletin'), '@cm.homepage') ?></li>
+                    <li><?php echo link_to(__('Events'), '@cm.events') ?></li>
                 </ul>
             </dd>
         </dl>
@@ -90,10 +89,7 @@
             </dt>
             <dd id='btn-tx-box'>
                 <ul>
-                    <li><?php echo link_to(__('People'), '@cm.people') ?></li>
-                    <li><?php echo link_to(__('Groups'), '@cm.groups') ?></li>
-                    <li><?php echo link_to(__('Events'), '@cm.homepage') ?></li>
-                    <li><?php echo link_to(__('Public Bulletin'), '@cm.homepage') ?></li>
+                    <li><?php echo link_to(__('Join Now'), '@tx.apply') ?></li>
                 </ul>
             </dd>
         </dl>

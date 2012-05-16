@@ -42,7 +42,7 @@
                     <li><?php echo link_to(__('Selling Leads'), '@b2b.selling-leads') ?></li>
                     <li><?php echo link_to(__('Trade Shows'), '@b2b.tradeshows') ?></li>
                     <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), '@b2b.tradeexperts') ?></li>
-                    <li><a href="s5.html">emt<span style="color:red;">TR</span>UST <sup>®</sup></a></li>
+                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@b2b.emttrust') ?></li>
                 </ul>
             </dd>
         </dl>
@@ -67,7 +67,7 @@
                     <li><?php echo link_to(__('Articles'), '@articles') ?></li>
                     <li><?php echo link_to(__('News'), '@news-home') ?></li>
                     <li><?php echo link_to(__('Authors'), '@homepage') ?></li>
-                    <li><?php echo link_to(__('Knowledgebase'), '@homepage') ?></li>
+                    <li><?php echo link_to(__('Knowledgebase'), '@kb') ?></li>
                 </ul>
             </dd>
         </dl>
@@ -79,8 +79,7 @@
                 <ul>
                     <li><?php echo link_to(__('People'), '@cm.people') ?></li>
                     <li><?php echo link_to(__('Groups'), '@cm.groups') ?></li>
-                    <li><?php echo link_to(__('Events'), '@cm.homepage') ?></li>
-                    <li><?php echo link_to(__('Public Bulletin'), '@cm.homepage') ?></li>
+                    <li><?php echo link_to(__('Events'), '@cm.events') ?></li>
                 </ul>
             </dd>
         </dl>
@@ -90,10 +89,7 @@
             </dt>
             <dd id='btn-tx-box'>
                 <ul>
-                    <li><?php echo link_to(__('People'), '@cm.people') ?></li>
-                    <li><?php echo link_to(__('Groups'), '@cm.groups') ?></li>
-                    <li><?php echo link_to(__('Events'), '@cm.homepage') ?></li>
-                    <li><?php echo link_to(__('Public Bulletin'), '@cm.homepage') ?></li>
+                    <li><?php echo link_to(__('Join Now'), '@tx.apply') ?></li>
                 </ul>
             </dd>
         </dl>

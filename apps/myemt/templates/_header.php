@@ -25,14 +25,13 @@
     		<dt><?php echo link_to('<b>'.__('B2B').'</b>', '@b2b.homepage', 'tabindex=2 id=btn-b2b') ?></dt>
             <dd id="btn-b2b-box">
     			<ul>
-    				<li><?php echo link_to(__('Companies'), '@b2b.companies') ?></li>
-    				<li><?php echo link_to(__('Products and Services'), '@b2b.products') ?></li>
-                    <li><?php echo link_to(__('Buying Leads'), '@buying-leads') ?></li>
-                    <li><?php echo link_to(__('Selling Leads'), '@selling-leads') ?></li>
-    				<li><?php echo link_to(__('Trade Shows'), '@b2b.tradeshows') ?></li>
+                    <li><?php echo link_to(__('Companies'), '@b2b.companies') ?></li>
+                    <li><?php echo link_to(__('Products and Services'), '@b2b.products') ?></li>
+                    <li><?php echo link_to(__('Buying Leads'), '@b2b.buying-leads') ?></li>
+                    <li><?php echo link_to(__('Selling Leads'), '@b2b.selling-leads') ?></li>
+                    <li><?php echo link_to(__('Trade Shows'), '@b2b.tradeshows') ?></li>
                     <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), '@b2b.tradeexperts') ?></li>
-                    <li><?php echo link_to(__('Transportation Directory'), '@b2b.homepage') ?></li>
-                    <li><a href="s5.html">em<span style="color:red;">TR</span>UST <sup>®</sup></a></li>
+                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@b2b.emttrust') ?></li>
     			</ul>
     		</dd>
     	</dl>
@@ -41,10 +40,9 @@
     		<dt><?php echo link_to('<b>'.__('JOBS').'</b>', '@hr.homepage', 'tabindex=3 id=btn-hr') ?></dt>
             <dd id="btn-hr-box">
     			<ul class="drop">
-    				<li><?php echo link_to(__('Job Search'), '@hr.homepage') ?></li>
+                    <li><?php echo link_to(__('Job Search'), '@hr.jobsearch') ?></li>
                     <li><?php echo link_to(__('My Career'), '@hr.mycareer') ?></li>
-    				<li><a href="#url"><span style="color:red;">TR</span>ADE Experts <sup>®</sup></a></li>
-    				<li><a class="last" href="#url">cv<span style="color:red;">TR</span>UST <sup>®</sup></a></li>
+                    <li><?php echo link_to(__('Bookmarks'), '@hr.mycareer-action?action=bookmarks') ?></li>
     			</ul>
     		</dd>
     	</dl>
@@ -55,8 +53,8 @@
     			<ul class="drop">
                     <li><?php echo link_to(__('Articles'), '@ac.articles') ?></li>
                     <li><?php echo link_to(__('News'), '@ac.news-home') ?></li>
-                    <li><?php echo link_to(__('Foreign Trade Glossary'), '@homepage') ?></li>
-    				<li><?php echo link_to(__('Country Profiles'), '@homepage') ?></li>
+                    <li><?php echo link_to(__('Authors'), '@ac.homepage') ?></li>
+                    <li><?php echo link_to(__('Knowledgebase'), '@ac.kb') ?></li>
     			</ul>
     		</dd>
     	</dl>
@@ -67,8 +65,7 @@
     			<ul class="drop">
                     <li><?php echo link_to(__('People'), '@cm.people') ?></li>
                     <li><?php echo link_to(__('Groups'), '@cm.groups') ?></li>
-                    <li><?php echo link_to(__('Events'), '@cm.homepage') ?></li>
-    				<li><?php echo link_to(__('Public Bulletin'), '@cm.homepage') ?></li>
+                    <li><?php echo link_to(__('Events'), '@cm.events') ?></li>
     			</ul>
     		</dd>
     	</dl>
@@ -76,6 +73,9 @@
     	<dl>
     		<dt><?php echo link_to('<b>'.__('TRANSLATION').'</b>', '@tx.homepage', 'tabindex=6 id=btn-tx') ?></dt>
 			<dd id='btn-tx-box'>
+                <ul class="drop">
+                    <li><?php echo link_to(__('Join Now'), '@tx.apply') ?></li>
+                </ul>
 			</dd>
     	</dl>
 

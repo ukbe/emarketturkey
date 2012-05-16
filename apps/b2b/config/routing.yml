@@ -1,3 +1,8 @@
+emttrust:
+  url: /:sf_culture/emtTrust
+  param: { module: emttrust, action: index }
+  requirements: { id: \d+, sf_culture: (?:en|de|tr) }
+
 product-detail-bc:
   url: /:sf_culture/product/:id
   param: { module: product, action: indexBC }
