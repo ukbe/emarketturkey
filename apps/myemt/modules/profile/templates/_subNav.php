@@ -1,10 +1,10 @@
     <header>
 <?php slot('pageHeader') ?>
         <hgroup class="_comSel">
-            <?php echo link_to(image_tag($sesuser->getProfilePictureUri()), "@edit-profile-picture", "class=_comMng_logo") ?>
+            <?php echo link_to(image_tag($sesuser->getProfilePictureUri()), "@setup-profile", "class=_comMng_logo") ?>
             <ul class="_horizontal">
                 <li><?php echo link_to(__('Go to Profile'), $sesuser->getProfileUrl()) ?></li>
-                <li><?php echo link_to($sesuser->getProfilePicture() ? __('Change Photo') : __('Upload Photo'), "@edit-profile-picture") ?></li>
+                <li><?php echo link_to($sesuser->getProfilePicture() ? __('Change Photo') : __('Upload Photo'), "@setup-profile") ?></li>
                 <li class="_last_item"><?php echo link_to(__('Messages'), "@messages") ?></li>
             </ul>
             <dl>

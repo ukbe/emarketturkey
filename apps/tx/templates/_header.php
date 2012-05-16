@@ -96,7 +96,7 @@
         <ul id="buttons">
             <!--// LOGGED OFF //-->
             <li class="nologin"><b><?php echo link_to(__('Sign Up'), '@myemt.signup', array('id' => 'btn_signup' , 'tabindex' => 7, 'title' => __('Sign Up'))) ?></b></li>
-            <li class="nologin"><b><?php echo link_to(__('Login'), '@myemt.login', array('id' => 'btn_login', 'title' => __('Login'))) ?></b>
+            <li class="nologin"><b><?php echo link_to(__('Login').'<b></b>', '@myemt.login', array('id' => 'btn_login', 'title' => __('Login'))) ?></b>
                 <div id="btn_login-box">
                     <ul class="menu-sub-box list">
                         <li class="header"><?php echo __('Login') ?></li>

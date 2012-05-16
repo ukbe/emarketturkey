@@ -514,7 +514,7 @@ tasks:
 profile-edit:
   url:   /:sf_culture/profile/edit
   requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: profile, action: edit }
+  param: { module: default, action: setupProfile }
 
 login:
   url:   /login
