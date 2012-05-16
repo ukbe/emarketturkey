@@ -21,14 +21,14 @@
 </div>
 <?php include_partial('global/page_user_message') ?>
 <div id="section-bg">
-<div id="section" class="app_lobby">
+<section class="app_lobby">
  <?php if (has_slot('subNav')): ?>
  <?php include_slot('subNav') ?>
  <?php else: ?>
  <?php include_partial('global/subNav') ?>
  <?php endif ?>
  <?php echo $sf_data->getraw('sf_content') ?>
-</div>
+</section>
 </div>
 </body>
 </html>
