@@ -1,3 +1,8 @@
+product-detail-bc:
+  url: /:sf_culture/product/:id
+  param: { module: product, action: indexBC }
+  requirements: { id: \d+, sf_culture: (?:en|de|tr) }
+
 company-profile-temp-bc:
   url:   /:sf_culture/company/:id
   requirements: { sf_culture: (?:en|de|tr), id: \d+ }
@@ -5,7 +10,7 @@ company-profile-temp-bc:
 
 company-profile-temp-bc-action:
   url:   /:sf_culture/company/:id/:paction
-  requirements: { sf_culture: (?:en|de|tr), id: \d+, action: (events|partners|network|people|photos|products|profile) }
+  requirements: { sf_culture: (?:en|de|tr), id: \d+, action: (events|companies|network|people|groups|photos|products|profile) }
   param: { module: company, action: profileBC }
 
 place-profile:
