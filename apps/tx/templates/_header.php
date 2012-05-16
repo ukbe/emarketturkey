@@ -1,7 +1,7 @@
     <div>
     <hgroup>
         <h1>
-            <a href="<?php echo url_for('@homepage') ?>" title="<?php echo __('eMarketTurkey Homepage') ?>" tabindex="0">
+            <a href="<?php echo url_for('@lobby.homepage') ?>" title="<?php echo __('eMarketTurkey Homepage') ?>" tabindex="0">
                 <abbr title="electronic">e</abbr><em>Market</em><em>Turkey</em>
             </a>
         </h1>
