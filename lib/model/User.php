@@ -1922,6 +1922,14 @@ WHERE PRIO=1
                         SELECT DISTINCT P_OBJECT_ID, P_OBJECT_TYPE_ID FROM ($sql)
                     )";
         }
+        else
+        {
+            $sql = "SELECT * FROM (
+                        SELECT PRES.*, RANK() OVER (PARTITION BY ID ORDER BY DEPTH ASC) SEQNUMBER 
+                        FROM ($sql) PRES
+                    ) 
+                    WHERE SEQNUMBER=1";
+        }
         
         if ($ipp && $page)
         {
