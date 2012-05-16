@@ -4,7 +4,7 @@ class HRProfile extends BaseHRProfile
 {
     public function getHRLogo()
     {
-        return $this->getMediaItem();
+        return $this->getImage(MediaItemPeer::MI_TYP_HR_LOGO);
     }
 
     public function getSpotBoxBackground()

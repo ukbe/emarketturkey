@@ -11,7 +11,7 @@ class MediaItemPeer extends BaseMediaItemPeer
     CONST MI_TYP_LOGO                       = 7;
     CONST MI_TYP_VIDEO                      = 8;
     CONST MI_TYP_PUBLICATION_PHOTO          = 9;
-    CONST MI_TYP_COMPANY_HR_LOGO            = 10;
+    CONST MI_TYP_HR_LOGO                    = 10;
     CONST MI_TYP_PLATFORM_AD_FILE           = 11;
     CONST MI_TYP_JOB_POST_IMAGE             = 12;
     CONST MI_TYP_BANNER_IMAGE               = 13;

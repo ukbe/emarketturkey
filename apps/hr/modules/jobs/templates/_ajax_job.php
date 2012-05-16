@@ -1,4 +1,4 @@
-<div class="spot-job-card" style="background: url(<? echo ($back = $owner->getHRProfile()->getSpotBoxBackground()) ? $back->getUri() : 'bg-800x400-1.jpg' ?>) no-repeat 0px;">
+<div class="spot-job-card" style="background: url(<? echo ($back = $owner->getHRProfile()->getSpotBoxBackground()) ? $back->getUri() : '/images/layout/background/spot-job-post-default-bg.jpg' ?>) no-repeat 0px;">
 <div class="logo"><img src="<?php echo $owner->getHRProfile()->getHRLogo() ? $owner->getHRProfile()->getHRLogo()->getMediumUri() : $owner->getLogo()->getMediumUri() ?>" /></div>
 <div class="_right-block blurred">
         <dl>

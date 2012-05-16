@@ -416,7 +416,7 @@ class MediaItem extends BaseMediaItem
                     
                 }
                 break;
-            case MediaItemPeer::MI_TYP_COMPANY_HR_LOGO :
+            case MediaItemPeer::MI_TYP_HR_LOGO :
                 $result = $is_owner ? $i18n->__("human resources logo of your company %1c", array('%1c' => $owner)) : $i18n->__("human resources logo of %1u's company %2c", array('%1u' => $top_owner, '%2c' => $owner, 'sf_culture' => $culture));
                 break;
             case MediaItemPeer::MI_TYP_PRODUCT_PICTURE :
