@@ -1,3 +1,4 @@
+<?php if (1==2):  // temporarily disabled commenting ?>
 <?php if ($user = $sf_user->getUser()): ?>
 <?php $cc = myTools::alphaID(rand(0, time())) ?>
 <div class="comment-box cb<?php echo $cc ?>">
@@ -34,11 +35,12 @@
 <?php echo input_hidden_tag('c2', PrivacyNodeTypePeer::PR_NTYP_USER) ?>
 <?php echo textarea_tag('comment-text', '', 'cols=50 rows=4') ?>
 <?php if_javascript(); ?>
-<?php echo submit_to_remote('comment', __('Leave Comment'), array('url' => '@profile-action?action=comment', 'update' => 'last-comment-'.$cc, 'position' => 'before', 'complete' => "jQuery('div.cb$cc').find('#comment-text').val('');"), 'class=command') ?>
+<?php echo submit_tag(__('Leave Comment'), array('url' => '@profile-action?action=comment', 'update' => 'last-comment-'.$cc, 'position' => 'before', 'complete' => "jQuery('div.cb$cc').find('#comment-text').val('');"), 'class=command') ?>
 <?php end_if_javascript(); ?>
 <noscript><?php echo submit_tag(__('Leave Comment')) ?></noscript>
 </form>
 </div>
 </div>
 </div>
+<?php endif ?>
 <?php endif ?>
