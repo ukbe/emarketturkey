@@ -4,7 +4,7 @@ class indexAction extends EmtAction
 {
     public function execute($request)
     {
-        $this->kb_category = PublicationCategoryPeer::retrieveByPK(48);
+        $this->kb_category = PublicationCategoryPeer::retrieveByPK(PublicationCategoryPeer::KNOWLEDGEBASE_CATEGORY_ID);
 
         $columnsTypes = array_keys(PublicationCategoryPeer::getBaseCategories(null, true, $this->kb_category->getId()));
         $this->sectarticles = PublicationPeer::doSelectArticlesByCategory(false, $columnsTypes, PublicationPeer::PUB_FEATURED_COLUMN, null, 5, true);
