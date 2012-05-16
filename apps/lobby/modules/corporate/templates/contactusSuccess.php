@@ -69,7 +69,6 @@
                 <p><?php echo __('Mansuroğlu Mah. Cumhuriyet Cad. No:15/1<br />Bayraklı 35040 Izmir<br />TURKEY') ?></p>
                 <br />
                 <div class="hrsplit-3"></div>
-            </section>
             </div>
         </div>
 
