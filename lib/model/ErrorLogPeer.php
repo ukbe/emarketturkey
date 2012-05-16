@@ -7,8 +7,8 @@ class ErrorLogPeer extends BaseErrorLogPeer
         try
         {
             $log = new ErrorLog();
-            $log->setCausingItemId($item_id);
-            $log->setCausingItemTypeId($item_type_id);
+            $log->setCausingItemId($item_id ? $item_id : 0);
+            $log->setCausingItemTypeId($item_type_id ? $item_type_id : 0);
             $log->setMessage($message);
             $log->save();
             mail('ukbe.akdogan@emarketturkey.com', 'Error occured', $e ? print_r($e, true) : $message);
