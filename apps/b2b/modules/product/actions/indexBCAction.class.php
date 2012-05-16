@@ -8,7 +8,7 @@ class indexBCAction extends EmtAction
         {
             $product = ProductPeer::retrieveByPK($this->getRequestParameter('id'));
             
-            if ($product && $this->getCompany())
+            if ($product && $product->getCompany())
             {
                 $this->redirect($product->getUrl(), 301);
             }
