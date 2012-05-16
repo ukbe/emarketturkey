@@ -8,7 +8,7 @@ class EmtJobAction extends EmtAction
 
         $this->job = JobPeer::getJobFromUrl($this->getRequest()->getParameterHolder());
 
-        $this->forward404unless($this->job);
+        $this->forward404Unless($this->job);
         
         $this->owner = $this->job->getOwner();
         $this->otyp = $this->job->getOwnerTypeId();
