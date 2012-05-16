@@ -21,18 +21,18 @@
 </div>
 <?php include_partial('global/page_user_message') ?>
 <div id="section-bg">
-<section class="app_b2b">
+<div id="section" class="app_b2b">
  <?php if (has_slot('subNav')): ?>
  <?php include_slot('subNav') ?>
  <?php else: ?>
  <?php include_partial('global/subNav') ?>
  <?php endif ?>
  <?php echo $sf_data->getraw('sf_content') ?>
-</section>
 </div>
-<section id="lowerContainer">
+</div>
+<div id="lowerContainer">
  <?php include_partial('global/footer') ?>
-</section>
+</div>
 
 </body>
 </html>

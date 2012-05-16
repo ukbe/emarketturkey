@@ -6,6 +6,9 @@
 <?php include_title() ?>
 <link rel="shortcut icon" href="/favicon.ico" />
 <?php include_partial('global/google-analytics') ?>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
 </head>
 <body class="_admin">
 <header>

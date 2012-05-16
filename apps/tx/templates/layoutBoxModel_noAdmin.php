@@ -7,6 +7,9 @@
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" type="text/css" media="screen" href="/css/boxmodel-admin.css" />
 <?php include_partial('global/google-analytics') ?>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
 </head>
 <body class="_admin">
 <header<?php echo $sf_user->isLoggedIn() ? ' class="login"' : '' ?>>
