@@ -33,5 +33,9 @@
  <?php echo $sf_data->getraw('sf_content') ?>
 </section>
 </div>
+<section id="lowerContainer">
+ <?php include_partial('global/footer') ?>
+</section>
+
 </body>
 </html>

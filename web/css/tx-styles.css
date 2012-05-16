@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-._translation {background:red url(/images/layout/background/translation.jpg) center bottom; }
+._translation {background: url(/images/layout/background/translation.jpg) center bottom; }
 
 .presentation .tabs dl {
 height: 344px;
