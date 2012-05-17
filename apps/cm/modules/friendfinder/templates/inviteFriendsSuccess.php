@@ -1,59 +1,46 @@
-<?php slot('uppermenu') ?>
-<?php include_partial('friendfinder/uppermenu') ?>
+<?php use_helper('Cryptographp', 'DateForm') ?>
+<?php slot('subNav') ?>
+<?php include_partial('subNav', array('sesuser' => $sesuser)) ?>
 <?php end_slot() ?>
-<div style="margin: 0 auto; width: 731px;">
+
+<div class="col_948 login">
+    <div class="box_762 _titleBG_Transparent" style="float: none; margin: 0 auto;">
+        <div class="_noBorder">
+
+            <div class="bubble ui-corner-all">
+                <div style="background: url(/images/layout/address-book.png) 15px 10px no-repeat; background-size: 100px auto; padding: 0px 20px 15px 135px;">
+                    <h4 class="noBorder"><?php echo __('Invite Friends') ?></h4>
+                    
+                    <?php if (isset($sent)): ?>
+                    <div class="<?php echo $sent > 0 ? 't_green' : 't_red' ?>">
+                    <?php echo format_number_choice('[0]No friends were invited|[1]1 friend was invited|(1,+Inf]%1% friends were invited', array('%1%' => $sent), $sent) ?>
+                    </div>
+                    <?php endif ?>
+                    <?php echo form_errors() ?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo form_tag('@invite-friends') ?>
+                    <dl class="_table">
+                        <dt><?php echo emt_label_for('emaillist', __('E-mail List')) ?></dt>
+                        <dd><?php echo textarea_tag('emaillist', !(isset($sent) && $sent) ? $sf_params->get('emaillist') : '', 'cols=60 rows=6') ?>
+                            <em class="ln-example"><?php echo __('Enter only one email address per line.') ?></em></dd>
+                        <dt><?php echo emt_label_for('message', __('Invite Message')) ?></dt>
+                        <dd><?php echo textarea_tag('message', !(isset($sent) && $sent) ? $sf_params->get('message') : '', 'cols=60 rows=6') ?>
+                            <em class="ln-example"><?php echo __('Optional') ?></em></dd>
+                        <dt><?php echo emt_label_for('cult', __('Invitation Language')) ?></dt>
+                        <dd><?php echo select_tag('cult', options_for_select(array('tr' => 'Türkçe', 'en' => 'English'), $sf_params->get('cult'))) ?>
+                            <em class="ln-example"><?php echo __('Invitation will be sent in selected language.') ?></em></dd>
+                        <dt></dt>
+                        <dd><?php echo submit_tag(__('Send Invitation'), 'class=green-button') ?></dd>
+                    </dl>
+                    </form>
+                    <div class="hrsplit-1"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <style>
-.add-list tr td.logo 
-{
-    width: 40px; 
-    text-align: center; 
-}
-.add-list tr td.logo img  
-{
-}
-.add-list tr td  
-{
-    font-size: 14px;
-    padding: 6px 10px; 
-    text-align: left;
-    vertical-align: middle;
-}
+.box_762 dl._table dd { width: 424px; }
 </style>
-<div class="rounded-border" style="margin: 0 auto;">
-<div>
-<div>
-<ol class="column">
-<li class="column span-19" style="padding: 15px;"><?php echo image_tag('layout/invite-friends.png', 'width=80') ?></li>
-<li class="column span-116">
-<h1 style="font: bold 20px tahoma; color: #737373; border-bottom: solid 3px #A4A9A6; padding: 3px;"><?php echo __('Invite Friends') ?></h1>
-<div class="hrsplit-2"></div>
-<?php echo __('You may invite your friends to join eMarketTurkey by providing their e-mail addresses.') ?>
-<div class="hrsplit-2"></div>
-<?php if (isset($sent)): ?>
-<div class="notify-bar">
-<?php echo format_number_choice('[0]No friends were invited|[1]1 friend was invited|(1,+Inf]%1% friends were invited', array('%1%' => $sent), $sent) ?>
-</div>
-<?php endif ?>
-<?php echo form_errors() ?>
-<div class="hrsplit-1"></div>
-<?php echo form_tag('@invite-friends') ?>
-<ol class="column span-105">
-<li class="column span-20 right append-1"><?php echo emt_label_for('emaillist', __('E-mail List')) ?></li>
-<li class="column span-84"><?php echo textarea_tag('emaillist', !(isset($sent) && $sent) ? $sf_params->get('emaillist') : '', 'cols=60 rows=6') ?><br /><em class="tip"><?php echo __('please enter only one email address per line') ?></em></li>
-<li class="column span-20 right append-1"><?php echo emt_label_for('message', __('Invite Message')) ?></li>
-<li class="column span-84"><?php echo textarea_tag('message', !(isset($sent) && $sent) ? $sf_params->get('message') : '', 'cols=60 rows=6') ?><br /><em class="tip"><?php echo __('optional') ?></em></li>
-<li class="column span-20 right append-1"><?php echo emt_label_for('cult', __('Invitation Language')) ?></li>
-<li class="column span-84"><?php echo select_tag('cult', options_for_select(array('tr' => 'Türkçe', 'en' => 'English'), $sf_params->get('cult'))) ?></li>
-</ol>
-<div class="hrsplit-2"></div>
-<div class="right">
-<?php echo submit_tag(__('Send Invitation'), 'class=command') ?>
-</div>
-</form>
-<div class="hrsplit-2"></div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
