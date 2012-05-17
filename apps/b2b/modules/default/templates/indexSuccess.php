@@ -152,8 +152,8 @@
         <h3><?php echo __('Upcoming Events') ?></h3>
         <div class="pad-0">
         <?php foreach ($featured_shows as $show): ?>
-            <?php if ($show->getPhoto()): ?>
-            <?php echo link_to(image_tag($show->getPhoto()->getMediumUri(), array('title' => $show, 'width' => 178, 'style' => 'display:block;')), $show->getUrl(), 'target=blank') ?>
+            <?php if ($show->getLogo()): ?>
+            <?php echo link_to(image_tag($show->getLogo()->getMediumUri(), array('title' => $show, 'width' => 178, 'style' => 'display:block;')), $show->getUrl(), 'target=blank') ?>
             <?php endif ?>
         <?php endforeach ?>
         </div>
