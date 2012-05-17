@@ -92,9 +92,9 @@ class addAction extends EmtManageEventAction
     					$this->event->setLocationState($this->place ? $this->place->getState() : $this->getRequestParameter('event_location_state'));
     
                         // Set time scheme
-                        $sdate = strtotime($this->getRequestParameter('event_start_date'));
+                        $sdate = strtotime($this->getRequestParameter('event_start'));
                         $this->time_scheme->setStartDate(date('U', mktime($this->getRequestParameter('event_start_time_hour'), $this->getRequestParameter('event_start_time_min'), 0, date('m', $sdate), date('d', $sdate), date('Y', $sdate))));
-                        $edate = strtotime($this->getRequestParameter('event_end_date'));
+                        $edate = strtotime($this->getRequestParameter('event_end'));
                         $this->time_scheme->setEndDate(date('U', mktime($this->getRequestParameter('event_end_time_hour'), $this->getRequestParameter('event_end_time_min'), 0, date('m', $edate), date('d', $edate), date('Y', $edate))));
                         $this->time_scheme->setRepeatTypeId($this->getRequestParameter('event_repeat') == 1 ? $this->getRequestParameter('event_repeat_type_id') : null);
                         $this->time_scheme->save();
