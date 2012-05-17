@@ -1,7 +1,7 @@
 <div class="col_948">
 
     <div class="col_180">
-<?php include_partial('leftmenu')?>
+    &nbsp;
     </div>
 
     <div class="col_576">

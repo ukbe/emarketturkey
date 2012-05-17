@@ -10,5 +10,5 @@ setAnalyticFilterCookieSuccess:
     layout: layoutFilter
 
 error404Success:
-    layout: layoutBoxModel
+    layout: layoutBoxModel-island
     
