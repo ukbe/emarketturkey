@@ -8,3 +8,7 @@ boxtestSuccess:
 
 setAnalyticFilterCookieSuccess:
     layout: layoutFilter
+
+error404Success:
+    layout: layoutBoxModel-corporate
+    
