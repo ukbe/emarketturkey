@@ -1,3 +1,8 @@
+bc-handler:
+  url:   /:sf_culture/:pmodule/:paction
+  requirements: { sf_culture: (?:en|de|tr), pmodule: (corporate), paction: (forIndividuals|forSuppliers) }
+  param: { module: default, action: allBC }
+
 alive:
   url:   /alive
   param: { module: default, action: alive }
