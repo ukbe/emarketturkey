@@ -71,12 +71,12 @@
     <dd class="_req"><?php echo input_tag("event_start_date", $sf_params->get('event_start_date', $event->getTimeScheme() ? $event->getTimeScheme()->getStartDate('d M Y') : null), array('style' => 'width:100px;')) ?>
         <?php echo select_hour_tag('event_start_time_hour', $sf_params->get('event_start_time_hour', $event->getTimeScheme() ? $event->getTimeScheme()->getStartDate('H') : null)) ?>
         <?php echo select_minute_tag('event_start_time_min', $sf_params->get('event_start_time_min', $event->getTimeScheme() ? $event->getTimeScheme()->getStartDate('i') : null)) ?>
-        <?php echo input_hidden_tag('event_start') ?></dd>
+        <?php echo input_hidden_tag('event_start', $event->getTimeScheme() ? $event->getTimeScheme()->getStartDate() : null) ?></dd>
     <dt><?php echo emt_label_for("event_start_date", __('End Date')) ?></dt>
     <dd><?php echo input_tag("event_end_date", $sf_params->get('event_end_date', $event->getTimeScheme() ? $event->getTimeScheme()->getEndDate('d M Y') : null), array('style' => 'width:100px;')) ?>
         <?php echo select_hour_tag('event_end_time_hour', $sf_params->get('event_end_time_hour', $event->getTimeScheme() ? $event->getTimeScheme()->getEndDate('H') : null)) ?>
         <?php echo select_minute_tag('event_end_time_min', $sf_params->get('event_end_time_min', $event->getTimeScheme() ? $event->getTimeScheme()->getEndDate('i') : null)) ?>
-        <?php echo input_hidden_tag('event_end') ?></dd>
+        <?php echo input_hidden_tag('event_end', $event->getTimeScheme() ? $event->getTimeScheme()->getEndDate() : null) ?></dd>
     <dt><?php echo emt_label_for("event_repeat_x", __('Repeat Event')) ?></dt>
     <dd><?php echo select_tag('event_repeat', options_for_select(array('0' => __('No'), '1' => __('Yes'))), $sf_params->get('event_repeat', $event->getTimeScheme() ? $event->getTimeScheme()->getRepeatTypeId() : null) > 0 ? 1 : 0) ?>
         <?php echo select_tag('event_repeat_type_id', options_for_select(TimeSchemePeer::$typeNames, $sf_params->get('event_repeat_type_id', $event->getTimeScheme() ? $event->getTimeScheme()->getRepeatTypeId() : null))) ?></dd>
