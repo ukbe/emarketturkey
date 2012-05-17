@@ -1,6 +1,6 @@
 <?php
 
-class indexBCAction extends EmtAction
+class showBCAction extends EmtAction
 {
     public function execute($request)
     {
