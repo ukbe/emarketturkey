@@ -6,6 +6,8 @@ class applyAction extends EmtAction
     {
         parent::initialize($context, $moduleName, $actionName);
         
+        if ($this->sesuser->isNew()) $this->redirect('@myemt.login?_ref='.$this->getRequest()->getUri());
+        
         $this->accounts = $this->sesuser->getCompanies(RolePeer::RL_CM_OWNER);
         array_unshift($this->accounts, $this->sesuser);
         $this->states = array();
