@@ -21,7 +21,7 @@
                 <dt><?php echo link_to(__('Privacy'), '@lobby.privacy') ?></dt>
                 <dd><?php echo link_to(__('Privacy Policy'), '@lobby.privacy') ?></dd>
                 <dd><?php echo link_to(__('Privacy Settings'), "@setup-privacy") ?></dd>
-                <dd class="_ft_truste"><?php echo link_to(image_tag('//privacy-policy.truste.com/certified-seal/wps/en/emarketturkey.com/seal_m.png', array('alt' => __('TRUSTe online privacy certification'))), '//privacy-policy.truste.com/click-with-confidence/wps/en/emarketturkey.com/seal_m', array('title' => __('TRUSTe online privacy certification'))) ?></dd>
+                <dd class="_ft_truste"><?php echo link_to(image_tag('//privacy-policy.truste.com/certified-seal/wps/en/emarketturkey.com/seal_m.png', array('alt' => __('TRUSTe online privacy certification'), 'style' => 'border: none;')), '//privacy-policy.truste.com/click-with-confidence/wps/en/emarketturkey.com/seal_m', array('title' => __('TRUSTe online privacy certification'), 'target' => '_blank')) ?></dd>
 			</dl>
 
 			<dl>
