@@ -64,7 +64,7 @@ li._ft_sub strong a:hover {text-decoration:none; }
 #lowerContainer dd._ftLn option {margin-right:10px;padding-right:2px;}
 
 ._ft_truste a img {
-    display:block;width:114px;height:36px;
+    display:block;height:36px;
     text-indent:-900px;overflow:hidden;
     opacity:.49;
     -webkit-transition: opacity .20s ease-in-out; -moz-transition: opacity .20s ease-in-out; -o-transition: opacity .20s ease-in-out;
