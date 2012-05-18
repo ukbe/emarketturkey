@@ -21,7 +21,7 @@
                 <dt><?php echo link_to(__('Privacy'), '@lobby.privacy') ?></dt>
                 <dd><?php echo link_to(__('Privacy Policy'), '@lobby.privacy') ?></dd>
                 <dd><?php echo link_to(__('Privacy Settings'), "@myemt.setup-privacy") ?></dd>
-                <dd class="_ft_truste"><a href=""><span>TRUSTe</span></a></dd>
+                <dd class="_ft_truste"><a href="//privacy-policy.truste.com/click-with-confidence/wps/en/emarketturkey.com/seal_s" title="TRUSTe online privacy certification" target="_blank"><img style="border: none" src="//privacy-policy.truste.com/certified-seal/wps/en/emarketturkey.com/seal_m.png" alt="TRUSTe online privacy certification"/></a></dd>
 			</dl>
 
 			<dl>

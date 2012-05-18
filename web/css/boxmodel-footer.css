@@ -63,15 +63,17 @@ li._ft_sub strong a:hover {text-decoration:none; }
 #lowerContainer dd._ftLn select {float:right;padding:3px 3px 3px 6px;margin:0px;background-color:#999;font-size:9px; border: none; border-radius: 2px;}
 #lowerContainer dd._ftLn option {margin-right:10px;padding-right:2px;}
 
-._ft_truste a span {
+._ft_truste a img {
     display:block;width:114px;height:36px;
-    position:absolute;bottom:10px;left:10px;
     text-indent:-900px;overflow:hidden;
-    background:url(/images/layout/icon/truste-seal-sm.png) bottom;
     opacity:.49;
     -webkit-transition: opacity .20s ease-in-out; -moz-transition: opacity .20s ease-in-out; -o-transition: opacity .20s ease-in-out;
 }
-._ft_truste a:hover span {opacity:.99}
+._ft_truste a {
+    display:block;width:114px;height:36px;
+    position:absolute;bottom:10px;left:10px;
+}
+._ft_truste a:hover img {opacity:.99}
 
 dd._ftSM {
     display:block;
