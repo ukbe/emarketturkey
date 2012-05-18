@@ -95,20 +95,19 @@
             <div class="scrollable vertical">
             
                 <div class="items">
-                
                 <?php foreach ($featured_companies as $i => $company): ?>
                     <?php if (($i % 4) == 0): ?>
                     <div>
                     <?php endif ?>
                     <div class="item">
-                        <?php echo link_to(image_tag($company->getProfilePictureUri(), array('title' => $company)), $company->getProfileUrl()) ?>
+                        <?php echo link_to(image_tag($company->getLogo()->getThumbnailUri(), array('title' => $company)), $company->getProfileUrl()) ?>
                         <div class="cname"><? echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
                         <div class="industry"><? echo $company->getBusinessSector() ?></div>
                     </div>
                     <?php if (($i % 4) == 3 || $i == (count($featured_companies) - 1)): ?>
                     </div>
                     <?php endif ?>
-                <?php endforeach ?> 
+                <?php endforeach ?>
                 </div>
             </div>
             <div class="navi"></div>
@@ -131,7 +130,8 @@
                     <div>
                     <?php endif ?>
                     <div class="item">
-                        <?php echo link_to(image_tag($product->getThumbUri(), array('title' => $product)), $product->getUrl()) ?>
+                        <?php $photo = $product->getPhoto() ?>
+                        <?php echo $photo ? link_to(image_tag($photo->getThumbnailUri(), array('title' => $product)), $product->getUrl()) : '' ?>
                         <div class="cname"><? echo link_to($product, $product->getUrl()) ?></div>
                         <div class="industry"><? echo link_to($product->getCompany(), $product->getCompany()->getProfileUrl()) ?></div>
                     </div>
