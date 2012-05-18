@@ -43,7 +43,7 @@ class ProductPeer extends BaseProductPeer
                     SELECT EMT_PRODUCT.*, rank() over (partition by company_id order by EMT_PRODUCT.CREATED_AT desc) rank
                     FROM EMT_PRODUCT
                     LEFT JOIN EMT_COMPANY ON EMT_PRODUCT.COMPANY_ID=EMT_COMPANY.ID
-                    WHERE EMT_PRODUCT.ACTIVE=1 AND EMT_COMPANY.AVAILABLE=1
+                    WHERE EMT_PRODUCT.ACTIVE=1 AND EMT_COMPANY.AVAILABLE=1 AND EMT_COMPANY.IS_FEATURED=1
                           AND EXISTS (
                                         SELECT 1 FROM EMT_MEDIA_ITEM MI 
                                         WHERE MI.OWNER_ID=EMT_PRODUCT.ID 
