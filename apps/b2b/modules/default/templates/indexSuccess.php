@@ -131,7 +131,6 @@
                     <?php endif ?>
                     <div class="item">
                         <?php $photo = $product->getPhoto() ?>
-                        <?php echo $photo ? link_to(image_tag($photo->getThumbnailUri(), array('title' => $product)), $product->getUrl()) : '' ?>
                         <div class="cname"><? echo link_to($product, $product->getUrl()) ?></div>
                         <div class="industry"><? echo link_to($product->getCompany(), $product->getCompany()->getProfileUrl()) ?></div>
                     </div>

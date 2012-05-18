@@ -72,7 +72,8 @@ class Product extends BaseProduct
         {
             if ($size=='S')
             {
-                return $profile_picture->getThumbnailUri();
+                if (file_exists($profile_picture->getThumbnailPath())) return $profile_picture->getThumbnailUri();
+                else return $path['S'];
             }
             elseif ($size=='M')
             {
