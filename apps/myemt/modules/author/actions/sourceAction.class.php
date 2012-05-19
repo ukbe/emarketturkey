@@ -20,6 +20,7 @@ class sourceAction extends EmtAuthorObjectAction
         {
             case 'new' : 
                 $this->getResponse()->setTitle('New Publication Source | eMarketTurkey');
+                if ($this->object && !$this->object->isNew()) $this->redirect($this->object->getEditUrl('view'));
                 break;
             case 'edit' :
                 $this->getResponse()->setTitle('Edit Publication Source | eMarketTurkey');
