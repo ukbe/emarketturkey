@@ -106,7 +106,7 @@ class directoryAction extends EmtAction
                 $c->add(GroupPeer::TYPE_ID, $this->types, Criteria::IN);
             }
             
-            if (!count($this->countries) && !count($this->types)) $this->redirect('@groups');
+            if (!count($this->countries) && !count($this->types) && !$this->keyword) $this->redirect('@groups');
 
             $this->mod = 1;
         }
