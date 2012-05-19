@@ -4,8 +4,9 @@ class searchBCAction extends EmtAction
 {
     public function execute($request)
     {
-        $within = myTools::pick_from_list($this->getRequestParameter('within'), array(PrivacyNodeTypePeer::PR_NTYP_USER, PrivacyNodeTypePeer::PR_NTYP_GROUP), null);
+        $within = myTools::pick_from_list(myTools::fixInt($this->getRequestParameter('within')), array(PrivacyNodeTypePeer::PR_NTYP_USER, PrivacyNodeTypePeer::PR_NTYP_GROUP), null);
 
+        $criteria = array();
         $criteria['keyword'] = $this->getRequestParameter('keyword');
         $criteria['location'] = $this->getRequestParameter('location');
         if ($within == PrivacyNodeTypePeer::PR_NTYP_GROUP)
