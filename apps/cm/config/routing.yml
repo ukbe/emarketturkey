@@ -1,3 +1,18 @@
+search:
+  url:   /:sf_culture/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: searchBC }
+
+search-groups:
+  url:   /:sf_culture/groups/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: groups, action: directory }
+
+search-users:
+  url:   /:sf_culture/people/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: people, action: directory }
+
 user-profile-temp-bc:
   url:   /:sf_culture/profile/:id
   requirements: { sf_culture: (?:en|de|tr), id: \d+ }
@@ -174,11 +189,6 @@ network:
   url:   /:sf_culture/network
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: network, action: index }
-
-search:
-  url:   /:sf_culture/search
-  requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: search, action: results }
 
 location-query:
   url:   /:sf_culture/profile/locationQuery
