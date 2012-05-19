@@ -113,10 +113,6 @@ class directoryAction extends EmtAction
 
             $this->mod = 1;
         }
-        else
-        {
-            $this->redirect("@groups");
-        }
         
         
         if (!$this->keyword) $c->addJoin(GroupPeer::ID, GroupI18nPeer::ID, Criteria::LEFT_JOIN);
