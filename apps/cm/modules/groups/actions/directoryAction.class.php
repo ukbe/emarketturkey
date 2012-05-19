@@ -126,7 +126,6 @@ class directoryAction extends EmtAction
         $c->addSelectColumn(GroupI18nPeer::DISPLAY_NAME);
         $c->addAscendingOrderByColumn(GroupI18nPeer::DISPLAY_NAME, myTools::NLSFunc(GroupI18nPeer::DISPLAY_NAME, 'SORT'));
         $c->add(GroupI18nPeer::CULTURE, $this->getUser()->getCulture());
-        echo $c->toString();die;
         $c->setDistinct();
         $pager = new sfPropelPager('Group', 20);
         $pager->setPage($this->page);
