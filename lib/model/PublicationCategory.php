@@ -2,6 +2,8 @@
 
 class PublicationCategory extends BasePublicationCategory
 {
+    private $hash = null;
+
     public function __toString()
     {
         return $this->getName() ? $this->getName() : $this->getDefaultName(); 
@@ -10,6 +12,21 @@ class PublicationCategory extends BasePublicationCategory
     public function getDefaultName()
     {
         return $this->getName($this->getDefaultLang()); 
+    }
+
+    public function getObjectTypeId()
+    {
+        return PrivacyNodeTypePeer::PR_NTYP_PUBLICATION_CATEGORY;
+    }
+    
+    public function getHash($reverse = false)
+    {
+        return is_null($this->hash) ? $this->hash = myTools::flipHash($this->getId(), false, $this->getObjectTypeId()) : $this->hash;
+    }
+
+    public function getPlug()
+    {
+        return base64_encode($this->getObjectTypeId() . '|' . $this->getHash());
     }
 
     public function getSubCategories($for_select = false)

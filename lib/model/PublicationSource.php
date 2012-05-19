@@ -2,6 +2,8 @@
 
 class PublicationSource extends BasePublicationSource
 {
+    private $hash = null;
+
     public function __toString()
     {
         return $this->getDisplayName() ? $this->getDisplayName() : $this->getDefaultName(); 
@@ -10,6 +12,21 @@ class PublicationSource extends BasePublicationSource
     public function getDefaultName()
     {
         return $this->getDisplayName($this->getDefaultLang()); 
+    }
+
+    public function getObjectTypeId()
+    {
+        return PrivacyNodeTypePeer::PR_NTYP_PUBLICATION_SOURCE;
+    }
+    
+    public function getHash($reverse = false)
+    {
+        return is_null($this->hash) ? $this->hash = myTools::flipHash($this->getId(), false, $this->getObjectTypeId()) : $this->hash;
+    }
+
+    public function getPlug()
+    {
+        return base64_encode($this->getObjectTypeId() . '|' . $this->getHash());
     }
 
     public function getPicture()
