@@ -85,7 +85,7 @@ class EmtObjectHandlerAction extends EmtAction
                         if (is_object($this->object) && get_class($this->object) == $this->objhandler->getClassName() && !$this->object->isNew())
                         {
                             $this->getUser()->setFlash('message', $this->objhandler->getSaveSuccessMessage());
-                            $this->act = 'view';
+                            $this->redirect($this->object->getEditUrl('view'));
                         }
                     }
                     break;
