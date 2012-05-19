@@ -8,7 +8,7 @@ class searchBCAction extends EmtAction
 
         $criteria = array();
         $criteria['keyword'] = $this->getRequestParameter('keyword');
-        $criteria['location'] = $this->getRequestParameter('location');
+        $criteria['country'] = $this->getRequestParameter('location');
         if ($within == PrivacyNodeTypePeer::PR_NTYP_GROUP)
             $criteria['type'] = $this->getRequestParameter('type');
 
