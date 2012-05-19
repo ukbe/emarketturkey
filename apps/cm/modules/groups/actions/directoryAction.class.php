@@ -115,7 +115,7 @@ class directoryAction extends EmtAction
         }
         
         
-        if (!$this->keyword) $c->addJoin(GroupPeer::ID, GroupI18nPeer::ID, Criteria::LEFT_JOIN);
+        if (!$this->keyword && !$this->initial) $c->addJoin(GroupPeer::ID, GroupI18nPeer::ID, Criteria::LEFT_JOIN);
         
         GroupPeer::addSelectColumns($c);
         
