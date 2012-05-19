@@ -31,16 +31,16 @@ class directoryAction extends EmtAction
 
         if ($this->keyword)
         {
-            $c1 = $c->getNewCriterion(GroupPeer::NAME, myTools::NLSFunc(GroupPeer::NAME, 'UPPER') . ' LIKE ' . myTools::NLSFunc('%{$this->keyword}%', 'UPPER'), Criteria::CUSTOM);
+            $c1 = $c->getNewCriterion(GroupPeer::NAME, myTools::NLSFunc(GroupPeer::NAME, 'UPPER') . ' LIKE ' . myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
             $c->addJoin(GroupPeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactAddressPeer::COUNTRY, GeonameCountryPeer::CURRENCY_CODE, Criteria::LEFT_JOIN);
-            $c2 = $c->getNewCriterion(GroupI18nPeer::ABBREVIATION, myTools::NLSFunc(GroupI18nPeer::ABBREVIATION, 'UPPER') . ' LIKE ' . myTools::NLSFunc('%{$this->keyword}%', 'UPPER'), Criteria::CUSTOM);
-            $c3 = $c->getNewCriterion(GroupI18nPeer::DISPLAY_NAME, myTools::NLSFunc(GroupI18nPeer::DISPLAY_NAME, 'UPPER') . ' LIKE ' . myTools::NLSFunc('%{$this->keyword}%', 'UPPER'), Criteria::CUSTOM);
-            $c4 = $c->getNewCriterion(GroupI18nPeer::INTRODUCTION, myTools::NLSFunc(GroupI18nPeer::INTRODUCTION, 'UPPER') . ' LIKE ' . myTools::NLSFunc('%{$this->keyword}%', 'UPPER'), Criteria::CUSTOM);
-            $c5 = $c->getNewCriterion(GroupI18nPeer::EVENTS_INTRODUCTION, myTools::NLSFunc(GroupI18nPeer::EVENTS_INTRODUCTION, 'UPPER') . ' LIKE ' . myTools::NLSFunc('%{$this->keyword}%', 'UPPER'), Criteria::CUSTOM);
-            $c6 = $c->getNewCriterion(GroupI18nPeer::MEMBER_PROFILE, myTools::NLSFunc(GroupI18nPeer::MEMBER_PROFILE, 'UPPER') . ' LIKE ' . myTools::NLSFunc('%{$this->keyword}%', 'UPPER'), Criteria::CUSTOM);
-            $c7 = $c->getNewCriterion(GeonameCountryPeer::COUNTRY, myTools::NLSFunc(GeonameCountryPeer::COUNTRY, 'UPPER') . ' LIKE ' . myTools::NLSFunc('%{$this->keyword}%', 'UPPER'), Criteria::CUSTOM);
+            $c2 = $c->getNewCriterion(GroupI18nPeer::ABBREVIATION, myTools::NLSFunc(GroupI18nPeer::ABBREVIATION, 'UPPER') . ' LIKE ' . myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c3 = $c->getNewCriterion(GroupI18nPeer::DISPLAY_NAME, myTools::NLSFunc(GroupI18nPeer::DISPLAY_NAME, 'UPPER') . ' LIKE ' . myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c4 = $c->getNewCriterion(GroupI18nPeer::INTRODUCTION, myTools::NLSFunc(GroupI18nPeer::INTRODUCTION, 'UPPER') . ' LIKE ' . myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c5 = $c->getNewCriterion(GroupI18nPeer::EVENTS_INTRODUCTION, myTools::NLSFunc(GroupI18nPeer::EVENTS_INTRODUCTION, 'UPPER') . ' LIKE ' . myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c6 = $c->getNewCriterion(GroupI18nPeer::MEMBER_PROFILE, myTools::NLSFunc(GroupI18nPeer::MEMBER_PROFILE, 'UPPER') . ' LIKE ' . myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c7 = $c->getNewCriterion(GeonameCountryPeer::COUNTRY, myTools::NLSFunc(GeonameCountryPeer::COUNTRY, 'UPPER') . ' LIKE ' . myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
             $c1->addOr($c2);
             $c1->addOr($c3);
             $c1->addOr($c4);
