@@ -32,7 +32,7 @@ class profileAction extends EmtManageJobAction
                 if ($filename)
                 {
                     $oldlogo = $this->profile->getHRLogo();
-                    $this->logo = MediaItemPeer::createMediaItem($this->owner->getId(), $this->otyp, MediaItemPeer::MI_TYP_COMPANY_HR_LOGO, $_FILES['hrlogo_file'], false);
+                    $this->logo = MediaItemPeer::createMediaItem($this->owner->getId(), $this->otyp, MediaItemPeer::MI_TYP_HR_LOGO, $_FILES['hrlogo_file'], false);
                     
                     $this->profile->setLogoId($this->logo->getId());
                     $this->profile->save();
