@@ -6,7 +6,7 @@ class directoryAction extends EmtAction
     {
         $this->substitute = $this->getRequestParameter('substitute');
         
-        $this->initial = $this->country = $this->type = null;
+        $this->initial = $this->country = $this->types = null;
         
         $this->mod = null;
         
@@ -80,7 +80,41 @@ class directoryAction extends EmtAction
             $c->add(ContactAddressPeer::COUNTRY, "UPPER(".ContactAddressPeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
         }
         
-        if ($this->mod === null) $this->redirect("@groups");
+        if (!$this->initial && !$this->country && !$this->mod)
+        {
+            $this->countries = $this->getRequestParameter('country', array());
+            if (!is_array($this->countries)) $this->countries = array($this->countries);
+            foreach ($this->countries as $key => $code)
+            {
+                $this->countries[$key] = strtoupper(substr($code, 0, 2));
+            }
+            $this->types = $this->getRequestParameter('gtype', array());
+            if (!is_array($this->types)) $this->types = array($this->types);
+            foreach ($this->types as $key => $type_id)
+            {
+                $this->types[$key] = (is_numeric($type_id) ? $type_id : 0);
+            }
+            if (count($this->countries))
+            {
+                $c->addJoin(GroupPeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
+                $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
+                $c->add(ContactAddressPeer::COUNTRY, $this->countries, Criteria::IN);
+            }
+            
+            if (count($this->types))
+            {
+                $c->add(GroupPeer::TYPE_ID, $this->types, Criteria::IN);
+            }
+            
+            if (!count($this->countries) && !count($this->types)) $this->redirect('@groups');
+
+            $this->mod = 1;
+        }
+        else
+        {
+            $this->redirect("@groups");
+        }
+        
         
         $c->addJoin(GroupPeer::ID, GroupI18nPeer::ID, Criteria::LEFT_JOIN);
         

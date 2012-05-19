@@ -9,10 +9,10 @@
     <div class="col_576">
         <div class="box_576 _titleBG_Transparent">
             <h4 style="border-bottom:none;"><?php echo __('Find a Group') ?></h4>
-            <?php echo form_tag("@groups-action?action=results") ?>
+            <?php echo form_tag("@search-groups", 'method=get') ?>
             <dl class="_table">
-                <dt><?php echo emt_label_for('group-keyword', __('Search')) ?></dt>
-                <dd><?php echo input_tag('group-keyword', $sf_params->get('group-keyword'), 'style=width:250px;') ?>
+                <dt><?php echo emt_label_for('keyword', __('Search')) ?></dt>
+                <dd><?php echo input_tag('keyword', $sf_params->get('keyword'), 'style=width:250px;') ?>
                     <?php echo submit_tag(__('Search'), 'class=green-button') ?>
                     <div class="adv-switch pad-1"><?php echo link_to_function(__('Advanced Search ..'), "$('.adv-switch').toggleClass('ghost');", 'class=bluelink') ?></div></dd>
                 <dt class="adv-switch ghost"><?php echo emt_label_for('country', __('Country'))?></dt>
@@ -21,7 +21,7 @@
                     </dd>
                 <dt class="adv-switch ghost"><?php echo emt_label_for('grouptype', __('Group Type'))?></dt>
                 <dd class="adv-switch ghost two_columns">
-                    <?php $gtypes = $sf_params->get('gtype', array()) ?>
+                    <?php $gtypes = $sf_params->get('gtype[]', array()) ?>
                     <?php foreach (GroupTypePeer::getOrderedNames() as $gtyp): ?>
                     <?php echo checkbox_tag('gtype[]', $gtyp->getId(), in_array($gtyp->getId(), $gtypes) === true, "id=gtype_{$gtyp->getId()}") ?>
                     <?php echo emt_label_for("gtype_{$gtyp->getId()}", $gtyp, 'class=checkbox-label') ?>
