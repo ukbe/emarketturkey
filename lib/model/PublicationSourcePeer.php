@@ -147,6 +147,8 @@ class PublicationSourcePeer extends BasePublicationSourcePeer
             {
                 $con->rollBack();
 
+                ErrorLogPeer::Log($object->getId() ? $object->getId() : 0, $object->getObjectTypeId(), "Error occured while saving Publication Source.\nPage:\nMessage:{$e->getMessage()}". $request->getUri());
+
                 return $object;
             }
         }
