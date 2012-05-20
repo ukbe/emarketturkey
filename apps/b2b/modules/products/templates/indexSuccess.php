@@ -8,7 +8,7 @@
     <div class="col_576">
         <div class="box_576 _titleBG_Transparent">
             <h4 style="border-bottom:none;"><?php echo __('Find a Product') ?></h4>
-            <?php echo form_tag("@search-products") ?>
+            <?php echo form_tag("@search-products", 'method=get') ?>
             <dl class="_table">
                 <dt><?php echo emt_label_for('keyword', __('Search Product')) ?></dt>
                 <dd><?php echo input_tag('keyword', $sf_params->get('keyword'), 'style=width:250px;') ?>
