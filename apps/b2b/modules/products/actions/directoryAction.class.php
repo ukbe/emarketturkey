@@ -35,12 +35,12 @@ class directoryAction extends EmtAction
         if ($this->keyword)
         {
             $c->addJoin(ProductPeer::BRAND_ID, CompanyBrandPeer::ID, Criteria::LEFT_JOIN);
-            $c1 = $c->getNewCriterion(ProductPeer::MODEL_NO, "UPPER(".ProductPeer::MODEL_NO.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c2 = $c->getNewCriterion(ProductPeer::BRAND_NAME, "UPPER(".ProductPeer::BRAND_NAME.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c3 = $c->getNewCriterion(ProductI18nPeer::NAME, "UPPER(".ProductI18nPeer::NAME.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c4 = $c->getNewCriterion(ProductI18nPeer::INTRODUCTION, "UPPER(".ProductI18nPeer::INTRODUCTION.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c5 = $c->getNewCriterion(ProductI18nPeer::PACKAGING, "UPPER(".ProductI18nPeer::PACKAGING.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c6 = $c->getNewCriterion(CompanyBrandPeer::NAME, "UPPER(".CompanyBrandPeer::NAME.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
+            $c1 = $c->getNewCriterion(ProductPeer::MODEL_NO, myTools::NLSFunc(ProductPeer::MODEL_NO, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c2 = $c->getNewCriterion(ProductPeer::BRAND_NAME, myTools::NLSFunc(ProductPeer::BRAND_NAME, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c3 = $c->getNewCriterion(ProductI18nPeer::NAME, myTools::NLSFunc(ProductI18nPeer::NAME, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c4 = $c->getNewCriterion(ProductI18nPeer::INTRODUCTION, myTools::NLSFunc(ProductI18nPeer::INTRODUCTION, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c5 = $c->getNewCriterion(ProductI18nPeer::PACKAGING, myTools::NLSFunc(ProductI18nPeer::PACKAGING, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
+            $c6 = $c->getNewCriterion(CompanyBrandPeer::NAME, myTools::NLSFunc(CompanyBrandPeer::NAME, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'", 'UPPER'), Criteria::CUSTOM);
             $c1->addOr($c2);
             $c1->addOr($c3);
             $c1->addOr($c4);
@@ -81,10 +81,44 @@ class directoryAction extends EmtAction
             $c->addJoin(CompanyPeer::PROFILE_ID, CompanyProfilePeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
-            $c->add(ContactAddressPeer::COUNTRY, "UPPER(".ContactAddressPeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
+            $c->add(ContactAddressPeer::COUNTRY, myTools::NLSFunc(ContactAddressPeer::COUNTRY, 'UPPER')." = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
         }
-        
-        if ($this->mod === null) $this->redirect("@products");
+
+        if (!$this->initial && !$this->country && !$this->category && !$this->mod)
+        {
+            $this->countries = $this->getRequestParameter('country', array());
+            if (!is_array($this->countries)) $this->countries = array($this->countries);
+            foreach ($this->countries as $key => $code)
+            {
+                $this->countries[$key] = strtoupper(substr($code, 0, 2));
+            }
+            $this->categories = $this->getRequestParameter('category', array());
+            if (!is_array($this->categories)) $this->categories = array($this->categories);
+            foreach ($this->categories as $key => $cat_id)
+            {
+                $this->categories[$key] = (is_numeric($cat_id) ? $cat_id : 0);
+            }
+            if (count($this->countries))
+            {
+                if (!$this->keyword)
+                {
+                    $c->addJoin(ProductPeer::COMPANY_ID, CompanyPeer::ID, Criteria::LEFT_JOIN);
+                    $c->addJoin(CompanyPeer::PROFILE_ID, CompanyProfilePeer::ID, Criteria::LEFT_JOIN);
+                    $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
+                    $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
+                }
+                $c->add(ContactAddressPeer::COUNTRY, $this->countries, Criteria::IN);
+            }
+            
+            if (count($this->categories))
+            {
+                $c->add(ProductPeer::CATEGORY_ID, $this->categories, Criteria::IN);
+            }
+            
+            if (!count($this->countries) && !count($this->categories) && !$this->keyword) $this->redirect('@products');
+
+            $this->mod = 1;
+        }
         
         $c->setDistinct();
         

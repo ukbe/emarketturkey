@@ -1,3 +1,18 @@
+search-bc:
+  url:   /:sf_culture/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: searchBC }
+
+search-products:
+  url:   /:sf_culture/products/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: products, action: directory }
+
+search-companies:
+  url:   /:sf_culture/companies/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: companies, action: directory }
+
 emttrust:
   url: /:sf_culture/emtTrust
   param: { module: emttrust, action: index }

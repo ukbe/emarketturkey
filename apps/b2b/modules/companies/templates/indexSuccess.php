@@ -9,10 +9,10 @@
     <div class="col_576">
         <div class="box_576 _titleBG_Transparent">
             <h4 style="border-bottom:none;"><?php echo __('Find a Company') ?></h4>
-            <?php echo form_tag("@companies-action?action=results") ?>
+            <?php echo form_tag("@search-companies") ?>
             <dl class="_table">
-                <dt><?php echo emt_label_for('company-keyword', __('Search Company')) ?></dt>
-                <dd><?php echo input_tag('company-keyword', $sf_params->get('company-keyword'), 'style=width:250px;') ?>
+                <dt><?php echo emt_label_for('keyword', __('Search Company')) ?></dt>
+                <dd><?php echo input_tag('keyword', $sf_params->get('keyword'), 'style=width:250px;') ?>
                     <?php echo submit_tag(__('Search'), 'class=green-button') ?>
                     <div class="adv-switch pad-1"><?php echo link_to_function(__('Advanced Search ..'), "$('.adv-switch').toggleClass('ghost');", 'class=bluelink') ?></div></dd>
                 <dt class="adv-switch ghost"><?php echo emt_label_for('industry', __('Industry'))?></dt>
@@ -23,7 +23,7 @@
                 <dd class="adv-switch ghost">
                     <?php echo select_country_tag('country', $sf_params->get('country'), array('size' => 5, 'multiple' => 'multiple')) ?>
                     </dd>
-                <dt class="adv-switch ghost"><?php echo emt_label_for('busstype', __('Business Type'))?></dt>
+                <dt class="adv-switch ghost"><?php echo emt_label_for('btype', __('Business Type'))?></dt>
                 <dd class="adv-switch ghost two_columns" style="width: 300px">
                     <?php $btypes = $sf_params->get('btype', array()) ?>
                     <?php foreach (BusinessTypePeer::getOrderedNames() as $btyp): ?>

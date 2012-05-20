@@ -29,16 +29,16 @@ class directoryAction extends EmtAction
         $c = new Criteria();
         if ($this->keyword)
         {
-            $c1 = $c->getNewCriterion(CompanyPeer::NAME, "UPPER(".CompanyPeer::NAME.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
+            $c1 = $c->getNewCriterion(CompanyPeer::NAME, myTools::NLSFunc(CompanyPeer::NAME, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'"), Criteria::CUSTOM);
             $c->addJoin(CompanyPeer::PROFILE_ID, CompanyProfilePeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(CompanyProfilePeer::ID, CompanyProfileI18nPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactAddressPeer::COUNTRY, GeonameCountryPeer::CURRENCY_CODE, Criteria::LEFT_JOIN);
-            $c2 = $c->getNewCriterion(CompanyProfilePeer::CERTIFICATIONS, "UPPER(".CompanyProfilePeer::CERTIFICATIONS.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c3 = $c->getNewCriterion(CompanyProfileI18nPeer::INTRODUCTION, "UPPER(".CompanyProfileI18nPeer::INTRODUCTION.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c4 = $c->getNewCriterion(CompanyProfileI18nPeer::PRODUCT_SERVICE, "UPPER(".CompanyProfileI18nPeer::PRODUCT_SERVICE.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
-            $c5 = $c->getNewCriterion(GeonameCountryPeer::COUNTRY, "UPPER(".GeonameCountryPeer::COUNTRY.") LIKE UPPER('%{$this->keyword}%')", Criteria::CUSTOM);
+            $c2 = $c->getNewCriterion(CompanyProfilePeer::CERTIFICATIONS, myTools::NLSFunc(CompanyProfilePeer::CERTIFICATIONS, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'"), Criteria::CUSTOM);
+            $c3 = $c->getNewCriterion(CompanyProfileI18nPeer::INTRODUCTION, myTools::NLSFunc(CompanyProfileI18nPeer::INTRODUCTION, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'"), Criteria::CUSTOM);
+            $c4 = $c->getNewCriterion(CompanyProfileI18nPeer::PRODUCT_SERVICE, myTools::NLSFunc(CompanyProfileI18nPeer::PRODUCT_SERVICE, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'"), Criteria::CUSTOM);
+            $c5 = $c->getNewCriterion(GeonameCountryPeer::COUNTRY, myTools::NLSFunc(GeonameCountryPeer::COUNTRY, 'UPPER')." LIKE ".myTools::NLSFunc("'%{$this->keyword}%'"), Criteria::CUSTOM);
             $c1->addOr($c2);
             $c1->addOr($c3);
             $c1->addOr($c4);
@@ -64,12 +64,16 @@ class directoryAction extends EmtAction
 
         if ($this->industry)
         {
+            $this->getResponse()->setTitle('Companies by Industry | eMarketTurkey');
+
             $this->mod = 1;
             $c->add(CompanyPeer::SECTOR_ID, $this->industry->getId());
         }
 
         if ($this->country)
         {
+            $this->getResponse()->setTitle('Companies by Country | eMarketTurkey');
+
             $this->mod = 2;
             $c->addJoin(CompanyPeer::PROFILE_ID, CompanyProfilePeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
@@ -77,7 +81,51 @@ class directoryAction extends EmtAction
             $c->add(ContactAddressPeer::COUNTRY, "UPPER(".ContactAddressPeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
         }
         
-        if ($this->mod === null) $this->redirect("@companies");
+        if (!$this->initial && !$this->country && !$this->industry && !$this->mod)
+        {
+            $this->countries = $this->getRequestParameter('country', array());
+            if (!is_array($this->countries)) $this->countries = array($this->countries);
+            foreach ($this->countries as $key => $code)
+            {
+                $this->countries[$key] = strtoupper(substr($code, 0, 2));
+            }
+            $this->industries = $this->getRequestParameter('industry', array());
+            if (!is_array($this->industries)) $this->industries = array($this->industries);
+            foreach ($this->industries as $key => $sect_id)
+            {
+                $this->industries[$key] = (is_numeric($sect_id) ? $sect_id : 0);
+            }
+            $this->btypes = $this->getRequestParameter('btype', array());
+            if (!is_array($this->btypes)) $this->btypes = array($this->btypes);
+            foreach ($this->btypes as $key => $btype_id)
+            {
+                $this->btypes[$key] = (is_numeric($btype_id) ? $btype_id : 0);
+            }
+            if (count($this->countries))
+            {
+                if (!$this->keyword)
+                {
+                    $c->addJoin(CompanyPeer::PROFILE_ID, CompanyProfilePeer::ID, Criteria::LEFT_JOIN);
+                    $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
+                    $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
+                }
+                $c->add(ContactAddressPeer::COUNTRY, $this->countries, Criteria::IN);
+            }
+            
+            if (count($this->industries))
+            {
+                $c->add(CompanyPeer::SECTOR_ID, $this->industries, Criteria::IN);
+            }
+            
+            if (count($this->btypes))
+            {
+                $c->add(CompanyPeer::BUSINESS_TYPE_ID, $this->btypes, Criteria::IN);
+            }
+            
+            if (!count($this->countries) && !count($this->industries) && !count($this->btypes) && !$this->keyword) $this->redirect('@companies');
+
+            $this->mod = 1;
+        }
         
         $c->setDistinct();
         

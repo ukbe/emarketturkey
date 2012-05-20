@@ -24,7 +24,7 @@
             <?php endif ?>
             <div class="hor-filter margin-t1">
                 <?php echo $keyword ? "<div>" . __('Keyword:') . ' ' . link_to($keyword, myTools::remove_querystring_var($sf_request->getUri(), 'keyword'), array('class' => 'filter-remove-link', 'title' => __('Remove Keyword Filter'))) . "</div>" : "" ?>
-                <?php if (counr($countries)): ?>
+                <?php if (count($countries)): ?>
                 <div class="clear"><?php echo __('Country:') ?>
                 <?php foreach ($countries as $code): ?>
                 <?php echo link_to(format_country($code), myTools::remove_querystring_var($sf_request->getUri(), 'country[]', $code), array('class' => 'filter-remove-link', 'title' => __('Remove Country Filter'))) ?>
