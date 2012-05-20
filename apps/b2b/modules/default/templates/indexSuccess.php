@@ -150,10 +150,11 @@
     <?php if (count($featured_shows)): ?>
     <div class="box_180 _title_BaseXor">
         <h3><?php echo __('Upcoming Events') ?></h3>
-        <div class="pad-0" style="width: 178px;">
+        <div class="pad-0" style="width: 178px; padding: 0px -1px;">
+            <div class="hrsplit-1"></div>
         <?php foreach ($featured_shows as $show): ?>
             <?php if ($show->getLogo()): ?>
-            <?php echo link_to(image_tag($show->getLogo()->getMediumUri(), array('title' => $show, 'width' => 178, 'style' => 'display:block;')), $show->getUrl(), 'target=blank') ?>
+            <?php echo link_to(image_tag($show->getLogo()->getMediumUri(), array('title' => $show, 'width' => 180, 'style' => 'display:block;')), $show->getUrl(), 'target=blank') ?>
             <?php endif ?>
         <?php endforeach ?>
         </div>
