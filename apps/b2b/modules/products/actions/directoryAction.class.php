@@ -26,12 +26,13 @@ class directoryAction extends EmtAction
         $this->keyword = $this->getRequestParameter('keyword', '');
         $this->page = is_numeric($this->getRequestParameter('page')) ? $this->getRequestParameter('page') : 1;
 
+        $c = new Criteria();
+
         if ($this->keyword || $this->initial)
         {
             $c->addJoin(ProductPeer::ID, ProductI18nPeer::ID, Criteria::INNER_JOIN);
         }
 
-        $c = new Criteria();
         if ($this->keyword)
         {
             $c->addJoin(ProductPeer::BRAND_ID, CompanyBrandPeer::ID, Criteria::LEFT_JOIN);
