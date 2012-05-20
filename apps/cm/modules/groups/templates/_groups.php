@@ -5,7 +5,6 @@
                     <?php if (($action=='directory' && (isset($mod) && $mod==1))): ?>
                     <ul><li class="_on"><?php echo link_to(__('Search Results'), '@groups') ?></li></ul>
                     <?php endif ?>
-                    
                     </li>
                 <li<?php echo $action=='connected' ? ' class="_on"' :'' ?>><?php echo link_to(__('Groups in Your Network'), "@groups-action?action=connected") ?>
                 <li<?php echo ($action=='byCountry' || (isset($mod) && $mod==2)) ? ' class="_on"' :'' ?>><?php echo link_to(__('Browse by Country'), "@groups-action?action=byCountry") ?></li>
