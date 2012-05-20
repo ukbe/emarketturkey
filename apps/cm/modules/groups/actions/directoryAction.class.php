@@ -74,6 +74,8 @@ class directoryAction extends EmtAction
 
         if ($this->country)
         {
+            $this->getResponse()->setTitle('Groups by Country | eMarketTurkey');
+
             $this->mod = 2;
             $c->addJoin(GroupPeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
@@ -113,7 +115,6 @@ class directoryAction extends EmtAction
 
             $this->mod = 1;
         }
-        
         
         if (!$this->keyword && !$this->initial) $c->addJoin(GroupPeer::ID, GroupI18nPeer::ID, Criteria::LEFT_JOIN);
         

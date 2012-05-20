@@ -24,21 +24,20 @@
             <?php endif ?>
             <div class="hor-filter margin-t1">
                 <?php echo $keyword ? "<div>" . __('Keyword:') . ' ' . link_to($keyword, myTools::remove_querystring_var($sf_request->getUri(), 'keyword'), array('class' => 'filter-remove-link', 'title' => __('Remove Keyword Filter'))) . "</div>" : "" ?>
-                <?php if ($countries): ?>
+                <?php if (counr($countries)): ?>
                 <div class="clear"><?php echo __('Country:') ?>
                 <?php foreach ($countries as $code): ?>
                 <?php echo link_to(format_country($code), myTools::remove_querystring_var($sf_request->getUri(), 'country[]', $code), array('class' => 'filter-remove-link', 'title' => __('Remove Country Filter'))) ?>
                 <?php endforeach ?>
                 </div>
                 <?php endif ?>
-                <?php if ($types): ?>
+                <?php if (count($types)): ?>
                 <div class="clear"><?php echo __('Group Type:') ?>
                 <?php foreach ($types as $type): ?>
                 <?php echo link_to(GroupTypePeer::retrieveByPK($type), myTools::remove_querystring_var($sf_request->getUri(), 'gtype[]', $type), array('class' => 'filter-remove-link', 'title' => __('Remove Group Type Filter'))) ?>
                 <?php endforeach ?>
                 </div>
                 <?php endif ?>
-                
             </div>
             <div class="_right">
             <?php echo pager_links($pager, array('pname' => 'page')) ?>
