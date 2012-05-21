@@ -197,7 +197,7 @@ class sfMessageSource_Oracle extends sfMessageSource_Database
     
     $result = array();
 
-    while ($row = oci_fetch_row($stmt))
+    while ($row = oci_fetch_array($stmt, OCI_NUM+OCI_RETURN_LOBS))
     {
       $source = $row[1];
       $result[$source][] = $row[2]; //target
