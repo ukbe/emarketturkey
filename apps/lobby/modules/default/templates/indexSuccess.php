@@ -10,32 +10,35 @@
             <ul class="home-tabs">
                 <li id="tab1" class="active">
                     <h2><?php echo __('Join Global Network') ?></h2>
-                    <div><?php echo __('Connect with professionals around the world. Build business relationships.') ?>
-                    </div>
+                    <div><?php echo __('Connect with professionals around the world. Build business relationships.') ?></div>
                 </li>
                 <li id="tab2">
                     <h2><?php echo __('Reach Buyers/Suppliers') ?></h2>
-                    <div><?php echo __('Find trusted buyers and suppliers. Reach beyond the borders.') ?>
-                    </div>
+                    <div><?php echo __('Find trusted buyers and suppliers. Reach beyond the borders.') ?></div>
                 </li>
                 <li id="tab3">
                     <h2><?php echo __('Promote Your Organisation') ?></h2>
-                    <div><?php echo __('Take advantage of group features for your organisation.') ?>
-                    </div>
+                    <div><?php echo __('Take advantage of group features for your organisation.') ?></div>
                 </li>
             </ul>
             <ul class="home-pans">
                 <li id="pan1" class="active"  style="background: url(/images/layout/background/globeline-thin.png) no-repeat center; background-opacity: .1;">
                     <h1><?php echo __('Meet professionals worldwide') ?></h1>
-                    <div style="background: url(/images/layout/background/social-world.png) no-repeat center;"></div>
+                    <div style="background: url(/images/layout/background/social-world.png) no-repeat center;">
+                        <div class="ghost"><?php echo image_tag('layout/background/social-world.png') ?></div>
+                    </div>
                 </li>
                 <li id="pan2" style="background: url(/images/layout/background/globeline-thin.png) no-repeat center; background-opacity: .1;">
                     <h1><?php echo __('Improve your sales and buyings') ?></h1>
-                    <div style="background: url(/images/layout/background/buyerssuppliers.png) no-repeat center;"></div>
+                    <div style="background: url(/images/layout/background/buyerssuppliers.png) no-repeat center;">
+                        <div class="ghost"><?php echo image_tag('layout/background/buyerssuppliers.png') ?></div>
+                    </div>
                 </li>
                 <li id="pan3" style="background: url(/images/layout/background/globeline-thin.png) no-repeat center; background-opacity: .1;">
                     <h1><?php echo __('Advanced group features') ?></h1>
-                    <div style="background: url(/images/layout/background/groupcube.png) no-repeat center;"></div>
+                    <div style="background: url(/images/layout/background/groupcube.png) no-repeat center;">
+                        <div class="ghost"><?php echo image_tag('layout/background/groupcube.png') ?></div>
+                    </div>
                 </li>
             </ul>
             

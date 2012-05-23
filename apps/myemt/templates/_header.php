@@ -2,6 +2,7 @@
 	<hgroup>
 		<h1>
             <a href="<?php echo url_for('@lobby.homepage') ?>" title="<?php echo __('eMarketTurkey Homepage') ?>" tabindex="0"><abbr title="electronic">e</abbr><em>Market</em><em>Turkey</em></a>
+            <div class="ghost"><?php echo image_tag('layout/emtlogo.gif', array('alt' => __('eMarketTurkey Logo'))) ?></div>
 		</h1>
 	</hgroup>
 <?php $logged_in = $sf_user->isLoggedIn() ?>
