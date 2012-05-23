@@ -56,7 +56,7 @@ class EmailTransactionPeer extends BaseEmailTransactionPeer
         $stmt->bindParam(':data', $j_data, PDO::PARAM_STR, strlen($j_data));
         $stmt->execute();
 
-        //if ($deliver) $tr->deliver();
+        if ($deliver) $tr->deliver();
         return $tr;
     }
     
