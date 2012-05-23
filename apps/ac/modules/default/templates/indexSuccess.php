@@ -29,7 +29,7 @@
                 <?php foreach ($sectnews as $sect): ?>
                 <?php if (!count($sect)) continue;?>
                 <li>
-                    <h4><?php echo link_to($sect[0]->getPublicationCategory(), "@news-category?stripped_category={$sect[0]->getPublicationCategory()->getStrippedCategory()}") ?></h4>
+                    <h4><?php echo link_to($sect[0]->getPublicationCategory()->__toString(), "@news-category?stripped_category={$sect[0]->getPublicationCategory()->getStrippedCategory()}") ?></h4>
                     <ul>
                     <?php foreach ($sect as $key  => $news): ?>
                         <li><?php echo link_to(($key == 0 ? image_tag($news->getPictureUri()) : '') . $news->getShortTitleVsTitle(), $news->getUrl()) ?>
@@ -49,8 +49,8 @@
             <dl class="rating-list">
             <?php foreach ($top_news as $news): ?>
                 <dt<?php echo strlen($news->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $news->getRating() ?></dt>
-                <dd><strong><?php echo link_to($news, $news->getUrl()) ?></strong>
-                    <?php echo $news->getPublicationSource() ?></dd>
+                <dd><strong><?php echo link_to($news->__toString(), $news->getUrl()) ?></strong>
+                    <?php echo $news->getPublicationSource()->__toString() ?></dd>
             <?php endforeach ?>
             </dl>
         </div>
@@ -64,8 +64,8 @@
             <dl class="rating-list">
             <?php foreach ($top_articles as $article): ?>
                 <dt<?php echo strlen($news->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $article->getRating() ?></dt>
-                <dd><strong><?php echo link_to($article, $article->getUrl()) ?></strong>
-                    <?php echo $article->getAuthor() ?></dd>
+                <dd><strong><?php echo link_to($article->__toString(), $article->getUrl()) ?></strong>
+                    <?php echo $article->getAuthor()->__toString() ?></dd>
             <?php endforeach ?>
             </dl>
         </div>
@@ -127,10 +127,10 @@
             <div class="col_authors margin-t2">
                 <dl>
                 <?php foreach ($colarticles as $article): ?>
-                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor())), $article->getUrl()) : '' ?></dt>
+                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor()->__toString())), $article->getUrl()) : '' ?></dt>
                     <dd>
                         <?php echo link_to($article, $article->getUrl()) ?>
-                        <div class="author-name"><?php echo link_to($article->getAuthor(), $article->getUrl()) ?>
+                        <div class="author-name"><?php echo link_to($article->getAuthor()->__toString(), $article->getUrl()) ?>
                         <?php echo $article->getAuthor()->getTitle() ?></div>
                         </dd>
                 <?php endforeach ?>
