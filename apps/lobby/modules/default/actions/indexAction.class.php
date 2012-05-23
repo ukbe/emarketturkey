@@ -11,7 +11,8 @@ class indexAction extends EmtAction
                 if (array_search($lang, array('tr', 'en')) !== false)
                 {
                     $this->getUser()->setAttribute('culture_selected', true);
-                    $this->redirect(myTools::localizedUrl($lang));
+                    $this->getUser()->setCulture($lang);
+                    $this->forward('default', 'index');
                 }
             }
         }
