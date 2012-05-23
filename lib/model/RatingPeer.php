@@ -23,7 +23,7 @@ class RatingPeer extends BaseRatingPeer
         $rate = new Rating();
         $rate->setItemId($item_id);
         $rate->setItemTypeId($item_type_id);
-        $rate->setClientIp(sfContext::getInstance()->getRequest()->getHttpHeader('addr', 'remote'));
+        $rate->setClientIp(sfContext::getInstance()->getRequest()->getHttpHeader('X-Forwarded-For'));
         $rate->setSessionId(session_id());
         $rate->setVisitorId($visitor_id);
         $rate->setVisitorTypeId($visitor_type_id);
