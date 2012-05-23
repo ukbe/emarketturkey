@@ -84,7 +84,7 @@
                 </div>
             <?php endif ?>
 
-                <h4><?php echo __('Job Specificatons') ?></h4>
+                <h4><?php echo __('Job Specifications') ?></h4>
                 <div>
                     <dl class="_table _noInput">
                     <?php if ($spec = $job->getObjectOrValueOfSpecType(JobSpecPeer::JSPTYP_JOB_FUNCTION)): ?>
@@ -96,7 +96,7 @@
                         <dd><?php echo $spec ?></dd>
                     <?php endif ?>
                     <?php if ($spec = $job->getObjectOrValueOfSpecType(JobSpecPeer::JSPTYP_WORKING_SCHEME)): ?>
-                        <dt><?php echo __('Attandence') ?></dt>
+                        <dt><?php echo __('Attendance') ?></dt>
                         <dd><?php echo $spec ?></dd>
                     <?php endif ?>
                     <?php if ($spec = $job->getObjectOrValueOfSpecType(JobSpecPeer::JSPTYP_EXPERIENCE_YEAR)): ?>

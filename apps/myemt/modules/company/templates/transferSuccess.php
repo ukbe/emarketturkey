@@ -18,7 +18,7 @@
             <?php if ($transfer && ($transfer->getStatus()==TransferOwnershipRequestPeer::STAT_ACCEPTED_BY_USER ||$transfer->getStatus()==TransferOwnershipRequestPeer::STAT_PENDING)): ?>
             <?php echo __('At the moment there is an initiated transfer process. Please see the details below.') ?>
             <div class="bubble margin-t2 margin-b2"><b class="t_red"><?php echo __('Attention!') ?></b><br />
-                <?php echo __('You should now send <b>%1</b> the transfer code <b>%2</b> since %1 will need this code in order to complete the transfer process.', array('%1' => $transfer->getUserRelatedByNewOwnerId(), '%2' => $transfer->getTransferCode())) ?>
+                <?php echo __('You should now send <b>%1</b> the transfer code <b>%2</b> since %1 will need this code in order to accept the transfer request.', array('%1' => $transfer->getUserRelatedByNewOwnerId(), '%2' => $transfer->getTransferCode())) ?>
                 </div>
             <dl class="_table">
                 <dt><?php echo emt_label_for('init-code', __('Transfer Code')) ?></dt>
