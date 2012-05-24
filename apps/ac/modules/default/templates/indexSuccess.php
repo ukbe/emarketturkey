@@ -123,7 +123,8 @@
             <span class="grey small"><?php echo __('Advertisement') ?></span>
             <div class="ghost">
             <span class="grey">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-            <?php echo link_to(__('Create Ad'), '@homepage', 'class=blue small')?></div>
+            <?php echo link_to(__('Create Ad'), '@homepage', 'class=blue small')?>
+            </div>
             </div>
         </div>
     </div>

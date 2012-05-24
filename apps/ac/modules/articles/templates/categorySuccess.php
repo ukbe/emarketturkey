@@ -68,12 +68,21 @@
     <div class="box_312 _border_Shadowed">
         <div>
             <div class="adbox">
-            <?php echo get_ad_for_ns('/academy/homepage/side/square') ?>
+<script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1242349477299469";
+    /* Publication Category Page */
+    google_ad_slot = "0735217610";
+    google_ad_width = 300;
+    google_ad_height = 250;
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
             </div>
             <div>
-            <span class="grey small"><?php echo __('Advertisement') ?></span>
-            <span class="grey">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-            <?php echo link_to(__('Create Ad'), '@homepage', 'class=blue small')?>
+                <span class="grey small"><?php echo __('Advertisement') ?></span>
+                <div class="ghost">
+                    <span class="grey">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <?php echo link_to(__('Create Ad'), '@homepage', 'class=blue small')?>
+                </div>
             </div>
         </div>
     </div>
