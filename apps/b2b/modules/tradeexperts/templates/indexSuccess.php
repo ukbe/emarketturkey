@@ -49,7 +49,7 @@
         <div class="box_657 pad-3 boxContent noBorder">
         <h2><abbr>TR</abbr>ADE EXPERTS</h2>
         <q>
-            Any member or company can create a <strong class="emt">TradeXpert <sup>&reg;</sup></strong> 
+            Any member or company can create a <strong class="emt">Trade Expert <sup>&reg;</sup></strong> 
             account for free. All it takes is to attract visitor focus and provide them with the
             expertise they need. The more popularity one has, the more inquiries, thus, <em>jobs</em> he will get!
         </q>
