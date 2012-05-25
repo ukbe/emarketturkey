@@ -1528,11 +1528,11 @@ ul.select-step .activate {
  display:block;
  float:left;
 }
-._comSel dl, 
-._comPro dl {margin-left:-550px;}
+._comSel dl {margin-left:-550px;}
+._comPro dl {margin-left:0px;}
 
 ._comSel > ul,
-._comPro > ul {width:530px;}
+._comPro > ul {width:600px;}
 
 ._comSel dt,
 ._comPro dt {
@@ -1641,7 +1641,12 @@ ul.select-step .activate {
  display:block;
  margin:36px 0 0 18px; padding-left:0;
  list-style:none;
-}._comPro > ul {margin-top:25px;}
+}
+
+._comPro > ul {
+ margin-top:0px;
+ width: 600px;
+}
 
 ._comSel > ul li,
 ._comPro > ul li {
