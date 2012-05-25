@@ -1845,7 +1845,7 @@ propel:
     _attributes:          { phpName: TradeExpertArea }
     ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_TRADE_EXPERT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
     COUNTRY:              { type: varchar(5) }
-    STATE:                { type: integer, size: 7, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  RESTRICT, onUpdate: RESCTRICT }
+    STATE:                { type: integer, size: 7, required: true, primaryKey: true, foreignTable: EXT_GEONAME, foreignReference: GEONAME_ID, onDelete:  RESTRICT, onUpdate: RESCTRICT }
     CITY:                 { type: varchar(50) }
 
   EMT_MESSAGE_TYPE:
