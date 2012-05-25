@@ -311,9 +311,10 @@ class PublicationPeer extends BasePublicationPeer
                     ".($author_id ? "AND EMT_PUBLICATION.AUTHOR_ID=$author_id" : '')."
                     ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=$category_id" : '')."
                     ".($except_pub_id ? "AND EMT_PUBLICATION.ID!=$except_pub_id" : '')."
+                    WHERE RTING > 0
+                    ORDER BY RTING DESC
                 )
-                WHERE RTING > 0 AND ROWNUM <= $limit
-                ORDER BY RTING DESC
+                WHERE ROWNUM <= $limit
             ";
 
         $stmt = $con->prepare($sql);
