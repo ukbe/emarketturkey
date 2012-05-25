@@ -302,15 +302,18 @@ class PublicationPeer extends BasePublicationPeer
 
         $sql = "SELECT * FROM
                 (
-                    SELECT EMT_PUBLICATION.*, (SELECT COUNT(*) FROM EMT_RATING WHERE ITEM_ID=EMT_PUBLICATION.ID AND ITEM_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_PUBLICATION.") RTING
-                    FROM EMT_PUBLICATION
-                    WHERE EMT_PUBLICATION.ACTIVE=1
-                    ".($type_id ? " AND EMT_PUBLICATION.TYPE_ID=$type_id" : '')."
-                    ".($culture ? "AND EXISTS (SELECT 1 FROM EMT_PUBLICATION_I18N WHERE ID=EMT_PUBLICATION.ID AND CULTURE='$culture')" : '')."
-                    ".($source_id ? "AND EMT_PUBLICATION.SOURCE_ID=$source_id" : '')."
-                    ".($author_id ? "AND EMT_PUBLICATION.AUTHOR_ID=$author_id" : '')."
-                    ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=$category_id" : '')."
-                    ".($except_pub_id ? "AND EMT_PUBLICATION.ID!=$except_pub_id" : '')."
+                    SELECT * FROM 
+                    (
+                        SELECT EMT_PUBLICATION.*, (SELECT COUNT(*) FROM EMT_RATING WHERE ITEM_ID=EMT_PUBLICATION.ID AND ITEM_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_PUBLICATION.") RTING
+                        FROM EMT_PUBLICATION
+                        WHERE EMT_PUBLICATION.ACTIVE=1
+                        ".($type_id ? " AND EMT_PUBLICATION.TYPE_ID=$type_id" : '')."
+                        ".($culture ? "AND EXISTS (SELECT 1 FROM EMT_PUBLICATION_I18N WHERE ID=EMT_PUBLICATION.ID AND CULTURE='$culture')" : '')."
+                        ".($source_id ? "AND EMT_PUBLICATION.SOURCE_ID=$source_id" : '')."
+                        ".($author_id ? "AND EMT_PUBLICATION.AUTHOR_ID=$author_id" : '')."
+                        ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=$category_id" : '')."
+                        ".($except_pub_id ? "AND EMT_PUBLICATION.ID!=$except_pub_id" : '')."
+                    )
                     WHERE RTING > 0
                     ORDER BY RTING DESC
                 )
