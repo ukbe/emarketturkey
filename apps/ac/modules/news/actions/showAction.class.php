@@ -11,6 +11,8 @@ class showAction extends EmtAction
             $this->redirect404();
         }
         
+        $this->getResponse()->addMeta('description', $this->news->getSummary());
+
         $this->getResponse()->setTitle("{$this->news->getTitle()} | eMarketTurkey");
 
         $this->source = $this->news->getPublicationSource();
