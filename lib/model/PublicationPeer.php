@@ -288,6 +288,7 @@ class PublicationPeer extends BasePublicationPeer
                         AND EMT_PUBLICATION_I18N.CULTURE='".sfContext::getInstance()->getUser()->getCulture()."'
                 )
                 WHERE SQNUM=1 AND ROWNUM <= $limit
+                ORDER BY UPDATED_AT DESC
                 ";
         
         $stmt = $con->prepare($sql);
