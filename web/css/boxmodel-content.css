@@ -1572,7 +1572,12 @@ ul.select-step .activate {
  text-overflow: ellipsis;
  font:normal 300 24px Helvetica,arial,sans-serif;
  background:url(/images/layout/icon/arrow-s.png) right center no-repeat;
-}._comPro dt em {background:none;}
+}
+._comPro dt em {
+ background:none;
+ maxw-width: 600px;
+ padding-right: 0px;
+}
 
 ._comSel dl._open dt em {
  color:#666;
