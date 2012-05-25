@@ -1529,7 +1529,7 @@ ul.select-step .activate {
  float:left;
 }
 ._comSel dl {margin-left:-550px;}
-._comPro dl {margin-left:0px;}
+._comPro dl {margin-left:0px; width: 630px;}
 
 ._comSel > ul,
 ._comPro > ul {width:600px;}
