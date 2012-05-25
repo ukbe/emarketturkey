@@ -66,7 +66,7 @@ class contactAction extends EmtCompanyAction
                 $data->set('oname', $this->company->getOwner()->__toString());
                 $data->set('subject', $message->getSubject());
                 $data->set('message', $message->getBody());
-                $data->set('message_id', $message->getId());
+                $data->set('message_link', $message->getUrl());
                 
                 $vars = array();
                 $vars['email'] = $this->company->getOwner()->getLogin()->getEmail();

@@ -41,7 +41,7 @@ div.mbox
                 <?php echo str_replace("\n", '<br />', $message) ?>
                 </div><br />
                 <?php echo __('You can click the link below to go to the message:') ?><br/>
-                <?php echo link_to('', 'messages/read?id='.$message_id, array('absolute_url' => true)); ?>
+                <?php echo link_to('', $message_link, array('absolute_url' => true)); ?>
                 <br /><br />
                 <?php echo __('eMarketTurkey Team') ?>
                 <br /><br />

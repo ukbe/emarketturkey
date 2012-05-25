@@ -95,7 +95,7 @@ class composeAction extends EmtMessageAction
                     $data->set('oname', ($recipient->getObjectTypeId() == PrivacyNodeTypePeer::PR_NTYP_USER ? null : $recipient->getOwner()->__toString()));
                     $data->set('subject', $message->getSubject());
                     $data->set('message', $message->getBody());
-                    $data->set('message_id', $message->getId());
+                    $data->set('message_link', $message->getUrl());
                     
                     $vars = array();
                     $vars['email'] = ($recipient->getObjectTypeId() == PrivacyNodeTypePeer::PR_NTYP_USER ? $recipient->getLogin()->getEmail() : $recipient->getOwner()->getLogin()->getEmail());
