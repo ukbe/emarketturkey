@@ -9,7 +9,7 @@
 
             <h4><?php echo __('For Chambers, Societies and Associations') ?></h4>
 
-            <?php include_partial('for_individuals.'.$sf_user->getCulture()) ?>
+            <?php include_partial('for_associations.'.$sf_user->getCulture()) ?>
 
         </div>
     </div>
