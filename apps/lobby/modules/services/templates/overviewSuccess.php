@@ -9,6 +9,9 @@
 
             <h4><?php echo __('Services') ?></h4>
             <div>
+
+            <?php include_partial('overview.'.$sf_user->getCulture()) ?>
+
             </div>
 
         </div>
