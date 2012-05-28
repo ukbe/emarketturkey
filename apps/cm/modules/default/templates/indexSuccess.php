@@ -9,12 +9,14 @@
         
             <div class="_noBorder pad-3" style="height: 170px;">
                 <h2 style="margin-bottom: 15px; font: bold 18px georgia;"><?php echo __('Search in Community')?></h2>
+                <?php echo form_tag("@search-users", 'method=get') ?>
                 <div class="txtCenter">
                 <p><?php echo __('Search people or groups in community.')?></p>
-                <?php echo input_tag('search_community', '', 'style=width: 300px; margin-top: 0px;padding: 5px; font: 13px arial;')?>
+                <?php echo input_tag('keyword', '', 'style=width: 300px; margin-top: 0px;padding: 5px; font: 13px arial;')?>
                 <div class="hrsplit-2"></div>
                 <?php echo submit_tag(__('Search'), 'class=submit-link')?>
                 </div>
+                </form>
             </div>
             <hr classs="split" />
             <div class="_noBorder pad-3" style="height: 170px;">
