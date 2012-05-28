@@ -5,9 +5,9 @@ class EmtAction extends sfAction
     public function initialize($context, $moduleName, $actionName)
     {
         parent::initialize($context, $moduleName, $actionName);
-        if (in_array($this->getRequestParameter('lang'), array('en', 'tr')))
+        if (in_array($this->getRequestParameter('x-cult'), array('en', 'tr')))
         {
-            $this->redirect(myTools::localizedUrl($this->getRequestParameter('lang')));
+            $this->redirect(myTools::remove_querystring_var(myTools::localizedUrl($this->getRequestParameter('x-cult')), 'x-cult'));
         }
 
         // Creating default session user variable to handle rights

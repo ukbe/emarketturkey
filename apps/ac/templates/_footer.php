@@ -27,7 +27,9 @@
 			<dl>
 
 				<dt class="_ftLn"><a href="">International</a> : </dt><dd class="_ftLn">
-					<form name="" action="."><div><select><option value="">العربية‏</option><option value="">中文</option><option value="">ΕΛΛΗΝΙΚ</option><option value="" selected="selected">ENGLISH</option><option value="">ESPAÑOL</option><option value="">FRANÇAIS</option><option value="">РУССКИЙ</option><option value="">TÜRKÇE</option></select></div></form></dd>
+                    <?php echo form_tag($sf_request->getUri(), 'method=GET') ?>
+                        <div><?php echo select_tag('x-cult', options_for_select(array('en' => 'English', 'tr' => 'Türkçe'), $sf_user->getCulture()), array('onchange' => "$(this).closest('form').submit();")) ?></div>
+                    </form></dd>
 
                 <dt><?php echo link_to(__('Support'), '@lobby.support') ?></dt>
                 <dd><?php echo link_to(__('Help Center'), '@lobby.help-center') ?></dd>
