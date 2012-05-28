@@ -9,6 +9,8 @@
 
             <h4><?php echo __('For Individuals') ?></h4>
 
+            <?php include_partial('for_individuals.'.$sf_user->getCulture()) ?>
+            
         </div>
     </div>
 

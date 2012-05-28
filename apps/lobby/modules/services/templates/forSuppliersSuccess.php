@@ -9,6 +9,8 @@
 
             <h4><?php echo __('For Suppliers') ?></h4>
 
+            <?php include_partial('for_suppliers.'.$sf_user->getCulture()) ?>
+
         </div>
     </div>
 
