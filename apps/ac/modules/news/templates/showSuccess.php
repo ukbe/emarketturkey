@@ -7,7 +7,7 @@
             <h2 class="pub-title"><?php echo $news->getTitle() ?></h2>
             <p class="headline_meta">
                 <abbr class="published" title="<?php echo $news->getCreatedAt('Y-m-d') ?>"><?php echo format_datetime($news->getCreatedAt('U'), 'f') ?></abbr>
-                <span class="author"><?php echo __('Source:') . link_to($news->getPublicationSource(), '@news-source?stripped_display_name='.$news->getPublicationSource()->getStrippedDisplayName(), array('title' => __('News by %1', array('%1' => $news->getPublicationSource())))) ?></span>
+                <span class="author"><?php echo __('Source:') . link_to($news->getPublicationSource()->__toString(), '@news-source?stripped_display_name='.$news->getPublicationSource()->getStrippedDisplayName(), array('title' => __('News by %1', array('%1' => $news->getPublicationSource()->__toString())))) ?></span>
             </p>
             <div class="pub-content">
                 <?php echo $news->getPicture() ? image_tag($news->getPicture()->getUri()) : '' ?>
@@ -35,13 +35,13 @@
 
     <?php if (count($top_news)): ?>
     <div class="box_312">
-        <h4><?php echo __('Most Read News on %1category', array('%1category' => $news->getPublicationCategory())) ?></h4>
+        <h4><?php echo __('Most Read News on %1category', array('%1category' => $news->getPublicationCategory()->__toString())) ?></h4>
         <div class="_noBorder">
             <dl class="rating-list">
             <?php foreach ($top_news as $tnews): ?>
                 <dt<?php echo strlen($news->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $tnews->getRating() ?></dt>
-                <dd><strong><?php echo link_to($tnews, $tnews->getUrl()) ?></strong>
-                    <?php echo $tnews->getPublicationSource() ?></dd>
+                <dd><strong><?php echo link_to($tnews->__toString(), $tnews->getUrl()) ?></strong>
+                    <?php echo $tnews->getPublicationSource()->__toString() ?></dd>
             <?php endforeach ?>
             </dl>
         </div>
@@ -55,7 +55,7 @@
             <dl class="rating-list">
             <?php foreach ($other_news as $tnews): ?>
                 <dt<?php echo strlen($tnews->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $tnews->getRating() ?></dt>
-                <dd><strong><?php echo link_to($tnews, $tnews->getUrl()) ?></strong>
+                <dd><strong><?php echo link_to($tnews->__toString(), $tnews->getUrl()) ?></strong>
                     <?php echo time_ago_in_words($tnews->getCreatedAt('U'), false) ?></dd>
             <?php endforeach ?>
             </dl>
@@ -73,9 +73,9 @@
             <?php if ($source): ?>
             <div class="col_authors margin-t2">
                 <dl>
-                    <dt><?php echo $source->getPicture() ? link_to(image_tag($source->getPictureUri(), array('title' => $source)), "@news-source?stripped_display_name={$source->getStrippedDisplayName()}") : '' ?></dt>
-                    <dd><?php echo $source ?>
-                            <?php echo link_to(__('News by %1source', array('%1source' => $source)), "@news-source?stripped_display_name={$source->getStrippedDisplayName()}") ?>
+                    <dt><?php echo $source->getPicture() ? link_to(image_tag($source->getPictureUri(), array('title' => $source->__toString())), "@news-source?stripped_display_name={$source->getStrippedDisplayName()}") : '' ?></dt>
+                    <dd><?php echo $source->__toString() ?>
+                            <?php echo link_to(__('News by %1source', array('%1source' => $source->__toString())), "@news-source?stripped_display_name={$source->getStrippedDisplayName()}") ?>
                         </dd>
                 </dl>
             </div>
@@ -83,7 +83,7 @@
             <div class="pad-1">
                 <ul class="sepdot">
                     <li><?php echo link_to(__('News Home'), '@news-home', 'class=blue small')?></li>
-                    <li><?php echo link_to($news->getPublicationCategory(), "@news-category?stripped_category={$news->getPublicationCategory()->getStrippedCategory()}", 'class=blue small')?></li>
+                    <li><?php echo link_to($news->getPublicationCategory()->__toString(), "@news-category?stripped_category={$news->getPublicationCategory()->getStrippedCategory()}", 'class=blue small')?></li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -134,10 +134,10 @@
             <div class="col_authors margin-t2">
                 <dl>
                 <?php foreach ($colarticles as $article): ?>
-                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor())), $article->getUrl()) : '' ?></dt>
+                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor()->__toString())), $article->getUrl()) : '' ?></dt>
                     <dd>
-                        <?php echo link_to($article, $article->getUrl()) ?>
-                        <div class="author-name"><?php echo link_to($article->getAuthor(), $article->getUrl()) ?>
+                        <?php echo link_to($article->__toString(), $article->getUrl()) ?>
+                        <div class="author-name"><?php echo link_to($article->getAuthor()->__toString(), $article->getUrl()) ?>
                         <?php echo $article->getAuthor()->getTitle() ?></div>
                         </dd>
                 <?php endforeach ?>
