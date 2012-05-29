@@ -13,6 +13,13 @@ class categoryAction extends EmtAction
         $this->category = PublicationCategoryPeer::doSelectOne($c);
         if (!$this->category) $this->redirect404();
 
+        $this->page = myTools::fixInt($this->getRequestParameter('page', 1));
+
+        $c = new Criteria();
+        $c->add(PublicationPeer::FEATURED_TYPE, null, Criteria::ISNULL);
+        $c->add(PublicationPeer::ID, "EXISTS (SELECT 1 FROM EMT_PUBLICATION_I18N WHERE EMT_PUBLICATION_I18N.ID=EMT_PUBLICATION.ID AND EMT_PUBLICATION_I18N.CULTURE='{$this->getUser()->getCulture()}')", Criteria::CUSTOM);
+        $this->pager = PublicationPeer::getPager($this->page, 10, $c, null, PublicationPeer::PUB_TYP_ARTICLE, null, $this->category->getId(), 1);
+        
         $this->banner_articles = PublicationPeer::doSelectByTypeId(PublicationPeer::PUB_TYP_ARTICLE, false, $this->category->getId(), 5, true);
         $this->top_articles = PublicationPeer::getMostReadPublications(PublicationPeer::PUB_TYP_ARTICLE, 5, $this->getUser()->getCulture(), null, null, null, null, $this->category->getId());
         $this->colarticles = PublicationPeer::getColumnArticles(5, $this->category->getId());

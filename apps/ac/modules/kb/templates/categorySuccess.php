@@ -15,6 +15,26 @@
         </ul>
     </div>
 
+    <div class="box_630 _other_pubs">
+        <h4><?php echo __('Articles on %cat', array('%cat' => $category->__toString())) ?></h4>
+        <div class="_noBorder">
+            <?php if (count($results = $pager->getResults())): ?>
+            <?php foreach ($results as $pub): ?>
+            <div class="item">
+                <?php echo $pub->getPicture() ? link_to(image_tag($pub->getPicture()->getUri(MediaItemPeer::LOGO_TYP_SMALL)), $pub->getUrl()) : ($pub->getAuthor() && $pub->getAuthor()->getPicture() ? link_to(image_tag($pub->getAuthor()->getPicture()->getUri(MediaItemPeer::LOGO_TYP_SMALL)), $pub->getUrl()) : '') ?>
+                <h2><?php echo link_to($pub->getShortTitleVsTitle(), $pub->getUrl()) ?></h2>
+                <p><?php echo $pub->getSummary()?></p>
+            </div>
+            <?php endforeach ?>
+            <?php endif ?>
+            <?php if ($pager->haveToPaginate()): ?>
+            <div class="_right">
+            <?php echo pager_links($pager, array('pname' => 'page')) ?>
+            </div>
+            <?php endif ?>
+        </div>
+    </div>
+
     <div class="box_630 spot_pubs">
         <div class="_noBorder">
             <?php foreach ($banner_articles as $pub): ?>

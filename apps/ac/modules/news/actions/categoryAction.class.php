@@ -10,7 +10,7 @@ class categoryAction extends EmtAction
         $this->banner_news = PublicationPeer::doSelectByTypeId(PublicationPeer::PUB_TYP_NEWS, false, $this->category->getId(), 5);
         $this->top_news = PublicationPeer::getMostReadPublications(PublicationPeer::PUB_TYP_NEWS, 5, $this->getUser()->getCulture(), null, null, null, null, $this->category->getId());
         $this->colarticles = PublicationPeer::getColumnArticles(5, $this->category->getId());
-        
+
         $this->page = myTools::fixInt($this->getRequestParameter('page', 1));
 
         $c = new Criteria();

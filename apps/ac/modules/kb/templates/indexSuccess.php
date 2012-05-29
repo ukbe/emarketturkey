@@ -20,7 +20,7 @@
                 <?php foreach ($sectarticles as $sect): ?>
                 <?php if (!count($sect)) continue;?>
                 <li>
-                    <h4><?php echo link_to($sect[0]->getPublicationCategory(), "@news-category?stripped_category={$sect[0]->getPublicationCategory()->getStrippedCategory()}") ?></h4>
+                    <h4><?php echo link_to($sect[0]->getPublicationCategory()->__toString(), "@news-category?stripped_category={$sect[0]->getPublicationCategory()->getStrippedCategory()}") ?></h4>
                     <ul>
                     <?php foreach ($sect as $key  => $article): ?>
                         <li><?php echo link_to($article->getShortTitleVsTitle(), $article->getUrl()) ?></li>
@@ -41,10 +41,10 @@
             <ul class="categories">
                 <?php foreach ($categories as $cat): ?>
                 <li>
-                <strong><?php echo link_to($cat, "@kb-category?stripped_category={$cat->getStrippedCategory()}") ?></strong>
+                <strong><?php echo link_to($cat->__toString(), "@kb-category?stripped_category={$cat->getStrippedCategory()}") ?></strong>
                 <ul>
                 <?php foreach ($cat->getSubCategories() as $sub): ?>
-                <li><?php echo link_to($sub, "@kb-category?stripped_category={$sub->getStrippedCategory()}") ?></li>
+                <li><?php echo link_to($sub->__toString(), "@kb-category?stripped_category={$sub->getStrippedCategory()}") ?></li>
                 <?php endforeach ?></ul></li>
                 <?php endforeach ?>
             </ul>
