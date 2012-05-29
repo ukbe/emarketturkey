@@ -27,6 +27,7 @@ class categoryAction extends EmtAction
         $c = new Criteria();
         $c->add(PublicationPeer::FEATURED_TYPE, null, Criteria::ISNULL);
         $c->add(PublicationPeer::ID, "EXISTS (SELECT 1 FROM EMT_PUBLICATION_I18N WHERE EMT_PUBLICATION_I18N.ID=EMT_PUBLICATION.ID AND EMT_PUBLICATION_I18N.CULTURE='{$this->getUser()->getCulture()}')", Criteria::CUSTOM);
+        $c->addDescendingOrderByColumn(PublicationPeer::CREATED_AT);
         $this->pager = PublicationPeer::getPager($this->page, 10, $c, null, PublicationPeer::PUB_TYP_ARTICLE, null, $this->category->getId(), 1);
         
         $this->banner_articles = PublicationPeer::doSelectByTypeId(PublicationPeer::PUB_TYP_ARTICLE, false, $this->category->getId(), 5, true);
