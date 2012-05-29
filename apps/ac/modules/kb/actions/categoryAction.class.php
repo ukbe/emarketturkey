@@ -8,7 +8,16 @@ class categoryAction extends EmtAction
 
         $c = new Criteria();
         $c->addJoin(PublicationCategoryPeer::ID, PublicationCategoryI18nPeer::ID, Criteria::LEFT_JOIN);
-        $c->add(PublicationCategoryPeer::PARENT_ID, $this->kb_category->getId());
+        $c->add(PublicationCategoryPeer::PARENT_ID, "
+        EXISTS (
+            SELECT 1 FROM (
+                SELECT ID FROM EMT_PUBLICATION_CATEGORY
+                START WITH ID=EMT_PUBLICATION_CATEGORY.ID
+                CONNECT BY NOCYCLE PRIOR PARENT_ID = ID
+            ) PREC
+            WHERE PREC.ID=".PublicationCategoryPeer::KNOWLEDGEBASE_CATEGORY_ID."
+        )
+        ", Criteria::CUSTOM);
         $c->add(PublicationCategoryI18nPeer::STRIPPED_CATEGORY, $this->getRequestParameter('stripped_category'));
         $this->category = PublicationCategoryPeer::doSelectOne($c);
         if (!$this->category) $this->redirect404();
