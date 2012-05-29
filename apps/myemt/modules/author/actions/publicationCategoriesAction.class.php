@@ -9,6 +9,8 @@ class publicationCategoriesAction extends EmtAjaxAction
     
     private function handleAction($isValidationError)
     {
+        if ($this->getRequest()->isXmlHttpRequest()) header('Content-type: text/html');
+
         //if ($this->getRequest()->getMethod() == sfRequest::POST)
         {
             if (!$isValidationError)
