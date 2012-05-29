@@ -100,7 +100,7 @@ class PublicationPeer extends BasePublicationPeer
         return PublicationPeer::doSelectOne($c);
     }
 
-    public static function getPager($page, $items_per_page = 20, $c1 = null, $author_id= null, $type_id = null, $source_id = null, $status = null)
+    public static function getPager($page, $items_per_page = 20, $c1 = null, $author_id= null, $type_id = null, $source_id = null, $category_id = null, $status = null)
     {
         if ($c1 instanceof Criteria)
         {
@@ -115,6 +115,7 @@ class PublicationPeer extends BasePublicationPeer
         if (isset($type_id)) $c->add(PublicationPeer::TYPE_ID, $type_id);
         if (isset($author_id)) $c->add(PublicationPeer::AUTHOR_ID, $author_id);
         if (isset($source_id)) $c->add(PublicationPeer::SOURCE_ID, $source_id);
+        if (isset($category_id)) $c->add(PublicationPeer::CATEGORY_ID, $category_id);
 
         $pager = new sfPropelPager('Publication', $items_per_page);
         $pager->setPage($page);

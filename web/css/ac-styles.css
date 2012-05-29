@@ -172,6 +172,66 @@
 {
     text-decoration: underline;
 }
+._other_pubs
+{
+}
+._other_pubs .item
+{
+    clear: both;
+    margin: 0px 0px 10px;
+    width: 610px;
+    min-height:50px;
+    height:auto;
+    border-bottom: dotted 1px #ccc;
+}
+._other_pubs .item:last-child
+{
+    margin-bottom: 0px;
+}
+._other_pubs .item img
+{
+    height: 40px;
+    max-width: 70px;
+    float: right;
+    margin: 0px 10px 5px 0px;
+}
+._other_pubs .item h2
+{
+    margin-top: 5px;
+    margin-bottom: 6px;
+    padding: 0px;
+}
+._other_pubs .item h2 > a
+{
+    font-family: georgia, arial, verdana;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 15px;
+    color: #039;
+    overflow: hidden;
+    white-space: nowrap;
+}
+._other_pubs .item h2 > a:hover
+{
+    text-decoration: underline;
+}
+._other_pubs p
+{
+    font-family: tahoma;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 16px;
+    color: #333;
+}
+._other_pubs a.readmore
+{
+    color: #039;
+    margin-left: 5px;
+}
+._other_pubs a.readmore:hover
+{
+    text-decoration: underline;
+}
 .authors_block > ul
 {
     

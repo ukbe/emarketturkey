@@ -13,6 +13,12 @@ class categoryAction extends EmtAction
         $this->top_articles = PublicationPeer::getMostReadPublications(PublicationPeer::PUB_TYP_ARTICLE, 5, $this->getUser()->getCulture(), null, null, null, null, $this->category->getId());
         $this->colarticles = PublicationPeer::getColumnArticles(5, $this->category->getId());
         
+        $this->page = myTools::fixInt($this->getRequestParameter('page', 1));
+
+        $c = new Criteria();
+        $c->add(PublicationPeer::FEATURED_TYPE, null, Criteria::ISNULL);
+        $this->pager = PublicationPeer::getPager($this->page, 10, $c, null, PublicationPeer::PUB_TYP_ARTICLE, null, $this->category->getId(), 1);
+        
         $this->categories = PublicationCategoryPeer::getBaseCategories();
 
         $this->kb_category = PublicationCategoryPeer::retrieveByPK(PublicationCategoryPeer::KNOWLEDGEBASE_CATEGORY_ID);
