@@ -4,7 +4,7 @@ class categoryAction extends EmtAction
 {
     public function execute($request)
     {
-        $this->kb_category = PublicationCategoryPeer::retrieveByPK(48);
+        $this->kb_category = PublicationCategoryPeer::retrieveByPK(PublicationCategoryPeer::KNOWLEDGEBASE_CATEGORY_ID);
 
         $c = new Criteria();
         $c->addJoin(PublicationCategoryPeer::ID, PublicationCategoryI18nPeer::ID, Criteria::LEFT_JOIN);
