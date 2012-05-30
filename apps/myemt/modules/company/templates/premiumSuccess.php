@@ -6,7 +6,7 @@
 
     <div class="boxContent tabs">
 
-        <dl class="_premium_services" style="display: block; ">
+        <dl class="_premium-services" style="display: block; ">
             <dt><?php echo __('Premium Services') ?></dt>
             <dd>
                 <?php echo __('Take your business to the level it deserves.') ?>
