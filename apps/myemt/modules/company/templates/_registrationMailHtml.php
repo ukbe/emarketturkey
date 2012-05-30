@@ -27,7 +27,7 @@ body { font-family: Arial; font-size: 10pt; font-weight: normal; color: #000000;
                 <?php echo __("You may also click the link below to edit informations about %1 :", array('%1' => $company->getName())) ?><br />
                 <?php echo link_to('', "@company-manage?hash={$company->getHash()}", array('absolute_url' => true)) ?><br /><br />
                 <?php echo __("If you wish to add your company's products or services, visit the link below :") ?><br />
-                <?php echo link_to('', "@manage-products?hash={$company->getHash()}", array('absolute_url' => true)) ?><br /><br />
+                <?php echo link_to('', "@products-overview?hash={$company->getHash()}", array('absolute_url' => true)) ?><br /><br />
                 <?php echo __('Thank you for registering your company!') ?>
                 <br /><br />
                 <?php echo __('eMarketTurkey Team') ?>
