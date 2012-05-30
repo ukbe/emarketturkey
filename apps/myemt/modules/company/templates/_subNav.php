@@ -16,7 +16,7 @@
                         <?php $props = $sf_user->getUser()->getOwnerships() ?>
                         <?php foreach ($props as $prop): ?>
                         <?php if (!($prop->getObjectTypeId()==PrivacyNodeTypePeer::PR_NTYP_COMPANY && $prop->getId() == $company->getId())): ?>
-                        <li><?php echo link_to($prop.'<span>switch</span>', $prop->getManageUrl()) ?></li>
+                        <li><?php echo link_to($prop->__toString().'<span>switch</span>', $prop->getManageUrl()) ?></li>
                         <?php endif ?>
                         <?php endforeach ?>
                         <li class="_bottom_comMng_links">
