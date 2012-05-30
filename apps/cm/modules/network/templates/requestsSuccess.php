@@ -3,7 +3,6 @@
 <?php end_slot() ?>
 
 <div class="col_948">
-    </div>
     <div class="col_180">
         <div class="box_180"></div>
 
