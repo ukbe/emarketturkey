@@ -1,7 +1,6 @@
 all:
     metas:
         title: "My Network | eMarketTurkey"
-    layout: layoutTripleColumn
 
 activitySuccess:
     metas:
