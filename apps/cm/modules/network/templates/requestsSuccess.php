@@ -1,5 +1,5 @@
 <?php slot('subNav') ?>
-<?php include_partial('profile/subNav', array('sesuser' => $sesuser)) ?>
+<?php include_partial('global/subNav', array('sesuser' => $sesuser)) ?>
 <?php end_slot() ?>
 
 <div class="col_948">
