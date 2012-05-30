@@ -2,7 +2,7 @@
             <ul class="_side">
                 <li<?php echo $action=='featured' ? ' class="_on"' :'' ?>><?php echo link_to(__('Featured Companies'), "@companies-action?action=featured") ?>
                 <li<?php echo $action=='index' ? ' class="_on"' :'' ?>><?php echo link_to(__('Find a Company'), "@companies") ?>
-                    <?php if (($action=='directory' && (isset($mod) && $mod==1))): ?>
+                    <?php if (($action=='directory' && (isset($mod) && $mod==4))): ?>
                     <ul><li class="_on"><?php echo link_to(__('Search Results'), '@companies') ?></li></ul>
                     <?php endif ?>
                     </li>

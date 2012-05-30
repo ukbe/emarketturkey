@@ -27,21 +27,21 @@
             <?php endif ?>
             <div class="hor-filter margin-t1">
                 <?php echo $keyword ? "<div>" . __('Keyword:') . ' ' . link_to($keyword, myTools::remove_querystring_var($sf_request->getUri(), 'keyword'), array('class' => 'filter-remove-link', 'title' => __('Remove Keyword Filter'))) . "</div>" : "" ?>
-                <?php if (count($countries)): ?>
+                <?php if (isset($countries) && count($countries)): ?>
                 <div class="clear"><?php echo __('Country:') ?>
                 <?php foreach ($countries as $code): ?>
                 <?php echo link_to(format_country($code), myTools::remove_querystring_var($sf_request->getUri(), 'country[]', $code), array('class' => 'filter-remove-link', 'title' => __('Remove Country Filter'))) ?>
                 <?php endforeach ?>
                 </div>
                 <?php endif ?>
-                <?php if (count($industries)): ?>
+                <?php if (isset($industries) && count($industries)): ?>
                 <div class="clear"><?php echo __('Industry:') ?>
                 <?php foreach ($industries as $sect_id): ?>
                 <?php echo link_to(BusinessSectorPeer::retrieveByPK($sect_id), myTools::remove_querystring_var($sf_request->getUri(), 'industry[]', $sect_id), array('class' => 'filter-remove-link', 'title' => __('Remove Industry Filter'))) ?>
                 <?php endforeach ?>
                 </div>
                 <?php endif ?>
-                <?php if (count($btypes)): ?>
+                <?php if (isset($btypes) && count($btypes)): ?>
                 <div class="clear"><?php echo __('Business Type:') ?>
                 <?php foreach ($btypes as $btype): ?>
                 <?php echo link_to(BusinessTypePeer::retrieveByPK($btype), myTools::remove_querystring_var($sf_request->getUri(), 'btype[]', $btype), array('class' => 'filter-remove-link', 'title' => __('Remove Business Type Filter'))) ?>

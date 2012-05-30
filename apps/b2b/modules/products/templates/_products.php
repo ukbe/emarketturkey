@@ -3,7 +3,7 @@
             <ul class="_side">
                 <li<?php echo $action=='spotlight' ? ' class="_on"' :'' ?>><?php echo link_to(__('Products Spotlight'), "@products-action?action=spotlight") ?>
                 <li<?php echo $action=='index' ? ' class="_on"' :'' ?>><?php echo link_to(__('Find a Product'), "@products") ?>
-                    <?php if (($action=='directory' && (isset($mod) && $mod==1))): ?>
+                    <?php if (($action=='directory' && (isset($mod) && $mod==4))): ?>
                     <ul><li class="_on"><?php echo link_to(__('Search Results'), '@products') ?></li></ul>
                     <?php endif ?>
                     </li>

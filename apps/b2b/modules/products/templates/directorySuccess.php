@@ -34,14 +34,14 @@
             <?php endif ?>
             <div class="hor-filter">
                 <?php echo $keyword ? "<div>" . __('Keyword:') . ' ' . link_to($keyword, myTools::remove_querystring_var($sf_request->getUri(), 'keyword'), array('class' => 'filter-remove-link', 'title' => __('Remove Keyword Filter'))) . "</div>" : "" ?>
-                <?php if (count($countries)): ?>
+                <?php if (isset($countries) && count($countries)): ?>
                 <div class="clear"><?php echo __('Country:') ?>
                 <?php foreach ($countries as $code): ?>
                 <?php echo link_to(format_country($code), myTools::remove_querystring_var($sf_request->getUri(), 'country[]', $code), array('class' => 'filter-remove-link', 'title' => __('Remove Country Filter'))) ?>
                 <?php endforeach ?>
                 </div>
                 <?php endif ?>
-                <?php if (count($categories)): ?>
+                <?php if (isset($categories) && count($categories)): ?>
                 <div class="clear"><?php echo __('Category:') ?>
                 <?php foreach ($categories as $cat_id): ?>
                 <?php echo link_to(ProductCategoryPeer::retrieveByPK($cat_id), myTools::remove_querystring_var($sf_request->getUri(), 'category[]', $cat_id), array('class' => 'filter-remove-link', 'title' => __('Remove Category Filter'))) ?>

@@ -118,7 +118,7 @@ class directoryAction extends EmtAction
             
             if (!count($this->countries) && !count($this->categories) && !$this->keyword) $this->redirect('@products');
 
-            $this->mod = 1;
+            $this->mod = 4;
         }
         
         $c->setDistinct();
