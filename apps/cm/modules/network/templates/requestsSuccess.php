@@ -1,33 +1,18 @@
-<?php slot('uppermenu') ?>
-<?php include_partial('network/uppermenu') ?>
+<?php slot('subNav') ?>
+<?php include_partial('profile/subNav', array('sesuser' => $sesuser)) ?>
 <?php end_slot() ?>
-<div class="network-panel">
-<style>
-#request-list
-{
-    border-top: solid 1px #888888;
-    width: 100%;
-} 
-#request-list td
-{
-    border-bottom : solid 1px #E0DEDE;
-    padding: 10px;
-}
-#request-list input[type=button]
-{
-    background-color: #60678A;
-    border: solid 1px #3D4051;
-    padding: 3px 6px;
-    margin-right: 8px;
-    color: #F9F9F9;
-}
-#request-list td:last-child
-{
-    width: 160px;
-    text-align: right;
-}
-</style>
-<h2><?php echo __('Network Requests') ?></h2>
+
+<div class="col_948">
+    </div>
+    <div class="col_180">
+        <div class="box_180"></div>
+
+    </div>
+
+    <div class="col_576">
+        <div class="box_576 _titleBG_Transparent">
+            <h4 class="margin-t1"><?php echo __('Network Requests') ?></h4>
+            <section>
 <?php if ((count($friend_requests) || count($group_requests) || count($group_invitations) || count($relation_updates))): ?>
 <table id="request-list" cellspacing="0" cellpadding="0">
 <?php foreach ($friend_requests as $request): ?>
@@ -86,4 +71,38 @@
 <?php else: ?>
 <?php echo __('You don\'t have any awaiting network requests.') ?><br /><br />
 <?php endif ?>
+            </section>
+
+        </div>
+
+    </div>
+
+    <div class="col_180">
+    </div>
 </div>
+    
+<style>
+#request-list
+{
+    border-top: solid 1px #888888;
+    width: 100%;
+} 
+#request-list td
+{
+    border-bottom : solid 1px #E0DEDE;
+    padding: 10px;
+}
+#request-list input[type=button]
+{
+    background-color: #60678A;
+    border: solid 1px #3D4051;
+    padding: 3px 6px;
+    margin-right: 8px;
+    color: #F9F9F9;
+}
+#request-list td:last-child
+{
+    width: 160px;
+    text-align: right;
+}
+</style>
