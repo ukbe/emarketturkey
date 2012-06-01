@@ -11,7 +11,7 @@ class transferAction extends EmtManageCompanyAction
     {
         $this->member = null;
         
-        if ($this->transfer = $this->company->getTransferProcess(TransferOwnershipRequestPeer::STAT_PENDING))
+        if ($this->transfer = $this->company->getTransferProcess(array(TransferOwnershipRequestPeer::STAT_PENDING, TransferOwnershipRequestPeer::STAT_ACCEPTED_BY_USER)))
         {
             if ($this->getRequestParameter('act') == 'cancel' && $this->getRequestParameter('tid') == $this->transfer->getGuid())
             {
