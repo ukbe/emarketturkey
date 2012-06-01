@@ -1184,10 +1184,11 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
     
     public function getTransferProcess($status_id, $return_single = true)
     {
+        $status_id = is_array($status_id) ? $status_id : array($status_id);
         $c = new Criteria();
         $c->add(TransferOwnershipRequestPeer::ACCOUNT_ID, $this->getId());
         $c->add(TransferOwnershipRequestPeer::ACCOUNT_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_COMPANY);
-        $c->add(TransferOwnershipRequestPeer::STATUS, $status_id);
+        $c->add(TransferOwnershipRequestPeer::STATUS, $status_id, Criteria::IN);
         $c->addDescendingOrderByColumn(TransferOwnershipRequestPeer::CREATED_AT);
         return $return_single ? TransferOwnershipRequestPeer::doSelectOne($c) : TransferOwnershipRequestPeer::doSelect($c);
     }
