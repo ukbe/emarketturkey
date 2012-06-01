@@ -17,48 +17,48 @@
             <h4><?php echo __('Transfer Account Ownership') ?></h4>
             <?php if ($transfer && ($transfer->getStatus()==TransferOwnershipRequestPeer::STAT_ACCEPTED_BY_USER ||$transfer->getStatus()==TransferOwnershipRequestPeer::STAT_PENDING)): ?>
             <?php echo __('At the moment there is an initiated transfer process. Please see the details below.') ?>
-            <?php if ($transfer->getStatus() == TransferOwnershipRequestPeer::STAT_PENDING): ?>
-            <div class="bubble margin-t2 margin-b2"><b class="t_red"><?php echo __('Attention!') ?></b><br />
-                <?php echo __('You should now send <b>%1</b> the transfer code <b>%2</b> since %1 will need this code in order to accept the transfer request.', array('%1' => $transfer->getUserRelatedByNewOwnerId(), '%2' => $transfer->getTransferCode())) ?>
-                </div>
-            <?php elseif ($transfer->getStatus() == TransferOwnershipRequestPeer::STAT_ACCEPTED_BY_USER): ?>
-            <div class="bubble margin-t2 margin-b2"><b class="t_green"><?php echo __('Attention!') ?></b><br />
-                <?php echo __('<b>%1</b> accepted the account transfer by entering the transfer code.', array('%1' => $transfer->getUserRelatedByNewOwnerId())) ?>
-                <div class="hrsplit-1"></div>
-                <?php echo __('The account for <b>%1</b> is about to be transferred to <b>%2</b>.', array('%1' => $transfer->getAccount(), '%2' => $transfer->getUserRelatedByNewOwnerId())) ?>
-                <div class="hrsplit-1"></div>
-                <?php echo __('Click Confirm button to complete the transfer process. If you did not initiate the transfer process or do not want to transfer <b>%1</b> account, then simply click the <b>Cancel Transfer</b> link below in order to cancel the whole process.', array('%1' => $transfer->getAccount())) ?>
-                <div class="hrsplit-2"></div>
-                <?php echo form_errors() ?>
-                <?php echo form_tag("@account-transfer?tid={$transfer->getGuid()}&act=$act") ?>
-                <?php echo input_hidden_tag('opt', 'in') ?>
-                <div class="_center">
-                <?php echo submit_tag(__('Confirm Transfer'), 'class=green-button') ?>&nbsp;&nbsp;
-                <?php echo link_to(__('Cancel Transfer'), "@account-transfer?tid={$transfer->getGuid()}&act=$act&opt=out", 'class=inherit-font bluelink hover') ?>
-                </div>
-                </form></div>
-            <?php endif ?>
-            <dl class="_table">
-                <dt><?php echo emt_label_for('init-code', __('Transfer Code')) ?></dt>
-                <dd style="font: bold 16px helvetica"><?php echo $transfer->getTransferCode() ?></dd>
-                <dt><?php echo emt_label_for('init-status', __('Status')) ?></dt>
-                <dd><?php echo TransferOwnershipRequestPeer::$statLabels[$transfer->getStatus()] ?></dd>
-                <dt><?php echo emt_label_for('init-date', __('Transfer Initiated At')) ?></dt>
-                <dd><?php echo format_date($transfer->getCreatedAt('U'), 'f') ?></dd>
-                <dt><?php echo emt_label_for('init-by', __('Initiated By')) ?></dt>
-                <dd><?php echo $transfer->getUserRelatedByProcessInitById() ?></dd>
-                <dt><?php echo emt_label_for('init-from', __('Transfer From')) ?></dt>
-                <dd><?php echo $transfer->getUserRelatedByCurrentOwnerId() ?></dd>
-                <dt><?php echo emt_label_for('init-to', __('Transfer To')) ?></dt>
-                <dd><?php echo $transfer->getUserRelatedByNewOwnerId() ?><br /><?php echo $transfer->getEmailAddress() ?></dd>
                 <?php if ($transfer->getStatus() == TransferOwnershipRequestPeer::STAT_PENDING): ?>
-                <dt></dt>
-                <dd><?php echo link_to(__('Cancel Transfer'), "@company-account?action=transfer&act=cancel&tid={$transfer->getGuid()}&hash={$company->getHash()}", 'class=green-button') ?></dd>
+                <div class="bubble margin-t2 margin-b2"><b class="t_red"><?php echo __('Attention!') ?></b><br />
+                    <?php echo __('You should now send <b>%1</b> the transfer code <b>%2</b> since %1 will need this code in order to accept the transfer request.', array('%1' => $transfer->getUserRelatedByNewOwnerId(), '%2' => $transfer->getTransferCode())) ?>
+                    </div>
+                <dl class="_table">
+                    <dt><?php echo emt_label_for('init-code', __('Transfer Code')) ?></dt>
+                    <dd style="font: bold 16px helvetica"><?php echo $transfer->getTransferCode() ?></dd>
+                    <dt><?php echo emt_label_for('init-status', __('Status')) ?></dt>
+                    <dd><?php echo TransferOwnershipRequestPeer::$statLabels[$transfer->getStatus()] ?></dd>
+                    <dt><?php echo emt_label_for('init-date', __('Transfer Initiated At')) ?></dt>
+                    <dd><?php echo format_date($transfer->getCreatedAt('U'), 'f') ?></dd>
+                    <dt><?php echo emt_label_for('init-by', __('Initiated By')) ?></dt>
+                    <dd><?php echo $transfer->getUserRelatedByProcessInitById() ?></dd>
+                    <dt><?php echo emt_label_for('init-from', __('Transfer From')) ?></dt>
+                    <dd><?php echo $transfer->getUserRelatedByCurrentOwnerId() ?></dd>
+                    <dt><?php echo emt_label_for('init-to', __('Transfer To')) ?></dt>
+                    <dd><?php echo $transfer->getUserRelatedByNewOwnerId() ?><br /><?php echo $transfer->getEmailAddress() ?></dd>
+                    <?php if ($transfer->getStatus() == TransferOwnershipRequestPeer::STAT_PENDING): ?>
+                    <dt></dt>
+                    <dd><?php echo link_to(__('Cancel Transfer'), "@company-account?action=transfer&act=cancel&tid={$transfer->getGuid()}&hash={$company->getHash()}", 'class=green-button') ?></dd>
+                    <?php endif ?>
+                </dl>
+                <div class="hrsplit-1"></div>
+                <?php echo link_to(__('Re-send notification email to %1.', array('%1' => $transfer->getUserRelatedByNewOwnerId())), "@company-account?action=transfer&act=notify&hash={$company->getHash()}", 'class=act a16px message bluelink') ?>
+                <div class="hrsplit-2"></div>
+                <?php elseif ($transfer->getStatus() == TransferOwnershipRequestPeer::STAT_ACCEPTED_BY_USER): ?>
+                <div class="bubble margin-t2 margin-b2 pad-1"><b class="t_green"><?php echo __('Attention!') ?></b><br />
+                    <?php echo __('<b>%1</b> accepted the account transfer by entering the transfer code.', array('%1' => $transfer->getUserRelatedByNewOwnerId())) ?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo __('The account for <b>%1</b> is about to be transferred to <b>%2</b>.', array('%1' => $transfer->getAccount(), '%2' => $transfer->getUserRelatedByNewOwnerId())) ?>
+                    <div class="hrsplit-1"></div>
+                    <?php echo __('Click Confirm button to complete the transfer process. If you did not initiate the transfer process or do not want to transfer <b>%1</b> account, then simply click the <b>Cancel Transfer</b> link below in order to cancel the whole process.', array('%1' => $transfer->getAccount())) ?>
+                    <div class="hrsplit-2"></div>
+                    <?php echo form_errors() ?>
+                    <?php echo form_tag("@account-transfer?tid={$transfer->getGuid()}&act=$act") ?>
+                    <?php echo input_hidden_tag('opt', 'in') ?>
+                    <div class="_center">
+                    <?php echo submit_tag(__('Confirm Transfer'), 'class=green-button') ?>&nbsp;&nbsp;
+                    <?php echo link_to(__('Cancel Transfer'), "@account-transfer?tid={$transfer->getGuid()}&act=$act&opt=out", 'class=inherit-font bluelink hover') ?>
+                    </div>
+                    </form></div>
                 <?php endif ?>
-            </dl>
-            <div class="hrsplit-1"></div>
-            <?php echo link_to(__('Re-send notification email to %1.', array('%1' => $transfer->getUserRelatedByNewOwnerId())), "@company-account?action=transfer&act=notify&hash={$company->getHash()}", 'class=act a16px message bluelink') ?>
-            <div class="hrsplit-2"></div>
             <?php else: ?>
             <?php if ($transfer && $transfer->getStatus() == TransferOwnershipRequestPeer::STAT_CANCELLED_BY_OWNER): ?>
             <div class="bubble margin-t2 margin-b2"><?php echo __('Transfer Process has been cancelled by account owner!') ?></div>
