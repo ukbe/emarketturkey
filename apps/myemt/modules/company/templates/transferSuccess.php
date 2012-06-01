@@ -51,7 +51,7 @@
                     <?php echo __('Click Confirm button to complete the transfer process. If you did not initiate the transfer process or do not want to transfer <b>%1</b> account, then simply click the <b>Cancel Transfer</b> link below in order to cancel the whole process.', array('%1' => $transfer->getAccount())) ?>
                     <div class="hrsplit-2"></div>
                     <?php echo form_errors() ?>
-                    <?php echo form_tag("@account-transfer?tid={$transfer->getGuid()}&act=$act") ?>
+                    <?php echo form_tag("@account-transfer?tid={$transfer->getGuid()}&act=finalize") ?>
                     <?php echo input_hidden_tag('opt', 'in') ?>
                     <div class="_center">
                     <?php echo submit_tag(__('Confirm Transfer'), 'class=green-button') ?>&nbsp;&nbsp;
