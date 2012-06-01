@@ -1207,15 +1207,9 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
                             CompanyUserPeer::CU_STAT_ENDED_BY_TARGET_USER,
                             CompanyUserPeer::CU_STAT_REJECTED);
 
-            $sql = "SELECT * FROM
-                    (
-                        SELECT EMT_COMPANY_USER.*,
-                        RANK() OVER (PARTITION BY COMPANY_ID, OBJECT_ID, OBJECT_TYPE_ID ORDER BY CREATED_AT DESC) SEQNUMBER
-                        FROM EMT_COMPANY_USER
-                        WHERE OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_COMPANY."
-                    )
+            $sql = "SELECT * FROM EMT_COMPANY_USER_VIEW
                     LEFT JOIN EMT_ROLE ON ROLE_ID=EMT_ROLE.ID
-                    WHERE SEQNUMBER=1 AND (COMPANY_ID={$this->getId()} AND OBJECT_ID=$object_id" . ($role_id ? " AND ROLE_ID=$role_id" : "") . ") OR ($object_type_id=".PrivacyNodeTypePeer::PR_NTYP_COMPANY." AND COMPANY_ID=$object_id AND OBJECT_ID={$this->getId()}" . ($role_id ? " AND EMT_ROLE.OPPOSITE_ROLE_ID=$role_id" : "") . ")
+                    WHERE OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_COMPANY." AND (COMPANY_ID={$this->getId()} AND OBJECT_ID=$object_id" . ($role_id ? " AND ROLE_ID=$role_id" : "") . ") OR ($object_type_id=".PrivacyNodeTypePeer::PR_NTYP_COMPANY." AND COMPANY_ID=$object_id AND OBJECT_ID={$this->getId()}" . ($role_id ? " AND EMT_ROLE.OPPOSITE_ROLE_ID=$role_id" : "") . ")
                     AND " . (isset($status) ? "STATUS IN (" . implode(',', $statuscr) . ")" : " STATUS NOT IN (" . implode(',',$filter) . ")");
             
             $stmt = $con->prepare($sql);
@@ -1225,13 +1219,8 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
             
         }
         
-        $sql = "SELECT * FROM 
-                (
-                    SELECT *,
-                    RANK() OVER (PARTITION BY COMPANY_ID, OBJECT_ID, OBJECT_TYPE_ID ORDER BY CREATED_AT DESC) SEQNUMBER
-                    FROM EMT_COMPANY_USER
-                )
-                WHERE SEQNUMBER=1 AND COMPANY_ID={$this->getId()} AND OBJECT_TYPE_ID!=".PrivacyNodeTypePeer::PR_NTYP_COMPANY
+        $sql = "SELECT * FROM EMT_COMPANY_USER_VIEW
+                WHERE COMPANY_ID={$this->getId()} AND OBJECT_TYPE_ID!=".PrivacyNodeTypePeer::PR_NTYP_COMPANY
                 .(isset($object_id) ? " AND OBJECT_ID=$object_id AND OBJECT_TYPE_ID=$object_type_id" : "")
                 .(isset($role_id) ? " AND ROLE_ID=$role_id" : "")
                 .(isset($status) ? " AND STATUS_ID IN (".implode(',', $statuscr).")" : "");
