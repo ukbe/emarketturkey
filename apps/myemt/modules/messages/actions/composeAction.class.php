@@ -18,7 +18,7 @@ class composeAction extends EmtMessageAction
     {
         $this->recipients = array();
         $this->recdata = array();
-
+        
         $ssplit = explode('|', $this->getRequestParameter('_s') ? base64_decode($this->getRequestParameter('_s')) : null);
         if (is_array($ssplit) && ($ssplit[0] = intval($ssplit[0])) && in_array($ssplit[0], array(PrivacyNodeTypePeer::PR_NTYP_USER, PrivacyNodeTypePeer::PR_NTYP_COMPANY, PrivacyNodeTypePeer::PR_NTYP_GROUP)))
         {
@@ -53,6 +53,50 @@ class composeAction extends EmtMessageAction
                 }
             }
         }
+        
+        $message = myTools::unplug($this->getRequestParameter('_m'));
+        
+        if ($message)
+        {
+            if ($this->account)
+            {
+                $list[] = array($this->account->getId(), $this->account->getObjectTypeId());
+            }
+            else
+            {
+                foreach ($this->props as $prop)
+                {
+                    $list[] = array($prop->getId(), $prop->getObjectTypeId());
+                }
+            }
+            
+            foreach ($list as $key => $item)
+            {
+                $list[$key] = "RECIPIENT_ID=".$item[0]." AND RECIPIENT_TYPE_ID=".$item[1];
+            }
+            $sql = "
+                SELECT EMT_MESSAGE_RECIPIENT.* FROM EMT_MESSAGE
+                LEFT JOIN EMT_MESSAGE_RECIPIENT ON EMT_MESSAGE.ID=EMT_MESSAGE_RECIPIENT.MESSAGE_ID
+                WHERE (".implode(' OR ', $list).")
+                AND EMT_MESSAGE_RECIPIENT.DELETED_AT IS NULL
+                AND EMT_MESSAGE.ID={$message->getId()}
+            ";
+            
+            $con = Propel::getConnection();
+    
+            $stmt = $con->prepare($sql);
+            $stmt->execute();
+            $recipients = MessageRecipientPeer::populateObjects($stmt);
+            $recipient = count($recipients) ? $recipients[0] : null;
+
+            if ($recipient)
+            {
+                $this->sender = $recipient->getRecipient();
+                $this->recipients = array($message->getSender());
+                $this->recdata = array(array('LABEL' => $message->getSender()->__toString(), 'HASH' => $message->getSender()->getPlug()));
+            }
+        }
+
         $this->recdata = json_encode($this->recdata);
         
         $this->object = myTools::unplug($this->getRequestParameter('_o'), true);

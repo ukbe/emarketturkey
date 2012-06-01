@@ -23,7 +23,7 @@
                 <?php echo input_hidden_tag('mod', 'commit') ?>
                 <dl class="_table">
                     <dt><?php echo emt_label_for('_s', __('Sender')) ?></dt>
-                    <dd><?php echo select_tag('_s', options_for_select($senders, $sf_params->get('_s'))) ?></dd>
+                    <dd><?php echo select_tag('_s', options_for_select($senders, $sf_params->get('_s', $sender ? $sender->getPlug() : null))) ?></dd>
                     <dt><?php echo emt_label_for('_r', __('Recipient')) ?></dt>
                     <dd><div id="reco"></div></dd>
                     <dt><?php echo emt_label_for('_subject', __('Subject')) ?></dt>
