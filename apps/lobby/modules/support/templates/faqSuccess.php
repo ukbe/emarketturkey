@@ -16,7 +16,8 @@
                     <?php $cat = $faq->getFaqCategory() ?>
                     <dt class="category"><?php echo $cat->getName() ?></dt>
                     <?php endif ?>
-                    <dt><?php echo link_to_function($faq->getQuestion(), '', 'class=inherit-font') ?></dt>
+                    <?php $hash = myTools::flipHash($faq->getId()) ?>
+                    <dt><?php echo link_to($faq->getQuestion(), "@faq#q$hash", "class=inherit-font id=q$hash onclick=return false;") ?></dt>
                     <dd><?php echo myTools::format_text($faq->getClob(FaqItemI18nPeer::ANSWER)) ?></dd>
                 <?php endforeach ?>
                 </dl>
@@ -31,6 +32,12 @@
 $(function(){
 
     $('dl.faq-list a').click(function(){ $(this).closest('dt').next('dd').toggleClass('view'); });
+    
+    if (window.location.hash!='') {
+        $(window.location.hash).click();
+        $('html, body').animate({scrollTop: $(window.location.hash).offset().top-100}, 500);
+    };
+    
 
 });
 

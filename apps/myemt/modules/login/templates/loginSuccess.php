@@ -54,14 +54,14 @@
                     <div style="padding: 20px 10px;">
                     <p><?php echo __("Don't have an eMarketTurkey.com account, yet?<br /><b>You can sign up in seconds!</b>") ?></p>
                     <p><?php echo link_to(image_tag('layout/button/joinnow.'.$sf_user->getCulture().'.gif'), '@signup') ?></p>
-                    <p><?php echo __('%1 how you can benefit for your career or your corporation.', array('%1' => link_to(__("Find out"), "@homepage", 'class=inherit-font bluelink hover'))) ?></p>
+                    <p><?php echo __('%1 how you can benefit for your career or your corporation.', array('%1' => link_to(__("Find out"), "@lobby.services", 'class=inherit-font bluelink hover'))) ?></p>
                     <div class="hrsplit-1"></div>
                     <div> 
                     <ul class="t_smaller" style="padding-left: 60px; background: url(/images/layout/icon/faq-40px.png) left 10px no-repeat;">
                         <li><h3 class="pad-l0 margin-b1 t_underline"><?php echo __('Frequently Asked Questions') ?>:</h3></li>
-                        <li><?php echo link_to (__('Who can register to eMarketTurkey?'), "@homepage", 'class=inherit-font hover') ?></li>
-                        <li><?php echo link_to (__('How can I register my company?'), "@homepage", 'class=inherit-font hover') ?></li>
-                        <li><?php echo link_to (__('more answers'), "@homepage", 'class=inherit-font bluelink hover') ?></li>
+                        <li><?php echo link_to (__('Who can register to eMarketTurkey?'), "@lobby.faq#qTMMS", 'class=inherit-font hover target=_blank') ?></li>
+                        <li><?php echo link_to (__('Is membership a paid service?'), "@lobby.faq#qxMMS", 'class=inherit-font hover') ?></li>
+                        <li><?php echo link_to (__('more answers'), "@lobby.faq", 'class=inherit-font bluelink hover') ?></li>
                     </ul>
                     </div>
                     </div>
