@@ -60,8 +60,8 @@
                     <ul class="t_smaller" style="padding-left: 60px; background: url(/images/layout/icon/faq-40px.png) left 10px no-repeat;">
                         <li><h3 class="pad-l0 margin-b1 t_underline"><?php echo __('Frequently Asked Questions') ?>:</h3></li>
                         <li><?php echo link_to (__('Who can register to eMarketTurkey?'), "@lobby.faq#qTMMS", 'class=inherit-font hover target=_blank') ?></li>
-                        <li><?php echo link_to (__('Is membership a paid service?'), "@lobby.faq#qxMMS", 'class=inherit-font hover') ?></li>
-                        <li><?php echo link_to (__('more answers'), "@lobby.faq", 'class=inherit-font bluelink hover') ?></li>
+                        <li><?php echo link_to (__('Is membership a paid service?'), "@lobby.faq#qxMMS", 'class=inherit-font hover target=_blank') ?></li>
+                        <li><?php echo link_to (__('more answers'), "@lobby.faq", 'class=inherit-font bluelink hover target=_blank') ?></li>
                     </ul>
                     </div>
                     </div>
