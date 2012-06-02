@@ -60,10 +60,11 @@ class postAction extends EmtManageLeadAction
                     $this->lead->setExpiresAt($this->getRequestParameter('expires_at'));
 
                     $isnew = $this->lead->isNew();
-                    $this->lead->save();
-
                     $pr = $this->getRequestParameter('lead_lang');
                     $this->lead->setDefaultLang($pr[0]);
+                    
+                    $this->lead->save();
+
 
                     if (is_array($pr))
                     {
