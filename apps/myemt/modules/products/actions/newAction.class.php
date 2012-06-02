@@ -229,9 +229,16 @@ class newAction extends EmtManageProductAction
     {
         $pr = $this->getRequestParameter('product_lang');
         $pr = is_array($pr)?$pr:array();
-        
+
         sfLoader::loadHelpers('I18N');
-        
+
+        if ($this->getRequestParameter('product_brand_owner') == CompanyBrandPeer::BRND_HOLDED_BY_COMPANY && $this->getRequestParameter('product_brand_id') === '0' && $this->getRequestParameter('product_new_brand') == '')
+            $this->getRequest()->setError('product_brand', __('Please enter the name of new product brand.'));
+        if ($this->getRequestParameter('product_brand_owner') == CompanyBrandPeer::BRND_HOLDED_BY_ELSE && $this->getRequestParameter('product_brand_name') == '')
+            $this->getRequest()->setError('product_brand', __('Please enter the name of the product brand.'));
+        if ($this->getRequestParameter('product_group_id') === '0' && $this->getRequestParameter('product_new_group') == '')
+            $this->getRequest()->setError('product_brand', __('Please enter the name of the product brand.'));
+            
         foreach ($pr as $key => $lang)
         {
             $lang = trim($lang);

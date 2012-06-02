@@ -98,7 +98,7 @@
     <dt><?php echo emt_label_for('product_group_id', __('Display in Group')) ?></dt>
     <dd><?php $groups = $company->getOrderedGroups(true); $groups[0] = __('New') ?>
         <?php echo select_tag('product_group_id', options_for_select($groups, $sf_params->get('product_group_id', $product->getGroupId()), 'include_blank=true')) ?>
-        <?php echo input_tag('product_new_group', $sf_params->get('product_new_group'), array('maxlength' => 255, 'style' => 'width: 200px;'.($sf_params->get('product_group_id', $product->getGroupId()) === 0) ? '' : 'display: none;')) ?>
+        <?php echo input_tag('product_new_group', $sf_params->get('product_new_group'), array('maxlength' => 255, 'style' => 'width: 200px;'.($sf_params->get('product_group_id', $product->getGroupId()) === 0 ? '' : 'display: none;'))) ?>
         <span class="ln-example"><?php echo __('Select existing product group or create new to display your products organized.') ?></span></dd>
 </dl>
 <h5 class="clear"><?php echo __('Product Details') ?></h5>
