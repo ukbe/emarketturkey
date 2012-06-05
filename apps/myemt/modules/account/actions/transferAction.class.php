@@ -142,6 +142,7 @@ class transferAction extends EmtManageAction
                                         }
 
                                         $new->setRoleId(RolePeer::RL_CM_OWNER);
+                                        $new->setStatus(CompanyUserPeer::CU_STAT_ACTIVE);
                                         $new->save();
                                         $current->setRoleId(RolePeer::RL_CM_FOLLOWER);
                                         $current->save();
@@ -188,6 +189,7 @@ class transferAction extends EmtManageAction
                                         }
                                          
                                         $new->setRoleId(RolePeer::RL_GP_OWNER);
+                                        $new->setStatus(GroupMembershipPeer::STYP_ACTIVE);
                                         $new->save();
                                         $current->setRoleId(RolePeer::RL_GP_MEMBER);
                                         $current->save();
