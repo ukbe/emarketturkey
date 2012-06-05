@@ -71,7 +71,7 @@ class Message extends BaseMessage
         $names = array();
         foreach($recips as $recip)
         {
-            if ($recip)
+            if ($recip && $recip->getRecipient())
                 $names[] = $recip->getRecipient()->__toString();
         }
         return $names;
