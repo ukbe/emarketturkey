@@ -126,20 +126,21 @@ class transferAction extends EmtManageAction
                                 $company = $this->transfer->getAccount();
                                 if ($company)
                                 {
-                                    $current = $company->getCompanyUserFor($this->transfer->getCurrentOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
-                                    $new = $company->getCompanyUserFor($this->transfer->getNewOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
-                                    if (!$new)
-                                    {
-                                        $new = new CompanyUser();
-                                        $new->setCompanyId($company->getId());
-                                        $new->setObjectId($this->transfer->getNewOwnerId());
-                                        $new->setObjectTypeId(PrivacyNodeTypePeer::PR_NTYP_USER);
-                                    }
-                                     
                                     $con = Propel::getConnection();
                                     try
                                     {
                                         $con->beginTransaction();
+
+                                        $current = $company->getCompanyUserFor($this->transfer->getCurrentOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
+                                        $new = $company->getCompanyUserFor($this->transfer->getNewOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
+                                        if (!$new)
+                                        {
+                                            $new = new CompanyUser();
+                                            $new->setCompanyId($company->getId());
+                                            $new->setObjectId($this->transfer->getNewOwnerId());
+                                            $new->setObjectTypeId(PrivacyNodeTypePeer::PR_NTYP_USER);
+                                        }
+
                                         $new->setRoleId(RolePeer::RL_CM_OWNER);
                                         $new->save();
                                         $current->setRoleId(RolePeer::RL_CM_FOLLOWER);
@@ -170,21 +171,22 @@ class transferAction extends EmtManageAction
                                 $group  = $this->transfer->getAccount();
                                 if ($group)
                                 {
-                                    $current = $group->hasMembership($this->transfer->getCurrentOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
-                                    $new = $group->hasMembership($this->transfer->getNewOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
-                                    if (!$new)
-                                    {
-                                        $new = new GroupMembership();
-                                        $new->setGroupId($group->getId());
-                                        $new->setObjectId($this->transfer->getNewOwnerId());
-                                        $new->setObjectypeId(PrivacyNodeTypePeer::PR_NTYP_USER);
-                                        $new->setStatus(GroupMembershipPeer::STYP_ACTIVE);
-                                    }
-                                     
                                     $con = Propel::getConnection();
                                     try
                                     {
                                         $con->beginTransaction();
+
+                                        $current = $group->hasMembership($this->transfer->getCurrentOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
+                                        $new = $group->hasMembership($this->transfer->getNewOwnerId(), PrivacyNodeTypePeer::PR_NTYP_USER);
+                                        if (!$new)
+                                        {
+                                            $new = new GroupMembership();
+                                            $new->setGroupId($group->getId());
+                                            $new->setObjectId($this->transfer->getNewOwnerId());
+                                            $new->setObjectypeId(PrivacyNodeTypePeer::PR_NTYP_USER);
+                                            $new->setStatus(GroupMembershipPeer::STYP_ACTIVE);
+                                        }
+                                         
                                         $new->setRoleId(RolePeer::RL_GP_OWNER);
                                         $new->save();
                                         $current->setRoleId(RolePeer::RL_GP_MEMBER);
