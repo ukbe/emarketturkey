@@ -76,6 +76,8 @@ function options_for_select($options = array(), $selected = '', $html_options = 
   {
     $html .= content_tag('option', '', array('value' => ''))."\n";
   }
+  
+  $use_i18n = _get_option($html_options, 'use_i18n');
 
   foreach ($options as $key => $value)
   {
@@ -91,7 +93,7 @@ function options_for_select($options = array(), $selected = '', $html_options = 
         $option_options['selected'] = 'selected';
       }
 
-      $html .= content_tag('option', $value, $option_options)."\n";
+      $html .= content_tag('option', $use_i18n ? __($value) : $value, $option_options)."\n";
     }
   }
 
