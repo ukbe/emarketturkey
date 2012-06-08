@@ -89,16 +89,16 @@
     <dt><?php echo emt_label_for('product_brand', __('Brand')) ?></dt>
     <dd><?php echo select_tag('product_brand_owner', options_for_select(CompanyBrandPeer::$typeNames, $sf_params->get('product_brand_owner', $product->getBrandName() ? CompanyBrandPeer::BRND_HOLDED_BY_ELSE : CompanyBrandPeer::BRND_HOLDED_BY_COMPANY))) ?>
         <div id="swother" style="display: inline;"><?php echo input_tag('product_brand_name',$sf_params->get('product_brand_name', $product->getBrandName()), 'maxlength=200 style=width:130px;') ?></div>
-        <?php $brands = $company->getOrderedBrands(true); $brands[0] = __('Add New') ?>
+        <?php $brands = $company->getOrderedBrands(true); $brands['new'] = __('Add New') ?>
         <div id="swour" style="display: inline;"><?php echo select_tag('product_brand_id', options_for_select($brands, $sf_params->get('product_brand_id', $product->getBrandId()), 'include_blank=true')) ?>
-        <?php echo input_tag('product_new_brand',$sf_params->get('product_new_brand'), 'maxlength=200 style=width:130px;') ?></div>
+        <?php echo input_tag('product_new_brand', $sf_params->get('product_new_brand'), 'maxlength=200 style=width:130px;') ?></div>
         <span class="ln-example"><?php echo __('Specify the brand name related to your product if applicable.') ?></span></dd>
     <dt><?php echo emt_label_for('product_model', __('Model No')) ?></dt>
     <dd><?php echo input_tag('product_model',$sf_params->get('product_model', $product->getModelNo()), 'size=20 maxlength=100 style=width:100px;') ?></dd>
     <dt><?php echo emt_label_for('product_group_id', __('Display in Group')) ?></dt>
-    <dd><?php $groups = $company->getOrderedGroups(true); $groups[0] = __('New') ?>
+    <dd><?php $groups = $company->getOrderedGroups(true); $groups['new'] = __('New') ?>
         <?php echo select_tag('product_group_id', options_for_select($groups, $sf_params->get('product_group_id', $product->getGroupId()), 'include_blank=true')) ?>
-        <?php echo input_tag('product_new_group', $sf_params->get('product_new_group'), array('maxlength' => 255, 'style' => 'width: 200px;'.($sf_params->get('product_group_id', $product->getGroupId()) === 0 ? '' : 'display: none;'))) ?>
+        <?php echo input_tag('product_new_group', $sf_params->get('product_new_group'), array('maxlength' => 255, 'style' => 'width: 200px;'.($sf_params->get('product_group_id', $product->getGroupId()) == 'new' ? '' : 'display: none;'))) ?>
         <span class="ln-example"><?php echo __('Select existing product group or create new to display your products organized.') ?></span></dd>
 </dl>
 <h5 class="clear"><?php echo __('Product Details') ?></h5>
@@ -206,8 +206,8 @@ $(function() {
     //$('input, textarea').watermark();
     
     $('#product_brand_owner').branch({map: {1: '#swour', 2: '#swother'}})
-    $('#product_brand_id').branch({map: {0: '#product_new_brand'}})
-    $('#product_group_id').branch({map: {0: '#product_new_group'}})
+    $('#product_brand_id').branch({map: {'new': '#product_new_brand'}})
+    $('#product_group_id').branch({map: {'new': '#product_new_group'}})
     
     $('dl._table input').customInput();
     

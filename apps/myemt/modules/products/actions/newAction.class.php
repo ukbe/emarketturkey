@@ -91,7 +91,7 @@ class newAction extends EmtManageProductAction
 					$this->product->setCapacityPeriodId($this->getRequestParameter('product_capacity_period'));
 
 					// Set product group
-					if ($this->getRequestParameter('product_group_id') == 0){
+					if ($this->getRequestParameter('product_group_id') == 'new'){
 						$grp = new ProductGroup();
 						$grp->setName($this->getRequestParameter('product_new_group'));
 						$grp->setCompanyId($this->company->getId());
@@ -101,13 +101,16 @@ class newAction extends EmtManageProductAction
 					}
 					elseif ($group = $this->company->getProductGroupById($this->getRequestParameter('product_group_id'))){
 						$this->product->setGroupId($group->getId());
-					};
+					}
+					else {
+					   $this->product->setGroupId(null);
+					}
 
 					// Set product brand
 					switch ($this->getRequestParameter('product_brand_owner')){
 					case CompanyBrandPeer::BRND_HOLDED_BY_COMPANY : 
 						switch ($this->getRequestParameter('product_brand_id')){
-							case 0 : 
+							case 'new' : 
 								$brand = new CompanyBrand();
 								$brand->setCompanyId($this->company->getId());
 								$brand->setName($this->getRequestParameter('product_new_brand'));
@@ -232,11 +235,15 @@ class newAction extends EmtManageProductAction
 
         sfLoader::loadHelpers('I18N');
 
-        if ($this->getRequestParameter('product_brand_owner') == CompanyBrandPeer::BRND_HOLDED_BY_COMPANY && $this->getRequestParameter('product_brand_id') === '0' && $this->getRequestParameter('product_new_brand') == '')
-            $this->getRequest()->setError('product_brand', __('Please enter the name of new product brand.'));
+        if ($this->getRequestParameter('product_brand_owner') == CompanyBrandPeer::BRND_HOLDED_BY_COMPANY) {
+            if ($this->getRequestParameter('product_brand_id') !== 'new' && !myTools::fixInt($this->getRequestParameter('product_brand_id')))
+                $this->getRequest()->setError('product_brand', __('Please select a brand from the list.'));
+            elseif ($this->getRequestParameter('product_brand_id') == 'new' && $this->getRequestParameter('product_new_brand') == '')
+                $this->getRequest()->setError('product_brand', __('Please enter the name of new product brand.'));
+        }
         if ($this->getRequestParameter('product_brand_owner') == CompanyBrandPeer::BRND_HOLDED_BY_ELSE && $this->getRequestParameter('product_brand_name') == '')
             $this->getRequest()->setError('product_brand', __('Please enter the name of the product brand.'));
-        if ($this->getRequestParameter('product_group_id') === '0' && $this->getRequestParameter('product_new_group') == '')
+        if ($this->getRequestParameter('product_group_id') == 'new' && $this->getRequestParameter('product_new_group') == '')
             $this->getRequest()->setError('product_group_id', __('Please enter the name of new product group.'));
             
         foreach ($pr as $key => $lang)
