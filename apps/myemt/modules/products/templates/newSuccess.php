@@ -87,7 +87,7 @@
     <dd><?php echo select_country_tag('product_origin', $sf_params->get('product_origin', $product->getOrigin() ? $product->getOrigin() : $company->getContact()->getWorkAddress()->getCountry())) ?>
         <span class="ln-example"><?php echo __('Select the origin of the product.') ?></span></dd>
     <dt><?php echo emt_label_for('product_brand', __('Brand')) ?></dt>
-    <dd><?php echo select_tag('product_brand_owner', options_for_select(CompanyBrandPeer::$typeNames, $sf_params->get('product_brand_owner', $product->getBrandName() ? CompanyBrandPeer::BRND_HOLDED_BY_ELSE : CompanyBrandPeer::BRND_HOLDED_BY_COMPANY, array('use_i18n' => true)))) ?>
+    <dd><?php echo select_tag('product_brand_owner', options_for_select(CompanyBrandPeer::$typeNames, $sf_params->get('product_brand_owner', $product->getBrandName() ? CompanyBrandPeer::BRND_HOLDED_BY_ELSE : CompanyBrandPeer::BRND_HOLDED_BY_COMPANY), array('use_i18n' => true))) ?>
         <div id="swother" style="display: inline;"><?php echo input_tag('product_brand_name',$sf_params->get('product_brand_name', $product->getBrandName()), 'maxlength=200 style=width:130px;') ?></div>
         <?php $brands = $company->getOrderedBrands(true); $brands['new'] = __('Add New') ?>
         <div id="swour" style="display: inline;"><?php echo select_tag('product_brand_id', options_for_select($brands, $sf_params->get('product_brand_id', $product->getBrandId()), 'include_blank=true')) ?>
