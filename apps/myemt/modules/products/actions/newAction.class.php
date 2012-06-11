@@ -79,16 +79,16 @@ class newAction extends EmtManageProductAction
 					$this->product->setKeyword($this->getRequestParameter('product_keyword'));
 
 					$this->product->setMinOrderQuantity($this->getRequestParameter('product_min_order'));
-					$this->product->setQuantityUnit($this->getRequestParameter('product_min_order_unit'));
+					$this->product->setQuantityUnit(myTools::fixInt($this->getRequestParameter('product_min_order_unit')));
 
 					$this->product->setPriceCurrency($this->getRequestParameter('product_price_currency'));
 					$this->product->setPriceStart($this->getRequestParameter('product_price_start'));
 					$this->product->setPriceEnd($this->getRequestParameter('product_price_end'));
-					$this->product->setPriceUnit($this->getRequestParameter('product_price_unit'));
+					$this->product->setPriceUnit(myTools::fixInt($this->getRequestParameter('product_price_unit')));
 
 					$this->product->setCapacity($this->getRequestParameter('product_capacity'));
-					$this->product->setCapacityUnit($this->getRequestParameter('product_capacity_unit'));
-					$this->product->setCapacityPeriodId($this->getRequestParameter('product_capacity_period'));
+					$this->product->setCapacityUnit(myTools::fixInt($this->getRequestParameter('product_capacity_unit')));
+					$this->product->setCapacityPeriodId(myTools::fixInt($this->getRequestParameter('product_capacity_period')));
 
 					// Set product group
 					if ($this->getRequestParameter('product_group_id') == 'new'){
