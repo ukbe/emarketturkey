@@ -23,7 +23,7 @@
         <p>"<?php echo $message ?>"</p>
         <?php endif ?>
         <p><?php echo __("You may click the link below to respond to your friend's invitation:") ?></p>
-        <p><?php echo link_to('', '@lobby.signup', array('query_string' => 'invite='. $invite_guid, 'absolute' => true)) ?></p><br />
+        <p><?php echo link_to('', '@myemt.signup', array('query_string' => 'invite='. $invite_guid, 'absolute' => true)) ?></p><br />
         <p><?php echo link_to('View in English', '@lobby.viewinvite', array('query_string' => 'invite=' . $invite_guid . '&ln=en', 'absolute' => true)) ?>&nbsp;&nbsp;
 <?php echo link_to('Türkçe dilinde oku', '@lobby.viewinvite', array('query_string' => 'invite=' . $invite_guid . '&ln=tr', 'absolute' => true)) ?>&nbsp;&nbsp;</p>
     </div>
