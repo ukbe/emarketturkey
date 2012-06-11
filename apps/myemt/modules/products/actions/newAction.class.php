@@ -78,15 +78,15 @@ class newAction extends EmtManageProductAction
 					$this->product->setOrigin($this->getRequestParameter('product_origin'));
 					$this->product->setKeyword($this->getRequestParameter('product_keyword'));
 
-					$this->product->setMinOrderQuantity($this->getRequestParameter('product_min_order'));
+					$this->product->setMinOrderQuantity(myTools::fixInt($this->getRequestParameter('product_min_order')));
 					$this->product->setQuantityUnit(myTools::fixInt($this->getRequestParameter('product_min_order_unit')));
 
 					$this->product->setPriceCurrency($this->getRequestParameter('product_price_currency'));
-					$this->product->setPriceStart($this->getRequestParameter('product_price_start'));
-					$this->product->setPriceEnd($this->getRequestParameter('product_price_end'));
+					$this->product->setPriceStart(myTools::fixInt($this->getRequestParameter('product_price_start')));
+					$this->product->setPriceEnd(myTools::fixInt($this->getRequestParameter('product_price_end')));
 					$this->product->setPriceUnit(myTools::fixInt($this->getRequestParameter('product_price_unit')));
 
-					$this->product->setCapacity($this->getRequestParameter('product_capacity'));
+					$this->product->setCapacity(myTools::fixInt($this->getRequestParameter('product_capacity')));
 					$this->product->setCapacityUnit(myTools::fixInt($this->getRequestParameter('product_capacity_unit')));
 					$this->product->setCapacityPeriodId(myTools::fixInt($this->getRequestParameter('product_capacity_period')));
 
