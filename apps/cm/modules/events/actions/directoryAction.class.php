@@ -88,6 +88,8 @@ class directoryAction extends EmtAction
         //$c->add(TimeSchemePeer::END_DATE, 'TRUNC(EMT_TIME_SCHEME.END_DATE) >= TRUNC(SYSDATE)', Criteria::CUSTOM);
                 
         $c->addJoin(EventPeer::ID, EventI18nPeer::ID, Criteria::LEFT_JOIN);
+        $c->addJoin(EventPeer::TYPE_ID, EventTypePeer::ID, Criteria::LEFT_JOIN);
+        $c->add(EventTypePeer::TYPE_CLASS, EventTypePeer::ECLS_TYP_SOCIAL);
         
         EventPeer::addSelectColumns($c);
         

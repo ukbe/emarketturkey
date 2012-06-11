@@ -32,7 +32,7 @@ class directoryAction extends EmtAction
         
         if ($this->keyword || $this->initial)
         {
-            $c->addJoin(EventPeer::ID, EventI18nPeer::ID, Criteria::INNER_JOIN);
+            $c->addJoin(EventPeer::ID, EventI18nPeer::ID, Criteria::LEFT_JOIN);
         }
 
         if ($this->keyword)
@@ -87,7 +87,9 @@ class directoryAction extends EmtAction
         //$c->addJoin(EventPeer::TIME_SCHEME_ID, TimeSchemePeer::ID, Criteria::LEFT_JOIN);
         //$c->add(TimeSchemePeer::END_DATE, 'TRUNC(EMT_TIME_SCHEME.END_DATE) >= TRUNC(SYSDATE)', Criteria::CUSTOM);
                 
-        $c->addJoin(EventPeer::ID, EventI18nPeer::ID);
+        $c->addJoin(EventPeer::ID, EventI18nPeer::ID, Criteria::LEFT_JOIN);
+        $c->addJoin(EventPeer::TYPE_ID, EventTypePeer::ID, Criteria::LEFT_JOIN);
+        $c->add(EventTypePeer::TYPE_CLASS, EventTypePeer::ECLS_TYP_BUSINESS);
         
         EventPeer::addSelectColumns($c);
         
@@ -99,6 +101,7 @@ class directoryAction extends EmtAction
         }
         else
         {
+            $c->addJoin(EventPeer::TIME_SCHEME_ID, TimeSchemePeer::ID, Criteria::LEFT_JOIN);
             $c->addSelectColumn(TimeSchemePeer::START_DATE);
             $c->addAscendingOrderByColumn(TimeSchemePeer::START_DATE);
         }
