@@ -70,9 +70,12 @@ class resetPasswordAction extends EmtAction
                     $vars['data'] = $data;
                     $vars['namespace'] = EmailTransactionNamespacePeer::EML_TR_NS_RESET_PASSWORD;
     
-                    EmailTransactionPeer::CreateTransaction($vars);
+                    $tr = EmailTransactionPeer::CreateTransaction($vars, false);
                     
                     $con->commit();
+                    
+                    $tr->reload();
+                    $tr->deliver();
                     
                     $this->setTemplate('resetPasswordMailSent');
                 }
