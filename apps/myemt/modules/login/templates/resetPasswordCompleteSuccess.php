@@ -15,7 +15,7 @@
                 <?php if (!$error_msg): ?>
                     <p><?php echo __('Your new password has been set. You should use your new password while logging in.') ?></p>
                     <div class="hrsplit-3"></div>
-                    <p><?php echo link_to('Log In Now', '@login') ?></p>
+                    <p><?php echo link_to(__('Log In Now'), '@login') ?></p>
                 <?php else: ?>
                 <?php echo $error_msg ?>
                 <?php endif ?>
