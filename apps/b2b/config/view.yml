@@ -10,7 +10,7 @@ default:
     robots:       index, follow
     base:         'http://b2b.emarketturkey.com'
 
-  stylesheets:    [master-1.0.css, b2b-styles.css]
+  stylesheets:    [master-1.1.css, b2b-styles.css]
 
   javascripts:    [jquery-1.7.1.min.js, jquery-ui-1.8.13.core.min.js, jquery.tools-1.2.5.min.js, emt-dynabox-1.0.js, emt-toolbar-init.js]
 
