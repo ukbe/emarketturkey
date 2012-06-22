@@ -22,13 +22,13 @@
                 <?php echo form_tag('login/resetPassword?log='.$sf_params->get('log').'&req='.$sf_params->get('req')) ?>
                 <dl class="_table">
                     <dt><?php echo emt_label_for('new_passwd', __('New Password')) ?></dt>
-                    <dd><?php echo input_password_tag('new_passwd', '', 'size=30 style=width:240px;') ?>
+                    <dd style="width:300px;"><?php echo input_password_tag('new_passwd', '', 'size=30 style=width:240px;') ?>
                         <em class="ln-example"><?php echo __('Your password should include 6-14 chars. and <b>at least one</b> numerical character.') ?></em></dd>
                     <dt><?php echo emt_label_for('new_passwd_rpt', __('New Password (repeat)')) ?></dt>
-                    <dd><?php echo input_password_tag('new_passwd_rpt', '', 'size=30 style=width:240px;') ?>
+                    <dd style="width:300px;"><?php echo input_password_tag('new_passwd_rpt', '', 'size=30 style=width:240px;') ?>
                         <em class="ln-example"><?php echo __('Re-type your new password.') ?></em></dd>
                     <dt></dt>
-                    <dd><?php echo submit_tag(__('Set New Password')) ?></dd>
+                    <dd style="width:300px;"><?php echo submit_tag(__('Set New Password'), 'class=green-button') ?></dd>
                 </dl>
                 </form>
             </div>
