@@ -5,8 +5,8 @@
 <?php $sf_context->getI18N()->setCulture($culture) ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="title" content="emt" />
-<meta name="language" content="EN" />
-<meta name="content-language" content="EN" />
+<meta name="language" content="<?php echo $culture ?>" />
+<meta name="content-language" content="<?php echo $culture ?>" />
 <style>
 body { font-family: Arial; font-size: 10pt; font-weight: normal; color: #000000; }
 </style>
