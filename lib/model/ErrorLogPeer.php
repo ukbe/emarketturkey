@@ -4,6 +4,8 @@ class ErrorLogPeer extends BaseErrorLogPeer
 {
     public static function Log($item_id, $item_type_id, $message, $e = null)
     {
+        $stack = $e ? $e->outputStackTrace() : '[object absent]';
+        $message .= "\n\nStack:\n{$stack}";
         try
         {
             $log = new ErrorLog();
