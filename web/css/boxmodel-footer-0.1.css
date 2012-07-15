@@ -1,0 +1,145 @@
+
+#lowerContainer {
+    margin: 0 auto;
+    display: block;
+    width: 962px;
+}
+
+#lowerContainer footer {
+    position: relative;
+    float: left;
+    height:auto;
+    color:#ccc;
+}
+
+.subsection, footer dl {
+    float:left;
+    width:213px;
+    padding:10px;
+    margin:5px 9px 5px 0;
+    overflow:hidden;
+    vertical-align:top;
+    text-align:justify;
+    background:#363636;
+    xbackground-image: -moz-linear-gradient( #404040, #363636);
+    border-radius:8px;
+    font:normal 300 11px Verdana, Arial,Helvetica,sans-serif;
+}
+
+div._ftAd { display:block;padding:15px 0 5px 0;background:transparent;border-color:transparent;}
+div._ftAd ul {margin:-12px 0 0;}
+div._ftAd ul li {margin-bottom:5px;}
+
+div._ftAd li a {
+    xwidth:190px;
+    display:block;
+    padding:8px;
+    border:1px solid #444;
+    background:#252525;
+}
+div._ftAd li a:hover {
+    background:#444;
+    color:#eee;
+    border-color:#252525;
+    text-decoration:none;
+    -webkit-transition: border-color .20s ease-in-out; -moz-transition: all .20s ease-in-out; -o-transition: border-color .20s ease-in-out;
+}
+
+li._ft_sub {display:block;margin:-5px 0 0;}
+li._ft_sub strong {border-bottom:1px solid;}
+li._ft_sub strong a:hover {text-decoration:none; }
+
+#lowerContainer dl {height:160px; padding:2px 10px 8px;position:relative;}
+#lowerContainer dt {margin:6px 0 2px;}
+#lowerContainer dt a {border-bottom:1px solid;}
+#lowerContainer dd {}
+#lowerContainer footer dt a:hover {text-decoration:none; }
+
+#lowerContainer dd._ftTabs a {display:block;}
+
+#lowerContainer dt._ftLn {display:none;}
+#lowerContainer dd._ftLn div {float:right;border:5px solid #404040;padding:0px;margin:4px -4px; border-radius: 6px;}
+#lowerContainer dd._ftLn select {float:right;padding:3px 3px 3px 6px;margin:0px;background-color:#999;font-size:9px; border: none; border-radius: 2px;}
+#lowerContainer dd._ftLn option {margin-right:10px;padding-right:2px;}
+
+._ft_truste a img {
+    display:block;height:36px;
+    text-indent:-900px;overflow:hidden;
+    opacity:.49;
+    -webkit-transition: opacity .20s ease-in-out; -moz-transition: opacity .20s ease-in-out; -o-transition: opacity .20s ease-in-out;
+}
+._ft_truste a {
+    display:block;width:114px;height:36px;
+    position:absolute;bottom:10px;left:10px;
+}
+._ft_truste a:hover img {opacity:.99}
+
+footer dl._ftAd {
+    float:left;
+    width:193px;
+    font: 9px arial;
+    text-align: left;
+}
+._ft_iskur img {
+    border-radius: 4px;
+    display:block; height:65px;
+    overflow:hidden;
+    opacity:.49;
+    -webkit-transition: opacity .20s ease-in-out; -moz-transition: opacity .20s ease-in-out; -o-transition: opacity .20s ease-in-out;
+    float: left;
+    margin: 0px 9px 2px 0px;
+}
+._ft_iskur img:hover {opacity:.99}
+
+dd._ftSM {
+    display:block;
+    float: left;
+    margin: 18px 0px 8px;
+    line-height: 19px;
+}
+dd._ft_rss,
+dd._ft_SMfb,
+dd._ft_SMli,
+dd._ft_SMtm,
+dd._ft_SMtw 
+{ 
+    display:block;
+    float:right;
+    width:19px;height:19px;
+    margin:18px 6px 8px;padding:0px;
+}
+dd._ft_rss a,
+dd._ft_SMfb a,
+dd._ft_SMli a,
+dd._ft_SMtm a,
+dd._ft_SMtw a 
+{ 
+    display:block;
+    float:right;
+    width:19px;height:19px;
+    margin:0;padding:0px;
+    text-indent:-900px;overflow:hidden;opacity:.49;
+    background-position:center;background-repeat:no-repeat;
+}
+dd._ft_rss a:hover,
+dd._ft_SMfb a:hover,
+dd._ft_SMli a:hover,
+dd._ft_SMtm a:hover,
+dd._ft_SMtw a:hover {
+    opacity:1;
+    -webkit-transition: opacity .10s ease-in-out; -moz-transition: opacity .10s ease-in-out; -o-transition: opacity .10s ease-in-out;
+}
+dd._ft_rss  a   {background-image:url(/images/layout/icon/ft_icon_rss_16x16.png);}
+dd._ft_SMfb a   {background-image:url(/images/layout/icon/social/facebook.png);}
+dd._ft_SMli a   {background-image:url(/images/layout/icon/social/linkedin.png);}
+dd._ft_SMtm a   {background-image:url();}
+dd._ft_SMtw a   {background-image:url(/images/layout/icon/social/twitter.png);} 
+
+
+div._ftLn { width:416px;height:100px;background:silver;}
+
+.subsection h4 { padding:0;margin:0 0 1em;font-family:tahoma;}
+.subsection sup {font-size:smaller;}
+.subsection ul { padding:0;margin:.25em 0 1em;}
+.subsection li a, #lowerContainer dl a {color:#ccc;}
+.subsection li a:hover, #lowerContainer dl a:hover  {text-decoration:underline;}

@@ -10,9 +10,19 @@
 				<dd><?php echo link_to(__('Premium Services'), '@lobby.premium') ?></dd>
 			</dl>
 
-			<div class="subsection _ftAd">
-
-			</div>
+            <?php if ($sf_user->getCulture() == 'tr'): ?>
+            <dl class="_ftAd">
+                <dt></dt>
+                <dd class="_ft_iskur"><?php echo image_tag('layout/icon/badge/iskur-oib-262x262.png') ?>
+                    <div style="font-size:10px;">hr.emarketturkey.com, EMT İnsan Kaynakları ve Danışmanlık Ltd. Şti.'ne ait bir kariyer platformudur.</div>
+                    <div class="hrsplit-1"></div>
+                    EMT İnsan Kaynakları ve Danışmanlık Ltd. Şti. Türkiye İş Kurumu 17.03.2011 tarih 455 numaralı izin belgesi ile faaliyetlerini sürdürmektedir.
+                    4904 sayılı Türkiye İş Kurumu Kanunu gereğince iş arayanlardan ücret alınması yasaktır.
+                    </dd>
+            </dl>
+            <?php else: ?>
+            <div class="subsection _ftAd"></div>
+            <?php endif ?>
 
 			<dl>
                 <dt><?php echo link_to(__('Usage Terms'), '@lobby.terms') ?></dt>
