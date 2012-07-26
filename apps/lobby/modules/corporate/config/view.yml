@@ -24,4 +24,8 @@ privacySuccess:
 termsSuccess:
     metas:
         title:  'Terms Of Use | eMarketTurkey'
+
+govApprovedSuccess:
+    metas:
+        title:  'Pre-approved by Government | eMarketTurkey'
     
