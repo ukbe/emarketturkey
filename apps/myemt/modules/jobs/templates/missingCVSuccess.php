@@ -53,8 +53,8 @@
     <td class="col1"><?php echo image_tag($app->getUser()->getProfilePictureUri()) ?></td>
     <td class="col2"><?php echo $app->getUser() ?>
         <table class="notepad">
-        <tr><td><label><?php echo __('Birth Date') ?></label><?php echo format_date($resume->getUser()->getBirthDate('U'), 'D') ?></td></tr>
-        <tr><td><label><?php echo __('Gender / Marital Status') ?></label><?php echo __(UserProfilePeer::$Gender[$app->getUser()->getGender()]) . ($resume->getUser()->getUserProfile() ? ' / ' . __(UserProfilePeer::$MaritalStatus[$app->getUser()->getUserProfile()->getMaritalStatus()]) : '') ?></td></tr>
+        <tr><td><label><?php echo __('Birth Date') ?></label><?php echo format_date($app->getUser()->getBirthDate('U'), 'D') ?></td></tr>
+        <tr><td><label><?php echo __('Gender / Marital Status') ?></label><?php echo __(UserProfilePeer::$Gender[$app->getUser()->getGender()]) . ($app->getUser()->getUserProfile() ? ' / ' . __(UserProfilePeer::$MaritalStatus[$app->getUser()->getUserProfile()->getMaritalStatus()]) : '') ?></td></tr>
         <tr><td><label><?php echo __('E-mail') ?></label><?php echo __('Not Specified') ?></td></tr>
         <tr><td><label><?php echo __('Phone Number') ?></label><?php echo __('Not Specified') ?></td></tr>
         <tr><td><label><?php echo __('Address') ?></label><?php echo __('Not Specified') ?></td></tr>
