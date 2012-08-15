@@ -12,6 +12,12 @@ class previewCVAction extends EmtManageJobAction
         
         $this->profile = $this->owner->getHRProfile();
         $this->resume = $this->app->getUser()->getResume();
+        if (!$this->resume)
+        {
+            $this->setTemplate('missingCV');
+            return;
+        }
+        
         $this->folder = $this->resume->getFolderFor($this->profile->getId());
         switch ($this->getRequestParameter('act'))
         {
