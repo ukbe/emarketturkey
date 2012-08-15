@@ -67,8 +67,8 @@ class indexAction extends EmtMessageAction
 
             foreach ($this->messages as $mess)
             {
-                if (!$message->getSender()) continue;
                 $message = ($mess instanceof Message ? $mess : $mess->getMessage());
+                if (!$message->getSender()) continue;
                 $items[] = array('IMG' => $message->getSender()->getProfilePictureUri(), 'NAME' => $message->getSender()->__toString(), 'MSG' => $message->getBody(), 'LINK' => url_for($message->getUrl(), true), 'DATE' => format_datetime($message->getCreatedAt('U'), 'r'), 'NEW' => !$mess->getIsRead());
             }
             if ($this->folder == 'inbox')
