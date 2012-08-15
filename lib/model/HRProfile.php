@@ -177,8 +177,8 @@ class HRProfile extends BaseHRProfile
         $c->addAscendingOrderByColumn(JobMessageTemplatePeer::ID);
         $c->setDistinct();
 
-        $templates = $this->getJobMessageTemplates($c);
-        echo $c->toString();die;
+        $templates = JobMessageTemplatePeer::doSelect($c);
+
         return $single_row ? (count($templates) ? $templates[0] : null) : $templates;
     }
     
