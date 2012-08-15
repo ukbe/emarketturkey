@@ -85,6 +85,8 @@
                 <?php echo input_hidden_tag('act', 'chgstatus') ?> 
                 <?php echo input_hidden_tag('do', 'commit') ?> 
                 <?php echo select_tag('status_id', options_for_select(UserJobPeer::$statusLabels, $app->getStatusId(), array('include_custom' => __('Please Select')))) ?>
+                <?php echo checkbox_tag('notify', false) ?>
+                <?php echo emt_label_for('notify', __('Notify Applicant')) ?>
                 <div class="hrsplit-1"></div>
                 <div class="_right"><?php echo link_to_function(__('cancel'), "$('.stat-chg-switch').show();$('.stat-chg-box').hide();", 'class=bluelink') ?></div>
                 <?php echo submit_tag(__('Save Status'), 'class=green-button smaller') ?>
