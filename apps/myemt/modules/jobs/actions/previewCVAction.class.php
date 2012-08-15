@@ -15,10 +15,12 @@ class previewCVAction extends EmtManageJobAction
         if (!$this->resume)
         {
             $this->setTemplate('missingCV');
-            return;
+            $this->folder = null;
+        }
+        else {
+            $this->folder = $this->resume->getFolderFor($this->profile->getId());
         }
         
-        $this->folder = $this->resume->getFolderFor($this->profile->getId());
         switch ($this->getRequestParameter('act'))
         {
             case "chgstatus" :
@@ -38,6 +40,7 @@ class previewCVAction extends EmtManageJobAction
                 }
                 break;
             case "classify" :
+                if (!$this->resume) break;
                 if (preg_match("/\d+/", $this->getRequestParameter('folder_id')) && $this->profile)
                 {
                     $folder = $this->profile->getFolderById($this->getRequestParameter('folder_id'));

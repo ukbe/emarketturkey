@@ -81,30 +81,6 @@
             </div>
             <div class="clear"></div>
         </div>
-        <div class="hrsplit-1"></div>
-        <div class="_dotted">
-            <div class="_right t_orange"><?php echo $folder ? $folder : __('Not Classified') ?></div>
-            <?php echo __('Store in folder:') ?>
-            <div class="clear"></div>
-            <div class="folder-chg-switch _right"><?php echo link_to_function(__('change'), "$('.folder-chg-switch, .stat-chg-box').hide();$('.folder-chg-box, .stat-chg-switch').show();", 'class=bluelink') ?></div>
-            <div class="folder-chg-box ghost">
-                <div class="hrsplit-1"></div>
-                <?php echo __("Please select a folder to store %1's resume:", array('%1' => $app->getUser())) ?>
-                <div class="hrsplit-1"></div>
-                <?php $folders = $profile->getOrderedFolders(); ?>
-                <?php if ($profile->countResumeFolders() < (($conf = sfConfig::get('app_jobs_profileconf')) && isset($conf['max_folder_count']) ? $conf['max_folder_count'] : 10)): ?>
-                <?php $folders['new'] = __('New ..'); ?>
-                <?php endif ?>
-                <?php echo form_tag("$jobroute&action=previewCV&appid={$app->getId()}&act=classify") ?>
-                <?php echo select_tag('folder_id', options_for_select($folders, $folder ? $folder->getId() : null, array('include_custom' => __('Please Select')))) ?>
-                <?php echo input_tag('folder_name', '', 'style=width:90px; class=ghost maxlength=50') ?>
-                <div class="hrsplit-1"></div>
-                <div class="_right"><?php echo link_to_function(__('cancel'), "$('.folder-chg-switch').show();$('.folder-chg-box').hide();$(this).closest('form')[0].reset();", 'class=bluelink') ?></div>
-                <?php echo submit_tag(__('Set Folder'), 'class=green-button smaller') ?>
-                </form>
-            </div>
-            <div class="clear"></div>
-        </div>
         </td>
     </tr>
 </table>
