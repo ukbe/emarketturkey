@@ -178,7 +178,7 @@ class HRProfile extends BaseHRProfile
         $c->setDistinct();
 
         $templates = $this->getJobMessageTemplates($c);
-        var_dump($templates);die;
+        echo $c->toString();die;
         return $single_row ? (count($templates) ? $templates[0] : null) : $templates;
     }
     
