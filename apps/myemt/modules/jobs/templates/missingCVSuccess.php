@@ -45,7 +45,7 @@
 </div>
 <div>
 <?php echo link_to(__('Print'), 'mycareer/print', 'class=act a16px print') ?>
-<?php echo link_to(__('Export'), 'mycareer/print', 'class=act a16px pdf') ?>
+<?php echo link_to(__('Export<span id="CV"></span>'), 'mycareer/print', 'class=act a16px pdf') ?>
 </div>
 <div class="hrsplit-2"></div>
 <table class="cvcard">
@@ -110,9 +110,7 @@
 </table>
 </div>
 
-<div class="error">
-    <?php echo __('This user does not have a CV.') ?>
-</div>
+<?php echo error_message("This user does not have a CV.") ?>
 
                 </div>
             </section>
