@@ -72,7 +72,6 @@
                 <?php echo form_tag("$jobroute&action=previewCV", 'method=GET') ?>
                 <?php echo input_hidden_tag('appid', $app->getId()) ?> 
                 <?php echo input_hidden_tag('act', 'chgstatus') ?> 
-                <?php echo input_hidden_tag('do', 'commit') ?> 
                 <?php echo select_tag('status_id', options_for_select(UserJobPeer::$statusLabels, $app->getStatusId(), array('include_custom' => __('Please Select')))) ?>
                 <div class="hrsplit-1"></div>
                 <div class="_right"><?php echo link_to_function(__('cancel'), "$('.stat-chg-switch').show();$('.stat-chg-box').hide();", 'class=bluelink') ?></div>
