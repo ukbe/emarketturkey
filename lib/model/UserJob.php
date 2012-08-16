@@ -18,7 +18,7 @@ class UserJob extends BaseUserJob
             
             // Setup Email Transaction to notify applicant
             if ($notify && ($template = $this->getJob()->getOwner()->getHRProfile()->getMessageTemplateById($template_id)) && ($template->getTypeId() == $status_id || is_null($template->getTypeId())))
-            {
+            {echo 1;
                 $ln = $this->getUser()->getPreferredCulture($template->getDefaultLang());
                 $message = str_replace(array("\n", "#uname", "#oname", "#joblink", "#jobtitle") , array("<br />", $this->getUser(), '<strong>'.$this->getJob()->getOwner()->getHrProfile()->getName().'</strong>', '<a href="'.$this->getJob()->getUrl().'">'.$this->getJob()->getDisplayTitle($ln).'</a>', $this->getJob()->getDisplayTitle($ln)), $template->getClob(JobMessageTemplateI18nPeer::CONTENT, $ln));
                 
@@ -27,7 +27,7 @@ class UserJob extends BaseUserJob
                                            $template->getTitle($ln),
                                            $message, null, $this->getId(), PrivacyNodeTypePeer::PR_NTYP_USER_JOB);
                 
-            }
+            }die;
             
             return true;
         }
