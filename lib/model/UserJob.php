@@ -22,8 +22,10 @@ class UserJob extends BaseUserJob
                 $aln = $this->getUser()->getPreferredCulture($template->getDefaultLang());
                 $ln = $template->hasLsiIn($aln) ? $aln : $template->getDefaultLang();
                 $jln = $this->getJob()->hasLsiIn($aln) ? $aln : $this->getJob()->getDefaultLang();
-                
-                $message = str_replace(array("\n", "#uname", "#oname", "#joblink", "#jobtitle") , array("<br />", $this->getUser(), '<strong>'.$this->getJob()->getOwner()->getHrProfile()->getName().'</strong>', '<a href="'.$this->getJob()->getUrl().'">'.$this->getJob()->getDisplayTitle($jln).'</a>', $this->getJob()->getDisplayTitle($jln)), $template->getClob(JobMessageTemplateI18nPeer::CONTENT, $ln));
+
+                sfLoader::loadHelpers('Url');
+
+                $message = str_replace(array("\n", "#uname", "#oname", "#joblink", "#jobtitle") , array("<br />", $this->getUser(), '<strong>'.$this->getJob()->getOwner()->getHrProfile()->getName().'</strong>', '<a href="'.url_for($this->getJob()->getUrl()).'">'.$this->getJob()->getDisplayTitle($jln).'</a>', $this->getJob()->getDisplayTitle($jln)), $template->getClob(JobMessageTemplateI18nPeer::CONTENT, $ln));
                 
                 MessagePeer::createMessage($this->getJob()->getOwner(),
                                            array(PrivacyNodeTypePeer::PR_NTYP_USER => array($this->getUser()->getId())),
