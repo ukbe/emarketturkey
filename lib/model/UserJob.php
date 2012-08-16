@@ -20,7 +20,8 @@ class UserJob extends BaseUserJob
             if ($notify && ($template = $this->getJob()->getOwner()->getHRProfile()->getMessageTemplateById($template_id)) && ($template->getTypeId() == $status_id || is_null($template->getTypeId())))
             {
                 $ln = $this->getUser()->getPreferredCulture($template->getDefaultLang());
-                $message = str_replace(array("\n", "#uname", "#oname", "#joblink", "#jobtitle") , array("<br />", $this->getUser(), '<strong>'.$this->getJob()->getOwner()->getHrProfile()->getName().'</strong>', '<a href="'.$this->getJob()->getUrl().'">'.$this->getJob()->getDisplayTitle($ln).'</a>', $this->getJob()->getDisplayTitle($ln)), $template->getClob(JobMessageTemplateI18nPeer::CONTENT, $template->hasLsiIn($ln) ? $ln : $template->getDefaultLang()));
+                $ln = $template->hasLsiIn($ln) ? $ln : $template->getDefaultLang();
+                $message = str_replace(array("\n", "#uname", "#oname", "#joblink", "#jobtitle") , array("<br />", $this->getUser(), '<strong>'.$this->getJob()->getOwner()->getHrProfile()->getName().'</strong>', '<a href="'.$this->getJob()->getUrl().'">'.$this->getJob()->getDisplayTitle($ln).'</a>', $this->getJob()->getDisplayTitle($ln)), $template->getClob(JobMessageTemplateI18nPeer::CONTENT, $ln));
                 
                 MessagePeer::createMessage($this->getJob()->getOwner(),
                                            array(PrivacyNodeTypePeer::PR_NTYP_USER => array($this->getUser()->getId())),
