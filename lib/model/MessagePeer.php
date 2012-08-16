@@ -38,11 +38,13 @@ class MessagePeer extends BaseMessagePeer
                 $delivery->save();
 
                 $data = new sfParameterHolder();
-                $data->set('sendername', $sender->__toString());
-                $data->set('rcpntname', $rcpnt->__toString());
+                $data->set('sname', $sender->__toString());
+                $data->set('rname', $rcpnt->__toString());
+                $data->set('oname', ($rcpnt->getObjectTypeId() == PrivacyNodeTypePeer::PR_NTYP_USER ? null : $rcpnt->getOwner()->__toString()));
                 $data->set('subject', $title);
                 $data->set('message', $body);
                 $data->set('message_id', $message->getId());
+                $data->set('message_link', $message->getUrl());
 
                 $topowner = PrivacyNodeTypePeer::getTopOwnerOf($rcpnt);
 
