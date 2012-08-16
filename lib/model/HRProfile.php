@@ -151,9 +151,16 @@ class HRProfile extends BaseHRProfile
     public function getMessageTemplateById($id)
     {
         $c = new Criteria();
+
+        $cp = $c->getNewCriterion(JobMessageTemplatePeer::HR_PROFILE_ID, $this->getId());
+        $cp->addOr($c->getNewCriterion(JobMessageTemplatePeer::HR_PROFILE_ID, "(HR_PROFILE_ID IS NULL AND NOT EXISTS (SELECT 1 FROM EMT_JOB_MESSAGE_TEMPLATE SECTAB WHERE EMT_JOB_MESSAGE_TEMPLATE.TYPE_ID=SECTAB.TYPE_ID AND SECTAB.HR_PROFILE_ID={$this->getId()}))", Criteria::CUSTOM));
+        $c->addAnd($cp);
+
         $c->add(JobMessageTemplatePeer::ID, $id);
-        $templates = $this->getJobMessageTemplates($c);
-        return count($templates) ? $templates[0] : null;
+        
+        $c->setDistinct();
+
+        return JobMessageTemplatePeer::doSelectOne($c);
     }
     
     public function getMessageTemplateByType($type_id, $accept_builtin = true, $single_row = true)
