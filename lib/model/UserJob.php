@@ -15,7 +15,10 @@ class UserJob extends BaseUserJob
         {
             $this->setStatusId($status_id);
             $this->save();
-            
+            var_dump($status_id);
+            var_dump($notify);
+            var_dump($template_id);
+            var_dump($this->getJob()->getOwner()->getHRProfile()->getMessageTemplateById($template_id));
             // Setup Email Transaction to notify applicant
             if ($notify && ($template = $this->getJob()->getOwner()->getHRProfile()->getMessageTemplateById($template_id)) && ($template->getTypeId() == $status_id || is_null($template->getTypeId())))
             {echo 1;
