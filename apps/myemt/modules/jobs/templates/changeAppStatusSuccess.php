@@ -58,6 +58,7 @@
                             <div class="hrsplit-3"></div>
                             <?php echo submit_tag(__('Apply Status Change'), "class=green-button") ?>
                         </div>
+                        </form>
                     </div>
                 </div>
                 <div class="pad-3">
