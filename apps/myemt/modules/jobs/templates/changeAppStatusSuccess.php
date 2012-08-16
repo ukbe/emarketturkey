@@ -62,7 +62,7 @@
                 </div>
                 <div class="pad-3">
                     <div class="circle-bullet margin-r2">2</div>
-                    <div><?php echo link_to(__('No, cancel status change'), "$jobroute&action=previewCV&id={$app->getId()}", 'class=t_blue larger') ?></div>
+                    <div><?php echo link_to(__('No, cancel status change'), "$jobroute&action=previewCV&appid={$app->getId()}", 'class=t_blue larger') ?></div>
                 </div>
                 
             </section>
