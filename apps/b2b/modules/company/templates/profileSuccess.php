@@ -49,7 +49,7 @@
                 <h3><?php echo __('Company <strong>Profile</strong>') ?></h3>
                 <div>
                     <?php if ($profile_image): ?>
-                    <div class="t_center profile-teaser"><?php echo image_tag($profile_image->getOriginalFileUri()) ?></div>
+                    <div class="profile-teaser"><?php echo image_tag($profile_image->getOriginalFileUri()) ?></div>
                     <?php endif ?>
                     <?php echo str_replace("\n", "<br />", $profile->getIntroduction()) ?>
                 </div>
