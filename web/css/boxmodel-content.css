@@ -3084,3 +3084,6 @@ a.help-link:hover
 {
     text-decoration: underline;
 }
+
+div.profile-teaser { text-align: center; }
+div.profile-teaser img { max-width: 560px; max-height: 420px; }

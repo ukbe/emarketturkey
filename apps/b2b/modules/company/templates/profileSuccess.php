@@ -47,8 +47,10 @@
         <div class="col_576">
             <div class="box_576 _title_BoldColor">
                 <h3><?php echo __('Company <strong>Profile</strong>') ?></h3>
-                <div class="pad-3">
-                    <?php echo $profile_image ? image_tag($profile_image->getMediumUri(), 'class=_left style=margin-right: 25px;') : '' ?>
+                <div>
+                    <?php if ($profile_image): ?>
+                    <div class="t_center profile-teaser"><?php echo image_tag($profile_image->getOriginalUri()) ?></div>
+                    <?php endif ?>
                     <?php echo str_replace("\n", "<br />", $profile->getIntroduction()) ?>
                 </div>
             </div>
