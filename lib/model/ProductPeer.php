@@ -34,7 +34,7 @@ class ProductPeer extends BaseProductPeer
         return ProductPeer::doSelect($c);
     }
     
-    public static function getFeaturedProducts($maxnum=20)
+    public static function getFeaturedProducts($maxnum = 20, $rand = false)
     {
         $con = Propel::getConnection();
         
@@ -50,7 +50,7 @@ class ProductPeer extends BaseProductPeer
                                             AND MI.OWNER_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_PRODUCT." 
                                             AND MI.ITEM_TYPE_ID=".MediaItemPeer::MI_TYP_PRODUCT_PICTURE."
                                     ) 
-                    ORDER BY EMT_PRODUCT.CREATED_AT DESC
+                    ORDER BY ".($rand ? "DBMS_RANDOM.VALUE" : "EMT_PRODUCT.CREATED_AT DESC")."
                 )
                 WHERE rank <= 3 and rownum <=$maxnum";
         
