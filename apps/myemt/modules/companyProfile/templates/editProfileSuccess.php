@@ -17,7 +17,7 @@
                 <span class="btn_container">
                     <?php echo link_to('&nbsp;', "@company-corporate?hash={$company->getHash()}", 'class="ui-icon ui-icon-pencil btn_function"') ?>
                 </span>
-                <dl class="_table">
+                <dl class="_table _noInput">
                     <dt><?php echo __('Company Name') ?></dt>
                     <dd><?php echo $company->getName() ?></dd>
                     <dt><?php echo __('Sector') ?></dt>
@@ -36,7 +36,7 @@
                 <span class="btn_container">
                     <?php echo link_to('&nbsp;', "@company-contact?hash={$company->getHash()}", 'class="ui-icon ui-icon-pencil btn_function"') ?>
                 </span>
-                <dl class="_table">
+                <dl class="_table _noInput">
                     <dt><?php echo __('Country') ?></dt>
                     <dd><?php echo $work_address->getCountry()?sfContext::getInstance()->getI18N()->getCountry($work_address->getCountry()):"" ?></dd>
                     <dt><?php echo __('Street Adress') ?></dt>
