@@ -14,9 +14,9 @@
         <div class="box_576 _titleBG_Transparent">
             <section>
                 <h4><?php echo __('Corporate Information') ?></h4>
-                <span class="btn_container">
-                    <?php echo link_to('&nbsp;', "@company-corporate?hash={$company->getHash()}", 'class="ui-icon ui-icon-pencil btn_function"') ?>
-                </span>
+                <div class="btn_container">
+                    <?php echo link_to('<span class="ui-icon ui-icon-pencil"></span><span class="ui-button-text">'.__('edit').'</span>', "@company-corporate?hash={$company->getHash()}", 'class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary"') ?>
+                </div>
                 <dl class="_table _noInput">
                     <dt><?php echo __('Company Name') ?></dt>
                     <dd><?php echo $company->getName() ?></dd>
@@ -33,9 +33,9 @@
 
             <section>
                 <h4><?php echo __('Contact Information') ?></h4>
-                <span class="btn_container">
-                    <?php echo link_to('&nbsp;', "@company-contact?hash={$company->getHash()}", 'class="ui-icon ui-icon-pencil btn_function"') ?>
-                </span>
+                <div class="btn_container">
+                    <?php echo link_to('<span class="ui-icon ui-icon-pencil"></span><span class="ui-button-text">'.__('edit').'</span>', "@company-contact?hash={$company->getHash()}", 'class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary"') ?>
+                </div>
                 <dl class="_table _noInput">
                     <dt><?php echo __('Country') ?></dt>
                     <dd><?php echo $work_address->getCountry()?sfContext::getInstance()->getI18N()->getCountry($work_address->getCountry()):"" ?></dd>
