@@ -101,7 +101,7 @@ all:
                 large:
                     width: 610
                     height: 280
-            10:  # MI_TYP_COMPANY_HR_LOGO
+            10:  # MI_TYP_HR_LOGO
                 small:
                     width: 140
                     height: 25
@@ -114,13 +114,13 @@ all:
             11:  # MI_TYP_PLATFORM_AD_FILE
                 small:
                     width: 100
-                    height: 100
+                    height: 58
                 medium:
-                    width: 300
-                    height: 300
+                    width: 245
+                    height: 143
                 large:
-                    width: 600
-                    height: 600
+                    width: 245
+                    height: 143
             14:  # MI_TYP_JOB_SPOTBOX_BACK
                 small:
                     width: 100
@@ -755,6 +755,14 @@ all:
             msgSaveSuccess: 'Publication Category has been successfully saved.'
             msgActivateSuccess: 'Publication Category has been activated.'
             msgDeActivateSuccess: 'Publication Category has been de-activated.'
+        Announcement:
+            editor: 'admin/announcement-edit'
+            viewer: 'admin/announcement-view'
+            msgRemovalConfirm: 'Please confirm the removal of selected announcement.'
+            msgRemovalSuccess: 'Announcement has been successfully removed.'
+            msgSaveSuccess: 'Announcement has been successfully saved.'
+            msgActivateSuccess: 'Announcement has been activated.'
+            msgDeActivateSuccess: 'Announcement has been de-activated.'
 
     ticker:
         updateInterval: 1
