@@ -74,19 +74,8 @@ class platformAdAction extends EmtAction
                 $filename = $this->getRequest()->getFileName('ad_file');
                 if ($filename)
                 {
-                    $filename_parts = explode('.', $filename);
-                    $fileextention = $filename_parts[count($filename_parts)-1];
-                    $this->fileobj = new MediaItem();
-                    $this->fileobj->setFilename($filename);
-                    $this->fileobj->setFileExtention($fileextention);
-                    $this->fileobj->setFileSize($this->getRequest()->getFileSize('ad_file'));
-                    $this->fileobj->setOwnerId($this->ad->getId());
-                    $this->fileobj->setOwnerTypeId(PrivacyNodeTypePeer::PR_NTYP_ADVERTISEMENT);
-                    $this->fileobj->setItemTypeId(MediaItemPeer::MI_TYP_PLATFORM_AD_FILE);
-                    $this->fileobj->save();
-                    $this->fileobj->reload();
-                    $this->fileobj->store($this->getRequest()->getFilePath('ad_file'));
-                    $this->getRequest()->moveFile('ad_file', $this->fileobj->getPath(false));
+                    $file = MediaItemPeer::createMediaItem($this->ad->getId(), PrivacyNodeTypePeer::PR_NTYP_ADVERTISEMENT, MediaItemPeer::MI_TYP_PLATFORM_AD_FILE, $this->getRequest()->getFilePath('ad_file'), false, array('crop' => false));
+                    
                 }
                 $con->commit();
                 $this->getUser()->setMessage('Information Saved!', 'Platform advertisement has been saved successfully.', null, null, true);
@@ -95,7 +84,7 @@ class platformAdAction extends EmtAction
             catch(Exception $e)
             {
                 $con->rollBack();
-                $this->getUser()->setMessage('Error Occured!', 'Error occured while storing new Platform Advertisement. Please try again later.'.$e->getMessage(), null, null, false);
+                $this->getUser()->setMessage('Error Occured!', 'Error occured while storing new Platform Advertisement. Please try again later.', null, null, false);
             }
         }
     }
