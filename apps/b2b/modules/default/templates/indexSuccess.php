@@ -162,7 +162,7 @@
     <?php endif ?>
     <style>.b2bad img { max-width: 170px; margin: 4px; } </style>
     <div class="b2bad box_180 pad-0">
-    <?php echo get_ad_for_ns('/b2b/homepage/left|center|right/top|middle|bottom') ?>
+    <?php echo get_ad_for_ns('/b2b/homepage/right/middle') ?>
     </div>
     <?php if (count($featured_experts)): ?>
     <div class="box_180 _title_BaseXor">
