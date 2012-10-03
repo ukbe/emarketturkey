@@ -22,4 +22,5 @@ fields:
         sfRegexValidator:
             match:         true
             match_error:   'Incorrect e-mail address or password.'
-            pattern:       '/(?!^\d*$)(?!^[a-zA-ZäüöÄÜÖß]*$)^[a-zA-ZäüöÄÜÖß\d]{6,14}$/u' # u stands for utf8
+            pattern:       '/^\w{6,14}$/u' # u stands for utf8
+            #pattern:       '/(?!^\d*$)(?!^[a-zA-ZäüöÄÜÖß]*$)^[a-zA-ZäüöÄÜÖß\d]{6,14}$/u' # u stands for utf8
