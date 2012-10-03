@@ -285,7 +285,7 @@ class User extends BaseUser
                 }
             }
             
-            //ActionLogPeer::Log($this, ActionPeer::ACT_UPLOAD_PROFILE_PICTURE, null, $item);
+            ActionLogPeer::Log($this, ActionPeer::ACT_UPLOAD_PROFILE_PICTURE, null, $item);
             return true;
         }
         return false;
@@ -1922,15 +1922,6 @@ WHERE PRIO=1
                         SELECT DISTINCT P_OBJECT_ID, P_OBJECT_TYPE_ID FROM ($sql)
                     )";
         }
-        else
-        {
-            $sql = "SELECT * FROM (
-                        SELECT PRES.*, RANK() OVER (PARTITION BY ID ORDER BY DEPTH ASC) SEQNUMBER 
-                        FROM ($sql) PRES
-                    ) 
-                    WHERE SEQNUMBER=1";
-        }
-        
         if ($ipp && $page)
         {
             $pager = new EmtPager($class, $ipp);
