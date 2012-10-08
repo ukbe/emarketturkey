@@ -1,4 +1,4 @@
-<?php slot('image_src', $company->getProfilePictureUri(MediaItemPeer::LOGO_TYPE_ORIGINAL)) ?>
+<?php slot('image_src', $company->getProfilePictureUri(MediaItemPeer::LOGO_TYPE_MEDIUM)) ?>
     <?php if ($account = $company->getPremiumAccount()): ?>
     <ul class="flagBox">
         <li><?php echo link_to(image_tag($account->getBadgeUri('medium')), '@homepage') ?></li>
