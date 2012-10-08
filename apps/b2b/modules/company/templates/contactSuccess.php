@@ -92,7 +92,7 @@
                     
                     <div class="pad-1">
                     <strong><?php echo __('Website:') ?></strong>
-                    <?php echo filter_var($url, FILTER_VALIDATE_URL); ?>
+                    <?php echo link_to('', $url, array('absolute_url' => true)) ?>
                     </div>
                     <?php endif ?>
                 </div>
