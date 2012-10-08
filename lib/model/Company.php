@@ -41,6 +41,9 @@ class Company extends BaseCompany
         {
             switch ($size)
             {
+                case MediaItemPeer::LOGO_TYPE_ORIGINAL :
+                    return $logo->getOriginalFileUri();
+                    break;
                 case MediaItemPeer::LOGO_TYPE_MEDIUM :
                     return $logo->getMediumUri();
                     break;

@@ -82,16 +82,19 @@
                     <strong><?php echo __('Address:') ?></strong>
                     <?php echo implode(', ', $addr) ?>
                     </div>
-                    <div class="pad-1">
                     <?php if ($phone): ?>
+                    <div class="pad-1">
                     <strong><?php echo __('Phone:') ?></strong>
                     <?php echo $phone->getPhone() ?>
                     </div>
-                    <div class="pad-1">
                     <?php endif ?>
+                    <?php if ((($url = $company->getUrl()) != '' && (strpos())) && filter_var($company->getUrl(), FILTER_VALIDATE_URL)): ?>
+                    
+                    <div class="pad-1">
                     <strong><?php echo __('Website:') ?></strong>
-                    <?php echo $company->getUrl() ?>
+                    <?php echo filter_var($company->getUrl(), FILTER_VALIDATE_URL); ?>
                     </div>
+                    <?php endif ?>
                 </div>
             </div>
         </div>

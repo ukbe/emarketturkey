@@ -28,6 +28,7 @@ class MediaItemPeer extends BaseMediaItemPeer
     CONST LOGO_TYP_SMALL                    = 1;
     CONST LOGO_TYPE_MEDIUM                  = 2;
     CONST LOGO_TYPE_LARGE                   = 3;
+    CONST LOGO_TYPE_ORIGINAL                = 4;
     #Custom Versions
     CONST LOGO_TYPE_HOME_SMALL_RECT         = 4;
     CONST LOGO_TYPE_HOME_BANNER_RECT        = 5;
@@ -38,6 +39,7 @@ class MediaItemPeer extends BaseMediaItemPeer
     public static $sizelabel = array(self::LOGO_TYP_SMALL     => 'small',
                                      self::LOGO_TYPE_MEDIUM   => 'medium',
                                      self::LOGO_TYPE_LARGE    => 'large',
+                                     self::LOGO_TYPE_ORIGINAL => 'original',
                                );
 
     public static $typeNames    = array (1 => 'Album Photo',
