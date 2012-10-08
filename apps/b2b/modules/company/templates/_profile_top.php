@@ -1,4 +1,4 @@
-<?php echo auto_discovery_link_tag('image' . ($company->getLogo() ? $company->getLogo()->getFileExtension() : 'png'), $company->getProfilePictureUri(), array('rel' => 'image_src')) ?>
+<?php echo auto_discovery_link_tag('image' . ($company->getLogo() ? $company->getLogo()->getFileExtention() : 'png'), $company->getProfilePictureUri(), array('rel' => 'image_src')) ?>
     <?php if ($account = $company->getPremiumAccount()): ?>
     <ul class="flagBox">
         <li><?php echo link_to(image_tag($account->getBadgeUri('medium')), '@homepage') ?></li>
