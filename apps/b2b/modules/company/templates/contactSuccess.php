@@ -92,7 +92,7 @@
                     
                     <div class="pad-1">
                     <strong><?php echo __('Website:') ?></strong>
-                    <?php echo link_to('', $url, array('absolute_url' => true, 'target' => '_blank')) ?>
+                    <?php echo link_to('', $url, array('absolute_url' => true, 'target' => '_blank', 'class' => 't_blue inherit-font')) ?>
                     </div>
                     <?php endif ?>
                 </div>
