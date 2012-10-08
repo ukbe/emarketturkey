@@ -88,11 +88,11 @@
                     <?php echo $phone->getPhone() ?>
                     </div>
                     <?php endif ?>
-                    <?php if ((($url = $company->getUrl()) != '' && (strpos())) && filter_var($company->getUrl(), FILTER_VALIDATE_URL)): ?>
+                    <?php if ((($url = $company->getUrl()) != '') && filter_var($url, FILTER_VALIDATE_URL)): ?>
                     
                     <div class="pad-1">
                     <strong><?php echo __('Website:') ?></strong>
-                    <?php echo filter_var($company->getUrl(), FILTER_VALIDATE_URL); ?>
+                    <?php echo filter_var($url, FILTER_VALIDATE_URL); ?>
                     </div>
                     <?php endif ?>
                 </div>
