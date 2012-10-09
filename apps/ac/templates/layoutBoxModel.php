@@ -5,6 +5,9 @@
 <?php include_metas() ?>
 <?php include_title() ?>
 <link rel="shortcut icon" href="/favicon.ico" />
+<?php if (has_slot('image_src')): ?>
+<link rel="image_src" href="<?php include_slot('image_src') ?>" />
+<?php endif ?>
 <?php include_partial('global/google-analytics') ?>
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
