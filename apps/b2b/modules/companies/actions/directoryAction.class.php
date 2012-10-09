@@ -72,7 +72,7 @@ class directoryAction extends EmtAction
             }
             else
             {
-                $c->add(CompanyPeer::NAME, myTools::NLSFunc("SUBSTR(".CompanyPeer::NAME.", 0, 1)", 'UPPER'). " IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : $this->initial)."')", Criteria::CUSTOM);
+                $c->add(CompanyPeer::NAME, myTools::NLSFunc("SUBSTR(".CompanyPeer::NAME.", 0, 1)", 'UPPER'). " IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : array($this->initial))."')", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(CompanyPeer::NAME, myTools::NLSFunc(CompanyPeer::NAME, 'SORT'));
         }
