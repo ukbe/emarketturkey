@@ -1,4 +1,4 @@
-<?php if ($news->getPicture()) slot('image_src', $news->getPicture()->getUri()) ?>
+<?php if ($news->getPicture()) slot('image_src', $news->getPicture()->getOriginalFileUri()) ?>
 <?php use_helper('Date') ?>
 <div class="col_948">
 
