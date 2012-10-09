@@ -49,15 +49,30 @@ class directoryAction extends EmtAction
         if ($this->initial)
         {
             $this->getResponse()->setTitle('Companies by Name | eMarketTurkey');
+            
+            $abc = range('A','Z');
 
+            $substitutes = array('C' => array('C', 'Ç'),
+                                 'G' => array('G', 'Ğ'),
+                                 'I' => array('I', 'İ'),
+                                 'O' => array('O', 'Ö'),
+                                 'S' => array('S', 'Ş'),
+                                 'U' => array('U', 'Ü'),
+                            );
+
+            foreach ($substitutes as $subs)
+                $abc = array_merge($abc, $subs);
+
+            $abc = array_unique($abc);
+            
             $this->mod = 3;
             if ($this->initial == '@')
             {
-                $c->add(CompanyPeer::NAME, myTools::NLSFunc("SUBSTR(".CompanyPeer::NAME.", 0, 1)", 'UPPER'). " NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
+                $c->add(CompanyPeer::NAME, myTools::NLSFunc("SUBSTR(".CompanyPeer::NAME.", 0, 1)", 'UPPER'). " NOT IN ('".implode("','", $abc)."')", Criteria::CUSTOM);
             }
             else
             {
-                $c->add(CompanyPeer::NAME, myTools::NLSFunc("SUBSTR(".CompanyPeer::NAME.", 0, 1)", 'UPPER'). "='{$this->initial}'", Criteria::CUSTOM);
+                $c->add(CompanyPeer::NAME, myTools::NLSFunc("SUBSTR(".CompanyPeer::NAME.", 0, 1)", 'UPPER'). " IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : $this->initial)."')", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(CompanyPeer::NAME, myTools::NLSFunc(CompanyPeer::NAME, 'SORT'));
         }
