@@ -27,8 +27,8 @@
                 <li><span><?php echo __('emtTrust') ?><sup>®</sup></span><?php echo __('Verified business with emtTrust') ?><sup>®</sup></li>
                 <li><span><?php echo __('Priority Listing') ?></span><?php echo __('Gold Members are listed prior to free members in search results and category pages.') ?></li>
                 <li><span><?php echo __('Content Translation') ?></span><?php echo __('Automated online content translation for up to %1 languages.', array('%1' => 2)) ?></li>
-                <li><span><?php echo __('Job Posting') ?></span><?php echo __('Up to %1 Job Postings.', array('%1' => 10)) ?></li>
-                <li><span><?php echo __('Unlimited Products') ?></span><?php echo __('Gold Members can list unlimited products.') ?></li>
+                <li><span><?php echo __('Job Posting') ?></span><?php echo __('Up to %1 Job Postings.', array('%1' => 5)) ?></li>
+                <li><span><?php echo __('Extended Product Listing') ?></span><?php echo __('Gold Members can list up to %1 products.', array('%1' => 50)) ?></li>
                 <li><span><?php echo __('TradeExperts') ?></span><?php echo __('On-demand TradeExperts directory listing.') ?></li>
                 </ul>
             </div>
@@ -55,10 +55,10 @@
                 <li><span><?php echo __('emtTrust') ?><sup>®</sup></span><?php echo __('Verified business with emtTrust') ?><sup>®</sup></li>
                 <li><span><?php echo __('Dedicated Support') ?></span><?php echo __('Get support from Dedicated Professionals for corporate needs.') ?></li>
                 <li><span><?php echo __('Priority Listing') ?></span><?php echo __('Platinum Members are listed prior to Gold Members and free members in search results and category pages.') ?></li>
-                <li><span><?php echo __('Content Translation') ?></span><?php echo __('Automated online content translation for up to %1 languages.', array('%1' => 3)) ?></li>
-                <li><span><?php echo __('Job Posting') ?></span><?php echo __('Up to %1 Job Postings.', array('%1' => 50)) ?></li>
+                <li><span><?php echo __('Content Translation') ?></span><?php echo __('Automated online content translation for up to %1 languages.', array('%1' => 4)) ?></li>
+                <li><span><?php echo __('Job Posting') ?></span><?php echo __('Up to %1 Job Postings.', array('%1' => 20)) ?></li>
                 <li><span><?php echo __('Platinum Job Posting') ?></span><?php echo __('Up to %1 Platinum Job Postings.', array('%1' => 3)) ?></li>
-                <li><span><?php echo __('Unlimited Products') ?></span><?php echo __('Platinum Members can list unlimited products.') ?></li>
+                <li><span><?php echo __('Extended Product Listing') ?></span><?php echo __('Platinum Members can list up to %1 products.', array('%1' => 150)) ?></li>
                 <li><span><?php echo __('TradeExperts') ?></span><?php echo __('On-demand TradeExperts directory listing.') ?></li>
                 <li><span><?php echo __('Transportation Directory') ?></span><?php echo __('On-demand Transportation Directory listing.') ?></li>
                 <li><span><?php echo __('One-Month Targeted Ads') ?></span><?php echo __('Targeted Ads through B2B and Career pages for one month period.') ?></li>
