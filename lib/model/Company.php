@@ -1512,6 +1512,7 @@ WHERE PRIO=1
         if (isset($item_type)) $c->add(MediaItemPeer::ITEM_TYPE_ID, $item_type);
         $c->add(MediaItemPeer::OWNER_ID, $this->getId());
         $c->add(MediaItemPeer::OWNER_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_COMPANY);
+        $c->addDescendingOrderByColumn(MediaItemPeer::CREATED_AT);
         
         $pager = new sfPropelPager('MediaItem', $items_per_page);
         $pager->setPage($page);
