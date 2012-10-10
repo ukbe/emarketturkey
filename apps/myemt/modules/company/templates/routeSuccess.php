@@ -41,7 +41,7 @@
         <div class="box_264 _titleBG_Transparent">
             <h4><?php echo __('Profile Status') ?></h4>
             <div class="_noBorder">
-            <?php echo $company->getStatusMessage() ?>
+            <?php echo __($company->getStatusMessage()) ?>
             </div>
         </div>
         <div class="box_264 _titleBG_Transparent">
