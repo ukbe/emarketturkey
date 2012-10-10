@@ -319,10 +319,10 @@ label.ui-state-active span.ui-button-text { color:#fff; }
 ._admin ._long #search_option { margin-top:0;padding:1px 7px;}
 
 #language_field {
- position:relative;
+ position:relative; left: 0px;
  display:none;
  width:660px;height:33px;
- margin:-49px auto 0; padding:17px 10px 0 66px;
+ margin:-49px 0px 0px 125px; padding:17px 10px 0 36px;
  overflow:hidden;
  z-index:20;
 }
