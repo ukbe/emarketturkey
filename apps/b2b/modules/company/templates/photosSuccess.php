@@ -16,7 +16,9 @@
             <?php if ($album || $unclassified): ?>
                 <h4><?php echo __("Photo Album:") ?>&nbsp;<span class="t_green"><?php echo $album ? $album->getName() : __('Unclassified') ?></span></h4>
                 <div class="_noBorder">
+                    <?php if (count($albums)): ?>
                     <?php echo link_to(__('Back to Albums'), $company->getProfileActionUrl('photos'), array('class' => 'inherit-font bluelink hover')) ?>
+                    <?php endif ?>
                     <div class="hrsplit-2"></div>
             <?php else:?>
                 <h4><?php echo count($albums) ? __("Photo Albums") : __('Company Photos') ?></h4>
