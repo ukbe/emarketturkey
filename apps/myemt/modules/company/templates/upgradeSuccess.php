@@ -17,7 +17,7 @@
             </span>
             <div class="hrsplit-3"></div>
             <span class="p-price">
-                <?php echo __('US$ 1,599.00') ?>
+                <?php echo __('US$ 2,499') ?>
                 <span class="p-period"><?php echo __('per year') ?></span>
             </span>
             <div class="hrsplit-3"></div>
@@ -45,7 +45,7 @@
             </span>
             <div class="hrsplit-3"></div>
             <span class="p-price">
-                <?php echo __('US$ 7,599.00') ?>
+                <?php echo __('US$ 3,499') ?>
                 <span class="p-period"><?php echo __('per year') ?></span>
             </span>
             <div class="hrsplit-3"></div>
