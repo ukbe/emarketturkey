@@ -75,6 +75,21 @@ for-associations:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: services, action: forAssociations }
 
+upgrade-gold:
+  url:   /:sf_culture/premium/upgrade/gold-membership
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: upgrade, type: gold }
+
+upgrade-platinum:
+  url:   /:sf_culture/premium/upgrade/platinum-membership
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: upgrade, type: platinum }
+
+premium-compare:
+  url:   /:sf_culture/premium/compare
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: compareMemberships }
+
 premium:
   url:   /:sf_culture/services/premium
   requirements: { sf_culture: (?:en|de|tr) } 
