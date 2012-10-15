@@ -626,3 +626,24 @@ function help_link($handle, $label = 'Help!')
 {
     return link_to($label, "@lobby.help-page?handle=$handle", 'class=help-link target=blank');
 }
+
+function emt_select_country_tag($name, $selected = null, $options = array())
+{
+  $c = sfCultureInfo::getInstance(sfContext::getInstance()->getUser()->getCulture());
+  $countries = $c->getCountries();
+
+  if ($country_option = _get_option($options, 'countries'))
+  {
+    $countries = array_intersect_key($countries, array_flip($country_option)); 
+  }
+
+  $c->sortArray($countries);
+  
+  $keys = array_values($countries);
+  $countries = array_combine($keys, $countries);
+
+  $option_tags = options_for_select($countries, $selected, $options);
+  unset($options['include_blank'], $options['include_custom']);
+
+  return select_tag($name, $option_tags, $options);
+}
