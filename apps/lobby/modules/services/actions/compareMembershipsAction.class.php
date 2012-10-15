@@ -1,6 +1,6 @@
 <?php
 
-class premiumAction extends EmtAction
+class compareMembershipsAction extends EmtAction
 {
     public function execute($request)
     {

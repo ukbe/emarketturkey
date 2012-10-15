@@ -1,4 +1,3 @@
-<?php $company=new Company();?>
 <div class="col_948">
 
     <div class="presentation">
@@ -42,7 +41,7 @@
                 </dd>
             </dl>
             <div class="txtCenter margin-t2">
-                <?php echo link_to(__('Compare Premium Account Types'), "@company-account?action=upgrade&act=compare&hash={$company->getHash()}", 'class=green-button') ?>
+                <?php echo link_to(__('Compare Premium Account Types'), "@premium-compare", 'class=green-button') ?>
             </div>
         <div class="box_678 noBorder" style="float: none; margin: 50px auto 0;">
                 <h4><?php echo __('Need More Information?')?></h4>
