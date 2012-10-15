@@ -80,7 +80,7 @@
                                 <dt><?php echo emt_label_for('Description', __('Notes')) ?></dt>
                                 <dd class="margin-b2"><?php echo textarea_tag('Description', '', 'cols=50 rows=3 max-length=1000') ?></dd>
                                 <dt></dt>
-                                <dd class="margin-t2"><?php echo submit_tag(__('Get more Info'), 'class=green-button name=Save id=Save') ?>&nbsp;&nbsp;
+                                <dd class="margin-t2"><?php echo submit_tag(__('Post Information'), 'class=green-button name=Save id=Save') ?>&nbsp;&nbsp;
                                     <?php echo reset_tag(__('Clear Form')) ?></dd>
                             </dl> 
                             <script> var mndFileds=new Array('Company','Last Name');var fldLangVal=new Array('Company','Last Name');function checkMandatery(){for(i=0;i<mndFileds.length;i++){ var fieldObj=document.forms['WebToLeads695090000000053037'][mndFileds[i]];if(fieldObj) {if(((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0){alert(fldLangVal[i] +' cannot be empty'); fieldObj.focus(); return false;}else if(fieldObj.nodeName=='SELECT'){if(fieldObj.options[fieldObj.selectedIndex].value=='-None-'){alert(fldLangVal[i] +' cannot be none'); fieldObj.focus(); return false;}}}}}</script>  
