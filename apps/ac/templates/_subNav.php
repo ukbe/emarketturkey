@@ -6,7 +6,7 @@
                 <dd<?php echo $module == 'news' ? ' class="_selected"' : '' ?>><?php echo link_to(__('News'), '@news-home') ?></dd>
                 <dd<?php echo $module == 'authors' ? ' class="_selected"' : '' ?>><?php echo link_to(__('Authors'), '@homepage') ?></dd>
                 <dd class="ui-corner-tr<?php echo $module == 'kb' ? ' _selected' : '' ?>"><?php echo link_to(__('Knowledgebase'), '@kb') ?></dd>
-                <dd class="_sp<?php echo checkActivePage('--UPGRADE', null, false, '_selected') ?>"><?php echo link_to(__('UPGRADE'), '@homepage') ?></dd>
+                <dd class="_sp<?php echo checkActivePage('--UPGRADE', null, false, '_selected') ?>"><?php echo link_to(__('UPGRADE'), '@lobby.premium') ?></dd>
             </dl>
         </nav>
     </header>
