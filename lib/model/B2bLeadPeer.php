@@ -38,6 +38,7 @@ class B2bLeadPeer extends BaseB2bLeadPeer
                     FROM EMT_B2B_LEAD
                     LEFT JOIN EMT_COMPANY ON EMT_B2B_LEAD.COMPANY_ID=EMT_COMPANY.ID
                     WHERE EMT_B2B_LEAD.ACTIVE=1 AND EMT_COMPANY.AVAILABLE=1
+                    	  AND TRUNC(EMT_B2B_LEAD.EXPIRES_AT) >= TRUNC(SYSDATE)
                     ".(isset($l_type_id) ? " AND EMT_B2B_LEAD.TYPE_ID=$l_type_id" : "")."
                     ORDER BY EMT_B2B_LEAD.CREATED_AT DESC
                 )
