@@ -22,8 +22,8 @@ class indexAction extends EmtAction
         
         $this->featured_companies = CompanyPeer::getFeaturedCompanies();
         
-        $this->selling_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_SELLING, 20);
-        $this->buying_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_BUYING, 20);
+        $this->selling_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_SELLING, 12);
+        $this->buying_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_BUYING, 12);
 
         $this->featured_shows = array(); //EventPeer::getFeaturedEvents(3, EventTypePeer::ECLS_TYP_BUSINESS);
         $this->featured_experts = array(); //TradeExpertPeer::getFeaturedTradeExperts(4);
