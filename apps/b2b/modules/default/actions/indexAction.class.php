@@ -18,9 +18,9 @@ class indexAction extends EmtAction
         
         $this->categories = ProductCategoryPeer::getBaseCategories();
         
-        $this->featured_products = ProductPeer::getFeaturedProducts(8, true);
+        $this->featured_products = ProductPeer::getFeaturedProducts(12, true);
         
-        $this->featured_companies = CompanyPeer::getFeaturedCompanies();
+        $this->featured_companies = CompanyPeer::getFeaturedCompanies(12);
         
         $this->selling_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_SELLING, 12);
         $this->buying_leads = B2bLeadPeer::getFeaturedLeads(B2bLeadPeer::B2B_LEAD_BUYING, 12);
