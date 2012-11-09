@@ -41,9 +41,9 @@
                     <div>
                     <?php endif ?>
                         <div class="item">
-                            <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->toString())), $lead->getUrl()) ?>
-                            <div class="cname"><? echo link_to($lead->toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
-                            <div class="industry"><? echo link_to($lead->getCompany()->toString(), $lead->getCompany()->getProfileUrl()) ?></div>
+                            <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
+                            <div class="cname"><? echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
+                            <div class="industry"><? echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
                         </div>
                     <?php if (($i % 4) == 3 || $i == (count($selling_leads)-1)): ?>
                     </div>
@@ -71,9 +71,9 @@
                     <div>
                     <?php endif ?>
                     <div class="item">
-                        <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->toString())), $lead->getUrl()) ?>
-                        <div class="cname"><? echo link_to($lead->toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
-                        <div class="industry"><? echo link_to($lead->getCompany()->toString(), $lead->getCompany()->getProfileUrl()) ?></div>
+                        <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
+                        <div class="cname"><? echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
+                        <div class="industry"><? echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
                     </div>
                     <?php if (($i % 4) == 3 || $i == (count($buying_leads) - 1)): ?>
                     </div>
@@ -100,9 +100,9 @@
                     <div>
                     <?php endif ?>
                     <div class="item">
-                        <?php echo link_to(image_tag($company->getLogo()->getThumbnailUri(), array('title' => $company->toString())), $company->getProfileUrl()) ?>
+                        <?php echo link_to(image_tag($company->getLogo()->getThumbnailUri(), array('title' => $company->__toString())), $company->getProfileUrl()) ?>
                         <div class="cname"><? echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
-                        <div class="industry"><? echo $company->getBusinessSector()->toString() ?></div>
+                        <div class="industry"><? echo $company->getBusinessSector()->__toString() ?></div>
                     </div>
                     <?php if (($i % 4) == 3 || $i == (count($featured_companies) - 1)): ?>
                     </div>
@@ -132,8 +132,8 @@
                     <div class="item">
                         <?php $photo = $product->getPhoto() ?>
                         <?php echo link_to(image_tag($photo->getThumbnailUri()), $product->getUrl()) ?>
-                        <div class="cname"><? echo link_to($product->toString(), $product->getUrl()) ?></div>
-                        <div class="industry"><? echo link_to($product->getCompany()->toString(), $product->getCompany()->getProfileUrl()) ?></div>
+                        <div class="cname"><? echo link_to($product->__toString(), $product->getUrl()) ?></div>
+                        <div class="industry"><? echo link_to($product->getCompany()->__toString(), $product->getCompany()->getProfileUrl()) ?></div>
                     </div>
                     <?php if (($i % 4) == 3 || $i == (count($featured_products) - 1)): ?>
                     </div>
@@ -154,7 +154,7 @@
             <div class="hrsplit-1"></div>
         <?php foreach ($featured_shows as $show): ?>
             <?php if ($show->getLogo()): ?>
-            <?php echo link_to(image_tag($show->getLogo()->getMediumUri(), array('title' => $show->toString(), 'width' => 180, 'style' => 'display:block;')), $show->getUrl(), 'target=blank') ?>
+            <?php echo link_to(image_tag($show->getLogo()->getMediumUri(), array('title' => $show->__toString(), 'width' => 180, 'style' => 'display:block;')), $show->getUrl(), 'target=blank') ?>
             <?php endif ?>
         <?php endforeach ?>
         </div>
@@ -171,8 +171,8 @@
         <?php $texp = UserPeer::retrieveByPKs(array(15, 19)) ?>
         <dl class="trade-experts">
         <?php foreach ($featured_experts as $expert): ?>
-            <dt><?php echo link_to(image_tag($expert->getProfilePictureUri(), array('title' => $expert->toString())), $expert->getProfileUrl()) ?></dt>
-            <dd><?php echo link_to($expert->toString(), $expert->getProfileUrl()) ?></dd>
+            <dt><?php echo link_to(image_tag($expert->getProfilePictureUri(), array('title' => $expert->__toString())), $expert->getProfileUrl()) ?></dt>
+            <dd><?php echo link_to($expert->__toString(), $expert->getProfileUrl()) ?></dd>
         <?php endforeach ?>
         </dl>
         <div class="hrsplit-1"></div>
