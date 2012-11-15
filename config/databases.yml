@@ -9,3 +9,4 @@ all:
             username: geek 
             password: geeker
             encoding: utf8
+            persistent: true
