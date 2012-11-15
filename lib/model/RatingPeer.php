@@ -37,13 +37,16 @@ class RatingPeer extends BaseRatingPeer
         if ($unique)
             $sql = "SELECT COUNT(DISTINCT session_id) 
                     FROM EMT_RATING 
-                    WHERE ITEM_ID=$item_id AND ITEM_TYPE_ID=$item_type_id";
+                    WHERE ITEM_ID=:item_id AND ITEM_TYPE_ID=:item_type_id";
         else
             $sql = "SELECT COUNT(*) 
                     FROM EMT_RATING 
-                    WHERE ITEM_ID=$item_id AND ITEM_TYPE_ID=$item_type_id";
+                    WHERE ITEM_ID=:item_id AND ITEM_TYPE_ID=:item_type_id";
                     
         $stmt = $con->prepare($sql);
+        $stmt->bindValue(':item_id', $item_id);
+        $stmt->bindValue(':item_type_id', $item_type_id);
+        
         $stmt->execute();
         $rs = $stmt->fetch(PDO::FETCH_NUM);
         return $rs[0];
