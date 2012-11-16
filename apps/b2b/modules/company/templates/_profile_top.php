@@ -8,7 +8,7 @@
     <hgroup class="_comPro">
         <?php echo link_to(image_tag($company->getProfilePictureUri()), $company->getProfileUrl()) ?>
         <dl>
-            <dt><em><?php echo $company ?></em></dt>
+            <dt><em><?php echo $company->__toString() ?></em></dt>
             <dd></dd>
         </dl>
         <ul class="_horizontal">

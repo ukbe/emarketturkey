@@ -1,10 +1,10 @@
 <div class="col_948 b2bCompany">
 
-<?php include_partial('profile_top', array('company' => $company->__toString(), 'nums' => $nums))?>
+<?php include_partial('profile_top', array('company' => $company, 'nums' => $nums))?>
     <div class="hrsplit-1"></div>
     <div class="col_180">
 
-<?php include_partial('leftmenu', array('company' => $company->__toString(), 'groups' => $groups, 'categories' => $categories))?>
+<?php include_partial('leftmenu', array('company' => $company, 'groups' => $groups, 'categories' => $categories))?>
 
     </div>
 
