@@ -73,7 +73,7 @@
                             <dt><?php echo emt_label_for('none', __('Price')) ?></dt>
                             <dd><?php echo $product->getPriceText() ?></dd>
                             <dt><?php echo emt_label_for('none', __('Production Capacity')) ?></dt>
-                            <dd><?php echo __('%1amount %2unit per %3period', array('%1amount' => $product->getCapacity(), '%2unit' => $product->getProductQuantityUnitRelatedByCapacityUnit()->__toString(), '%3period' => $product->getTimePeriod())) ?></dd>
+                            <dd><?php echo __('%1amount %2unit per %3period', array('%1amount' => $product->getCapacity(), '%2unit' => $product->getProductQuantityUnitRelatedByCapacityUnit(), '%3period' => $product->getTimePeriod())) ?></dd>
                             <dt><?php echo emt_label_for('none', __('Packaging')) ?></dt>
                             <dd><?php echo $product->getPackaging() ?></dd>
                         </dl>
