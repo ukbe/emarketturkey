@@ -25,12 +25,12 @@ class PlatformAdPeer extends BasePlatformAdPeer
                     from emt_platform_ad adv, 
                     (
                       select avg(cnt) aveg from (
-                        select count(*) cnt, to_date(TO_CHAR(ade.created_at,'YYYY/MM/DD'), 'YYYY/MM/DD') 
+                        select count(*) cnt, trunc(ade.created_at) 
                         from emt_platform_ad_event ade
                         left join emt_platform_ad adv on ade.ad_id=adv.id
                         left join emt_platform_ad_namespace adn on adv.ad_namespace_id=adn.id
-                        where ade.type_id=1 and adn.ad_namespace='$ns'
-                        GROUP BY to_date(TO_CHAR(ade.created_at,'YYYY/MM/DD'), 'YYYY/MM/DD') 
+                        where ade.type_id=1 and adn.ad_namespace=:namespace_str
+                        GROUP BY trunc(ade.created_at) 
                       )
                     ) ort, 
                     (
@@ -40,12 +40,12 @@ class PlatformAdPeer extends BasePlatformAdPeer
                         select adv.id, count(*) cont from emt_platform_ad adv
                         inner join emt_platform_ad_event ade on adv.id=ade.ad_id
                         left join emt_platform_ad_namespace adn on adv.ad_namespace_id=adn.id
-                        where to_date(to_char(ade.created_at, 'YYYY/MM/DD'), 'YYYY/MM/DD')=to_date(sysdate, 'YYYY/MM/DD')
-                        and ade.type_id=1 and adv.status=1 and adn.ad_namespace='$ns'
+                        where trunc(ade.created_at)=trunc(sysdate)
+                        and ade.type_id=1 and adv.status=1 and adn.ad_namespace=:namespace_str
                         GROUP BY adv.id
                       ) evn on adv.id=evn.id
                     ) adviews, emt_platform_ad_namespace adn
-                    where adv.id=adviews.ad_id and adv.ad_namespace_id=adn.id and adn.ad_namespace='$ns'
+                    where adv.id=adviews.ad_id and adv.ad_namespace_id=adn.id and adn.ad_namespace=:namespace_str
                   ) ping
                   order by ((aveg * view_percentage / 100) - cont) * dbms_random.value(0, 1) desc
                 )
@@ -53,6 +53,7 @@ class PlatformAdPeer extends BasePlatformAdPeer
             ";
                 
         $stmt = $con->prepare($sql);
+        $stmt->bindValue(':namespace_str', $ns);
         $stmt->execute();
 
         $ads = PlatformAdPeer::populateObjects($stmt);
