@@ -1,16 +1,16 @@
 <div class="col_948 b2bCompany">
 
-<?php include_partial('profile_top', array('company' => $company, 'nums' => $nums))?>
+<?php include_partial('profile_top', array('company' => $company->__toString(), 'nums' => $nums))?>
     <div class="hrsplit-1"></div>
     <div class="col_180">
 
-<?php include_partial('leftmenu', array('company' => $company, 'groups' => $groups, 'categories' => $categories))?>
+<?php include_partial('leftmenu', array('company' => $company->__toString(), 'groups' => $groups, 'categories' => $categories))?>
 
     </div>
 
     <div class="col_762 b2bProduct">
 
-        <h3 class="pname"><?php echo $product ?></h3>
+        <h3 class="pname"><?php echo $product->__toString() ?></h3>
         <div>
             <?php if ($photo = $product->getPhoto()): ?>
             <div class="col_180">
@@ -42,12 +42,12 @@
                         <h4<?php echo !$product->getIntroduction() ? '  class="margin-t0"' : '' ?>><?php echo __('Specifications') ?></h4>
                         <table class="infoTable margin-2" style="width: 542px;">
                             <tr><th><?php echo __('Category') ?></th>
-                                <td><?php echo link_to($product->getProductCategory(), "@products-dir?substitute={$product->getProductCategory()->getStrippedCategory()}") ?></td></tr>
+                                <td><?php echo link_to($product->getProductCategory()->__toString(), "@products-dir?substitute={$product->getProductCategory()->getStrippedCategory()}") ?></td></tr>
                             <tr><th><?php echo __('Model No') ?></th>
                                 <td><?php echo $product->getModelNo() ?></td></tr>
                             <?php if ($product->getProductGroup()): ?>
                             <tr><th><?php echo __('Product Group') ?></th>
-                                <td><?php echo link_to($product->getProductGroup(), $company->getProfileActionUrl('products'), array('query_string' => "group={$product->getProductGroup()->getStrippedName()}")) ?></td></tr>
+                                <td><?php echo link_to($product->getProductGroup()->__toString(), $company->getProfileActionUrl('products'), array('query_string' => "group={$product->getProductGroup()->getStrippedName()}")) ?></td></tr>
                             <?php endif ?>
                             <tr><th><?php echo __('Origin') ?></th>
                                 <td><?php echo CountryPeer::retrieveByISO($product->getOrigin()) ?></td></tr>
@@ -65,15 +65,15 @@
                             <dt><?php echo emt_label_for('none', __('Payment Terms')) ?></dt>
                             <dd class="two_columns" style="width: 400px;">
                                 <?php foreach ($payment_terms as $term): ?>
-                                <div><?php echo $term ?></div>
+                                <div><?php echo $term->__toString() ?></div>
                                 <?php endforeach?>
                             </dd>
                             <dt><?php echo emt_label_for('none', __('Minimum Order Quantity')) ?></dt>
-                            <dd><?php echo $product->getMinOrderQuantity() . ' ' . ($product->getProductQuantityUnitRelatedByQuantityUnit() ? $product->getProductQuantityUnitRelatedByQuantityUnit() : '') ?></dd>
+                            <dd><?php echo $product->getMinOrderQuantity() . ' ' . ($product->getProductQuantityUnitRelatedByQuantityUnit() ? $product->getProductQuantityUnitRelatedByQuantityUnit()->__toString() : '') ?></dd>
                             <dt><?php echo emt_label_for('none', __('Price')) ?></dt>
                             <dd><?php echo $product->getPriceText() ?></dd>
                             <dt><?php echo emt_label_for('none', __('Production Capacity')) ?></dt>
-                            <dd><?php echo __('%1amount %2unit per %3period', array('%1amount' => $product->getCapacity(), '%2unit' => $product->getProductQuantityUnitRelatedByCapacityUnit(), '%3period' => $product->getTimePeriod())) ?></dd>
+                            <dd><?php echo __('%1amount %2unit per %3period', array('%1amount' => $product->getCapacity(), '%2unit' => $product->getProductQuantityUnitRelatedByCapacityUnit()->__toString(), '%3period' => $product->getTimePeriod()->__toString())) ?></dd>
                             <dt><?php echo emt_label_for('none', __('Packaging')) ?></dt>
                             <dd><?php echo $product->getPackaging() ?></dd>
                         </dl>
