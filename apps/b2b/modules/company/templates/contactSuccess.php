@@ -17,7 +17,7 @@
                 <section>
                 <?php if ($sesuser->isNew()): ?>
                     <div class="pad-3">
-                    <?php echo __('Please %1 or %2 in order to contact %3.', array('%1' => link_to(__('Login'), '@myemt.login', array('query_string' => "_ref=$_here", 'class' => 'loginlink inherit-font bluelink hover')), '%2' => link_to(__('Sign Up'), "@myemt.signup?_ref={$_here}", 'class=inherit-font bluelink hover'), '%3' => $company)) ?>
+                    <?php echo __('Please %1 or %2 in order to contact %3.', array('%1' => link_to(__('Login'), '@myemt.login', array('query_string' => "_ref=$_here", 'class' => 'loginlink inherit-font bluelink hover')), '%2' => link_to(__('Sign Up'), "@myemt.signup?_ref={$_here}", 'class=inherit-font bluelink hover'), '%3' => $company->__toString())) ?>
                     </div>
                 <?php else: ?>
                     <?php if ($composed): ?>
@@ -26,7 +26,7 @@
                     </div>
                     <?php else: ?>
                     <div class="pad-3">
-                    <?php echo __('Fill in the contact form below to send message to %1.', array('%1' => $company)) ?>
+                    <?php echo __('Fill in the contact form below to send message to %1.', array('%1' => $company->__toString())) ?>
                     </div>
                     <?php echo form_errors() ?>
                     <?php echo form_tag($company->getProfileActionUrl('contact')) ?>
@@ -36,12 +36,12 @@
                                   unset($list[$company->getPlug()]);
                                   echo select_tag('_s', options_for_select($list)) ?></dd>
                         <dt><?php echo emt_label_for('_r', __('Recipient')) ?></dt>
-                        <dd class="t_larger t_bold t_green _noInput"><?php echo input_hidden_tag('_r', $company->getPlug()) ?><?php echo $company ?></dd>
+                        <dd class="t_larger t_bold t_green _noInput"><?php echo input_hidden_tag('_r', $company->getPlug()) ?><?php echo $company->__toString() ?></dd>
                         <dt><?php echo emt_label_for('rtype', __('Request Type')) ?></dt>
                         <dd><?php echo select_tag('rtype', options_for_select(MessageTypePeer::getOrderedNames(ApplicationPeer::APP_B2B, true, true))) ?></dd>
                         <?php if ($related): ?>
                         <dt><?php echo emt_label_for('rourl', __('Related Item')) ?></dt>
-                        <dd class="_noInput"><?php echo link_to($related, $related->getUrl(), 'class=inherit-font t_orange t_bold hover target=blank') ?>
+                        <dd class="_noInput"><?php echo link_to($related->__toString(), $related->getUrl(), 'class=inherit-font t_orange t_bold hover target=blank') ?>
                             <?php echo input_hidden_tag('rel', $sf_params->get('rel'))?></dd>
                         <?php else: ?>
                         <dt><?php echo emt_label_for('rourl', __('Related Url')) ?></dt>
