@@ -89,6 +89,8 @@ class directoryAction extends EmtAction
             $this->mod = 1;
         }
         
+        $c->add(UserPeer::ID, "NOT EXISTS (SELECT 1 FROM EMT_BLOCKLIST WHERE EMT_BLOCKLIST.LOGIN_ID=EMT_USER.LOGIN_ID)", Criteria::CUSTOM);
+
         $c->setDistinct();
         
         $pager = new sfPropelPager('User', 20);
