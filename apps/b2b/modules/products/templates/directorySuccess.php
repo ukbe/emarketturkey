@@ -12,12 +12,12 @@
             <h4 style="border-bottom:none;"><?php echo __('Products from %1', array('%1' => $country->getName())) ?></h4>
             <?php echo link_to(__('Back to Country List'), '@products-action?action=byCountry', 'class=bluelink hover') ?>
             <?php elseif ($category): ?>
-            <h4 style="border-bottom:none;"><?php echo __('Products in %1 Category', array('%1' => $category)) ?></h4>
+            <h4 style="border-bottom:none;"><?php echo __('Products in %1 Category', array('%1' => $category->__toString())) ?></h4>
             <?php echo link_to(__('Back to Category List'), '@products-action?action=byCategory', 'class=bluelink hover') ?>
             <?php if (count($subs = $category->getSubCategories())):?>
             <div class="bubble two_columns margin-t1">
             <?php foreach ($subs as $sub): ?>
-            <?php echo link_to($sub, "@products-dir?substitute={$sub->getStrippedCategory()}") ?>
+            <?php echo link_to($sub->__toString(), "@products-dir?substitute={$sub->getStrippedCategory()}") ?>
             <?php endforeach ?>
             <div class="clear"></div>
             </div>
