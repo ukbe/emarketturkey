@@ -26,7 +26,7 @@
     <tr>
         <td><?php echo link_to(image_tag($resume->getPhotoUri()), $url = $profile->getCVPreviewUrl($resume->getId())) ?></td>
         <td></td>
-        <td><?php echo link_to($resume->getUser()->toString(), $url) ?></td>
+        <td><?php echo link_to($resume->getUser()->__toString(), $url) ?></td>
         <td><?php echo implode('<br />', $channels) ?></td>
     </tr>
 <?php endforeach ?>
