@@ -14,7 +14,7 @@
         <div class="box_762 _titleBG_Transparent">
             <section id="boxContent">
                 <h4>
-                <div class="_right"><?php echo link_to(__('Edit Product'), "@edit-product?hash={$company->getHash()}&id={$product->getId()}") ?></div>
+                <div class="_right"><?php echo link_to(__('Edit Product'), "@edit-product?hash={$company->getHash()}&id={$product->getId()}", 'class=action-button') ?></div>
                 <?php echo __('Product Details: <span class="sparkle">%1</span>', array('%1' => $product->getName())) ?>
                 <div><?php if ($product->isOnline()): ?><span class="tag online-11px"><?php echo __('Online') ?></span><?php else:  ?><span class="tag offline-11px"><?php echo __('Offline') ?></span><?php endif ?>
                      </div></h4>
