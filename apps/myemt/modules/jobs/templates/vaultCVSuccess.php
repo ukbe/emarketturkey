@@ -52,10 +52,12 @@
 <div><?php echo __('Flag:') ?></div>
 </div>
 </div>
+<?php /*
 <div>
 <?php echo link_to(__('Print'), 'mycareer/print', 'class=act a16px print') ?>
 <?php echo link_to(__('Export<span id=item></span>'), 'mycareer/export', 'class=act a16px pdf') ?>
 </div>
+*/ ?>
 <div class="hrsplit-2"></div>
 <?php $photo = $resume->getPhoto() ?>
 <table class="cvcard">
