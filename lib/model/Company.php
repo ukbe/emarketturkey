@@ -970,7 +970,7 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
         if ($for_select) {
             $prs = array();
             foreach ($brds as $brd) {
-                $prs[$brd->getId()] = $brd->getName();
+                $prs[$brd->getId()] = $brd->__toString();
             }
             return $prs;
         }
