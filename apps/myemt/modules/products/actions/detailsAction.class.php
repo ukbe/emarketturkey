@@ -21,7 +21,7 @@ class detailsAction extends EmtManageProductAction
         $this->attrmatrix = $this->product->getAttributeMatrix();
         $this->payment_terms = unserialize($this->product->getPaymentTerms());
 
-        $this->getResponse()->setTitle(sfContext::getInstance()->getI18N()->__('Edit Product: %1', array('%1' => $this->product->getName())));
+        $this->getResponse()->setTitle(sfContext::getInstance()->getI18N()->__('Product Details: %1', array('%1' => $this->product->__toString())));
     }
     
     public function execute($request)
