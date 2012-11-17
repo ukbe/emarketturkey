@@ -137,7 +137,10 @@ class newAction extends EmtManageProductAction
 					
                     $isnew = $this->product->isNew();
                     
-					// Check if Auto Activate Product is enabled
+                    // Set online status
+                    $this->product->setActive($this->getRequestParameter('product_active'));
+                    
+                    // Check if Auto Activate Product is enabled
 					if ($isnew)
 					{
     					if (GlobalConfigPeer::getConfig(GlobalConfigPeer::GC_AUTO_ACTIVATE_PRODUCT) == true){

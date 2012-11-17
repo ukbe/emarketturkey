@@ -100,6 +100,8 @@
         <?php echo select_tag('product_group_id', options_for_select($groups, $sf_params->get('product_group_id', $product->getGroupId()), 'include_blank=true')) ?>
         <?php echo input_tag('product_new_group', $sf_params->get('product_new_group'), array('maxlength' => 255, 'style' => 'width: 200px;'.($sf_params->get('product_group_id', $product->getGroupId()) == 'new' ? '' : 'display: none;'))) ?>
         <span class="ln-example"><?php echo __('Select existing product group or create new to display your products organized.') ?></span></dd>
+    <dt><?php echo emt_label_for('product_active', __('Online')) ?></dt>
+    <dd><?php echo checkbox_tag('product_active', 1, $product->isNew() ? 1 : $product->getActive()) ?></dd>
 </dl>
 <h5 class="clear"><?php echo __('Product Details') ?></h5>
 <?php foreach (($sf_request->getMethod()==sfRequest::POST ? $sf_params->get("product_lang") : (count($i18ns) ? $i18ns : array($sf_user->getCulture()))) as $key => $lang): ?>
@@ -129,10 +131,13 @@
     <dd><?php echo input_tag("product_min_order", $sf_params->get('product_min_order', $product->getMinOrderQuantity()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value')) ?>
         <?php echo select_tag('product_min_order_unit', options_for_select(ProductQuantityUnitPeer::getOrderedQuantities(true), $sf_params->get('product_min_order_unit', $product->getQuantityUnit()), array('include_custom' => __('Select Unit')))) ?></dd>
     <dt><?php echo emt_label_for(array('product_price_currency', 'product_price_start', 'product_price_end', 'product_price_unit'), __('FOB Price')) ?></dt>
-    <dd><?php echo select_currency_tag('product_price_currency', $sf_params->get('product_price_currency', $product->getPriceCurrency()), array('display' => 'code', 'include_custom' => __('Currency'), '')) ?>
-        <?php echo input_tag('product_price_start', $sf_params->get('product_price_start', $product->getPriceStart()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value')) ?>
-        <?php echo input_tag('product_price_end', $sf_params->get('product_price_end', $product->getPriceEnd()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value')) ?>
-        <?php echo __('per %1', array('%1' => select_tag('product_price_unit', options_for_select(ProductQuantityUnitPeer::getOrderedQuantities(true), $sf_params->get('product_price_unit', $product->getPriceUnit()), array('include_custom' => __('Select Unit')))))) ?>
+    <dd><?php echo __('%1 per %2', 
+             array(
+    			'%1' => select_currency_tag('product_price_currency', $sf_params->get('product_price_currency', $product->getPriceCurrency()), array('display' => 'code', 'include_custom' => __('Currency'), ''))
+                      . input_tag('product_price_start', $sf_params->get('product_price_start', $product->getPriceStart()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value'))
+                      . input_tag('product_price_end', $sf_params->get('product_price_end', $product->getPriceEnd()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value')),
+                '%2' => select_tag('product_price_unit', options_for_select(ProductQuantityUnitPeer::getOrderedQuantities(true), $sf_params->get('product_price_unit', $product->getPriceUnit()), array('include_custom' => __('Select Unit'))))
+             )) ?>
         </dd>
     <dt><?php echo emt_label_for('payment_term', __('Payment Terms')) ?></dt>
     <dd class="two_columns" style="width:580px;">
@@ -142,9 +147,12 @@
         <?php endforeach ?>
     </dd>
     <dt><?php echo emt_label_for("product_capacity", __('Production Capacity')) ?></dt>
-    <dd><?php echo input_tag("product_capacity", $sf_params->get('product_capacity', $product->getCapacity()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value')) ?>
-        <?php echo select_tag('product_capacity_unit', options_for_select(ProductQuantityUnitPeer::getOrderedQuantities(true), $sf_params->get('product_capacity_unit', $product->getCapacityUnit()), array('include_custom' => __('Select Unit')))) ?>
-        <?php echo __('per %1', array('%1' => select_tag('product_capacity_period', options_for_select(TimePeriodPeer::getOrderedPeriods(true), $sf_params->get('product_capacity_period', $product->getCapacityPeriodId()), array('include_custom' => __('Select Period')))))) ?>
+    <dd><?php echo __('%1 per %2', 
+             array(
+                '%1' => input_tag("product_capacity", $sf_params->get('product_capacity', $product->getCapacity()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value'))
+                      . select_tag('product_capacity_unit', options_for_select(ProductQuantityUnitPeer::getOrderedQuantities(true), $sf_params->get('product_capacity_unit', $product->getCapacityUnit()), array('include_custom' => __('Select Unit')))),
+             	'%2' => select_tag('product_capacity_period', options_for_select(TimePeriodPeer::getOrderedPeriods(true), $sf_params->get('product_capacity_period', $product->getCapacityPeriodId()), array('include_custom' => __('Select Period'))))
+             )) ?>
         </dd>
 </dl>
 <h5 class="clear"><?php echo __('Product Photo') ?></h5>
