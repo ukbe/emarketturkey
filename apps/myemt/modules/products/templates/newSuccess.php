@@ -100,8 +100,9 @@
         <?php echo select_tag('product_group_id', options_for_select($groups, $sf_params->get('product_group_id', $product->getGroupId()), 'include_blank=true')) ?>
         <?php echo input_tag('product_new_group', $sf_params->get('product_new_group'), array('maxlength' => 255, 'style' => 'width: 200px;'.($sf_params->get('product_group_id', $product->getGroupId()) == 'new' ? '' : 'display: none;'))) ?>
         <span class="ln-example"><?php echo __('Select existing product group or create new to display your products organized.') ?></span></dd>
-    <dt><?php echo emt_label_for('product_active', __('Online')) ?></dt>
-    <dd><?php echo checkbox_tag('product_active', 1, $product->isNew() ? 1 : $product->getActive()) ?></dd>
+    <dt><?php echo emt_label_for('product_active_0', __('Status')) ?></dt>
+    <dd><?php echo checkbox_tag('product_active', 1, $product->isNew() ? 1 : $product->getActive()) ?>
+        <?php echo emt_label_for('product_active', __('Online')) ?></dd>
 </dl>
 <h5 class="clear"><?php echo __('Product Details') ?></h5>
 <?php foreach (($sf_request->getMethod()==sfRequest::POST ? $sf_params->get("product_lang") : (count($i18ns) ? $i18ns : array($sf_user->getCulture()))) as $key => $lang): ?>
