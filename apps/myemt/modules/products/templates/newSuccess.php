@@ -132,7 +132,7 @@
     <dd><?php echo input_tag("product_min_order", $sf_params->get('product_min_order', $product->getMinOrderQuantity()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value')) ?>
         <?php echo select_tag('product_min_order_unit', options_for_select(ProductQuantityUnitPeer::getOrderedQuantities(true), $sf_params->get('product_min_order_unit', $product->getQuantityUnit()), array('include_custom' => __('Select Unit')))) ?></dd>
     <dt><?php echo emt_label_for(array('product_price_currency', 'product_price_start', 'product_price_end', 'product_price_unit'), __('FOB Price')) ?></dt>
-    <dd><?php echo __('%1 per %2', 
+    <dd><?php echo __('%1 per %2<span class=price></span>', 
              array(
     			'%1' => select_currency_tag('product_price_currency', $sf_params->get('product_price_currency', $product->getPriceCurrency()), array('display' => 'code', 'include_custom' => __('Currency'), ''))
                       . input_tag('product_price_start', $sf_params->get('product_price_start', $product->getPriceStart()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value'))
@@ -148,7 +148,7 @@
         <?php endforeach ?>
     </dd>
     <dt><?php echo emt_label_for("product_capacity", __('Production Capacity')) ?></dt>
-    <dd><?php echo __('%1 per %2', 
+    <dd><?php echo __('%1 per %2<span class=capacity></span>', 
              array(
                 '%1' => input_tag("product_capacity", $sf_params->get('product_capacity', $product->getCapacity()), array('style' => 'width:100px;', 'maxlength' => 16, 'watermark' => 'Numberic Value'))
                       . select_tag('product_capacity_unit', options_for_select(ProductQuantityUnitPeer::getOrderedQuantities(true), $sf_params->get('product_capacity_unit', $product->getCapacityUnit()), array('include_custom' => __('Select Unit')))),
