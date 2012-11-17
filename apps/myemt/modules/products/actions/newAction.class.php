@@ -138,7 +138,7 @@ class newAction extends EmtManageProductAction
                     $isnew = $this->product->isNew();
                     
                     // Set online status
-                    $this->product->setActive($this->getRequestParameter('product_active'));
+                    $this->product->setActive($this->getRequestParameter('product_active') == 'online' ? 1 : 0);
                     
                     // Check if Auto Activate Product is enabled
 					if ($isnew)
