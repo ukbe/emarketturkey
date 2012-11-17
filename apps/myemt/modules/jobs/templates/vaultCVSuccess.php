@@ -54,7 +54,7 @@
 </div>
 <div>
 <?php echo link_to(__('Print'), 'mycareer/print', 'class=act a16px print') ?>
-<?php echo link_to(__('Export'), 'mycareer/print', 'class=act a16px pdf') ?>
+<?php echo link_to(__('Export<span id=item></span>'), 'mycareer/export', 'class=act a16px pdf') ?>
 </div>
 <div class="hrsplit-2"></div>
 <?php $photo = $resume->getPhoto() ?>
