@@ -326,13 +326,13 @@ class PublicationPeer extends BasePublicationPeer
             ";
 
         $stmt = $con->prepare($sql);
-        if ($type_id) $stmt->bingValue(':type_id', $type_id);
-        if ($culture) $stmt->bingValue(':culture', $culture);
-        if ($source_id) $stmt->bingValue(':source_id', $source_id);
-        if ($author_id) $stmt->bingValue(':author_id', $author_id);
-        if ($category_id) $stmt->bingValue(':category_id', $category_id);
-        if ($except_pub_id) $stmt->bingValue(':except_pub_id', $except_pub_id);
-        $stmt->bingValue(':limit', $limit);
+        if ($type_id) $stmt->bindValue(':type_id', $type_id);
+        if ($culture) $stmt->bindValue(':culture', $culture);
+        if ($source_id) $stmt->bindValue(':source_id', $source_id);
+        if ($author_id) $stmt->bindValue(':author_id', $author_id);
+        if ($category_id) $stmt->bindValue(':category_id', $category_id);
+        if ($except_pub_id) $stmt->bindValue(':except_pub_id', $except_pub_id);
+        $stmt->bindValue(':limit', $limit);
         $stmt->execute();
 
         return PublicationPeer::populateObjects($stmt);
