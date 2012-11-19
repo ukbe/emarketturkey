@@ -285,14 +285,17 @@ class PublicationPeer extends BasePublicationPeer
                     WHERE EMT_AUTHOR.IS_COLUMNIST=1 AND EMT_AUTHOR.FEATURED_TYPE=".AuthorPeer::AUTH_FEATURED_COLUMN."
                         AND EMT_AUTHOR.ACTIVE=1 AND EMT_PUBLICATION.ACTIVE=1 AND EMT_PUBLICATION.FEATURED_TYPE=".PublicationPeer::PUB_FEATURED_COLUMN."
                         AND EMT_PUBLICATION.TYPE_ID=".PublicationPeer::PUB_TYP_ARTICLE."
-                        ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=$category_id" : '')."
-                        AND EMT_PUBLICATION_I18N.CULTURE='".sfContext::getInstance()->getUser()->getCulture()."'
+                        ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=:category_id" : '')."
+                        AND EMT_PUBLICATION_I18N.CULTURE=:culture
                 )
-                WHERE SQNUM=1 AND ROWNUM <= $limit
+                WHERE SQNUM=1 AND ROWNUM <= :limit
                 ORDER BY UPDATED_AT DESC
                 ";
         
         $stmt = $con->prepare($sql);
+        if ($category_id) $stmt->bindValue(':category_id', $category_id);
+        $stmt->bindValue(':limit', $limit);
+        $stmt->bindValue(':culture', sfContext::getInstance()->getUser()->getCulture());
         $stmt->execute();
 
         return PublicationPeer::populateObjects($stmt);
@@ -309,20 +312,27 @@ class PublicationPeer extends BasePublicationPeer
                         SELECT EMT_PUBLICATION.*, (SELECT COUNT(*) FROM EMT_RATING WHERE ITEM_ID=EMT_PUBLICATION.ID AND ITEM_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_PUBLICATION.") RTING
                         FROM EMT_PUBLICATION
                         WHERE EMT_PUBLICATION.ACTIVE=1
-                        ".($type_id ? " AND EMT_PUBLICATION.TYPE_ID=$type_id" : '')."
-                        ".($culture ? "AND EXISTS (SELECT 1 FROM EMT_PUBLICATION_I18N WHERE ID=EMT_PUBLICATION.ID AND CULTURE='$culture')" : '')."
-                        ".($source_id ? "AND EMT_PUBLICATION.SOURCE_ID=$source_id" : '')."
-                        ".($author_id ? "AND EMT_PUBLICATION.AUTHOR_ID=$author_id" : '')."
-                        ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=$category_id" : '')."
-                        ".($except_pub_id ? "AND EMT_PUBLICATION.ID!=$except_pub_id" : '')."
+                        ".($type_id ? " AND EMT_PUBLICATION.TYPE_ID=:type_id" : '')."
+                        ".($culture ? "AND EXISTS (SELECT 1 FROM EMT_PUBLICATION_I18N WHERE ID=EMT_PUBLICATION.ID AND CULTURE=:culture)" : '')."
+                        ".($source_id ? "AND EMT_PUBLICATION.SOURCE_ID=:source_id" : '')."
+                        ".($author_id ? "AND EMT_PUBLICATION.AUTHOR_ID=:author_id" : '')."
+                        ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=:category_id" : '')."
+                        ".($except_pub_id ? "AND EMT_PUBLICATION.ID!=:except_pub_id" : '')."
                     )
                     WHERE RTING > 0
                     ORDER BY RTING DESC
                 )
-                WHERE ROWNUM <= $limit
+                WHERE ROWNUM <= :limit
             ";
 
         $stmt = $con->prepare($sql);
+        if ($type_id) $stmt->bingValue(':type_id', $type_id);
+        if ($culture) $stmt->bingValue(':culture', $culture);
+        if ($source_id) $stmt->bingValue(':source_id', $source_id);
+        if ($author_id) $stmt->bingValue(':author_id', $author_id);
+        if ($category_id) $stmt->bingValue(':category_id', $category_id);
+        if ($except_pub_id) $stmt->bingValue(':except_pub_id', $except_pub_id);
+        $stmt->bingValue(':limit', $limit);
         $stmt->execute();
 
         return PublicationPeer::populateObjects($stmt);
