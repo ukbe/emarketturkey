@@ -29,7 +29,7 @@ class emailTransactionContentAction extends EmtManageAction
                     $this->getUser()->setCulture($this->transaction->getPreferredLang());
                     try
                     {
-                        echo get_partial($this->transaction->getEmailTransactionNamespace()->getTemplate(), unserialize($this->transaction->getData()));
+                        echo get_partial($this->transaction->getEmailTransactionNamespace()->getTemplate(), unserialize($this->transaction->getClob(EmailTransactionPeer::DATA)));
                     }
                     catch (Exception $e)
                     {

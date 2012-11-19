@@ -36,7 +36,7 @@
 <li class="column span-40 right append-2 first"><b><?php echo __('Data') ?></b></li>
 <li class="column span-110">
 <div style="background-color: #f0f0f0; border: solid 1px #c0c0c0;padding: 5px;">
-<?php foreach (unserialize($transaction->getData()) as $key => $datum): ?>
+<?php foreach (unserialize($transaction->getClob(EmailTransactionPeer::DATA)) as $key => $datum): ?>
 <b><?php echo $key ?></b>: <?php echo $datum ?><br />
 <?php endforeach ?></div></li>
 <li class="column span-40 right append-2 first"><b><?php echo __('Content') ?></b></li>
