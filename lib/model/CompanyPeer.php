@@ -74,8 +74,8 @@ class CompanyPeer extends BaseCompanyPeer
                     }
                     
                     $stmt = $con->prepare($sql);
-                    $c_intro = $this->getRequestParameter("company_introduction_$key");
-                    $c_prod = $this->getRequestParameter("company_productservice_$key");
+                    $c_intro = $register_prefs->get("company_introduction_$key");
+                    $c_prod = $register_prefs->get("company_productservice_$key");
                     $stmt->bindValue(':id', $company_profile->getId());
                     $stmt->bindValue(':culture', $lang);
                     $stmt->bindParam(':introduction', $c_intro, PDO::PARAM_STR, strlen($c_intro));
