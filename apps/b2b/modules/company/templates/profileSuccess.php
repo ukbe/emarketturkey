@@ -51,7 +51,7 @@
                     <?php if ($profile_image): ?>
                     <div class="profile-teaser"><?php echo image_tag($profile_image->getOriginalFileUri()) ?></div>
                     <?php endif ?>
-                    <?php echo str_replace("\n", "<br />", $profile->getIntroduction()) ?>
+                    <?php echo str_replace("\n", "<br />", $profile->getClob(CompanyProfileI18nPeer::INTRODUCTION)) ?>
                 </div>
             </div>
             <div class="box_576 _titleBG_Transparent">
@@ -60,7 +60,7 @@
                 $facts = array(
                     __('Business Type')     => $company->getBusinessType(),
                     __('Industry')          => $company->getBusinessSector(),
-                    __('Products and Services') => str_replace("\n", "<br />", $profile->getProductService()),
+                    __('Products and Services') => str_replace("\n", "<br />", $profile->getClob(CompanyProfileI18nPeer::PRODUCT_SERVICE)),
                     __('Founded in')        => $profile->getFoundedIn('Y'),
                 ) 
                 ?>

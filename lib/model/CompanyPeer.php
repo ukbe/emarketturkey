@@ -57,10 +57,30 @@ class CompanyPeer extends BaseCompanyPeer
             {
                 foreach($pr as $key => $lang)
                 {
-                    $ci18n = $company_profile->getCurrentCompanyProfileI18n($lang);
-                    $ci18n->setIntroduction($register_prefs->get("company_introduction_$key"));
-                    $ci18n->setProductService($register_prefs->get("company_productservice_$key"));
-                    $ci18n->save();
+                    if ($this->company_profile->hasLsiIn($lang))
+                    {
+                        $sql = "UPDATE EMT_COMPANY_PROFILE_I18N 
+                    			SET id=:id, culture=:culture, introduction=:introduction, product_service=:product_service
+                    			WHERE id=:id AND culture=:culture
+                        ";
+                    }
+                    else
+                    {
+                        $sql = "INSERT INTO EMT_COMPANY_PROFILE_I18N 
+                                (id, culture, introduction, product_service)
+                                VALUES
+                                (:id, :culture, :introduction, :product_service)
+                        ";
+                    }
+                    
+                    $stmt = $con->prepare($sql);
+                    $c_intro = $this->getRequestParameter("company_introduction_$key");
+                    $c_prod = $this->getRequestParameter("company_productservice_$key");
+                    $stmt->bindValue(':id', $this->company_profile->getId());
+                    $stmt->bindValue(':culture', $lang);
+                    $stmt->bindParam(':introduction', $c_intro, PDO::PARAM_STR, strlen($c_intro));
+                    $stmt->bindParam(':product_service', $c_prod, PDO::PARAM_STR, strlen($c_prod));
+                    $stmt->execute();
                 }
             }
             

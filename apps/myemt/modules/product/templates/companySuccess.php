@@ -18,7 +18,7 @@
 <div class="column span-105 prepend-1 append-1">
 <h2><?php echo $company->getName() ?></h2>
 <h4><?php echo $company->getBusinessSector() ?></h4>
-<p><?php echo $company->getCompanyProfile()->getProductService() ?></p>
+<p><?php echo $company->getCompanyProfile()->getClob(CompanyProfileI18nPeer::PRODUCT_SERVICE) ?></p>
 <?php if (count($products)): ?>
 <div class="column span-104"><?php echo image_tag('layout/button/company-profile/products.'.$sf_user->getCulture().'.png') ?></div>
 <div class="hrsplit-1"></div>

@@ -20,9 +20,9 @@
             <dt><?php echo __('Business Type') ?></dt>
             <dd><?php echo $company->getBusinessType() ?></dd>
             <dt><?php echo __('Introduction') ?></dt>
-            <dd><?php echo str_replace("\r\n", '<br />', $profile->getIntroduction()) ?></dd>
+            <dd><?php echo str_replace("\r\n", '<br />', $profile->getClob(CompanyProfileI18nPeer::INTRODUCTION)) ?></dd>
             <dt><?php echo __('Products and Services') ?></dt>
-            <dd><?php echo str_replace("\r\n", '<br />', $profile->getProductService()) ?></dd>
+            <dd><?php echo str_replace("\r\n", '<br />', $profile->getClob(CompanyProfileI18nPeer::PRODUCT_SERVICE)) ?></dd>
         </dl>
         <div class="center-block"></div>
     </div>

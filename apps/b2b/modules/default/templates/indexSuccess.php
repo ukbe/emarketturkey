@@ -42,8 +42,8 @@
                     <?php endif ?>
                         <div class="item">
                             <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
-                            <div class="cname"><? echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
-                            <div class="industry"><? echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
+                            <div class="cname"><?php echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
+                            <div class="industry"><?php echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
                         </div>
                     <?php if (($i % 4) == 3 || $i == (count($selling_leads)-1)): ?>
                     </div>
@@ -72,8 +72,8 @@
                     <?php endif ?>
                     <div class="item">
                         <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
-                        <div class="cname"><? echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
-                        <div class="industry"><? echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
+                        <div class="cname"><?php echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
+                        <div class="industry"><?php echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
                     </div>
                     <?php if (($i % 4) == 3 || $i == (count($buying_leads) - 1)): ?>
                     </div>
@@ -101,8 +101,8 @@
                     <?php endif ?>
                     <div class="item">
                         <?php echo link_to(image_tag($company->getLogo()->getThumbnailUri(), array('title' => $company->__toString())), $company->getProfileUrl()) ?>
-                        <div class="cname"><? echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
-                        <div class="industry"><? echo $company->getBusinessSector()->__toString() ?></div>
+                        <div class="cname"><?php echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
+                        <div class="industry"><?php echo $company->getBusinessSector()->__toString() ?></div>
                     </div>
                     <?php if (($i % 4) == 3 || $i == (count($featured_companies) - 1)): ?>
                     </div>
@@ -132,8 +132,8 @@
                     <div class="item">
                         <?php $photo = $product->getPhoto() ?>
                         <?php echo link_to(image_tag($photo->getThumbnailUri()), $product->getUrl()) ?>
-                        <div class="cname"><? echo link_to($product->__toString(), $product->getUrl()) ?></div>
-                        <div class="industry"><? echo link_to($product->getCompany()->__toString(), $product->getCompany()->getProfileUrl()) ?></div>
+                        <div class="cname"><?php echo link_to($product->__toString(), $product->getUrl()) ?></div>
+                        <div class="industry"><?php echo link_to($product->getCompany()->__toString(), $product->getCompany()->getProfileUrl()) ?></div>
                     </div>
                     <?php if (($i % 4) == 3 || $i == (count($featured_products) - 1)): ?>
                     </div>

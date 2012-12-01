@@ -4,7 +4,7 @@
     <div class="breadcrumb">
         <ul>
             <li><?php echo link_to(__('Trade Experts'), '@tradeexperts') ?></li>
-            <li><span><?php echo $tradeexpert ?></span></li>
+            <li><span><?php echo $tradeexpert->__toString() ?></span></li>
         </ul>
     </div>
 
@@ -25,7 +25,7 @@
             
     <div class="col_576 b2bProduct">
 
-        <h3 class="pname"><?php echo $tradeexpert ?><span class="subinfo"><?php echo $tradeexpert->getHolderTypeId() == PrivacyNodeTypePeer::PR_NTYP_COMPANY ? __('Corporate') : __('Individual') ?></span></h3>
+        <h3 class="pname"><?php echo $tradeexpert->__toString() ?><span class="subinfo"><?php echo $tradeexpert->getHolderTypeId() == PrivacyNodeTypePeer::PR_NTYP_COMPANY ? __('Corporate') : __('Individual') ?></span></h3>
         <div>
             <?php if ($intro = $tradeexpert->getClob(TradeExpertI18nPeer::INTRODUCTION)): ?>
             <div class="box_576">
@@ -40,7 +40,7 @@
                     <?php if (count($industries)): ?>
                     <div class="two_columns">
                     <?php foreach ($industries as $industry): ?>
-                    <div><?php echo $industry ?></div> 
+                    <div><?php echo $industry->__toString() ?></div> 
                     <?php endforeach ?>
                     </div>
                     <?php else: ?>
@@ -55,7 +55,7 @@
                     <?php if (count($areas)): ?>
                     <div class="two_columns">
                     <?php foreach ($areas as $area): ?>
-                    <div><?php echo $area ?></div> 
+                    <div><?php echo $area->__toString() ?></div> 
                     <?php endforeach ?>
                     </div>
                     <?php else: ?>
@@ -71,7 +71,7 @@
                 <div>
                     <div class="four_columns">
                     <?php foreach ($clients as $client): ?>
-                        <div class="txtCenter"><?php echo link_to(image_tag($client->getClient()->getProfilePictureUri(), array('title' => $client->getClient())), $client->getClient()->getProfileUrl()) ?></div> 
+                        <div class="txtCenter"><?php echo link_to(image_tag($client->getClient()->getProfilePictureUri(), array('title' => $client->getClient()->__toString())), $client->getClient()->getProfileUrl()) ?></div> 
                     <?php endforeach ?>
                         <div class="clear"></div>
                     </div>

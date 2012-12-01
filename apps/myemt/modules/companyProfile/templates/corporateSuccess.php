@@ -36,9 +36,9 @@
     <dt></dt>
     <dd><span class="ln-notify"><?php echo __('<strong>Attention:</strong> The fields below should be filled in <span class="ln-tag">%1</span>', array('%1' => format_language($lang))) ?></span></dd>
     <dt><?php echo emt_label_for("introduction_$key", __('Introduction')) ?></dt>
-    <dd><?php echo textarea_tag("introduction_$key", $sf_params->get("introduction_$key", $profile->getIntroduction($lang)), 'cols=52 rows=4 maxlength=2000') ?></dd>
+    <dd><?php echo textarea_tag("introduction_$key", $sf_params->get("introduction_$key", $profile->getClob(CompanyProfileI18nPeer::INTRODUCTION, $lang)), 'cols=52 rows=4 maxlength=2000') ?></dd>
     <dt><?php echo emt_label_for("productservice_$key", __('Products and Services')) ?></dt>
-    <dd><?php echo textarea_tag("productservice_$key", $sf_params->get("productservice_$key", $profile->getProductService($lang)), 'cols=52 rows=4 maxlength=2000') ?></dd>
+    <dd><?php echo textarea_tag("productservice_$key", $sf_params->get("productservice_$key", $profile->getClob(CompanyProfileI18nPeer::PRODUCT_SERVICE, $lang)), 'cols=52 rows=4 maxlength=2000') ?></dd>
 </dl>
 <?php endforeach ?>
 <dl class="_table">

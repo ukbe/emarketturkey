@@ -47,10 +47,30 @@ class corporateAction extends EmtManageCompanyAction
                 {
                     foreach($pr as $key => $lang)
                     {
-                        $ci18n = $this->profile->getCurrentCompanyProfileI18n($lang);
-                        $ci18n->setIntroduction($this->getRequestParameter("introduction_$key"));
-                        $ci18n->setProductService($this->getRequestParameter("productservice_$key"));
-                        $ci18n->save();
+                        if ($this->profile->hasLsiIn($lang))
+                        {
+                            $sql = "UPDATE EMT_COMPANY_PROFILE_I18N 
+                        			SET id=:id, culture=:culture, introduction=:introduction, product_service=:product_service
+                        			WHERE id=:id AND culture=:culture
+                            ";
+                        }
+                        else
+                        {
+                            $sql = "INSERT INTO EMT_COMPANY_PROFILE_I18N 
+                                    (id, culture, introduction, product_service)
+                                    VALUES
+                                    (:id, :culture, :introduction, :product_service)
+                            ";
+                        }
+                        
+                        $stmt = $con->prepare($sql);
+                        $c_intro = $this->getRequestParameter("introduction_$key");
+                        $c_prod = $this->getRequestParameter("productservice_$key");
+                        $stmt->bindValue(':id', $this->profile->getId());
+                        $stmt->bindValue(':culture', $lang);
+                        $stmt->bindParam(':introduction', $c_intro, PDO::PARAM_STR, strlen($c_intro));
+                        $stmt->bindParam(':product_service', $c_prod, PDO::PARAM_STR, strlen($c_prod));
+                        $stmt->execute();
                     }
                 }
                 if (!$this->profile->isNew() && count($diff = array_diff($this->i18ns, $pr))) $this->profile->removeI18n($diff);
@@ -86,7 +106,7 @@ class corporateAction extends EmtManageCompanyAction
             if (mb_strlen($this->getRequestParameter("introduction_$key")) > 2000)
                 $this->getRequest()->setError("introduction_$key", sfContext::getInstance()->getI18N()->__('Company introduction for %1 language must be maximum %2 characters long.', array('%1' => sfContext::getInstance()->getI18N()->getNativeName($lang), '%2' => 2000)));
             if (mb_strlen($this->getRequestParameter("productservice_$key")) > 2000)
-                $this->getRequest()->setError("productservice_$key", sfContext::getInstance()->getI18N()->__('Company products and services description for %1 language must be maximum %2 characters long.', array('%1' => sfContext::getInstance()->getI18N()->getNativeName($lang), '%2' => 1800)));
+                $this->getRequest()->setError("productservice_$key", sfContext::getInstance()->getI18N()->__('Company products and services description for %1 language must be maximum %2 characters long.', array('%1' => sfContext::getInstance()->getI18N()->getNativeName($lang), '%2' => 2000)));
         }
         return !$this->getRequest()->hasErrors();
     }
