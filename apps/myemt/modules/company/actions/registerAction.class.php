@@ -63,6 +63,7 @@ class registerAction extends EmtAction
             if (mb_strlen($this->getRequestParameter('company_name'), 'utf-8') < 3 || mb_strlen($this->getRequestParameter('company_name'), 'utf-8') > 255) $this->getRequest()->setError('company_name', 'Company Name should be 3 to 255 characters long.');
             if (mb_strlen($this->getRequestParameter('company_city'), 'utf-8') > 50) $this->getRequest()->setError('company_city', 'City/Town name should include maximum 50 characters.');
             if (mb_strlen($this->getRequestParameter('company_postalcode'), 'utf-8') > 10) $this->getRequest()->setError('company_postalcode', 'Postal Code should include maximum 10 characters.');
+            if (mb_strlen($this->getRequestParameter('company_street'), 'utf-8') > 255) $this->getRequest()->setError('company_street', 'Street address should be maximum 255 characters long.');
 
             $pr = $this->getRequestParameter('company_lang');
             $pr = is_array($pr)?$pr:array();
