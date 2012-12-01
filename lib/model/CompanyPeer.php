@@ -57,7 +57,7 @@ class CompanyPeer extends BaseCompanyPeer
             {
                 foreach($pr as $key => $lang)
                 {
-                    if ($this->company_profile->hasLsiIn($lang))
+                    if ($company_profile->hasLsiIn($lang))
                     {
                         $sql = "UPDATE EMT_COMPANY_PROFILE_I18N 
                     			SET id=:id, culture=:culture, introduction=:introduction, product_service=:product_service
@@ -76,7 +76,7 @@ class CompanyPeer extends BaseCompanyPeer
                     $stmt = $con->prepare($sql);
                     $c_intro = $this->getRequestParameter("company_introduction_$key");
                     $c_prod = $this->getRequestParameter("company_productservice_$key");
-                    $stmt->bindValue(':id', $this->company_profile->getId());
+                    $stmt->bindValue(':id', $company_profile->getId());
                     $stmt->bindValue(':culture', $lang);
                     $stmt->bindParam(':introduction', $c_intro, PDO::PARAM_STR, strlen($c_intro));
                     $stmt->bindParam(':product_service', $c_prod, PDO::PARAM_STR, strlen($c_prod));
