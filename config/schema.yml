@@ -298,8 +298,8 @@ propel:
     _attributes:          { phpName: CompanyProfileI18n }
     ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_COMPANY_PROFILE, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
     CULTURE:              { type: varchar, size: 7, isCulture: true, required: true, primaryKey: true }
-    INTRODUCTION:         { type: longvarchar }
-    PRODUCT_SERVICE:      { type: longvarchar }
+    INTRODUCTION:         { type: clob }
+    PRODUCT_SERVICE:      { type: clob }
 
   EMT_COMPANY_LOGIN: 
     _attributes:          { phpName: CompanyLogin }
