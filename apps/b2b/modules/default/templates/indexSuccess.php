@@ -17,8 +17,9 @@
     <div class="box_576">
         <div class="slider-wrapper theme-orman _noBorder"  style="height: 250px;">
             <div id="slider" class="nivoSlider">
-                <img src="/images/content/banner/blank-blue.jpg" alt="" height="229" />
-                <img src="/images/content/banner/around-the-world.jpg" alt="" />
+                <img src="/images/content/banner/b2b-banner-fashion.jpg" alt="" />
+                <img src="/images/content/banner/b2b-banner-furniture.jpg" alt="" />
+                <img src="/images/content/banner/b2b-banner-grain.jpg" alt="" />
             </div>
         </div>
     </div>
