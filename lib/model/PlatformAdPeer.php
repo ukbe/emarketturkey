@@ -47,9 +47,10 @@ class PlatformAdPeer extends BasePlatformAdPeer
                     ) adviews, emt_platform_ad_namespace adn
                     where adv.id=adviews.ad_id and adv.ad_namespace_id=adn.id and adn.ad_namespace=:namespace_str
                   ) ping
+                  where status=1 and valid_from <= sysdate and valid_until >= sysdate
                   order by ((aveg * view_percentage / 100) - cont) * dbms_random.value(0, 1) desc
                 )
-                where rownum=1 and valid_from <= sysdate and valid_until >= sysdate
+                where rownum=1 
             ";
                 
         $stmt = $con->prepare($sql);
