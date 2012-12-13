@@ -17,9 +17,9 @@
     <div class="box_576">
         <div class="slider-wrapper theme-orman _noBorder"  style="height: 250px;">
             <div id="slider" class="nivoSlider">
-                <img src="/images/content/banner/b2b.banner.fashion.jpg" alt="Fashionable, Quality Clothing Suppliers" />
-                <img src="/images/content/banner/b2b.banner.furniture.jpg" alt="Find Elegant Furniture Products" />
-                <img src="/images/content/banner/b2b.banner.grain.jpg" alt="Healthy Grain Producers" />
+                <img src="/images/content/banner/b2b-banner-fashion.jpg" alt="Fashionable, Quality Clothing Suppliers" />
+                <img src="/images/content/banner/b2b-banner-furniture.jpg" alt="Find Elegant Furniture Products" />
+                <img src="/images/content/banner/b2b-banner-grain.jpg" alt="Healthy Grain Producers" />
             </div>
         </div>
     </div>
