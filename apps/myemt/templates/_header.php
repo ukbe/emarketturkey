@@ -81,6 +81,7 @@
     	</dl>
 
     	<ul id="buttons">
+            <?php if (!$logged_in): ?>
             <!--// LOGGED OFF //-->
             <li class="nologin"><b><?php echo link_to(__('Sign Up'), '@signup', array('id' => 'btn_signup' , 'tabindex' => 7, 'title' => __('Sign Up'))) ?></b></li>
             <li class="nologin"><b><?php echo link_to(__('Login').'<b></b>', '@login', array('id' => 'btn_login', 'title' => __('Login'))) ?></b>
@@ -104,7 +105,7 @@
                     </ul>
                 </div>
             </li>
-
+            <?php else: ?>
             <!--// LOGGED IN //-->
             <li><b><?php echo link_to(__('Messages').'<b></b><span class="btn_messages-newtag"></span>', '@messages', array('id' => 'btn_messages', 'title' => __('Messages'))) ?></b>
                 <div id="btn_messages-box">
@@ -166,7 +167,6 @@
             <li><b><?php echo link_to(__('Contacts').'<b></b>', '@contacts', array('id' => 'btn_contacts', 'title' => __('Contacts'))) ?></b></li>
             <li><b><?php echo link_to(__('Tasks').'<b></b>', '@tasks', array('id' => 'btn_tasks', 'title' => __('Tasks'))) ?></b></li>
             <li><b><?php echo link_to(__('Account').'<b></b>', '@account', array('id' => 'btn_account', 'title' => __('Account'))) ?></b>
-            <?php if ($sf_user->isLoggedIn()): ?>
                 <div id="btn_account-box">
                     <ul class="menu-sub-box list">
                         <li class="header"><?php echo $sf_user->getUser() ?></li>
@@ -176,8 +176,8 @@
                         <li class="item"><?php echo link_to(__('Logout'), '@logout') ?></li>
                     </ul>
                 </div>
-            <?php endif ?>
             </li>
+            <?php endif ?>
     	</ul>
 
         <div style="position:absolute;top:0px;right:0px;margin:0;padding:0;font-size:10px;z-index:500;">
