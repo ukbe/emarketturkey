@@ -43,7 +43,7 @@
                     <div>
                     <?php endif ?>
                         <div class="item">
-                            <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
+                            <?php echo link_to(image_tag($lead->getThumbUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
                             <div class="cname"><?php echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
                             <div class="industry"><?php echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
                         </div>
@@ -73,7 +73,7 @@
                     <div>
                     <?php endif ?>
                     <div class="item">
-                        <?php echo link_to(image_tag($lead->getPhotoUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
+                        <?php echo link_to(image_tag($lead->getThumbUri(), array('title' => $lead->__toString())), $lead->getUrl()) ?>
                         <div class="cname"><?php echo link_to($lead->__toString(), $lead->getUrl(), 'class=bluelink hover') ?></div>
                         <div class="industry"><?php echo link_to($lead->getCompany()->__toString(), $lead->getCompany()->getProfileUrl()) ?></div>
                     </div>
