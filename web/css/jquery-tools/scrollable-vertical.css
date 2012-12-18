@@ -43,28 +43,32 @@
 .scrollable .item img {
     float: left;
     margin: 4px 7px 4px 0px;
-    max-height: 40px;
+    max-height: 50px;
     max-width: 80px;
 }
 
-.scrollable .item .cname {
-    font: 11px arial;
+.scrollable .item .cname,
+.scrollable .item .cname a {
+    font: bold 12px arial;
     margin: 3px 0px 0px;
     padding: 0px;
-    line-height: 12px;
+    line-height: 14px;
     max-height: 33px;
     overflow: hidden;
     display: block;
-    color: #333;
+    color: #222;
+    letter-spacing: 1px;
 }
 
-.scrollable .item .industry {
-    font: 11px arial;
-    margin: 0px;
+.scrollable .item .industry,
+.scrollable .item .industry a {
+    font: 12px arial;
+    margin: 4px 0px 0px;
     padding: 0px;
-    line-height: 15px;
-    max-height: 15px;
+    line-height: 14px;
+    max-height: 30px;
     overflow: hidden;
     display: block;
-    color: #888;
+    color: #0088CC;
+    letter-spacing: 1px;
 }

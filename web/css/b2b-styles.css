@@ -34,3 +34,40 @@ dl.trade-experts dt img
     max-width: 30px;
     max-height: 30px;
 }
+
+.spot_banner
+{
+    
+}
+.spot_banner > div
+{
+    border: none;
+}
+.spot_banner .slider
+{
+    position:relative;
+    overflow:hidden;
+    width: 568px;
+    height:249px;
+}
+.spot_banner .slider .items {
+    width:20000em;
+    position:absolute;
+}
+.spot_banner .slider .items a {
+    float: left;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+.spot_banner .slider .items img {
+    float: left;
+    display: block;
+    width: 568px;
+    height: 229px;
+}
+.spot_banner .slider .nav_placer {
+    margin-top: 234px;
+    width:auto;
+    text-align: center;
+}

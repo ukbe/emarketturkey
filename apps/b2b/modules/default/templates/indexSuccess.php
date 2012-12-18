@@ -13,14 +13,15 @@
 </div>
 
 <div class="col_576">
-    
-    <div class="box_576">
-        <div class="slider-wrapper theme-orman _noBorder"  style="height: 250px;">
-            <div id="slider" class="nivoSlider">
-                <img src="/images/content/banner/b2b-banner-fashion.jpg" alt="Fashionable, Quality Clothing Suppliers" />
-                <img src="/images/content/banner/b2b-banner-furniture.jpg" alt="Find Elegant Furniture Products" />
-                <img src="/images/content/banner/b2b-banner-grain.jpg" alt="Healthy Grain Producers" />
+
+    <div class="box_576 spot_banner">
+        <div class="slider">
+            <div class="items">
+                <img src="http://www.emarketturkey.com/images/content/banner/b2b-banner-fashion.jpg" alt="Fashionable, Quality Clothing Suppliers" />
+                <img src="http://www.emarketturkey.com/images/content/banner/b2b-banner-furniture.jpg" alt="Find Elegant Furniture Products" />
+                <img src="http://www.emarketturkey.com/images/content/banner/b2b-banner-grain.jpg" alt="Healthy Grain Producers" />
             </div>
+            <div class="nav_placer"><div class="navi"></div></div>
         </div>
     </div>
 
@@ -28,13 +29,13 @@
 
     <?php if (count($selling_leads) > 3): ?>
     <div class="box_576 _title_BoldColor">
-        
+
         <h3>
         <div class="_right"><?php echo link_to(__('See All'), '@selling-leads', 'class=bluelink hover') ?></div>
         <?php echo __('<strong>Selling</strong> Leads') ?></h3>
         <div>
             <div class="scrollable vertical">
-            
+
                 <div class="items">
                 
                 <?php foreach ($selling_leads as $i => $lead): ?>
@@ -186,12 +187,12 @@
 </div>
 <?php use_stylesheet('jquery-tools/scrollable-navigator.css') ?>
 <?php use_stylesheet('jquery-tools/scrollable-vertical.css') ?>
-<?php use_javascript('jquery.nivo.slider.pack.js') ?>
-<?php use_stylesheet('nivo-slider.css') ?>
-<?php use_stylesheet('/images/nivo/orman/orman.css') ?>
 <?php echo javascript_tag("
    $(function(){
         $('.scrollable').scrollable({vertical: true, circular: true, mousewheel: true}).navigator().autoscroll({interval: 15000});
-        $('#slider').nivoSlider({effect: 'fade', pauseTime: 5000});
    });
 ") ?>
+<?php use_javascript('emt-slider-1.0.js') ?>
+<?php echo javascript_tag("
+    $('.slider').emtslider({nav: '.navi'});
+")?>
