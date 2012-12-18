@@ -15,7 +15,7 @@
             <?php if ($photo = $product->getPhoto()): ?>
             <div class="col_180">
                 <div class="box_180 txtCenter">
-                    <?php echo link_to_function(image_tag($photo->getMediumUri()), '') ?>
+                    <?php echo link_to(image_tag($photo->getMediumUri(), array('alt' => $product->__toString())), $photo->getOriginalFileUri(), array('rel' => 'shadowbox[product-photos]', 'title' => $product->__toString())) ?>
                 </div>
                 <div class="box_180 txtCenter">
                     <div class="_noBorder">
@@ -89,7 +89,7 @@
                                 <dt><?php echo __('Product Photos') ?></dt>
                                 <?php foreach ($photos as $ph): ?>
                                 <dd>
-                                    <?php echo link_to(image_tag($ph->getThumbnailUri()), $ph->getUrl()) ?>
+                                    <?php echo link_to(image_tag($ph->getThumbnailUri(), array('alt' => $product->__toString())), $ph->getOriginalFileUri(), array('rel' => 'shadowbox[product-photos]', 'title' => $product->__toString())) ?>
                                 </dd>
                                 <?php endforeach ?>
                             </dl>
@@ -122,8 +122,9 @@
             <div class=clear hrpslit-1"></div>
         </div>
             
-
     </div>
-
+<?php use_javascript('/sf/shadowbox-build-3.0rc1/shadowbox.js') ?>
+<?php use_stylesheet('/sf/shadowbox-build-3.0rc1/shadowbox.css') ?>
+<?php echo javascript_tag('Shadowbox.init();') ?>
 
 </div>
