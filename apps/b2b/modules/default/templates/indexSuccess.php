@@ -27,6 +27,35 @@
 
     <hr class="margin-b2" />
 
+    <?php if (count($featured_companies) > 3): ?>
+    <div class="box_576 _title_BoldColor">
+        <h3><?php echo __('<strong>Featured</strong> Companies') ?></h3>
+        <div>
+            <div class="scrollable vertical">
+            
+                <div class="items">
+                <?php foreach ($featured_companies as $i => $company): ?>
+                    <?php if (($i % 4) == 0): ?>
+                    <div>
+                    <?php endif ?>
+                    <div class="item">
+                        <?php echo link_to(image_tag($company->getLogo()->getThumbnailUri(), array('title' => $company->__toString())), $company->getProfileUrl()) ?>
+                        <div class="cname"><?php echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
+                        <div class="industry"><?php echo $company->getBusinessSector()->__toString() ?></div>
+                    </div>
+                    <?php if (($i % 4) == 3 || $i == (count($featured_companies) - 1)): ?>
+                    </div>
+                    <?php endif ?>
+                <?php endforeach ?>
+                </div>
+            </div>
+            <div class="navi"></div>
+        </div>
+    </div>
+
+    <hr class="margin-b2" />
+    <?php endif ?>
+
     <?php if (count($selling_leads) > 3): ?>
     <div class="box_576 _title_BoldColor">
 
@@ -81,35 +110,6 @@
                     </div>
                     <?php endif ?>
                 <?php endforeach ?> 
-                </div>
-            </div>
-            <div class="navi"></div>
-        </div>
-    </div>
-
-    <hr class="margin-b2" />
-    <?php endif ?>
-
-    <?php if (count($featured_companies) > 3): ?>
-    <div class="box_576 _title_BoldColor">
-        <h3><?php echo __('<strong>Featured</strong> Companies') ?></h3>
-        <div>
-            <div class="scrollable vertical">
-            
-                <div class="items">
-                <?php foreach ($featured_companies as $i => $company): ?>
-                    <?php if (($i % 4) == 0): ?>
-                    <div>
-                    <?php endif ?>
-                    <div class="item">
-                        <?php echo link_to(image_tag($company->getLogo()->getThumbnailUri(), array('title' => $company->__toString())), $company->getProfileUrl()) ?>
-                        <div class="cname"><?php echo link_to($company->getName(), $company->getProfileUrl()) ?></div>
-                        <div class="industry"><?php echo $company->getBusinessSector()->__toString() ?></div>
-                    </div>
-                    <?php if (($i % 4) == 3 || $i == (count($featured_companies) - 1)): ?>
-                    </div>
-                    <?php endif ?>
-                <?php endforeach ?>
                 </div>
             </div>
             <div class="navi"></div>
