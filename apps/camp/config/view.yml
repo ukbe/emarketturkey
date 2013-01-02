@@ -1,0 +1,18 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        'eMarketTurkey | Global Business Platform'
+    description:  'eMarketTurkey is a business platform which companies and professionals could have variety of services at the same place.'
+    keywords:     'products, companies, import, export, trade, business, jobs, human networking, events, human resources, hr, directory, transportation directory, trade experts, emarket, turkey, global'
+    #language:     en
+    robots:       index, follow
+    base:         'http://www.emarketturkey.com'
+
+  stylesheets:    [master-1.2.css, lobby-styles.css]
+
+  javascripts:    [jquery-1.7.1.min.js, jquery-ui-1.8.13.core.min.js, jquery.tools-1.2.5.min.js, emt-dynabox-1.0.js, emt-toolbar-init.js]
+
+  has_layout:     on
+  layout:         layoutBoxModel

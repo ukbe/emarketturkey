@@ -1,0 +1,12 @@
+indexSuccess:
+  javascripts:    [jquery.scrollTo-1.4.0-min.js,jquery.localscroll-1.2.6-min.js,jquery.serialScroll-1.2.1-min.js,jquery.jcarousel.pack.js,emt-slider.min.js,jquery.cookie.min.js]
+  layout:  layoutNewLogo
+  metas:
+    title:  'Share your ideas | eMarketTurkey'
+
+thankyouMessageSuccess:
+  javascripts:    []
+  layout:  layoutNewLogo
+  metas:
+    title:  'Thank you! | eMarketTurkey'
+    

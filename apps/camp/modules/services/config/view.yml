@@ -1,0 +1,74 @@
+all:
+  layout:  layoutBoxModel-corporate
+
+overviewSuccess:
+  metas:
+    title: "eMarketTurkey Services"
+
+forIndividualsSuccess:
+    metas:
+        title:  'For Individuals | eMarketTurkey'
+
+forSuppliersSuccess:
+    metas:
+        title:  'For Suppliers | eMarketTurkey'
+
+forAssociationsSuccess:
+    metas:
+        title:  'For Suppliers | eMarketTurkey'
+
+tradeexpertsSuccess:
+  metas:
+    title: "TradeExperts | eMarketTurkey"
+    
+tpdSuccess:
+  metas:
+    title: "Transportation Directory | eMarketTurkey"
+
+membershipSuccess:
+  metas:
+    title: "Membership | eMarketTurkey"
+
+directorySuccess:
+  metas:
+    title: "Directory Service | eMarketTurkey"
+
+leadsSuccess:
+  metas:
+    title: "Selling & Buying Leads | eMarketTurkey"
+    
+jobsSuccess:
+  metas:
+    title: "Job Postings | eMarketTurkey"
+
+assisttxSuccess:
+  metas:
+    title: "Native Messaging | eMarketTurkey"
+
+automatedtxSuccess:
+  metas:
+    title: "Automated Info Translation | eMarketTurkey"
+
+cvstoreSuccess:
+  metas:
+    title: "CV Store | eMarketTurkey"
+
+embeddedhriSuccess:
+  metas:
+    title: "Embedded HR Interface | eMarketTurkey"
+
+emtrustSuccess:
+  metas:
+    title: "emTrust | eMarketTurkey"
+
+incoopSuccess:
+  metas:
+    title: "Investment Opportunities and Cooperation Directory | eMarketTurkey"
+
+ondemandtxSuccess:
+  metas:
+    title: "On-Demand Translation | eMarketTurkey"
+
+simultxSuccess:
+  metas:
+    title: "Simultaneous Translator Directory | eMarketTurkey"

@@ -1,0 +1,23 @@
+indexSuccess:
+  metas:
+    title: "Find a Company | eMarketTurkey"
+
+featuredSuccess:
+  metas:
+    title: "Featured Companies | eMarketTurkey"
+
+connectedSuccess:
+  metas:
+    title: "Companies in Your Network | eMarketTurkey"
+
+byCountrySuccess:
+  metas:
+    title: "Companies by Country | eMarketTurkey"
+
+byIndustrySuccess:
+  metas:
+    title: "Companies by Industry | eMarketTurkey"
+
+byNameSuccess:
+  metas:
+    title: "Companies by Name | eMarketTurkey"

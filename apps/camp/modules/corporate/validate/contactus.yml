@@ -1,0 +1,24 @@
+fields:
+    topic_id:
+        required:
+            msg: 'Please select a topic for your message.'
+    sender_name:
+        required:
+            msg: "Please enter your name and lastname."
+    sender_email:
+        required:
+            msg: 'Please enter your email address.'
+        sfEmailValidator:
+            strict:      true
+            email_error: 'Please correct your email address.'
+        sfStringValidator:
+            max: 50
+    message_text:
+        required:
+            msg: "Please enter your message."
+    verify_code:
+        required:
+            msg: 'Enter the security code shown on the picture.'
+        sfCryptographpValidator:
+            code_error: 'Incorrect security code! Please try again.'
+                    

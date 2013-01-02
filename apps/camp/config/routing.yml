@@ -1,0 +1,227 @@
+## B2B Rules
+
+search-companies:
+  url:   /:sf_culture/companies/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: companies, action: directory }
+
+companies-action:
+  url:   /:sf_culture/companies/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|connected|byCountry|byIndustry|byName|results) } 
+  param: { module: companies }
+
+companies-dir:
+  url:   /:sf_culture/companies/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: companies, action: directory }
+
+companies:
+  url:   /:sf_culture/companies
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: companies, action: index }
+
+company-category:
+  url: /:sf_culture/company/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: companies, action: category }
+
+company-product-substitute:
+  url:   /:sf_culture/company/:hash/products/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' }
+  param: { module: company, action: products }
+
+company-events:
+  url:   /:sf_culture/company/:hash/events
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: events }
+
+company-partners:
+  url:   /:sf_culture/company/:hash/partners
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: partners }
+
+company-network:
+  url:   /:sf_culture/company/:hash/network
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: network }
+
+company-people:
+  url:   /:sf_culture/company/:hash/people
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: people }
+
+company-photos:
+  url:   /:sf_culture/company/:hash/photos
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: photos }
+
+company-products:
+  url:   /:sf_culture/company/:hash/products
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: products }
+
+company-profile-action:
+  url:   /:sf_culture/company/:hash/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (products|connections|photos|partners|events|contact|upload|leads|product|lead) } 
+  param: { module: company }
+
+company-profile:
+  url:   /:sf_culture/company/:hash/profile
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: company, action: profile }
+
+#### End Core Rules
+
+## Core Rules
+
+bc-handler:
+  url:   /:sf_culture/:pmodule/:paction
+  requirements: { sf_culture: (?:en|de|tr), pmodule: (corporate), paction: (forIndividuals|forSuppliers) }
+  param: { module: default, action: allBC }
+
+alive:
+  url:   /alive
+  param: { module: default, action: alive }
+
+viewinvite:
+  url:   /:sf_culture/invite/view
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: viewInvite }
+
+cookie-setter:
+  url:   /setAnalyticFilterCookie
+  param: { module: default, action: setAnalyticFilterCookie }
+
+cryptographp:
+  url:   /cryptographp/:id
+  param: { module: cryptographp, action: index }
+  
+signup:
+  url:   /:sf_culture/signup
+  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  param: { module: signup, action: index }
+
+#### End Core Rules
+
+## Corporate Rules
+gov-approved:
+  url:   /:sf_culture/corporate/gov-approved
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: govApproved }
+
+aboutus:
+  url:   /:sf_culture/corporate/aboutus
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: aboutus }
+
+press-releases:
+  url:   /:sf_culture/press/releases
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: press, action: releases }
+
+contactus:
+  url:   /:sf_culture/corporate/contactus
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: contactus }
+
+help-center:
+  url:   /:sf_culture/support/help
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: support, action: help }
+
+help-page:
+  url:   /:sf_culture/help/:handle
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: help, action: generic }
+
+faq:
+  url:   /:sf_culture/support/faq
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: support, action: faq }
+
+support:
+  url:   /:sf_culture/support/overview
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: support, action: overview }
+
+privacy:
+  url:   /:sf_culture/corporate/privacy
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: privacy }
+
+privacy-help:
+  url:   /:sf_culture/help/privacy
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: help, action: privacy }
+
+terms:
+  url:   /:sf_culture/corporate/terms
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: terms }
+
+#### End Corporate Rules
+
+## Service Rules
+
+services:
+  url:   /:sf_culture/services/overview
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: overview }
+
+for-individuals:
+  url:   /:sf_culture/services/for-individuals
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: forIndividuals }
+
+for-suppliers:
+  url:   /:sf_culture/services/for-suppliers
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: forSuppliers }
+
+for-associations:
+  url:   /:sf_culture/services/for-associations
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: forAssociations }
+
+upgrade-gold:
+  url:   /:sf_culture/premium/upgrade/gold-membership
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: upgrade, type: gold }
+
+upgrade-platinum:
+  url:   /:sf_culture/premium/upgrade/platinum-membership
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: upgrade, type: platinum }
+
+premium-compare:
+  url:   /:sf_culture/premium/compare
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: compareMemberships }
+
+premium:
+  url:   /:sf_culture/services/premium
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: services, action: premium }
+
+#### End Service Rules
+
+## Default Rules
+homepage:
+  url:   /:sf_culture
+  requirements: {sf_culture: (en|de|tr)}
+  param: { module: default, action: index }
+
+homepage1:
+  url:   /
+  param: { module: default, action: index }
+
+default_index:
+  url:   /:sf_culture/:module
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { action: index }
+
+default:
+  url:   /:sf_culture/:module/:action/*
+  requirements: { sf_culture: (?:en|de|tr) } 
+
+#### End Default Rules

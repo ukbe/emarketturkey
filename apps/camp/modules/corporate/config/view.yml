@@ -1,0 +1,31 @@
+all:
+    layout: layoutBoxModel-corporate
+    
+aboutusSuccess:
+    metas:
+        title:  'About Us | eMarketTurkey'
+
+partnersSuccess:
+    metas:
+        title:  'Partners | eMarketTurkey'
+
+storiesSuccess:
+    metas:
+        title:  'Success Stories | eMarketTurkey'
+
+contactusSuccess:
+    metas:
+        title:  'Contact Us | eMarketTurkey'
+
+privacySuccess:
+    metas:
+        title:  'Privacy Policy | eMarketTurkey'
+
+termsSuccess:
+    metas:
+        title:  'Terms Of Use | eMarketTurkey'
+
+govApprovedSuccess:
+    metas:
+        title:  'Pre-approved by Government | eMarketTurkey'
+    
