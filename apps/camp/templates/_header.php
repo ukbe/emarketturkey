@@ -33,29 +33,29 @@
         </dl>
         <dl>
             <dt>
-                <a href="<?php echo url_for('@b2b.homepage') ?>" tabindex="2" id="btn-b2b"><b><?php echo __('B2B') ?></b></a>
+                <a href="<?php echo url_for('@homepage') ?>" tabindex="2" id="btn-b2b"><b><?php echo __('B2B') ?></b></a>
             </dt>
             <dd id='btn-b2b-box'>
                 <ul>
-                    <li><?php echo link_to(__('Companies'), '@b2b.companies') ?></li>
-                    <li><?php echo link_to(__('Products and Services'), '@b2b.products') ?></li>
-                    <li><?php echo link_to(__('Buying Leads'), '@b2b.buying-leads') ?></li>
-                    <li><?php echo link_to(__('Selling Leads'), '@b2b.selling-leads') ?></li>
-                    <li><?php echo link_to(__('Trade Shows'), '@b2b.tradeshows') ?></li>
-                    <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), '@b2b.tradeexperts') ?></li>
-                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@b2b.emttrust') ?></li>
+                    <li><?php echo link_to(__('Companies'), '@companies') ?></li>
+                    <li><?php echo link_to(__('Products and Services'), '@products') ?></li>
+                    <li><?php echo link_to(__('Buying Leads'), '@buying-leads') ?></li>
+                    <li><?php echo link_to(__('Selling Leads'), '@selling-leads') ?></li>
+                    <li><?php echo link_to(__('Trade Shows'), '@tradeshows') ?></li>
+                    <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), 'tradeexperts') ?></li>
+                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@emttrust') ?></li>
                 </ul>
             </dd>
         </dl>
         <dl>
             <dt>
-                <a href="<?php echo url_for('@hr.homepage') ?>" tabindex="3" id="btn-hr"><b><?php echo __('JOBS') ?></b></a>
+                <a href="<?php echo url_for('@jobs') ?>" tabindex="3" id="btn-hr"><b><?php echo __('JOBS') ?></b></a>
             </dt>
             <dd id='btn-hr-box'>
                 <ul>
-                    <li><?php echo link_to(__('Job Search'), '@hr.jobsearch') ?></li>
-                    <li><?php echo link_to(__('My Career'), '@hr.mycareer') ?></li>
-                    <li><?php echo link_to(__('Bookmarks'), '@hr.mycareer-action?action=bookmarks') ?></li>
+                    <li><?php echo link_to(__('Job Search'), '@jobsearch') ?></li>
+                    <li><?php echo link_to(__('My Career'), '@mycareer') ?></li>
+                    <li><?php echo link_to(__('Bookmarks'), '@mycareer-action?action=bookmarks') ?></li>
                 </ul>
             </dd>
         </dl>

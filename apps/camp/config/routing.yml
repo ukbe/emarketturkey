@@ -70,7 +70,200 @@ company-profile:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: company, action: profile }
 
-#### End Core Rules
+tradeshow-detail:
+  url:   /:sf_culture/tradeshow/:guid
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: tradeshow, action: view }
+
+tradeshows-action:
+  url:   /:sf_culture/tradeshows/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|attenders|byCountry|byIndustry|byName) }
+  param: { module: tradeshows }
+
+tradeshows-dir:
+  url:   /:sf_culture/tradeshows/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: tradeshows, action: directory }
+
+tradeshows:
+  url:   /:sf_culture/tradeshows
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: tradeshows, action: index }
+
+lead-detail:
+  url:   /:sf_culture/lead/:guid
+  requirements: { sf_culture: (?:en|de|tr), guid: '[A-Fa-f0-9]+' } 
+  param: { module: lead, action: view }
+
+buying-leads:
+  url:   /:sf_culture/buying
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: leads, action: index, type_code: buying }
+
+selling-leads:
+  url:   /:sf_culture/selling
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: leads, action: index, type_code: selling }
+
+leads-action:
+  url:   /:sf_culture/leads/:type_code/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (index|latest|network|byCategory|byCountry|results), type_code: (buying|selling) } 
+  param: { module: leads }
+
+leads-dir:
+  url:   /:sf_culture/leads/:type_code/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+', type_code: (selling|buying) } 
+  param: { module: leads, action: directory }
+
+search-products:
+  url:   /:sf_culture/products/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: products, action: directory }
+
+products-action:
+  url:   /:sf_culture/products/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (spotlight|network|byCategory|byCountry|results) } 
+  param: { module: products }
+
+products-dir:
+  url:   /:sf_culture/products/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: products, action: directory }
+
+products:
+  url:   /:sf_culture/products
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: products, action: index }
+
+product-category:
+  url: /:sf_culture/product/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: products, action: category }
+
+tradeexpert-profile:
+  url:   /:sf_culture/tradeexpert/:hash
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: tradeexpert, action: view }
+
+tradeexperts-action:
+  url:   /:sf_culture/tradeexperts/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (apply|byCountry|byIndustry|byName|find|connected|featured) }
+  param: { module: tradeexperts }
+
+tradeexperts-dir:
+  url:   /:sf_culture/tradeexperts/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: tradeexperts, action: directory }
+
+tradeexperts:
+  url:   /:sf_culture/tradeexperts
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: tradeexperts, action: index }
+
+place-profile:
+  url:   /:sf_culture/venue/:hash
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: venue, action: view }
+
+venues-action:
+  url:   /:sf_culture/venues/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|byCountry|byName) }
+  param: { module: venues }
+
+venues-dir:
+  url:   /:sf_culture/venues/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: venues, action: directory }
+
+venues:
+  url:   /:sf_culture/venues
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: venues, action: index }
+
+#### End B2B Rules
+
+## HR Rules
+
+jobsearch:
+  url:   /:sf_culture/jobs/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: search }
+
+company-jobs:
+  url:   /:sf_culture/company/:hash/jobs
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: company }
+
+group-jobs:
+  url:   /:sf_culture/group/:hash/jobs
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: group }
+
+similar-jobs:
+  url:   /:sf_culture/jobs/:guid/similar
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: jobs, action: similar }
+
+job:
+  url:   /:sf_culture/jobs/:guid/view
+  requirements: { id: '[A-F0-9]+', sf_culture: (?:en|de|tr) }
+  param: { module: jobs, action: view }
+
+jobs:
+  url:   /:sf_culture/jobs
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: jobs, action: index }
+
+myemployers:
+  url: /:sf_culture/mycareer/employers
+  param: { module: mycareer, action: employers, group: null }
+
+myemployers-banned:
+  url: /:sf_culture/mycareer/employers/banned
+  param: { module: mycareer, action: employers, group: banned }
+
+myemployers-bookmarked:
+  url: /:sf_culture/mycareer/employers/bookmarked
+  param: { module: mycareer, action: employers, group: bookmarked }
+
+myjobs:
+  url: /:sf_culture/mycareer/jobs
+  param: { module: mycareer, action: jobs, group: null }
+
+myjobs-applied-view:
+  url: /:sf_culture/mycareer/jobs/applied/:guid
+  param: { module: mycareer, action: jobs, group: applied }
+
+myjobs-applied:
+  url: /:sf_culture/mycareer/jobs/applied
+  param: { module: mycareer, action: jobs, group: applied }
+
+myjobs-bookmarked:
+  url: /:sf_culture/mycareer/jobs/bookmarked
+  param: { module: mycareer, action: jobs, group: bookmarked }
+
+myjobs-viewed:
+  url: /:sf_culture/mycareer/jobs/viewed
+  param: { module: mycareer, action: jobs, group: viewed }
+
+mycareer:
+  url: /:sf_culture/mycareer
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: mycareer, action: overview }
+
+mycareer-action:
+  url:   /:sf_culture/mycareer/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (bookmarks) } 
+  param: { module: mycareer }
+
+mycv-action:
+  url:   /:sf_culture/mycareer/cv/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (review|edit|status|basic|contact|education|work|courses|languages|skills|publications|awards|references|organisations|materials|custom|preview|export) } 
+  param: { module: mycv }
+
+
+
+#### End HR Rules
 
 ## Core Rules
 

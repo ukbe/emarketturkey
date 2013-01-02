@@ -1,0 +1,7 @@
+all:
+  stylesheets:    [hr-styles.css]
+
+indexSuccess:
+  stylesheets:    [fancybox/jquery.fancybox.css]
+
+  javascripts:    [fancybox/jquery.fancybox.pack.js]

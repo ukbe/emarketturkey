@@ -1,0 +1,24 @@
+fields:
+  resume-photo:
+    file:       True
+    sfFileValidator:
+      mime_types: @web_images
+      mime_types_error: Only PNG, JPEG and GIF files are allowed
+      max_size:         2048000
+      max_size_error:   Max allowed size is 2MB
+
+  resume-hccv:
+    file:       True
+    sfFileValidator:
+      mime_types: [@ms-docs, @open-docs, @other-docs]
+      mime_types_error: Only document file types are allowed
+      max_size:         5120000
+      max_size_error:   Max allowed size is 5MB
+
+  resume-portfolio:
+    file:       True
+    sfFileValidator:
+      mime_types: [@ms-docs, @open-docs, @other-docs, @archives, @web_images]
+      mime_types_error: Only document, archive or image file types are allowed
+      max_size:         5120000
+      max_size_error:   Max allowed size is 5MB
