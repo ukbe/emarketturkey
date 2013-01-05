@@ -61,36 +61,36 @@
         </dl>
         <dl>
             <dt>
-                <a href="<?php echo url_for('@ac.homepage') ?>" tabindex="4" id="btn-ac"><b><?php echo __('ACADEMY') ?></b></a>
+                <a href="<?php echo url_for('@academy') ?>" tabindex="4" id="btn-ac"><b><?php echo __('ACADEMY') ?></b></a>
             </dt>
             <dd id='btn-ac-box'>
                 <ul>
-                    <li><?php echo link_to(__('Articles'), '@ac.articles') ?></li>
-                    <li><?php echo link_to(__('News'), '@ac.news-home') ?></li>
-                    <li><?php echo link_to(__('Authors'), '@ac.homepage') ?></li>
-                    <li><?php echo link_to(__('Knowledgebase'), '@ac.kb') ?></li>
+                    <li><?php echo link_to(__('Articles'), '@articles') ?></li>
+                    <li><?php echo link_to(__('News'), '@news-home') ?></li>
+                    <li><?php echo link_to(__('Authors'), '@academy') ?></li>
+                    <li><?php echo link_to(__('Knowledgebase'), '@kb') ?></li>
                 </ul>
             </dd>
         </dl>
         <dl>
             <dt>
-                <a href="<?php echo url_for('@cm.homepage') ?>" tabindex="5" id="btn-cm"><b><?php echo __('COMMUNITY') ?></b></a>
+                <a href="<?php echo url_for('@community') ?>" tabindex="5" id="btn-cm"><b><?php echo __('COMMUNITY') ?></b></a>
             </dt>
             <dd id='btn-cm-box'>
                 <ul>
-                    <li><?php echo link_to(__('People'), '@cm.people') ?></li>
-                    <li><?php echo link_to(__('Groups'), '@cm.groups') ?></li>
-                    <li><?php echo link_to(__('Events'), '@cm.events') ?></li>
+                    <li><?php echo link_to(__('People'), '@people') ?></li>
+                    <li><?php echo link_to(__('Groups'), '@groups') ?></li>
+                    <li><?php echo link_to(__('Events'), '@events') ?></li>
                 </ul>
             </dd>
         </dl>
         <dl>
             <dt>
-                <a href="<?php echo url_for('@tx.homepage') ?>" tabindex="6" id="btn-tx"><b><?php echo __('TRANSLATION') ?></b></a>
+                <a href="<?php echo url_for('@translation') ?>" tabindex="6" id="btn-tx"><b><?php echo __('TRANSLATION') ?></b></a>
             </dt>
             <dd id='btn-tx-box'>
                 <ul>
-                    <li><?php echo link_to(__('Join Now'), '@tx.apply') ?></li>
+                    <li><?php echo link_to(__('Join Now'), '@tr-apply') ?></li>
                 </ul>
             </dd>
         </dl>

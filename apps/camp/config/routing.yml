@@ -182,7 +182,7 @@ venues:
 
 #### End B2B Rules
 
-## HR Rules
+## Jobs Rules
 
 jobsearch:
   url:   /:sf_culture/jobs/search
@@ -261,9 +261,266 @@ mycv-action:
   requirements: { sf_culture: (?:en|de|tr), action: (review|edit|status|basic|contact|education|work|courses|languages|skills|publications|awards|references|organisations|materials|custom|preview|export) } 
   param: { module: mycv }
 
+#### End Jobs Rules
 
+## Academy Rules
 
-#### End HR Rules
+article-source:
+  url: /:sf_culture/article/by/:stripped_display_name
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: source }
+
+articles-category:
+  url: /:sf_culture/articles/on/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: category }
+
+articles:
+  url: /:sf_culture/articles
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: index }
+
+article-feed:
+  url: /:sf_culture/article/:stripped_title/feed
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: articles, action: feed }
+
+author-article:
+  url: /:sf_culture/authors/:stripped_display_name/posts/:stripped_title
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: authors, action: article }
+
+author:
+  url: /:sf_culture/authors/:stripped_display_name/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (profile|posts) } 
+  param: { module: authors }
+
+authors:
+  url: /:sf_culture/authors
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: authors, action: overview }
+
+academy:
+  url: /:sf_culture/academy
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: academy, action: index }
+
+kb-article:
+  url: /:sf_culture/knowledgebase/posts/:stripped_title
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: kb, action: article }
+
+kb-category:
+  url: /:sf_culture/knowledgebase/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: kb, action: category }
+
+kb:
+  url: /:sf_culture/knowledgebase
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: kb, action: index }
+
+news-home:
+  url: /:sf_culture/news
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: index }
+
+news-category:
+  url: /:sf_culture/news/on/:stripped_category
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: category }
+
+news-source:
+  url: /:sf_culture/news/by/:stripped_display_name
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: source }
+
+news-feed:
+  url: /:sf_culture/news/:stripped_title/feed
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: feed }
+
+news:
+  url: /:sf_culture/news/:stripped_title
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: news, action: show }
+
+#### End Academy Rules
+
+## Community Rules
+
+community:
+  url: /:sf_culture/community
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: community, action: index }
+
+event-detail:
+  url:   /:sf_culture/event/:guid
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: event, action: view }
+
+events-action:
+  url:   /:sf_culture/events/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|attenders|byCountry|byIndustry|byName) }
+  param: { module: events }
+
+events-dir:
+  url:   /:sf_culture/events/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: events, action: directory }
+
+events:
+  url:   /:sf_culture/events
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: events, action: index }
+
+invite-friends:
+  url:   /:sf_culture/inviteFriends
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: friendfinder, action: inviteFriends }
+
+consent-invite:
+  url:   /:sf_culture/live-contacts/inviteFriends
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: friendfinder, action: inviteConsentFriends }
+
+consent-add:
+  url:   /:sf_culture/live-contacts/addFriends
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: friendfinder, action: addConsentFriends }
+
+livecontacts:
+  url:   /:sf_culture/live-contacts
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: friendfinder, action: addConsentFriends }
+
+friendfinder:
+  url:   /:sf_culture/friendfinder
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: friendfinder, action: index }
+
+group-profile-action:
+  url:   /:sf_culture/group/:stripped_name/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (info|discussions|connections|photos|events|career|contact) } 
+  param: { module: group }
+
+group-profile:
+  url:   /:sf_culture/group/:stripped_name
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: group, action: posts }
+
+search-groups:
+  url:   /:sf_culture/groups/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: groups, action: directory }
+
+join-group:
+  url:   /:sf_culture/group/join
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: groups, action: join }
+
+edit-group-mem:
+  url:   /:sf_culture/group/join
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: groups, action: join }
+
+groups-action:
+  url:   /:sf_culture/groups/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|connected|byCountry|byIndustry|byName|results) } 
+  param: { module: groups }
+
+groups-dir:
+  url:   /:sf_culture/groups/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: groups, action: directory }
+
+groups:
+  url:   /:sf_culture/groups
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: groups, action: index }
+
+notifications:
+  url:   /:sf_culture/notifications
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: network, action: notifications }
+
+network-activity:
+  url:   /:sf_culture/activity
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: network, action: activity }
+
+requests:
+  url:   /:sf_culture/requests
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: network, action: requests }
+
+network:
+  url:   /:sf_culture/network
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: network, action: index }
+
+search-users:
+  url:   /:sf_culture/people/search
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: people, action: directory }
+
+connect-user:
+  url:   /:sf_culture/people/connect
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: people, action: connect }
+
+connect-edit-user:
+  url:   /:sf_culture/people/connection
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: people, action: connection }
+
+pymk:
+  url:   /:sf_culture/pymk
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: people, action: pymk }
+
+people-action:
+  url:   /:sf_culture/people/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (pymk|connected|byCountry|byIndustry|byName|results) } 
+  param: { module: people }
+
+people-dir:
+  url:   /:sf_culture/people/:substitute
+  requirements: { sf_culture: (?:en|de|tr), substitute: '[A-Za-z\-@]+' } 
+  param: { module: people, action: directory }
+
+people:
+  url:   /:sf_culture/people
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: people, action: index }
+
+#<--- Skipped module=profile
+
+user-profile-action:
+  url:   /:sf_culture/profile/:hash/:action
+  requirements: { sf_culture: (?:en|de|tr), action: (connections|photos|events|career) } 
+  param: { module: user }
+
+user-profile:
+  url:   /:sf_culture/profile/:hash
+  requirements: { sf_culture: (?:en|de|tr) }
+  param: { module: user, action: profile }
+ 
+#### End Community Rules
+
+## Translation Rules
+
+translation:
+  url:   /:sf_culture/translation
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: translation, action: index }
+
+tr-apply:
+  url:   /:sf_culture/translation/apply
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: translation, action: apply }
+
+#### End Translation Rules
 
 ## Core Rules
 
