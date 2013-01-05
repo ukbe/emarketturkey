@@ -1,0 +1,32 @@
+all:
+
+  metas:
+    title:        'Community | eMarketTurkey'
+    description:  'eMarketTurkey Community Platform'
+    keywords:     'human networking, professional, network, community, event, calender, personal profiles'
+
+  stylesheets:    [cm-styles.css]
+
+indexSuccess:
+  metas:
+    title: "Find a Trade Show | eMarketTurkey"
+
+featuredSuccess:
+  metas:
+    title: "Featured Trade Shows | eMarketTurkey"
+
+attendersSuccess:
+  metas:
+    title: "Who is Attending? | eMarketTurkey"
+
+byCountrySuccess:
+  metas:
+    title: "Trade Shows by Country | eMarketTurkey"
+
+byIndustrySuccess:
+  metas:
+    title: "Trade Shows by Industry | eMarketTurkey"
+
+byNameSuccess:
+  metas:
+    title: "Trade Shows by Name | eMarketTurkey"

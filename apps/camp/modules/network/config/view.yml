@@ -1,0 +1,21 @@
+all:
+
+  metas:
+    title: "My Network | eMarketTurkey"
+    description:  'eMarketTurkey Community Platform'
+    keywords:     'human networking, professional, network, community, event, calender, personal profiles'
+
+  stylesheets:    [cm-styles.css]
+
+activitySuccess:
+    metas:
+        title: "Network Activity | eMarketTurkey"
+
+requestsSuccess:
+    metas:
+        title: "Network Requests | eMarketTurkey"
+
+pymkSuccess:
+    metas:
+        title: "People You May Know | eMarketTurkey"
+

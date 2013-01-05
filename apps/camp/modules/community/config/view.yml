@@ -1,0 +1,8 @@
+all:
+
+  metas:
+    title:        'Community | eMarketTurkey'
+    description:  'eMarketTurkey Community Platform'
+    keywords:     'human networking, professional, network, community, event, calender, personal profiles'
+
+  stylesheets:    [cm-styles.css]

@@ -1,0 +1,7 @@
+all:
+  metas:
+    title:  'Translation | eMarketTurkey'
+    description:  'eMarketTurkey Translation is a human oriented translation platform.'
+    keywords:     'translate, translation, translator, localization, interpret, community'
+
+  stylesheets:    [tx-styles.css]

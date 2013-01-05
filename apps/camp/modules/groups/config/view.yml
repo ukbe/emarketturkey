@@ -1,0 +1,32 @@
+all:
+
+  metas:
+    title:        'Community | eMarketTurkey'
+    description:  'eMarketTurkey Community Platform'
+    keywords:     'human networking, professional, network, community, event, calender, personal profiles'
+
+  stylesheets:    [cm-styles.css]
+
+indexSuccess:
+  metas:
+    title: "Find a Group | eMarketTurkey"
+
+featuredSuccess:
+  metas:
+    title: "Featured Groups | eMarketTurkey"
+
+connectedSuccess:
+  metas:
+    title: "Groups in Your Network | eMarketTurkey"
+
+byCountrySuccess:
+  metas:
+    title: "Groups by Country | eMarketTurkey"
+
+byTypeSuccess:
+  metas:
+    title: "Groups by Type | eMarketTurkey"
+
+byNameSuccess:
+  metas:
+    title: "Groups by Name | eMarketTurkey"

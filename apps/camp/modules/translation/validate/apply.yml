@@ -1,0 +1,37 @@
+fields:
+    account:
+        required:
+            msg: "Please select an account in order to apply for Translator."
+
+    company_name:
+        required:
+            msg: "Please specify your company's name."
+    company_industry:
+        required:
+            msg: "Please select an industry which suits your company's business area."
+    company_business_type:
+        required:
+            msg: "Please select a business type which suits your company's business model."
+    company_country:
+        required:
+            msg: "Please specify which country your company is located in."
+    company_street:
+        required:
+            msg: "Please enter street address of your company."
+    company_state:
+        required:
+            msg: "Please specify which state/province your company is located in."
+    company_city:
+        required:
+            msg: "Please specify which city/town your company is located in."
+    company_phone:
+        required:
+            msg: "Please enter phone number of your company."
+
+    langs:
+        required:
+            msg: "Please select at least one language."
+    translator_introduction:
+        required:
+            msg: "Please specify introduction information for Translator profile."
+            

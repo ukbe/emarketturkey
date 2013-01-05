@@ -1,0 +1,19 @@
+all:
+
+  metas:
+    title: "Friend Finder | eMarketTurkey"
+    description:  'eMarketTurkey Community Platform'
+    keywords:     'human networking, professional, network, community, event, calender, personal profiles'
+
+  stylesheets:    [cm-styles.css]
+
+  layout:  'layoutBoxModel-island'
+
+addLiveFriendsSuccess:
+  metas:
+    title: "Add Windows Live Friends | eMarketTurkey"
+
+inviteLiveFriendsSuccess:
+  metas:
+    title: "Invite Windows Live Friends | eMarketTurkey"
+        
