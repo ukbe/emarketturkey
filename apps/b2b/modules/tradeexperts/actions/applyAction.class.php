@@ -4,6 +4,12 @@ class applyAction extends EmtAction
 {
     public function initialize($context, $moduleName, $actionName)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.tradeexperts-action?".http_build_query($params), 301);
+
         parent::initialize($context, $moduleName, $actionName);
         
         if ($this->sesuser->isNew()) $this->redirect('@myemt.login?_ref='.$this->getRequest()->getUri());

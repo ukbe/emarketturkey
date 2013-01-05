@@ -4,6 +4,9 @@ class viewAction extends EmtPlaceAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.place-profile?hash=".$this->place->getHash(), 301);
+
         $this->getResponse()->setTitle($this->place . ' | eMarketTurkey');
 
         $this->owner = $this->place->getOwner();

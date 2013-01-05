@@ -4,6 +4,12 @@ class networkAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.products-action?".http_build_query($params), 301);
+
         $this->keyword = $this->getRequestParameter('keyword', '');
         $this->page = is_numeric($this->getRequestParameter('page')) ? $this->getRequestParameter('page') : 1;
         $this->category = is_numeric($this->getRequestParameter('category')) ? ProductCategoryPeer::retrieveByPK($this->getRequestParameter('category')) : null;

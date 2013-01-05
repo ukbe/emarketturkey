@@ -4,6 +4,9 @@ class viewAction extends EmtTradeExpertAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.tradeexpert-profile?hash=".$this->tradeexpert->getHash(), 301);
+
         $this->getResponse()->setTitle($this->tradeexpert . ' | eMarketTurkey');
         
         $this->areas = $this->tradeexpert->getAreas();

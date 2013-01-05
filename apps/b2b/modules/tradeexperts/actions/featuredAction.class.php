@@ -4,6 +4,12 @@ class featuredAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.tradeexperts-action?".http_build_query($params), 301);
+
         $types = array(PrivacyNodeTypePeer::PR_NTYP_COMPANY, PrivacyNodeTypePeer::PR_NTYP_USER);
         $this->type_id = myTools::pick_from_list($this->getRequestParameter('type'), $types, null);
 

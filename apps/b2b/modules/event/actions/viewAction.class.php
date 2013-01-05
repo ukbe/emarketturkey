@@ -4,6 +4,9 @@ class viewAction extends EmtEventAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.tradeshow-detail?guid={$request->getParameter('guid')}", 301);
+
         $this->getResponse()->setTitle($this->event . ' | eMarketTurkey');
 
         $this->photos = $this->event->getPhotos();

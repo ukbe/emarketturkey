@@ -4,11 +4,18 @@ class connectedAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.companies-action?".http_build_query($params), 301);
+        
+        
         $this->keyword = $this->getRequestParameter('keyword', '');
         $this->page = is_numeric($this->getRequestParameter('page')) ? $this->getRequestParameter('page') : 1;
         $this->industry = is_numeric($this->getRequestParameter('industry')) ? BusinessSectorPeer::retrieveByPK($this->getRequestParameter('industry')) : null;
         $this->country = preg_match("/^[A-Za-z]{2}$/", $this->getRequestParameter('country')) ? strtoupper($this->getRequestParameter('country')) : '';
-        
+
         $joins = $wheres = array();
         
         if ($this->keyword || $this->country)

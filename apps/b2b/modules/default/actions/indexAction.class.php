@@ -4,6 +4,8 @@ class indexAction extends EmtAction
 {
     public function execute($request)
     {
+        $this->redirect('@camp.homepage', 301);
+
         if (!$this->getUser()->getAttribute('culture_selected') && $_SERVER["REQUEST_URI"]="/")
         {
             foreach ($this->getRequest()->getLanguages() as $lang)

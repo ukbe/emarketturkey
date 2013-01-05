@@ -4,6 +4,12 @@ class featuredAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.tradeshows-action?".http_build_query($params), 301);
+
         $this->keyword = $this->getRequestParameter('keyword', '');
         $this->page = is_numeric($this->getRequestParameter('page')) ? $this->getRequestParameter('page') : 1;
         $this->industry = null; //is_numeric($this->getRequestParameter('cm_industry')) ? BusinessSectorPeer::retrieveByPK($this->getRequestParameter('cm_industry')) : null;

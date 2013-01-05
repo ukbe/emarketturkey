@@ -4,6 +4,9 @@ class resultsAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect('@camp.homepage');
+
         if ($this->hasRequestParameter('within') && is_numeric($this->getRequestParameter('within')))
         {
             $within = array(PrivacyNodeTypePeer::PR_NTYP_COMPANY => 'Companies',
