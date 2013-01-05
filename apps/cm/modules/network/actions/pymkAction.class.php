@@ -21,7 +21,7 @@ class pymkAction extends EmtManageAction
         $offset = $this->bookmark = (is_numeric($pg) ? $pg * $perpage : 0);
         $bookmark = myTools::fixInt($this->getRequestParameter('bookmark'));
         if ($bookmark) $offset = $this->boookmark = $bookmark;
-var_dump($this->bookmark);die;        
+
         $this->people = $this->sesuser->getFriendsToAdvise(2, $perpage, false, $offset);
         $count = $this->sesuser->countFriendsToAdvise(2);
         if ($offset > 0 && !count($this->people))
