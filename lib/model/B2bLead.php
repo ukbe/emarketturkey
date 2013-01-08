@@ -112,7 +112,7 @@ class B2bLead extends BaseB2bLead
     public function getUrl()
     {
         $app =  sfContext::getInstance()->getConfiguration()->getApplication();
-        return ($app=='b2b'?'@':'@b2b.')."lead-detail?guid={$this->getGuid()}";
+        return ($app=='camp'?'@':'@camp.')."lead-detail?guid={$this->getGuid()}";
     }
     
     public function hasLsiIn($culture)

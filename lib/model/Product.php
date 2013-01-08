@@ -106,14 +106,14 @@ class Product extends BaseProduct
     public function getUrl($standalone = false, $tab = null)
     {
         $app =  sfContext::getInstance()->getConfiguration()->getApplication();
-        if ($standalone) return ($app=='b2b'?'@':'@b2b.')."product-detail?id={$this->getId()}" . ($tab ? "&tab=$tab" : "");
+        if ($standalone) return ($app=='camp'?'@':'@camp.')."product-detail?id={$this->getId()}" . ($tab ? "&tab=$tab" : "");
         return $this->getCompany()->getProfileActionUrl('product') . "&id={$this->getId()}" . ($tab ? "&tab=$tab" : "");
     }
     
     public function getPhotoUrl($standalone = false, $photo_id)
     {
         $app =  sfContext::getInstance()->getConfiguration()->getApplication();
-        if ($standalone) return ($app=='b2b'?'@':'@b2b.')."product-detail?id={$this->getId()}&photo=$photo_id";
+        if ($standalone) return ($app=='camp'?'@':'@camp.')."product-detail?id={$this->getId()}&photo=$photo_id";
         return $this->getCompany()->getProfileActionUrl('product') . "&id={$this->getId()}&photo=$photo_id";
     }
     

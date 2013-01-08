@@ -49,6 +49,7 @@ class PrivacyNodeTypePeer extends BasePrivacyNodeTypePeer
     CONST PR_NTYP_POST_LOCATION     = 39;
     CONST PR_NTYP_POST_STATUS       = 40;
     CONST PR_NTYP_MESSAGE           = 41;
+    CONST PR_NTYP_ANNOUNCEMENT      = 42;
 
     public static $typeNames    = array (1 => 'User',
                                          2 => 'Company',
@@ -91,6 +92,7 @@ class PrivacyNodeTypePeer extends BasePrivacyNodeTypePeer
                                          39 => 'Post Location',
                                          40 => 'Post Status',
                                          41 => 'Message',
+                                         42 => 'Announcement',
                                          );
     public static $matrix       = array('User'      => self::PR_NTYP_USER,
                                         'Company'   => self::PR_NTYP_COMPANY,
@@ -124,6 +126,7 @@ class PrivacyNodeTypePeer extends BasePrivacyNodeTypePeer
                                         'PostLocation' => self::PR_NTYP_POST_LOCATION,
                                         'PostStatus' => self::PR_NTYP_POST_STATUS,
                                         'Message' => self::PR_NTYP_MESSAGE,
+                                        'Announcement' => self::PR_NTYP_ANNOUNCEMENT,
                                         );
 
     public static function getTypeFromClassname($classname, $return_obj = false)
@@ -189,6 +192,8 @@ class PrivacyNodeTypePeer extends BasePrivacyNodeTypePeer
             case self::PR_NTYP_PLACE        : return $object->getUrl();
                                               break;
             case self::PR_NTYP_TRADE_EXPERT : return $object->getProfileUrl();
+                                              break;
+            case self::PR_NTYP_ANNOUNCEMENT : return $object->getManageUrl();
                                               break;
             default                         : return null;
         }

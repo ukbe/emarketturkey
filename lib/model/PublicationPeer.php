@@ -35,20 +35,25 @@ class PublicationPeer extends BasePublicationPeer
                 start with parent_id=0
                 connect by nocycle prior id = parent_id
             ) HCATS ON EMT_PUBLICATION.CATEGORY_ID=HCATS.ID
-            WHERE EMT_PUBLICATION_I18N.CULTURE='".sfContext::getInstance()->getUser()->getCulture()."'
+            WHERE EMT_PUBLICATION_I18N.CULTURE=:culture
             AND HCATS.ACTIVE=1
-            ".($type_id ? "AND EMT_PUBLICATION.TYPE_ID=$type_id" : '')."
-            ".($featured_type ? "AND EMT_PUBLICATION.FEATURED_TYPE=$featured_type" : '')."
+            ".($type_id ? "AND EMT_PUBLICATION.TYPE_ID=:type_id" : '')."
+            ".($featured_type ? "AND EMT_PUBLICATION.FEATURED_TYPE=:featured_type" : '')."
             ".(!$include_inactive ? "AND EMT_PUBLICATION.ACTIVE=1" : '')."
-            ".($category_id ? ($include_sub_categories ? "AND HCATS.SPOINT=$category_id" : "AND HCATS.ID=$category_id") : '')."
+            ".($category_id ? ($include_sub_categories ? "AND HCATS.SPOINT=:category_id" : "AND HCATS.ID=:category_id") : '')."
             ORDER BY EMT_PUBLICATION.CREATED_AT DESC
         ";
         if ($limit)
         {
-            $sql = "SELECT * FROM ($sql) WHERE ROWNUM<=$limit";
+            $sql = "SELECT * FROM ($sql) WHERE ROWNUM<=:limit";
         }
         
         $stmt = $con->prepare($sql);
+        $stmt->bindValue(':culture', sfContext::getInstance()->getUser()->getCulture());
+        if ($type_id) $stmt->bindValue(':type_id', $type_id);
+        if ($featured_type) $stmt->bindValue(':featured_type', $featured_type);
+        if ($category_id) $stmt->bindValue(':category_id', $category_id);
+        if ($limit) $stmt->bindValue(':limit', $limit);
         $stmt->execute();
         return PublicationPeer::populateObjects($stmt);
     }
@@ -224,7 +229,7 @@ class PublicationPeer extends BasePublicationPeer
                         {
                             $sql = "UPDATE EMT_PUBLICATION_I18N 
                                     SET id=:id, culture=:culture, title=:title, stripped_title=:stripped_title, short_title=:short_title, summary=:summary, introduction=:introduction, content=:content
-                                    WHERE id=".$object->getId()." AND culture=:culture
+                                    WHERE id=:id AND culture=:culture
                             ";
                         }
                         else
@@ -282,9 +287,9 @@ class PublicationPeer extends BasePublicationPeer
                     SELECT EMT_PUBLICATION.*, RANK() OVER (PARTITION BY EMT_PUBLICATION.AUTHOR_ID ORDER BY EMT_PUBLICATION.CREATED_AT DESC) SQNUM FROM EMT_PUBLICATION
                     LEFT JOIN EMT_PUBLICATION_I18N ON EMT_PUBLICATION.ID=EMT_PUBLICATION_I18N.ID
                     LEFT JOIN EMT_AUTHOR ON EMT_PUBLICATION.AUTHOR_ID=EMT_AUTHOR.ID
-                    WHERE EMT_AUTHOR.IS_COLUMNIST=1 AND EMT_AUTHOR.FEATURED_TYPE=".AuthorPeer::AUTH_FEATURED_COLUMN."
-                        AND EMT_AUTHOR.ACTIVE=1 AND EMT_PUBLICATION.ACTIVE=1 AND EMT_PUBLICATION.FEATURED_TYPE=".PublicationPeer::PUB_FEATURED_COLUMN."
-                        AND EMT_PUBLICATION.TYPE_ID=".PublicationPeer::PUB_TYP_ARTICLE."
+                    WHERE EMT_AUTHOR.IS_COLUMNIST=1 AND EMT_AUTHOR.FEATURED_TYPE=:auth_featured_type
+                        AND EMT_AUTHOR.ACTIVE=1 AND EMT_PUBLICATION.ACTIVE=1 AND EMT_PUBLICATION.FEATURED_TYPE=:pub_featured_type
+                        AND EMT_PUBLICATION.TYPE_ID=:type_id
                         ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=:category_id" : '')."
                         AND EMT_PUBLICATION_I18N.CULTURE=:culture
                 )
@@ -294,6 +299,9 @@ class PublicationPeer extends BasePublicationPeer
         
         $stmt = $con->prepare($sql);
         if ($category_id) $stmt->bindValue(':category_id', $category_id);
+        $stmt->bindValue(':auth_featured_type', AuthorPeer::AUTH_FEATURED_COLUMN);
+        $stmt->bindValue(':pub_featured_type', PublicationPeer::PUB_FEATURED_COLUMN);
+        $stmt->bindValue(':type_id', PublicationPeer::PUB_TYP_ARTICLE);
         $stmt->bindValue(':limit', $limit);
         $stmt->bindValue(':culture', sfContext::getInstance()->getUser()->getCulture());
         $stmt->execute();

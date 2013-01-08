@@ -42,7 +42,7 @@ class Place extends BasePlace
 
     public function getUrl()
     {
-        return (sfContext::getInstance()->getConfiguration()->getApplication() == "b2b" ? "@" : "@b2b.") . "place-profile?hash=".$this->getHash();
+        return (sfContext::getInstance()->getConfiguration()->getApplication() == "camp" ? "@" : "@camp.") . "place-profile?hash=".$this->getHash();
     }
 
     public function getLogo()

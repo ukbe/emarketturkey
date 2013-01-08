@@ -210,26 +210,26 @@ class Group extends BaseGroup
     
     public function getProfileUrl()
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "cm")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
         return "@group-profile?stripped_name=".$this->getStrippedName();
         else
-        return "@cm.group-profile?stripped_name=".$this->getStrippedName();
+        return "@camp.group-profile?stripped_name=".$this->getStrippedName();
     }
 
     public function getPhotosUrl($paramstr = null)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "cm")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return "@group-photos?stripped_name=".$this->getStrippedName().(isset($paramstr) ? "&$paramstr" : "");
         else
-            return "@cm.group-photos?stripped_name=".$this->getStrippedName().(isset($paramstr) ? "&$paramstr" : "");
+            return "@camp.group-photos?stripped_name=".$this->getStrippedName().(isset($paramstr) ? "&$paramstr" : "");
     }
     
     public function getUploadUrl()
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "cm")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return "@group-upload-photo?stripped_name=".$this->getStrippedName();
         else
-            return "@cm.group-upload-photo?stripped_name=".$this->getStrippedName();
+            return "@camp.group-upload-photo?stripped_name=".$this->getStrippedName();
     }
     
     public function getPhoto($mi_id)
@@ -1058,10 +1058,10 @@ WHERE
 
 	public function getProfileActionUrl($action)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "cm")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return "@group-profile-tab?stripped_name={$this->getStrippedName()}&action=$action";
         else
-            return "@cm.group-profile-tab?stripped_name={$this->getStrippedName()}&action=$action";
+            return "@camp.group-profile-tab?stripped_name={$this->getStrippedName()}&action=$action";
     }
     
     public function getProfileTabsForUser($user)

@@ -58,7 +58,7 @@ class JobPeer extends BaseJobPeer
         $stmt->execute();
         
         $res = JobPeer::populateObjects($stmt);
-        
+
         return count($res) ? $res[0] : null;
     }
 

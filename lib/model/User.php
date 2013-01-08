@@ -119,31 +119,31 @@ class User extends BaseUser
 
     public function getProfileUrl()
     {
-        return (sfContext::getInstance()->getConfiguration()->getApplication() == "cm" ? "@" : "@cm.") . "user-profile?hash={$this->getHash()}";
+        return (sfContext::getInstance()->getConfiguration()->getApplication() == "camp" ? "@" : "@camp.") . "user-profile?hash={$this->getHash()}";
     }
     
     public function getProfileActionUrl($action)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "cm")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return $this->hasUsername()?"@user-profile-action?hash={$this->getHash()}&action=$action":"@user-profile-action?hash={$this->getHash()}&action=$action";
         else
-            return $this->hasUsername()?"@cm.user-profile-action?hash={$this->getHash()}&action=$action":"@cm.user-profile-action?hash={$this->getHash()}&action=$action";
+            return $this->hasUsername()?"@camp.user-profile-action?hash={$this->getHash()}&action=$action":"@camp.user-profile-action?hash={$this->getHash()}&action=$action";
     }
     
     public function getPhotosUrl($paramstr = null)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "cm")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return ($this->hasUsername()?"@user-profile-action?hash={$this->getHash()}&action=photos":"@user-profile-action?hash={$this->getHash()}&action=photos") . (isset($paramstr) ? "&$paramstr" : "");
         else
-            return ($this->hasUsername()?"@cm.user-profile-action?hash={$this->getHash()}&action=photos":"@cm.user-profile-action?hash={$this->getHash()}&action=photos") . (isset($paramstr) ? "&$paramstr" : "");
+            return ($this->hasUsername()?"@camp.user-profile-action?hash={$this->getHash()}&action=photos":"@camp.user-profile-action?hash={$this->getHash()}&action=photos") . (isset($paramstr) ? "&$paramstr" : "");
     }
     
     public function getUploadUrl()
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "cm")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return $this->hasUsername()?"@user-upload-photo?username=".$this->getLogin()->getUsername():"@profile-upload-photo?id=".$this->getId();
         else
-            return $this->hasUsername()?"@cm.user-upload-photo?username=".$this->getLogin()->getUsername():"@cm.profile-upload-photo?id=".$this->getId();
+            return $this->hasUsername()?"@camp.user-upload-photo?username=".$this->getLogin()->getUsername():"@camp.profile-upload-photo?id=".$this->getId();
     }
     
     public function isFriendsWith($user_id)

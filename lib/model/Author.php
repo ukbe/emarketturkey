@@ -74,7 +74,7 @@ class Author extends BaseAuthor
     public function getUrl($action = 'posts')
     {
         $app = sfContext::getInstance()->getConfiguration()->getApplication();
-        $app = $app == 'ac' ? '' : "$app.";
+        $app = $app == 'camp' ? '' : "$app.";
         return "@{$app}author?action={$action}&stripped_display_name={$this->getStrippedDisplayName()}";
     }
 

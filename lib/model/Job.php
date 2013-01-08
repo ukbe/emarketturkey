@@ -31,10 +31,10 @@ class Job extends BaseJob
 
     public function getUrl()
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "hr")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
         return "@job?guid=" . $this->getGuid();
         else
-        return "@hr.job?guid=" . $this->getGuid();
+        return "@camp.job?guid=" . $this->getGuid();
     }
 
     public function getManageUrl()

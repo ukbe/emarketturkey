@@ -76,16 +76,16 @@ class Company extends BaseCompany
 
     public function getProfileUrl()
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "b2b")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
         return $this->hasAccountName()?"@company-profile-accountname?accountname=".$this->getAccountName():"@company-profile?hash=".$this->getHash();
         else
-        return $this->hasAccountName()?"@b2b.company-profile-accountname?accountname=".$this->getAccountName():"@b2b.company-profile?hash=".$this->getHash();
+        return $this->hasAccountName()?"@camp.company-profile-accountname?accountname=".$this->getAccountName():"@camp.company-profile?hash=".$this->getHash();
     }
 
     public function getProfileActionUrl($action_name)
     {
         $current = sfContext::getInstance()->getConfiguration()->getApplication();
-        $target = ($action_name == 'jobs' ? 'hr' : 'b2b');
+        $target = 'camp';
         if ($action_name == 'jobs') return "@".($current!=$target? "$target." : '')."company-jobs?hash={$this->getHash()}";
         return "@".($current!=$target? "$target." : '')."company-profile-action?hash={$this->getHash()}&action=$action_name";
     }
@@ -795,26 +795,26 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
     
     public function getPhotosUrl($paramstr = null)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "b2b")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return "@company-photos?hash=".$this->getHash().(isset($paramstr) ? "&$paramstr" : "");
         else
-            return "@b2b.company-photos?hash=".$this->getHash().(isset($paramstr) ? "&$paramstr" : "");
+            return "@camp.company-photos?hash=".$this->getHash().(isset($paramstr) ? "&$paramstr" : "");
     }
     
     public function getProductsUrl($paramstr = null)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "b2b")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return "@company-products?hash=".$this->getHash().(isset($paramstr) ? "&$paramstr" : "");
         else
-            return "@b2b.company-products?hash=".$this->getHash().(isset($paramstr) ? "&$paramstr" : "");
+            return "@camp.company-products?hash=".$this->getHash().(isset($paramstr) ? "&$paramstr" : "");
     }
     
     public function getProductUrl($product_id)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "b2b")
+        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
             return "@product-detail?hash={$this->getHash()}&id={$product_id}";
         else
-            return "@b2b.product-detail?hash={$this->getHash()}&id={$product_id}";
+            return "@camp.product-detail?hash={$this->getHash()}&id={$product_id}";
     }
     
     public function getDefineText($to_user = null, $target_culture = null)

@@ -60,7 +60,7 @@ class TradeExpert extends BaseTradeExpert
     
     public function getProfileUrl()
     {
-        return (sfContext::getInstance()->getConfiguration()->getApplication() == "b2b" ? "@" : "@b2b.") . "tradeexpert-profile?hash=".$this->getHash();
+        return (sfContext::getInstance()->getConfiguration()->getApplication() == "camp" ? "@" : "@camp.") . "tradeexpert-profile?hash=".$this->getHash();
     }
 
     public function getContact()

@@ -136,13 +136,13 @@ class Publication extends BasePublication
 
         if ($this->isKB())
         {
-            return $app == 'ac' ? "@kb-article?stripped_title=".$this->getStrippedTitle() : "@ac.kb-article?stripped_title=".$this->getStrippedTitle();
+            return $app == 'camp' ? "@kb-article?stripped_title=".$this->getStrippedTitle() : "@camp.kb-article?stripped_title=".$this->getStrippedTitle();
         }
         
         switch ($this->getTypeId())
         {
-            case PublicationPeer::PUB_TYP_ARTICLE : return $app == 'ac' ? "@author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName()}&stripped_title=".$this->getStrippedTitle() : "@ac.author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName()}&stripped_title=".$this->getStrippedTitle();
-            case PublicationPeer::PUB_TYP_NEWS : return $app == 'ac' ? "@news?stripped_title=".$this->getStrippedTitle() : "@ac.news?stripped_title=".$this->getStrippedTitle();
+            case PublicationPeer::PUB_TYP_ARTICLE : return $app == 'camp' ? "@author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName()}&stripped_title=".$this->getStrippedTitle() : "@camp.author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName()}&stripped_title=".$this->getStrippedTitle();
+            case PublicationPeer::PUB_TYP_NEWS : return $app == 'camp' ? "@news?stripped_title=".$this->getStrippedTitle() : "@camp.news?stripped_title=".$this->getStrippedTitle();
         }
         return "";
     }

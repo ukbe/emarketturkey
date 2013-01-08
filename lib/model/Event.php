@@ -33,16 +33,14 @@ class Event extends BaseEvent
     {
         $app = sfContext::getInstance()->getConfiguration()->getApplication();
         
-        $route = "event-detail?guid={$this->getGuid()}";
-        
         switch ($this->getEventType()->getTypeClass())
         {
             case EventTypePeer::ECLS_TYP_BUSINESS :
-                return ($app == 'b2b' ? '@' : '@b2b.') . $route;
+                return ($app == 'camp' ? "@tradeshow-detail?guid={$this->getGuid()}" : "@camp.tradeshow-detail?guid={$this->getGuid()}");
             case EventTypePeer::ECLS_TYP_ACADEMIC :
-                return ($app == 'ac' ? '@' : '@ac.') . $route;
+                return ($app == 'camp' ? "@event-detail?guid={$this->getGuid()}" : "@camp.event-detail?guid={$this->getGuid()}");
             case EventTypePeer::ECLS_TYP_SOCIAL :
-                return ($app == 'cm' ? '@' : '@cm.') . $route;
+                return ($app == 'camp' ? "@event-detail?guid={$this->getGuid()}" : "@camp.event-detail?guid={$this->getGuid()}");
         }
         return (!$load_app || $load_app == $app ? '@' : "@$load_app.") . $route;
     }
