@@ -12,7 +12,7 @@
 
             <dl class="_ftAd">
                 <dt></dt>
-                <dd class="_ft_full_seal"><?php echo link_to(image_tag('layout/badges/ekonomi-seal-whitebg.S.tr.png'), '@gov-approved') ?></dd>
+                <dd class="_ft_full_seal"><?php echo link_to(image_tag('layout/badges/ekonomi-seal-whitebg.S.'.$sf_user->getCulture().'.png'), '@gov-approved') ?></dd>
             </dl>
 
 			<dl>

@@ -29,7 +29,6 @@
 div._ftAd { display:block;padding:15px 0 5px 0;background:transparent;border-color:transparent;}
 div._ftAd ul {margin:-12px 0 0;}
 div._ftAd ul li {margin-bottom:5px;}
-div._ftAd div {display:none}
 
 div._ftAd li a {
     xwidth:190px;
@@ -74,6 +73,46 @@ li._ft_sub strong a:hover {text-decoration:none; }
     position:absolute;bottom:10px;left:10px;
 }
 ._ft_truste a:hover img {opacity:.99}
+
+._ft_full_seal {
+    height: 150px;
+}
+._ft_full_seal a img {
+    display:block;
+    text-indent:-900px;overflow:hidden;
+    margin: 0 auto;
+    max-height: 140px;
+}
+._ft_full_seal a {
+    display:block;width:auto;height:140px;padding: 5px 0px;
+    background-color: #fff;
+    border-radius: 6px;
+    opacity:.49;
+    -webkit-transition: opacity .20s ease-in-out; -moz-transition: opacity .20s ease-in-out; -o-transition: opacity .20s ease-in-out;
+}
+._ft_full_seal a:hover {opacity:.99}
+
+#lowerContainer dl._ftAd {
+    float:left;
+    width:193px;
+    height: 150px;
+    font: 9px arial;
+    text-align: left;
+    padding: 10px;
+}
+#lowerContainer dl._ftAd dt {
+    display: none;
+}
+._ft_iskur img {
+    border-radius: 4px;
+    display:block; height:65px;
+    overflow:hidden;
+    opacity:.49;
+    -webkit-transition: opacity .20s ease-in-out; -moz-transition: opacity .20s ease-in-out; -o-transition: opacity .20s ease-in-out;
+    float: left;
+    margin: 0px 9px 2px 0px;
+}
+._ft_iskur img:hover {opacity:.99}
 
 dd._ftSM {
     display:block;
