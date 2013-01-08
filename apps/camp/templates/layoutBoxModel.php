@@ -34,7 +34,11 @@
 </section>
 </div>
 <section id="lowerContainer">
+ <?php if (has_slot('footer')): ?>
+ <?php include_slot('footer') ?>
+ <?php else: ?>
  <?php include_partial('global/footer') ?>
+ <?php endif ?>
 </section>
 
 </body>

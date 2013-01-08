@@ -2,6 +2,10 @@
 <?php include_partial('global/subNav_hr') ?>
 <?php end_slot() ?>
 
+<?php slot('footer') ?>
+<?php include_partial('global/footer_hr') ?>
+<?php end_slot() ?>
+
 <div class="col_948">
 <?php include_partial('global/jobs_search_bar', array('params' => $params)) ?>
 
