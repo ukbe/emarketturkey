@@ -150,7 +150,7 @@
             <div class="box_180 _titleBG_White">
                 <h3><?php echo __('How are you connected?') ?></h3>
                 <div>
-                    <?php include_partial('global/connected_how', array('subject' => $sesuser, 'target' => $company)) ?>
+                    <?php //include_partial('global/connected_how', array('subject' => $sesuser, 'target' => $company)) ?>
                 </div>
             </div>
 
