@@ -4,6 +4,9 @@ class inviteConsentFriendsAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.consent-invite", 301);
+
         $this->user = $this->getUser()->getUser();
 
         $this->consentLogin = ConsentLoginPeer::retrieveByPk($this->getRequestParameter('lid'));

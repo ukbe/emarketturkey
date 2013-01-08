@@ -4,6 +4,12 @@ class postsAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.author?".http_build_query($params), 301);
+
         $this->author = AuthorPeer::retrieveByStrippedName($this->getRequestParameter('stripped_display_name'));
 
         if (!$this->author || !$this->author->getActive()) $this->redirect404();

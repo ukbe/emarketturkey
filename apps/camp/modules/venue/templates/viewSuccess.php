@@ -1,4 +1,9 @@
 <?php use_helper('Date') ?>
+
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_b2b') ?>
+<?php end_slot() ?>
+
 <div class="col_948">
 
     <div class="breadcrumb">
@@ -119,7 +124,7 @@
             <?php else: ?>
             <?php echo __('This venue is not claimed yet.')?>
             <p>
-            <?php echo __('Do you own this venue? Claim your ownership %1herelink', array('%1herelink' => link_to(__('here'), '@lobby.contactus', 'class=inherit-font bluelink hover')))?>
+            <?php echo __('Do you own this venue? Claim your ownership %1herelink', array('%1herelink' => link_to(__('here'), '@contactus', 'class=inherit-font bluelink hover')))?>
             </p>
             <?php endif ?>
             </div>

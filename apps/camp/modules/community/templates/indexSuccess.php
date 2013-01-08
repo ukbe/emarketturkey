@@ -1,3 +1,7 @@
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_cm') ?>
+<?php end_slot() ?>
+
 <div class="col_948" class="position: relative;">
 
     <div class="col_471" style="height: 389px; width: 480px;margin: -10px 0px 0px -3px; border-bottom: solid 1px #ddd; padding: 10px 0px;

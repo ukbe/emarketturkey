@@ -11,24 +11,22 @@ class ignoreAction extends EmtAction
     
     public function execute($request)
     {
-        if (!$this->getRequest()->isXmlHttpRequest())
-        {
-            $this->redirect404();
-        }
+        $this->user = myTools::unplug($this->getRequestParameter('user'), true);
 
-        if (!is_numeric($user_id = $this->getRequestParameter('user')))
-        {
-            $this->redirect404();
-        }
+        if (!$this->user && ($this->getRequest()->isXmlHttpRequest() || $this->hasRequestParameter('callback'))) return $this->renderText($this->getContext()->getI18N()->__('ACTION DISALLOWED'));
+        if (!$this->user) $this->redirect('@myemt.homepage');
+
+        header('Content-type: text/html');
+
         $con = Propel::getConnection();
          
-        if ($this->getRequestParameter('ignore') == 'true' && !$this->sesuser->hasIgnoredUser($user_id))
+        if ($this->getRequestParameter('ignore') == 'true' && !$this->sesuser->hasIgnoredUser($this->user->getId()) && !$this->sesuser->isFriendsWith($this->user->getId()))
         {
             try {
                 $con->beginTransaction();
                 $ignore = new IgnoreAdvise();
                 $ignore->setUserId($this->sesuser->getId());
-                $ignore->setRelatedUserId($user_id);
+                $ignore->setRelatedUserId($this->user->getId());
                 $ignore->save();
                 $con->commit();
             }
@@ -37,7 +35,10 @@ class ignoreAction extends EmtAction
                 $con->rollBack();
                 return $this->renderText($this->getContext()->getI18N()->__('Error Occured!'));
             }
-            return $this->renderText("<script>jQuery('#r$user_id').closest('tr').hide();</script>");
+            if ($this->getRequest()->isXmlHttpRequest())
+                return $this->renderPartial('people/ajaxIgnore', array('plug' => $this->user->getPlug(), 'message' => 'Contact is ignored!'));
+            elseif ($this->hasRequestParameter('callback'))
+                return $this->renderText($this->getRequestParameter('callback')."(".json_encode(array('content' => $this->getPartial('people/ajaxIgnore', array('plug' => $this->user->getPlug(), 'message' => $this->getContext()->getI18N()->__('Contact is ignored!'), 'redir' => $this->_ref ? $this->_ref : null)))).");");
         }
         else
         {

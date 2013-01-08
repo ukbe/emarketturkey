@@ -1,4 +1,9 @@
 <?php use_helper('Number') ?>
+
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_ac') ?>
+<?php end_slot() ?>
+
 <div class="col_948">
 
 <div class="col_630">

@@ -23,7 +23,7 @@ class newAction extends EmtManageProductAction
             $this->attrmatrix = $this->product->getAttributeMatrix();
             $this->payment_terms = unserialize($this->product->getPaymentTerms());
 
-            $this->getResponse()->setTitle(sfContext::getInstance()->getI18N()->__('Edit Product: %1', array('%1' => $this->product->getName())));
+            $this->getResponse()->setTitle(sfContext::getInstance()->getI18N()->__('Edit Product: %1', array('%1' => $this->product->__toString())));
         }
         else
         {

@@ -25,7 +25,7 @@ user-profile-temp-bc-action:
 
 group-profile-action:
   url:   /:sf_culture/group/:stripped_name/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (info|discussions|connections|photos|events|career|contact) } 
+  requirements: { sf_culture: (?:en|de|tr), action: (info|discussions|connections|photos|events|career|contact|posts) } 
   param: { module: group }
 
 group-profile:

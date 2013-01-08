@@ -4,6 +4,20 @@ class employersAction extends EmtCVAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $group = myTools::pick_from_list($this->getRequestParameter('group'), array('banned', 'bookmarked'), null);
+
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['action']);
+        unset($params['sf_culture']);
+        if ($group == 'bookmarked')
+            $this->redirect("@camp.myemployers-bookmarked?".http_build_query($params), 301);
+        elseif ($group == 'banned')
+            $this->redirect("@camp.myemployers-banned?".http_build_query($params), 301);
+        else
+            $this->redirect("@camp.myemployers?".http_build_query($params), 301);
+
         $this->group = myTools::pick_from_list($this->getRequestParameter('group'), array('banned', 'bookmarked'), 'bookmarked');
         $this->page = myTools::fixInt($this->getRequestParameter('page'));
         

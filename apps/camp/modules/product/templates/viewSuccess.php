@@ -1,3 +1,7 @@
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_b2b') ?>
+<?php end_slot() ?>
+
 <?php use_helper('Date') ?>
 <div class="col_948">
 

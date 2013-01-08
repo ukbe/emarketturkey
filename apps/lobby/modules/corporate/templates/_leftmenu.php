@@ -13,6 +13,6 @@
         </div>
         <div class="box_180 noBorder">
             <ul class="_comMenu">
-                <li<?php echo $action == 'govApproved' ? ' class="selected"' : '' ?>><?php echo link_to(__('Pre-approved by Government'), "corporate/govApproved") ?></li>
+                <li<?php echo $action == 'govApproved' ? ' class="selected"' : '' ?>><?php echo link_to(__('Pre-approved by Government'), "@gov-approved") ?></li>
             </ul>
         </div>

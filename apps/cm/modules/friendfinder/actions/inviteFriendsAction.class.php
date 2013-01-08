@@ -15,6 +15,9 @@ class inviteFriendsAction extends EmtAction
 
     private function handleAction($isValidationError)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.invite-friends", 301);
+
         $this->user = $this->getUser()->getUser();
         
         $this->emaillist = $this->getRequestParameter('emaillist');

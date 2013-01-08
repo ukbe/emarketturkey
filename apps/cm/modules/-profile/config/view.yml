@@ -1,0 +1,13 @@
+all:
+    metas:
+        title: "My Profile | eMarketTurkey"
+    layout: layoutTripleColumn
+
+indexSuccess:
+    metas:
+        title: "My Profile | eMarketTurkey"
+ 
+publicUserProfileSuccess:
+ 
+addSuccess:
+    has_layout: off

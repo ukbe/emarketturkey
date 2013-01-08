@@ -1,3 +1,7 @@
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_b2b') ?>
+<?php end_slot() ?>
+
 <div class="col_948 b2bCompany">
 
 <?php include_partial('profile_top', array('company' => $company, 'nums' => $nums))?>

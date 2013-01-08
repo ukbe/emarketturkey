@@ -4,11 +4,11 @@
 <?php if ($thisIsMe): ?>
 <div class="actions">
     <?php if ($act == 'rem'): ?>
-    <?php echo link_to(__('Yes, Delete!'), "@hr.mycv-action?action=education&act=rem&id={$object->getId()}&do=commit", 'id=confirmremoval') ?>
-    <?php echo link_to(__('Cancel'), "@hr.mycv-action?action=education") ?>
+    <?php echo link_to(__('Yes, Delete!'), "@mycv-action?action=education&act=rem&id={$object->getId()}&do=commit", 'id=confirmremoval') ?>
+    <?php echo link_to(__('Cancel'), "@mycv-action?action=education") ?>
     <?php else: ?>
-    <?php echo link_to(__('Edit'), "@hr.mycv-action?action=education&act=edit&id={$object->getId()}#editrecord", "id=edit{$object->getId()} class=ajax-enabled") ?>
-    <?php echo link_to(__('Remove'), "@hr.mycv-action?action=education&act=rem&id={$object->getId()}#confirmremoval", "id=remove{$object->getId()} class=ajax-enabled removelink") ?>
+    <?php echo link_to(__('Edit'), "@mycv-action?action=education&act=edit&id={$object->getId()}#editrecord", "id=edit{$object->getId()} class=ajax-enabled") ?>
+    <?php echo link_to(__('Remove'), "@mycv-action?action=education&act=rem&id={$object->getId()}#confirmremoval", "id=remove{$object->getId()} class=ajax-enabled removelink") ?>
     <?php endif ?>
 </div>
 <?php endif ?>

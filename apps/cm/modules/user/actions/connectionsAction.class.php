@@ -5,6 +5,12 @@ class connectionsAction extends EmtUserAction
 
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.user-profile-action?".http_build_query($params), 301);
+
         if (!$this->thisIsMe &&
             !($this->sesuser->can(ActionPeer::ACT_VIEW_FRIENDS, $this->user)
               || $this->sesuser->can(ActionPeer::ACT_VIEW_GROUPS, $this->user)

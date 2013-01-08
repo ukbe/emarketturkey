@@ -4,6 +4,13 @@ class articleAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['action']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.author-article?".http_build_query($params), 301);
+
         $this->article = PublicationPeer::retrieveByStrippedTitle($this->getRequestParameter('stripped_title'));
 
         if (!$this->article || $this->article->getTypeId()!=PublicationPeer::PUB_TYP_ARTICLE)

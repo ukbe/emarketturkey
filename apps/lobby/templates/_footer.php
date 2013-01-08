@@ -10,9 +10,10 @@
 				<dd><?php echo link_to(__('Premium Services'), '@premium') ?></dd>
 			</dl>
 
-			<div class="subsection _ftAd">
-
-			</div>
+            <dl class="_ftAd">
+                <dt></dt>
+                <dd class="_ft_full_seal"><?php echo link_to(image_tag('layout/badges/ekonomi-seal-whitebg.S.tr.png'), '@gov-approved') ?></dd>
+            </dl>
 
 			<dl>
                 <dt><?php echo link_to(__('Usage Terms'), '@terms') ?></dt>

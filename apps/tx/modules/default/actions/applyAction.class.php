@@ -6,6 +6,13 @@ class applyAction extends EmtAction
     {
         parent::initialize($context, $moduleName, $actionName);
         
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['action']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.tr-apply?".http_build_query($params), 301);
+
         if ($this->sesuser->isNew()) $this->redirect('@myemt.login?_ref='.$this->getRequest()->getUri());
         
         $this->accounts = $this->sesuser->getCompanies(RolePeer::RL_CM_OWNER);

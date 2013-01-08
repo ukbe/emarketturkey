@@ -1,3 +1,7 @@
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_cm') ?>
+<?php end_slot() ?>
+
 <div class="col_948 cmGroup">
 
     <div class="col_180" style="z-index: 1;">

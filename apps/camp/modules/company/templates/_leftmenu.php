@@ -20,7 +20,7 @@
                 <?php endif ?>
                 </li>
                 <li class="_leads<?php echo $action == 'leads' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Trade Leads'), $company->getProfileActionUrl('leads')) ?></li>
-                <li class="_jobs<?php echo $action == 'jobs' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Jobs'), "@hr.company-jobs?hash={$company->getHash()}") ?></li>
+                <li class="_jobs<?php echo $action == 'jobs' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Jobs'), "@company-jobs?hash={$company->getHash()}") ?></li>
                 <li class="_connections<?php echo $action == 'connections' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Connections'), $company->getProfileActionUrl('connections')) ?></li>
                 <li class="_photos<?php echo $action == 'photos' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Photos'), $company->getProfileActionUrl('photos')) ?></li>
                 <li class="_events<?php echo $action == 'events' ? ' selected' : '' ?>"><?php echo link_to('<span></span>'.__('Events'), $company->getProfileActionUrl('events')) ?></li>

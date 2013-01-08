@@ -4,6 +4,13 @@ class groupAction extends EmtGroupAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['action']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.group-jobs?".http_build_query($params), 301);
+
         $act = myTools::pick_from_list($this->getRequestParameter('act'), array('save', 'rem', 'ban', 'unb'), null);
         if ($act)
         {

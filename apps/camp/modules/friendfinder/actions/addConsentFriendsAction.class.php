@@ -51,7 +51,7 @@ class addConsentFriendsAction extends EmtManageAction
                 }
                 $relation = null;
             }
-            $this->redirect(url_for(str_replace('@cm.', '@', $settings['invite-friend'])).'?lid='.$this->consentLogin->getId());
+            $this->redirect(url_for($settings['invite-friend']).'?lid='.$this->consentLogin->getId());
         }
         else
         {
@@ -71,13 +71,13 @@ class addConsentFriendsAction extends EmtManageAction
                 {
                     if (!($rel=$this->sesuser->isFriendsWith($member->getId()))) $this->members[] = $member;
                 } 
-                if (!count($this->members)) $this->redirect(url_for(str_replace('@cm.', '@', $settings['invite-friend'])).'?lid='.$this->consentLogin->getId());
+                if (!count($this->members)) $this->redirect(url_for($settings['invite-friend']).'?lid='.$this->consentLogin->getId());
                 
                 $this->banned_emails = $banned_emails;
             }
             else
             {
-                $this->redirect(url_for(str_replace('@cm.', '@', $settings['index'])));
+                $this->redirect(url_for($settings['index']));
             }
         }
     }

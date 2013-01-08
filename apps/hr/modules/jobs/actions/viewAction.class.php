@@ -4,6 +4,13 @@ class viewAction extends EmtJobAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['action']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.job?".http_build_query($params), 301);
+
         $act = myTools::pick_from_list($this->getRequestParameter('act'), array('apply', 'save', 'rem', 'cancel'), null);
         if ($act)
         {

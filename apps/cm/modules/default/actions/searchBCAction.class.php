@@ -17,9 +17,9 @@ class searchBCAction extends EmtAction
         $criteria = http_build_query($criteria);
 
         if ($within == PrivacyNodeTypePeer::PR_NTYP_GROUP)
-            $this->redirect('@search-groups' . ($criteria ? "?$criteria" : ''), 301);
+            $this->redirect('@camp.search-groups' . ($criteria ? "?$criteria" : ''), 301);
         elseif ($within == PrivacyNodeTypePeer::PR_NTYP_USER)
-            $this->redirect('@search-users' . ($criteria ? "?$criteria" : ''), 301);
+            $this->redirect('@camp.search-users' . ($criteria ? "?$criteria" : ''), 301);
         else
             $this->redirect404();
     }

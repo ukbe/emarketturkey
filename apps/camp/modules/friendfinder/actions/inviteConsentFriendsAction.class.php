@@ -72,7 +72,7 @@ class inviteConsentFriendsAction extends EmtAction
             }
             else
             {
-                $this->redirect(url_for(str_replace('@cm.', '@', $settings['index'])));
+                $this->redirect(url_for($settings['index']));
             }
         }
     }

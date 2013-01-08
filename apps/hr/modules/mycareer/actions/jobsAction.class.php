@@ -4,6 +4,25 @@ class jobsAction extends EmtCVAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $group = myTools::pick_from_list($this->getRequestParameter('group'), array('applied', 'bookmarked', 'viewed'), null);
+        $jobid = $this->getRequestParameter('guid')
+
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['action']);
+        unset($params['sf_culture']);
+        if ($group == 'applied' && $jobid)
+            $this->redirect("@camp.myjobs-applied-view?".http_build_query($params), 301);
+        elseif ($group == 'applied')
+            $this->redirect("@camp.myjobs-applied?".http_build_query($params), 301);
+        elseif ($group == 'bookmarked')
+            $this->redirect("@camp.myjobs-bookmarked?".http_build_query($params), 301);
+        elseif ($group == 'viewed')
+            $this->redirect("@camp.myjobs-viewed?".http_build_query($params), 301);
+        else
+            $this->redirect("@camp.myjobs?".http_build_query($params), 301);
+
         $this->group = myTools::pick_from_list($this->getRequestParameter('group'), array('applied', 'bookmarked', 'viewed'), 'applied');
         $this->page = myTools::fixInt($this->getRequestParameter('page'));
         

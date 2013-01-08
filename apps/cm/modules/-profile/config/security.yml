@@ -1,0 +1,18 @@
+comment:
+  is_secure: on
+  credentials: user
+locationQuery:
+  is_secure: on
+  credentials: user
+updateStatus:
+  is_secure: on
+  credentials: user
+updateLocation:
+  is_secure: on
+  credentials: user
+upload:
+  is_secure: on
+  credentials: user
+add:
+  is_secure: on
+  credentials: user

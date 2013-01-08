@@ -1,7 +1,7 @@
     <div>
 	<hgroup>
 		<h1>
-            <a href="<?php echo url_for('@lobby.homepage') ?>" title="<?php echo __('eMarketTurkey Homepage') ?>" tabindex="0"><abbr title="electronic">e</abbr><em>Market</em><em>Turkey</em></a>
+            <a href="<?php echo url_for('@camp.homepage') ?>" title="<?php echo __('eMarketTurkey Homepage') ?>" tabindex="0"><abbr title="electronic">e</abbr><em>Market</em><em>Turkey</em></a>
             <div class="ghost"><?php echo image_tag('layout/emtlogo.gif', array('alt' => __('eMarketTurkey Logo'))) ?></div>
 		</h1>
 	</hgroup>
@@ -23,59 +23,59 @@
     	</dl>
 
     	<dl>
-    		<dt><?php echo link_to('<b>'.__('B2B').'</b>', '@b2b.homepage', 'tabindex=2 id=btn-b2b') ?></dt>
+    		<dt><?php echo link_to('<b>'.__('B2B').'</b>', '@camp.homepage', 'tabindex=2 id=btn-b2b') ?></dt>
             <dd id="btn-b2b-box">
     			<ul>
-                    <li><?php echo link_to(__('Companies'), '@b2b.companies') ?></li>
-                    <li><?php echo link_to(__('Products and Services'), '@b2b.products') ?></li>
-                    <li><?php echo link_to(__('Buying Leads'), '@b2b.buying-leads') ?></li>
-                    <li><?php echo link_to(__('Selling Leads'), '@b2b.selling-leads') ?></li>
-                    <li><?php echo link_to(__('Trade Shows'), '@b2b.tradeshows') ?></li>
-                    <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), '@b2b.tradeexperts') ?></li>
-                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@b2b.emttrust') ?></li>
+                    <li><?php echo link_to(__('Companies'), '@camp.companies') ?></li>
+                    <li><?php echo link_to(__('Products and Services'), '@camp.products') ?></li>
+                    <li><?php echo link_to(__('Buying Leads'), '@camp.buying-leads') ?></li>
+                    <li><?php echo link_to(__('Selling Leads'), '@camp.selling-leads') ?></li>
+                    <li><?php echo link_to(__('Trade Shows'), '@camp.tradeshows') ?></li>
+                    <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), '@camp.tradeexperts') ?></li>
+                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@camp.premium') ?></li>
     			</ul>
     		</dd>
     	</dl>
 
     	<dl>
-    		<dt><?php echo link_to('<b>'.__('JOBS').'</b>', '@hr.homepage', 'tabindex=3 id=btn-hr') ?></dt>
+    		<dt><?php echo link_to('<b>'.__('JOBS').'</b>', '@camp.jobs', 'tabindex=3 id=btn-hr') ?></dt>
             <dd id="btn-hr-box">
     			<ul class="drop">
-                    <li><?php echo link_to(__('Job Search'), '@hr.jobsearch') ?></li>
-                    <li><?php echo link_to(__('My Career'), '@hr.mycareer') ?></li>
-                    <li><?php echo link_to(__('Bookmarks'), '@hr.mycareer-action?action=bookmarks') ?></li>
+                    <li><?php echo link_to(__('Job Search'), '@camp.jobsearch') ?></li>
+                    <li><?php echo link_to(__('My Career'), '@camp.mycareer') ?></li>
+                    <li><?php echo link_to(__('Bookmarks'), '@camp.mycareer-action?action=bookmarks') ?></li>
     			</ul>
     		</dd>
     	</dl>
 
     	<dl>
-    		<dt><?php echo link_to('<b>'.__('ACADEMY').'</b>', '@ac.homepage', 'tabindex=4 id=btn-ac') ?></dt>
+    		<dt><?php echo link_to('<b>'.__('ACADEMY').'</b>', '@camp.academy', 'tabindex=4 id=btn-ac') ?></dt>
             <dd id="btn-ac-box">
     			<ul class="drop">
-                    <li><?php echo link_to(__('Articles'), '@ac.articles') ?></li>
-                    <li><?php echo link_to(__('News'), '@ac.news-home') ?></li>
-                    <li><?php echo link_to(__('Authors'), '@ac.homepage') ?></li>
-                    <li><?php echo link_to(__('Knowledgebase'), '@ac.kb') ?></li>
+                    <li><?php echo link_to(__('Articles'), '@camp.articles') ?></li>
+                    <li><?php echo link_to(__('News'), '@camp.news-home') ?></li>
+                    <li><?php echo link_to(__('Authors'), '@camp.homepage') ?></li>
+                    <li><?php echo link_to(__('Knowledgebase'), '@camp.kb') ?></li>
     			</ul>
     		</dd>
     	</dl>
 
     	<dl>
-    		<dt><?php echo link_to('<b>'.__('COMMUNITY').'</b>', '@cm.homepage', 'tabindex=5 id=btn-cm') ?></dt>
+    		<dt><?php echo link_to('<b>'.__('COMMUNITY').'</b>', '@camp.community', 'tabindex=5 id=btn-cm') ?></dt>
             <dd id="btn-cm-box">
     			<ul class="drop">
-                    <li><?php echo link_to(__('People'), '@cm.people') ?></li>
-                    <li><?php echo link_to(__('Groups'), '@cm.groups') ?></li>
-                    <li><?php echo link_to(__('Events'), '@cm.events') ?></li>
+                    <li><?php echo link_to(__('People'), '@camp.people') ?></li>
+                    <li><?php echo link_to(__('Groups'), '@camp.groups') ?></li>
+                    <li><?php echo link_to(__('Events'), '@camp.events') ?></li>
     			</ul>
     		</dd>
     	</dl>
 
     	<dl>
-    		<dt><?php echo link_to('<b>'.__('TRANSLATION').'</b>', '@tx.homepage', 'tabindex=6 id=btn-tx') ?></dt>
+    		<dt><?php echo link_to('<b>'.__('TRANSLATION').'</b>', '@camp.translation', 'tabindex=6 id=btn-tx') ?></dt>
 			<dd id='btn-tx-box'>
                 <ul class="drop">
-                    <li><?php echo link_to(__('Join Now'), '@tx.apply') ?></li>
+                    <li><?php echo link_to(__('Join Now'), '@camp.tr-apply') ?></li>
                 </ul>
 			</dd>
     	</dl>
@@ -181,11 +181,11 @@
     	</ul>
 
         <div style="position:absolute;top:0px;right:0px;margin:0;padding:0;font-size:10px;z-index:500;">
-<?php $search = array(PrivacyNodeTypePeer::PR_NTYP_COMPANY  => array(__('Companies'), url_for('@companies')),
-                          PrivacyNodeTypePeer::PR_NTYP_PRODUCT  => array(__('Products'), url_for('@products')),
-                          PrivacyNodeTypePeer::PR_NTYP_USER     => array(__('People'), url_for('@cm.people')),
-                          PrivacyNodeTypePeer::PR_NTYP_GROUP    => array(__('Groups'), url_for('@cm.groups')),
-                          PrivacyNodeTypePeer::PR_NTYP_JOB     => array(__('Jobs'), url_for('@cm.people'))) ?>
+<?php $search = array(PrivacyNodeTypePeer::PR_NTYP_COMPANY  => array(__('Companies'), url_for('@camp.companies')),
+                          PrivacyNodeTypePeer::PR_NTYP_PRODUCT  => array(__('Products'), url_for('@camp.products')),
+                          PrivacyNodeTypePeer::PR_NTYP_USER     => array(__('People'), url_for('@camp.people')),
+                          PrivacyNodeTypePeer::PR_NTYP_GROUP    => array(__('Groups'), url_for('@camp.groups')),
+                          PrivacyNodeTypePeer::PR_NTYP_JOB     => array(__('Jobs'), url_for('@camp.jobsearch'))) ?>
 <?php $srctyp = $sf_user->getAttribute('srctype', PrivacyNodeTypePeer::PR_NTYP_COMPANY) ?>
 <?php $srcdata = $search[$srctyp] ?>
 <?php $js = array() ?> 

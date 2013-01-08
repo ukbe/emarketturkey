@@ -201,9 +201,9 @@
         <div style="position:absolute;top:0px;right:0px;margin:0;padding:0;font-size:10px;z-index:500;">
 <?php $search = array(PrivacyNodeTypePeer::PR_NTYP_COMPANY  => array(__('Companies'), url_for('@companies')),
                       PrivacyNodeTypePeer::PR_NTYP_PRODUCT  => array(__('Products'), url_for('@products')),
-                      PrivacyNodeTypePeer::PR_NTYP_USER     => array(__('People'), url_for('@cm.people')),
-                      PrivacyNodeTypePeer::PR_NTYP_GROUP    => array(__('Groups'), url_for('@cm.groups')),
-                      PrivacyNodeTypePeer::PR_NTYP_JOB     => array(__('Jobs'), url_for('@cm.people'))) ?>
+                      PrivacyNodeTypePeer::PR_NTYP_USER     => array(__('People'), url_for('@people')),
+                      PrivacyNodeTypePeer::PR_NTYP_GROUP    => array(__('Groups'), url_for('@groups')),
+                      PrivacyNodeTypePeer::PR_NTYP_JOB     => array(__('Jobs'), url_for('@jobs'))) ?>
 <?php $srctyp = $sf_user->getAttribute('srctype', PrivacyNodeTypePeer::PR_NTYP_COMPANY) ?>
 <?php $srcdata = $search[$srctyp] ?>
 <?php $js = array() ?> 

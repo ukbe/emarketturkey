@@ -45,7 +45,6 @@ packagesSuccess:
 emailTransactionContentSuccess:
     metas:
         title: 'E-mail Transaction Content'
-    has_layout: false
 
 jobPositionsSuccess:
     metas:

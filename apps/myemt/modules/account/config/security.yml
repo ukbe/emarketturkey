@@ -1,2 +1,5 @@
+changePassword:
+  require_ssl: true
+
 verify:
-  is_secure: off
+  is_secure: off  

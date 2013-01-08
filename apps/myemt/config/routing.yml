@@ -15,7 +15,7 @@ author-action:
 
 admin-action:
   url:   /:sf_culture/tasks/admin/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (overview|notifications|categories|users|companies) }
+  requirements: { sf_culture: (?:en|de|tr), action: (overview|users|user|companies|groups|group|announcements|announcement) }
   param: { module: admin }
 
 upload-handler:
@@ -438,7 +438,7 @@ join-tradeexpert:
 
 forgot-password:
   url: /:sf_culture/forgotpassword
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|de|tr) }
   param: { module: login, action: resetPassword }
 
 product-detail:
@@ -448,7 +448,7 @@ product-detail:
 
 change-password:
   url:   /:sf_culture/account/changePassword
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
   param: { module: account, action: changePassword }
 
 friendfinder:
@@ -518,7 +518,7 @@ profile-edit:
 
 login:
   url:   /login
-  requirements: { is_secure: true }
+  requirements: { is_secure: false }
   param: { module: login, action: login }
 
 logout:

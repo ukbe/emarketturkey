@@ -1,3 +1,7 @@
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_hr') ?>
+<?php end_slot() ?>
+
 <div class="col_948" style="min-height: 450px;">
 <?php include_partial('global/jobs_search_bar', array('params' => $params, 'open' => !$commit)) ?>
 

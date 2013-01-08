@@ -52,7 +52,24 @@
     </tr>
 </table>
 <dl class="_table">
-    <dt class="add-lang-link ghost"></dt>
+    <dt class="add-lang-link ghost">
+    <?php if (is_array($sf_params->get('langs')) && count($sf_params->get('langs'))): ?>
+<table>
+    <tbody id="new-lang-tmpl">
+    <?php foreach ($sf_params->get('langs') as $lang): ?>
+        <tr>
+            <th>#langname# <?php echo input_hidden_tag('langs[]', '#lang#') ?></th>
+            <td><?php echo checkbox_tag('lang-#lang#-native', 1, false, array('onclick' => "if ($(this).attr('checked')) $(this).closest('tr').find('select').attr('disabled', true); else $(this).closest('tr').find('select').attr('disabled', false);")) ?></td>
+            <td><?php echo select_tag('lang-#lang#-read', options_for_select(array(1 => __('Low'), 2=> __('Fair'), 3 => __('High')), null, array('include_blank' => true))) ?></td>
+            <td><?php echo select_tag('lang-#lang#-write', options_for_select(array(1 => __('Low'), 2=> __('Fair'), 3 => __('High')), null, array('include_blank' => true))) ?></td>
+            <td><?php echo select_tag('lang-#lang#-speak', options_for_select(array(1 => __('Low'), 2=> __('Fair'), 3 => __('High')), null, array('include_blank' => true))) ?></td>
+            <td><?php echo link_to_function(image_tag('layout/icon/led-icons/cancel.png'), "$('#translator_add > option[value=\"'+$(this).closest('tr').find('input[type=hidden][name=\"langs[]\"]').val()+'\"]').attr('disabled', false); $(this).closest('tr').remove(); if ($('.lang-table').find('input[name=\"langs[]\"]').length == 0) { $('.lang-table tr.no-items').show(); $('.lang-table tr.header').hide(); } ", 'class=removelink') ?></td>
+        </tr>
+    <?php endif ?>
+    </tbody>
+</table>
+    <?php endif ?>
+        </dt>
     <dd class="add-lang-link ghost"><?php echo link_to_function(__('Add Language'), "$('.add-lang-link').slideUp('fast'); $('.add-lang').slideDown('fast');", 'class=ln-addlink greenspan led add-11px') ?></dd>
     <dt class="_req add-lang"><?php echo emt_label_for('translator_add', __('Select Language')) ?></dt>
     <dd>

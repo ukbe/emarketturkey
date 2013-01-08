@@ -1,3 +1,7 @@
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_cm') ?>
+<?php end_slot() ?>
+
 <div class="col_948">
     <div class="col_180">
         <div class="box_180">
@@ -27,7 +31,7 @@
             <h5 class="margin-0"><?php echo __('People You May Know') ?></h5>
             <div class="_noBorder smalltext tiny">
                 <?php foreach ($pmyk_people as $user): ?>
-                <?php include_partial('profile/user', array('user' => $user)) ?>
+                <?php include_partial('user/user', array('user' => $user)) ?>
                 <?php endforeach ?>
                 <?php echo link_to(__('List all Suggestions'), "@people-action?action=pymk", 'class=clear inherit-font hover bluelink margin-t1') ?>
             </div>
@@ -37,7 +41,7 @@
             <h5 class="margin-0"><?php echo __('People in Your Network') ?></h5>
             <div class="_noBorder smalltext tiny">
                 <?php foreach ($net_people as $user): ?>
-                <?php include_partial('profile/user', array('user' => $user)) ?>
+                <?php include_partial('user/user', array('user' => $user)) ?>
                 <?php endforeach ?>
                 <?php echo link_to(__('List all People in My Network'), "@people-action?action=connected", 'class=clear inherit-font hover bluelink margin-t1') ?>
             </div>

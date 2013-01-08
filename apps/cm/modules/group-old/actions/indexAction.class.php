@@ -13,6 +13,9 @@ class indexAction extends EmtGroupAction
     
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.group-profile?stripped_name={$this->group->getStrippedName()}", 301);
+
         $this->pvars = array();
         $this->setTemplate('profileScheme');
         $this->handleAction(false);

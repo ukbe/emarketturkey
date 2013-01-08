@@ -1,9 +1,10 @@
 login:
   is_secure: off
-  require_ssl: true
+  require_ssl: false
 
 resetPassword:
   is_secure: off
+  require_ssl: true
 
 easyLogin:
   is_secure: off

@@ -12,6 +12,9 @@ class photosAction extends EmtGroupAction
     
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.group-profile-action?action=photos&stripped_name={$this->group->getStrippedName()}", 301);
+
         $this->handleAction(false);
     }
     

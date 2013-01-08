@@ -1,3 +1,8 @@
+gov-approved:
+  url:   /:sf_culture/corporate/gov-approved
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: corporate, action: govApproved }
+
 bc-handler:
   url:   /:sf_culture/:pmodule/:paction
   requirements: { sf_culture: (?:en|de|tr), pmodule: (corporate), paction: (forIndividuals|forSuppliers) }

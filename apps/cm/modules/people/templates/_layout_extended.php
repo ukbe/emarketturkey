@@ -14,7 +14,7 @@
             <div>
                 <?php if ($user->relevel == 0): ?>
                 <?php echo link_to(__('Connect'), "@connect-user?user={$user->getPlug()}", "class=action-button margin-r1 ajax-enabled id=c{$user->getPlug()}") ?>
-                <?php echo link_to(__('Ignore'), "@connect-user?user={$user->getPlug()}", "class=action-button ajax-enabled id=r{$user->getPlug()}") ?>
+                <?php echo link_to(__('Ignore'), "@pmyk-ignore?user={$user->getPlug()}", "class=action-button ajax-enabled id=r{$user->getPlug()}") ?>
                 <?php else: ?>
                 <div class="txtCenter">
                 <?php echo link_to(__('Send Message'), "@myemt.compose-message?_s={$sesuser->getPlug()}&_r={$user->getPlug()}&_ref=$_here", "id=snm{$user->getPlug()} class=ajax-enabled style=background: url(/images/layout/icon/led-icons/email.png) no-repeat 1px center; padding-left: 22px;") ?>

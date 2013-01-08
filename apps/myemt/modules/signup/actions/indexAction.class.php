@@ -42,7 +42,7 @@ class indexAction extends EmtAction
                 $data = new sfParameterHolder();
                 try
                 {
-                    $user = UserPeer::SignupUser($signup_fields, &$data, ($this->invite instanceof InviteFriend));
+                    $user = UserPeer::SignupUser($signup_fields, $data, ($this->invite instanceof InviteFriend));
                     if ($user instanceof User)
                     {
                         $vars = array();

@@ -4,6 +4,13 @@ class indexAction extends EmtAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['action']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.news-home?".http_build_query($params), 301);
+
         $columnsTypes = array_keys(PublicationCategoryPeer::getBaseCategories(null, true));
         $this->sectnews = PublicationPeer::doSelectNewsByCategory(false, $columnsTypes, PublicationPeer::PUB_FEATURED_COLUMN, null, 5, true);
         

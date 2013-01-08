@@ -11,6 +11,9 @@ class activityAction extends EmtAction
     
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect('@camp.network-activity', 301);
+
         $this->handleAction(false);
     }
     

@@ -4,6 +4,9 @@ class addConsentFriendsAction extends EmtManageAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.livecontacts", 301);
+
         $this->consentLogin = ConsentLoginPeer::retrieveByPk($this->getRequestParameter('lid'));
         if (!$this->sesuser || !$this->consentLogin || $this->sesuser->getId()!=$this->consentLogin->getUserId()) $this->redirect('@friendfinder');
         $this->consent_type = $this->consentLogin->getServiceId();

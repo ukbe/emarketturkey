@@ -1,4 +1,9 @@
 <?php use_helper('Date') ?>
+
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_hr') ?>
+<?php end_slot() ?>
+
 <div class="col_948">
 
     <div class="breadcrumb">

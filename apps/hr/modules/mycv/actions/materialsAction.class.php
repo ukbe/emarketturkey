@@ -4,6 +4,12 @@ class materialsAction extends EmtCVAction
 {
     public function __construct($context, $moduleName, $actionName)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.mycv-action?".http_build_query($params), 301);
+
         parent::initialize($context, $moduleName, $actionName);
 
         $this->portfolio = $this->resume->getPortfolio();

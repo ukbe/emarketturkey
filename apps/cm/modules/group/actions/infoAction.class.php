@@ -4,6 +4,12 @@ class infoAction extends EmtGroupAction
 {
     public function execute($request)
     {
+        // Redirect to camp application
+        $params = $this->getRequest()->getParameterHolder()->getAll();
+        unset($params['module']);
+        unset($params['sf_culture']);
+        $this->redirect("@camp.group-profile-action?".http_build_query($params), 301);
+
         $this->getResponse()->setTitle($this->group . ' | eMarketTurkey');
 
         $this->posts = $this->group->getPosts();

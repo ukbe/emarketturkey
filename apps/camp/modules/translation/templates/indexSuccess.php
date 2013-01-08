@@ -1,3 +1,7 @@
+<?php slot('subNav') ?>
+<?php include_partial('global/subNav_tx') ?>
+<?php end_slot() ?>
+
 <div class="col_948">
 <div class="presentation">
 

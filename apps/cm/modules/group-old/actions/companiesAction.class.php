@@ -6,6 +6,9 @@ class companiesAction extends EmtGroupAction
     
     public function execute($request)
     {
+        // Redirect to camp application
+        $this->redirect("@camp.group-profile-action?action=connections&stripped_name={$this->group->getStrippedName()}&relation=companies", 301);
+
         $this->pvars = array();
         $this->setTemplate('profileScheme');
         $this->handleAction(false);
