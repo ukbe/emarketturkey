@@ -27,7 +27,7 @@
     		}
         	this._apply();
         	this._parallel = this.options.parallelPack ? $(this.options.parallelPack.replace('_ID_', this.element.attr('id'))) : null;
-        	if (this._parallel.length) {this._parallel.items = this._parallel.children();}
+        	if (this._parallel && this._parallel.length) {this._parallel.items = this._parallel.children();}
         	this._timerFunc = function() {
             	self._next();
             	self._timer = setTimeout(function(){self._timerFunc();}, self.options.delay);
