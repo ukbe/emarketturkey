@@ -78,27 +78,6 @@ class EventPeer extends BaseEventPeer
             $c->add(EventPeer::GUID, $ph->get('guid'));
         }
 
-        if ($filter_env && $app != 'myemt')
-        {
-            $c->addJoin(EventPeer::TYPE_ID, EventTypePeer::ID, Criteria::LEFT_JOIN);
-            switch ($app)
-            {
-                case 'b2b' : 
-                    $c1 = $c->getNewCriterion(EventTypePeer::TYPE_CLASS, EventTypePeer::ECLS_TYP_BUSINESS);
-                    break;
-                case 'cm' : 
-                    $c1 = $c->getNewCriterion(EventTypePeer::TYPE_CLASS, EventTypePeer::ECLS_TYP_SOCIAL);
-                    break;
-                case 'ac' : 
-                    $c1 = $c->getNewCriterion(EventTypePeer::TYPE_CLASS, EventTypePeer::ECLS_TYP_ACADEMIC);
-                    break;
-            }
-            
-            $c2 = $c->getNewCriterion(EventTypePeer::TYPE_CLASS, null, Criteria::ISNULL);
-            $c1->addOr($c2);
-            $c->addAnd($c1);
-        }
-
         return self::doSelectOne($c);
     }
 
