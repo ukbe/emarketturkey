@@ -211,6 +211,63 @@ all:
           lobby:
             enabled: on                         # enable the feature
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              myemt:
+                routes:                         # routes to load, leave empty will load all the routes
+                env:                            # define the environment
+                  dev: my.geek.emt   # define the full path for the dev environnement
+                  test: my.emarketturkey.com      # define the full path for the test environnement
+                  prod: my.emarketturkey.com      # define the full path for the prod environnement
+              hr:
+                routes:
+                env:
+                  dev: hr.geek.emt
+                  test: hr.emarketturkey.com
+                  prod: hr.emarketturkey.com     
+              b2b:
+                routes:
+                env:
+                  dev: b2b.geek.emt
+                  test: b2b.emarketturkey.com
+                  prod: b2b.emarketturkey.com     
+              ac:
+                routes:
+                env:
+                  dev: ac.geek.emt
+                  test: ac.emarketturkey.com
+                  prod: ac.emarketturkey.com     
+              cm:
+                routes:
+                env:
+                  dev: cm.geek.emt
+                  test: cm.emarketturkey.com
+                  prod: cm.emarketturkey.com     
+              tx:
+                routes:
+                env:
+                  dev: tx.geek.emt
+                  test: tx.emarketturkey.com
+                  prod: tx.emarketturkey.com     
+              ads:
+                routes:
+                env:
+                  dev: ads.geek.emt
+                  test: ads.emarketturkey.com
+                  prod: ads.emarketturkey.com     
+          camp:
+            enabled: on                         # enable the feature
+            load:
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               myemt:
                 routes:                         # routes to load, leave empty will load all the routes
                 env:                            # define the environment
@@ -256,18 +313,24 @@ all:
           hr:
             enabled: on                         # enable the feature
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               myemt:
                 routes:                         # routes to load, leave empty will load all the routes
                 env:                            # define the environment
                   dev: my.geek.emt   # define the full path for the dev environnement
                   test: my.emarketturkey.com      # define the full path for the test environnement
                   prod: my.emarketturkey.com      # define the full path for the prod environnement
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
               b2b:
                 routes:
                 env:
@@ -301,18 +364,24 @@ all:
           myemt:
             enabled: on
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               hr:
                 routes:
                 env:
                   dev: hr.geek.emt
                   test: hr.emarketturkey.com
                   prod: hr.emarketturkey.com
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
               b2b:
                 routes:
                 env:
@@ -346,18 +415,24 @@ all:
           b2b:
             enabled: on
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               hr:
                 routes:
                 env:
                   dev: hr.geek.emt
                   test: hr.emarketturkey.com
                   prod: hr.emarketturkey.com
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
               myemt:
                 routes:                         # routes to load, leave empty will load all the routes
                 env:                            # define the environment
@@ -391,18 +466,24 @@ all:
           cm:
             enabled: on
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               hr:
                 routes:
                 env:
                   dev: hr.geek.emt
                   test: hr.emarketturkey.com
                   prod: hr.emarketturkey.com
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
               b2b:
                 routes:
                 env:
@@ -436,18 +517,24 @@ all:
           ac:
             enabled: on
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               hr:
                 routes:
                 env:
                   dev: hr.geek.emt
                   test: hr.emarketturkey.com
                   prod: hr.emarketturkey.com
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
               b2b:
                 routes:
                 env:
@@ -481,18 +568,24 @@ all:
           tx:
             enabled: on
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               hr:
                 routes:
                 env:
                   dev: hr.geek.emt
                   test: hr.emarketturkey.com
                   prod: hr.emarketturkey.com
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
               b2b:
                 routes:
                 env:
@@ -526,6 +619,18 @@ all:
           ads:
             enabled: on
             load:
+              camp:
+                routes:
+                env:
+                  dev: geek.emt
+                  test: emarketturkey.com
+                  prod: emarketturkey.com     
+              lobby:
+                routes:
+                env:
+                  dev: lobby.geek.emt
+                  test: lobby.emarketturkey.com
+                  prod: lobby.emarketturkey.com     
               hr:
                 routes:
                 env:
@@ -562,12 +667,6 @@ all:
                   dev: cm.geek.emt
                   test: cm.emarketturkey.com
                   prod: cm.emarketturkey.com     
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
 
     routerAction:
         createCV:
@@ -616,11 +715,11 @@ all:
             offers:  Contacts.View
             keyfile:  %SF_CONFIG_DIR%/DelAuth.xml
             cookie:  delauth
-            index:  '@cm.friendfinder'
+            index:  '@friendfinder'
             handler:  '@myemt.consent-handle'
             import:  '@myemt.consent-import'
-            add-friend:  '@cm.consent-add'
-            invite-friend:  '@cm.consent-invite'
+            add-friend:  '@consent-add'
+            invite-friend:  '@consent-invite'
             banned_emails: []  #comma seperated list of emails to ignore while sending invitation
         google:
             Consumer_Key: 'my.emarketturkey.com'
@@ -637,11 +736,11 @@ all:
                 oauth_callback: '@myemt.consent-handle-google'
                 oauth_signature: "MIICXQIBAAKBgQDMQNqbTXj1vXp+2BFIOjGF4R5ubkxTaTuQU1/51RcSv0f5MNeQ\nkhASlYmVaq70o7oyFFNToSYlp3gkF9H4y8q0QL2iWVvzr2nl0PZ9FDITDBBdn6zb\nnDeEuRQt6xUfkhSG1x5ZTiFZLDr/ZECrIw0zMywZ6pEarP2sORFl3zz79wIDAQAB\nAoGAdFSjrTwsnllygPfyr95lAkk7Gc48Lm2K/SJfUV1qLMVA6s5EmBR4jv0YRT9j\nsfXmQEuPQdxQa7W8GWJvtnHrWkXgu/a37AMgjrkBncQ5N4cZFzjedOklRnk0+ny5\n4foVegsGV9qRO4+cRQhB6tcgIXhynJUSuQU83piUIypqPmECQQDmztUNCifIJY4E\n53QmFA1vA2jO1Ocw4mboNliX3n9liNc5xdTFfa4v7R39+cdBRwkDRdo/YKYg8CSd\ntYd2ZT4ZAkEA4owKcD69FPROLzrshfwkh4ZA3O4xBguHCRigWiNOroEKbmrWavnL\nw2vK9HXrDHtquLZF+w3my8vhopwwgHssjwJBAJjwAJhtXELxL5PsUjhRHT2sQqya\nwr7PpmTEbhvj4QLEk+jCP+TFDMDRHAiIlBGbIku6440PW8WDmp+uA57eIzECQAa/\nZRAyzi7xl+KQPrs+51eiCAyMi6lCbqM2uI/2vUE1VrozNG+7QPZxH3poiLe2dVdL\nFoqDv3wSdoYBYPByusECQQCg6Vu/QbxwHoIWWHGnL7R46sZKjsnTxN1OQ1liTMHt\nlyxuhuK1MhnOUYOusrurKTVOiEwkCA8cTPkWMpw6cNIL"
             scope: "https://www.google.com/m8/feeds/contacts/default/full"
-            index:  '@cm.friendfinder'
+            index:  '@friendfinder'
             handler:  '@myemt.google-handle'
             import:  '@myemt.google-import'
-            add-friend:  '@cm.consent-add'
-            invite-friend:  '@cm.consent-invite'
+            add-friend:  '@consent-add'
+            invite-friend:  '@consent-invite'
             banned_emails: []  #comma seperated list of emails to ignore while sending invitation
 
     jobs:
@@ -775,3 +874,12 @@ all:
                 url:  http://finance.yahoo.com/d/quotes.csv?s=%symbols%&f=sl1
                 seperator:  '+'
                 parser:  EmtYahooFinanceResponseParser
+
+# Academy settings
+
+    homepagePlacements:
+        newsColumns: # max 4 columns
+            1:  1 # Economy
+            2:  7 # Science
+            3:  2 # Politics
+            4:  14 # Markets
