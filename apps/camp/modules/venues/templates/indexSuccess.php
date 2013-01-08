@@ -11,7 +11,7 @@
 
     <div class="col_576">
         <div class="box_576 _titleBG_Transparent">
-            <h4 style="border-bottom:none;"><?php echo __('Find a Venue Show') ?></h4>
+            <h4 style="border-bottom:none;"><?php echo __('Find a Venue') ?></h4>
             <?php echo form_tag("@venues-action?action=results") ?>
             <dl class="_table">
                 <dt><?php echo emt_label_for('venue-keyword', __('Search Venue')) ?></dt>
