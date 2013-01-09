@@ -18,11 +18,6 @@
             <dd>
                 Join <strong class="emt">eMarketTurkey <sup>&reg;</sup></strong> today,<br /> 
                 get help from a <em>TRADE EXPERT</em>.
-                <ul>
-                    <li><a href="sdfg">Who are trade experts?</a></li>
-                    <li><a href="asdf">What is <strong class="emt">eMarketTurkey <sup>&reg;</sup> TRADE Experts <sup>&reg;</sup></strong>program?</a></li>
-                    <li><a href="dfgh">How can you reach a trade expert?</a></li>
-                </ul>
             </dd>
         </dl>
         <dl class="_trade_expert-02">
