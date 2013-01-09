@@ -43,7 +43,7 @@
                     <li><?php echo link_to(__('Selling Leads'), '@selling-leads') ?></li>
                     <li><?php echo link_to(__('Trade Shows'), '@tradeshows') ?></li>
                     <li><br /><?php echo link_to(__('<span class="t_red">TR</span>ADE Experts'), 'tradeexperts') ?></li>
-                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@emttrust') ?></li>
+                    <li><?php echo link_to(__('emt<span class="t_red">TR</span>UST'), '@premium') ?></li>
                 </ul>
             </dd>
         </dl>
