@@ -5,7 +5,7 @@ class logoutAction extends EmtAction
     public function execute($request)
     {
         $this->getUser()->signout();
-        $this->redirect('@lobby.homepage');
+        $this->redirect('@camp.homepage');
     }
     
 }
