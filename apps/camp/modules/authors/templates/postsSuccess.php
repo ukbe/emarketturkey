@@ -54,7 +54,7 @@
             <?php foreach ($top_posts as $post): ?>
                 <dt<?php echo strlen($post->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $post->getRating() ?></dt>
                 <dd><strong><?php echo link_to($post->__toString(), $post->getUrl()) ?></strong>
-                    <?php echo $post->getPublicationSource()->__toString() ?></dd>
+                    <?php echo $post->getPublicationSource() ? $post->getPublicationSource()->__toString() : '' ?></dd>
             <?php endforeach ?>
             </dl>
         </div>
