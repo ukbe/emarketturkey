@@ -29,7 +29,7 @@
                 <dl>
                     <dt><?php echo count($author->getPhotos()) ? link_to(image_tag($author->getPictureUri(), array('title' => $author)), $author->getUrl('posts')) : '' ?></dt>
                     <dd>
-                        <div class="author-name"><?php echo link_to($author, $author->getUrl('posts')) ?>
+                        <div class="author-name"><?php echo link_to($author->__toString(), $author->getUrl('posts')) ?>
                         <?php echo $author->getTitle() ?></div>
                         <div class="fgeorgia margin-t2">
                             <?php echo $author->getIntroduction() ?>
@@ -53,8 +53,8 @@
             <dl class="rating-list">
             <?php foreach ($top_posts as $post): ?>
                 <dt<?php echo strlen($post->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $post->getRating() ?></dt>
-                <dd><strong><?php echo link_to($post, $post->getUrl()) ?></strong>
-                    <?php echo $post->getPublicationSource() ?></dd>
+                <dd><strong><?php echo link_to($post->__toString(), $post->getUrl()) ?></strong>
+                    <?php echo $post->getPublicationSource()->__toString() ?></dd>
             <?php endforeach ?>
             </dl>
         </div>
@@ -91,8 +91,8 @@
                 <?php foreach ($colarticles as $article): ?>
                     <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor())), $article->getUrl()) : '' ?></dt>
                     <dd>
-                        <?php echo link_to($article, $article->getUrl()) ?>
-                        <div class="author-name"><?php echo link_to($article->getAuthor(), $article->getUrl()) ?>
+                        <?php echo link_to($article->__toString(), $article->getUrl()) ?>
+                        <div class="author-name"><?php echo link_to($article->getAuthor()->__toString(), $article->getUrl()) ?>
                         <?php echo $article->getAuthor()->getTitle() ?></div>
                         </dd>
                 <?php endforeach ?>
