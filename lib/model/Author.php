@@ -71,11 +71,21 @@ class Author extends BaseAuthor
         return $this->getPublication($item_id, PublicationPeer::PUB_TYP_NEWS, $order_asc);
     }
 
-    public function getUrl($action = 'posts')
+    public function getUrl($action = 'posts', $culture = null)
     {
         $app = sfContext::getInstance()->getConfiguration()->getApplication();
         $app = $app == 'camp' ? '' : "$app.";
-        return "@{$app}author?action={$action}&stripped_display_name={$this->getStrippedDisplayName()}";
+
+        if (!$culture)
+        {
+            $culture = sfContext::getInstance()->getUser()->getCulture();
+        }
+        else
+        {
+            if (!$this->hasLsiIn($culture)) return null;
+        }
+
+        return "@{$app}author?action={$action}&stripped_display_name={$this->getStrippedDisplayName($culture)}&sf_culture=$culture";
     }
 
     public function getAdjective()

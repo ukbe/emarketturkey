@@ -130,21 +130,30 @@ class Publication extends BasePublication
         return $this->getAuthor();
     }
 
-    public function getUrl()
+    public function getUrl($culture = null)
     {
         $app = sfContext::getInstance()->getConfiguration()->getApplication();
 
+        if (!$culture)
+        {
+            $culture = sfContext::getInstance()->getUser()->getCulture();
+        }
+        else
+        {
+            if (!$this->hasLsiIn($culture)) return null;
+        }
+
         if ($this->isKB())
         {
-            return $app == 'camp' ? "@kb-article?stripped_title=".$this->getStrippedTitle() : "@camp.kb-article?stripped_title=".$this->getStrippedTitle();
+            return $app == 'camp' ? "@kb-article?stripped_title=".$this->getStrippedTitle()."&sf_culture=$culture" : "@camp.kb-article?stripped_title=".$this->getStrippedTitle()."&sf_culture=$culture";
         }
         
         switch ($this->getTypeId())
         {
-            case PublicationPeer::PUB_TYP_ARTICLE : return $app == 'camp' ? "@author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName()}&stripped_title=".$this->getStrippedTitle() : "@camp.author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName()}&stripped_title=".$this->getStrippedTitle();
-            case PublicationPeer::PUB_TYP_NEWS : return $app == 'camp' ? "@news?stripped_title=".$this->getStrippedTitle() : "@camp.news?stripped_title=".$this->getStrippedTitle();
+            case PublicationPeer::PUB_TYP_ARTICLE : return $app == 'camp' ? "@author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName($culture)}&stripped_title=".$this->getStrippedTitle($culture)."&sf_culture=$culture" : "@camp.author-article?stripped_display_name={$this->getAuthor()->getStrippedDisplayName($culture)}&stripped_title=".$this->getStrippedTitle($culture)."&sf_culture=$culture";
+            case PublicationPeer::PUB_TYP_NEWS : return $app == 'camp' ? "@news?stripped_title=".$this->getStrippedTitle($culture)."&sf_culture=$culture" : "@camp.news?stripped_title=".$this->getStrippedTitle($culture)."&sf_culture=$culture";
         }
-        return "";
+        return null;
     }
 
     public function getEditUrl($act = 'edit')

@@ -34,14 +34,21 @@ class PublicationCategoryPeer extends BasePublicationCategoryPeer
         return $cats; 
     }
     
-    public static function retrieveByStrippedCategory($category)
+    public static function retrieveByStrippedCategory($category, $ignore_culture = false)
     {
         $c = new Criteria();
         $c->add(PublicationCategoryI18nPeer::STRIPPED_CATEGORY, $category);
-        $cats = self::doSelectWithI18n($c);
+        if ($ignore_culture)
+        {
+            $cats = PublicationCategoryI18nPeer::doSelect($c);
+        }
+        else
+        {
+            $cats = self::doSelectWithI18n($c);
+        }
         if (is_array($cats) && count($cats))
         {
-            return $cats[0];
+            return $ignore_culture ? $cats[0]->getPublicationCategory() : $cats[0];
         }
         else
         {

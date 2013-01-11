@@ -8,14 +8,21 @@ class PublicationPeer extends BasePublicationPeer
     CONST PUB_FEATURED_BANNER   = 1;
     CONST PUB_FEATURED_COLUMN   = 2;
     
-    public static function retrieveByStrippedTitle($title)
+    public static function retrieveByStrippedTitle($title, $ignore_culture = false)
     {
         $c = new Criteria();
         $c->add(PublicationI18nPeer::STRIPPED_TITLE, $title);
-        $pubs = self::doSelectWithI18n($c);
+        if ($ignore_culture)
+        {
+            $pubs = PublicationI18nPeer::doSelect($c);
+        }
+        else
+        {
+            $pubs = self::doSelectWithI18n($c);
+        }
         if (is_array($pubs) && count($pubs))
         {
-            return $pubs[0];
+            return $ignore_culture ? $pubs[0]->getPublication() : $pubs[0];
         }
         else
         {
