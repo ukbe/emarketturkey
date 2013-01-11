@@ -7,7 +7,7 @@ search-companies:
 
 companies-action:
   url:   /:sf_culture/companies/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (featured|connected|byCountry|byIndustry|byName|results) } 
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|connected|byCountry|byIndustry|byName) } 
   param: { module: companies }
 
 companies-dir:
@@ -19,11 +19,6 @@ companies:
   url:   /:sf_culture/companies
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: companies, action: index }
-
-company-category:
-  url: /:sf_culture/company/:stripped_category
-  requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: companies, action: category }
 
 company-product-substitute:
   url:   /:sf_culture/company/:hash/products/:substitute
@@ -122,7 +117,7 @@ search-products:
 
 products-action:
   url:   /:sf_culture/products/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (spotlight|network|byCategory|byCountry|results) } 
+  requirements: { sf_culture: (?:en|de|tr), action: (spotlight|network|byCategory|byCountry) } 
   param: { module: products }
 
 products-dir:
@@ -134,11 +129,6 @@ products:
   url:   /:sf_culture/products
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: products, action: index }
-
-product-category:
-  url: /:sf_culture/product/:stripped_category
-  requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: products, action: category }
 
 tradeexpert-profile:
   url:   /:sf_culture/tradeexpert/:hash
@@ -426,7 +416,7 @@ group-profile:
 
 groups-action:
   url:   /:sf_culture/groups/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (featured|connected|byCountry|byIndustry|byName|results) } 
+  requirements: { sf_culture: (?:en|de|tr), action: (featured|connected|byCountry|byIndustry|byName) } 
   param: { module: groups }
 
 groups-dir:
@@ -444,20 +434,10 @@ notifications:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: network, action: notifications }
 
-network-activity:
-  url:   /:sf_culture/activity
-  requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: network, action: activity }
-
 requests:
   url:   /:sf_culture/requests
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: network, action: requests }
-
-network:
-  url:   /:sf_culture/network
-  requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: network, action: index }
 
 search-users:
   url:   /:sf_culture/people/search
