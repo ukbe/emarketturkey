@@ -598,6 +598,11 @@ terms:
 
 ## Service Rules
 
+sitemap:
+  url:   /sitemap.xml
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: sitemap }
+
 services:
   url:   /:sf_culture/services/overview
   requirements: { sf_culture: (?:en|de|tr) } 

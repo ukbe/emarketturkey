@@ -2,12 +2,30 @@
 
 class categoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
-        $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'));
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
+        $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'), $xcult);
+
         if (!$this->category) $this->redirect404();
-        
+
+        $urls = array();
+        foreach (sfConfig::get('app_i18n_cultures') as $culture)
+        {
+            $urls[$culture] = "@articles-category?stripped_category=".$this->category->getStrippedCategory($culture)."&sf_culture=$culture";
+        }
+
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
         $this->getResponse()->addMeta('description', sfContext::getInstance()->getI18N()->__('Read various articles on %1cat', array('%1cat' => $this->category->__toString())));
+
+        $this->getUser()->setCultureLinks($urls);
 
         $this->banner_articles = PublicationPeer::doSelectByTypeId(PublicationPeer::PUB_TYP_ARTICLE, false, $this->category->getId(), 5);
         $this->top_articles = PublicationPeer::getMostReadPublications(PublicationPeer::PUB_TYP_ARTICLE, 5, $this->getUser()->getCulture(), null, null, null, null, $this->category->getId());

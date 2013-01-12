@@ -2,9 +2,13 @@
 
 class categoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
-        $this->kb_category = PublicationCategoryPeer::retrieveByPK(PublicationCategoryPeer::KNOWLEDGEBASE_CATEGORY_ID);
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
+        $this->kb_category = PublicationCategoryPeer::retrieveByPK(PublicationCategoryPeer::KNOWLEDGEBASE_CATEGORY_ID, $xcult);
 
         $c = new Criteria();
         $c->addJoin(PublicationCategoryPeer::ID, PublicationCategoryI18nPeer::ID, Criteria::LEFT_JOIN);
@@ -21,6 +25,19 @@ class categoryAction extends EmtAction
         $c->add(PublicationCategoryI18nPeer::STRIPPED_CATEGORY, $this->getRequestParameter('stripped_category'));
         $this->category = PublicationCategoryPeer::doSelectOne($c);
         if (!$this->category) $this->redirect404();
+
+        $urls = array();
+        foreach (sfConfig::get('app_i18n_cultures') as $culture)
+        {
+            $urls[$culture] = "@kb-category?stripped_category=".$this->category->getStrippedCategory($culture)."&sf_culture=$culture";
+        }
+
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
 
         $this->page = myTools::fixInt($this->getRequestParameter('page', 1));
 

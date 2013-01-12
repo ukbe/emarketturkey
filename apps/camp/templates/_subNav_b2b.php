@@ -7,7 +7,7 @@
                 <dd<?php echo $module=='leads' && $sf_params->get('type_code')=='buying' ? ' class="_selected"' : '' ?>><?php echo link_to(__('Buying Leads'), '@buying-leads') ?></dd>
                 <dd<?php echo $module=='leads' && $sf_params->get('type_code')=='selling' ? ' class="_selected"' : '' ?>><?php echo link_to(__('Selling Leads'), '@selling-leads') ?></dd>
                 <dd class="ui-corner-tr<?php echo $module == 'events' || $module == 'venues' ? ' _selected' : '' ?>"><?php echo link_to(__('Trade Shows'), '@tradeshows') ?></dd>
-                <dd class="_sp<?php echo checkActivePage('--UPGRADE', null, false, '_selected') ?>"><?php echo link_to(__('UPGRADE'), '@lobby.premium') ?></dd>
+                <dd class="_sp<?php echo checkActivePage('--UPGRADE', null, false, '_selected') ?>"><?php echo link_to(__('UPGRADE'), '@premium') ?></dd>
                 <dd class="_pr<?php echo checkActivePage('module=tradeexperts', null, false, '_selected') ?>"><?php echo link_to('<span>TR</span>ADE Experts <sup>®</sup>', '@tradeexperts') ?></dd>
                 <dd class="_pr<?php echo checkActivePage('--EMTTRUST', null, false, '_selected') ?>"><?php echo link_to('emt<span>TR</span>UST <sup>®</sup>', '@homepage', 'style=color:#eee') ?></dd>
             </dl>

@@ -10,8 +10,8 @@
 
 	<dl id="language_field">
 		<dt><?php echo __('INTERNATIONAL:') ?></dt>
-		<dd><?php echo link_to('ENGLISH', myTools::localizedUrl('en')) ?></dd>
-		<dd><?php echo link_to('TÜRKÇE', myTools::localizedUrl('tr')) ?></dd>
+		<dd><?php echo link_to('ENGLISH', isset($urls) && isset($urls['en']) ? $urls['en'] : myTools::localizedUrl('en')) ?></dd>
+		<dd><?php echo link_to('TÜRKÇE', isset($urls) && isset($urls['tr']) ? $urls['tr'] : myTools::localizedUrl('tr')) ?></dd>
 		<dd class="more ghost"><a href=""></a></dd>
 	</dl>
 

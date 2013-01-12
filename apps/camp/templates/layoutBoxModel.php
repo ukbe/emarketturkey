@@ -12,7 +12,7 @@
 </head>
 <body class="_noJS">
 <header>
- <?php include_partial('global/header') ?>
+ <?php include_partial('global/header', array('urls' => $sf_user->getCultureLinks())) ?>
 </header>
 <div id="pop-holder"><?php include_partial('global/pop_message') ?>
 <?php if (has_slot('pageHeader')): ?>
