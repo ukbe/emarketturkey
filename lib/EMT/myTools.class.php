@@ -120,8 +120,7 @@ class myTools
         $request    = sfContext::getInstance()->getRequest();
         $controller = sfContext::getInstance()->getController();
         
-        // depending on your routing configuration, you can set $route_name = $routing->getCurrentRouteName()
-        $route_name = '';
+        $route_name = $routing->getCurrentRouteName();
         
         $parameters = $controller->convertUrlStringToParameters($routing->getCurrentInternalUri());
         $parameters[1]['sf_culture'] = $sf_culture;
