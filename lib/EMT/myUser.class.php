@@ -10,7 +10,7 @@ class myUser extends sfBasicSecurityUser
     {
         // initialize parent
         parent::initialize($dispatcher, $storage, $options);
-        
+
         if ($this->isAuthenticated())
         {
             if (!$this->getUser() || $this->login_obj->countBlocksExceptReasonIds(array(BlockReasonPeer::BR_TYP_VERIFICATION_REQUIRED)))
@@ -156,9 +156,21 @@ class myUser extends sfBasicSecurityUser
         }
     }
     
+    public function setCultureLinks($links)
+    {
+        $this->setAttribute("links", $links);
+    }
+    
+    public function getCultureLinks($purge = true)
+    {
+        $attr = $this->getAttribute('links', null);
+        if ($purge) $this->getAttributeHolder()->remove('links');
+        return $attr;
+    }
+    
     public function setSearchFlash($keyword)
     {
-        $flash = $this->getAttribute("recentsearches", array(), 'myemt');
+        $flash = $this->getAttribute('recentsearches', array(), 'myemt');
         array_push($flash, $keyword);
         $flash = array_unique($flash);
         $this->setAttribute("recentsearches", $flash, 'myemt');

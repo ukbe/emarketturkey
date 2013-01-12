@@ -2,13 +2,18 @@
 
 class EmtAction extends sfAction
 {
+    protected $i18n_object_depended = false;
+
     public function initialize($context, $moduleName, $actionName)
     {
         parent::initialize($context, $moduleName, $actionName);
-        if (in_array($this->getRequestParameter('x-cult'), array('en', 'tr')))
+        if (!$this->i18n_object_depended && in_array($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures')))
         {
             $this->redirect(myTools::remove_querystring_var(myTools::localizedUrl($this->getRequestParameter('x-cult')), 'x-cult'));
         }
+
+        // purge links if left over from previous page
+        $this->getUser()->getAttributeHolder()->remove('links');
 
         // Creating default session user variable to handle rights
         if (!($this->sesuser = $this->getUser()->getUser())) 
