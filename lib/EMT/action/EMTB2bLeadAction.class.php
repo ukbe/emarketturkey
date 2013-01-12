@@ -10,6 +10,8 @@ class EmtB2bLeadAction extends EmtAction
         
         $this->forward404unless($this->lead);
 
+        $this->getResponse()->addMeta('description', $this->lead->getDescription());
+
         $this->company = $this->lead->getCompany();
     }
     

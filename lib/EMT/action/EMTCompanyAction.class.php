@@ -12,7 +12,9 @@ class EmtCompanyAction extends EmtAction
 
         $this->own_company = $this->sesuser->isOwnerOf($this->company);
         $this->profile = $this->company->getCompanyProfile();
-        
+
+        $this->getResponse()->addMeta('description', $this->profile->getIntroduction());
+
         $this->nums = array();
         $this->nums['followers'] = $this->company->countFollowers();
         $this->nums['products'] = $this->company->countActiveProducts();

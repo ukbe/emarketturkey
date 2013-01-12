@@ -9,6 +9,8 @@ class EmtPlaceAction extends EmtAction
 
         $this->place = PlacePeer::getPlaceFromUrl($this->getRequest()->getParameterHolder());
         
+        $this->getResponse()->addMeta('description', $this->place->getIntroduction());
+
         $this->forward404Unless($this->place);
 
     }

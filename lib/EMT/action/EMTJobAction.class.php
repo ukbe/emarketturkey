@@ -10,6 +10,8 @@ class EmtJobAction extends EmtAction
 
         $this->forward404Unless($this->job);
         
+        $this->getResponse()->addMeta('description', $this->job->getDescription());
+
         $this->owner = $this->job->getOwner();
         $this->otyp = $this->job->getOwnerTypeId();
         

@@ -9,6 +9,8 @@ class EmtEventAction extends EmtAction
 
         $this->event = EventPeer::getEventFromUrl($this->getRequest()->getParameterHolder(), true);
         
+        $this->getResponse()->addMeta('description', $this->event->getIntroduction());
+
         $this->forward404Unless($this->event);
 
     }

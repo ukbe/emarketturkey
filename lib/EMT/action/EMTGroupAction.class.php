@@ -18,11 +18,13 @@ class EmtGroupAction extends EmtAction
         }
         if (!$this->group || $this->group->getOwner()->isBlocked()) $this->redirect404();
 
+        $this->getResponse()->addMeta('description', $this->group->getIntroduction());
+
         if (!$this->sesuser->isNew())
             $this->isMember = $this->group->hasMembership($this->sesuser->getId(), PrivacyNodeTypePeer::PR_NTYP_USER);
         else
             $this->isMember = false;
-        
+
         $this->own_group = $this->sesuser->isOwnerOf($this->group);
 
         $this->goodToRun = $this->actionID ? $this->sesuser->can($this->actionID, $this->group) : null;
