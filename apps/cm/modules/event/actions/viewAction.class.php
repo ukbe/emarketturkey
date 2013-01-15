@@ -5,7 +5,7 @@ class viewAction extends EmtEventAction
     public function execute($request)
     {
         // Redirect to camp application
-        $this->redirect('@camp.event-detail?hash='.$this->event->getGuid(), 301);
+        $this->redirect('@camp.event-detail?guid='.$this->event->getGuid(), 301);
 
         $this->getResponse()->setTitle($this->event . ' | eMarketTurkey');
 
