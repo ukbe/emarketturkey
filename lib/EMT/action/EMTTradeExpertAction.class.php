@@ -9,7 +9,7 @@ class EmtTradeExpertAction extends EmtAction
 
         $this->tradeexpert = TradeExpertPeer::getTradeExpertFromUrl($this->getRequest()->getParameterHolder());
         
-        $this->getResponse()->addMeta('description', $this->profile->getIntroduction());
+        $this->getResponse()->addMeta('description', $this->tradeexpert->getIntroduction());
 
         $this->forward404Unless($this->tradeexpert);
 
