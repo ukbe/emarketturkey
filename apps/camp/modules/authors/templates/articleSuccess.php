@@ -81,7 +81,7 @@
                 <dl>
                     <dt><?php echo $source->getPicture() ? link_to(image_tag($source->getPictureUri(), array('title' => $source->__toString())), "@article-source?stripped_display_name={$source->getStrippedDisplayName()}") : '' ?></dt>
                     <dd><?php echo $source ?>
-                        <?php echo link_to(__('Articles by %1source', array('%1source' => $source->__toString())), "@news-source?stripped_display_name={$source->getStrippedDisplayName()}") ?>
+                        <?php echo link_to(__('Articles by %1source', array('%1source' => $source->__toString())), "@article-source?stripped_display_name={$source->getStrippedDisplayName()}") ?>
                         </dd>
                 </dl>
             </div>

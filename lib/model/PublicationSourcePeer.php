@@ -4,6 +4,28 @@ class PublicationSourcePeer extends BasePublicationSourcePeer
 {
     CONST PSRC_FEATURED         = 1;
     
+    public static function retrieveByStrippedName($name, $ignore_culture = false)
+    {
+        $c = new Criteria();
+        $c->add(PublicationSourceI18nPeer::STRIPPED_DISPLAY_NAME, $name);
+        if ($ignore_culture)
+        {
+            $pubs = PublicationSourceI18nPeer::doSelect($c);
+        }
+        else
+        {
+            $pubs = self::doSelectWithI18n($c);
+        }
+        if (is_array($pubs) && count($pubs))
+        {
+            return $ignore_culture ? $pubs[0]->getPublicationSource() : $pubs[0];
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
     public static function getPager($page, $items_per_page = 20, $c1 = null)
     {
         if ($c1 instanceof Criteria)

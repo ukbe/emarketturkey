@@ -145,7 +145,7 @@ class Publication extends BasePublication
 
         if ($this->isKB())
         {
-            return $app == 'camp' ? "@kb-article?stripped_title=".$this->getStrippedTitle()."&sf_culture=$culture" : "@camp.kb-article?stripped_title=".$this->getStrippedTitle()."&sf_culture=$culture";
+            return $app == 'camp' ? "@kb-article?stripped_title=".$this->getStrippedTitle($culture)."&sf_culture=$culture" : "@camp.kb-article?stripped_title=".$this->getStrippedTitle($culture)."&sf_culture=$culture";
         }
         
         switch ($this->getTypeId())

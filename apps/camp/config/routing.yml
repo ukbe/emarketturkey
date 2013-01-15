@@ -256,7 +256,7 @@ mycv-action:
 ## Academy Rules
 
 article-source:
-  url: /:sf_culture/article/by/:stripped_display_name
+  url: /:sf_culture/articles/by/:stripped_display_name
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: articles, action: source }
 

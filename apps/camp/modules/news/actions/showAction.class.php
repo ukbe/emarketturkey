@@ -25,7 +25,6 @@ class showAction extends EmtAction
         if ($xcult)
         {
             $this->redirect($urls[$xcult]);
-            
         }
 
         $this->getResponse()->addMeta('description', $this->news->getSummary());

@@ -68,11 +68,27 @@ class PublicationSource extends BasePublicationSource
         return "{$app}author-action?action=source&id={$this->getId()}&act=$act";
     }
 
-    public function getUrl($action = 'posts')
+    public function getUrl($type = 1, $culture = null)
     {
+        // $type = 1  -> Article
+        //         2  -> News
         $app = sfContext::getInstance()->getConfiguration()->getApplication();
-        $app = $app == 'ac' ? '' : "$app.";
-        return "@{$app}news-source?action={$action}&stripped_display_name={$this->getStrippedDisplayName()}";
+
+        if (!$culture)
+        {
+            $culture = sfContext::getInstance()->getUser()->getCulture();
+        }
+        else
+        {
+            if (!$this->hasLsiIn($culture)) return null;
+        }
+
+        switch ($type)
+        {
+            case PublicationPeer::PUB_TYP_ARTICLE : return $app == 'camp' ? "@article-source?stripped_display_name={$this->getStrippedDisplayName($culture)}&sf_culture=$culture" : "@camp.article-source?stripped_display_name={$this->getStrippedDisplayName($culture)}&sf_culture=$culture";
+            case PublicationPeer::PUB_TYP_NEWS : return $app == 'camp' ? "@news-source?stripped_display_name={$this->getStrippedDisplayName($culture)}&sf_culture=$culture" : "@camp.news-source?stripped_display_name={$this->getStrippedDisplayName($culture)}&sf_culture=$culture";
+        }
+        return null;
     }
 
     public function getExistingI18ns()
