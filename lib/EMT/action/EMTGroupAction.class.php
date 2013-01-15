@@ -12,7 +12,7 @@ class EmtGroupAction extends EmtAction
         {
             $this->group = GroupPeer::retrieveByStrippedName($this->getRequestParameter('stripped_name'));
         }
-        elseif ($this->getContext()->getConfiguration()->getApplication() == 'myemt' && $this->getRequestParameter('hash'))
+        elseif ($this->getContext()->getConfiguration()->getApplication() == 'myemt' || $this->getRequestParameter('hash'))
         {
             $this->group = GroupPeer::getGroupFromHash($this->getRequestParameter('hash'));
         }
