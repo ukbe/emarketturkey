@@ -27,8 +27,10 @@ class sourceAction extends EmtAction
         $this->getUser()->setCultureLinks($urls);
 
         $c = new Criteria();
+        $c->addJoin(PublicationPeer::ID, PublicationI18nPeer::ID);
         $c->add(PublicationPeer::TYPE_ID, PublicationPeer::PUB_TYP_ARTICLE);
         $c->add(PublicationPeer::ACTIVE, 1);
+        $c->add(PublicationI18nPeer::CULTURE, $this->getUser()->getCulture());
         $c->addDescendingOrderByColumn(PublicationPeer::CREATED_AT);
         $this->articles = $this->source->getPublications($c);
 
