@@ -8,7 +8,7 @@
 <?php $logged_in = $sf_user->isLoggedIn() ?>
 	<nav<?php echo $logged_in ? ' class="_login"' : '' ?>>
     	<dl>
-    		<dt class="_liHome<?php echo !$logged_in ? ' empty' : '' ?>"><?php echo link_to(image_tag('layout/icon/home-white.png', array('alt' => __('Home for International Trade'))), $sf_user->isLoggedIn() ? '@homepage' : '@lobby.homepage', 'tabindex=1 id=btn-home') ?></dt>
+    		<dt class="_liHome<?php echo !$logged_in ? ' empty' : '' ?>"><?php echo link_to(image_tag('layout/icon/home-white.png', array('alt' => __('Home for International Trade'))), $sf_user->isLoggedIn() ? '@homepage' : '@camp.homepage', 'tabindex=1 id=btn-home') ?></dt>
             <dd id="btn-home-box">
                 <?php if ($logged_in): ?>
                 <ul>
