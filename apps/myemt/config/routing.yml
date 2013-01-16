@@ -1,3 +1,7 @@
+link-trash:
+  url: /*/_LINK_
+  param: { module: default, action: gone }
+
 representative-action:
   url:   /:sf_culture/tasks/representative/:action
   requirements: { sf_culture: (?:en|de|tr), action: (overview|notifications|requests) }

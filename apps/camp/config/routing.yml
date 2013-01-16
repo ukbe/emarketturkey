@@ -1,3 +1,7 @@
+link-trash:
+  url: /*/_LINK_
+  param: { module: default, action: gone }
+
 ## B2B Rules
 
 search-companies:

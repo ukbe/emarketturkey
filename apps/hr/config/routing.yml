@@ -1,3 +1,7 @@
+link-trash:
+  url: /*/_LINK_
+  param: { module: default, action: gone }
+
 myemployers:
   url: /:sf_culture/mycareer/employers
   param: { module: mycareer, action: employers, group: null }

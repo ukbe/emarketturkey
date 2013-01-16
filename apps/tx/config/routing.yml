@@ -1,3 +1,7 @@
+link-trash:
+  url: /*/_LINK_
+  param: { module: default, action: gone }
+
 apply:
   url:   /:sf_culture/apply
   requirements: { sf_culture: (?:en|de|tr) } 
