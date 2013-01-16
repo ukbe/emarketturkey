@@ -669,7 +669,12 @@ article-by-moved:
 news-by-empty:
   url:   /:sf_culture/news/by/
   requirements: { sf_culture: (?:en|de|tr) } 
-  param: { module: default, action: gone }
+  param: { module: default, action: badRequest400 }
+
+news-by-empty:
+  url:   /:sf_culture/news/
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: badRequest400 }
 
 #### End HTTP Notifications
 
