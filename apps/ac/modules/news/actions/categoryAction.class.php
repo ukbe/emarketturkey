@@ -5,14 +5,9 @@ class categoryAction extends EmtAction
     public function execute($request)
     {
         // Redirect to camp application
-        $params = $this->getRequest()->getParameterHolder()->getAll();
-        unset($params['module']);
-        unset($params['action']);
-        unset($params['sf_culture']);
-        $this->redirect("@camp.news-category?".http_build_query($params), 301);
-
-        $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'));
+        $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'), true);
         if (!$this->category) $this->redirect404();
+        $this->redirect("@camp.news-category?stripped_category=".$this->category->getStrippedCategory(), 301);
 
         $this->banner_news = PublicationPeer::doSelectByTypeId(PublicationPeer::PUB_TYP_NEWS, false, $this->category->getId(), 5);
         $this->top_news = PublicationPeer::getMostReadPublications(PublicationPeer::PUB_TYP_NEWS, 5, $this->getUser()->getCulture(), null, null, null, null, $this->category->getId());
