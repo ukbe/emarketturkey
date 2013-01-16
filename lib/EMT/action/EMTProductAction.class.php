@@ -8,11 +8,12 @@ class EmtProductAction extends EmtCompanyAction
 
         $this->product = ProductPeer::getProductFromUrl($this->getRequest()->getParameterHolder(), $this->company, true);
         
+        $this->forward404unless($this->product);
+
         $this->groups = $this->company->getOrderedGroups(false);
         
         $this->getResponse()->addMeta('description', $this->product->getIntroduction());
 
-        $this->forward404unless($this->product);
         
     }
     
