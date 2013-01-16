@@ -215,8 +215,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www..emarketturkey.com
+                  prod: www.emarketturkey.com     
               myemt:
                 routes:                         # routes to load, leave empty will load all the routes
                 env:                            # define the environment
@@ -317,8 +317,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www.emarketturkey.com
+                  prod: www.emarketturkey.com     
               lobby:
                 routes:
                 env:
@@ -368,8 +368,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www.emarketturkey.com
+                  prod: www.emarketturkey.com     
               lobby:
                 routes:
                 env:
@@ -419,8 +419,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www.emarketturkey.com
+                  prod: www.emarketturkey.com     
               lobby:
                 routes:
                 env:
@@ -470,8 +470,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www.emarketturkey.com
+                  prod: www.emarketturkey.com     
               lobby:
                 routes:
                 env:
@@ -521,8 +521,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www.emarketturkey.com
+                  prod: www.emarketturkey.com     
               lobby:
                 routes:
                 env:
@@ -572,8 +572,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www.emarketturkey.com
+                  prod: www.emarketturkey.com     
               lobby:
                 routes:
                 env:
@@ -623,8 +623,8 @@ all:
                 routes:
                 env:
                   dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
+                  test: www.emarketturkey.com
+                  prod: www.emarketturkey.com     
               lobby:
                 routes:
                 env:
@@ -637,12 +637,6 @@ all:
                   dev: hr.geek.emt
                   test: hr.emarketturkey.com
                   prod: hr.emarketturkey.com
-              lobby:
-                routes:
-                env:
-                  dev: geek.emt
-                  test: emarketturkey.com
-                  prod: emarketturkey.com     
               b2b:
                 routes:
                 env:
