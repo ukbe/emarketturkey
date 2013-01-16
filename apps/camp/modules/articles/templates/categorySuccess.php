@@ -84,7 +84,7 @@
             <?php foreach ($top_articles as $article): ?>
                 <dt<?php echo strlen($article->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $article->getRating() ?></dt>
                 <dd><strong><?php echo link_to($article->__toString(), $article->getUrl()) ?></strong>
-                    <?php echo $article->getPublicationSource()->__toString() ?></dd>
+                    <?php echo $article->getPublicationSource() ? $article->getPublicationSource()->__toString() : '' ?></dd>
             <?php endforeach ?>
             </dl>
         </div>
