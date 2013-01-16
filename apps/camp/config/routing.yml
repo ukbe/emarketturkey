@@ -658,7 +658,7 @@ newlogo-gone:
 
 trash-gone:
   url:   /:sf_culture/:trashpage
-  requirements: { sf_culture: (?:en|de|tr), trashpage: (dfgh|sdfg) } 
+  requirements: { sf_culture: (?:en|de|tr), trashpage: (dfgh|sdfg|asdf) } 
   param: { module: default, action: gone }
 
 article-by-moved:
