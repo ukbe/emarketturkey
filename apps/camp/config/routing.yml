@@ -643,6 +643,15 @@ premium:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: services, action: premium }
 
+services-gone:
+  url:   /:sf_culture/services/:old_service_type
+  requirements: { sf_culture: (?:en|de|tr), old_service_type: (jobs|cvstore|incoop|automatedtx|simultx|embeddedhri|directory|ondemandtx|assisttx|emtrust|simultx) } 
+  param: { module: default, action: gone }
+
+newlogo-gone:
+  url:   /newlogo
+  param: { module: default, action: gone }
+
 #### End Service Rules
 
 ## Default Rules
