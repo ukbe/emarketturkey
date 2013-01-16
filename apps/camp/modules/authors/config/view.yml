@@ -3,4 +3,4 @@ all:
     title:        'Academy | eMarketTurkey'
     description:  'eMarketTurkey Academy Portal'
     keywords:     'article, trade, information, research, survey, news, import, export, knowledgebase'
-  stylesheets:    [ac-styles-0.1.css]
+  stylesheets:    [ac-styles-0.2.css]
