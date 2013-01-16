@@ -5,12 +5,10 @@ class categoryAction extends EmtAction
     public function execute($request)
     {
         // Redirect to camp application
-        $params = $this->getRequest()->getParameterHolder()->getAll();
-        unset($params['module']);
-        unset($params['action']);
-        unset($params['sf_culture']);
-        $this->redirect("@camp.kb-category?".http_build_query($params), 301);
-
+        $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'), true);
+        if (!$this->category) $this->redirect404();
+        $this->redirect("@camp.kb-category?stripped_category=".$this->category->getStrippedCategory(), 301);
+        
         $this->kb_category = PublicationCategoryPeer::retrieveByPK(PublicationCategoryPeer::KNOWLEDGEBASE_CATEGORY_ID);
 
         $c = new Criteria();
