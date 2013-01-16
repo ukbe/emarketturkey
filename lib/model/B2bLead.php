@@ -217,5 +217,10 @@ class B2bLead extends BaseB2bLead
         $app =  sfContext::getInstance()->getConfiguration()->getApplication();
         return $this->getUrl() . "&photo=$photo_id";
     }
+
+    public function isExpired()
+    {
+        return $this->getExpiresAt() > date('U');
+    }
     
 }

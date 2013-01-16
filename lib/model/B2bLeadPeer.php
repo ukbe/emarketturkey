@@ -16,13 +16,13 @@ class B2bLeadPeer extends BaseB2bLeadPeer
         return B2bLeadPeer::doSelectOne($c);
     }
 
-    public static function getLeadFromUrl(sfParameterHolder $ph)
+    public static function getLeadFromUrl(sfParameterHolder $ph, $expire = false)
     {
         $c = new Criteria();
         $c->addJoin(B2bLeadPeer::COMPANY_ID, CompanyPeer::ID, Criteria::INNER_JOIN);
         $c->add(B2bLeadPeer::GUID, $ph->get('guid'));
         $c->add(B2bLeadPeer::ACTIVE, 1);
-        $c->add(B2bLeadPeer::EXPIRES_AT, "TRUNC(EMT_B2B_LEAD.EXPIRES_AT) >= TRUNC(SYSDATE)", Criteria::CUSTOM);
+        if ($expire) $c->add(B2bLeadPeer::EXPIRES_AT, "TRUNC(EMT_B2B_LEAD.EXPIRES_AT) >= TRUNC(SYSDATE)", Criteria::CUSTOM);
         $c->add(CompanyPeer::AVAILABLE, 1);
         return self::doSelectOne($c);
     }
