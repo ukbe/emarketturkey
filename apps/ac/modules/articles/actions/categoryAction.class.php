@@ -7,7 +7,11 @@ class categoryAction extends EmtAction
         // Redirect to camp application
         $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'), true);
         if (!$this->category) $this->redirect404();
-        $this->redirect("@camp.articles-category?stripped_category=".$this->category->getStrippedCategory(), 301);
+        
+        if ($this->hasRequestParameter('page')) $pagestr = "&page={$this->getRequestParameter('page')}"
+        else $pagestr = '';
+        
+        $this->redirect("@camp.articles-category?stripped_category=".$this->category->getStrippedCategory().$pagestr, 301);
 
         $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'));
         if (!$this->category) $this->redirect404();
