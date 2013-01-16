@@ -136,7 +136,7 @@ class Publication extends BasePublication
 
         if (!$culture)
         {
-            $culture = sfContext::getInstance()->getUser()->getCulture();
+            $culture = $this->getDefaultLang();
         }
         else
         {
