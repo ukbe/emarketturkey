@@ -78,6 +78,10 @@ article-feed:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: articles, action: feed }
 
+link-trash:
+  url: /*/_LINK_
+  param: { module: default, action: gone }
+
 # default rules
 homepage:
   url: /:sf_culture
