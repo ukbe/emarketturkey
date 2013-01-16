@@ -47,7 +47,7 @@
                     <dt><?php echo emt_label_for('captcha', __('Security Code')) ?></dt>
                     <dd><?php echo input_tag('captcha', '', array('style' => 'border:solid 1px #CCCCCC; width: 60px;')); ?></dd>
                     <dt>&nbsp;</dt>
-                    <dd><?php echo __('By clicking Sign Up, you are indicating that you have read and agree to the %1s and %2s.', array('%1s' => link_to(__('Terms of Use'), '@lobby.terms', 'target=emt_terms class=inherit-font bluelink t_hover'), '%2s' => link_to(__('Privacy Policy'), '@lobby.privacy', 'target=emt_privacy class=inherit-font bluelink t_hover'))) ?></dd>
+                    <dd><?php echo __('By clicking Sign Up, you are indicating that you have read and agree to the %1s and %2s.', array('%1s' => link_to(__('Terms of Use'), '@camp.terms', 'target=emt_terms class=inherit-font bluelink t_hover'), '%2s' => link_to(__('Privacy Policy'), '@camp.privacy', 'target=emt_privacy class=inherit-font bluelink t_hover'))) ?></dd>
                     <dt></dt>
                     <dd><?php echo submit_tag(__('Sign Up'), 'class=green-button') ?></dd>
                 </dl>
