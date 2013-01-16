@@ -108,7 +108,7 @@
             <div class="pad-1">
                 <ul class="sepdot">
                     <li><?php echo link_to(__('Articles Home'), '@articles', 'class=blue small')?></li>
-                    <li><?php echo link_to($article->getPublicationCategory()->__toString(), "@news-category?stripped_category={$article->getPublicationCategory()->getStrippedCategory()}", 'class=blue small')?></li>
+                    <li><?php echo link_to($article->getPublicationCategory()->__toString(), "@articles-category?stripped_category={$article->getPublicationCategory()->getStrippedCategory()}", 'class=blue small')?></li>
                 </ul>
             </div>
             <div class="clear"></div>
