@@ -643,6 +643,10 @@ premium:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: services, action: premium }
 
+#### End Service Rules
+
+## HTTP Notifications
+
 services-gone:
   url:   /:sf_culture/services/:old_service_type
   requirements: { sf_culture: (?:en|de|tr), old_service_type: (jobs|cvstore|incoop|automatedtx|simultx|embeddedhri|directory|ondemandtx|assisttx|emtrust|simultx) } 
@@ -652,7 +656,17 @@ newlogo-gone:
   url:   /newlogo
   param: { module: default, action: gone }
 
-#### End Service Rules
+trash-gone:
+  url:   /:sf_culture/:trashpage
+  requirements: { sf_culture: (?:en|de|tr), trashpage: (dfgh|sdfg) } 
+  param: { module: default, action: gone }
+
+article-by-moved:
+  url:   /:sf_culture/article/by/:stripped_display_name
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: default, action: moved301 }
+
+#### End HTTP Notifications
 
 ## Default Rules
 homepage:
