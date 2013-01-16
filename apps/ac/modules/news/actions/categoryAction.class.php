@@ -8,7 +8,7 @@ class categoryAction extends EmtAction
         $this->category = PublicationCategoryPeer::retrieveByStrippedCategory($this->getRequestParameter('stripped_category'), true);
         if (!$this->category) $this->redirect404();
         
-        if ($this->hasRequestParameter('page')) $pagestr = "&page={$this->getRequestParameter('page')}"
+        if ($this->hasRequestParameter('page')) $pagestr = "&page={$this->getRequestParameter('page')}";
         else $pagestr = '';
         
         $this->redirect("@camp.news-category?stripped_category=".$this->category->getStrippedCategory().$pagestr, 301);
