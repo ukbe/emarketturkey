@@ -12,7 +12,7 @@
             <h2 class="pub-title"><?php echo $article->getTitle() ?></h2>
             <p class="headline_meta">
                 <span class="author"><?php echo __('Author:') . link_to($author->__toString(), '@author?action=posts&stripped_display_name='.$author->getStrippedDisplayName(), array('title' => __('Articles by %1', array('%1' => $author->__toString())))) ?></span>
-                <span class="category"><?php echo __('Category:') . link_to($article->getPublicationCategory(), "@articles-category?stripped_category={$article->getPublicationCategory()->getStrippedCategory()}") ?></span>
+                <span class="category"><?php echo __('Category:') . link_to($article->getPublicationCategory()->__toString(), "@articles-category?stripped_category={$article->getPublicationCategory()->getStrippedCategory()}") ?></span>
                 <abbr class="published" title="<?php echo $article->getCreatedAt('Y-m-d') ?>"><?php echo format_datetime($article->getCreatedAt('U'), 'f') ?></abbr>
             </p>
             <div class="pub-content">
@@ -80,7 +80,7 @@
             <div class="col_authors margin-t2">
                 <dl>
                     <dt><?php echo $source->getPicture() ? link_to(image_tag($source->getPictureUri(), array('title' => $source->__toString())), "@news-source?stripped_display_name={$source->getStrippedDisplayName()}") : '' ?></dt>
-                    <dd><?php echo $source ?>
+                    <dd><?php echo $source->__toString() ?>
                         <?php echo link_to(__('Articles by %1source', array('%1source' => $source->__toString())), "@news-source?stripped_display_name={$source->getStrippedDisplayName()}") ?>
                         </dd>
                 </dl>

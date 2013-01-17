@@ -15,7 +15,7 @@
                         $html = "<li>".link_to($parent, "@kb-category?stripped_category={$parent->getStrippedCategory()}")."</li>". $html;
                     }
                   echo $html ? $html : ''; ?>
-            <li><span><?php echo $category ?></span></li>
+            <li><span><?php echo $category->__toString() ?></span></li>
         </ul>
     </div>
 
@@ -58,10 +58,10 @@
             <ul class="categories">
                 <?php foreach ($categories as $cat): ?>
                 <li>
-                <strong><?php echo link_to($cat, "@kb-category?stripped_category={$cat->getStrippedCategory()}") ?></strong>
+                <strong><?php echo link_to($cat->__toString(), "@kb-category?stripped_category={$cat->getStrippedCategory()}") ?></strong>
                 <ul>
                 <?php foreach ($cat->getSubCategories() as $sub): ?>
-                <li><?php echo link_to($sub, "@kb-category?stripped_category={$sub->getStrippedCategory()}") ?></li>
+                <li><?php echo link_to($sub->__toString(), "@kb-category?stripped_category={$sub->getStrippedCategory()}") ?></li>
                 <?php endforeach ?></ul></li>
                 <?php endforeach ?>
             </ul>
@@ -79,8 +79,8 @@
             <dl class="rating-list">
             <?php foreach ($top_articles as $article): ?>
                 <dt<?php echo strlen($article->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $article->getRating() ?></dt>
-                <dd><strong><?php echo link_to($article, $article->getUrl()) ?></strong>
-                    <?php echo $article->getPublicationSource() ?></dd>
+                <dd><strong><?php echo link_to($article->__toString(), $article->getUrl()) ?></strong>
+                    <?php echo $article->getPublicationSource()->__toString() ?></dd>
             <?php endforeach ?>
             </dl>
         </div>
@@ -115,10 +115,10 @@
             <div class="col_authors margin-t2">
                 <dl>
                 <?php foreach ($colarticles as $article): ?>
-                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor())), $article->getUrl()) : '' ?></dt>
+                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor()->__toString())), $article->getUrl()) : '' ?></dt>
                     <dd>
-                        <?php echo link_to($article, $article->getUrl()) ?>
-                        <div class="author-name"><?php echo link_to($article->getAuthor(), $article->getUrl()) ?>
+                        <?php echo link_to($article->__toString(), $article->getUrl()) ?>
+                        <div class="author-name"><?php echo link_to($article->getAuthor()->__toString(), $article->getUrl()) ?>
                         <?php echo $article->getAuthor()->getTitle() ?></div>
                         </dd>
                 <?php endforeach ?>
