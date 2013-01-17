@@ -54,18 +54,33 @@ class directoryAction extends EmtAction
         {
             $this->getResponse()->setTitle('Groups by Name | eMarketTurkey');
 
+            $abc = range('A','Z');
+
+            $substitutes = array('C' => array('C', 'Ç'),
+                                 'G' => array('G', 'Ğ'),
+                                 'I' => array('I', 'İ'),
+                                 'O' => array('O', 'Ö'),
+                                 'S' => array('S', 'Ş'),
+                                 'U' => array('U', 'Ü'),
+                            );
+
+            foreach ($substitutes as $subs)
+                $abc = array_merge($abc, $subs);
+
+            $abc = array_unique($abc);
+            
             $this->mod = 3;
             if ($this->initial == '@')
             {
-                $c1 = $c->getNewCriterion(GroupPeer::NAME, "UPPER(SUBSTR(".GroupPeer::NAME.", 0, 1)) NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
-                $c2 = $c->getNewCriterion(GroupI18nPeer::DISPLAY_NAME, "UPPER(SUBSTR(".GroupI18nPeer::DISPLAY_NAME.", 0, 1)) NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
+                $c1 = $c->getNewCriterion(GroupPeer::NAME, "UPPER(SUBSTR(".GroupPeer::NAME.", 0, 1)) NOT IN ('".implode("','", $abc)."')", Criteria::CUSTOM);
+                $c2 = $c->getNewCriterion(GroupI18nPeer::DISPLAY_NAME, "UPPER(SUBSTR(".GroupI18nPeer::DISPLAY_NAME.", 0, 1)) NOT IN ('".implode("','", $abc)."')", Criteria::CUSTOM);
                 $c1->addOr($c2);
                 $c->add($c1);
             }
             else
             {
-                $c1 = $c->getNewCriterion(GroupPeer::NAME, "UPPER(SUBSTR(".GroupPeer::NAME.", 0, 1))='{$this->initial}'", Criteria::CUSTOM);
-                $c2 = $c->getNewCriterion(GroupI18nPeer::DISPLAY_NAME, "UPPER(SUBSTR(".GroupI18nPeer::DISPLAY_NAME.", 0, 1))='{$this->initial}'", Criteria::CUSTOM);
+                $c1 = $c->getNewCriterion(GroupPeer::NAME, "UPPER(SUBSTR(".GroupPeer::NAME.", 0, 1)) IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : array($this->initial))."')", Criteria::CUSTOM);
+                $c2 = $c->getNewCriterion(GroupI18nPeer::DISPLAY_NAME, "UPPER(SUBSTR(".GroupI18nPeer::DISPLAY_NAME.", 0, 1)) IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : array($this->initial))."')", Criteria::CUSTOM);
                 $c1->addOr($c2);
                 $c->add($c1);
             }

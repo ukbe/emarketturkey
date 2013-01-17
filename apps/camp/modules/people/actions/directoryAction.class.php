@@ -41,14 +41,29 @@ class directoryAction extends EmtAction
         {
             $this->getResponse()->setTitle('People by Name | eMarketTurkey');
 
+            $abc = range('A','Z');
+
+            $substitutes = array('C' => array('C', 'Ç'),
+                                 'G' => array('G', 'Ğ'),
+                                 'I' => array('I', 'İ'),
+                                 'O' => array('O', 'Ö'),
+                                 'S' => array('S', 'Ş'),
+                                 'U' => array('U', 'Ü'),
+                            );
+
+            foreach ($substitutes as $subs)
+                $abc = array_merge($abc, $subs);
+
+            $abc = array_unique($abc);
+            
             $this->mod = 3;
             if ($this->initial == '@')
             {
-                $c->add(UserPeer::DISPLAY_NAME, myTools::NLSFunc("SUBSTR(".UserPeer::DISPLAY_NAME.", 0, 1)")." NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
+                $c->add(UserPeer::DISPLAY_NAME, myTools::NLSFunc("SUBSTR(".UserPeer::DISPLAY_NAME.", 0, 1)")." NOT IN ('".implode("','", $abc)."')", Criteria::CUSTOM);
             }
             else
             {
-                $c->add(UserPeer::DISPLAY_NAME, myTools::NLSFunc("SUBSTR(".UserPeer::DISPLAY_NAME.", 0, 1)")."='{$this->initial}'", Criteria::CUSTOM);
+                $c->add(UserPeer::DISPLAY_NAME, myTools::NLSFunc("SUBSTR(".UserPeer::DISPLAY_NAME.", 0, 1)")." IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : array($this->initial))."')", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(myTools::NLSFunc(UserPeer::DISPLAY_NAME, 'SORT'));
             $c->addAscendingOrderByColumn(myTools::NLSFunc(UserPeer::DISPLAY_LASTNAME, 'SORT'));
