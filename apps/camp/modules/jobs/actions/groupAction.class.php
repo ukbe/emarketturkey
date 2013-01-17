@@ -7,6 +7,9 @@ class groupAction extends EmtGroupAction
         $act = myTools::pick_from_list($this->getRequestParameter('act'), array('save', 'rem', 'ban', 'unb'), null);
         if ($act)
         {
+            if ($this->sesuser->isNew())
+                $this->redirect("@myemt.login?_ref={$this->_here}");
+
             $fav = $this->sesuser->getBookmarkByItem($this->group->getId(), PrivacyNodeTypePeer::PR_NTYP_GROUP, UserBookmarkPeer::BMTYP_FAVOURITE);
             $ban = $this->sesuser->getBookmarkByItem($this->group->getId(), PrivacyNodeTypePeer::PR_NTYP_GROUP, UserBookmarkPeer::BMTYP_BANNED);
             if ($act == 'rem' && $fav)
@@ -49,7 +52,7 @@ class groupAction extends EmtGroupAction
             $this->getUser()->getAttributeHolder()->remove('act', null, '/hr/groups');
         }
         $this->act = $act;
-        
+
         $this->own_group = $this->sesuser->isOwnerOf($this->group);
 
         $this->getResponse()->setTitle(sfContext::getInstance()->getI18N()->__("Group Jobs: %1", array('%1' => $this->group)) . ' | eMarketTurkey');

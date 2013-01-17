@@ -8,9 +8,7 @@ class companyAction extends EmtCompanyAction
         if ($act)
         {
             if ($this->sesuser->isNew())
-            {
-                $this->redirect('@myemt.login?_ref='.$this->_here);
-            }
+                $this->redirect("@myemt.login?_ref={$this->_here}");
 
             $fav = $this->sesuser->getBookmarkByItem($this->company->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, UserBookmarkPeer::BMTYP_FAVOURITE);
             $ban = $this->sesuser->getBookmarkByItem($this->company->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, UserBookmarkPeer::BMTYP_BANNED);
