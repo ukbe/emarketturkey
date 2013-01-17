@@ -57,7 +57,7 @@ class directoryAction extends EmtAction
             $this->mod = 3;
             if ($this->initial == '@')
             {
-                $c1 = $c->getNewCriterion(GroupPeer::NAME, "UPPER(SUBSTR(".GroupPeer::DISPLAY_NAME.", 0, 1)) NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
+                $c1 = $c->getNewCriterion(GroupPeer::NAME, "UPPER(SUBSTR(".GroupPeer::NAME.", 0, 1)) NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
                 $c2 = $c->getNewCriterion(GroupI18nPeer::DISPLAY_NAME, "UPPER(SUBSTR(".GroupI18nPeer::DISPLAY_NAME.", 0, 1)) NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
                 $c1->addOr($c2);
                 $c->add($c1);
