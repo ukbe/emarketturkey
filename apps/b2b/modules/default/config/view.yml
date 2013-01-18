@@ -1,0 +1,6 @@
+error404Success:
+  metas:
+    title:        'Page Not Found'
+  layout: layoutTitleOnly
+  stylesheets:    [-*, error.css]
+  javascripts:    [-*]

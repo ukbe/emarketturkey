@@ -1,4 +1,10 @@
 indexSuccess:
   stylesheets:    [fancybox/jquery.fancybox.css]
-
   javascripts:    [fancybox/jquery.fancybox.pack.js]
+
+error404Success:
+  metas:
+    title:        'Page Not Found'
+  layout: layoutTitleOnly
+  stylesheets:    [-*, error.css]
+  javascripts:    [-*]

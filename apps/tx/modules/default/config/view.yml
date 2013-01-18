@@ -16,4 +16,10 @@ jobsEditSuccess:
 jobsSuccess:
     stylesheets:    [master-1.0.css, boxmodel-admin.css]
     javascripts:  [jquery.customCheckbox.js, jquery.switchButton.js, emt.langform-1.0.js, emt.hierarchyselector-1.0.js]
-    
+
+error404Success:
+  metas:
+    title:        'Page Not Found'
+  layout: layoutTitleOnly
+  stylesheets:    [-*, error.css]
+  javascripts:    [-*]
