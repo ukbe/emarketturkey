@@ -123,7 +123,10 @@ class myTools
         $route_name = $routing->getCurrentRouteName();
         
         $parameters = $controller->convertUrlStringToParameters($routing->getCurrentInternalUri());
-        $parameters[1]['sf_culture'] = $sf_culture;
+        if (isset($parameters[1]['sf_culture']))
+            $parameters[1]['sf_culture'] = $sf_culture;
+        else
+            $parameters[1]['x-cult'] = $sf_culture;
         
         return $routing->generate($route_name, array_merge($request->getGetParameters(), $parameters[1]));
     }
