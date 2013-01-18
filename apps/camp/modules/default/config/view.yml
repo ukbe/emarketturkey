@@ -1,5 +1,12 @@
 indexSuccess:
   stylesheets:   [b2b-styles.css]
 
+error404Success:
+  metas:
+    title:        'Page Not Found'
+  layout: layoutTitleOnly
+  stylesheets:    [-*, error.css]
+  javascripts:    [-*]
+
 setAnalyticFilterCookieSuccess:
-    layout: layoutPlain
+  layout: layoutPlain
