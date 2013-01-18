@@ -9,6 +9,7 @@ class EmtAction extends sfAction
         parent::initialize($context, $moduleName, $actionName);
         if (!$this->i18n_object_depended && in_array($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures')))
         {
+            $this->getUser()->setCulture($this->getRequestParameter('x-cult'));
             $this->redirect(myTools::remove_querystring_var(myTools::localizedUrl($this->getRequestParameter('x-cult')), 'x-cult'));
         }
 
