@@ -1,6 +1,6 @@
 login:
   is_secure: off
-  require_ssl: false
+  require_ssl: true
 
 resetPassword:
   is_secure: off

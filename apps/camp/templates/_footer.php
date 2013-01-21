@@ -22,7 +22,9 @@
                 <dt><?php echo link_to(__('Privacy'), '@privacy') ?></dt>
                 <dd><?php echo link_to(__('Privacy Policy'), '@privacy') ?></dd>
                 <dd><?php echo link_to(__('Privacy Settings'), "@myemt.setup-privacy") ?></dd>
-                <dd class="_ft_truste"><?php echo link_to(image_tag('//privacy-policy.truste.com/certified-seal/wps/en/emarketturkey.com/seal_m.png', array('alt' => __('TRUSTe online privacy certification'), 'style' => 'border: none;')), '//privacy-policy.truste.com/click-with-confidence/wps/en/emarketturkey.com/seal_m', array('title' => __('TRUSTe online privacy certification'), 'target' => '_blank')) ?></dd>
+                <dd class="_ft_truste">
+                    <div id="6441f5cf-ba19-4f40-914b-f06a38962c54"> <script type="text/javascript" src="//privacy-policy.truste.com/privacy-seal/EMTPORT-Bilgi-Teknolojileri-A-S-/asc?rid=6441f5cf-ba19-4f40-914b-f06a38962c54"></script><a href="//privacy.truste.com/privacy-seal/EMTPORT-Bilgi-Teknolojileri-A-S-/validation?rid=eef0516a-87b9-4e06-accc-f2ff9ec5c83a" title="TRUSTe online privacy certification" target="_blank"><img style="border: none" src="//privacy-policy.truste.com/privacy-seal/EMTPORT-Bilgi-Teknolojileri-A-S-/seal?rid=eef0516a-87b9-4e06-accc-f2ff9ec5c83a" alt="TRUSTe online privacy certification"/></a></div>
+                </dd>
 			</dl>
 
 			<dl>
