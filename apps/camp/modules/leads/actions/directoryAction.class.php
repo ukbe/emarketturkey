@@ -2,8 +2,12 @@
 
 class directoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
         $types = array('selling' => B2bLeadPeer::B2B_LEAD_SELLING, 'buying' => B2bLeadPeer::B2B_LEAD_BUYING);
         $this->type_code = myTools::pick_from_list($this->getRequestParameter('type_code'), array_keys($types), null);
         $this->type_id = in_array($this->type_code, array_keys($types)) ? $types[$this->type_code] : null;
@@ -23,10 +27,10 @@ class directoryAction extends EmtAction
         }
         else
         {
-            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute));
+            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             if (!$this->country)
             {
-                $this->category = ProductCategoryPeer::retrieveByStrippedCategory(strtolower($this->substitute));
+                $this->category = ProductCategoryPeer::retrieveByStrippedCategory(strtolower($this->substitute), $xcult);
             }
         }
         
@@ -52,6 +56,8 @@ class directoryAction extends EmtAction
 
         $i18n = $this->getContext()->getI18N();
 
+        $urls = array();
+
         if ($this->initial)
         {
             $this->getResponse()->setTitle($this->buying ? 'Buying Leads by Name | eMarketTurkey' : 'Selling Leads by Name | eMarketTurkey');
@@ -65,6 +71,11 @@ class directoryAction extends EmtAction
                 $c->add(B2bLeadI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".B2bLeadI18nPeer::NAME.", 0, 1)", 'UPPER'). "='{$this->initial}'", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(B2bLeadI18nPeer::NAME, myTools::NLSFunc(B2bLeadI18nPeer::NAME, 'SORT'));
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@leads-dir?substitute={$this->initial}&type_code={$this->type_code}&sf_culture=$culture";
+            }
         }
 
         if ($this->category)
@@ -72,6 +83,11 @@ class directoryAction extends EmtAction
             $this->getResponse()->setTitle($i18n->__($this->buying ? 'Buying Leads in %1 Category' : 'Selling Leads in %1 Category', array('%1' => $this->category)). ' | eMarketTurkey');
             $this->mod = 1;
             $c->add(B2bLeadPeer::CATEGORY_ID, $this->category->getId());
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@leads-dir?substitute=".$this->category->getStrippedCategory($culture)."&type_code={$this->type_code}&sf_culture=$culture";
+            }
         }
 
         if ($this->country)
@@ -83,8 +99,20 @@ class directoryAction extends EmtAction
             $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
             $c->add(ContactAddressPeer::COUNTRY, "UPPER(".ContactAddressPeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@leads-dir?substitute=".$this->country->getStrippedName($culture)."&type_code={$this->type_code}&sf_culture=$culture";
+            }
         }
         
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
+
         if ($this->mod === null) $this->redirect($this->buying ? "@buying-leads" : "selling-leads");
         
         $c->setDistinct();

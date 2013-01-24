@@ -2,8 +2,12 @@
 
 class directoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
         $this->substitute = $this->getRequestParameter('substitute');
         
         $this->initial = $this->country = $this->industry = null;
@@ -16,10 +20,10 @@ class directoryAction extends EmtAction
         }
         else
         {
-            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute));
+            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             if (!$this->country)
             {
-                $this->industry = BusinessSectorPeer::retrieveByStrippedName(strtolower($this->substitute));
+                $this->industry = BusinessSectorPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             }
         }
         
@@ -49,6 +53,8 @@ class directoryAction extends EmtAction
 
         $i18n = $this->getContext()->getI18N();
 
+        $urls = array();
+
         if ($this->initial)
         {
             $this->getResponse()->setTitle('Trade Shows by Name | eMarketTurkey');
@@ -62,6 +68,11 @@ class directoryAction extends EmtAction
                 $c->add(EventI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".EventI18nPeer::NAME.", 0, 1)", 'UPPER'). "='{$this->initial}'", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(EventI18nPeer::NAME, myTools::NLSFunc(EventI18nPeer::NAME, 'SORT'));
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@tradeshows-dir?substitute={$this->initial}&sf_culture=$culture";
+            }
         }
 
         if ($this->industry)
@@ -69,6 +80,11 @@ class directoryAction extends EmtAction
             $this->getResponse()->setTitle($i18n->__('Trade Shows on %1 Industry', array('%1' => $this->industry)). ' | eMarketTurkey');
             $this->mod = 1;
             //$c->add(EventPeer::CATEGORY_ID, $this->category->getId());
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@tradeshows-dir?substitute=".$this->industry->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
 
         if ($this->country)
@@ -80,8 +96,20 @@ class directoryAction extends EmtAction
             $c2 = $c->getNewCriterion(PlacePeer::COUNTRY, "UPPER(".PlacePeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
             $c1->addOr($c2);
             $c->addAnd($c1);
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@tradeshows-dir?substitute=".$this->country->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
         
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
+
         if ($this->mod === null) $this->redirect("@tradeshows");
 
         //$c->addJoin(EventPeer::TIME_SCHEME_ID, TimeSchemePeer::ID, Criteria::LEFT_JOIN);

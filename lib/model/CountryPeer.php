@@ -37,14 +37,21 @@ class CountryPeer extends BaseCountryPeer
         return self::doSelectOne($c);
     }
 
-    public static function retrieveByStrippedName($name)
+    public static function retrieveByStrippedName($name, $ignore_culture = false)
     {
         $c = new Criteria();
         $c->add(CountryI18nPeer::STRIPPED_NAME, $name);
-        $inds = self::doSelectWithI18n($c);
-        if (is_array($inds) && count($inds))
+        if ($ignore_culture)
         {
-            return $inds[0];
+            $cnts = CountryI18nPeer::doSelect($c);
+        }
+        else
+        {
+            $cnts = self::doSelectWithI18n($c);
+        }
+        if (is_array($cnts) && count($cnts))
+        {
+            return $ignore_culture ? $cnts[0]->getCountry() : $cnts[0];
         }
         else
         {

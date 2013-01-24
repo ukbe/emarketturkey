@@ -20,14 +20,21 @@ class BusinessSectorPeer extends BaseBusinessSectorPeer
         return BusinessSectorPeer::doSelectWithI18n($c);
     }
 
-    public static function retrieveByStrippedName($name)
+    public static function retrieveByStrippedName($name, $ignore_culture = false)
     {
         $c = new Criteria();
         $c->add(BusinessSectorI18nPeer::STRIPPED_NAME, $name);
-        $inds = self::doSelectWithI18n($c);
-        if (is_array($inds) && count($inds))
+        if ($ignore_culture)
         {
-            return $inds[0];
+            $sects = BusinessSectorI18nPeer::doSelect($c);
+        }
+        else
+        {
+            $sects = self::doSelectWithI18n($c);
+        }
+        if (is_array($sects) && count($sects))
+        {
+            return $ignore_culture ? $sects[0]->getBusinessSector() : $sects[0];
         }
         else
         {

@@ -42,7 +42,7 @@ class Event extends BaseEvent
             case EventTypePeer::ECLS_TYP_SOCIAL :
                 return ($app == 'camp' ? "@event-detail?guid={$this->getGuid()}" : "@camp.event-detail?guid={$this->getGuid()}");
         }
-        return (!$load_app || $load_app == $app ? '@' : "@$load_app.") . $route;
+        return ($app == 'camp' ? "@event-detail?guid={$this->getGuid()}" : "@camp.event-detail?guid={$this->getGuid()}");
     }
 
     public function getManageUrl()

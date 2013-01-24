@@ -2,8 +2,12 @@
 
 class directoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
         $this->substitute = $this->getRequestParameter('substitute');
         
         $this->initial = $this->country = $this->category = null;
@@ -16,10 +20,10 @@ class directoryAction extends EmtAction
         }
         else
         {
-            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute));
+            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             if (!$this->country)
             {
-                $this->category = ProductCategoryPeer::retrieveByStrippedCategory(strtolower($this->substitute));
+                $this->category = ProductCategoryPeer::retrieveByStrippedCategory(strtolower($this->substitute), $xcult);
             }
         }
         
@@ -52,6 +56,8 @@ class directoryAction extends EmtAction
 
         $i18n = $this->getContext()->getI18N();
 
+        $urls = array();
+
         if ($this->initial)
         {
             $this->getResponse()->setTitle('Products by Name | eMarketTurkey');
@@ -65,6 +71,11 @@ class directoryAction extends EmtAction
                 $c->add(ProductI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".ProductI18nPeer::NAME.", 0, 1)", 'UPPER'). "='{$this->initial}'", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(ProductI18nPeer::NAME, myTools::NLSFunc(ProductI18nPeer::NAME, 'SORT'));
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@products-dir?substitute={$this->initial}&sf_culture=$culture";
+            }
         }
 
         if ($this->category)
@@ -72,6 +83,11 @@ class directoryAction extends EmtAction
             $this->getResponse()->setTitle($i18n->__('Products in %1 Category', array('%1' => $this->category)). ' | eMarketTurkey');
             $this->mod = 1;
             $c->add(ProductPeer::CATEGORY_ID, $this->category->getId());
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@products-dir?substitute=".$this->category->getStrippedCategory($culture)."&sf_culture=$culture";
+            }
         }
 
         if ($this->country)
@@ -83,7 +99,19 @@ class directoryAction extends EmtAction
             $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
             $c->add(ContactAddressPeer::COUNTRY, myTools::NLSFunc(ContactAddressPeer::COUNTRY, 'UPPER')." = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@products-dir?substitute=".$this->country->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
+
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
 
         if (!$this->initial && !$this->country && !$this->category && !$this->mod)
         {

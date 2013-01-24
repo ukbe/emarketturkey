@@ -2,8 +2,12 @@
 
 class directoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
         $this->substitute = $this->getRequestParameter('substitute');
         
         $this->initial = $this->country = null;
@@ -16,7 +20,7 @@ class directoryAction extends EmtAction
         }
         else
         {
-            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute));
+            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
         }
         
         $this->keyword = $this->getRequestParameter('keyword', '');
@@ -36,6 +40,8 @@ class directoryAction extends EmtAction
 
         $i18n = $this->getContext()->getI18N();
 
+        $urls = array();
+
         if ($this->initial)
         {
             $this->getResponse()->setTitle('Venues by Name | eMarketTurkey');
@@ -49,6 +55,11 @@ class directoryAction extends EmtAction
                 $c->add(PlaceI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".PlaceI18nPeer::NAME.", 0, 1)", 'UPPER'). "='{$this->initial}'", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(PlaceI18nPeer::NAME, myTools::NLSFunc(PlaceI18nPeer::NAME, 'SORT'));
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@venues-dir?substitute={$this->initial}&sf_culture=$culture";
+            }
         }
 
         if ($this->country)
@@ -56,11 +67,22 @@ class directoryAction extends EmtAction
             $this->getResponse()->setTitle($i18n->__('Venues in %1', array('%1' => $this->country->getName())). ' | eMarketTurkey');
             $this->mod = 2;
             $c->add(PlacePeer::COUNTRY, "UPPER(".PlacePeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@venues-dir?substitute=".$this->country->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
+
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
 
         if ($this->mod === null) $this->redirect("@venues");
 
-        
         PlacePeer::addSelectColumns($c);
         
         $c->setDistinct();

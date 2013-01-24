@@ -2,8 +2,12 @@
 
 class directoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
         $this->substitute = $this->getRequestParameter('substitute');
         
         $this->initial = $this->country = $this->industry = null;
@@ -16,10 +20,10 @@ class directoryAction extends EmtAction
         }
         else
         {
-            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute));
+            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             if (!$this->country)
             {
-                $this->industry = BusinessSectorPeer::retrieveByStrippedName(strtolower($this->substitute));
+                $this->industry = BusinessSectorPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             }
         }
 
@@ -45,6 +49,8 @@ class directoryAction extends EmtAction
             $c1->addOr($c5);
             $c->add($c1);
         }
+
+        $urls = array();
 
         if ($this->initial)
         {
@@ -75,6 +81,11 @@ class directoryAction extends EmtAction
                 $c->add(CompanyPeer::NAME, myTools::NLSFunc("SUBSTR(".CompanyPeer::NAME.", 0, 1)", 'UPPER'). " IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : array($this->initial))."')", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(CompanyPeer::NAME, myTools::NLSFunc(CompanyPeer::NAME, 'SORT'));
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@companies-dir?substitute={$this->initial}&sf_culture=$culture";
+            }
         }
 
         if ($this->industry)
@@ -83,6 +94,11 @@ class directoryAction extends EmtAction
 
             $this->mod = 1;
             $c->add(CompanyPeer::SECTOR_ID, $this->industry->getId());
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@companies-dir?substitute=".$this->industry->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
 
         if ($this->country)
@@ -94,8 +110,20 @@ class directoryAction extends EmtAction
             $c->addJoin(CompanyProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
             $c->add(ContactAddressPeer::COUNTRY, "UPPER(".ContactAddressPeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@companies-dir?substitute=".$this->country->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
         
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
+
         if (!$this->initial && !$this->country && !$this->industry && !$this->mod)
         {
             $this->countries = $this->getRequestParameter('country', array());

@@ -2,8 +2,12 @@
 
 class directoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
         $this->substitute = $this->getRequestParameter('substitute');
         
         $this->initial = $this->country = $this->industry = null;
@@ -16,10 +20,10 @@ class directoryAction extends EmtAction
         }
         else
         {
-            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute));
+            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             if (!$this->country)
             {
-                $this->industry = BusinessSectorPeer::retrieveByStrippedName(strtolower($this->substitute));
+                $this->industry = BusinessSectorPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
             }
         }
         
@@ -49,19 +53,42 @@ class directoryAction extends EmtAction
 
         $i18n = $this->getContext()->getI18N();
 
+        $urls = array();
+
         if ($this->initial)
         {
             $this->getResponse()->setTitle('Events by Name | eMarketTurkey');
+
+            $abc = range('A','Z');
+
+            $substitutes = array('C' => array('C', 'Ç'),
+                                 'G' => array('G', 'Ğ'),
+                                 'I' => array('I', 'İ'),
+                                 'O' => array('O', 'Ö'),
+                                 'S' => array('S', 'Ş'),
+                                 'U' => array('U', 'Ü'),
+                            );
+
+            foreach ($substitutes as $subs)
+                $abc = array_merge($abc, $subs);
+
+            $abc = array_unique($abc);
+
             $this->mod = 3;
             if ($this->initial == '@')
             {
-                $c->add(EventI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".EventI18nPeer::NAME.", 0, 1)", 'UPPER'). " NOT IN ('".implode("','", range('A','Z'))."')", Criteria::CUSTOM);
+                $c->add(EventI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".EventI18nPeer::NAME.", 0, 1)", 'UPPER'). " NOT IN ('".implode("','", $abc)."')", Criteria::CUSTOM);
             }
             else
             {
-                $c->add(EventI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".EventI18nPeer::NAME.", 0, 1)", 'UPPER'). "='{$this->initial}'", Criteria::CUSTOM);
+                $c->add(EventI18nPeer::NAME, myTools::NLSFunc("SUBSTR(".EventI18nPeer::NAME.", 0, 1)", 'UPPER'). " IN ('".implode("','", isset($substitutes[$this->initial]) ?  $substitutes[$this->initial] : array($this->initial))."')", Criteria::CUSTOM);
             }
             $c->addAscendingOrderByColumn(EventI18nPeer::NAME, myTools::NLSFunc(EventI18nPeer::NAME, 'SORT'));
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@events-dir?substitute={$this->initial}&sf_culture=$culture";
+            }
         }
 
         if ($this->industry)
@@ -69,6 +96,11 @@ class directoryAction extends EmtAction
             $this->getResponse()->setTitle($i18n->__('Events on %1 Industry', array('%1' => $this->industry)). ' | eMarketTurkey');
             $this->mod = 1;
             //$c->add(EventPeer::CATEGORY_ID, $this->category->getId());
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@events-dir?substitute=".$this->industry->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
 
         if ($this->country)
@@ -80,9 +112,21 @@ class directoryAction extends EmtAction
             $c2 = $c->getNewCriterion(PlacePeer::COUNTRY, "UPPER(".PlacePeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
             $c1->addOr($c2);
             $c->addAnd($c1);
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@events-dir?substitute=".$this->country->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
         
         if ($this->mod === null) $this->redirect("@events");
+
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
 
         //$c->addJoin(EventPeer::TIME_SCHEME_ID, TimeSchemePeer::ID, Criteria::LEFT_JOIN);
         //$c->add(TimeSchemePeer::END_DATE, 'TRUNC(EMT_TIME_SCHEME.END_DATE) >= TRUNC(SYSDATE)', Criteria::CUSTOM);
