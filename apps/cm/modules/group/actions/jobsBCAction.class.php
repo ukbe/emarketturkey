@@ -6,7 +6,7 @@
  * @package b2b
  * @sub-package login
  */
-class jobsAction extends EmtGroupAction
+class jobsBCAction extends EmtGroupAction
 {
     public function execute($request)
     {
