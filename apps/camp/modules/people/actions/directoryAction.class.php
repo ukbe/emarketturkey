@@ -2,8 +2,12 @@
 
 class directoryAction extends EmtAction
 {
+    protected $i18n_object_depended = true;
+
     public function execute($request)
     {
+        $xcult = myTools::pick_from_list($this->getRequestParameter('x-cult'), sfConfig::get('app_i18n_cultures'), null);
+
         $this->substitute = $this->getRequestParameter('substitute');
         
         $this->initial = $this->country = null;
@@ -16,7 +20,7 @@ class directoryAction extends EmtAction
         }
         else
         {
-            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute));
+            $this->country = CountryPeer::retrieveByStrippedName(strtolower($this->substitute), $xcult);
         }
 
         $this->keyword = $this->getRequestParameter('keyword', '');
@@ -36,6 +40,8 @@ class directoryAction extends EmtAction
             $c1->addOr($c3);
             $c->add($c1);
         }
+
+        $urls = array();
 
         if ($this->initial)
         {
@@ -67,6 +73,11 @@ class directoryAction extends EmtAction
             }
             $c->addAscendingOrderByColumn(myTools::NLSFunc(UserPeer::DISPLAY_NAME, 'SORT'));
             $c->addAscendingOrderByColumn(myTools::NLSFunc(UserPeer::DISPLAY_LASTNAME, 'SORT'));
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@people-dir?substitute={$this->initial}&sf_culture=$culture";
+            }
         }
 
         if ($this->country)
@@ -78,6 +89,11 @@ class directoryAction extends EmtAction
             $c->addJoin(UserProfilePeer::CONTACT_ID, ContactPeer::ID, Criteria::LEFT_JOIN);
             $c->addJoin(ContactPeer::ID, ContactAddressPeer::CONTACT_ID, Criteria::LEFT_JOIN);
             $c->add(ContactAddressPeer::COUNTRY, "UPPER(".ContactAddressPeer::COUNTRY.") = UPPER('{$this->country->getIso()}')", Criteria::CUSTOM);
+
+            foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            {
+                $urls[$culture] = "@people-dir?substitute=".$this->country->getStrippedName($culture)."&sf_culture=$culture";
+            }
         }
         
         if (!$this->initial && !$this->country && !$this->mod)
@@ -104,6 +120,13 @@ class directoryAction extends EmtAction
             $this->mod = 1;
         }
         
+        if ($xcult)
+        {
+            $this->redirect($urls[$xcult]);
+        }
+
+        $this->getUser()->setCultureLinks($urls);
+
         $c->add(UserPeer::ID, "NOT EXISTS (SELECT 1 FROM EMT_BLOCKLIST WHERE EMT_BLOCKLIST.LOGIN_ID=EMT_USER.LOGIN_ID)", Criteria::CUSTOM);
 
         $c->setDistinct();
