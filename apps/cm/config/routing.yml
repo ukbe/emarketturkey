@@ -32,6 +32,11 @@ group-profile-action:
   requirements: { sf_culture: (?:en|de|tr), action: (info|discussions|connections|photos|events|career|contact|posts) } 
   param: { module: group }
 
+group-profile-BC:
+  url:   /:sf_culture/group/:stripped_name/jobs
+  requirements: { sf_culture: (?:en|de|tr) } 
+  param: { module: group, jobsBC }
+
 group-profile:
   url:   /:sf_culture/group/:stripped_name
   requirements: { sf_culture: (?:en|de|tr) }
