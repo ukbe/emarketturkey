@@ -12,6 +12,8 @@ class showAction extends EmtAction
 
         if (!$this->news || $this->news->getTypeId()!=PublicationPeer::PUB_TYP_NEWS)
         {
+            if ($news = PublicationPeer::retrieveByStrippedTitle($this->getRequestParameter('stripped_title'), true))
+                $this->redirect($news->getUrl(), 301);
             $this->redirect404();
         }
 

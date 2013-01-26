@@ -14,6 +14,8 @@ class articleAction extends EmtAction
 
         if (!$this->article || $this->article->getTypeId()!=PublicationPeer::PUB_TYP_ARTICLE)
         {
+            if ($article = PublicationPeer::retrieveByStrippedTitle($this->getRequestParameter('stripped_title'), true))
+                $this->redirect($article->getUrl(), 301);
             $this->redirect404();
         }
 
