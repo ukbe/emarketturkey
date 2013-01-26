@@ -14,7 +14,7 @@
 
     <div class="col_762 b2bProduct">
 
-        <h3 class="pname"><?php echo $product->__toString() ?></h3>
+        <h3 class="pname"><?php echo ($product->getAbsBrandName() ? $product->getAbsBrandName() . ' - ' : '' ) . $product->__toString() ?></h3>
         <div>
             <?php if ($photo = $product->getPhoto()): ?>
             <div class="col_180">
