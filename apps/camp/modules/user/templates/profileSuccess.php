@@ -26,7 +26,7 @@
         
         <?php if (count($groups)): ?>
         <div class="box_180 _noBordered">
-            <h3><?php echo link_to(__('Groups') . " ($num_groups)", $user->getProfileActionUrl('groups')) ?></h3>
+            <h3><?php echo link_to(__('Groups') . " ($num_groups)", $user->getProfileActionUrl('connections'). "&relation=groups") ?></h3>
             <div>
             <dl class="_table">
             <?php foreach ($groups as $group): ?>
