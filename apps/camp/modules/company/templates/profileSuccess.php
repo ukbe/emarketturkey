@@ -1,3 +1,4 @@
+<?php use_helper('Date') ?>
 <?php slot('subNav') ?>
 <?php include_partial('global/subNav_b2b') ?>
 <?php end_slot() ?>
@@ -66,12 +67,14 @@
                     __('Industry')          => $company->getBusinessSector(),
                     __('Products and Services') => str_replace("\n", "<br />", $profile->getClob(CompanyProfileI18nPeer::PRODUCT_SERVICE)),
                     __('Founded in')        => $profile->getFoundedIn('Y'),
+                    __('Brands')            => $company->getCompanyBrands(),
+                    __('Members Since')     => format_datetime($company->getCreatedAt('U'), 'Y'),
                 ) 
                 ?>
                 <dl class="_table _noInput">
                 <?php foreach (array_filter($facts) as $label => $fact): ?>
                     <dt><?php echo $label ?></dt>
-                    <dd><?php echo $fact ?></dd>
+                    <dd><?php echo is_array($fact) ? implode(', ', $fact) : $fact ?></dd>
                 <?php endforeach ?>
                 </dl>
             </div>
