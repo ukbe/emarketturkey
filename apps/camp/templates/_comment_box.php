@@ -1,4 +1,4 @@
-<?php echo __('Not available.') ?>
+<div class="pad-2 t_grey"><?php echo __('Not available.') ?></div>
 <?php if (1==2): ?>
 <?php use_helper('Date') ?>
 <?php $user = $sf_user->getUser() ?>
