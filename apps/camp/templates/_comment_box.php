@@ -1,4 +1,4 @@
-<?php return; ?>
+<?php if (1==2): ?>
 <?php use_helper('Date') ?>
 <?php $user = $sf_user->getUser() ?>
 <?php if ($user && !$user->isNew()): ?>
@@ -44,4 +44,5 @@
 </div>
 </div>
 </div>
+<?php endif ?>
 <?php endif ?>
