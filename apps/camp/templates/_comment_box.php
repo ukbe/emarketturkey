@@ -1,3 +1,4 @@
+<?php echo __('Not available.') ?>
 <?php if (1==2): ?>
 <?php use_helper('Date') ?>
 <?php $user = $sf_user->getUser() ?>
