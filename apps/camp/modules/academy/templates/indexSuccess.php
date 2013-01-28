@@ -68,7 +68,7 @@
         <div class="_noBorder">
             <dl class="rating-list">
             <?php foreach ($top_articles as $article): ?>
-                <dt<?php echo strlen($news->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $article->getRating() ?></dt>
+                <dt<?php echo strlen($article->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $article->getRating() ?></dt>
                 <dd><strong><?php echo link_to($article->__toString(), $article->getUrl()) ?></strong>
                     <?php echo $article->getAuthor()->__toString() ?></dd>
             <?php endforeach ?>
