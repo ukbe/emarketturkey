@@ -1,3 +1,4 @@
+<?php return; ?>
 <?php use_helper('Date') ?>
 <?php $user = $sf_user->getUser() ?>
 <?php if ($user && !$user->isNew()): ?>
