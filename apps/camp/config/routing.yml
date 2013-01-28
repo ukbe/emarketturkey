@@ -498,10 +498,10 @@ user-profile:
   requirements: { sf_culture: (?:en|de|tr) }
   param: { module: user, action: profile }
  
-user-profile-group-bc-action:
-  url:   /:sf_culture/profile/:hash/groups
-  requirements: { sf_culture: (?:en|de|tr), action: (groups) }
-  param: { module: default, action: gone }
+user-profile-hashed-bc-action:
+  url:   /:sf_culture/profile/:hash/:paction
+  requirements: { sf_culture: (?:en|de|tr), paction: (groups) }
+  param: { module: user, action: hashedBC }
 
 #### End Community Rules
 
