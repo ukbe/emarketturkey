@@ -483,7 +483,10 @@ people:
   requirements: { sf_culture: (?:en|de|tr) } 
   param: { module: people, action: index }
 
-#<--- Skipped module=profile
+profile-action:
+  url:   /:sf_culture/profile/:paction
+  requirements: { sf_culture: (?:en|de|tr), paction: (locationQuery|updateLocation|updateStatus|upload|comment) } 
+  param: { module: profile }
 
 user-profile-action:
   url:   /:sf_culture/profile/:hash/:action
