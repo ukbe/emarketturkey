@@ -24,7 +24,7 @@
 <?php echo link_to_function(__('Comment'), "jQuery('.na-{$activity->getId()}-cmn').toggle();", "class=na-{$activity->getId()}-cmn".(count($cmnts) ? " ghost" : "")) ?>
 <div class="hrsplit-1"></div>
 <div class="na-<?php echo $activity->getId() ?>-cmn<?php echo (!count($cmnts)) ? " ghost" : "" ?>">
-<?php include_partial('profile/comment_box', array('item' => ($object ? $object : $activity), 'cmnts' => $cmnts)) ?>
+<?php include_partial('global/comment_box', array('item' => ($object ? $object : $activity), 'cmnts' => $cmnts)) ?>
 </div>
 <?php endif ?>
 <?php  ?>

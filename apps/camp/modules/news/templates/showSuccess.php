@@ -34,7 +34,7 @@
             </div>
             <div class="comments-box">
             <h3><?php echo __('Comments') ?></h3>
-            <?php include_partial('profile/comment_box', array('item' => $news)) ?>
+            <?php include_partial('global/comment_box', array('item' => $news)) ?>
             </div>
         </div>
     </div>

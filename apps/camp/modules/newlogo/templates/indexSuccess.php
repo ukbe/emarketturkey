@@ -38,7 +38,7 @@ ol li a.selected {background-color: #496181; color: #FFFFFF; border-color: #4961
 <?php echo link_to_function(__('Comments(%1)', array('%1' => ($cnt = CommentPeer::countCommentsFor($options[0])))), "jQuery(this).parent().find('.comments').slideToggle('fast');jQuery(this).toggleClass('dropped');") ?>
 <div class="comments ghost">
 <?php echo $cnt == 0 ? __('No comments for this logo, yet. Be the first to comment on this logo.').'<br /><br />' : '' ?>
-<?php include_partial('profile/comment_box', array('item' => $options[0])) ?>
+<?php include_partial('global/comment_box', array('item' => $options[0])) ?>
 </div>
 </div>
 <div class="tabs tab-2 ghost">
@@ -48,7 +48,7 @@ ol li a.selected {background-color: #496181; color: #FFFFFF; border-color: #4961
 <?php echo link_to_function(__('Comments(%1)', array('%1' => ($cnt = CommentPeer::countCommentsFor($options[1])))), "jQuery(this).parent().find('.comments').slideToggle('fast');jQuery(this).toggleClass('dropped');") ?>
 <div class="comments ghost">
 <?php echo $cnt == 0 ? __('No comments for this logo, yet. Be the first to comment on this logo.').'<br /><br />' : '' ?>
-<?php include_partial('profile/comment_box', array('item' => $options[1])) ?>
+<?php include_partial('global/comment_box', array('item' => $options[1])) ?>
 </div>
 </div>
 <div class="tabs tab-3 ghost">
@@ -58,7 +58,7 @@ ol li a.selected {background-color: #496181; color: #FFFFFF; border-color: #4961
 <?php echo link_to_function(__('Comments(%1)', array('%1' => ($cnt = CommentPeer::countCommentsFor($options[2])))), "jQuery(this).parent().find('.comments').slideToggle('fast');jQuery(this).toggleClass('dropped');") ?>
 <div class="comments ghost">
 <?php echo $cnt == 0 ? __('No comments for this logo, yet. Be the first to comment on this logo.').'<br /><br />' : '' ?>
-<?php include_partial('profile/comment_box', array('item' => $options[2])) ?>
+<?php include_partial('global/comment_box', array('item' => $options[2])) ?>
 </div>
 </div>
 <div class="tabs tab-4 ghost">
@@ -68,7 +68,7 @@ ol li a.selected {background-color: #496181; color: #FFFFFF; border-color: #4961
 <?php echo link_to_function(__('Comments(%1)', array('%1' => ($cnt = CommentPeer::countCommentsFor($options[3])))), "jQuery(this).parent().find('.comments').slideToggle('fast');jQuery(this).toggleClass('dropped');") ?>
 <div class="comments ghost">
 <?php echo $cnt == 0 ? __('No comments for this logo, yet. Be the first to comment on this logo.').'<br /><br />' : '' ?>
-<?php include_partial('profile/comment_box', array('item' => $options[3])) ?>
+<?php include_partial('global/comment_box', array('item' => $options[3])) ?>
 </div>
 </div>
 <div class="hrsplit-1"></div>

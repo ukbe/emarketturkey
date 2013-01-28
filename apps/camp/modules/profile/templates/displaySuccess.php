@@ -34,4 +34,4 @@
 <em><?php echo __('Uploaded at %1t by %2n', array('%1t' => format_datetime($photo->getCreatedAt('U'), 'U'), '%2n' => link_to($user, $user->getProfileUrl(), 'class=side-link'))) ?></em>
 </div>
 <div class="hrsplit-1"></div>
-<?php include_partial('profile/comment_box', array('item' => $photo)) ?>
+<?php include_partial('global/comment_box', array('item' => $photo)) ?>
