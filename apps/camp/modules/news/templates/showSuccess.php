@@ -45,7 +45,7 @@
         <div class="_noBorder">
             <dl class="rating-list">
             <?php foreach ($top_news as $tnews): ?>
-                <dt<?php echo strlen($news->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $tnews->getRating() ?></dt>
+                <dt<?php echo strlen($tnews->getRating()) > 3 ? ' class="t_smaller"' : '' ?>><?php echo $tnews->getRating() ?></dt>
                 <dd><strong><?php echo link_to($tnews->__toString(), $tnews->getUrl()) ?></strong>
                     <?php echo $tnews->getPublicationSource()->__toString() ?></dd>
             <?php endforeach ?>
