@@ -187,7 +187,7 @@ class sfMessageSource_Oracle extends sfMessageSource_Database
     $sql =
       "SELECT t.id, t.source, t.target, t.comments
         FROM emt_tx_trans_unit t
-        LEFT JOIN emt_tx_catalogue c on t.cat_id=t.cat_id
+        LEFT JOIN emt_tx_catalogue c on t.cat_id=c.cat_id
         WHERE c.name = :variant";
 
     $stmt = oci_parse($this->db, $sql);
