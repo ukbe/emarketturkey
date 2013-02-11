@@ -6,6 +6,6 @@ class GroupI18n extends BaseGroupI18n
     {
         parent::setDisplayName($name);
         
-        $this->setStrippedDisplayName(myTools::stripText($name));
+        $this->setStrippedDisplayName(myTools::url_slug($name));
     }
 }

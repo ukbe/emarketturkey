@@ -18,7 +18,7 @@ class Group extends BaseGroup
     {
         parent::setName($name);
         
-        $this->setStrippedName(myTools::stripText($name));
+        $this->setStrippedName(myTools::url_slug($name));
     }
     
     public function getHash($reverse = false)

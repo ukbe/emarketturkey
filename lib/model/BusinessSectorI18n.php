@@ -6,6 +6,6 @@ class BusinessSectorI18n extends BaseBusinessSectorI18n
     {
         parent::setName($name);
         
-        $this->setStrippedName(myTools::stripText($name));
+        $this->setStrippedName(myTools::url_slug($name));
     }
 }

@@ -147,7 +147,7 @@ class PublicationSourcePeer extends BasePublicationSourcePeer
                         $stmt->bindValue(':id', $object->getId());
                         $stmt->bindValue(':culture', $lang);
                         $stmt->bindValue(':display_name', $params->get("pubs_display_name_$key"));
-                        $stmt->bindValue(':stripped_display_name', myTools::stripText($params->get("pubs_display_name_$key")));
+                        $stmt->bindValue(':stripped_display_name', myTools::url_slug($params->get("pubs_display_name_$key")));
                         $stmt->bindValue(':short_description', $params->get("pubs_short_desc_$key"));
                         $stmt->bindValue(':description', $params->get("pubs_description_$key"));
                         $stmt->execute();

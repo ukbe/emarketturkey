@@ -158,7 +158,7 @@ class AuthorPeer extends BaseAuthorPeer
                         $stmt->bindValue(':id', $object->getId());
                         $stmt->bindValue(':culture', $lang);
                         $stmt->bindValue(':display_name', $params->get("auth_display_name_$key"));
-                        $stmt->bindValue(':stripped_display_name', myTools::stripText($params->get("auth_display_name_$key")));
+                        $stmt->bindValue(':stripped_display_name', myTools::url_slug($params->get("auth_display_name_$key")));
                         $stmt->bindValue(':title', $params->get("auth_title_$key"));
                         $stmt->bindValue(':introduction', $params->get("auth_introduction_$key"));
                         $stmt->execute();

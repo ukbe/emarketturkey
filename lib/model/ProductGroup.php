@@ -11,7 +11,7 @@ class ProductGroup extends BaseProductGroup
     {
         parent::setName($name, $culture);
         
-        $this->setStrippedName(myTools::stripText($name));
+        $this->setStrippedName(myTools::url_slug($name));
     }
     
     public function getNameByPriority()

@@ -157,7 +157,7 @@ class PublicationCategoryPeer extends BasePublicationCategoryPeer
                         $stmt->bindValue(':id', $object->getId());
                         $stmt->bindValue(':culture', $lang);
                         $stmt->bindValue(':name', $params->get("pubc_name_$key"));
-                        $stmt->bindValue(':stripped_category', myTools::stripText($params->get("pubc_name_$key")));
+                        $stmt->bindValue(':stripped_category', myTools::url_slug($params->get("pubc_name_$key")));
                         $stmt->execute();
                     }
                 }

@@ -14,7 +14,7 @@ class Translator extends BaseTranslator
     {
         parent::setName($value, $culture);
         
-        $this->setStrippedName(myTools::stripText($value), $culture);
+        $this->setStrippedName(myTools::url_slug($value), $culture);
     }
 
     public function getDefaultName()

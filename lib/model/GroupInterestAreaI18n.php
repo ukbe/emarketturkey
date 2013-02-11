@@ -6,6 +6,6 @@ class GroupInterestAreaI18n extends BaseGroupInterestAreaI18n
     {
         parent::setName($name);
         
-        $this->setStrippedName(myTools::stripText($name));
+        $this->setStrippedName(myTools::url_slug($name));
     }
 }

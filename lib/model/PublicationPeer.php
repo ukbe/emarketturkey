@@ -253,7 +253,7 @@ class PublicationPeer extends BasePublicationPeer
                         $stmt->bindValue(':id', $object->getId());
                         $stmt->bindValue(':culture', $lang);
                         $stmt->bindValue(':title', $params->get("article_title_$key"));
-                        $stmt->bindValue(':stripped_title', myTools::stripText($params->get("article_title_$key")));
+                        $stmt->bindValue(':stripped_title', myTools::url_slug($params->get("article_title_$key")));
                         $stmt->bindValue(':short_title', $params->get("article_stitle_$key"));
                         $stmt->bindValue(':summary', $params->get("article_summary_$key"));
                         $stmt->bindValue(':introduction', $params->get("article_introduction_$key"));

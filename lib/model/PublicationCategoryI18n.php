@@ -6,6 +6,6 @@ class PublicationCategoryI18n extends BasePublicationCategoryI18n
     {
         parent::setName($name);
         
-        $this->setStrippedCategory(myTools::stripText($name));
+        $this->setStrippedCategory(myTools::url_slug($name));
     }
 }

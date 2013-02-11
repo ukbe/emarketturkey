@@ -6,6 +6,6 @@ class PublicationI18n extends BasePublicationI18n
     {
         parent::setTitle($title);
         
-        $this->setStrippedTitle(myTools::stripText($title));
+        $this->setStrippedTitle(myTools::url_slug($title));
     }
 }

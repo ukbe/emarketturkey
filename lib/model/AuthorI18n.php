@@ -6,6 +6,6 @@ class AuthorI18n extends BaseAuthorI18n
     {
         parent::setDisplayName($displayname);
         
-        $this->setStrippedDisplayName(myTools::stripText($displayname));
+        $this->setStrippedDisplayName(myTools::url_slug($displayname));
     }
 }

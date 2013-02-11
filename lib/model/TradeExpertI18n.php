@@ -6,6 +6,6 @@ class TradeExpertI18n extends BaseTradeExpertI18n
     {
         parent::setName($name);
         
-        $this->setStrippedName(myTools::stripText($name));
+        $this->setStrippedName(myTools::url_slug($name));
     }
 }

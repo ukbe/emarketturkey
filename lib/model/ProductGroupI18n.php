@@ -6,7 +6,7 @@ class ProductGroupI18n extends BaseProductGroupI18n
     {
         parent::setName($name);
         
-        $this->setStrippedName(myTools::stripText($name));
+        $this->setStrippedName(myTools::url_slug($name));
     }
     
 }

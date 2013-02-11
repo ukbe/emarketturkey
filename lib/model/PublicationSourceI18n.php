@@ -6,6 +6,6 @@ class PublicationSourceI18n extends BasePublicationSourceI18n
     {
         parent::setDisplayName($displayname);
         
-        $this->setStrippedDisplayName(myTools::stripText($displayname));
+        $this->setStrippedDisplayName(myTools::url_slug($displayname));
     }
 }
