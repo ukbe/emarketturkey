@@ -31,7 +31,7 @@
 
 				<dt class="_ftLn"><a href="">International</a> : </dt><dd class="_ftLn">
                     <?php echo form_tag($sf_request->getUri(), 'method=GET') ?>
-                        <div><?php echo select_tag('x-cult', options_for_select(array('en' => 'English', 'tr' => 'Türkçe', 'ru' => 'русский'), $sf_user->getCulture()), array('onchange' => "$(this).closest('form').submit();")) ?></div>
+                        <div><?php echo select_tag('x-cult', options_for_select(array('en' => 'English', 'tr' => 'Türkçe', 'ru' => 'РУССКИЙ'), $sf_user->getCulture()), array('onchange' => "$(this).closest('form').submit();")) ?></div>
                     </form></dd>
 
                 <dt><?php echo link_to(__('Support'), '@support') ?></dt>
