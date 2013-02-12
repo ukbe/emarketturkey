@@ -1,0 +1,22 @@
+<div>
+<p>eMarketTurkey, a next generation B2B Directory Services &amp; Trade Portal , is the ultimate place embracing the fortunes of e-marketing and conventional business to help you attain zero-problem international trade on a single platform.</p>
+<p>Acting as a trade bridge, our goal is to provide companies and professionals with the most comprehensive and reliable trade database about Turkey, that would connect them with the other parties willing to trade or operate in the emerging markets nearby, and give them an edge to competitiveness on international level beyond Turkey.</p>
+<p>By emphasizing social and business activities, this place will be your favorite meeting point before and after commencing international trade (~ taking decisions on international commerce).</p>
+<p>Embracing all economic sectors, eMarketTurkey has an understanding of global and human-oriented business, capable of processing a broad range of B2B needs of yours on international level.</p>
+ 
+<p>eMarketTurkey, consists of five main parts:</p>
+<ul>
+<li>B2B Services</li>
+<li>Human Resources</li>
+<li>Academy</li>
+<li>Community</li>
+<li>Translation</li>
+</ul>
+<p><b>eMarketTurkey B2B : </b>Heart of the project; through which members can engage in dialogue with each other, and become legitimate to create new directory services by publishing their own content and inventories. Among the B2B services, there are numerous trusted and value-added services for our members to cherish including but not limited to Trade Experts, Transportation Directory, Multilingual Messaging, and Investment and Business Opportunities Directory.</p>
+<p><b>eMarketTurkey HR : </b>Individuals can submit their professional resumes and follow up job postings reliably and securely through our own specialized and official HR extension, EMT Insan Kaynaklari Ltd.  Aiming to be the best of its kind, companies of interest are able to follow and query the best applications that would suit their business needs. Moreover, the authorized members of human resources consultancy companies can publish notices, review the applications and write recommendation letters for the right candidate on behalf of the requester company.</p>
+<p><b>eMarketTurkey Academy : </b>The academic dimension to the activities we conduct the analysis and application of appropriate scientific criteria as well as proceed without delay, has worked closely with universities on behalf of improvement projects. In this index, the well-known columnists, academics and economists published articles; research, various surveys, news and statistics will take place in a building created.</p>
+<p><b>eMarketTurkey Community  : </b>Our members can join in various business and social networks where they can capitalize on the opportunities upon their will. Two popular services in the community pages are “Free Classifieds” and “Event Calendars”.</p> 
+<p><b>eMarketTurkey Translation : </b>All information and content in eMarketTurkey has been built to run in different languages. Firms have the opportunity to  publish service and product information in any language thanks to our interpreter network. Also, translation of all kinds takes place on the internet and all processes can be tracked online with eMarketTurkey’s General Translator Services.</p>
+<p>To enhance our services, we have developed a particular section in which a solid knowledge base is intended for our followers, so they could gain from the expert opinions of renown academicians and economists, as well as the expertise of acknowledged professionals we were in cooperation from the very beginning. Among the materials we offer, there are surveys, published articles, market analysis, regulations, know-hows, up-to-date news, interviews, info-graphics and other statistics with regards to the practical implications of our intended goal, which was to leverage our member's ability to trade in or from Turkey.</p>
+<p>The information available in eMarketTurkey has been specifically designed to meet multilingual demands. Members have the opportunity to exhibit their goods and services in any languages by use of our trusted “interpreter network”. Translation tasks can be monitored online.</p>
+</div>
