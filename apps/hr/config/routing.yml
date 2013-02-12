@@ -36,58 +36,58 @@ myjobs-viewed:
 
 mycv-action:
   url:   /:sf_culture/mycareer/cv/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (review|edit|status|basic|contact|education|work|courses|languages|skills|publications|awards|references|organisations|materials|custom|preview|export) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (review|edit|status|basic|contact|education|work|courses|languages|skills|publications|awards|references|organisations|materials|custom|preview|export) } 
   param: { module: mycv }
 
 jobsearch:
   url:   /:sf_culture/jobs/search
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: jobs, action: search }
 
 company-jobs:
   url:   /:sf_culture/company/:hash/jobs
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: jobs, action: company }
 
 group-jobs:
   url:   /:sf_culture/group/:hash/jobs
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: jobs, action: group }
 
 similar-jobs:
   url:   /:sf_culture/jobs/:guid/similar
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: jobs, action: index }
 
 job:
   url:   /:sf_culture/jobs/:guid/view
-  requirements: { id: '[A-F0-9]+', sf_culture: (?:en|de|tr) }
+  requirements: { id: '[A-F0-9]+', sf_culture: (?:en|ru|tr) }
   param: { module: jobs, action: view }
 
 jobs:
   url:   /:sf_culture/jobs
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: jobs, action: list }
 
 mycareer:
   url: /:sf_culture/mycareer
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: mycareer, action: overview }
 
 mycareer-action:
   url:   /:sf_culture/mycareer/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (bookmarks) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (bookmarks) } 
   param: { module: mycareer }
 
 cv-create:
   url:   /:sf_culture/mycareer/cv/create
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: hr_cv, action: create }
 
 # default rules
 homepage:
   url:   /:sf_culture
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: index }
 
 homepage1:
@@ -96,10 +96,10 @@ homepage1:
 
 default_index:
   url:   /:sf_culture/:module
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { action: index }
 
 default:
   url:   /:sf_culture/:module/:action/*
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   

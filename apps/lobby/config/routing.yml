@@ -1,11 +1,11 @@
 gov-approved:
   url:   /:sf_culture/corporate/gov-approved
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: corporate, action: govApproved }
 
 bc-handler:
   url:   /:sf_culture/:pmodule/:paction
-  requirements: { sf_culture: (?:en|de|tr), pmodule: (corporate), paction: (forIndividuals|forSuppliers) }
+  requirements: { sf_culture: (?:en|ru|tr), pmodule: (corporate), paction: (forIndividuals|forSuppliers) }
   param: { module: default, action: allBC }
 
 alive:
@@ -14,32 +14,32 @@ alive:
 
 press-releases:
   url:   /:sf_culture/press/releases
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: press, action: releases }
 
 help-page:
   url:   /:sf_culture/help/:handle
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: help, action: generic }
 
 privacy-help:
   url:   /:sf_culture/help/privacy
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: help, action: privacy }
 
 temp-privacy:
   url:   /:sf_culture/temp/privacy
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: tempPrivacy }
 
 viewinvite:
   url:   /:sf_culture/invite/view
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: viewInvite }
 
 newlogo2:
   url:   /:sf_culture/newlogo
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: newlogo, action: index }
 
 newlogo1:
@@ -48,7 +48,7 @@ newlogo1:
 
 profile-action:
   url:   /:sf_culture/profile/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (comment) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (comment) } 
   param: { module: profile }
 
 cookie-setter:
@@ -57,77 +57,77 @@ cookie-setter:
 
 aboutus:
   url:   /:sf_culture/corporate/aboutus
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: corporate, action: aboutus }
 
 services:
   url:   /:sf_culture/services/overview
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: overview }
 
 for-individuals:
   url:   /:sf_culture/services/for-individuals
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: forIndividuals }
 
 for-suppliers:
   url:   /:sf_culture/services/for-suppliers
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: forSuppliers }
 
 for-associations:
   url:   /:sf_culture/services/for-associations
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: forAssociations }
 
 upgrade-gold:
   url:   /:sf_culture/premium/upgrade/gold-membership
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: upgrade, type: gold }
 
 upgrade-platinum:
   url:   /:sf_culture/premium/upgrade/platinum-membership
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: upgrade, type: platinum }
 
 premium-compare:
   url:   /:sf_culture/premium/compare
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: compareMemberships }
 
 premium:
   url:   /:sf_culture/services/premium
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: premium }
 
 faq:
   url:   /:sf_culture/support/faq
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: support, action: faq }
 
 support:
   url:   /:sf_culture/support/overview
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: support, action: overview }
 
 help-center:
   url:   /:sf_culture/support/help
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: support, action: help }
 
 contactus:
   url:   /:sf_culture/corporate/contactus
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: corporate, action: contactus }
 
 privacy:
   url:   /:sf_culture/corporate/privacy
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: corporate, action: privacy }
 
 terms:
   url:   /:sf_culture/corporate/terms
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: corporate, action: terms }
 
 login:
@@ -148,18 +148,18 @@ locate:
 
 signup:
   url:   /:sf_culture/signup
-  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|ru|tr) } 
   param: { module: signup, action: index }
 
 verify:
   url:   /:sf_culture/verify
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: signup, action: verifyEmailAddress }
 
 # default rules
 homepage:
   url:   /:sf_culture
-  requirements: {sf_culture: (en|de|tr)}
+  requirements: {sf_culture: (en|ru|tr)}
   param: { module: default, action: index }
 
 homepage1:
@@ -168,10 +168,10 @@ homepage1:
 
 default_index:
   url:   /:sf_culture/:module
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { action: index }
 
 default:
   url:   /:sf_culture/:module/:action/*
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   

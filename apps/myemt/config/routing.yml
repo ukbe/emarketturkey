@@ -4,277 +4,277 @@ link-trash:
 
 representative-action:
   url:   /:sf_culture/tasks/representative/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (overview|notifications|requests) }
+  requirements: { sf_culture: (?:en|ru|tr), action: (overview|notifications|requests) }
   param: { module: representative }
 
 translator-action:
   url:   /:sf_culture/tasks/translator/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (overview|notifications|requests) }
+  requirements: { sf_culture: (?:en|ru|tr), action: (overview|notifications|requests) }
   param: { module: translator }
 
 author-action:
   url:   /:sf_culture/tasks/author/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (overview|notifications|author|authors|source|sources|news|newss|article|articles|category|categories|publicationCategories) }
+  requirements: { sf_culture: (?:en|ru|tr), action: (overview|notifications|author|authors|source|sources|news|newss|article|articles|category|categories|publicationCategories) }
   param: { module: author }
 
 admin-action:
   url:   /:sf_culture/tasks/admin/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (overview|users|user|companies|groups|group|announcements|announcement) }
+  requirements: { sf_culture: (?:en|ru|tr), action: (overview|users|user|companies|groups|group|announcements|announcement) }
   param: { module: admin }
 
 upload-handler:
   url:   /:sf_culture/upload
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: profile, action: upload }
 
 manage-trade-expert:
   url:   /:sf_culture/tradeexpert/:hash/manage
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: tradeexpert, action: manage }
 
 notifications:
   url:   /:sf_culture/notifications
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: network, action: notifications }
 
 network-list-add:
   url:   /:sf_culture/profile/listadd
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: profile, action: listAdd }
 
 query-all:
   url:   /:sf_culture/profile/query/global
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: profile, action: query, coverage: public }
 
 query-network:
   url:   /:sf_culture/profile/query
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: profile, action: query, coverage: network }
 
 group-members:
   url:   /:sf_culture/group/:hash/members/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (summary|list|member|rights|demographics|messaging|invite) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (summary|list|member|rights|demographics|messaging|invite) } 
   param: { module: members }
 
 group-members-summary:
   url:   /:sf_culture/group/:hash/members
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: members, action: summary }
 
 upload-group-logo:
   url:   /:sf_culture/group/:hash/logo
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: groupProfile, action: logo }
 
 group-discussions:
   url: /:sf_culture/group/:hash/discussions/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (review) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (review) } 
   param: { module: discussions, origin: 2  }
 
 edit-group-profile:
   url: /:sf_culture/group/:hash/editProfile
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: groupProfile, action: edit }
 
 group-basic:
   url: /:sf_culture/group/:hash/edit/basic
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: groupProfile, action: basic }
 
 group-contact:
   url: /:sf_culture/group/:hash/edit/contact
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: groupProfile, action: contact }
 
 group-account:
   url: /:sf_culture/group/:hash/account/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (settings|privacy|orders|payments|transfer|relations|premium|upgrade) }
+  requirements: { sf_culture: (?:en|ru|tr), action: (settings|privacy|orders|payments|transfer|relations|premium|upgrade) }
   param: { module: group }
 
 group-account-default:
   url: /:sf_culture/group/:hash/account
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: group, action: settings }
 
 group-route:
   url:   /:sf_culture/group/:hash/route
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: group, action: route }
 
 group-manage:
   url:   /:sf_culture/group/:hash/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (manage|basic|contact|edit|invite|media|sendMail|search|logo|editPendingMember) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (manage|basic|contact|edit|invite|media|sendMail|search|logo|editPendingMember) } 
   param: { module: group }
 
 group-start:
   url:   /:sf_culture/group/start
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: group, action: start }
 
 account-transfer:
   url:   /:sf_culture/account/transfer
-  requirements: { sf_culture: (?:en|de|tr), act: (finalize|takeover) } 
+  requirements: { sf_culture: (?:en|ru|tr), act: (finalize|takeover) } 
   param: { module: account, action: transfer }
 
 premium-services-group:
   url:   /:sf_culture/premiumservices/group
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: service, action: premiumGroup }
 
 premium-services-company:
   url:   /:sf_culture/premiumservices/company
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: service, action: premiumCompany }
 
 premium-services:
   url:   /:sf_culture/premiumservices
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: service, action: premium }
 
 services:
   url:   /:sf_culture/service/select
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: service, action: select }
 
 add-items:
   url:   /:sf_culture/services/packages
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: service, action: packages }
 
 checkout:
   url:   /:sf_culture/cart/checkout
-  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|ru|tr) } 
   param: { module: cart, action: checkout }
 
 viewcart:
   url:   /:sf_culture/cart
-  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|ru|tr) } 
   param: { module: cart, action: index }
 
 signup:
   url:   /:sf_culture/signup
-  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|ru|tr) } 
   param: { module: signup, action: index }
 
 route:
   url:   /:sf_culture/route
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: signup, action: route }
 
 verify-email:
   url:   /:sf_culture/account/verify
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: account, action: verify }
 
 setup-notify:
   url:   /:sf_culture/account/notifications
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: account, action: notifications }
 
 contacts:
   url:   /:sf_culture/contacts
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: contacts, action: index }
 
 calendar:
   url:   /:sf_culture/calendar
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: calender, action: index }
 
 edit-profile-picture:
   url:   /:sf_culture/profile/picture
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: profile, action: picture }
 
 list-leads:
   url:   /:sf_culture/company/:hash/leads/list
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: leads, action: list }
 
 manage-leads:
   url:   /:sf_culture/company/:hash/leads/manage
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: leads, action: manage }
 
 edit-lead:
   url:   /:sf_culture/company/:hash/leads/:id/edit
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: leads, action: post }
 
 post-lead:
   url:   /:sf_culture/company/:hash/leads/post
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: leads, action: post }
 
 post-selling-lead:
   url:   /:sf_culture/company/:hash/leads/selling/post
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: leads, action: post, type_id: 1 }
 
 post-buying-lead:
   url:   /:sf_culture/company/:hash/leads/buying/post
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: leads, action: post, type_id: 2 }
 
 company-service-packages:
   url:   /:sf_culture/company/:hash/service/packages
-  requirements: { sf_culture: (?:en|de|tr), sid: \d+ } 
+  requirements: { sf_culture: (?:en|ru|tr), sid: \d+ } 
   param: { module: company, action: packages }
 
 company-media:
   url:   /:sf_culture/company/:hash/media
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: company, action: media }
 
 upload-company-logo:
   url:   /:sf_culture/company/:hash/logo
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: companyProfile, action: logo }
 
 company-manage:
   url:   /:sf_culture/company/:hash/manage
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: company, action: manage }
 
 company-jobs-action:
   url:   /:sf_culture/company/:hash/jobs/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (overview|post|addServices|manage|profile|messageTemplates|messageTemplate|vault|vaultCV|cvdb|add2cart) } 
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (overview|post|addServices|manage|profile|messageTemplates|messageTemplate|vault|vaultCV|cvdb|add2cart) } 
   param: { module: jobs, otyp: 2 }
 
 company-job-action:
   url:   /:sf_culture/company/:hash/jobs/:guid/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (details|applicants|post|previewCV) } 
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (details|applicants|post|previewCV) } 
   param: { module: jobs, otyp: 2 }
 
 group-jobs-action:
   url:   /:sf_culture/group/:hash/jobs/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (overview|post|addServices|manage|profile|messageTemplates|messageTemplate|vault|vaultCV|cvdb|add2cart) } 
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (overview|post|addServices|manage|profile|messageTemplates|messageTemplate|vault|vaultCV|cvdb|add2cart) } 
   param: { module: jobs, otyp: 3 }
 
 group-job-action:
   url:   /:sf_culture/group/:hash/jobs/:guid/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (details|applicants|post|previewCV) }  
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (details|applicants|post|previewCV) }  
   param: { module: jobs, otyp: 3 }
 
 company-events-action:
   url:   /:sf_culture/company/:hash/events/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (add|manage|overview) } 
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (add|manage|overview) } 
   param: { module: events, otyp: 2 }
 
 company-event-action:
   url:   /:sf_culture/company/:hash/events/:id/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (add|details|invite) } 
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (add|details|invite) } 
   param: { module: events, otyp: 2 }
 
 group-events-action:
   url:   /:sf_culture/group/:hash/events/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (add|manage|overview) } 
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (add|manage|overview) } 
   param: { module: events, otyp: 3 }
 
 group-event-action:
   url:   /:sf_culture/group/:hash/events/:id/:action
-  requirements: { sf_culture: (?:en|de|tr), own: \d+, action: (add|details|invite) } 
+  requirements: { sf_culture: (?:en|ru|tr), own: \d+, action: (add|details|invite) } 
   param: { module: events, otyp: 3 }
 
 network-activity-refresh:
@@ -287,237 +287,237 @@ status-update:
 
 setup-profile:
   url:   /:sf_culture/setupProfile
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: setupProfile }
 
 google-import:
   url:   /:sf_culture/consent/google/import
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: consent, action: google }
 
 google-handle:
   url:   /:sf_culture/consent/google/handle
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: consent, action: handleGoogle }
 
 consent-import:
   url:   /:sf_culture/consent/import
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: consent, action: live }
 
 consent-handle:
   url:   /:sf_culture/consent/handle
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: consent, action: handle }
 
 profile-action:
   url:   /:sf_culture/profile/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (comment) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (comment) } 
   param: { module: profile }
 
 statistics:
   url:   /:sf_culture/statistics
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: statistics }
 
 notification-set:
   url:   /:sf_culture/account/notifications
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: account, action: notifications }
 
 network-requests:
   url:   /:sf_culture/network/requests
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: network, action: requests }
 
 location-query:
   url:   /:sf_culture/profile/locationQuery
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: profile, action: locationQuery }
 
 company-account:
   url: /:sf_culture/company/:hash/account/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (settings|privacy|orders|payments|transfer|relations|premium|upgrade) }
+  requirements: { sf_culture: (?:en|ru|tr), action: (settings|privacy|orders|payments|transfer|relations|premium|upgrade) }
   param: { module: company }
 
 company-account-default:
   url: /:sf_culture/company/:hash/account
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: company, action: settings }
 
 company-privacy:
   url: /:sf_culture/company/:hash/account/privacy
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: company, action: privacy }
 
 products-overview:
   url: /:sf_culture/company/:hash/products/overview
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: overview }
 
 list-products:
   url: /:sf_culture/company/:hash/products/list
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: list }
 
 add-product:
   url: /:sf_culture/company/:hash/products/add
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: new }
 
 edit-product:
   url: /:sf_culture/company/:hash/product/:id/edit
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: products, action: new }
 
 product-details:
   url: /:sf_culture/company/:hash/product/:id/details
-  requirements: { sf_culture: (?:en|de|tr) }
+  requirements: { sf_culture: (?:en|ru|tr) }
   param: { module: products, action: details }
 
 product-statistics:
   url: /:sf_culture/company/:hash/products/statistics
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: statistics }
 
 upload-product-photo:
   url: /:sf_culture/company/:hash/product/:id/upload
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: upload }
 
 delete-product:
   url: /:sf_culture/company/:hash/product/:id/delete
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: delete }
 
 toggle-product:
   url: /:sf_culture/company/:hash/product/:id/toggle
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: toggleActivate }
 
 retrieve-products:
   url: /:sf_culture/company/:hash/product/retrieve
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: retrieve }
 
 list-product-groups:
   url: /:sf_culture/company/:hash/products/groups
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: groups }
 
 new-product-group:
   url: /:sf_culture/company/:hash/products/groups/new
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: newGroup }
 
 edit-product-group:
   url: /:sf_culture/company/:hash/products/groups/:id/edit
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: products, action: newGroup }
 
 edit-company-profile:
   url: /:sf_culture/company/:hash/editProfile
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: companyProfile, action: editProfile }
 
 company-corporate:
   url: /:sf_culture/company/:hash/edit/corporate
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: companyProfile, action: corporate }
 
 company-contact:
   url: /:sf_culture/company/:hash/edit/contact
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: companyProfile, action: contact }
 
 join-tpd:
   url: /:sf_culture/tpd/join
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: tpd, action: join }
 
 join-tradeexpert:
   url: /:sf_culture/tradeexperts/join
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: tradeexperts, action: join }
 
 forgot-password:
   url: /:sf_culture/forgotpassword
-  requirements: { is_secure: true, sf_culture: (?:en|de|tr) }
+  requirements: { is_secure: true, sf_culture: (?:en|ru|tr) }
   param: { module: login, action: resetPassword }
 
 product-detail:
   url: /:sf_culture/company/:hash/product/:pid
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: product, action: index }
 
 change-password:
   url:   /:sf_culture/account/changePassword
-  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|ru|tr) } 
   param: { module: account, action: changePassword }
 
 friendfinder:
   url:   /:sf_culture/friendfinder
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: friendfinder, action: index }
 
 invite-friend:
   url:   /:sf_culture/invitefriend
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: invitefriend, action: index }
 
 find-city:
   url:   /:sf_culture/profile/findlocation
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: profile, action: findlocation }
 
 manage:
   url:   /:sf_culture/manage
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: manage, action: index }
 
 tools:
   url:   /:sf_culture/tools
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: tools, action: index }
 
 account:
   url:   /:sf_culture/account
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: account, action: index }
 
 setup-privacy:
   url:   /:sf_culture/account/privacy
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: account, action: privacy }
 
 register-comp:
   url:   /:sf_culture/register
-  requirements: { is_secure: true, sf_culture: (?:en|de|tr) } 
+  requirements: { is_secure: true, sf_culture: (?:en|ru|tr) } 
   param: { module: company, action: register }
 
 company-route:
   url: /:sf_culture/company/:hash/route
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: company, action: route }
 
 network-tools:
   url:   /:sf_culture/network/tools
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: network, action: tools }
 
 tasks-action:
   url:   /:sf_culture/tasks/:action
-  requirements: { sf_culture: (?:en|de|tr), action: (overview|notifications|preferences) } 
+  requirements: { sf_culture: (?:en|ru|tr), action: (overview|notifications|preferences) } 
   param: { module: tasks }
 
 tasks:
   url:   /:sf_culture/tasks
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: tasks, action: overview }
 
 profile-edit:
   url:   /:sf_culture/profile/edit
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: setupProfile }
 
 login:
@@ -531,36 +531,36 @@ logout:
 
 message-read:
   url:   /:sf_culture/messages/read
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: messages, action: read }
 
 compose-message:
   url:   /:sf_culture/messages/compose
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: messages, action: compose }
 
 messages:
   url:   /:sf_culture/messages
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: messages, action: index }
 
 # default rules
 homepage:
   url:   /:sf_culture
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: index }
 
 homepage1:
   url:   /
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: index }
 
 default_index:
   url:   /:sf_culture/:module
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { action: index }
 
 default:
   url:   /:sf_culture/:module/:action/*
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   

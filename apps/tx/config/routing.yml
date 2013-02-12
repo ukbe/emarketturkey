@@ -4,13 +4,13 @@ link-trash:
 
 apply:
   url:   /:sf_culture/apply
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: apply }
 
 # default rules
 homepage:
   url:   /:sf_culture
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: default, action: index }
 
 homepage1:
@@ -19,10 +19,10 @@ homepage1:
 
 default_index:
   url:   /:sf_culture/:module
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   param: { action: index }
 
 default:
   url:   /:sf_culture/:module/:action/*
-  requirements: { sf_culture: (?:en|de|tr) } 
+  requirements: { sf_culture: (?:en|ru|tr) } 
   
