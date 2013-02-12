@@ -45,6 +45,7 @@ all:
         cultures:
             1: 'en'
             2: 'tr'
+            3: 'ru'
         
     photoConfig:
         size:
