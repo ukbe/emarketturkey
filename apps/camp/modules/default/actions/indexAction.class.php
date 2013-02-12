@@ -8,7 +8,7 @@ class indexAction extends EmtAction
         {
             foreach ($this->getRequest()->getLanguages() as $lang)
             {
-                if (array_search($lang, array('tr', 'en')) !== false)
+                if (array_search($lang, array('tr', 'en', 'ru')) !== false)
                 {
                     $this->getUser()->setAttribute('culture_selected', true);
                     $this->redirect(myTools::localizedUrl($lang));

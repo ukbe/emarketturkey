@@ -88,7 +88,7 @@
         <span class="err-1" title="^[0-9]{1,9}$"><?php echo __('Please select your home state/province') ?></span>
     </span></dd>
 <dt><?php echo emt_label_for('profile_preferred_lang', __('Select your preferred language')) ?></dt>
-<dd<?php echo $sf_request->hasError('profile_preferred_lang') ? ' class="focus"' : '' ?>><?php echo select_tag('profile_preferred_lang', options_for_select(array('tr' => 'Türkçe', 'en' => 'English'), $sf_params->get('profile_preferred_lang', $profile->getPreferredLanguage() ? $profile->getPreferredLanguage() : $sf_user->getCulture()), array('include_custom' => __('Select language')))) ?>
+<dd<?php echo $sf_request->hasError('profile_preferred_lang') ? ' class="focus"' : '' ?>><?php echo select_tag('profile_preferred_lang', options_for_select(array('en' => 'English', 'tr' => 'Türkçe', 'ru' => 'русский', ), $sf_params->get('profile_preferred_lang', $profile->getPreferredLanguage() ? $profile->getPreferredLanguage() : $sf_user->getCulture()), array('include_custom' => __('Select language')))) ?>
     <span class="form-error" id="profile_preferred_lang_error">
         <span class="err-1" title="^(tr)|(en)$"><?php echo __('Please select your preferred language') ?></span>
     </span></dd>
