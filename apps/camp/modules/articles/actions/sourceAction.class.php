@@ -16,7 +16,7 @@ class sourceAction extends EmtAction
         foreach (sfConfig::get('app_i18n_cultures') as $culture)
         {
             $urls[$culture] = $this->source->getUrl(PublicationPeer::PUB_TYP_ARTICLE, $culture);
-            if (!isset($urls[$culture]) || is_null($urls[$culture])) $urls[$culture] = "@articles-home?sf_culture=$culture";
+            if (!isset($urls[$culture]) || is_null($urls[$culture])) $urls[$culture] = "@articles?sf_culture=$culture";
         }
 
         if ($xcult)
