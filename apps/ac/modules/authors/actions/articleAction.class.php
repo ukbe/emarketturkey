@@ -6,7 +6,10 @@ class articleAction extends EmtAction
     {
         // Redirect to camp application
         $this->article = PublicationPeer::retrieveByStrippedTitle($this->getRequestParameter('stripped_title'), true);
-        $this->redirect($this->article->getUrl(), 301);
+        if (!$this->article)
+            $this->redirect("@camp.articles", 410); //  HTTP 410 : Gone!
+        else
+            $this->redirect($this->article->getUrl(), 301);
         
         if (!$this->article || $this->article->getTypeId()!=PublicationPeer::PUB_TYP_ARTICLE)
         {
