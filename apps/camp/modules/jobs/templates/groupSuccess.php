@@ -13,14 +13,14 @@
     <div class="breadcrumb">
         <ul>
             <li><?php echo link_to(__('Employers'), '@homepage') ?></li>
-            <li><span><?php echo $group ?></span></li>
+            <li><span><?php echo $group->__toString() ?></span></li>
         </ul>
     </div>
 
     <div class="col_180">
     <?php if ($group->getLogo()): ?>
         <div class="box_180 txtCenter">
-            <?php echo link_to(image_tag($group->getLogo()->getMediumUri()), "@group-jobs?hash={$group->getHash()}") ?>
+            <?php echo link_to(image_tag($group->getLogo()->getMediumUri()), "@group-jobs?stripped_name={$group->getStrippedName()()}") ?>
         </div>
     <?php endif ?>
         <div class="box_180 txtCenter">
@@ -32,7 +32,7 @@
 
     <div class="col_576 b2bProduct">
 
-        <h3 class="pname"><?php echo $group ?><div class="t_grey" style="font-size: 14px;"><?php echo __('Jobs') ?></div></h3>
+        <h3 class="pname"><?php echo $group->__toString() ?><div class="t_grey" style="font-size: 14px;"><?php echo __('Jobs') ?></div></h3>
         <div class="box_576">
             <div class="_noBorder pad-0">
                 <table class="job-list">
@@ -40,7 +40,7 @@
                         <th><?php echo __('Deadline') ?></th></tr>
                 <?php foreach ($jobs as $job): ?>
                     <tr>
-                        <td><?php echo link_to($job, $job->getUrl(), 'class=inherit-font bluelink hover') ?><?php echo $sesuser->getUserJob($job->getId(), UserJobPeer::UJTYP_FAVOURITE) ? '<em class="bookmarked" title="'.__('Bookmarked').'"></em>' : '' ?>
+                        <td><?php echo link_to($job__toString(), $job->getUrl(), 'class=inherit-font bluelink hover') ?><?php echo $sesuser->getUserJob($job->getId(), UserJobPeer::UJTYP_FAVOURITE) ? '<em class="bookmarked" title="'.__('Bookmarked').'"></em>' : '' ?>
                             <?php echo count($tx = $job->getTopSpecsText(true, null)) ? "<span>".implode(', ', $tx)."</span>" : "" ?></td>
                         <td><?php echo format_date($job->getDeadline('U'), 'D') ?></td>
                     </tr>
