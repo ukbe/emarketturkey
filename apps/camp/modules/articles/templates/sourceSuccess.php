@@ -11,7 +11,7 @@
             <div class="item">
                 <?php echo $pub->getPicture() ? link_to(image_tag($pub->getPicture()->getUri(MediaItemPeer::LOGO_TYPE_MEDIUM)), $pub->getUrl()) : '' ?>
                 <h2><?php echo link_to($pub->getShortTitleVsTitle(), $pub->getUrl()) ?></h2>
-                <p><?php echo $pub->getSummary()?><?php echo link_to(__('Read More'), $pub->getUrl(), 'class=readmore')?></p>
+                <p><?php echo $pub->getSummary() ?><?php echo link_to(__('Read More'), $pub->getUrl(), 'class=readmore')?></p>
             </div>
             <?php endforeach ?>
         </div>
@@ -85,7 +85,7 @@
             <div class="col_authors margin-t2">
                 <dl>
                 <?php foreach ($colarticles as $article): ?>
-                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor())), $article->getUrl()) : '' ?></dt>
+                    <dt><?php echo count($article->getAuthor()->getPhotos()) ? link_to(image_tag($article->getAuthor()->getPictureUri(), array('title' => $article->getAuthor()->__toString())), $article->getUrl()) : '' ?></dt>
                     <dd>
                         <?php echo link_to($article->__toString(), $article->getUrl()) ?>
                         <div class="author-name"><?php echo link_to($article->getAuthor()->__toString(), $article->getUrl()) ?>
