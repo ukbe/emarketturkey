@@ -32,7 +32,7 @@ class groupAction extends EmtGroupAction
                 $usercomp->save();
                 $this->getUser()->setAttribute('act', array($act, $this->group->getHash()), '/hr/groups');
             }
-            $this->redirect("@group-jobs?hash={$this->group->getHash()}");
+            $this->redirect($this->group->getProfileActionUrl('jobs'));
         }
 
         $act = $this->getUser()->getAttribute('act', null, '/hr/groups');

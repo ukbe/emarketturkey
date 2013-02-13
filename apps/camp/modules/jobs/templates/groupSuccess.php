@@ -20,7 +20,7 @@
     <div class="col_180">
     <?php if ($group->getLogo()): ?>
         <div class="box_180 txtCenter">
-            <?php echo link_to(image_tag($group->getLogo()->getMediumUri()), "@group-jobs?stripped_name={$group->getStrippedName()}") ?>
+            <?php echo link_to(image_tag($group->getLogo()->getMediumUri()), $group->getProfileActionUrl('jobs')) ?>
         </div>
     <?php endif ?>
         <div class="box_180 txtCenter">
