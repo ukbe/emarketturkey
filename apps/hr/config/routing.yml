@@ -94,12 +94,19 @@ homepage1:
   url:   /
   param: { module: default, action: index }
 
-default_index:
-  url:   /:sf_culture/:module
+# return 410 for rest of the pages
+rest-is-gone:
+  url: /:sf_culture/*
   requirements: { sf_culture: (?:en|ru|tr) } 
-  param: { action: index }
+  param: { module: default, action: gone }
 
-default:
-  url:   /:sf_culture/:module/:action/*
-  requirements: { sf_culture: (?:en|ru|tr) } 
-  
+
+#default_index:
+#  url:   /:sf_culture/:module
+#  requirements: { sf_culture: (?:en|ru|tr) } 
+#  requirements: { sf_culture: (?:en|ru|tr) } 
+#  param: { action: index }
+#
+#default:
+#  url:   /:sf_culture/:module/:action/*
+#  requirements: { sf_culture: (?:en|ru|tr) } 
