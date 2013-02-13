@@ -1059,9 +1059,9 @@ WHERE
 	public function getProfileActionUrl($action)
     {
         if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
-            return "@group-profile-action?stripped_name={$this->getStrippedName()}&action=$action";
+            return "@group-profile-action?" . ($action == 'jobs' ? "hash={$this->getHash()}" : "stripped_name={$this->getStrippedName()}") . "&action=$action";
         else
-            return "@camp.group-profile-action?stripped_name={$this->getStrippedName()}&action=$action";
+            return "@camp.group-profile-action?" . ($action == 'jobs' ? "hash={$this->getHash()}" : "stripped_name={$this->getStrippedName()}") . "&action=$action";
     }
     
     public function getProfileTabsForUser($user)
