@@ -17,11 +17,11 @@ class EmtGroupAction extends EmtAction
         {
             $this->group = GroupPeer::getGroupFromHash($this->getRequestParameter('hash'));
         }
-        if (!$this->group || $this->group->getOwner()->isBlocked()) $this->redirect404();
-        
         if ($this->checkBlock && $this->group && $this->getContext()->getConfiguration()->getApplication() != 'myemt' && ($this->group->getBlocked() || !$this->group->getAvailable()))
             $this->forward('default', 'gone');
 
+        if (!$this->group || $this->group->getOwner()->isBlocked()) $this->redirect404();
+        
         $this->getResponse()->addMeta('description', $this->group->getIntroduction());
 
         if (!$this->sesuser->isNew())
