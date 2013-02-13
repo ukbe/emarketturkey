@@ -1058,7 +1058,7 @@ WHERE
 
 	public function getProfileActionUrl($action)
     {
-        $app = (sfContext::getInstance()->getConfiguration()->getApplication() == "camp") ? "@camp." : "@";
+        $app = (sfContext::getInstance()->getConfiguration()->getApplication() == "camp") ? "@" : "@camp.";
         $route = ($action == "jobs") ? "group-jobs" : "group-profile-action";
         $param = ($action == "jobs") ? "hash={$this->getHash()}" : "stripped_name={$this->getStrippedName()}";
 
