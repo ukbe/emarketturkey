@@ -79,10 +79,10 @@ mycareer-action:
   requirements: { sf_culture: (?:en|ru|tr), action: (bookmarks) } 
   param: { module: mycareer }
 
-cv-create:
-  url:   /:sf_culture/mycareer/cv/create
-  requirements: { sf_culture: (?:en|ru|tr) } 
-  param: { module: hr_cv, action: create }
+#cv-create:
+#  url:   /:sf_culture/mycareer/cv/create
+#  requirements: { sf_culture: (?:en|ru|tr) } 
+#  param: { module: hr_cv, action: create }
 
 # default rules
 homepage:
