@@ -1,8 +1,3 @@
-inserti18n:
-  url: /:sf_culture/default/inserti18n
-  requirements: { sf_culture: (?:ru) } 
-  param: { module: default, action: inserti18n }
-
 link-trash:
   url: /*/_LINK_
   param: { module: default, action: gone }
