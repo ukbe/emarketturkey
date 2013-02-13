@@ -3,6 +3,7 @@
 class EmtGroupAction extends EmtAction
 {
     protected $actionID = null;
+    protected $checkBlock = 1;
     
     public function initialize($context, $moduleName, $actionName)
     {
@@ -17,6 +18,9 @@ class EmtGroupAction extends EmtAction
             $this->group = GroupPeer::getGroupFromHash($this->getRequestParameter('hash'));
         }
         if (!$this->group || $this->group->getOwner()->isBlocked()) $this->redirect404();
+        
+        if ($this->checkBlock && $this->group && $this->getContext()->getConfiguration()->getApplication() != 'myemt' && ($this->group->getBlocked() || !$this->group->getAvailable()))
+            $this->forward('default', 'gone');
 
         $this->getResponse()->addMeta('description', $this->group->getIntroduction());
 
