@@ -1058,10 +1058,11 @@ WHERE
 
 	public function getProfileActionUrl($action)
     {
-        if (sfContext::getInstance()->getConfiguration()->getApplication() == "camp")
-            return "@group-profile-action?" . ($action == 'jobs' ? "hash={$this->getHash()}" : "stripped_name={$this->getStrippedName()}") . "&action=$action";
-        else
-            return "@camp.group-profile-action?" . ($action == 'jobs' ? "hash={$this->getHash()}" : "stripped_name={$this->getStrippedName()}") . "&action=$action";
+        $app = (sfContext::getInstance()->getConfiguration()->getApplication() == "camp") ? "@camp." : "@";
+        $route = ($action == "jobs") ? "group-jobs" : "group-profile-action";
+        $param = ($action == "jobs") ? "hash={$group->getHash()}" : "stripped_name={$group->getStrippedName()}";
+
+        return "{$app}{$route}?$param&action=$action";
     }
     
     public function getProfileTabsForUser($user)
