@@ -194,7 +194,7 @@ company-jobs:
   param: { module: jobs, action: company }
 
 group-jobs:
-  url:   /:sf_culture/group/:hash/jobs
+  url:   /:sf_culture/group/:stripped_name/jobs
   requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: jobs, action: group }
 
