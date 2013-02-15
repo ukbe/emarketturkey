@@ -50,9 +50,10 @@
                 <dd><?php echo link_to(__('Corporate Communications'), '@contactus?topic='.CustomerMessagePeer::CM_TPC_CORPORATE_COMM) ?></dd>
                 <dd><?php echo link_to(__('Work for eMarketTurkey'), '@contactus?topic='.CustomerMessagePeer::CM_TPC_WORK_FOR_EMT) ?></dd>
                 <dd class="_ftSM">eMarketTurkey  <sup>&reg;</sup></dd>
-                <dd class="_ft_SMfb" title="Facebook"><a href="http://www.facebook.com/eMarketTurkey" target="_blank">Facebook</a></dd>
-                <dd class="_ft_SMli" title="LinkedIn"><a href="http://www.linkedin.com/company/emarketturkey-business-services" target="_blank">LinkedIn</a></dd>
+                <dd class="_ft_SMgp" title="Google+"><a href="https://plus.google.com/113684589093964444271" target="_blank">Google+</a></dd>
                 <dd class="_ft_SMtw" title="Twitter"><a href="http://twitter.com/#!/emarketturkey" target="_blank">Twitter</a></dd>
+                <dd class="_ft_SMli" title="LinkedIn"><a href="http://www.linkedin.com/company/emarketturkey-business-services" target="_blank">LinkedIn</a></dd>
+                <dd class="_ft_SMfb" title="Facebook"><a href="http://www.facebook.com/eMarketTurkey" target="_blank">Facebook</a></dd>
 			</dl>
 
 		</footer>
