@@ -32,7 +32,7 @@
     <dt></dt>
     <dd class="right"><div class="ln-show ghost"><?php echo link_to_function(__('remove'), '', "class=ln-removelink") ?></div></dd>
     <dt><?php echo emt_label_for("comp_lang_$key", __('<span class="ln-remove" style="display: inline;">Default </span>Language')) ?></dt>
-    <dd><?php echo select_language_tag("comp_lang_$key", $lang, array('languages' => array('tr', 'en'), 'class' => 'ln-select', 'name' => 'comp_lang[]', 'include_blank' => true)) ?></dd>
+    <dd><?php echo select_language_tag("comp_lang_$key", $lang, array('languages' => sfConfig::get('app_i18n_cultures'), 'class' => 'ln-select', 'name' => 'comp_lang[]', 'include_blank' => true)) ?></dd>
     <dt></dt>
     <dd><span class="ln-notify"><?php echo __('<strong>Attention:</strong> The fields below should be filled in <span class="ln-tag">%1</span>', array('%1' => format_language($lang))) ?></span></dd>
     <dt><?php echo emt_label_for("introduction_$key", __('Introduction')) ?></dt>

@@ -21,7 +21,7 @@
     <dt></dt>
     <dd class="right"><div class="ln-show ghost" style="position: absolute; top: 10px; right: 10px;"><?php echo link_to_function(__('remove'), '', "class=ln-removelink") ?></div></dd>
     <dt><?php echo emt_label_for('job_lang', __('<span class="ln-remove" style="display: inline;">Default </span>Language')) ?></dt>
-    <dd><?php echo select_language_tag('job_lang', $sf_user->getCulture(), array('languages' => array('tr', 'en'), 'class' => 'ln-select', 'include_blank' => true)) ?></dd>
+    <dd><?php echo select_language_tag('job_lang', $sf_user->getCulture(), array('languages' => sfConfig::get('app_i18n_cultures'), 'class' => 'ln-select', 'include_blank' => true)) ?></dd>
     <dt></dt>
     <dd><span class="ln-notify"><?php echo __('<span class="redspan">Attention:</span> The fields below should be filled in <span class="ln-tag">English</span>') ?></span></dd>
     <dt><?php echo emt_label_for('job_title', __('Job Title')) ?></dt>

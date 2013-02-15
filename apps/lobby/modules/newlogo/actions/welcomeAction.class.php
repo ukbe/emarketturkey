@@ -10,7 +10,7 @@ class welcomeAction extends EmtAction
         {
             foreach ($this->getRequest()->getLanguages() as $lang)
             {
-                if (array_search($lang, array('tr', 'en')) !== false)
+                if (array_search($lang, sfConfig::get('app_i18n_cultures')) !== false)
                 {
                     $this->getUser()->setAttribute('culture_selected', true);
                     $lng = $lang;

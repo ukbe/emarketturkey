@@ -27,7 +27,7 @@
     <dt></dt>
     <dd class="right"><div class="ln-show ghost"><?php echo link_to_function(image_tag('layout/icon/led-icons/cancel.png', array('title' => __('Remove Translation'))), '', "class=ln-removelink") ?></div></dd>
     <dt class="_req"><?php echo emt_label_for("job_lang_$key", __('<span class="ln-remove" style="display: inline;">Default </span>Language')) ?></dt>
-    <dd><?php echo select_language_tag("job_lang_$key", $lang, array('languages' => array('tr', 'en'), 'class' => 'ln-select', 'name' => 'job_lang[]', 'include_blank' => true)) ?></dd>
+    <dd><?php echo select_language_tag("job_lang_$key", $lang, array('languages' => sfConfig::get('app_i18n_cultures'), 'class' => 'ln-select', 'name' => 'job_lang[]', 'include_blank' => true)) ?></dd>
     <dt></dt>
     <dd><span class="ln-notify"><?php echo __('<strong>Attention:</strong> The fields below should be filled in <span class="ln-tag">%1</span>', array('%1' => format_language($lang))) ?></span></dd>
     <dt class="_req"><?php echo emt_label_for("job_title_$key", __('Job Title')) ?></dt>
