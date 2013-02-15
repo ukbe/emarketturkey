@@ -796,4 +796,19 @@ class sfRoute implements Serializable
   {
     list($this->tokens, $this->defaultParameters, $this->defaultOptions, $this->compiled, $this->options, $this->pattern, $this->regex, $this->variables, $this->defaults, $this->requirements) = unserialize($data);
   }
+  
+  /**
+   * Returns true if the specified variable exists.
+   *
+   * @return boolean
+   */
+  public function hasVariable($variable_name)
+  {
+    if (!$this->compiled)
+    {
+      $this->compile();
+    }
+
+    return isset($this->variables[$variable_name]);
+  }
 }

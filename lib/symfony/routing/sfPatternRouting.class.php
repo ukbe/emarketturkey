@@ -247,6 +247,18 @@ class sfPatternRouting extends sfRouting
   }
 
   /**
+   * Returns route object for the given name.
+   *
+   * @param  string $name  The route name
+   *
+   * @return sfRoute
+   */
+  public function getRoute($name)
+  {
+    return isset($this->routes[$name]) ? $this->routes[$name] : null;
+  }
+
+  /**
    * Adds a new route at the beginning of the current list of routes.
    *
    * @see connect

@@ -242,8 +242,11 @@ class myTools
         
         $route_name = $force_route ? $force_route : $routing->getCurrentRouteName();
         
+        $route = $routing->getRoute($route_name);
+        $has_culture = $route->hasVariable('sf_culture');
+        
         $parameters = $controller->convertUrlStringToParameters($routing->getCurrentInternalUri());
-        if (isset($parameters[1]['sf_culture']))
+        if (isset($parameters[1]['sf_culture']) || $has_culture)
             $parameters[1]['sf_culture'] = $sf_culture;
         else
             $parameters[1]['x-cult'] = $sf_culture;
