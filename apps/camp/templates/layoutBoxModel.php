@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE HTML>
-<html<?php emt_include_itemtype() ?>>
+<html<?php emt_include_itemtype() ?> lang="<? echo $sf_user->getCulture() ?>">
 <head>
 <?php include_http_metas() ?>
 <?php include_metas() ?>
 <?php emt_include_object_metas() ?>
 <?php include_title() ?>
+<?php emt_include_link_metas() ?>
 <link rel="shortcut icon" href="/favicon.ico" />
 <?php include_partial('global/google-analytics') ?>
 <!--[if lt IE 9]>

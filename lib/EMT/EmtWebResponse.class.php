@@ -14,6 +14,7 @@ class EmtWebResponse extends sfWebResponse
 
   protected
     $object_metas       = array(),
+    $link_metas         = array(),
     $item_type          = null;
 
 
@@ -115,10 +116,8 @@ class EmtWebResponse extends sfWebResponse
   /**
    * Adds an object meta header.
    *
-   * @param string  $key      Name of the header
-   * @param string  $value    Meta header value (if null, remove the meta)
-   * @param bool    $replace  true if it's replaceable
-   * @param bool    $escape   true for escaping the header
+   * @param string  $options  Header attribute list
+   * @param string  $content  Meta header value (if null, remove the meta)
    */
   public function addObjectMeta($options, $content)
   {
@@ -137,6 +136,36 @@ class EmtWebResponse extends sfWebResponse
     }
 
     $this->object_metas[$key] = $content;
+  }
+
+  /**
+   * Retrieves all LINK meta headers.
+   *
+   * @return array List of LINK meta headers
+   */
+  public function getLinkMetas()
+  {
+    return $this->link_metas;
+  }
+
+  /**
+   * Adds an object LINK meta header.
+   *
+   * @param string  $options  Header attribute list
+   * @param string  $content  Meta header value (if null, remove the meta)
+   */
+  public function addLinkMeta($options, $content)
+  {
+    $key = serialize($options);
+
+    if (is_null($content))
+    {
+      unset($this->link_metas[$key]);
+
+      return;
+    }
+    
+    $this->link_metas[$key] = $content;
   }
 
   /**

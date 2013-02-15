@@ -229,7 +229,7 @@ class myTools
         return get_partial($templateName, $vars);
     }
     
-    public static function localizedUrl($sf_culture = null)
+    public static function localizedUrl($sf_culture = null, $absolute = false)
     {
         if (!$sf_culture)
         {
@@ -248,7 +248,7 @@ class myTools
         else
             $parameters[1]['x-cult'] = $sf_culture;
         
-        return $routing->generate($route_name, array_merge($request->getGetParameters(), $parameters[1]));
+        return $routing->generate($route_name, array_merge($request->getGetParameters(), $parameters[1]), $absolute);
     }
     
     // 2 functions below are copied from EPM framework classes 

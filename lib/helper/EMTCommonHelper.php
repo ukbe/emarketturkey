@@ -663,6 +663,20 @@ function emt_include_object_metas()
     }
 }
 
+function emt_include_link_metas()
+{
+    $context = sfContext::getInstance();
+
+    foreach ($context->getResponse()->getLinkMetas() as $key => $content)
+    {
+        $options = unserialize($key);
+        $tag = array('content' => $content);
+        $options = array_merge($tag, $options); 
+
+        echo tag('link', $options)."\n";
+    }
+}
+
 function emt_include_itemtype()
 {
     $itemtype = sfContext::getInstance()->getResponse()->getItemType();

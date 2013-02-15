@@ -8,13 +8,25 @@ class indexAction extends EmtAction
         {
             foreach ($this->getRequest()->getLanguages() as $lang)
             {
-                if (array_search($lang, array('tr', 'en', 'ru')) !== false)
+                if (array_search($lang, sfConfig::get('app_i18n_cultures')) !== false)
                 {
                     $this->getUser()->setAttribute('culture_selected', true);
                     $this->redirect(myTools::localizedUrl($lang));
                 }
             }
         }
+
+        $this->getResponse()->addMeta('application-name', 'eMarketTurkey');
+        $this->getResponse()->addLinkMeta(array('rel' => 'canonical'), myTools::localizedUrl($this->getUser()->getCulture(), true));
+
+        $alternates = array();
+        foreach (sfConfig::get('app_i18n_cultures') as $culture)
+            if ($culture != $this->getUser()->getCulture()) 
+                $alternates[$culture] = myTools::localizedUrl($culture, true);
+
+        $titles = array('en' => 'eMarketTurkey', 'tr' => 'eMarketTurkey Turkish', 'ru' => 'eMarketTurkey Russian');
+        foreach ($alternates as $lang => $link)
+            $this->getResponse()->addLinkMeta(array('rel' => 'alternate', 'hreflang' => $lang, 'title' => $titles[$lang], 'type' => 'text/html'), $link);
         
         $this->categories = ProductCategoryPeer::getBaseCategories();
         
