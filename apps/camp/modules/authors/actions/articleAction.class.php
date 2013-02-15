@@ -30,8 +30,24 @@ class articleAction extends EmtAction
             
         }
 
-        $this->getResponse()->addMeta('description', $this->article->getSummary());
-
+        $this->getResponse()->setItemType('http://schema.org/NewsArticle');
+        
+        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->article->getSummary());
+        $this->getResponse()->addObjectMeta(array('name' => 'title', 'itemprop' => 'headline'), $this->article->getTitle());
+        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->article->getSummary());
+        $this->getResponse()->addObjectMeta(array('name' => 'author', 'itemprop' => 'author'), $this->article->getAuthor()->__toString());
+        $this->getResponse()->addObjectMeta(array('name' => 'source', 'itemprop' => 'sourceOrganisation'), $this->article->getPublicationSource()->__toString());
+        $this->getResponse()->addObjectMeta(array('name' => 'medium', 'itemprop' => 'genre'), 'Article');
+        $this->getResponse()->addObjectMeta(array('name' => 'section', 'itemprop' => 'articleSection'), $this->article->getPublicationCategory()->getTopCategory()->__toString());
+        $this->getResponse()->addObjectMeta(array('name' => 'pubdate', 'itemprop' => 'datePublished'), $this->article->getCreatedAt('Y-m-d\TH:i:s\Z'));
+        $this->getResponse()->addObjectMeta(array('name' => 'lastmod', 'itemprop' => 'dateModified'), $this->article->getUpdatedAt('Y-m-d\TH:i:s\Z'));
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'dateCreated'), $this->article->getCreatedAt('Y-m-d\TH:i:s\Z'));
+        $this->getResponse()->addObjectMeta(array('http-equiv' => 'last-modified'), $this->article->getUpdatedAt('Y-m-d\TH:i:s\Z'));
+        sfLoader::loadHelpers('Url');
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'url'), url_for($this->article->getUrl(), true));
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'thumbnailUrl'), url_for($this->article->getPicture()->getThumbnailUri(), true));
+        $this->getResponse()->addObjectMeta(array('name' => 'language', 'itemprop' => 'inLanguage'), $this->getUser()->getCulture());
+        
         $this->getResponse()->setTitle("{$this->article->getTitle()} | eMarketTurkey");
 
         $this->getUser()->setCultureLinks($urls);

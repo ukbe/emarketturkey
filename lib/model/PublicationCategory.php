@@ -39,6 +39,20 @@ class PublicationCategory extends BasePublicationCategory
         return PublicationCategoryPeer::retrieveByPK($this->getParentId());
     }
 
+    public function getTopCategory()
+    {
+        $pointer = $this;
+
+        while ($pointer->getParent())
+        {
+            $pin = $pointer->getParent();
+            $pointer = null;
+            $pointer = $pin;
+            $pin = null;
+        }
+        return $pointer;
+    }
+
     public function hasLsiIn($culture)
     {
         $lsi = $this->getCurrentPublicationCategoryI18n($culture);

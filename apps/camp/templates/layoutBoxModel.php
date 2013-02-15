@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE HTML>
+<html<?php emt_include_itemtype() ?>>
 <head>
 <?php include_http_metas() ?>
 <?php include_metas() ?>
+<?php emt_include_object_metas() ?>
 <?php include_title() ?>
 <link rel="shortcut icon" href="/favicon.ico" />
 <?php include_partial('global/google-analytics') ?>

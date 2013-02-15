@@ -29,7 +29,23 @@ class showAction extends EmtAction
             $this->redirect($urls[$xcult]);
         }
 
-        $this->getResponse()->addMeta('description', $this->news->getSummary());
+        $this->getResponse()->setItemType('http://schema.org/NewsArticle');
+        
+        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->news->getSummary());
+        $this->getResponse()->addObjectMeta(array('name' => 'title', 'itemprop' => 'headline'), $this->news->getTitle());
+        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->news->getSummary());
+        $this->getResponse()->addObjectMeta(array('name' => 'author', 'itemprop' => 'author'), $this->news->getAuthor()->__toString());
+        $this->getResponse()->addObjectMeta(array('name' => 'source', 'itemprop' => 'sourceOrganisation'), $this->news->getPublicationSource()->__toString());
+        $this->getResponse()->addObjectMeta(array('name' => 'medium', 'itemprop' => 'genre'), 'News');
+        $this->getResponse()->addObjectMeta(array('name' => 'section', 'itemprop' => 'articleSection'), $this->news->getPublicationCategory()->getTopCategory()->__toString());
+        $this->getResponse()->addObjectMeta(array('name' => 'pubdate', 'itemprop' => 'datePublished'), $this->news->getCreatedAt('Y-m-d\TH:i:s\Z'));
+        $this->getResponse()->addObjectMeta(array('name' => 'lastmod', 'itemprop' => 'dateModified'), $this->news->getUpdatedAt('Y-m-d\TH:i:s\Z'));
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'dateCreated'), $this->news->getCreatedAt('Y-m-d\TH:i:s\Z'));
+        $this->getResponse()->addObjectMeta(array('http-equiv' => 'last-modified'), $this->news->getUpdatedAt('Y-m-d\TH:i:s\Z'));
+        sfLoader::loadHelpers('Url');
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'url'), url_for($this->news->getUrl(), true));
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'thumbnailUrl'), url_for($this->news->getPicture()->getThumbnailUri(), true));
+        $this->getResponse()->addObjectMeta(array('name' => 'language', 'itemprop' => 'inLanguage'), $this->getUser()->getCulture());
 
         $this->getResponse()->setTitle("{$this->news->getTitle()} | eMarketTurkey");
 

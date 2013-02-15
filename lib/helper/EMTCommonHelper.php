@@ -647,3 +647,25 @@ function emt_select_country_tag($name, $selected = null, $options = array())
 
   return select_tag($name, $option_tags, $options);
 }
+
+function emt_include_object_metas()
+{
+    $context = sfContext::getInstance();
+    $i18n = sfConfig::get('sf_i18n') ? $context->getI18N() : null;
+
+    foreach ($context->getResponse()->getObjectMetas() as $key => $content)
+    {
+        $options = unserialize($key);
+        $tag = array('content' => is_null($i18n) ? $content : $i18n->__($content));
+        $options = array_merge($tag, $options); 
+        
+        echo tag('meta', $options)."\n";
+    }
+}
+
+function emt_include_itemtype()
+{
+    $itemtype = sfContext::getInstance()->getResponse()->getItemType();
+    
+    echo $itemtype ? ' itemscope itemtype="'.$itemtype.'"' : '';
+}
