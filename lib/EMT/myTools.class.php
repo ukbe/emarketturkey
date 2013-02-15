@@ -229,7 +229,7 @@ class myTools
         return get_partial($templateName, $vars);
     }
     
-    public static function localizedUrl($sf_culture = null, $absolute = false)
+    public static function localizedUrl($sf_culture = null, $absolute = false, $force_route = null)
     {
         if (!$sf_culture)
         {
@@ -240,7 +240,7 @@ class myTools
         $request    = sfContext::getInstance()->getRequest();
         $controller = sfContext::getInstance()->getController();
         
-        $route_name = $routing->getCurrentRouteName();
+        $route_name = $force_route ? $force_route : $routing->getCurrentRouteName();
         
         $parameters = $controller->convertUrlStringToParameters($routing->getCurrentInternalUri());
         if (isset($parameters[1]['sf_culture']))

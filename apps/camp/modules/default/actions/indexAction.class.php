@@ -17,12 +17,12 @@ class indexAction extends EmtAction
         }
 
         $this->getResponse()->addMeta('application-name', 'eMarketTurkey');
-        $this->getResponse()->addLinkMeta(array('rel' => 'canonical'), myTools::localizedUrl($this->getUser()->getCulture(), true));
+        $this->getResponse()->addLinkMeta(array('rel' => 'canonical'), myTools::localizedUrl($this->getUser()->getCulture(), true, '@homepage'));
 
         $alternates = array();
         foreach (sfConfig::get('app_i18n_cultures') as $culture)
             if ($culture != $this->getUser()->getCulture()) 
-                $alternates[$culture] = myTools::localizedUrl($culture, true);
+                $alternates[$culture] = myTools::localizedUrl($culture, true, '@homepage');
 
         $titles = array('en' => 'eMarketTurkey', 'tr' => 'eMarketTurkey Turkish', 'ru' => 'eMarketTurkey Russian');
         foreach ($alternates as $lang => $link)
