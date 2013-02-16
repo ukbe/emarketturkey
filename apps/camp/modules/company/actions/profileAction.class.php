@@ -21,7 +21,7 @@ class profileAction extends EmtCompanyAction
 
         $this->getResponse()->setItemType('http://schema.org/Organization');
         
-        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->profile->getIntroduction());
+        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), myTools::trim_text($this->profile->getClob(CompanyProfileI18nPeer::INTRODUCTION), 250, true));
         $this->getResponse()->addObjectMeta(array('name' => 'name', 'itemprop' => 'name'), $this->company->__toString());
         $this->getResponse()->addObjectMeta(array('itemprop' => 'brands'), implode(', ', $this->company->getCompanyBrands()));
         $this->getResponse()->addObjectMeta(array('itemprop' => 'foundingDate'), $this->profile->getFoundedIn('Y'));
