@@ -34,7 +34,6 @@ class articleAction extends EmtAction
         
         $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->article->getSummary());
         $this->getResponse()->addObjectMeta(array('name' => 'title', 'itemprop' => 'headline'), $this->article->getTitle());
-        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->article->getSummary());
         $this->getResponse()->addObjectMeta(array('name' => 'author', 'itemprop' => 'author'), $this->article->getAuthor()->__toString());
         if ($this->article->getPublicationSource()) $this->getResponse()->addObjectMeta(array('name' => 'source', 'itemprop' => 'sourceOrganisation'), $this->article->getPublicationSource()->__toString());
         $this->getResponse()->addObjectMeta(array('name' => 'medium', 'itemprop' => 'genre'), 'Article');
