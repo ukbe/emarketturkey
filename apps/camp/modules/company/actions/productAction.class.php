@@ -25,7 +25,8 @@ class productAction extends EmtProductAction
         sfLoader::loadHelpers('Url');
         if (count($this->photos)) $this->getResponse()->addObjectMeta(array('itemprop' => 'image'), url_for($this->photos[0]->getOriginalFileUri(), true));
         $this->getResponse()->addObjectMeta(array('itemprop' => 'url'), url_for($this->product->getUrl(), true));
-                
+        $this->getResponse()->addObjectMeta(array('http-equiv' => 'last-modified'), $this->product->getUpdatedAt('Y-m-d\TH:i:s\Z'));
+        
         if (!$this->own_company) RatingPeer::logNewVisit($this->product->getId(), PrivacyNodeTypePeer::PR_NTYP_PRODUCT);
     }
     
