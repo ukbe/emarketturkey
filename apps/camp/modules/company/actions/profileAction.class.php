@@ -23,7 +23,7 @@ class profileAction extends EmtCompanyAction
         
         $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), myTools::trim_text($this->profile->getClob(CompanyProfileI18nPeer::INTRODUCTION), 250, true));
         $this->getResponse()->addObjectMeta(array('name' => 'name', 'itemprop' => 'name'), $this->company->__toString());
-        $this->getResponse()->addObjectMeta(array('itemprop' => 'brands'), implode(', ', $this->company->getCompanyBrands()));
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'brand'), implode(', ', $this->company->getCompanyBrands()));
         $this->getResponse()->addObjectMeta(array('itemprop' => 'foundingDate'), $this->profile->getFoundedIn('Y'));
         $this->getResponse()->addObjectMeta(array('itemprop' => 'address'), $address->__toString());
         $this->getResponse()->addObjectMeta(array('itemprop' => 'telephone'), $phone->__toString());
