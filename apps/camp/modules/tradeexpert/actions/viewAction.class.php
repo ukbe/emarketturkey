@@ -4,7 +4,7 @@ class viewAction extends EmtTradeExpertAction
 {
     public function execute($request)
     {
-        $this->getResponse()->setTitle($this->tradeexpert . ' | eMarketTurkey');
+        $this->getResponse()->setTitle($this->tradeexpert->__toString() . ' | eMarketTurkey');
         
         $this->areas = $this->tradeexpert->getAreas();
         $this->industries = $this->tradeexpert->getIndustries();
