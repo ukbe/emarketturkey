@@ -44,7 +44,7 @@ class articleAction extends EmtAction
         $this->getResponse()->addObjectMeta(array('http-equiv' => 'last-modified'), $this->article->getUpdatedAt('Y-m-d\TH:i:s\Z'));
         sfLoader::loadHelpers('Url');
         $this->getResponse()->addObjectMeta(array('itemprop' => 'url'), url_for($this->article->getUrl(), true));
-        $this->getResponse()->addObjectMeta(array('itemprop' => 'thumbnailUrl'), url_for($this->article->getPicture()->getThumbnailUri(), true));
+        if ($this->article->getPicture()) $this->getResponse()->addObjectMeta(array('itemprop' => 'thumbnailUrl'), url_for($this->article->getPicture()->getThumbnailUri(), true));
         $this->getResponse()->addObjectMeta(array('name' => 'language', 'itemprop' => 'inLanguage'), $this->getUser()->getCulture());
         
         $this->getResponse()->setTitle("{$this->article->getTitle()} | eMarketTurkey");

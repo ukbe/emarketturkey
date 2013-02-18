@@ -43,7 +43,7 @@ class showAction extends EmtAction
         $this->getResponse()->addObjectMeta(array('http-equiv' => 'last-modified'), $this->news->getUpdatedAt('Y-m-d\TH:i:s\Z'));
         sfLoader::loadHelpers('Url');
         $this->getResponse()->addObjectMeta(array('itemprop' => 'url'), url_for($this->news->getUrl(), true));
-        $this->getResponse()->addObjectMeta(array('itemprop' => 'thumbnailUrl'), url_for($this->news->getPicture()->getThumbnailUri(), true));
+        if ($this->news->getPicture()) $this->getResponse()->addObjectMeta(array('itemprop' => 'thumbnailUrl'), url_for($this->news->getPicture()->getThumbnailUri(), true));
         $this->getResponse()->addObjectMeta(array('name' => 'language', 'itemprop' => 'inLanguage'), $this->getUser()->getCulture());
 
         $this->getResponse()->setTitle("{$this->news->getTitle()} | eMarketTurkey");
