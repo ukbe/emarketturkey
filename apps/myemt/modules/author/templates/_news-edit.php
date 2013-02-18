@@ -63,7 +63,7 @@ else {
             <li class="hs-part" id="<?php echo "lcategory_id_item" . ($parent_key == '' ? "" : "_") . "$parent_key" ?>">
                 <?php $keys = array_keys($cat);
                       $key = array_pop($keys);
-                      echo select_tag($parent_key !== '' ? "lcategory_id_$parent_key" : "lcategory_id", options_for_select($cat[$key], $key, array('include_custom' => __('Please Select'), 'class' => 'column first')), array('class' => 'hs-selector', 'name' => "category_id[]")); ?>
+                      echo select_tag($parent_key !== '' ? "lcategory_id_$parent_key" : "lcategory_id", options_for_select($cat[$key], $key, array('include_custom' => __('Please Select'), 'class' => 'column first')), array('class' => 'hs-selector', 'name' => count($categorytree) > 0 ? ($parent_key !== '' ? "lcategory_id_.$parent_key" : "lcategory_id") : "category_id")); ?>
             </li>
                 <?php $parent_key = $key ?>
                 <?php $cat = array_pop($categorytree) ?>
