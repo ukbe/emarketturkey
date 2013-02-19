@@ -130,7 +130,7 @@ class CompanyPeer extends BaseCompanyPeer
         return $company;
     }
     
-    public static function getFeaturedCompanies($maxnum=20)
+    public static function getFeaturedCompanies($maxnum=20, $random = true)
     {
         // @todo: Add an algorithm to select companies to display on homepage
         $sql = "
@@ -145,6 +145,8 @@ class CompanyPeer extends BaseCompanyPeer
         ";
         
         if ($maxnum) $sql = "SELECT * FROM ($sql) WHERE ROWNUM <= $maxnum";
+        
+        if ($random) $sql = "SELECT * FROM ($sql) ORDER BY dbms_random.value";
         
         $con = Propel::getConnection();
         $stmt = $con->prepare($sql);
