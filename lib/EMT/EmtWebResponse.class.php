@@ -82,13 +82,16 @@ class EmtWebResponse extends sfWebResponse
   {
     $key = strtolower($key);
 
-    foreach ($this->object_metas as $option => $content)
+    if ($key != 'title')
     {
-        $options = unserialize($option);
-        if (in_array($key, $options))
+        foreach ($this->object_metas as $option => $content)
         {
-            unset($this->metas[$key]);
-            return;
+            $options = unserialize($option);
+            if (in_array($key, $options))
+            {
+                unset($this->metas[$key]);
+                return;
+            }
         }
     }
 
@@ -129,8 +132,8 @@ class EmtWebResponse extends sfWebResponse
 
       return;
     }
-    
-    if (isset($options['name']))
+
+    if (isset($options['name']) && $options['name']!='title')
     {
         unset($this->metas[$options['name']]);
     }
