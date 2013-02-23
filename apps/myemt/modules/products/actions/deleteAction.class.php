@@ -20,7 +20,7 @@ class deleteAction extends EmtManageProductAction
         else
         {
             if ($this->getRequest()->isXmlHttpRequest())
-                return $this->renderPartial('confirmItemRemoval', array('message' => __('Are you sure to delete your product?'), 'postUrl' => "@delete-product?hash={$this->company->getHash()}&id={$this->product->getId()}", 'object' => $this->product, 'sf_params' => $this->getRequest()->getParameterHolder(), 'sf_request' => $this->getRequest()));
+                return $this->renderPartial('confirmItemRemoval', array('message' => $this->getContext()->getI18N()->__('Are you sure to delete your product?'), 'postUrl' => "@delete-product?hash={$this->company->getHash()}&id={$this->product->getId()}", 'object' => $this->product, 'sf_params' => $this->getRequest()->getParameterHolder(), 'sf_request' => $this->getRequest()));
         }
 
         $this->photos = $this->product->getPhotos();
