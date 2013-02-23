@@ -228,7 +228,7 @@ class Company extends BaseCompany
                     select emt_rating.item_id as rid, count(*) as rating from emt_rating where emt_rating.item_type_id=".RatingPeer::RITYP_PRODUCT." group by emt_rating.item_id order by rating desc
                     )
                 inner join emt_product on emt_product.id=rid
-                where emt_product.company_id=".$this->getId()." and emt_product.active=1 and rownum<=$count
+                where emt_product.company_id=".$this->getId()." and emt_product.active=1 and emt_product.deleted_at is null and rownum<=$count
                 ";
         
         $stmt = $con->prepare($sql);
@@ -337,6 +337,7 @@ class Company extends BaseCompany
         }
         $c->addJoin(ProductCategoryPeer::ID, ProductPeer::CATEGORY_ID);
         $c->add(ProductPeer::COMPANY_ID, $this->getId());
+        $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
         $c->setDistinct();
         $c->addAscendingOrderByColumn(ProductCategoryI18nPeer::NAME);
         return ProductCategoryPeer::doSelectWithI18n($c);
@@ -363,6 +364,7 @@ class Company extends BaseCompany
         $c = new Criteria();
         $c->add(ProductPeer::CATEGORY_ID, $id);
         $c->add(ProductPeer::ACTIVE, 1);
+        $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
         return $this->getProducts($c);
     }
     
@@ -370,6 +372,7 @@ class Company extends BaseCompany
     {
         $c = new Criteria();
         $c->add(ProductPeer::ID, $id);
+        $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
         $product = $this->getProducts($c);
         return (is_array($product) && count($product)) ? $product[0] : null;
     }
@@ -426,6 +429,7 @@ class Company extends BaseCompany
         $c = new Criteria();
         $c->addJoin(CompanyPeer::ID, ProductPeer::COMPANY_ID);
         $c->add(CompanyPeer::ID, $this->getId());
+        $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
         $c->addJoin(ProductPeer::ID, MediaItemPeer::OWNER_ID);
         $c->add(MediaItemPeer::OWNER_TYPE_ID, PrivacyNodeTypePeer::PR_NTYP_PRODUCT);
         return MediaItemPeer::doSelect($c);
@@ -531,6 +535,7 @@ class Company extends BaseCompany
     {
         $c = new Criteria();
         $c->add(ProductPeer::ACTIVE, 1);
+        $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
         return $this->getProducts($c);
     }
 
@@ -926,7 +931,7 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
             SELECT EMT_PRODUCT_CATEGORY_I18N.* FROM EMT_PRODUCT_CATEGORY_I18N
             LEFT JOIN EMT_PRODUCT_CATEGORY ON EMT_PRODUCT_CATEGORY_I18N.ID=EMT_PRODUCT_CATEGORY.ID
             LEFT JOIN EMT_PRODUCT ON EMT_PRODUCT_CATEGORY.ID=EMT_PRODUCT.CATEGORY_ID
-            WHERE COMPANY_ID={$this->getId()}
+            WHERE COMPANY_ID={$this->getId()} AND EMT_PRODUCT.DELETED_AT IS NULL
             ORDER BY ".myTools::NLSFunc(ProductCategoryI18nPeer::NAME, 'SORT')."
         ) GRP
         LEFT JOIN EMT_PRODUCT_CATEGORY ON GRP.ID=EMT_PRODUCT_CATEGORY.ID
@@ -1033,7 +1038,8 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
         
         if (isset($status)) $c->add(ProductPeer::APPROVAL_STATUS, $status);
         $c->add(ProductPeer::COMPANY_ID, $this->getId());
-        
+        $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
+
         $pager = new sfPropelPager('Product', $items_per_page);
         $pager->setPage($page);
         $pager->setCriteria($c);
@@ -1245,6 +1251,7 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
         $c = new Criteria();
         $c->add(ProductPeer::IS_TOP_PRODUCT, 1);
         $c->add(ProductPeer::ACTIVE, 1);
+        $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
         if (isset($num)) $c->setLimit($num);
         return $this->getProducts($c);
     }
@@ -1286,7 +1293,7 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
         if ($get_asset_type)
         {
             $assetlinks = array(
-                PrivacyNodeTypePeer::PR_NTYP_PRODUCT        => "INNER JOIN EMT_PRODUCT ON COMPANY.ID=EMT_PRODUCT.COMPANY_ID",
+                PrivacyNodeTypePeer::PR_NTYP_PRODUCT        => "INNER JOIN EMT_PRODUCT ON COMPANY.ID=EMT_PRODUCT.COMPANY_ID AND EMT_PRODUCT.DELETED_AT IS NULL",
                 PrivacyNodeTypePeer::PR_NTYP_B2B_LEAD       => "INNER JOIN EMT_B2B_LEAD ON COMPANY.ID=EMT_B2B_LEAD.COMPANY_ID",
                 PrivacyNodeTypePeer::PR_NTYP_EVENT_INVITE   => "INNER JOIN EMT_EVENT_INVITE ON P_OBJECT_ID=EMT_EVENT_INVITE.SUBJECT_ID AND P_OBJECT_TYPE_ID=EMT_EVENT_INVITE.SUBJECT_TYPE_ID",
                 PrivacyNodeTypePeer::PR_NTYP_TRADE_EXPERT   => "INNER JOIN EMT_TRADE_EXPERT ON P_OBJECT_ID=EMT_TRADE_EXPERT.HOLDER_ID AND P_OBJECT_TYPE_ID=EMT_TRADE_EXPERT.HOLDER_TYPE_ID"

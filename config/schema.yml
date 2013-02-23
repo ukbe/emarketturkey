@@ -712,6 +712,7 @@ propel:
     BRAND_ID:             { type: integer, size: 10, index: true, foreignTable: EMT_COMPANY_BRAND, foreignReference: ID, onDelete: SET NULL, onUpdate: CASCADE}
     DEFAULT_LANG:         { isCulture: true, type: varchar, size: 7 }
     IS_TOP_PRODUCT:       { type: boolean, default: false }
+    DELETED_AT:           { type: timestamp }
 
   EMT_PRODUCT_I18N:
     _attributes:          { phpName: ProductI18n }

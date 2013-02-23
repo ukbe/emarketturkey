@@ -14,11 +14,14 @@
         <div class="box_762 _titleBG_Transparent">
             <section id="boxContent">
                 <h4>
-                <div class="_right"><?php echo link_to(__('Edit Product'), "@edit-product?hash={$company->getHash()}&id={$product->getId()}", 'class=action-button') ?>
-                                    <?php echo link_to(__('Delete Product'), "@delete-product?hash={$company->getHash()}&id={$product->getId()}", "class=action-button ajax-enabled id=rempit{$product->getId()}") ?></div>
                 <?php echo __('Product Details: <span class="sparkle">%1</span>', array('%1' => $product->getName())) ?>
                 <div><?php if ($product->isOnline()): ?><span class="tag online-11px"><?php echo __('Online') ?></span><?php else:  ?><span class="tag offline-11px"><?php echo __('Offline') ?></span><?php endif ?>
                      </div></h4>
+<div class="bubble pad-2">
+    <?php echo __('Are you sure to delete your product?') ?>&nbsp;&nbsp;
+    <?php echo link_to(__('Yes, Delete!'), "@delete-product?hash={$company->getHash()}&id={$product->getId()}&do=commit", 'class=green-button') ?>&nbsp;&nbsp;
+    <?php echo link_to(__('Cancel'), $product->getManageUrl(), 'class=inherit-font bluelink') ?>
+</div>
 <h5><?php echo __('Product Classification') ?></h5>
 <dl class="_table _noInput">
     <dt><?php echo emt_label_for('category_id', __('Category')) ?></dt>
