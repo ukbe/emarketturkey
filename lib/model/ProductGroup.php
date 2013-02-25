@@ -26,7 +26,7 @@ class ProductGroup extends BaseProductGroup
 
     public function getUrl()
     {
-       return (sfContext::getInstance()->getConfiguration()->getApplication() == 'b2b' ? "@" : "@b2b.") . "company-product-substitute?hash={$this->getCompany()->getHash()}&substitute={$this->getSafeStrippedName()}";  
+       return (sfContext::getInstance()->getConfiguration()->getApplication() == 'camp' ? "@" : "@camp.") . "company-product-substitute?hash={$this->getCompany()->getHash()}&substitute={$this->getSafeStrippedName()}";  
     }
 
     public function getExistingI18ns()
