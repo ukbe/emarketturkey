@@ -134,6 +134,12 @@
         </div>
     </div>
 
+    <div class="box_312 noBorder">
+        <div>
+            <?php echo link_to(image_tag('content/event/igid.inv.banner.jpg'), 'http://www.inovasyonodulleri.com/', 'style="display: block; width: 250px; height: 250px; margin: 10px 29px 0px;" target=blank') ?>
+        </div>
+    </div>
+
     <div class="box_312 _border_Shadowed">
         <h3><?php echo link_to_function(__('Authors'), '', 'class=blue') ?></h3>
         <div>

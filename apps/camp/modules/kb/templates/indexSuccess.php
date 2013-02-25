@@ -18,6 +18,12 @@
         </div>
     </div>
 
+    <div class="box_630 noBorder">
+        <div>
+            <?php echo link_to(image_tag('content/event/igid.inv.banner.strip.jpg', 'style="display: block; width: 630px;"'), 'http://www.inovasyonodulleri.com/', 'style="display: block; margin: 10px 0px;" target=blank') ?>
+        </div>
+    </div>
+
     <div class="box_630">
         <div class="_noBorder pad-0">
             <ul class="pub_boxes">
