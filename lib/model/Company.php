@@ -1025,7 +1025,7 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
         return $prodArray;
     }
     
-    public function getProductPager($page, $items_per_page = 20, $c1 = null, $status = null)
+    public function getProductPager($page, $items_per_page = 20, $c1 = null, $status = null, $active = null)
     {
         if ($c1 instanceof Criteria)
         {
@@ -1037,6 +1037,7 @@ ORDER BY OBJ_VROLE_LVL DESC NULLS LAST, SUB_VROLE_LVL DESC NULLS LAST, OBJECTED,
         }
         
         if (isset($status)) $c->add(ProductPeer::APPROVAL_STATUS, $status);
+        if (isset($active)) $c->add(ProductPeer::ACTIVE, $active);
         $c->add(ProductPeer::COMPANY_ID, $this->getId());
         $c->add(ProductPeer::DELETED_AT, null, Criteria::ISNULL);
 

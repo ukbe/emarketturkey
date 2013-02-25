@@ -26,7 +26,7 @@ companies:
 
 company-product-substitute:
   url:   /:sf_culture/company/:hash/products/:substitute
-  requirements: { sf_culture: (?:en|ru|tr), substitute: '[A-Za-z\-@]+' }
+  requirements: { sf_culture: (?:en|ru|tr), substitute: '[A-Za-z\-@0-9]+' }
   param: { module: company, action: products }
 
 company-events:
