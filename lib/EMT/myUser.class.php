@@ -13,7 +13,7 @@ class myUser extends sfBasicSecurityUser
 
         if ($this->isAuthenticated())
         {
-            if (!$this->getUser() || $this->login_obj->countBlocksExceptReasonIds(array(BlockReasonPeer::BR_TYP_VERIFICATION_REQUIRED)))
+            if (!$this->getUser() || !$this->login_obj || $this->login_obj->countBlocksExceptReasonIds(array(BlockReasonPeer::BR_TYP_VERIFICATION_REQUIRED)))
             {
                 $this->signOut();
             }
