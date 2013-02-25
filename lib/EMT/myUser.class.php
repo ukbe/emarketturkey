@@ -81,6 +81,7 @@ class myUser extends sfBasicSecurityUser
     public function signOut()
     {
         $this->getAttributeHolder()->removeNamespace('subscriber');
+        $this->getAttributeHolder()->removeNamespace('/user/page/default');
         $this->user_obj = null;
         $this->login_obj = null;
         $this->user_profile = null;
