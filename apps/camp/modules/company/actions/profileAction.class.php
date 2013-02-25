@@ -25,8 +25,8 @@ class profileAction extends EmtCompanyAction
         $this->getResponse()->addObjectMeta(array('name' => 'name', 'itemprop' => 'name'), $this->company->__toString());
         $this->getResponse()->addObjectMeta(array('itemprop' => 'brand'), implode(', ', $this->company->getCompanyBrands()));
         $this->getResponse()->addObjectMeta(array('itemprop' => 'foundingDate'), $this->profile->getFoundedIn('Y'));
-        $this->getResponse()->addObjectMeta(array('itemprop' => 'address'), $address->__toString());
-        $this->getResponse()->addObjectMeta(array('itemprop' => 'telephone'), $phone->__toString());
+        if ($address) $this->getResponse()->addObjectMeta(array('itemprop' => 'address'), $address->__toString());
+        if ($phone) $this->getResponse()->addObjectMeta(array('itemprop' => 'telephone'), $phone->__toString());
         if ($fax_number) $this->getResponse()->addObjectMeta(array('itemprop' => 'faxNumber'), $fax_number->__toString());
         $this->getResponse()->addObjectMeta(array('http-equiv' => 'last-modified'), $this->company->getUpdatedAt('Y-m-d\TH:i:s\Z'));
         sfLoader::loadHelpers('Url');
