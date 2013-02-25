@@ -16,6 +16,7 @@ class myUser extends sfBasicSecurityUser
             if (!$this->getUser() || !$this->login_obj || $this->login_obj->countBlocksExceptReasonIds(array(BlockReasonPeer::BR_TYP_VERIFICATION_REQUIRED)))
             {
                 $this->signOut();
+                return;
             }
 
             $current_pop = $this->getAttribute('pop_message', array(), '/user/page/default');
