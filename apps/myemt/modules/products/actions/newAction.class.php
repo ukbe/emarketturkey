@@ -164,6 +164,7 @@ class newAction extends EmtManageProductAction
                     }
 
                     $this->product->setAttributes($attrmatrix);
+                    $this->product->save();
 
                     if (is_array($pr))
                     {
@@ -198,7 +199,6 @@ class newAction extends EmtManageProductAction
                         }
                     }
                     if (!$isnew && count($diff = array_diff($this->i18ns, $pr))) $this->product->removeI18n($diff);
-                    $this->product->save();
                     
                     if ($isnew && $this->product->getApprovalStatus() == ProductPeer::PR_STAT_APPROVED)
                         ActionLogPeer::Log($this->company, ActionPeer::ACT_ADD_PRODUCT, null, $this->product);
