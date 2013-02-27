@@ -193,7 +193,7 @@ class newAction extends EmtManageProductAction
                             $stmt->bindValue(':name', $this->getRequestParameter("product_name_$key"));
                             $stmt->bindParam(':introduction', $p_intro, PDO::PARAM_STR, strlen($p_intro));
                             $stmt->bindValue(':packaging', $this->getRequestParameter("packaging_$key"));
-                            $stmt->bindParam(':htlm_content', $p_html, PDO::PARAM_STR, strlen($p_html));
+                            $stmt->bindParam(':html_content', $p_html, PDO::PARAM_STR, strlen($p_html));
                             $stmt->execute();
                         }
                     }
