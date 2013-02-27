@@ -46,7 +46,7 @@
                     <div class="_noBorder pad-0">
                     <?php if ($introduction): ?>
                     <div class="pad-2">
-                        <?php echo $introduction ?>
+                        <?php echo myTools::format_text($introduction) ?>
                     </div>
                     <?php endif ?>
                     <div>
