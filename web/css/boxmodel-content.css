@@ -2064,7 +2064,7 @@ ul.select-step .activate {
 .productGallery > dl {
  display:block;
  clear:both;
- margin:1em auto 3em;
+ margin:0px;
 }
 
 .productGallery > dl > dt {
