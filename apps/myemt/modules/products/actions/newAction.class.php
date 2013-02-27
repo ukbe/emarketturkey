@@ -169,7 +169,7 @@ class newAction extends EmtManageProductAction
                     {
                         foreach($pr as $key => $lang)
                         {
-                            if ($product->hasLsiIn($lang))
+                            if ($this->product->hasLsiIn($lang))
                             {
                                 $sql = "UPDATE EMT_PRODUCT_I18N 
                             			SET id=:id, culture=:culture, name=:name, introduction=:introduction, packaging=:packaging, html_content=:html_content
@@ -188,7 +188,7 @@ class newAction extends EmtManageProductAction
                             $stmt = $con->prepare($sql);
                             $p_intro = $register_prefs->get("product_introduction_$key");
                             $p_hmtl = "";
-                            $stmt->bindValue(':id', $product->getId());
+                            $stmt->bindValue(':id', $this->product->getId());
                             $stmt->bindValue(':culture', $lang);
                             $stmt->bindValue(':name', $this->getRequestParameter("product_name_$key"));
                             $stmt->bindParam(':introduction', $p_intro, PDO::PARAM_STR, strlen($p_intro));
