@@ -2223,7 +2223,7 @@ a.basic
 .photoGallery > dl {
  display:block;
  clear:both;
- margin:1em auto 3em;
+ margin:0px;
 }
 
 .photoGallery > dl > dt {
