@@ -186,7 +186,7 @@ class newAction extends EmtManageProductAction
                             }
                             
                             $stmt = $con->prepare($sql);
-                            $p_intro = $register_prefs->get("product_introduction_$key");
+                            $p_intro = $this->getRequestParameter("product_introduction_$key");
                             $p_hmtl = "";
                             $stmt->bindValue(':id', $this->product->getId());
                             $stmt->bindValue(':culture', $lang);
