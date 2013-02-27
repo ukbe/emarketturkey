@@ -197,7 +197,7 @@ class newAction extends EmtManageProductAction
                             $stmt->execute();
                         }
                     }
-                    if (!$this->product->isNew() && count($diff = array_diff($this->i18ns, $pr))) $this->product->removeI18n($diff);
+                    if (!$isnew && count($diff = array_diff($this->i18ns, $pr))) $this->product->removeI18n($diff);
                     $this->product->save();
                     
                     if ($isnew && $this->product->getApprovalStatus() == ProductPeer::PR_STAT_APPROVED)

@@ -16,7 +16,7 @@
 <?php if ($product->isNew()): ?>
                 <h4><?php echo __('Add Product') ?></h4>
 <?php echo form_errors() ?>
-<?php echo form_tag("@add-product?hash={$company->getHash()}", 'novalidate=novalidate') ?>
+<?php echo form_tag("@add-product?hash={$company->getHash()}", 'novalidate=novalidate enctype=multipart/form-data') ?>
 <?php else: ?>
                 <h4><?php echo __('Edit Product') ?></h4>
 <?php echo form_errors() ?>
