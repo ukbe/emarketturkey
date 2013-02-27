@@ -23,7 +23,7 @@
         <p>"<?php echo $message ?>"</p>
         <?php endif ?>
         <p><?php echo __("You may click the link below to respond to your friend's invitation:") ?></p>
-        <p><?php echo link_to('', '@lobby.signup', array('query_string' => 'invite='. $invite_guid, 'absolute' => true)) ?></p>
+        <p><?php echo link_to('', '@camp.signup', array('query_string' => 'invite='. $invite_guid, 'absolute' => true)) ?></p>
     </div>
     <div style="float: left;">
         <img src="http://www.emarketturkey.com/images/content/invite/template-1/network.png" width="259" height="208" />
@@ -31,7 +31,7 @@
 <div align="left" style="padding-left: 1px;">
     <img src="http://www.emarketturkey.com/images/content/invite/template-1/services.<?php echo $culture ?>.png" width="707" height="206" />
     </div>
-<div align="right" style="padding: 20px 40px;"><?php echo link_to(__('More about eMarketTurkey Services'), '@lobby.homepage') ?></div>
+<div align="right" style="padding: 20px 40px;"><?php echo link_to(__('More about eMarketTurkey Services'), '@camp.homepage') ?></div>
 <div align="right" style="padding: 20px 40px;"><?php echo __('eMarketTurkey Team') ?></div>
 <div style="background: url(http://www.emarketturkey.com/images/content/invite/template-1/footer.png) top left no-repeat;">
             <img src="http://www.emarketturkey.com/images/spacer.gif" width="1" height="12" /></div>

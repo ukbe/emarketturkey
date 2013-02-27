@@ -23,7 +23,7 @@ body { font-family: Arial; font-size: 10pt; font-weight: normal; color: #000000;
                 <?php echo __('Hi %1,', array('%1' => $iname)) ?><br /><br />
                 <?php echo __('%1 invited you to join the group %3.', array('%1' => $mnamelname, '%3' => $gname)) ?><br /><br />
                 <?php echo __('You can click the link below to accept the invite:') ?><br/>
-                <?php echo link_to('', '@cm.requests', array('absolute_url' => true)); ?>
+                <?php echo link_to('', '@camp.requests', array('absolute_url' => true)); ?>
                 <br /><br />
                 <?php echo __('eMarketTurkey Team') ?>
                 <br /><br />

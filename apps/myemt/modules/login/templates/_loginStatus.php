@@ -6,10 +6,10 @@
     <?php echo link_to("<sup>".($mescnt = $sf_user->getUser()->getUnreadMessageCount())."</sup>", '@messages', array('id' => 'messages', 'class' => 'toplink'. ($mescnt ? ' new': ''), 'title' => __('Messages'))) ?>
 </td>
 <td>
-    <?php echo link_to("<sup>".($notcnt = $sf_user->getUser()->getNotificationCount())."</sup>", '@cm.notifications', array('id' => 'notifications', 'class' => 'toplink'. ($notcnt ? ' new': ''), 'title' => __('Notifications'))) ?>
+    <?php echo link_to("<sup>".($notcnt = $sf_user->getUser()->getNotificationCount())."</sup>", '@camp.notifications', array('id' => 'notifications', 'class' => 'toplink'. ($notcnt ? ' new': ''), 'title' => __('Notifications'))) ?>
 </td>
 <td>
-    <?php echo link_to("<sup>".($reqcnt = $sf_user->getUser()->getRequestCount())."</sup>", $reqcnt ? '@cm.requests' : '@cm.network', array('class' => 'toplink contacts'. ($reqcnt ? ' new': ''), 'title' => __('Contacts'))) ?>
+    <?php echo link_to("<sup>".($reqcnt = $sf_user->getUser()->getRequestCount())."</sup>", $reqcnt ? '@camp.requests' : '@camp.network', array('class' => 'toplink contacts'. ($reqcnt ? ' new': ''), 'title' => __('Contacts'))) ?>
 </td>
 <?php $roles = $sf_user->getUser()->getLogin()->getRoles() ?>
 <?php if (count($roles)>1): ?>
