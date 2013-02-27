@@ -117,7 +117,7 @@
     <dt class="_req"><?php echo emt_label_for("product_name_$key", __('Product Name')) ?></dt>
     <dd><?php echo input_tag("product_name_$key",$sf_params->get("product_name_$key", $product->getName($lang)), 'size=50 maxlength=400') ?></dd>
     <dt class="_req"><?php echo emt_label_for("product_introduction_$key", __('Introduction')) ?></dt>
-    <dd><?php echo textarea_tag("product_introduction_$key", $sf_params->get("product_introduction_$key", $product->getIntroduction($lang)), 'cols=52 rows=4 maxlength=1800') ?></dd>
+    <dd><?php echo textarea_tag("product_introduction_$key", $sf_params->get("product_introduction_$key", $product->getClob(ProductI18nPeer::INTRODUCTION, $lang)), 'cols=52 rows=4 maxlength=1800') ?></dd>
     <dt><?php echo emt_label_for("packaging_$key", __('Packaging')) ?></dt>
     <dd><?php echo input_tag("packaging_$key", $sf_params->get("packaging_$key", $product->getPackaging($lang)), 'size=50 maxlength=200') ?></dd>
 </dl>

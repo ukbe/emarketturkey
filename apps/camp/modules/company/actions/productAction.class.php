@@ -17,8 +17,9 @@ class productAction extends EmtProductAction
         $this->photos = $this->product->getPhotos();
 
         $this->getResponse()->setItemType('http://schema.org/Product');
-        
-        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), myTools::trim_text($this->product->getIntroduction(), 250, true) ? $this->product->getIntroduction() : sfContext::getInstance()->getI18N()->__("%1 from %2", array('%1' => $this->product->__toString(), '%2' => $this->company->__toString())));
+
+        $this->introduction = $this->product->getClob(ProductI18nPeer::INTRODUCTION);
+        $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), $this->introduction ? myTools::trim_text($this->introduction, 250, true) : sfContext::getInstance()->getI18N()->__("%1 from %2", array('%1' => $this->product->__toString(), '%2' => $this->company->__toString())));
         $this->getResponse()->addObjectMeta(array('itemprop' => 'name'), $this->product->__toString());
         if ($brand = $this->product->getAbsBrandName()) $this->getResponse()->addObjectMeta(array('itemprop' => 'brand'), $brand);
         $this->getResponse()->addObjectMeta(array('itemprop' => 'manufacturer'), $this->company->__toString());

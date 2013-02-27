@@ -63,7 +63,7 @@
             <dt><?php echo __('Product Name') ?></dt>
             <dd><?php echo $product->getName($lang) ?></dd>
             <dt><?php echo __('Introduction') ?></dt>
-            <dd><?php echo $product->getIntroduction($lang) ?></dd>
+            <dd><?php echo $product->getClob(ProductI18nPeer::INTRODUCTION, $lang) ?></dd>
             <dt><?php echo __('Packaging') ?></dt>
             <dd><?php echo $product->getPackaging($lang) ?></dd>
         </dl>

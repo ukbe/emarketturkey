@@ -164,17 +164,37 @@ class newAction extends EmtManageProductAction
                     }
 
                     $this->product->setAttributes($attrmatrix);
-                    
+
                     if (is_array($pr))
                     {
                         foreach($pr as $key => $lang)
                         {
-                            $pi18n = $this->product->getCurrentProductI18n($lang);
-                            $pi18n->setName($this->getRequestParameter("product_name_$key"));
-                            $pi18n->setIntroduction($this->getRequestParameter("product_introduction_$key"));
-                            $pi18n->setPackaging($this->getRequestParameter("packaging_$key"));
-                            $pi18n->setHtmlContent('');
-                            $pi18n->save();
+                            if ($product->hasLsiIn($lang))
+                            {
+                                $sql = "UPDATE EMT_PRODUCT_I18N 
+                            			SET id=:id, culture=:culture, name=:name, introduction=:introduction, packaging=:packaging, html_content=:html_content
+                            			WHERE id=:id AND culture=:culture
+                                ";
+                            }
+                            else
+                            {
+                                $sql = "INSERT INTO EMT_PRODUCT_I18N 
+                                        (id, culture, name, introduction, packaging, html_content)
+                                        VALUES
+                                        (:id, :culture, :name, :introduction, :packaging, :html_content)
+                                ";
+                            }
+                            
+                            $stmt = $con->prepare($sql);
+                            $p_intro = $register_prefs->get("product_introduction_$key");
+                            $p_hmtl = "";
+                            $stmt->bindValue(':id', $product->getId());
+                            $stmt->bindValue(':culture', $lang);
+                            $stmt->bindValue(':name', $this->getRequestParameter("product_name_$key"));
+                            $stmt->bindParam(':introduction', $p_intro, PDO::PARAM_STR, strlen($p_intro));
+                            $stmt->bindValue(':packaging', $this->getRequestParameter("packaging_$key"));
+                            $stmt->bindParam(':htlm_content', $p_html, PDO::PARAM_STR, strlen($p_html));
+                            $stmt->execute();
                         }
                     }
                     if (!$this->product->isNew() && count($diff = array_diff($this->i18ns, $pr))) $this->product->removeI18n($diff);

@@ -19,7 +19,7 @@
 <div class="column span-105 prepend-1 append-1">
 <h2><?php echo $product->getDisplayName() ?></h2>
 <h4><?php echo $product->getProductCategory()->getName() ?></h4>
-<p><?php echo $product->getIntroduction() ?></p>
+<p><?php echo $product->getClob(ProductI18nPeer::INTRODUCTION) ?></p>
 <ol class="column span-100">
 <li class="column span-23 append-2 first"><?php echo __('Payment Term') ?></li>
 <li class="column span-75"><?php echo $product->getPaymentTerm()->getCode().' - '. $product->getPaymentTerm()->getName() ?></li>

@@ -719,9 +719,9 @@ propel:
     ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_PRODUCT, foreignReference: ID, onDelete: CASCADE, onUpdate: CASCADE }
     CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
     NAME:                 { type: varchar(400), required: true }
-    INTRODUCTION:         { type: longvarchar, required: true }
+    INTRODUCTION:         { type: clob }
     PACKAGING:            { type: varchar(500) }
-    HTML_CONTENT:         { type: longvarchar }
+    HTML_CONTENT:         { type: clob }
 
   EMT_PRODUCT_ATTR:
     _attributes:          { phpName: ProductAttr, isI18N: true, i18nTable: EMT_PRODUCT_ATTR_I18N }

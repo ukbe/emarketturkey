@@ -44,13 +44,13 @@
             <div class="col_576">
                 <div class="box_576">
                     <div class="_noBorder pad-0">
-                    <?php if ($product->getIntroduction()): ?>
+                    <?php if ($introduction): ?>
                     <div class="pad-2">
-                        <?php echo $product->getIntroduction() ?>
+                        <?php echo $introduction ?>
                     </div>
                     <?php endif ?>
                     <div>
-                        <h4<?php echo !$product->getIntroduction() ? '  class="margin-t0"' : '' ?>><?php echo __('Specifications') ?></h4>
+                        <h4<?php echo !$introduction ? '  class="margin-t0"' : '' ?>><?php echo __('Specifications') ?></h4>
                         <table class="infoTable margin-2" style="width: 542px;">
                             <tr><th><?php echo __('Category') ?></th>
                                 <td><?php echo link_to($product->getProductCategory()->__toString(), "@products-dir?substitute={$product->getProductCategory()->getStrippedCategory()}") ?></td></tr>

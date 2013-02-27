@@ -46,7 +46,7 @@ class CompanyPeer extends BaseCompanyPeer
             $contact_phone->setPhone($register_prefs->get('company_phone'));
             $contact_phone->setType(ContactPeer::WORK);
             $contact_phone->save();
-            
+
             $company_profile = new CompanyProfile();
             $company_profile->setContactId($contact->getId());
             $company_profile->save();
@@ -83,7 +83,7 @@ class CompanyPeer extends BaseCompanyPeer
                     $stmt->execute();
                 }
             }
-            
+
             $company->setName($register_prefs->get('company_name'));
             $company->setSectorId($register_prefs->get('company_industry'));
             $company->setBusinessTypeId($register_prefs->get('company_business_type'));
