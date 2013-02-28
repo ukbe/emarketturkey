@@ -67,10 +67,15 @@ class Login extends BaseLogin
 
     public function countBlocksExceptReasonIds($rsnids)
     {
-        $c = new Criteria();
-        $c->add(BlocklistPeer::ACTIVE, 1);
-        $c->add(BlocklistPeer::BLOCKREASON_ID, $rsnids, Criteria::NOT_IN);
-        $this->countBlocklists($c);
+        $con = Propel::getConnection();
+        
+        $sql = "SELECT COUNT(*) FROM EMT_BLOCKLIST
+    			WHERE ACTIVE=1 AND BLOCKREASON_ID NOT IN (". implode(',', $rsnids) .")";
+        
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $rs = $stmt->fetch(PDO::FETCH_NUM);
+        return $rs[0];
     }
 
     public function getBlockByReasonId($rsnid)
