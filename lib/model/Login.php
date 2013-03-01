@@ -70,7 +70,7 @@ class Login extends BaseLogin
         $con = Propel::getConnection();
         
         $sql = "SELECT COUNT(*) FROM EMT_BLOCKLIST
-    			WHERE ACTIVE=1 AND BLOCKREASON_ID NOT IN (". implode(',', $rsnids) .")";
+    			WHERE LOGIN_ID={$this->getId()} AND ACTIVE=1 AND BLOCKREASON_ID NOT IN (". implode(',', $rsnids) .")";
         
         $stmt = $con->prepare($sql);
         $stmt->execute();
