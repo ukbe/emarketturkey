@@ -30,7 +30,7 @@
     <div class="tabgroup" style="width:400px;">
         <ul class="flowtabs" id="flowtabs">
             <?php foreach ($i18ns as $key => $lang): ?>
-            <li><a href="t<?php echo $key ?>"<?php echo $sf_user->getCulture() == $lang || (!in_array($sf_user->getCulture(), $i18ns) && $lang == $job->getDefaultLang()) ? 'class=current' : '' ?>><?php echo format_language($lang) ?></a></li>
+            <li><a href="t<?php echo $key ?>"<?php echo $sf_user->getCulture() == $lang || (!in_array($sf_user->getCulture(), $i18ns) && $lang == $event->getDefaultLang()) ? 'class=current' : '' ?>><?php echo format_language($lang) ?></a></li>
             <?php endforeach ?>
         </ul>
         <?php if (count($i18ns) < count(sfConfig::get('app_i18n_cultures'))): ?>
