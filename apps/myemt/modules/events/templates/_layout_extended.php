@@ -12,7 +12,7 @@
 <?php foreach ($results as $event): ?>
     <tr>
         <td><?php echo link_to(image_tag($event->getLogoUri()), $event->getManageUrl()) ?></td>
-        <td><strong><?php echo link_to($event->getName(), $event->getManageUrl()) ?></strong>
+        <td><strong><?php echo link_to($event->__toString(), $event->getManageUrl()) ?></strong>
             <em><?php echo __('Type: ') . link_to($event->getEventType(), "$query&type={$event->getTypeId()}") ?></em>
             <em><?php echo __('Location: ') . ($event->getPlace() ? link_to($event->getPlace()->getLongName(), "$query&place={$event->getPlaceId()}") : $event->getLocationName() . ($event->getGeonameCity() ? ', ' . $event->getGeonameCity()->getName() : '') . ($event->getLocationCountry() ? ', ' . format_country($event->getLocationCountry()) : '')) ?></em>
             </td>
