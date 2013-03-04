@@ -10,6 +10,7 @@
 <?php include_partial('global/google-analytics') ?>
 <!--[if lt IE 9]>
 <script src="/js/html5shiv.js" type="text/javascript"></script>
+<script src="/js/es5-shim.min.js" type="text/javascript"></script>
 <![endif]-->
 </head>
 <body class="_noJS _island">
