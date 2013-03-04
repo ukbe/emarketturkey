@@ -1,14 +1,14 @@
 @CHARSET "UTF-8";
 
-._admin > header {
+body._admin > header {
  display:block;
  width:100%;height:26px;
  background-color:#494949;
  background: url(/images/layout/background/admin/menu.png) repeat-x center;
 }
 
-._admin > header hgroup {height:26px;}
-._admin > header hgroup h1 {
+body._admin > header hgroup {height:26px;}
+body._admin > header hgroup h1 {
  width:73px;height:21px;
  top:2px;left:12px;
  background:url(/images/emtLogo-admin.png) no-repeat;
@@ -36,9 +36,9 @@ body #section-bg > section {
  background:transparent;z-index:0;
 }
 
-._admin #subscr_messages { top:6px; }
-._admin .login #buttons { top:14px; z-index: 30; }
-._admin #buttons > li > b > a {
+body._admin #subscr_messages { top:6px; }
+body._admin .login #buttons { top:14px; z-index: 30; }
+body._admin #buttons > li > b > a {
  display:block;z-index: 20; position: relative;
  width:22px;height:20px;
  margin:0px 3px;padding:0px;
@@ -49,11 +49,11 @@ body #section-bg > section {
  background-repeat:no-repeat;
 -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;
 }
-._admin #buttons > li > b > a:hover {
+body._admin #buttons > li > b > a:hover {
  background-color:white;
  border-color:white;
 }
-._admin #buttons > li > b > a._btn_up {
+body._admin #buttons > li > b > a._btn_up {
  border-color:#000;
  border-bottom: none;
  margin:0px 3px -3px;padding:0px 0px 4px;
@@ -61,17 +61,17 @@ body #section-bg > section {
 -moz-border-bottom-right-radius:0px; -webkit-border-bottom-right-radius:0px; border-bottom-right-radius:0px;
 }
 
-._admin #buttons > li > b > a#btn_login {
+body._admin #buttons > li > b > a#btn_login {
  width:22px;height:20px;
 }
-._admin #buttons > li > b > a#btn_login > b {
+body._admin #buttons > li > b > a#btn_login > b {
  width: 22px; height: 20px;
 }
-._admin #buttons > li > b > a#btn_login._btn_up {
+body._admin #buttons > li > b > a#btn_login._btn_up {
  margin:0px 3px -3px;padding:0px 0px 4px;
 }
 
-//._admin #subNav dt { display:none; }
+//body._admin #subNav dt { display:none; }
 
 ._monitor {
  position:absolute;
@@ -82,7 +82,7 @@ body #section-bg > section {
  height:120px;
 }
 
-._admin #section-bg > section section {
+body._admin #section-bg > section section {
  clear:both;
  display:block;
  position:relative;
@@ -90,18 +90,18 @@ body #section-bg > section {
  height:100%;
 }
 
-._admin #section-bg > section section p {
+body._admin #section-bg > section section p {
  padding:1em;
 }
 
-._admin #section-bg > section section:hover .btn_container { display:block; }
+body._admin #section-bg > section section:hover .btn_container { display:block; }
 
 
 /*
  admin. form fields
  */
 
-._admin #section-bg > section > header > hgroup {
+body._admin #section-bg > section > header > hgroup {
  display:block;
  position:absolute;
  top:-100px;
@@ -477,61 +477,61 @@ ul.side-menu li a:hover { background-color: #eefbb8; color: #000; text-decoratio
     background: url(/images/layout/background/nologo.medium.png) no-repeat center;
 }
 
-._admin .cvRecordBlock
+body._admin .cvRecordBlock
 {
     border-bottom : dotted 1px #e9e9e9;
     margin-bottom: 5px;
     padding: 0px;
 }
-._admin .cvRecordBlock > div
+body._admin .cvRecordBlock > div
 {
     margin: 5px 0px 5px;
     padding: 11px;
 }
-._admin #editrecord.cvRecordBlock > div
+body._admin #editrecord.cvRecordBlock > div
 {
     margin: 5px 0px 5px;
     padding: 1px;
 }
-._admin #editrecord.cvRecordBlock > div dl._table
+body._admin #editrecord.cvRecordBlock > div dl._table
 {
     margin-left: 2px;
     margin-right: 2px;
 }
-._admin #editrecord.cvRecordBlock > div dl._table dd
+body._admin #editrecord.cvRecordBlock > div dl._table dd
 {
     width: 417px;
 }
-._admin .cvRecordBlock:hover > div
+body._admin .cvRecordBlock:hover > div
 {
     border: solid 1px #e5ebf7;
     padding: 10px;
     background-color: #f5f7fb;
 }
-._admin #editrecord.cvRecordBlock:hover > div
+body._admin #editrecord.cvRecordBlock:hover > div
 {
     padding: 0px;
 }
-._admin .cvRecordBlock h5
+body._admin .cvRecordBlock h5
 {
     font: bold 15px 'Lucida Grande',Helvetica,Arial,Verdana,sans-serif;
     background: transparent;
     padding: 0px;
     margin: 0px 0px 6px;
 }
-._admin .cvRecordBlock h5 em
+body._admin .cvRecordBlock h5 em
 {
     font-weight: normal;
     margin-left: 10px;
     font-style: normal;
     color: #777;
 }
-._admin .cvRecordBlock .actions
+body._admin .cvRecordBlock .actions
 {
     display: none;
     float: right;
 }
-._admin .cvRecordBlock .actions a
+body._admin .cvRecordBlock .actions a
 {
     height: 12px;
     line-height: 12px;
@@ -543,29 +543,29 @@ ul.side-menu li a:hover { background-color: #eefbb8; color: #000; text-decoratio
     color: #333;
     padding: 4px 6px 6px;
 }
-._admin .cvRecordBlock .actions a:hover
+body._admin .cvRecordBlock .actions a:hover
 {
     background-position: bottom;
 }
-._admin .cvRecordBlock:hover .actions,
-._admin .cvRecordBlock.confirm-removal .actions 
+body._admin .cvRecordBlock:hover .actions,
+body._admin .cvRecordBlock.confirm-removal .actions 
 {
     display: block;
 }
-._admin .cvRecordBlock p 
+body._admin .cvRecordBlock p 
 {
     font: 11px tahoma;
     color: #333;
     padding: 5px 0px;
     margin: 0px; 
 }
-._admin .cvRecordBlock p.flash 
+body._admin .cvRecordBlock p.flash 
 {
     font-size: 14px;
     font-family: arial;
     color: #465271; 
 }
-._admin .cvRecordBlock .bubble 
+body._admin .cvRecordBlock .bubble 
 {
     margin: 4px -5px;
     padding: 10px;
@@ -573,23 +573,23 @@ ul.side-menu li a:hover { background-color: #eefbb8; color: #000; text-decoratio
     border-radius: 6px;
     font: 11px tahoma;
 }
-._admin .cvRecordBlock:hover .bubble 
+body._admin .cvRecordBlock:hover .bubble 
 {
     background-color: #ebeff7;
 }
-._admin .cvRecordBlock .level-low,
-._admin .cvRecordBlock .level-fair,
-._admin .cvRecordBlock .level-fluent,
-._admin .cvRecordBlock .level-unknown
+body._admin .cvRecordBlock .level-low,
+body._admin .cvRecordBlock .level-fair,
+body._admin .cvRecordBlock .level-fluent,
+body._admin .cvRecordBlock .level-unknown
 {
     display: inline-block;
     margin: 0px 20px 0px 0px;
     min-width: 100px;
 }
-._admin .cvRecordBlock .level-low .level-bar,
-._admin .cvRecordBlock .level-fair .level-bar,
-._admin .cvRecordBlock .level-fluent .level-bar,
-._admin .cvRecordBlock .level-unknown .level-bar
+body._admin .cvRecordBlock .level-low .level-bar,
+body._admin .cvRecordBlock .level-fair .level-bar,
+body._admin .cvRecordBlock .level-fluent .level-bar,
+body._admin .cvRecordBlock .level-unknown .level-bar
 {
     height: 18px;
     margin-top: 10px;
@@ -597,10 +597,10 @@ ul.side-menu li a:hover { background-color: #eefbb8; color: #000; text-decoratio
     width: 100%;
     padding: 1px;
 }
-._admin .cvRecordBlock .level-low .level-bar div span,
-._admin .cvRecordBlock .level-fair .level-bar div span,
-._admin .cvRecordBlock .level-fluent .level-bar div span,
-._admin .cvRecordBlock .level-unknown .level-bar div span
+body._admin .cvRecordBlock .level-low .level-bar div span,
+body._admin .cvRecordBlock .level-fair .level-bar div span,
+body._admin .cvRecordBlock .level-fluent .level-bar div span,
+body._admin .cvRecordBlock .level-unknown .level-bar div span
 {
     line-height: 14px;
     font: 11px arial;
@@ -608,22 +608,22 @@ ul.side-menu li a:hover { background-color: #eefbb8; color: #000; text-decoratio
     padding: 2px 5px;
     display: block;
 }
-._admin .cvRecordBlock .level-low .level-bar div
+body._admin .cvRecordBlock .level-low .level-bar div
 {
     width: 33%;
     background-color: #9bc2dd;
 }
-._admin .cvRecordBlock .level-fair .level-bar div
+body._admin .cvRecordBlock .level-fair .level-bar div
 {
     width: 66%;
     background-color: #5da0cf;
 }
-._admin .cvRecordBlock .level-fluent .level-bar div
+body._admin .cvRecordBlock .level-fluent .level-bar div
 {
     width: 100%;
     background-color: #3776a2;
 }
-._admin .cvRecordBlock .level-unknown .level-bar div span
+body._admin .cvRecordBlock .level-unknown .level-bar div span
 {
     color: #666;
 }
