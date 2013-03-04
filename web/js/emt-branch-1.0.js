@@ -4,7 +4,7 @@
         options: {
             map: {},
             method: 'anim',
-            toggleClass: 'ghost',
+            toggleClass: 'ghost'
         },
 
         _create: function(){

@@ -31,7 +31,7 @@
             headerContent: '',
             footerContent: '',
             allowLoadInside: true,
-            hoverDelay: 1000,
+            hoverDelay: 1000
         },
 
         _create: function(){
