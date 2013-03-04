@@ -3,6 +3,7 @@
 body._admin > header {
  display:block;
  width:100%;height:26px;
+ filter: none;
  background-color:#494949;
  background: url(/images/layout/background/admin/menu.png) repeat-x center;
 }
