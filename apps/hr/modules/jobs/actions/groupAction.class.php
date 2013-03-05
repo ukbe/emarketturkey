@@ -9,7 +9,8 @@ class groupAction extends EmtGroupAction
         unset($params['module']);
         unset($params['action']);
         unset($params['sf_culture']);
-        $this->redirect("@camp.group-jobs?".http_build_query($params), 301);
+        unset($params['hash']);
+        $this->redirect("@camp.group-jobs?=stripped_name={$this->group->getStrippedName()}&".http_build_query($params), 301);
 
         $act = myTools::pick_from_list($this->getRequestParameter('act'), array('save', 'rem', 'ban', 'unb'), null);
         if ($act)

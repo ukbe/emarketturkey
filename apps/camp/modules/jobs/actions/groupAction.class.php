@@ -4,8 +4,6 @@ class groupAction extends EmtGroupAction
 {
     public function execute($request)
     {
-        $act = myTools::pick_from_list($this->getRequestParameter('act'), array('save', 'rem', 'ban', 'unb'), null);
-
         if ($this->getContext()->getRouting()->getCurrentRouteName() != 'group-jobs')
         {
             // Redirect to new url with stripped_name parameter rather than group hash
@@ -15,6 +13,8 @@ class groupAction extends EmtGroupAction
             unset($params['hash']);
             $this->redirect("@group-jobs?stripped_name={$this->group->getStrippedName()}&".http_build_query($params), 301);
         }
+
+        $act = myTools::pick_from_list($this->getRequestParameter('act'), array('save', 'rem', 'ban', 'unb'), null);
 
         if ($act)
         {
