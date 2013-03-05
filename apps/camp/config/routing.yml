@@ -4,8 +4,8 @@ link-trash:
 
 group-hashed-jobs:
   url:   /:sf_culture/group/:hash/jobs
-  requirements: { sf_culture: (?:en|ru|tr) } 
-  param: { module: jobs, action: group, hash: '[A-Za-z0-9]{2}HT' }
+  requirements: { sf_culture: (?:en|ru|tr), hash: '^[A-Za-z0-9]{2}HT$' } 
+  param: { module: jobs, action: group }
 
 ## B2B Rules
 
