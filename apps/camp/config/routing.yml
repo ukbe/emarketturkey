@@ -2,6 +2,11 @@ link-trash:
   url: /*/_LINK_
   param: { module: default, action: gone }
 
+group-hashed-jobs:
+  url:   /:sf_culture/group/:hash/jobs
+  requirements: { sf_culture: (?:en|ru|tr) } 
+  param: { module: jobs, action: group, hash: '[A-Za-z0-9]{2}HT' }
+
 ## B2B Rules
 
 search-companies:
