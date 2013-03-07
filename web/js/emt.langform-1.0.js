@@ -2,7 +2,7 @@
 
     $.widget("ui.langform", {
         options: {
-			availangs: {'tr': [0, 'Turkish'], 'en': [0, 'English']},
+			availangs: {'tr': [0, 'Turkish'], 'en': [0, 'English'], 'ru': [0, 'Russian']},
 			beforeAdd: undefined,
 			afterAdd: undefined
         },
