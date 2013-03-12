@@ -30,6 +30,7 @@
                             <?php echo !$sesuser->isNew() ? input_hidden_tag('LEADCF1', $sesuser->getHash()) : '' ?>
                             <?php echo count($companies = $sesuser->getCompanies()) == 1 ? input_hidden_tag('LEADCF2', $companies[0]->getHash()) : '' ?>
                         <?php if ($campaign): ?>
+                            <?php echo input_hidden_tag('Campaign', $campaign->getCode()) ?>
                             <?php include_partial("campaign_{$campaign->getCode()}_custom", array('campaign' => $campaign)) ?>
                         <?php endif ?>
                             <dl class="_table">
