@@ -655,10 +655,19 @@ premium-compare:
   requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: compareMemberships }
 
+premium-campaign:
+  url:   /:sf_culture/premium/campaign
+  requirements: { sf_culture: (?:en|ru|tr) } 
+  param: { module: services, action: campaign }
+
 premium:
   url:   /:sf_culture/services/premium
   requirements: { sf_culture: (?:en|ru|tr) } 
   param: { module: services, action: premium }
+
+thankyou:
+  url:   /thankyou
+  param: { module: services, action: thankyou }
 
 #### End Service Rules
 
