@@ -1985,4 +1985,16 @@ propel:
     QUESTION:             { type: varchar(1000), required: true }
     ANSWER:               { type: clob, required: true }
 
-    
+  EMT_CAMPAIGN: 
+    _attributes:          { phpName: Campaign, isI18N: true, i18nTable: EMT_CAMPAIGN_I18N }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, autoincrement: true }
+    GUID:                 { type: varchar(36), default: sys_guid(), required: true }
+    CODE:                 { type: varchar, size: 15, required: true }
+    NAME:                 { type: varchar(50), required: true }
+    PREMIUM_TYPE:         { type: varchar(50), required: false, default: null }
+
+  EMT_CAMPAIGN_I18N: 
+    _attributes:          { phpName: CampaignI18n }
+    ID:                   { type: integer, size: 10, required: true, primaryKey: true, foreignTable: EMT_CAMPAIGN, foreignReference: ID, onDelete:  CASCADE, onUpdate: CASCADE }
+    CULTURE:              { isCulture: true, type: varchar, size: 7, required: true, primaryKey: true }
+    DISPLAY_NAME:         { type: varchar(255), required: true }
