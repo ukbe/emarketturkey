@@ -18,8 +18,8 @@
             </span>
             <div class="hrsplit-3"></div>
             <span class="p-price">
-                <strike><small><?php echo __('3.500 TL + KDV') ?></small></strike><br />
-                <large class="t_green"><?php echo __('2.800 TL + KDV') ?></large>
+                <strike><small><?php echo __('2.500 TL + KDV') ?></small></strike><br />
+                <large class="t_green"><?php echo __('1.750 TL + KDV') ?></large>
                 <span class="p-period"><?php echo __('per year') ?></span>
             </span>
             <div class="hrsplit-3"></div>
@@ -47,7 +47,7 @@
             <div class="hrsplit-3"></div>
             <span class="p-price">
                 <strike><small><?php echo __('5.000 TL + KDV') ?></small></strike><br />
-                <large class="t_green"><?php echo __('4.000 TL + KDV') ?></large>
+                <large class="t_green"><?php echo __('3.500 TL + KDV') ?></large>
                 <span class="p-period"><?php echo __('per year') ?></span>
             </span>
             <div class="hrsplit-3"></div>
@@ -128,21 +128,21 @@
                 <div style="width: 428px; margin-right: 10px;">
                     <h4><?php echo __('Gold Membership') ?></h4>
                     <table class="plan" cellspacing="0" cellpadding="0">
-                    <tr><th><?php echo __('Invoiced Amount (%1amount)', array('%1amount' => '2.800,00 TL + KDV')) ?></th><td class="t_red">3.304,00 TL</td></tr>
-                    <tr><th><?php echo __('State Grant (%1amount)', array('%1amount' => __('Taxed Amount &times; %1ratio', array('%1ratio' => '%70')))) ?></th><td class="t_green">2.312,80 TL</td></tr>
-                    <tr><th><?php echo __('VAT Advantage') ?></th><td class="t_green">504,00 TL</td></tr>
-                    <tr><th><?php echo __('Income Tax Advantage') ?></th><td class="t_green">560,00 TL</td></tr>
-                    <tr class="sum"><th><?php echo __('Overall Budget Cost') ?></th><td class="t_green">+72,80 TL</td></tr>
+                    <tr><th><?php echo __('Invoiced Amount (%1amount)', array('%1amount' => '1.750,00 TL + KDV')) ?></th><td class="t_red">2.065,00 TL</td></tr>
+                    <tr><th><?php echo __('State Grant (%1amount)', array('%1amount' => __('Taxed Amount &times; %1ratio', array('%1ratio' => '%70')))) ?></th><td class="t_green">1.445,50 TL</td></tr>
+                    <tr><th><?php echo __('VAT Advantage') ?></th><td class="t_green">315,00 TL</td></tr>
+                    <tr><th><?php echo __('Income Tax Advantage') ?></th><td class="t_green">350,00 TL</td></tr>
+                    <tr class="sum"><th><?php echo __('Overall Budget Cost') ?></th><td class="t_green">+45,50 TL</td></tr>
                     </table>
                 </div>
                 <div style="width: 428px;">
                     <h4><?php echo __('Platinum Membership') ?></h4>
                     <table class="plan" cellspacing="0" cellpadding="0">
-                    <tr><th><?php echo __('Invoiced Amount (%1amount)', array('%1amount' => '4.000,00 TL + KDV')) ?></th><td class="t_red">4.720,00 TL</td></tr>
-                    <tr><th><?php echo __('State Grant (%1amount)', array('%1amount' => __('Upper limit'))) ?></th><td class="t_green">2.891,00 TL</td></tr>
-                    <tr><th><?php echo __('VAT Advantage') ?></th><td class="t_green">720,00 TL</td></tr>
-                    <tr><th><?php echo __('Income Tax Advantage') ?></th><td class="t_green">800,00 TL</td></tr>
-                    <tr class="sum"><th><?php echo __('Overall Budget Cost') ?></th><td class="t_red">-309,00 TL</td></tr>
+                    <tr><th><?php echo __('Invoiced Amount (%1amount)', array('%1amount' => '3.500,00 TL + KDV')) ?></th><td class="t_red">4.130,00 TL</td></tr>
+                    <tr><th><?php echo __('State Grant (%1amount)', array('%1amount' => __('Taxed Amount &times; %1ratio', array('%1ratio' => '%70')))) ?></th><td class="t_green">2.891,00 TL</td></tr>
+                    <tr><th><?php echo __('VAT Advantage') ?></th><td class="t_green">630,00 TL</td></tr>
+                    <tr><th><?php echo __('Income Tax Advantage') ?></th><td class="t_green">700,00 TL</td></tr>
+                    <tr class="sum"><th><?php echo __('Overall Budget Cost') ?></th><td class="t_green">+91,00 TL</td></tr>
                     </table>
                 </div>
               </div>
@@ -158,54 +158,6 @@
 <?php echo javascript_tag("
 $('#accordion h2').click(function(){ var j = this; $('#accordion > h2 > span').fadeToggle('fast'); $('#accordion > div').slideToggle('fast', function(){ $(j).toggleClass('active'); }); });
 ") ?>
-
-<?php $data = array('platinum' => array(__('Upgrade to Platinum Account'), __('<span class=to></span>Platinum Account'), 'Platinum Membership'),
-                    'gold'     => array(__('Upgrade to Gold Account'), __('<span class=to></span>Gold Account'), 'Gold Membership'),
-                    null       => array(__('Apply for a Premium Account'), __('<span class=to></span>Premium Account'), 'Premium Membership'),
-                )?>
-        <div class="ghost box_678 noBorder" style="float: none; margin: 50px auto 0; background: url(/images/layout/background/premium-platinum-xl.jpg) no-repeat; padding-top: 300px;">
-                <h4><?php echo $data[$type][0] ?></h4>
-                <div>
-                    <p class="pad-3"><?php echo __('Please fill in the form below in order to upgrade to %1acctype.<br />We will contact you for further steps.', array('%1acctype' => $data[$type][1])) ?></p>
-                    <div id='crmWebToEntityForm' align=center>
-                        <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads695090000000053037 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatery()' accept-charset='UTF-8'>
-                            <input type='hidden' name='xnQsjsdp' value=YCm8KjqT-AJthYo*kRl79w$$/>
-                            <input type='hidden' name='xmIwtLD' value=B-OVfTFfSyZtQkCwOFwd*PKHA-X**-ls/>
-                            <input type='hidden' name='actionType' value=TGVhZHM=/>
-                            <input type='hidden' name='returnURL' value='http://www.emarketturkey.com/thankyou' />
-                            <input type='hidden' name='LEADCF3' value='YES' />
-                            <?php echo input_hidden_tag('LEADCF4', $data[$type][2]) ?>
-                            <?php echo !$sesuser->isNew() ? input_hidden_tag('LEADCF1', $sesuser->getHash()) : '' ?>
-                            <dl class="_table">
-                                <dt><?php echo emt_label_for('Company', __('Company Name')) ?></dt>
-                                <dd><?php echo input_tag('Company', '', 'max-length=100') ?></dd>
-                                <dt><?php echo emt_label_for('First Name', __('Name')) ?></dt>
-                                <dd><?php echo input_tag('First Name', '', 'max-length=40') ?></dd>
-                                <dt><?php echo emt_label_for('Last Name', __('Lastname')) ?></dt>
-                                <dd><?php echo input_tag('Last Name', '', 'max-length=80') ?></dd>
-                                <dt><?php echo emt_label_for('Designation', __('Position Title')) ?></dt>
-                                <dd><?php echo input_tag('Designation', '', 'max-length=100') ?></dd>
-                                <dt><?php echo emt_label_for('Email', __('E-mail')) ?></dt>
-                                <dd><?php echo input_tag('Email', '', 'max-length=100') ?></dd>
-                                <dt><?php echo emt_label_for('Phone', __('Phone')) ?></dt>
-                                <dd><?php echo input_tag('Phone', '', 'max-length=30') ?></dd>
-                                <dt><?php echo emt_label_for('Website', __('Website')) ?></dt>
-                                <dd><?php echo input_tag('Website', '', 'max-length=120') ?></dd>
-                                <dt><?php echo emt_label_for('State', __('State/Province')) ?></dt>
-                                <dd><?php echo input_tag('State', '', 'max-length=30') ?></dd>
-                                <dt><?php echo emt_label_for('Country', __('Country')) ?></dt>
-                                <dd><?php echo emt_select_country_tag('Country', '') ?></dd>
-                                <dt><?php echo emt_label_for('Description', __('Notes')) ?></dt>
-                                <dd class="margin-b2"><?php echo textarea_tag('Description', '', 'cols=50 rows=3 max-length=1000') ?></dd>
-                                <dt></dt>
-                                <dd class="margin-t2"><?php echo submit_tag(__('Submit'), 'class=green-button name=Save id=Save') ?>&nbsp;&nbsp;
-                                    <?php echo reset_tag(__('Clear Form')) ?></dd>
-                            </dl> 
-                            <script> var mndFileds=new Array('Company','Last Name');var fldLangVal=new Array('Company','Last Name');function checkMandatery(){for(i=0;i<mndFileds.length;i++){ var fieldObj=document.forms['WebToLeads695090000000053037'][mndFileds[i]];if(fieldObj) {if(((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0){alert(fldLangVal[i] +' cannot be empty'); fieldObj.focus(); return false;}else if(fieldObj.nodeName=='SELECT'){if(fieldObj.options[fieldObj.selectedIndex].value=='-None-'){alert(fldLangVal[i] +' cannot be none'); fieldObj.focus(); return false;}}}}}</script>  
-                        </form>
-                    </div>                
-                </div>
-        </div>
 
 </div>
 <style>
