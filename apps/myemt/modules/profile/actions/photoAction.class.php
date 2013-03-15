@@ -76,7 +76,7 @@ class photoAction extends EmtManageAction
                 catch (Exception $e)
                 {
                     $con->rollBack();
-                    ErrorLogPeer::Log($this->sesuser, PrivacyNodeTypePeer::PR_NTYP_USER, "Error occured during profile photo upload\nMsg:{$e->getMessage()}\nFile:{$e->getFile()} Line:{$e->getLine()}");
+                    ErrorLogPeer::Log($this->sesuser, PrivacyNodeTypePeer::PR_NTYP_USER, "Error occured during profile photo upload", $e);
                     if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18N()->__('Error Occured'), 'uri' => $this->fileobj->getOriginalFileUri())));
                     else $this->uploadError = true;
                 }

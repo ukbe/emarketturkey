@@ -217,7 +217,7 @@ class newAction extends EmtManageProductAction
                 catch(Exception $e)
                 {
                     $con->rollBack();
-                    ErrorLogPeer::Log($this->company->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, $e->getMessage(). ';' . $e->getFile() . ';' . $e->getLine());
+                    ErrorLogPeer::Log($this->company->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, null, $e);
                 }
             }
             

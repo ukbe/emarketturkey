@@ -80,7 +80,7 @@ class logoAction extends EmtManageCompanyAction
                 catch (Exception $e)
                 {
                     $con->rollBack();
-                    ErrorLogPeer::Log($this->company, PrivacyNodeTypePeer::PR_NTYP_COMPANY, "Error Occured During logo upload\nMsg:{$e->getMessage()}\nFile:{$e->getFile()} Line:{$e->getLine()}");
+                    ErrorLogPeer::Log($this->company, PrivacyNodeTypePeer::PR_NTYP_COMPANY, "Error Occured During logo upload", $e);
                     if ($this->getRequestParameter('js') == 'true') return $this->renderText(json_encode(array('status' => 0, 'message' => $this->getContext()->getI18N()->__('Error Occured'), 'uri' => $this->fileobj->getOriginalFileUri())));
                     else $this->uploadError = true;
                 }

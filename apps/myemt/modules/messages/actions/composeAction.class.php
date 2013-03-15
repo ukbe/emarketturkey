@@ -169,8 +169,8 @@ class composeAction extends EmtMessageAction
             }
             catch (Exception $e)
             {
-                $con->rollBack();echo $e->getMessage();
-                ErrorLogPeer::Log($this->sender->getId(), $this->sender->getObjectTypeId(), 'Message:' . $e->getMessage() . "\nFile:" . $e->getFile() . "\nLine:" . $e->getLine());
+                $con->rollBack();
+                ErrorLogPeer::Log($this->sender->getId(), $this->sender->getObjectTypeId(), null, $e);
                 $this->getRequest()->setError('_generic', 'Error occured while sending message');
             }
         }

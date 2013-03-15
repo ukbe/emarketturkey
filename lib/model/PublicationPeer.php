@@ -277,7 +277,7 @@ class PublicationPeer extends BasePublicationPeer
             {
                 $con->rollBack();
 
-                ErrorLogPeer::Log($object->getId() ? $object->getId() : 0, $object->getObjectTypeId(), "Error occured while saving Publication.\nPage:\nMessage:{$e->getMessage()}". $request->getUri());
+                ErrorLogPeer::Log($object->getId() ? $object->getId() : 0, $object->getObjectTypeId(), "Error occured while saving Publication.", $e);
 
                 return $object;
             }

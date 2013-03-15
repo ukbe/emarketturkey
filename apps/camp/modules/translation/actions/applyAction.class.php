@@ -73,7 +73,7 @@ class applyAction extends EmtAction
                     catch (Exception $e)
                     {
                         $con->rollBack();
-                        ErrorLogPeer::Log($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, 'Error while registering new company: '.$e->getMessage().'; File: '.$e->getFile().'; Line: '.$e->getLine());
+                        ErrorLogPeer::Log($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, 'Error while registering new company', $e);
                     }
                     
                     if ($this->account instanceof Company)
@@ -92,7 +92,7 @@ class applyAction extends EmtAction
                         }
                         catch (Exception $e)
                         {
-                            ErrorLogPeer::Log($this->account->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, 'Error while creating email transaction for new company: '.$e->getMessage().'; File: '.$e->getFile().'; Line: '.$e->getLine());
+                            ErrorLogPeer::Log($this->account->getId(), PrivacyNodeTypePeer::PR_NTYP_COMPANY, 'Error while creating email transaction for new company', $e);
                         }
                     }
                     else
@@ -170,7 +170,7 @@ class applyAction extends EmtAction
                 catch (Exception $e)
                 {
                     $con->rollBack();
-                    ErrorLogPeer::Log($this->account->getId(), $this->account->getObjectTypeId(), 'Error while creating translator application: '.$e->getMessage().'; File: '.$e->getFile().'; Line: '.$e->getLine());
+                    ErrorLogPeer::Log($this->account->getId(), $this->account->getObjectTypeId(), 'Error while creating translator application', $e);
                     $this->error = 'An error occured while creating your Translator application.';
                     return sfView::SUCCESS;
                 }

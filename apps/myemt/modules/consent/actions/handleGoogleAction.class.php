@@ -69,7 +69,7 @@ class handleGoogleAction extends EmtAction
         }
         catch (Exception $e)
         {
-            ErrorLogPeer::Log($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, "Error while importing Google Contacts: ".$e->getMessage());
+            ErrorLogPeer::Log($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, "Error while importing Google Contacts", $e);
         }
         $this->redirect(url_for(str_replace('@myemt.', '@', $settings['import']), true));
     }

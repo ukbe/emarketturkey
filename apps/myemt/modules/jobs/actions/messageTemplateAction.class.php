@@ -77,7 +77,7 @@ class messageTemplateAction extends EmtManageJobAction
             catch(Exception $e)
             {
                 $con->rollBack();
-                ErrorLogPeer::Log($this->owner->getId(), $this->otyp, $e->getMessage(). ';' . $e->getFile() . ';' . $e->getLine());
+                ErrorLogPeer::Log($this->owner->getId(), $this->otyp, null, $e);
             }
                 
         }

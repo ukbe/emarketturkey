@@ -69,7 +69,7 @@ class UserPeer extends BaseUserPeer
         catch(Exception $e)
         {
             $con->rollBack();
-            ErrorLogPeer::Log(0, RolePeer::RL_USER, "Error while sign up process: ".$e->getMessage()."; File: ".$e->getFile()."; Line: ".$e->getLine());
+            ErrorLogPeer::Log(0, RolePeer::RL_USER, "Error while sign up process.", $e);
                         
             return null;
         }

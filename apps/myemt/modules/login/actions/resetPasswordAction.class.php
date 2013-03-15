@@ -45,7 +45,7 @@ class resetPasswordAction extends EmtAction
                 $this->user = $this->login->getUser();
                 if (!$this->user)
                 {
-                    ErrorLogPeer::Log($user_id, PrivacyNodeTypePeer::PR_NTYP_USER, 'Missing User record for Login #').$login->getId();
+                    ErrorLogPeer::Log($user_id, PrivacyNodeTypePeer::PR_NTYP_USER, "Missing user record for Login #{.$login->getId()}");
                     $this->getRequest()->setError('reset_email', 'This email address is not registered.');
                     return sfView::SUCCESS;
                 }

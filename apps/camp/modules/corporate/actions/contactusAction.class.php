@@ -58,7 +58,7 @@ class contactusAction extends EmtAction
             }
             catch (Exception $e)
             {
-                ErrorLogPeer::Log(0, 0, $e->getMessage());
+                ErrorLogPeer::Log(0, 0, null, $e);
                 $this->errortext = "An error occured while while storing your message. Please try again.<br />We're sorry for inconvenience..";
             }
         }

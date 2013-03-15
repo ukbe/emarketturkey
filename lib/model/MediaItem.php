@@ -139,7 +139,7 @@ class MediaItem extends BaseMediaItem
         }
         catch (Exception $e)
         {
-            ErrorLogPeer::Log($this->getId(), PrivacyNodeTypePeer::PR_NTYP_MEDIA_ITEM, 'on delete: '.$e->getMessage());
+            ErrorLogPeer::Log($this->getId(), PrivacyNodeTypePeer::PR_NTYP_MEDIA_ITEM, 'Error while deleting MediaItem.', $e);
         }
         
         parent::delete($con);

@@ -79,7 +79,7 @@ class inviteAction extends EmtManageEventAction
                 die;
                 $con->rollBack();
                 $this->getUser()->setMessage('Error Occured!', 'Error occured while sending invitations. Please try again later.', null, null, false);
-                ErrorLogPeer::Log($this->event->getId(), PrivacyNodeTypePeer::PR_NTYP_EVENT, $e->getMessage());
+                ErrorLogPeer::Log($this->event->getId(), PrivacyNodeTypePeer::PR_NTYP_EVENT, "Error occured while sending invitations.", $e);
             }
         }
     }

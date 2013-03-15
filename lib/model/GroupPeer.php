@@ -144,7 +144,7 @@ class GroupPeer extends BaseGroupPeer
         catch(Exception $e)
         {
             $con->rollBack();
-            ErrorLogPeer::Log($users[RolePeer::RL_GP_OWNER]->getId(), RolePeer::RL_GP_OWNER, "Error while registering new group: ".$e->getMessage()."; File: ".$e->getFile()."; Line: ".$e->getLine());
+            ErrorLogPeer::Log($users[RolePeer::RL_GP_OWNER]->getId(), RolePeer::RL_GP_OWNER, "Error while registering new group.", $e);
             return null;
         }
 

@@ -21,7 +21,7 @@ class CascadeItemRemovalBehavior
                 }
                 catch (Exception $e)
                 {
-                    ErrorLogPeer::Log($object->getId(), PrivacyNodeTypePeer::PR_NTYP_PRODUCT, 'Could not cascade MediaItems on delete: '.$e->getMessage());
+                    ErrorLogPeer::Log($object->getId(), PrivacyNodeTypePeer::PR_NTYP_PRODUCT, 'Could not cascade MediaItems on delete.', $e);
                 }
                 break;
             case "Company" :
@@ -41,7 +41,7 @@ class CascadeItemRemovalBehavior
                 }
                 catch (Exception $e)
                 {
-                    ErrorLogPeer::Log($object->getId(), PrivacyNodeTypePeer::PR_NTYP_MEDIA_ITEM, 'Could not cascade ActionLogs on delete: '.$e->getMessage());
+                    ErrorLogPeer::Log($object->getId(), PrivacyNodeTypePeer::PR_NTYP_MEDIA_ITEM, 'Could not cascade ActionLogs on delete.', $e);
                 }
                 break;
         }

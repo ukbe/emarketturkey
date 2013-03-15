@@ -86,7 +86,7 @@ class inviteAction extends EmtManageGroupAction
             {
                 $con->rollBack();
                 $this->getUser()->setMessage('Error Occured!', 'Error occured while inviting your friends. Please try again later.', null, null, false);
-                ErrorLogPeer::Log($this->group->getId(), PrivacyNodeTypePeer::PR_NTYP_GROUP, $e->getMessage());
+                ErrorLogPeer::Log($this->group->getId(), PrivacyNodeTypePeer::PR_NTYP_GROUP, "Error occured while inviting user's friends.", $e);
             }
         }
     }

@@ -136,7 +136,7 @@ class addAction extends EmtManageEventAction
                 catch(Exception $e)
                 {
                     $con->rollBack();
-                    ErrorLogPeer::Log($this->owner->getId(), $this->own, $e->getMessage(). ';' . $e->getFile() . ';' . $e->getLine());
+                    ErrorLogPeer::Log($this->owner->getId(), $this->own, null, $e);
                 }
             }
             

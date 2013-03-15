@@ -123,7 +123,7 @@ class CompanyPeer extends BaseCompanyPeer
             echo $e->getMessage();
             $con->rollBack();
             $owner = array_key_exists(RolePeer::RL_CM_REPRESENTATIVE, $users)?$users[RolePeer::RL_CM_REPRESENTATIVE]:$users[RolePeer::RL_CM_OWNER];
-            ErrorLogPeer::Log($owner->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, "Error while registering new company: ".$e->getMessage()."; File: ".$e->getFile()."; Line: ".$e->getLine());
+            ErrorLogPeer::Log($owner->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, "Error while registering new company.", $e);
             return null;
         }
 

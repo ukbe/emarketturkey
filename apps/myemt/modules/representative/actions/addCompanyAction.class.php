@@ -62,7 +62,7 @@ class addCompanyAction extends EmtAction
             else
             {
                 $con->rollBack();
-                ErrorLogPeer::Log($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, "Error while adding portfolio company!");
+                ErrorLogPeer::Log($this->user->getId(), PrivacyNodeTypePeer::PR_NTYP_USER, "Error while adding portfolio company.", null);
 
                 $this->errorWhileSaving = true;
                 return sfView::SUCCESS;

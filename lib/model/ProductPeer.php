@@ -27,6 +27,7 @@ class ProductPeer extends BaseProductPeer
                 Criteria::CUSTOM);
             $c->add(CompanyPeer::AVAILABLE, 1);
             $c->add(ProductPeer::ACTIVE, 1);
+            $c->add(ProductPeer::IS_DELETED, null, Criteria::ISNULL);
         }
         else
         {

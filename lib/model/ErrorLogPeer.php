@@ -6,7 +6,8 @@ class ErrorLogPeer extends BaseErrorLogPeer
     {
         $context = sfContext::getInstance();
         $stack = $e ? $e->outputStackTrace() : '[object absent]';
-        $message .= "\n\nStack:\n{$stack}";
+        if ($e) $message .= (!is_null($message) ? "\"" . $message . "\"\n" : '') . "Message: {$e->getMessage()}\nFile: {$e->getFile()}\nLine: {$e->getLine()}\n\nApplication:{$log->getApplication()}\nModule:{$log->getModule()}\nAction:{$log->getAction()}\n\nStack:\n{$stack}";
+        $message .= "";
         try
         {
             $log = new ErrorLog();
@@ -17,7 +18,7 @@ class ErrorLogPeer extends BaseErrorLogPeer
             $log->setModule($context->getModuleName());
             $log->setAction($context->getActionName());
             $log->save();
-            mail('ukbe.akdogan@emarketturkey.com', 'Error occured', $e ? print_r($e, true) : "$message\n\nApplication:{$log->getApplication()}\nModule:{$log->getModule()}\nAction:{$log->getAction()}");
+            mail('ukbe.akdogan@emarketturkey.com', 'Error occured', $message);
         }
         catch (Exception $e)
         {
