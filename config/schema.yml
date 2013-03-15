@@ -799,8 +799,8 @@ propel:
     ACTION_ID:            { type: integer, size: 5, foreignTable: EMT_ACTION, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
     MESSAGE:              { type: varchar(255) }
     APPLICATION:          { type: varchar(100) }
-    MODULE:               { type: varchar(100) }
-    ACTION:               { type: varchar(100) }
+    MODULE_NAME:          { type: varchar(100) }
+    ACTION_NAME:          { type: varchar(100) }
     CREATED_AT:           ~
 
   EMT_PASSWORD_RESET_REQUEST:
