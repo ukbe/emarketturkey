@@ -798,6 +798,9 @@ propel:
     CAUSING_ITEM_TYPE_ID: { type: integer, size: 3, required: true, foreignTable: EMT_PRIVACY_NODE_TYPE, foreignReference: ID, onDelete: NO ACTION, onUpdate: NO ACTION }
     ACTION_ID:            { type: integer, size: 5, foreignTable: EMT_ACTION, foreignReference: ID, onDelete:  SET NULL, onUpdate: SET NULL }
     MESSAGE:              { type: varchar(255) }
+    APPLICATION:          { type: varchar(100) }
+    MODULE:               { type: varchar(100) }
+    ACTION:               { type: varchar(100) }
     CREATED_AT:           ~
 
   EMT_PASSWORD_RESET_REQUEST:
