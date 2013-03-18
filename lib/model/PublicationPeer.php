@@ -299,9 +299,9 @@ class PublicationPeer extends BasePublicationPeer
                         AND EMT_PUBLICATION.TYPE_ID=:type_id
                         ".($category_id ? "AND EMT_PUBLICATION.CATEGORY_ID=:category_id" : '')."
                         AND EMT_PUBLICATION_I18N.CULTURE=:culture
+                    ORDER BY EMT_PUBLICATION.UPDATED_AT DESC
                 )
                 WHERE SQNUM=1 AND ROWNUM <= :limit
-                ORDER BY UPDATED_AT DESC
                 ";
         
         $stmt = $con->prepare($sql);
