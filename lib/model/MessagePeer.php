@@ -55,7 +55,7 @@ class MessagePeer extends BaseMessagePeer
                 $vars['namespace'] = EmailTransactionNamespacePeer::EML_TR_NS_NEW_MESSAGE;
 
                 ActionLogPeer::Log($sendertop, ActionPeer::ACT_SEND_MESSAGE, $rcpnt);
-                EmailTransactionPeer::CreateTransaction($vars);
+                EmailTransactionPeer::CreateTransaction($vars, strpos($body, '@') === false && strpos($title, '@') === false);
             }
             
         }
