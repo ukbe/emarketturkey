@@ -43,7 +43,7 @@ class ProductPeer extends BaseProductPeer
         
         $sql = "SELECT * FROM
                 (
-                    SELECT EMT_PRODUCT.*, rank() over (partition by company_id order by EMT_PRODUCT.CREATED_AT desc) rank
+                    SELECT EMT_PRODUCT.*, rank() over (partition by emt_product.company_id order by EMT_PRODUCT.CREATED_AT desc) rank
                     FROM EMT_PRODUCT
                     LEFT JOIN EMT_COMPANY ON EMT_PRODUCT.COMPANY_ID=EMT_COMPANY.ID
 	    	        LEFT JOIN EMT_COMPANY_USER_VIEW ON EMT_COMPANY.ID=EMT_COMPANY_USER_VIEW.COMPANY_ID AND EMT_COMPANY_USER_VIEW.OBJECT_TYPE_ID=".PrivacyNodeTypePeer::PR_NTYP_USER." AND EMT_COMPANY_USER_VIEW.ROLE_ID=".RolePeer::RL_CM_OWNER."
