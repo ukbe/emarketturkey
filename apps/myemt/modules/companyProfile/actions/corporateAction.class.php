@@ -103,10 +103,10 @@ class corporateAction extends EmtManageCompanyAction
         {
             if ($lang == '')
                 $this->getRequest()->setError("comp_lang_$key", sfContext::getInstance()->getI18N()->__('Please specify language'));
-            if (mb_strlen($this->getRequestParameter("introduction_$key")) > 2000)
-                $this->getRequest()->setError("introduction_$key", sfContext::getInstance()->getI18N()->__('Company introduction for %1 language must be maximum %2 characters long.', array('%1' => sfContext::getInstance()->getI18N()->getNativeName($lang), '%2' => 2000)));
-            if (mb_strlen($this->getRequestParameter("productservice_$key")) > 2000)
-                $this->getRequest()->setError("productservice_$key", sfContext::getInstance()->getI18N()->__('Company products and services description for %1 language must be maximum %2 characters long.', array('%1' => sfContext::getInstance()->getI18N()->getNativeName($lang), '%2' => 2000)));
+            if (mb_strlen($this->getRequestParameter("introduction_$key")) > 5000)
+                $this->getRequest()->setError("introduction_$key", sfContext::getInstance()->getI18N()->__('Company introduction for %1 language must be maximum %2 characters long.', array('%1' => sfContext::getInstance()->getI18N()->getNativeName($lang), '%2' => 5000)));
+            if (mb_strlen($this->getRequestParameter("productservice_$key")) > 5000)
+                $this->getRequest()->setError("productservice_$key", sfContext::getInstance()->getI18N()->__('Company products and services description for %1 language must be maximum %2 characters long.', array('%1' => sfContext::getInstance()->getI18N()->getNativeName($lang), '%2' => 5000)));
         }
         return !$this->getRequest()->hasErrors();
     }
