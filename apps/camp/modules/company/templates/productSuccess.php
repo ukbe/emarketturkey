@@ -94,7 +94,8 @@
                     
                     <div>
                         <h4><?php echo __('Product Photos') ?></h4>
-                        <?php if (count($photos)): ?>
+                        <?php if (count($photos) > 1): ?>
+                        <?php 	array_shift($photos) ?>
                         <div class="photoGallery _noBorder">
                             <dl>
                                 <dt><?php echo __('Product Photos') ?></dt>
