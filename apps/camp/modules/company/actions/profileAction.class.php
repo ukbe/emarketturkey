@@ -22,7 +22,7 @@ class profileAction extends EmtCompanyAction
         $this->getResponse()->setItemType('http://schema.org/Organization');
         
         $this->getResponse()->addObjectMeta(array('name' => 'description', 'itemprop' => 'description'), myTools::trim_text($this->profile->getClob(CompanyProfileI18nPeer::INTRODUCTION), 250, true));
-        $this->getResponse()->addObjectMeta(array('name' => 'name', 'itemprop' => 'name'), $this->company->__toString());
+        $this->getResponse()->addObjectMeta(array('name' => 'name', 'itemprop' => 'name', 'property' => 'og:title'), $this->company->__toString());
         $this->getResponse()->addObjectMeta(array('itemprop' => 'brand'), implode(', ', $this->company->getCompanyBrands()));
         $this->getResponse()->addObjectMeta(array('itemprop' => 'foundingDate'), $this->profile->getFoundedIn('Y'));
         if ($address) $this->getResponse()->addObjectMeta(array('itemprop' => 'address'), $address->__toString());
@@ -30,10 +30,10 @@ class profileAction extends EmtCompanyAction
         if ($fax_number) $this->getResponse()->addObjectMeta(array('itemprop' => 'faxNumber'), $fax_number->__toString());
         $this->getResponse()->addObjectMeta(array('http-equiv' => 'last-modified'), $this->company->getUpdatedAt('Y-m-d\TH:i:s\Z'));
         sfLoader::loadHelpers('Url');
-        $this->getResponse()->addObjectMeta(array('itemprop' => 'url'), url_for($this->company->getProfileUrl(), true));
+        $this->getResponse()->addObjectMeta(array('itemprop' => 'url', 'property' => 'og:url'), url_for($this->company->getProfileUrl(), true));
         if ($this->company->getLogo())
         {
-            $this->getResponse()->addObjectMeta(array('itemprop' => 'image'), url_for($this->company->getLogo()->getOriginalFileUri(), true));
+            $this->getResponse()->addObjectMeta(array('itemprop' => 'image', 'property' => 'og:image'), url_for($this->company->getLogo()->getOriginalFileUri(), true));
             $this->getResponse()->addObjectMeta(array('itemprop' => 'logo'), url_for($this->company->getLogo()->getThumbnailUri(), true));
         }
 
