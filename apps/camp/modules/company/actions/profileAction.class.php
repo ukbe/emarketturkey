@@ -33,7 +33,7 @@ class profileAction extends EmtCompanyAction
         $this->getResponse()->addObjectMeta(array('itemprop' => 'url'), url_for($this->company->getProfileUrl(), true));
         if ($this->company->getLogo())
         {
-            $this->getResponse()->addObjectMeta(array('itemprop' => 'image'), url_for($this->company->getLogo()->getThumbnailUri(), true));
+            $this->getResponse()->addObjectMeta(array('itemprop' => 'image'), url_for($this->company->getLogo()->getOriginalFileUri(), true));
             $this->getResponse()->addObjectMeta(array('itemprop' => 'logo'), url_for($this->company->getLogo()->getThumbnailUri(), true));
         }
 
