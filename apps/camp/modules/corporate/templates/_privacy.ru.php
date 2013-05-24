@@ -1,6 +1,6 @@
 <div class="privacy-policy">
 <div>
-<em>(Updated on July 22, 2011)</em>
+<em>(Updated on May 24, 2013)</em>
 <div class="hrsplit-2"></div>
 <p>This is the Privacy Policy governing your use of the <b>eMarketTurkey.com Site</b> ("<b>Site</b>") and the collection, use, transfer and processing of your collected information by <b>eMarketTurkey.com</b> and those affiliates which provide the relevant Premium Services (collectively referred to as "<b>eMarketTurkey.com</b>","we" or "us"). By using this <b>Site</b>, you consent to our Privacy Policy set out below.</p>
 <p><b>eMarketTurkey.com</b> makes a firm commitment to protect your privacy. The following policy, as part of Terms & Conditions which has to be agreed with by users while visiting our web<b>Site</b>, provides details of how your information is treated. This policy may be subject to change in the future. However, we will notify you and request your confirmation, in such case.</p>

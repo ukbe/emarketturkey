@@ -1,6 +1,6 @@
 <div class="privacy-policy">
 <div>
-<em>(22 Temmuz 2011 tarihinde güncellenmiştir)</em>
+<em>(24 Mayıs 2013 tarihinde güncellenmiştir)</em>
 <div class="hrsplit-2"></div>
 <p>Bu, <b>eMarketTurkey.com</b> Sitesini ("Site") kullanımınızı ve <b>eMarketTurkey.com</b> ile ilgili Premium Servisleri sağlayan bağlı kuruluşları (topluca "<b>eMarketTurkey.com</b>" veya "biz" olarak anılır) tarafından toplanan bilgilerinizin toplanması, kullanılması, transferi ve işlenmesini yöneten Gizlilik Politikasıdır. Bu Siteyi kullanarak aşağıda belirtilen Gizlilik Politikamıza rıza gösteriyorsunuz.</p>
 <p><b>eMarketTurkey.com</b> gizliliğinizi koruma yönünde kesin bir taahhütte bulunur. Web Sitemizi ziyaret eden kullanıcıların kabul etmek zorunda olduğu Şartlar ve Koşulların bir parçası olan aşağıdaki politika bilgilerinizin nasıl işlem gördüğüne dair ayrıntıları sağlar. Bu politika ileride değişikliğe tabi olabilir. Ancak böyle bir durumda sizi bilgilendirecek ve onayınızı isteyeceğiz.</p>
