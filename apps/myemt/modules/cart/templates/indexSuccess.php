@@ -79,10 +79,7 @@
             <?php echo image_tag('layout/ssl-your-safe.png') ?>
             <?php echo __('You are secured with high-level SSL encryption.') ?>
             <!-- BEGIN DigiCert Site Seal Code --><div id="digicertsitesealcode" class="txtLeft"><script language="javascript" type="text/javascript" src="https://www.digicert.com/custsupport/sealtable.php?order_id=00246390&amp;seal_type=a&amp;seal_size=medium&amp;seal_color=blue&amp;new=1&amp;newmedium=1"></script><a href="http://www.digicert.com/">SSL Certificate</a><script language="javascript" type="text/javascript">coderz();</script></div><!-- END DigiCert Site Seal Code -->
-            <div class="hrsplit-3"></div>
-            <div class="hrsplit-3"></div>
-            <span class="t_smaller"><?php echo __('Privacy Certified by') ?></span>
-            <a href="//privacy-policy.truste.com/click-with-confidence/wps/en/emarketturkey.com/seal_m" title="TRUSTe online privacy certification" target="_blank"><img style="border: none" src="//privacy-policy.truste.com/certified-seal/wps/en/emarketturkey.com/seal_m.png" alt="TRUSTe online privacy certification"/></a>
+            <div class="hrsplit-2"></div>
         </div>
         </div>
     </div>
