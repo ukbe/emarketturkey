@@ -10,7 +10,7 @@
 				<dd><?php echo link_to(__('Premium Services'), '@premium') ?></dd>
 			</dl>
 
-            <?php if ($sf_user->getCulture() == 'tr'): ?>
+            <?php if ($sf_user->getCulture() == 'tr' && 1==2): ?>
             <dl class="_ftAd">
                 <dt></dt>
                 <dd class="_ft_iskur"><?php echo image_tag('layout/icon/badge/iskur-oib-262x262.png') ?>
