@@ -69,7 +69,7 @@
             <td><?php echo select_tag('lang-#lang#-speak', options_for_select(array(1 => __('Low'), 2=> __('Fair'), 3 => __('High')), null, array('include_blank' => true))) ?></td>
             <td><?php echo link_to_function(image_tag('layout/icon/led-icons/cancel.png'), "$('#translator_add > option[value=\"'+$(this).closest('tr').find('input[type=hidden][name=\"langs[]\"]').val()+'\"]').attr('disabled', false); $(this).closest('tr').remove(); if ($('.lang-table').find('input[name=\"langs[]\"]').length == 0) { $('.lang-table tr.no-items').show(); $('.lang-table tr.header').hide(); } ", 'class=removelink') ?></td>
         </tr>
-    <?php endif ?>
+    <?php endforeach ?>
     </tbody>
 </table>
     <?php endif ?>
