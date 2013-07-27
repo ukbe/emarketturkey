@@ -31,7 +31,7 @@ class applyAction extends EmtAction
                     
                     $this->getUser()->setAttribute('new_company_data', $data, '\tx\translators\apply');
                     $this->getUser()->setAttribute('account', 'new_company', '\tx\translators\apply');
-                    $this->redirect('@apply?step=2');
+                    $this->redirect('@tr-apply?step=2');
                 }
                 elseif ($this->getRequestParameter('account') != '')
                 {
@@ -41,11 +41,11 @@ class applyAction extends EmtAction
                         && !(TranslatorPeer::retrieveAccountFor(array(TranslatorPeer::TR_STAT_APPROVED, TranslatorPeer::TR_STAT_PENDING, TranslatorPeer::TR_STAT_SUSPENDED), $this->account)))
                     {
                         $this->getUser()->setAttribute('account', $this->getRequestParameter('account'), '\tx\translators\apply');
-                        $this->redirect('@apply?step=2');
+                        $this->redirect('@tr-apply?step=2');
                     }
                     else
                     {
-                        $this->redirect('@apply');
+                        $this->redirect('@tr-apply');
                     }
                 }
             }
@@ -106,7 +106,7 @@ class applyAction extends EmtAction
                     $this->account = myTools::unplug($this->getUser()->getAttribute('account', null, '\tx\translators\apply'));
                     if (TranslatorPeer::retrieveAccountFor(array(TranslatorPeer::TR_STAT_APPROVED, TranslatorPeer::TR_STAT_PENDING, TranslatorPeer::TR_STAT_SUSPENDED), $this->account))
                     {
-                        $this->redirect('@apply');
+                        $this->redirect('@tr-apply');
                     }
                 }
                 
@@ -189,7 +189,7 @@ class applyAction extends EmtAction
                 {
                     $this->getUser()->setAttribute('new_company_data', null, '\tx\translators\apply');
                     $this->getUser()->setAttribute('account', null, '\tx\translators\apply');
-                    $this->redirect("@apply");
+                    $this->redirect("@tr-apply");
                 }
                 $this->account = new Company();
                 $this->account->setName($data->get('company_name'));
@@ -207,7 +207,7 @@ class applyAction extends EmtAction
                 }
                 else
                 {
-                    $this->redirect('@apply');
+                    $this->redirect('@tr-apply');
                 }
             }
             $this->setTemplate('translatorProfile');
