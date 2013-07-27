@@ -15,7 +15,7 @@ class requestsAction extends EmtAction
     
     private function handleAction($isValidationError)
     {
-        $this->redirect('@cm.requests');
+        $this->redirect('@camp.requests');
     }
 
     public function validate()

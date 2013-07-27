@@ -136,7 +136,7 @@
         <span class="err-1" title="^\+?([0-9]|\(|\)|-|\/|\s)+$"><?php echo __('Please enter your phone number') ?></span>
     </span></dd>
 <dt></dt>
-<dd><span class="_right"><?php echo link_to(__('Skip this step'), '@cm.friendfinder?sup=true', 'class=inherit-font bluelink hover') ?></span> <?php echo submit_tag(__('Save Profile'), 'class=green-button') ?></dd>
+<dd><span class="_right"><?php echo link_to(__('Skip this step'), '@camp.friendfinder?sup=true', 'class=inherit-font bluelink hover') ?></span> <?php echo submit_tag(__('Save Profile'), 'class=green-button') ?></dd>
 </dl>
 </form>
 <?php use_javascript('emt-location-1.0.js') ?>

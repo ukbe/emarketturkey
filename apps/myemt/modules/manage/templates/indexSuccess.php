@@ -24,7 +24,7 @@ else
 <?php foreach ($groups as $group): ?>
 <div class="rounded-border">
 <span><?php echo link_to(image_tag($group->getProfilePictureUri(false), 'height=20'), 'group/manage', array('query_string' => 'id='.$group->getId())) ?>
-<?php echo link_to($group, '@cm.group-manage?stripped_name='.$group->getStrippedName().'&action=manage') ?></span>
+<?php echo link_to($group, '@camp.group-manage?stripped_name='.$group->getStrippedName().'&action=manage') ?></span>
 <div><div>
 <ol>
 <li><?php echo image_tag('layout/icon/bullet.png') ?>&nbsp;&nbsp;<?php

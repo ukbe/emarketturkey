@@ -209,7 +209,7 @@ $('#location-manual').autocomplete({
         <?php $advises = $sesuser->getSuggestedFriendsPager(null, true, 3) ?>
         <?php if (count($advises)): ?>
         <div class="box_312 _border_Shadowed">
-            <h3><span class="_right"><?php echo link_to(__('See All'), '@cm.pymk') ?></span>
+            <h3><span class="_right"><?php echo link_to(__('See All'), '@camp.pymk') ?></span>
                 <span class="blue"><?php echo __('People You May Know') ?></span>
             </h3>
             <div>

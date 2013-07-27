@@ -27,7 +27,7 @@ body { font-family: Arial; font-size: 10pt; font-weight: normal; color: #000000;
                 <?php echo $message ?><br /><br />
                 <?php endif ?>
                 <?php echo __('You can click the link below to accept the request:') ?><br/>
-                <?php echo link_to('', '@cm.requests', array('absolute_url' => true)); ?>
+                <?php echo link_to('', '@camp.requests', array('absolute_url' => true)); ?>
                 <br /><br />
                 <?php echo __('eMarketTurkey Team') ?>
                 <br /><br />

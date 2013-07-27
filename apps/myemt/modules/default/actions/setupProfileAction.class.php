@@ -72,7 +72,7 @@ class setupProfileAction extends EmtAction
             $this->phone->setType($this->getRequestParameter('contact_type'));
             $this->phone->save();
 
-            $this->redirect('@cm.friendfinder?sup=true');
+            $this->redirect('@camp.friendfinder?sup=true');
         }
 
     }

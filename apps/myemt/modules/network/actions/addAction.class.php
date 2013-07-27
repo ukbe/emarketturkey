@@ -33,7 +33,7 @@ class addAction extends EmtAction
         }
         if (!$this->contact)
         {
-            $this->redirect('@cm.network');
+            $this->redirect('@camp.network');
         }
         if ($this->getRequest()->getMethod() == sfRequest::POST)
         {
