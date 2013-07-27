@@ -44,7 +44,7 @@
             <h3><?php echo __('Corporate or Professional. All good!') ?></h3>
             <p><?php echo __('Are you running an agency? You may create a corporate account for your agency and receive translation requests for your business.') ?></p>
             <div class="hrsplit-1"></div>
-            <?php echo link_to(__('Register Now'), '@apply', 'class=dark-button') ?>
+            <?php echo link_to(__('Register Now'), '@tr-apply', 'class=dark-button') ?>
         </div>
     </div>
 
