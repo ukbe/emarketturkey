@@ -24,7 +24,7 @@
     </tbody>
 </table>
 </div>
-<?php echo form_tag('@apply') ?> <?php echo input_hidden_tag('step', 2) ?>
+<?php echo form_tag('@tr-apply') ?> <?php echo input_hidden_tag('step', 2) ?>
 <?php if ($sesuser->isNew()): ?> <?php else: ?> <?php echo __('Please provide additional information for Translator profile:') ?>
 <div class="hrsplit-3"></div>
 <?php echo form_errors() ?> <?php if (isset($error)): ?>
@@ -33,7 +33,7 @@
 <?php endif ?>
 <dl class="_table">
     <dt><?php echo emt_label_for('account', __('Account Holder')) ?></dt>
-    <dd class="t_larger"><span class="t_green t_bold"><?php echo $account ?></span>&nbsp;&nbsp;<?php echo link_to(__('(change)'), "@apply", 'class=inherit-font bluelink hover') ?>
+    <dd class="t_larger"><span class="t_green t_bold"><?php echo $account ?></span>&nbsp;&nbsp;<?php echo link_to(__('(change)'), "@tr-apply", 'class=inherit-font bluelink hover') ?>
     <div class="hrsplit-3"></div>
     </dd>
     <dt class="_req"><?php echo emt_label_for('translator_introduction', __('Introduction')) ?></dt>

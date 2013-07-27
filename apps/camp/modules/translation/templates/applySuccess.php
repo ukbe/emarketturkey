@@ -9,7 +9,7 @@
             <h4><div class="_right t_orange"><? echo __('Step 1') ?></div>
             <?php echo __('Apply for Translator') ?></h4>
             <div class="pad-3 _noBorder">
-            <?php echo form_tag('@apply') ?>
+            <?php echo form_tag('@tr-apply') ?>
             <?php echo input_hidden_tag('step', 1) ?>
             <?php echo $sf_request->hasError('account') ? form_errors() : '' ?>
             <?php if ($sesuser->isNew()): ?>
